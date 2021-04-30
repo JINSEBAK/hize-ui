@@ -1,5 +1,5 @@
-// 로그인
-.user-login {
+// 로그인, 회원가입
+.user-sign {
     max-width: 480px;
     margin: 0 auto;
     .login-heading {
@@ -15,9 +15,43 @@
     }
     .help-block {
         color: $text-warning;
+        margin-bottom: 24px;
     }
     .find-info {
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+    .mb-join {
+        clear: both;
+        padding-top: 36px;
+    }
+    .form-group {
+        .form-control {
+            + .form-control {
+                margin-top: 8px;
+            }
+        }
+    }
+    .step {
+        margin: 24px 0;
+        overflow: hidden;
+        .step-join {
+            li {
+                float: left;
+                width: 50%;
+                .step-cell {
+                    text-align: center;
+                    height: 40px;
+                    line-height: 40px;
+                }
+                &.active {
+                    color: $text-primary;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .step-join-content {
+        border: 1px solid red;
     }
 }

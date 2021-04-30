@@ -45,7 +45,7 @@ gulp.task("scss:compile", () => {
       indentType: "space", // space, tab
       indentWidth: 4, //
       precision: 8,
-      sourceComments: true, // 코멘트 제거 여부
+      sourceComments: false, // 코멘트 제거 여부
     };
     gulp
       .src(PATH.ASSETS.STYLE + "/style.scss")
