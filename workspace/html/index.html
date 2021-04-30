@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hize 관리자 사이트 UI</title>
+    <link rel="shortcut icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+      .panel-body { font-size: 12px; }
+      .panel-body dl dd { margin-bottom: 12px; }
+      .table tr:hover { background-color: rgb(230, 228, 252); }
+    </style>
+
+  </head>
+  <body style="padding: 2rem">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading" style="background-color:#f6fbf4">관리자웹 퍼블리싱 파일 목록</div>
+      <div class="panel-body">
+        <dl>
+          <dt>목차작성</dt>
+          <dd>
+            마지막 행(tr)을 복사하여 작성 / 번호는 자동 생성 / 링크 연결 후 정상동작 확인
+          </dd>
+          <dt>진행률</dt>
+          <dd>
+            <span class="label label-default">completed</span>
+            <span class="label label-success">10%</span>
+            <span class="label label-info">wait</span>
+            <span class="label label-warning">new</span>
+          </dd>
+        </dl>
+      </div>
+      <table class="table">
+        <caption style="display: none">Hize UI 목차</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>대분류</th>
+            <th>중분류</th>
+            <th>소분류</th>
+            <th>파일명</th>
+            <th>진행률</th>
+            <th>이동</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="idx"></th>
+            <td colspan="3">공통요소</td>
+            <td>elements.html</td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/elements.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td colspan="3">템플릿(빈페이지)</td>
+            <td>template.html</td>
+            <td>
+              <span class="label label-success">70%</span>
+            </td>
+            <td><a href="./view/template.html" target="_blank" rel="noreferrer noopener"  class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>신규 페이지 생성 시, template.html 파일 복사 후 진행</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td colspan="3">로그인</td>
+            <td>wa_01_login.html</td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_01_login.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+
+
+
+
+          <!-- 목록 sample mark-up -->
+          <tr >
+            <th class="idx"></th>
+            <td>대</td>
+            <td>중</td>
+            <td>소</td>
+            <td>join.html</td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>기타 참고 사항을 작성합니다.</small>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      var idxCells = document.querySelectorAll('.idx');
+      idxCells.forEach((cell, index) => {
+        cell.innerText = index + 1;
+      })
+    </script>
+
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">사용자앱(웹뷰) 퍼블리싱 파일 목록</div>
+      <div class="panel-body">
+        <dl>
+          <dt></dt>
+          <dd></dd>
+        </dl>
+      </div>
+      <table class="table">
+        <caption style="display: none">Hize UI 목차</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>대분류</th>
+            <th>중분류</th>
+            <th>소분류</th>
+            <th>파일명</th>
+            <th>진행률</th>
+            <th>이동</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../common/resources.html')
+    <style>
+        dl dt { margin-bottom: 12px; font-size: 24px; }
+        dl dd { margin-bottom: 48px; }
+        dl dd .sep { margin-bottom: 36px; }
+    
+    </style>
+  </head>
+  <body style="padding: 2rem">
+    <dl>
+        <dt>Buttons</dt>
+        <dd>
+            <div class="sep">
+                <button class="btn btn-default">버튼 default</button>
+                <button class="btn btn-primary">버튼 primary</button>
+                <button class="btn btn-primary" disabled>버튼 primary disabeld</button>
+                <a class="btn btn-link">link (a tag)</a>
+            </div>
+            <div class="sep">
+                <button class="btn btn-default btn-xs">버튼 default</button>
+                <button class="btn btn-primary btn-xs">버튼 primary</button>
+                <button class="btn btn-primary btn-xs" disabled>버튼 primary disabeld</button>
+            </div>
+        </dd>
+
+        <dt>Icons</dt>
+        <dd>
+            <span class=""></span>
+        </dd>
+
+        <dt>Modals</dt>
+        <dd>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#alertModal" >Alert Modal</button>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#confirmModal" >Confirm Modal</button>
+
+            <!-- 알림 메시지용 -->
+            <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
+                        </div>
+                        <div class="modal-body">
+                            내용을 작성합니다.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사용자 의사결정용 -->
+            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
+                        </div>
+                        <div class="modal-body">
+                            내용을 작성합니다.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dd>
+
+        <dt>Forms</dt>
+        <dd>
+            <div class="sep">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label" for="id1">text</label>
+                        <input type="text" class="form-control" id="id1" placeholder="placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="id2">password</label>
+                        <input type="password" class="form-control" id="id2" placeholder="placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="id3">disabled</label>
+                        <input type="text" class="form-control" id="id3" placeholder="placeholder" disabled>
+                    </div>
+                    <div class="form-group has-warning">
+                        <label class="control-label" for="id4">warning text</label>
+                        <input type="text" class="form-control" id="id4" placeholder="placeholder" value="123">
+                        <span class="help-block">아이디는 영문, 숫자포함 4~12자리까지 가능합니다.</span>
+                    </div>
+                </form>
+            </div>
+            <div class="sep">
+                <form>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="">
+                            label for checkbox
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="sep">
+                <form>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="option-radio" value="1" checked>
+                            label for radio1
+                        </label>
+                        <label>
+                            <input type="radio" name="option-radio" value="2">
+                            label for radio2
+                        </label>
+                        <label>
+                            <input type="radio" name="option-radio" value="3">
+                            label for radio3
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="sep">
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="sep">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        dropdown 
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sep">
+                <textarea class="form-control" rows="3" ></textarea>
+            </div>
+        </dd>
+
+    
+    </dl>
+
+    @@include('../common/scripts.html')
+    <script>
+        $(document).ready(function() {
+            // 드롭다운
+            $('.dropdown-toggle').on('click', function() {
+                if ($(this).hasClass('open')) {
+                    $(this).removeClass('open');
+                } else {
+                    $(this).addClass('open');
+                }
+            })
+        });
+    </script>
+  </body>
+</html>
+

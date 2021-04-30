@@ -1,0 +1,150 @@
+@charset 'utf-8';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  transition: all .2s;
+}
+
+/* colors */
+$border-color: #ddd;
+$border-light-color: #eee;
+$text-basic: #9d9d9d;
+$text-basic-hover: #000;
+$text-link-basic: #6a6a6a;
+$text-link-hover: #000;
+$text-warning: #8a6d3b;
+
+/* buttons */
+
+/* forms */
+
+/* icons */
+
+// header fixed-top 적용 시, body에 padding-top 필요
+body {
+  padding-top: 70px;
+}
+
+a {
+  color: $text-link-basic;
+  &:hover, &:active {
+    color: $text-link-hover;
+  }
+}
+
+
+
+// header
+.navbar {
+  border-bottom: 1px solid $border-color;
+  .container-fluid {
+    .navbar-header {
+      .navbar-toggle {
+        color: #fff;
+      }
+    }
+    .navbar-collapse {
+      .pull-right {
+        .btn-group {
+          margin-top: 6px;
+          .btn-profile {
+            background-color: transparent;
+            color: $text-basic;
+            display: flex;
+            align-items: center;
+            &:hover, &:focus, &:active {
+              color: $text-basic-hover;
+              box-shadow: none;
+            }
+            .user-img {
+              display: inline-block;
+              width: 26px;
+              height: 26px;
+              margin-right: 6px;
+              border-radius: 100%;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// gnb
+.sidebar {
+  border-right: 1px solid $border-color;
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
+  .nav-sidebar {
+    > li {
+      margin: 10px 0;
+      transition: all .3s;
+      > a:not(.single) {
+        background-image: url(../images/icons/down-arrow.svg);
+        background-position: calc(100% - 15px) center;
+        background-repeat: no-repeat;
+        background-size: 10px;
+      }
+      &.active {
+        > a:not(.single) {
+          background-image: url(../images/icons/up-arrow.svg);
+        }
+        .sub-menu {
+          height: auto;
+          transition: all .3s;
+        }
+      }
+      .glyphicon {
+        margin-right: 6px;
+      }
+    }
+    .sub-menu {
+      height: 0;
+      overflow: hidden;
+      list-style: none;
+      padding: 0px 38px;
+      li {
+        padding: 4px 0;
+      }
+    }
+  }
+}
+
+.main {
+  padding: 0 20px;
+  .page-header {
+    padding: 0;
+    margin: 0;
+    h4 {
+      margin: 0 0 10px;
+      small {
+        display: block;
+        position: relative;
+        margin-top: 6px;
+      }
+      .breadcrumb {
+        position: absolute;
+        top: 0;
+        right: 12px;
+        padding: 0;
+        margin: 0;
+        font-size: 80%;
+        background-color: transparent;
+      }
+    }
+  }
+}

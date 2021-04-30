@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../../assets/css/style.css" />
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="user-login">
+                <form>
+                    <h2 class="login-heading">
+                        <img src="../../assets/images/photos/user-img.png" alt="주식 서비스 관리자 로그인 이미지 또는 로고" >
+                        <!-- 주식 서비스 관리자 로그인 -->
+                    </h2>
+                    <div class="form-group">
+                        <label for="userId" class="sr-only">아이디</label>
+                        <input type="text" id="userId" class="form-control" placeholder="아이디 입력" autofocus>
+                    </div>
+
+                    <!-- help-block에 메시지 표시할 때 부모 div에 .has-warning 추가 -->
+                    <div class="form-group">
+                        <label for="userPw" class="sr-only">비밀번호</label>
+                        <input type="password" id="userPw" class="form-control" placeholder="비밀번호 입력" >
+                    </div>
+                    
+                    <!-- form validation message -->
+                    <span class="help-block"></span>
+
+                    <button type="submit" class="btn btn-primary btn-block">관리자 로그인</button>
+
+                    <div class="checkbox pull-left">
+                        <label>
+                            <input type="checkbox" value="remember-me"> ID 저장
+                        </label>
+                    </div>
+                    <div class="pull-right">
+                        <div class="find-info">
+                            <a href="#">아이디/비밀번호 찾기</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                // onchange 이벤트 감지는 blur시 적용되기 때문에, 실시간 확인을 하려면 change, keyup, paste 함께 사용
+                $('#userId').on('change keyup paste', function(){
+                    var len = $(this).val().length;
+                    if ( len < 4 || len > 12 ) {
+                        $('.help-block').html('아이디를 형식에 맞게 입력해주세요.<br>(영문, 숫자 4~12자리)').fadeIn();
+                        $('.form-group').removeClass('has-warning');
+                        $('#userId').parent('.form-group').addClass('has-warning');
+                    } else {
+                        $('.help-block').text('').fadeOut();
+                        $('.form-group').removeClass('has-warning');
+                    }
+                })
+            });
+        </script>
+    </body>
+</html>

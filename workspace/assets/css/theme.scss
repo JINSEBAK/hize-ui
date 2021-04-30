@@ -1,0 +1,23 @@
+// 로그인
+.user-login {
+    max-width: 480px;
+    margin: 0 auto;
+    .login-heading {
+        text-align: center;
+        padding: 12px;
+        img {
+            display: block;
+            margin: 12px auto;
+            width: 72px;
+            height: 72px;
+            border-radius: 100%;
+        }
+    }
+    .help-block {
+        color: $text-warning;
+    }
+    .find-info {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
