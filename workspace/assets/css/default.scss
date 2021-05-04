@@ -6,10 +6,6 @@ body {
   padding: 0;
 }
 
-* {
-  transition: all .2s;
-}
-
 div, ul {
   padding: 0; 
   margin: 0;
@@ -19,17 +15,44 @@ ul, li {
   list-style: none;
 }
 
+button:focus {
+  outline: none !important;
+}
+
+*:not(.nav-sidebar>li>.sub-menu) {
+  transition: all .2s;
+}
+
 /* colors */
 $border-color: #ddd;
 $border-light-color: #eee;
+$bg-color: #f2f3f6;
+$bg-light-color: #f9f9f9; // 채팅방bg
+$balloon-default: #fff;
+$balloon-admin: #ffeae2;  // 관리자 말풍선
+$balloon-signal: #ffdfdf; // 신호색상
+$text-white: #fff;
 $text-basic: #9d9d9d;
 $text-basic-hover: #000;
 $text-primary: #2e6da4;
 $text-link-basic: #6a6a6a;
 $text-link-hover: #000;
 $text-warning: #8a6d3b;
+$card-hover: #f2f3f5;
+$card-active: #fff3e0;
+$btn-primary: #2e6da4;
+$btn-secondary: #666;
+$btn-secondary-hover: #000;
 
 /* buttons */
+.btn-secondary {
+  background-color: $btn-secondary;
+  color: $text-white;
+  &:focus, &:hover, &:active {
+    color: $text-white;
+    background-color: $btn-secondary-hover;
+  }
+}
 
 /* forms */
 
@@ -52,6 +75,7 @@ a {
 // header
 .navbar {
   border-bottom: 1px solid $border-color;
+  background-color: #fff;
   .container-fluid {
     .navbar-header {
       .navbar-toggle {
@@ -76,6 +100,7 @@ a {
               width: 26px;
               height: 26px;
               margin-right: 6px;
+              margin-left: 6px;
               border-radius: 100%;
               overflow: hidden;
               img {
@@ -94,6 +119,7 @@ a {
 .sidebar {
   border-right: 1px solid $border-color;
   position: fixed;
+  width: 210px;
   top: 51px;
   bottom: 0;
   left: 0;
@@ -102,7 +128,6 @@ a {
   .nav-sidebar {
     > li {
       margin: 10px 0;
-      transition: all .3s;
       > a:not(.single) {
         background-image: url(../images/icons/down-arrow.svg);
         background-position: calc(100% - 15px) center;
@@ -113,22 +138,18 @@ a {
         > a:not(.single) {
           background-image: url(../images/icons/up-arrow.svg);
         }
-        .sub-menu {
-          height: auto;
-          transition: all .3s;
-        }
       }
       .glyphicon {
         margin-right: 6px;
       }
     }
     .sub-menu {
-      height: 0;
+      display: none;
       overflow: hidden;
       list-style: none;
       padding: 0px 38px;
       li {
-        padding: 4px 0;
+        padding: 6px 0;
       }
     }
   }
@@ -136,6 +157,7 @@ a {
 
 .main {
   padding: 0 20px;
+  padding-left: 230px;
   .page-header {
     padding: 0;
     margin: 0;
@@ -156,5 +178,106 @@ a {
         background-color: transparent;
       }
     }
+  }
+}
+
+
+// alert, confirm
+#alertModal {
+  .modal-dialog {
+    width: 320px;
+    .modal-content {
+      .modal-body {
+        p {
+          color: $text-basic;
+          margin-top: 12px;
+        }
+      }
+      .modal-footer {
+        padding: 0;
+        .btn {
+          width: 100%;
+          border-radius: 0 0 4px 4px;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  .modal-body {
+    .scrolling {
+      max-height: 60vh;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px !important;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #ffffff !important;
+      }
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #d8d8d8 !important;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #c5c5c5 !important;
+      }
+    }
+  }
+  &.modal-list {
+    .modal-body {
+      padding: 15px 4px;
+      .scrolling {
+        padding: 0 12px;
+      }
+    }
+  }
+}
+
+
+
+
+// forms
+.form-search {
+  // 돋보기 아이콘이 있는 input
+  position: relative;
+  padding: 12px;
+  .form-control {
+    padding: 6px 34px 6px 12px;
+  }
+  .glyphicon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    margin-top: -8px;
+    z-index: 5;
+    cursor: pointer;
+  }
+}
+
+// 목록 상단에 위치
+.list-filter {
+  padding: 0 12px 6px 0px;
+  min-height: 28px;
+  margin-top: -15px;
+}
+
+.filter {
+  .btn-group {
+    .dropdown-menu {
+      min-width: 100px;
+    }
+  }
+}
+
+.no-result {
+  text-align: center;
+  span {
+    display: block;
+    margin: 12px auto;
+    font-size: 36px;
+    color: $text-basic;
   }
 }

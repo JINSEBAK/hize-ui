@@ -41,7 +41,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
+                            <h5 class="modal-title" id="alertModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
                         </div>
                         <div class="modal-body">
                             내용을 작성합니다.
@@ -156,7 +156,7 @@
 
     @@include('../common/scripts.html')
     <script>
-        $(document).ready(function() {
+        $(function() {
             // 드롭다운
             $('.dropdown-toggle').on('click', function() {
                 if ($(this).hasClass('open')) {
