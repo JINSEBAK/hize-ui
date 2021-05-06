@@ -214,13 +214,60 @@
             <th>중분류</th>
             <th>소분류</th>
             <th>파일명</th>
-            <th>진행률</th>
+            <th>와이어프레임</th>
+            <th>스타일</th>
             <th>이동</th>
             <th>비고</th>
           </tr>
         </thead>
+        <tbody>
+          <tr>
+            <th class="wvidx"></th>
+            <td colspan="3">메인</td>
+            <td>au_01_main.html</td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <a href="./wvview/au_01_main.html" target="_blank" rel="noreferrer noopener"
+                class="glyphicon glyphicon-link"></a>
+            </td>
+            <td>
+              <small>큰 구조 및 sticky 작업만 진행, 시안 컨펌 후 작업 예정</small>
+            </td>
+          </tr>
+
+
+          <!-- 목록 sample mark-up -->
+          <tr>
+            <th class="wvidx"></th>
+            <td>대</td>
+            <td>중</td>
+            <td>소</td>
+            <td>join.html</td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>기타 참고 사항을 작성합니다.</small>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
+    <script>
+      var idxCells = document.querySelectorAll('.wvidx');
+      idxCells.forEach((cell, index) => {
+        cell.innerText = index + 1;
+      })
+    </script>
 
 
 

@@ -59,6 +59,27 @@ gulp.task("scss:compile", () => {
   });
 });
 
+gulp.task("scss:webview", () => {
+  return new Promise((resolve) => {
+    var options = {
+      outputStyle: "expanded", // nested, expanded, compact, compressed
+      indentType: "space", // space, tab
+      indentWidth: 4, //
+      precision: 8,
+      sourceComments: false, // 코멘트 제거 여부
+    };
+    gulp
+      .src(PATH.ASSETS.STYLE + "/wv.scss")
+      .pipe(sourcemaps.init())
+      .pipe(scss(options))
+      .pipe(sourcemaps.write())
+      .pipe(concat("wv.css"))
+      .pipe(gulp.dest(DEST_PATH.ASSETS.STYLE))
+      .pipe(browserSync.reload({ stream: true }));
+    resolve();
+  });
+});
+
 gulp.task("css:copy", () => {
   return new Promise((resolve) => {
     gulp
@@ -136,6 +157,7 @@ gulp.task("watch", () => {
   return new Promise((resolve) => {
     gulp.watch(PATH.HTML + "/**/*.html", gulp.series(["html"]));
     gulp.watch(PATH.ASSETS.STYLE + "/**/*.scss", gulp.series(["scss:compile"]));
+    gulp.watch(PATH.ASSETS.STYLE + "/**/*.scss", gulp.series(["scss:webview"]));
     resolve();
   });
 });
@@ -149,5 +171,5 @@ gulp.task("browserSync", () => {
 
 gulp.task(
   "default",
-  gulp.series(["clean", "scss:compile", "css:copy", "font:copy", "js:copy", "image:copy", "html", "fileinclude",  "nodemon:start", "browserSync", "watch"])
+  gulp.series(["clean", "scss:compile", "scss:webview", "css:copy", "font:copy", "js:copy", "image:copy", "html", "fileinclude",  "nodemon:start", "browserSync", "watch"])
 );
