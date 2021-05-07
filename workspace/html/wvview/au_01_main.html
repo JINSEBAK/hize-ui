@@ -6,7 +6,25 @@
     <body>
         <div class="w-main">
             <article class="w-main-carousel" style="color: #fff;">
-                Carousel Slide
+                <!-- carousel -->
+                <div class="carousel slide" data-ride="carousel" id="mainCarousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mainCarousel" data-slide-to="1"></li>
+                        <li data-target="#mainCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            1
+                        </div>
+                        <div class="item">
+                            2
+                        </div>
+                        <div class="item">
+                            3
+                        </div>
+                    </div>
+                </div>
             </article>
             <article class="w-main-list">
                 <div class="w-main-tab" id="webviewMainTabs">
@@ -275,6 +293,10 @@
         @@include('../common/scripts.html')
         <script>
             $(function() {
+
+                // carousel
+                $('#mainCarousel').carousel();
+
                 $(window).scroll(function() {
                     var scroll = $(this).scrollTop();
                     if ( scroll > 200 ) {

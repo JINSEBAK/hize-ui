@@ -1,20 +1,62 @@
 // 메인
-html, body {
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 body {
     padding-top: 0;
-    height: 100%;
+    font-size: 16px;
+}
+
+div, ul {
+  padding: 0; 
+  margin: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+button:focus {
+  outline: none !important;
 }
 
 * {
     box-sizing: border-box;
 }
 
-$border-color: #ccc;
+/* colors */
+$border-color: #ddd;
+$border-light-color: #eee;
+$bg-color: #f2f3f6;
+$bg-light-color: #f9f9f9; // 채팅방bg
+$balloon-default: #fff;
+$balloon-admin: #ffeae2;  // 관리자 말풍선
+$balloon-signal: #ffdfdf; // 신호색상
+$text-white: #fff;
+$text-basic: #9d9d9d;
+$text-basic-hover: #000;
+$text-primary: #2e6da4;
+$text-link-basic: #6a6a6a;
+$text-link-hover: #000;
+$text-warning: #8a6d3b;
+$card-hover: #f2f3f5;
+$card-active: #fff3e0;
+$btn-primary: #2e6da4;
+$btn-secondary: #666;
+$btn-secondary-hover: #000;
+
+a {
+  color: $text-link-basic;
+  &:hover, &:active {
+    color: $text-link-hover;
+  }
+}
 
 .w-main {
     width: 100%;
@@ -22,6 +64,30 @@ $border-color: #ccc;
     .w-main-carousel {
         min-height: 200px;
         background-color: darkslategray;
+        .carousel {
+            height: 200px;
+            text-align: center;
+            padding: 50px 0;
+            .carousel-indicators {
+                bottom: 0;
+                li {
+                    border: none;
+                    background-color: #fff;
+                    margin: 0 2px;
+                }
+                .active {
+                    background-color: coral;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            .carousel-inner {
+                .item {
+                    font-size: 56px;
+                    font-weight: bold;
+                }
+            }
+        }
     }
     .w-main-list {
         padding: 12px;
@@ -54,7 +120,7 @@ $border-color: #ccc;
             padding: 12px 0;
             li {
                 padding: 6px 0;
-                border-bottom: 1px solid #ccc;
+                border-bottom: 1px solid $border-color;
                 .wcc {
                     display: flex;
                     .img-thumb {

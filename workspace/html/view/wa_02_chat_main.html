@@ -18,7 +18,7 @@
                 <div class="main" id="main">
                     @@include('../common/title.html', { "title" : "채팅", "sub" : "참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다." })
 
-                    <div class="contents chat-contents">
+                    <div class="contents chat-contents scroll">
                         <div class="col-md-12">
                             <button type="button" class="btn btn-secondary pull-right">단체 메시지 발송</button>
                         </div>
@@ -81,7 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="chat-body">
-                                    <div class="scrolling" id="chatBody">
+                                    <div class="scroll" id="chatBody">
                                         <div class="date">2021년 4월 10일</div>
 
                                         <!-- 
@@ -236,7 +236,7 @@
                                     <li role="presentation"><a href="#myChatList" data-toggle="tab">참여 채팅방</a></li>
                                 </ul>
                             </div>
-                            <div class="tab-content">
+                            <div class="tab-content scroll">
                                 <div class="tab-pane fade in active" id="allChatList">
                                     <form>
                                         <div class="form-group form-search">
@@ -732,9 +732,9 @@
                 var browserHeight = document.documentElement.clientHeight;
                 divHeight = browserHeight - (70 + 49 + 82 + 42 + 12);
                 $('.chat-contents').find('.tab-content').css('height', divHeight+'px');
-                $('.chat-body').find('.scrolling').css('height', divHeight-78+'px');
+                $('.chat-body').find('.scroll').css('height', divHeight-78+'px');
 
-                $('.chat-body').find('.scrolling').scrollTop(divHeight);
+                $('.chat-body').find('.scroll').scrollTop(divHeight);
 
                 // 사용자 툴팁
                 $('.msg .info .name').popover();
@@ -767,6 +767,8 @@
                         + '</div>';
 
                 $('#chatBody').append(_html);
+
+                console.log($('#chatBody').innerHeight());
             }
 
         </script>
