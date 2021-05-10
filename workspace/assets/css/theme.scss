@@ -270,7 +270,14 @@
             background-color: $bg-light-color;
             min-height: 400px;
             overflow-y: auto;
-            padding: 45px 12px;
+            position: relative;
+            .inner {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                padding: 45px 12px;
+            }
             .date {
                 font-size: 12px;
                 text-align: center;
@@ -328,6 +335,7 @@
                     }
                 }
                 &.general {
+                    position: relative;
                     .img {
                         width: 48px;
                         height: 48px;
@@ -341,17 +349,37 @@
                     .info {
                         margin-left: 20px;
                         .balloon {
+                            cursor: pointer;
+                            position: relative;
                             .inner {
                                 background-color: $balloon-default;
                             }
                             &:before {
                                 border-top: 10px solid $balloon-default; 
-                                left: -10px;
+                                left: -9px;
                                 top: 8px;
                             }
                             &:after {
-                                left: -12px;
+                                left: -11px;
                                 top: 7px;
+                            }
+                            &.selected {
+                                .inner {
+                                    color: maroon;
+                                }
+                                .btn-delete {
+                                    position: absolute;
+                                    padding: 0;
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 100%;
+                                    border: none;
+                                    background-color: #000;
+                                    color: #fff;
+                                    right: -30px;
+                                    top: 50%;
+                                    margin-top: -12px;
+                                }
                             }
                         }
                     }

@@ -43,6 +43,23 @@ function callAlert(msg) {
     $('#alertModal').modal('show');
 }
 
+// web-toast 호출
+function callToast(data) {
+  
+    const isToast = document.querySelector('.toast');
+
+    // toast가 있으면 삭제
+    if ( isToast !== null ) {
+        isToast.remove();
+    }
+
+    const time = data.type === undefined ? 'short' : data.type;
+    const _toast = '<div class="toast ' + time + '">' 
+                +       '<div class="msg">' + data.msg + '</div>'
+                +   '</div>';
+
+    $('body').append(_toast);
+}
 
 // date format
 function getChatDate() {
