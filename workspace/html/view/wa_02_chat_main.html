@@ -18,7 +18,7 @@
                 <div class="main" id="main">
                     @@include('../common/title.html', { "title" : "채팅", "sub" : "참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다." })
 
-                    <div class="contents chat-contents scroll">
+                    <div class="contents chat-contents">
                         <div class="col-md-12">
                             <button type="button" class="btn btn-secondary pull-right">단체 메시지 발송</button>
                         </div>
@@ -28,7 +28,6 @@
                                     <span class="title">[유료] 성투 주식방 1</span>
                                     <span class="count">85/120</span>
                                     <div class="pull-right">
-                                        <button type="button" class="btn btn-default btn-sm">회원추가</button>
                                         <button type="button" class="btn btn-default btn-sm">신호발송</button>
                                         <div class="btn-group">
                                             <button type="button" class="btn " data-toggle="dropdown" aria-expanded="false">
@@ -97,9 +96,9 @@
                                                     <img src="../../assets/images/photos/user-img-default.png">
                                                 </div>
                                                 <div class="info">
-                                                    <span class="name" data-toggle="popover" data-placement="right" title="나회원" 
-                                                        data-html="true" data-content='가입기간: 2021.03.01 ~ 2021.05.20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>나회원</span>
-                                                    <span class="id">(nanana)</span>
+                                                    <span class="name" data-toggle="popover" data-placement="left" title="나회원"
+                                                    data-html="true" data-content='가입기간: 2021.03.01 ~ 2021.05.20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>나회원</span>
+                                                    <span class="id">(namem79)</span>
                                                     <span class="time">오전 10:00</span>
                                                     <div class="balloon">
                                                         <div class="inner">오늘도 성투하세요.</div>
@@ -112,9 +111,10 @@
                                                     <img src="../../assets/images/photos/user-img-default.png">
                                                 </div>
                                                 <div class="info">
-                                                    <span class="name" data-toggle="popover" data-placement="right" title="김수로"
+                                                    <span class="name" data-toggle="popover" data-placement="left" title="김수로"
                                                         data-html="true" data-content='가입기간: 2021.03.01 ~ 2021.05.20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'
                                                     >김수로</span>
+                                                    <span class="id">(surokim)</span>
                                                     <span class="time">오전 10:00</span>
                                                     <div class="balloon">
                                                         <div class="inner">여러분도!</div>
@@ -217,26 +217,46 @@
                                                     </div>
                                                 </li>
                                                 <li>
-                                                    <label type="button" class="btn btn-default btn-file">
-                                                        <span class="glyphicon glyphicon-picture" for="chatImageFile"></span>
-                                                        <input type="file" id="chatImageFile">
-                                                    </label>
+                                                    <button class="btn btn-default btn-file">
+                                                        <label>
+                                                            <span class="glyphicon glyphicon-picture" for="chatImageFile"></span>
+                                                            <input type="file" id="chatImageFile">
+                                                        </label>
+                                                    </button>
                                                 </li>
                                                 <li>
                                                     <button type="button" class="btn btn-primary">전송</button>
                                                 </li>
                                                 <li>
-                                                    
-                                                    <button type="button" class="btn btn-default btn-setting" data-toggle="popover" data-placement="top"
-                                                        data-title="설정"
-                                                        data-html="true" 
-                                                        data-content='<form><div><label class="radio-inline"><input type="radio" name="chat-freeze" id="radio1" value="1"> 얼리기</label> 
-                                                        
-                                                            <label class="radio-inline"><input type="radio" name="chat-freeze" id="radio2" value="2"> 녹이기</label>
-                                                        </div></form>'
-                                                    >
+                                                    <button type="button" class="btn btn-default btn-setting" data-toggle="popover">
                                                         <span class="glyphicon glyphicon-cog"></span>
                                                     </button>
+                                                    <div id="chatSetting" class="hide">
+                                                        <form id="settingInPopover">
+                                                            <div class="form-title">
+                                                                메세지 입력 기능
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="chebkbox">
+                                                                    <input type="radio" name="chat-freeze" value="0" onchange="javascript: messageSend('off');"> 끄기 
+                                                                </label> 
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="chat-freeze" value="1" checked onchange="javascript: messageSend('on');"> 켜기
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-title">
+                                                                파일 첨부 기능
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="chebkbox">
+                                                                    <input type="radio" name="attachment" value="0" checked onchange="javascript: fileSend('off');"> OFF 
+                                                                </label> 
+                                                                <label class="radio-inline">
+                                                                    <input type="radio" name="attachment" value="1" onchange="javascript: fileSend('on');"> ON
+                                                                </label>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
@@ -505,12 +525,82 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">공지등록</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNoticeRegisterForm" data-dismiss="modal">공지등록</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- 공지사항 상세 -->
+        <div class="modal fade modal-notice" id="modalNoticeModify" aria-labelledby="modalNoticeModifyLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">공지사항 상세</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="noticeTitle" class="sr-only">제목</label>
+                                <input type="text" class="form-control" name="" id="noticeDetailTitle" placeholder="제목을 입력해주세요.">
+                            </div>
+                            <!-- textarea length 사용 시 form-content 필수 -->
+                            <div class="form-group form-content">
+                                <label for="noticeContent" class="sr-only">내용</label>
+                                <textarea class="form-control" name="" id="noticeDetailContent" placeholder="내용을 입력해주세요.">안녕하세요~ 성투주식방의 나주식입니다.
+분석을 통해 결과 예측으로 실시간 수익을 내드리고 있습니다.
+안전한 수익을 위해 매시간마다 정보를 전달드립니다.</textarea>
+                                <div class="count">
+                                    <span class="txt-length">0</span>
+                                    <span>500</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default">삭제</button>
+                        <button type="button" class="btn btn-primary">수정</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 공지사항 등록 -->
+        <div class="modal fade modal-notice" id="modalNoticeRegisterForm" aria-labelledby="modalNoticeRegisterFormLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">공지등록</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="noticeTitle" class="sr-only">제목</label>
+                                <input type="text" class="form-control" name="" id="noticeTitle" placeholder="제목을 입력해주세요.">
+                            </div>
+                            <!-- textarea length 사용 시 form-content 필수 -->
+                            <div class="form-group form-content">
+                                <label for="noticeContent" class="sr-only">내용</label>
+                                <textarea class="form-control" name="" id="noticeContent" placeholder="내용을 입력해주세요." ></textarea>
+                                <div class="count">
+                                    <span class="txt-length">0</span>
+                                    <span>100</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    
         <!-- 회원목록 모달 -->
         <div class="modal fade modal-list" id="modalMemberList" aria-labelledby="modalMemberListLabel"
             aria-hidden="true">
@@ -748,17 +838,11 @@
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 divHeight = browserHeight - (70 + 49 + 82 + 42 + 12);
+
                 $('.chat-contents').find('.tab-content').css('height', divHeight+'px');
                 $('.chat-body').find('.scroll').css('height', divHeight-78+'px');
 
                 $('.chat-body').find('.scroll').scrollTop(divHeight);
-
-                // 사용자 툴팁
-                $('.msg .info .name').popover();
-                
-                // 설정
-                $('.btn-setting').popover();
-
 
                 $('#chatMsg').keydown(function(event) {
                     event.preventDefault;
@@ -774,6 +858,9 @@
                     }
                 });
 
+                 // 사용자 정보
+                 $('.msg .info .name').popover();
+
                 // 말풍선 클릭
                 $('.msg.general').find('.balloon').on('click', function() {
                     if ( $(this).hasClass('selected') ) {
@@ -785,6 +872,55 @@
                     }
                 });
 
+                // 설정 버튼 클릭
+                $('.btn-setting').popover({
+                    title: '<span>설정</span>',
+                    container: 'body',
+                    placement: 'top',
+                    html: true,
+                    content: function() {
+                        return $('#chatSetting').html();
+                    }
+                });
+
+                // 공지사항 입력
+                $('#noticeContent').on('change keyup paste', function() {
+                    var len = $(this).val().length;
+                    if ( len <= 100 ) {
+                        $(this).next('.count').find('.txt-length').html(len);
+                    } else {
+                        callAlert({ title: '입력 불가', description: '공지사항은 100자까지 등록 가능합니다.'})
+                    }
+                    $(this).val( $(this).val().substring(0, 100) );
+                });
+
+                $('#noticeDetailContent').on('change keyup paste', function() {
+                    var len = $(this).val().length;
+                    if ( len <= 500 ) {
+                        $(this).next('.count').find('.txt-length').html(len);
+                    } else {
+                        callAlert({ title: '입력 불가', description: '공지사항은 100자까지 등록 가능합니다.'})
+                    }
+                    $(this).val( $(this).val().substring(0, 500) );
+                });
+
+                // 공지사항 상세
+                $('.notice-list').find('.notice').on('click', function() {
+                    $('#modalNoticeModify .count').find('.txt-length').text( $('#modalNoticeModify').find('textarea').val().length );
+                    // 열려있는 팝업 닫기
+                    $('.modal').modal('hide');
+                    $('#modalNoticeModify').modal('show');
+                });
+
+                //
+                $('#modalNoticeModify').find('.btn-default').on('click', function() {
+                    // 삭제 확인
+                    callConfirm({ title: '공지사항을<br>삭제하시겠습니까?' }, onClickDelete());
+                });
+                $('#modalNoticeModify').find('.btn-primary').on('click', function() {
+                    // 수정 알림
+                    callAlert({ title: '공지사항이<br>수정되었습니다.'})
+                });
 
             });
 
@@ -808,6 +944,32 @@
 
             function removeMsg(obj) {
                 $(obj).parents('.msg').remove();
+            }
+
+            // 설정 - 팝오버 동적 요소에 이벤트 바인딩이 안됨. 개발시 분리할 것
+            function messageSend(mode) {
+                if ( mode === 'off' ) {
+                    $('.chat-body').find('.scroll').addClass('freezing');
+                    $('.chat-input').find('.form-control').attr('disabled', true);  // form 요소 disabled
+                    $('.pod-options').find('button').attr('disabled', true);    // button disabled
+                } else {
+                    $('.chat-body').find('.scroll').removeClass('freezing');
+                    $('.chat-input').find('.form-control').removeAttr('disabled'); 
+                    $('.pod-options').find('button').removeAttr('disabled');
+                }
+            }
+
+            function fileSend(mode) {
+                if ( mode === 'off') {
+                    $('.btn-file').attr('disabled', true);
+                } else {
+                    $('.btn-file').removeAttr('disabled');
+                   
+                }
+            }
+
+            function onClickDelete() {
+                $('.modal').modal('hide');
             }
 
         </script>

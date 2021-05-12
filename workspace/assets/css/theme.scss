@@ -64,6 +64,20 @@
                 opacity: 0;
             }
         }
+        &.form-inline {
+            display: flex;
+            flex-wrap: wrap;
+            label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            input {
+                flex: 1;
+            }
+            button {
+                margin-left: 6px;
+            }
+        }
     }
     .step {
         margin: 24px 0;
@@ -271,6 +285,9 @@
             min-height: 400px;
             overflow-y: auto;
             position: relative;
+            &.freezing {
+                background-color: $bg-freezing;
+            }
             .inner {
                 position: absolute;
                 left: 0;
@@ -450,9 +467,14 @@
                     border-radius: 4px !important;
                 }
                 .btn-file {
+                    label {
+                        margin: 0;
+                    }
                     input[type=file] {
                         position: absolute;
                         opacity: 0;
+                        width: 1px;
+                        height: 1px;
                     }
                 }
             }
@@ -569,6 +591,77 @@
                     }
                 }
             }
+        }
+    }
+}
+
+// textarea length 사용
+.form-content {
+    position: relative;
+    textarea {
+        resize: none;
+        min-height: 240px;
+    }
+    .count {
+        position: absolute;
+        right: 12px;
+        bottom: 6px;
+        span {
+            color: $text-basic;
+            &:last-child {
+                &:before {
+                    content: ' / ';
+                }
+            }
+        }
+    }
+}
+
+// 매출액 panel
+.panel.total-revenue {
+    padding: 12px 0;
+    text-align: center;
+    > * {
+        display: inline-block;
+    }
+    strong {
+        margin-left: 6px;
+        .total {
+            font-size: 18px;
+            color: $text-primary;
+        }
+    }
+}
+
+.table-form {
+    .fx.fx-mg {
+        button {
+            margin-left: auto;
+        }
+    }
+    .mg-groups {
+        display: flex;
+        align-items: center;
+        .mg-pouch {
+            display: flex;
+            align-items: center;
+            background-color: $text-primary;
+            color: $text-white;
+            padding: 6px 12px 8px;
+            border-radius: 36px;
+            margin-right: 8px;
+            .icon-del {
+                cursor: pointer;
+                border-radius: 100%;
+                padding: 2px;
+                margin-left: 6px;
+                &:hover {
+                    background-color: rgba(0,0,0,.2);
+                }
+            }
+        }
+        .ph {
+            color: $text-basic;
         }
     }
 }

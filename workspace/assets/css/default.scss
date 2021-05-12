@@ -20,11 +20,11 @@ button:focus {
 }
 
 *:not(.nav-sidebar>li>.sub-menu) {
-  //transition: all .2s;
+  transition: all .2s;
 }
 
-// no transition
-.popover {
+// except transition
+.popover, .popover > *, .modal-backdrop, .ui-timepicker-container, .ui-timepicker-container * {
   transition: none !important;
 }
 
@@ -33,6 +33,7 @@ $border-color: #ddd;
 $border-light-color: #eee;
 $bg-color: #f2f3f6;
 $bg-light-color: #f9f9f9; // 채팅방bg
+$bg-freezing: #e2f2ff;  // 얼리기
 $balloon-default: #fff;
 $balloon-admin: #ffeae2;  // 관리자 말풍선
 $balloon-signal: #ffdfdf; // 신호색상
@@ -43,6 +44,7 @@ $text-primary: #2e6da4;
 $text-link-basic: #6a6a6a;
 $text-link-hover: #000;
 $text-warning: #8a6d3b;
+$text-emphasize: coral;
 $card-hover: #f2f3f5;
 $card-active: #fff3e0;
 $btn-primary: #2e6da4;
@@ -59,7 +61,6 @@ $btn-secondary-hover: #000;
   }
 }
 
-/* forms */
 
 /* icons */
 
@@ -73,6 +74,10 @@ a {
   &:hover, &:active {
     color: $text-link-hover;
   }
+}
+
+.fx {
+  display: flex;
 }
 
 
@@ -186,13 +191,29 @@ a {
   }
 }
 
+@media (max-width: 1199px) {
+  .main {
+    padding-left: 20px;
+  }
+}
+
+@media ( max-width: 991px) {
+  .main {
+    padding: 0 12px;
+  }
+}
+
+.popover {
+  min-width: 180px;
+}
 
 // alert, confirm
-#alertModal {
+#alertModal, #confirmModal {
   .modal-dialog {
     width: 320px;
     .modal-content {
       .modal-body {
+        padding: 30px 15px;
         p {
           color: $text-basic;
           margin-top: 12px;
@@ -200,10 +221,27 @@ a {
       }
       .modal-footer {
         padding: 0;
+        border-top: none;
         .btn {
           width: 100%;
+          padding: 12px;
           border-radius: 0 0 4px 4px;
         }
+      }
+    }
+  }
+}
+
+#confirmModal {
+  .modal-footer {
+    display: flex;
+    .btn {
+      margin: 0;
+      &:first-child {
+        border-radius: 0 0 0 4px !important;
+      }
+      &:last-child {
+        border-radius: 0 0 4px 0 !important;
       }
     }
   }
@@ -244,21 +282,79 @@ a {
 
 
 
-// forms
+// forms 
 .form-search {
-  // 돋보기 아이콘이 있는 input
+  // 돋보기 아이콘이 있는 input - 1개
   position: relative;
   padding: 12px;
   .form-control {
-    padding: 6px 34px 6px 12px;
+    padding: 6px 12px 6px 34px;
   }
   .glyphicon {
     position: absolute;
-    right: 24px;
+    left: 24px;
     top: 50%;
     margin-top: -8px;
     z-index: 5;
     cursor: pointer;
+  }
+}
+
+// 검색 영역
+.area-search {
+  margin: 24px 0;
+  background-color: $bg-color;
+  padding: 12px;
+  border-radius: 4px;
+  .form-inline {
+    .form-group {
+      min-width: 172px;
+      label {
+        width: 100%;
+        font-weight: normal;
+        font-size: 12px;
+        margin-bottom: 2px;
+        &.sr-only {
+          position: relative;
+        }
+      }
+      select {
+        width: 98%;
+      }
+      &.form-in-btn {
+        .keyword {
+          width: 320px;
+        }
+      }
+    }
+  }
+}
+
+.date-inline {
+  display: flex;
+  .date-box {
+    margin-right: 6px;
+  }
+}
+
+.date-box {
+  position: relative;
+  span.glyphicon-calendar {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: $text-basic;
+  }
+}
+
+.time-inline {
+  display: flex;
+  align-items: center;
+  .dash {
+    padding: 0 4px;
+  }
+  .timepicker {
+    max-width: 172px;
   }
 }
 
@@ -284,6 +380,184 @@ a {
     margin: 12px auto;
     font-size: 36px;
     color: $text-basic;
+  }
+}
+
+// data table
+.area-list {
+  .area-list-header {
+    overflow: hidden;
+    margin-bottom: 12px;
+    > div {
+      font-size: 14px;
+      &:first-child {
+        padding-top: 10px;
+        .count {
+          color: $text-emphasize;
+        }
+      }
+    }
+  }
+  .area-list-body {
+    nav {
+      text-align: center;
+    }
+  }
+}
+
+.data-list {
+  thead {
+    tr {
+      th {
+        span {
+          cursor: pointer;
+          color: $text-basic;
+          float: right;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      &:hover {
+        background-color: $card-hover;
+      }
+      td {
+        span {
+          a {
+            color: $text-primary;
+          }
+          &.ellipsis {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 데이터 없음
+.area-empty {
+  text-align: center;
+  padding: 72px 0;
+  border: 1px solid $border-light-color;
+  > div {
+    strong {
+      font-size: 18px;
+    }
+    p {
+      margin-top: 6px;
+      color: $text-basic;
+    }
+    &:before {
+      // 결과 없음 아이콘
+      content: '';
+      display: block;
+      width: 72px;
+      height: 72px;
+      background-color: $bg-color;
+      margin: 24px auto;
+    }
+  }
+}
+
+
+// 상세 화면 공통 default
+.nav-tabs.detail-tabs {
+  margin: 24px 0 0;
+  > li {
+    &.active {
+      > a {
+        background-color: $card-active !important;
+      }
+    }
+  }
+}
+
+.detail-content {
+  margin-top: 24px;
+  .detail-content-hd {
+    font-size: 14px;
+    color: $text-basic;
+  }
+  .form-inline-set {
+    display: flex;
+    > div {
+      &:first-child {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+.btn-groups {
+  margin-bottom: 36px;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// table forms
+.table.table-form {
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  tbody {
+    th, td {
+      vertical-align: middle;
+    }
+    th {
+      background-color: $bg-light-color;
+      min-height: 51px;
+    }
+    td {
+      .data {
+        display: block;
+        padding: 6px 0;
+      }
+      .radio {
+        label {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+  .img-file-box {
+    .img-thumb {
+      height: 226px;
+      overflow-y: hidden;
+      background-color: $bg-light-color;
+    }
+    .file-func {
+      padding-top: 12px;
+      .sm-guide {
+        list-style: disc;
+        padding-left: 20px;
+        li {
+          list-style: disc;
+          font-size: 12px;
+          color: $text-basic;
+        }
+      }
+      .btn-file {
+        position: relative;
+        input[type=file] {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          opacity: 0;
+        }
+      }
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
   }
 }
 

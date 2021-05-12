@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    @@include('../common/resources.html')
+    @@include('../common/resources.html', { "type" : "admin"})
     <style>
         dl dt { margin-bottom: 12px; font-size: 24px; }
         dl dd { margin-bottom: 48px; }
@@ -149,6 +149,18 @@
             <div class="sep">
                 <textarea class="form-control" rows="3" ></textarea>
             </div>
+            <div class="step">
+                <div class="date-inline">
+                    <div class="date-box">
+                        <input type="text" class="form-control datepicker" placeholder="시작일">
+                        <span class="glyphicon glyphicon-calendar"></span> 
+                    </div>
+                    <div class="date-box">
+                        <input type="text" class="form-control datepicker" placeholder="종료일">
+                        <span class="glyphicon glyphicon-calendar"></span> 
+                    </div>
+                </div>
+            </div>
         </dd>
 
     
@@ -164,7 +176,11 @@
                 } else {
                     $(this).addClass('open');
                 }
-            })
+            });
+
+            // datepicker
+            $('.datepicker').datepicker();
+
         });
     </script>
   </body>

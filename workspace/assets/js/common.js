@@ -19,16 +19,21 @@ $(function() {
 
 // alert 호출
 function callAlert(msg) {
-    console.log(msg);
-    const _html = '<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
+    console.log( msg.description );
+    console.log( typeof msg.description );
+    var _html = '<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
                 +   '<div class="modal-dialog" role="document">'
                 +       '<div class="modal-content">'
                 +           '<div class="modal-header">'
-                +               '<h5 class="modal-title" id="alertModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>'
+                +               '<h5 class="modal-title" id="alertModalLabel"></h5>'
                 +           '</div>'
-                +           '<div class="modal-body text-center">'
-                +               '내용을 작성합니다.'
-                +           '</div>'
+                +           '<div class="modal-body text-center">' + msg.title;
+    if ( msg.description !== undefined) {
+        _html += '<p>' + msg.description + '</p>';
+    } else {
+        _html += '';
+    }
+        _html +=           '</div>'
                 +           '<div class="modal-footer">'
                 +               '<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>'
                 +           '</div>'
@@ -38,9 +43,43 @@ function callAlert(msg) {
 
     $('body').append(_html);
     $('#alertModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
-    $('#alertModal').find('.modal-body').html(msg.title + '<p>' + msg.description + '</p>');
-
     $('#alertModal').modal('show');
+}
+
+
+// confirm 호출
+function callConfirm(msg, actions) {
+    var _html = '<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
+                +   '<div class="modal-dialog" role="document">'
+                +       '<div class="modal-content">'
+                +           '<div class="modal-header">'
+                +               '<h5 class="modal-title" id="confirmModalLabel"></h5>'
+                +           '</div>'
+                +           '<div class="modal-body text-center">' 
+                +               msg.title;
+    if ( msg.description !== undefined ) {
+        _html += '<p>' + msg.description + '</p>';
+    }
+         _html +=           '</div>'
+                +           '<div class="modal-footer">'
+                +               '<button type="button" class="btn btn-default" data-dismiss="modal">아니오</button>'
+                +               '<button type="button" class="btn btn-primary btn-act">네</button>'
+                +           '</div>'
+                +       '</div>'
+                +   '</div>'
+                +'</div>';
+
+    $('body').append(_html);
+    $('#confirmModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
+    $('#confirmModal').find('.btn-act').on('click', function() {
+        if ( actions !== undefined) {
+            actions;
+        } else {
+            $('#confirmModal').modal('hide');
+        }
+    });
+
+    $('#confirmModal').modal('show');
 }
 
 // web-toast 호출
