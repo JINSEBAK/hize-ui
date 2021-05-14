@@ -23,8 +23,8 @@ function callAlert(msg) {
     $('body').find('#alertModal').remove();
     $('body').find('#confirmModal').remove();
 
-    var _html = '<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
-                +   '<div class="modal-dialog" role="document">'
+    var _html = '<div class="modal fade modal-alert" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
+                +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
                 +           '<div class="modal-header">'
                 +               '<h5 class="modal-title" id="alertModalLabel"></h5>'
@@ -55,8 +55,8 @@ function callConfirm(msg, actions) {
     $('body').find('#alertModal').remove();
     $('body').find('#confirmModal').remove();
 
-    var _html = '<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
-                +   '<div class="modal-dialog" role="document">'
+    var _html = '<div class="modal fade modal-confirm" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
+                +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
                 +           '<div class="modal-header">'
                 +               '<h5 class="modal-title" id="confirmModalLabel"></h5>'

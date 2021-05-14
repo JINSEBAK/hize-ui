@@ -527,3 +527,76 @@ a {
         }
     }
 }
+
+
+// alert, confirm
+.modal-alert, .modal-confirm {
+    .modal-dialog {
+        top: 50%;
+        margin-top: -50%;
+        p {
+            color: $text-basic;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+    }
+    .modal-footer {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        button {
+            padding: 12px;
+            flex: 1;
+            border: none;
+        }
+    }
+}
+
+.modal-alert {
+    .modal-footer {
+        button {
+            border-radius: 0 0 4px 4px;
+        }
+    }
+}
+
+.modal-confirm {
+    .modal-footer {
+        button {
+            margin: 0 !important;
+            &:first-child {
+                border-radius: 0 0 0 4px;
+            }
+            &:last-child {
+                border-radius: 0 0 4px 0;
+            }
+        }
+    }
+}
+
+
+// 게시판 
+.w-main {
+    border: 1px solid red;
+    .w-hd {
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 0 3px rgba(0,0,0,.4);
+        .inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            > div {
+                width: 20%;
+                background-color: yellow;
+            }
+            .name {
+                background-color: cyan;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

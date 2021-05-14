@@ -5,29 +5,25 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     </head>
     <body>
-        <div class="w-main w-main-a">
-            <article class="w-main-carousel">
-        
-                <div class="swiper-container main-visual-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">2</div>
-                        <div class="swiper-slide">3</div>
-                    </div>
-                    <div class="swiper-pagination"></div>
+        <div class="w-main">
+            <header class="w-hd">
+                <div class="inner">
+                    <div class="">백버튼</div>
+                    <h4 class="name">게시판</h4>
+                    <div class="">기능</div>
                 </div>
-            </article>
-            <article class="w-main-list">
+            </header>
+            <article>
                 <div class="w-main-tab" id="webviewMainTabs">
                     <ul role="tablist">
                         <li class="active" role="presentation">
-                            <a href="#payChatList" aria-controls="payChatList" role="tab" data-toggle="tab">유료방</a>
+                            <a href="#payChatList" aria-controls="payChatList" role="tab" data-toggle="tab">매매 인증</a>
                         </li>
                         <li>
-                            <a href="#expChatList" aria-controls="expChatList" role="tab" data-toggle="tab">체험방</a>
+                            <a href="#expChatList" aria-controls="expChatList" role="tab" data-toggle="tab">이용 후기</a>
                         </li>
                         <li>
-                            <a href="#movieList" aria-controls="movieList" role="tab" data-toggle="tab">동영상</a>
+                            <a href="#movieList" aria-controls="movieList" role="tab" data-toggle="tab">투자 정보</a>
                         </li>
                     </ul>
                 </div>
@@ -416,7 +412,7 @@
 
                 $(window).scroll(function() {
                     var scroll = $(this).scrollTop();
-                    if ( scroll > 200 ) {
+                    if ( scroll > 50 ) {
                         $('#webviewMainTabs').addClass('tab-sticky');
                     } else {
                         $('#webviewMainTabs').removeClass('tab-sticky');
