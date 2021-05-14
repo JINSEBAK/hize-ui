@@ -46,7 +46,7 @@ $text-link-hover: #000;
 $text-warning: #8a6d3b;
 $text-emphasize: coral;
 $card-hover: #f2f3f5;
-$card-active: #fff3e0;
+$card-active: #e6e4fc;
 $btn-primary: #2e6da4;
 $btn-secondary: #666;
 $btn-secondary-hover: #000;
@@ -80,6 +80,12 @@ a {
   display: flex;
 }
 
+.divider {
+  border-top: 1px solid $border-color;
+  height: 1px;
+  margin-bottom: 24px;
+}
+
 
 
 // header
@@ -87,15 +93,46 @@ a {
   border-bottom: 1px solid $border-color;
   background-color: #fff;
   .container-fluid {
+    padding-left: 0;
     .navbar-header {
+      width: 210px;
+      padding-left: 15px;
+      background-color: $bg-freezing;
+      border-right: 1px solid $border-color;
       .navbar-toggle {
         color: #fff;
       }
     }
     .navbar-collapse {
-      .pull-right {
+      position: relative;
+      .sm-req-bd {
+        display: flex;
+        font-size: 13px;
+        padding: 16px 15px;
+        > li {
+          em {
+            color: $text-emphasize;
+          }
+          &:after {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            margin: 2px 10px -2px 6px;
+            background-color: $border-color;
+          }
+          &:last-child {
+            &:after {
+              content: none;
+            }
+          }
+        }
+      }
+      .rt-info {
+        position: absolute;
+        right: 0;
+        top: 5px;
         .btn-group {
-          margin-top: 6px;
           .btn-profile {
             background-color: transparent;
             color: $text-basic;
@@ -299,6 +336,27 @@ a {
     cursor: pointer;
   }
 }
+// form 요소에 read-only 클래스가 있는 경우
+.form-control[disabled].read-only {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  line-height: 1.8;
+  padding: 6px 0;
+  cursor: default;
+}
+
+.radio {
+  label {
+    margin-right: 12px;
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 // 검색 영역
 .area-search {
@@ -384,9 +442,12 @@ a {
 }
 
 // data table
+.pagination-wrap {
+  text-align: center;
+}
+
 .area-list {
   .area-list-header {
-    overflow: hidden;
     margin-bottom: 12px;
     > div {
       font-size: 14px;
@@ -397,10 +458,20 @@ a {
         }
       }
     }
-  }
-  .area-list-body {
-    nav {
-      text-align: center;
+    .form-inline {
+      display: flex;
+      align-items: center;
+      label {
+        font-weight: normal;
+        color: $text-basic;
+        padding-right: 6px;
+        padding-top: 4px;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
     }
   }
 }
@@ -433,6 +504,9 @@ a {
             overflow: hidden;
             text-overflow: ellipsis;
           }
+        }
+        .btn {
+          padding: 0 10px;
         }
       }
     }
@@ -481,6 +555,7 @@ a {
   margin-top: 24px;
   .detail-content-hd {
     font-size: 14px;
+    padding: 0 8px;
     color: $text-basic;
   }
   .form-inline-set {
@@ -556,6 +631,17 @@ a {
         content: '';
         display: block;
         clear: both;
+      }
+    }
+  }
+  .form-control {
+    &.form-tail {
+      display: inline-block;
+      max-width: 200px;
+      & + .label-tail {
+        font-weight: normal;
+        color: $text-basic;
+        font-size: 12px;
       }
     }
   }

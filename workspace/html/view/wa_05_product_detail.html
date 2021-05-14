@@ -60,8 +60,8 @@
 
                             <!-- 채팅방 정보 탭에서만 노출 -->
                             <div class="pull-right" id="modifyBtns">
-                                <button class="btn btn-secondary">폐쇄</button>
-                                <button class="btn btn-primary">수정</button>
+                                <button class="btn btn-secondary" id="btnShutdown">폐쇄</button>
+                                <button class="btn btn-primary" id="btnSave">수정</button>
                             </div>
                         </div>
                         
@@ -69,6 +69,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- 관리자 추가 팝업 -->
+        @@include('./inside/wa_05_product_register_popup.html')
 
         <!-- scripts -->
         @@include('../common/scripts.html')
@@ -96,17 +99,41 @@
                 $('.icon-del').on('click', function() {
                     
                     $(this).parent('.mg-pouch').remove();
-                    
+                
                     const pouches = document.querySelectorAll('.mg-pouch').length;
-                    console.log( pouches );
                     if ( pouches < 1 ) {
                         $('.ph').fadeIn();
                     } else {
                         $('.ph').css('display', 'none');
                     }
                 });
-                
+
+                // 채팅방 폐쇄
+                $('#btnShutdown').on('click', function() {
+                    callConfirm({ 
+                        title: '채팅방을<br>폐쇄하시겠습니까?', 
+                        description: '채팅방을 폐쇄하는 경우 채팅방 목록에서 삭제되고 채팅방에 있는 회원들은 나가기 처리됩니다.'
+                    }, onClickShutdown );
+                });
+
+                // 수정 
+                $('#btnSave').on('click', function() {
+                    callAlert({ title: '수정되었습니다.' });
+                });
             });
+
+            var onClickShutdown = function() {
+                callAlert({ title: '채팅방이<br>폐쇄되었습니다.'})
+            }
+
+            // 인증번호 설정
+            function setCertifyNumber(mode) {
+                if ( mode === 'off' ) {
+                    $('#certifyNumber').attr('disabled', true);
+                } else {
+                    $('#certifyNumber').removeAttr('disabled');
+                }
+            }
         </script>
     </body>
 </html>

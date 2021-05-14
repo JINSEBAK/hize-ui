@@ -12,7 +12,7 @@
                     <th>No.</th>
                     <th>관리자명</th>
                     <th>아이디</th>
-                    <th>이력</th>
+                    <th>이력 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                     <th>변경자</th>
                     <th>변경일</th>
                 </tr>
@@ -121,24 +121,6 @@
                 
             </tbody>
         </table>
-        <nav>
-            <ul class="pagination pagination-sm">
-                <li class="disabled">
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-                </li>
-            </ul>
-        </nav>
+        @@include('../../common/pagination.html')
     </div>
 </div>

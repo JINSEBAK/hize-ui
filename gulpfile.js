@@ -171,5 +171,5 @@ gulp.task("browserSync", () => {
 
 gulp.task(
   "default",
-  gulp.series(["clean", "scss:compile", "scss:webview", "css:copy", "font:copy", "js:copy", "image:copy", "html", "fileinclude",  "nodemon:start", "browserSync", "watch"])
+  gulp.series(["clean", "scss:compile", "scss:webview", "css:copy", "font:copy", "js:copy", "image:copy", "html", "fileinclude",  "nodemon:start", "watch", "browserSync",])
 );

@@ -19,8 +19,10 @@ $(function() {
 
 // alert 호출
 function callAlert(msg) {
-    console.log( msg.description );
-    console.log( typeof msg.description );
+
+    $('body').find('#alertModal').remove();
+    $('body').find('#confirmModal').remove();
+
     var _html = '<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
                 +   '<div class="modal-dialog" role="document">'
                 +       '<div class="modal-content">'
@@ -49,6 +51,10 @@ function callAlert(msg) {
 
 // confirm 호출
 function callConfirm(msg, actions) {
+
+    $('body').find('#alertModal').remove();
+    $('body').find('#confirmModal').remove();
+
     var _html = '<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
                 +   '<div class="modal-dialog" role="document">'
                 +       '<div class="modal-content">'
@@ -73,10 +79,9 @@ function callConfirm(msg, actions) {
     $('#confirmModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
     $('#confirmModal').find('.btn-act').on('click', function() {
         if ( actions !== undefined) {
-            actions;
-        } else {
-            $('#confirmModal').modal('hide');
-        }
+            actions();
+        } 
+        $('#confirmModal').modal('hide');
     });
 
     $('#confirmModal').modal('show');
@@ -118,3 +123,5 @@ function getChatDate() {
 
     return meridiem + ' ' + (nowHour % 12) + ':' + nowMinutes;
 }
+
+

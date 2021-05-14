@@ -154,12 +154,56 @@
     }
 }
 
+// 가이드 모달 (대표이미지)
+.modal-guide {
+    .ol-guide {
+        padding-left: 20px;
+        > li {
+            list-style: decimal;
+            > ul {
+                > li {
+                    list-style: '-';
+                    padding-left: 6px;
+                }
+            }
+        }
+        .ex-img {
+            background-color: $bg-color;
+            margin: 24px 0;
+            text-align: center;
+            position: relative;
+            p {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                transform: translate(0, 48%);
+                color: $text-white;
+            }
+            img {
+                width: 500px;
+                height: 300px;
+            }
+        }
+    }
+}
+
 // 채팅 목록 및 채팅 카드
 .chat-contents {
     overflow: hidden;
     height: 100%;
-    > div:first-child {
-        margin: 24px auto;
+    > div {
+        &:nth-of-type(1) {
+            margin: 24px auto;
+            padding: 0;
+        }
+        &:nth-of-type(2) {
+            padding-left: 0;
+        }
+        &:nth-of-type(3) {
+            padding-right: 0;
+        }
     }
     .tab-content {
         overflow-y: auto;
@@ -287,6 +331,9 @@
             position: relative;
             &.freezing {
                 background-color: $bg-freezing;
+                & + .chat-input {
+                    background-color: $bg-freezing;
+                }
             }
             .inner {
                 position: absolute;
@@ -358,6 +405,7 @@
                         height: 48px;
                         border-radius: 100%;
                         overflow: hidden;
+                        cursor: pointer;
                         img {
                             width: 100%;
                             height: auto;
@@ -380,22 +428,65 @@
                                 left: -11px;
                                 top: 7px;
                             }
+                            button {
+                                display: none;
+                            }
+                            // 메세지 삭제
+                            &.del {
+                                &:before {
+                                    border-top: 10px solid $bg-color;
+                                }
+                                .inner {
+                                    background-color: $bg-color;
+                                    color: $text-basic;
+                                }
+                            }
+                            // 말풍선 클릭
                             &.selected {
                                 .inner {
-                                    color: maroon;
+                                    color: #000;
                                 }
-                                .btn-delete {
+                                button {
                                     position: absolute;
                                     padding: 0;
                                     width: 24px;
                                     height: 24px;
                                     border-radius: 100%;
                                     border: none;
-                                    background-color: #000;
+                                    background-color: rgba(0,0,0,.5);
                                     color: #fff;
-                                    right: -30px;
                                     top: 50%;
                                     margin-top: -12px;
+                                    &.btn-delete {
+                                        right: -30px;
+                                        display: block;
+                                    }
+                                    &.btn-reply {
+                                        right: -60px;
+                                    }
+                                    &:hover {
+                                        background-color: rgba(0,0,0,1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.blocked {
+                    .img {
+                        border: 1px solid rgba(0,0,0,.8);
+                    }
+                    .info {
+                        .balloon {
+                            &.selected {
+                                button {
+                                    &.btn-reply {
+                                        right: -30px;
+                                        display: block !important;
+                                    }
+                                    &.btn-delete {
+                                        right: -60px;
+                                    }
                                 }
                             }
                         }
@@ -477,6 +568,29 @@
                         height: 1px;
                     }
                 }
+            }
+            .block-msg-reply {
+                display: none;
+                background-color: rgba(0,0,0,.7);
+                color: $text-white;
+                font-size: 13px;
+                border-radius: 4px;
+                padding: 4px 12px;
+                width: calc(100% - 24px);
+                position: absolute;
+                top: -18px;
+                z-index: 100;
+                .tg-msg {
+                    color: rgba(255,255,255,.6);
+                }
+                .btn-reply-cancel {
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    margin-top: -7px;
+
+                }
+
             }
         }
     }
@@ -595,6 +709,30 @@
     }
 }
 
+.modal-notice {
+    .notice-title {
+        margin-bottom: 12px;
+        .hd {
+            strong {
+                float: left;
+                max-width: 80%;
+            }
+            .label {
+                float: right;
+                font-size: 12px;
+            }
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+        .date {
+            color: $text-basic;
+        }
+    }
+}
+
 // textarea length 사용
 .form-content {
     position: relative;
@@ -633,35 +771,109 @@
     }
 }
 
+// 관리자
+.mg-groups {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .mg-pouch {
+        display: flex;
+        align-items: center;
+        background-color: $text-primary;
+        color: $text-white;
+        padding: 6px 12px 8px;
+        border-radius: 36px;
+        margin: 0 4px 4px 0;
+        min-width: 120px;
+        .icon-del {
+            cursor: pointer;
+            border-radius: 100%;
+            padding: 2px;
+            margin-left: 6px;
+            &:hover {
+                background-color: rgba(0,0,0,.2);
+            }
+        }
+    }
+    .ph {
+        color: $text-basic;
+    }
+}
+
+// 등록, 수정 등 table 구조
 .table-form {
+    margin-bottom: 36px;
     .fx.fx-mg {
         button {
             margin-left: auto;
+            max-height: 34px;
         }
     }
-    .mg-groups {
-        display: flex;
-        align-items: center;
-        .mg-pouch {
-            display: flex;
-            align-items: center;
-            background-color: $text-primary;
-            color: $text-white;
-            padding: 6px 12px 8px;
-            border-radius: 36px;
-            margin-right: 8px;
-            .icon-del {
-                cursor: pointer;
-                border-radius: 100%;
-                padding: 2px;
-                margin-left: 6px;
-                &:hover {
-                    background-color: rgba(0,0,0,.2);
+}
+
+// dl 구조 form (채팅방 설정)
+.detail-form {
+    .fx.fx-mg {
+        button {
+            margin-left: auto;
+            max-height: 34px;
+        }
+    }
+    .title {
+        font-weight: normal;
+        color: $text-basic;
+    }
+    .cont {
+        padding: 6px 0 24px;
+        .img-thumb {
+            position: relative;
+            .btn {
+                position: absolute;
+                right: 6px;
+                top: 6px;
+                input[type=file] {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
                 }
             }
+            img {
+                width: 100%;
+            }
         }
-        .ph {
-            color: $text-basic;
+        .form-pack {
+            input.form-control {
+                margin-bottom: 6px;
+            }
+            textarea.form-control {
+                min-height: 120px;
+            }
         }
+        .radio {
+            label {
+                margin-right: 8px;
+            }
+        }
+    }
+    .form-inline-set {
+        display: flex;
+        .time-inline {
+            .form-control {
+                max-width: 120px;
+            }
+        }
+    }
+}
+
+// timepicker
+.ui-timepicker-standard {
+    z-index: 10000 !important;
+}
+
+
+#settingInPopover {
+    .btn {
+        display: block;
+        margin: 0 auto;
     }
 }

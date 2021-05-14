@@ -35,6 +35,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="" class="sr-only">구분</label>
+                                    <select class="form-control">
+                                        <option>채팅방명</option>
+                                        <option>생성자명</option>
+                                        <option>관리자명</option>
+                                    </select>
+                                </div>
                                 <div class="form-group form-in-btn">
                                     <label for="" class="sr-only">검색어</label>
                                     <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
@@ -58,338 +66,362 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
+                                            <th>구분 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                                             <th>채팅방명</th>
-                                            <th>생성자ID</th>
-                                            <th>관리자ID</th>
+                                            <th>생성자명</th>
+                                            <th>관리자명</th>
                                             <th>이용자수 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>최대인원 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>총 매출액(원) <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>생성일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>총 매출액(원)</th>
+                                            <th>생성일</th>
                                             <th>종료일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>상태 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>100</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">성투주식방-1</a>
                                                 </span>
                                             </td>
-                                            <td>park77</td>
-                                            <td>hongadmin</td>
+                                            <td>박민</td>
+                                            <td>나주민 외 2</td>
                                             <td>40</td>
-                                            <td>100</td>
                                             <td>70,000,000</td>
                                             <td>2021.04.10</td>
                                             <td>2021.06.10</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>99</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">성공의 지름길! 자신감있는 종목을 콕 찝어 드립니다. </a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>parkadmin</td>
-                                            <td>100</td>
+                                            <td>나주민</td>
+                                            <td>박나래 외 1</td>
                                             <td>100</td>
                                             <td>100,000,000</td>
                                             <td>2021.04.09</td>
                                             <td>2021.05.09</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>98</td>
+                                            <td>체험</td>
                                             <td>
                                                 <span class="ellipsis">
-                                                    <a href="./wa_05_product_detail.html">성투주식방-2</a>
+                                                    <a href="./wa_05_product_detail.html">모두에게 공유하는 성공투자의 길!</a>
                                                 </span>
                                             </td>
-                                            <td>park77</td>
-                                            <td>nastock</td>
-                                            <td>50</td>
+                                            <td>박민</td>
+                                            <td>나영석 외 2</td>
                                             <td>100</td>
-                                            <td>50,000,000</td>
+                                            <td>0</td>
                                             <td>2021.04.05</td>
                                             <td>2021.06.05</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>97</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">성투주식방-3</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>나주민</td>
+                                            <td>나영석 외 2</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>폐쇄</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>96</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">성투주식방-4</a>
                                                 </span>
                                             </td>
-                                            <td>park77</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>박민</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>95</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">성투주식방-5</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>94</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>93</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>92</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>91</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>90</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>89</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>88</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>87</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>86</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>85</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>84</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>83</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>82</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                         <tr>
                                             <td>81</td>
+                                            <td>유료</td>
                                             <td>
                                                 <span class="ellipsis">
                                                     <a href="./wa_05_product_detail.html">채팅방명</a>
                                                 </span>
                                             </td>
-                                            <td>no1admin</td>
-                                            <td>yellow12</td>
-                                            <td>0</td>
+                                            <td>생성자명</td>
+                                            <td>관리자명</td>
                                             <td>0</td>
                                             <td>0</td>
                                             <td>YYYY.MM.DD</td>
                                             <td>YYYY.MM.DD</td>
+                                            <td>유지</td>
+                                            <td><a href="./wa_02_chat_main.html" type="button" class="btn btn-default btn-sm">채팅</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <nav>
-                                    <ul class="pagination pagination-sm">
-                                        <li class="disabled">
-                                            <a href="#" aria-label="Previous">
-                                              <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                @@include('../common/pagination.html')
                             </div>
 
                         </div>
