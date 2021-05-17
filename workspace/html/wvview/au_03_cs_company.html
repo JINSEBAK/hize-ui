@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "user" })
+    </head>
+    <body>
+        <div class="w-main">
+            <!--header-->
+            @@include('../wvcommon/header.html', { "title" : "회사 정보", "action" : "" })
+            <article>
+                <dl class="info-company">
+                    <dt>상호</dt>
+                    <dd>(주)OOOOO</dd>
+                    <dt>대표</dt>
+                    <dd>ooo</dd>
+                    <dt>주소</dt>
+                    <dd>서울특별시 금천구 벚꽃로 298(가산동 50-3) 대륭포스트타워6차</dd>
+                    <dt>사업자등록번호</dt>
+                    <dd>000-00-00000</dd>
+                    <dt>홈페이지</dt>
+                    <dd>
+                        <!-- TODO! Link 클릭 이벤트 제공 시, native 앱과 통신 필요 -->
+                        <a href="http://smcore.co.kr">http://smcore.co.kr</a>
+                    </dd>
+                </dl>
+                <dl class="info-company">
+                    <dt>고객센터 연락처</dt>
+                    <dd>
+                        010-XXXX-XXXX<br>
+                        <a href="mailto: abc@abc.com">abc@abc.com</a>
+                    </dd>
+                </dl>
+                <p>
+                    서비스 이용에 대한 문의는<br>
+                    고객센터 전화를 이용해주시기 바랍니다.
+                </p>
+            </article>
+        </div>
+        
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "user" })
+    </head>
+    <body>
+        <div class="w-main">
+            <!--header-->
+            @@include('../wvcommon/header.html', { "title" : "댓글 쓰기", "action" : "" })
+            <article>
+                <div class="post-board post-board-detail">
+                    <div class="post">
+                        <div class="post-hd">
+                            <label class="label label-default">BEST</label>
+                            <span class="title">단타와 장기 투자 결고 모두 인증합니다. 감사합니다~</span>
+                        </div>
+                        <div class="post-body">
+                            <form>
+                                <div class="form-group fm-comment">
+                                    <textarea class="form-control" placeholder="댓글을 남겨주세요."></textarea>
+                                    <div class="count">
+                                        <span class="txt-length">0</span>
+                                        <span>500</span>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <button type="button" class="btn btn-primary">등록</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                $('textarea').on('change keyup paste', function() {
+                    const len = $(this).val().length;
+                    if ( len > 500 ) {
+                    } else {
+                        $('.txt-length').text( len );
+                    }
+                    $(this).val( $(this).val().substring(0, 500) );
+                });
+            });
+        </script>
+    </body>
+</html>

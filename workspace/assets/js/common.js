@@ -18,7 +18,7 @@ $(function() {
 
 
 // alert 호출
-function callAlert(msg) {
+function callAlert(msg, actions) {
 
     $('body').find('#alertModal').remove();
     $('body').find('#confirmModal').remove();
@@ -37,7 +37,7 @@ function callAlert(msg) {
     }
         _html +=           '</div>'
                 +           '<div class="modal-footer">'
-                +               '<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>'
+                +               '<button type="button" class="btn btn-primary btn-act" data-dismiss="modal">확인</button>'
                 +           '</div>'
                 +       '</div>'
                 +   '</div>'
@@ -46,6 +46,12 @@ function callAlert(msg) {
     $('body').append(_html);
     $('#alertModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
     $('#alertModal').modal('show');
+
+    $('#alertModal').find('.btn-act').on('click', function() {
+        if ( actions !== undefined ) {
+            actions();
+        }
+    });
 }
 
 
