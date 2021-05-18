@@ -15,6 +15,9 @@
     }
     .help-block {
         margin-bottom: 24px;
+        &.help-block-login {
+            color: #a94442;
+        }
     }
     .find-info {
         margin-top: 10px;
@@ -76,6 +79,9 @@
             }
             button {
                 margin-left: 6px;
+            }
+            .help-block {
+                width: 100%;
             }
         }
     }
