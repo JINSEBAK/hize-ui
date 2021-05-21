@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "회원 관리", "sub" : "주식 서비스 플랫폼 회원을 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        <!-- 검색 -->
+                        <div class="area-search">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label for="">기간</label>
+                                    <div class="date-inline">
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="시작일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="종료일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">구분</label>
+                                    <select class="form-control">
+                                        <option value="">회원명</option>
+                                        <option value="">아이디</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-in-btn">
+                                    <label for="" class="sr-only">검색어</label>
+                                    <input type="text" class="form-control keyword" placeholder="검색어 입력">
+                                    <button type="button" class="btn btn-secondary" id="btnSearch">검색</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">100</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>회원명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>회원ID</th>
+                                            <th>닉네임</th>
+                                            <th>회원 가입일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>이삼오</td>
+                                            <td>235lee</td>
+                                            <td>235나</td>
+                                            <td>2021.04.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>99</td>
+                                            <td>장나라</td>
+                                            <td>janghaha</td>
+                                            <td>난나라</td>
+                                            <td>2021.04.09</td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td>이경</td>
+                                            <td>mrlee</td>
+                                            <td>이하고난</td>
+                                            <td>2021.04.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td>황나라</td>
+                                            <td>narawang</td>
+                                            <td>narawang</td>
+                                            <td>2021.03.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>96</td>
+                                            <td>권우수</td>
+                                            <td>woosu12</td>
+                                            <td>woosu12</td>
+                                            <td>2021.03.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td>95</td>
+                                            <td>이름</td>
+                                            <td>회원ID</td>
+                                            <td>닉네임</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>94</td>
+                                            <td>이름</td>
+                                            <td>회원ID</td>
+                                            <td>닉네임</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>93</td>
+                                            <td>이름</td>
+                                            <td>회원ID</td>
+                                            <td>닉네임</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>92</td>
+                                            <td>이름</td>
+                                            <td>회원ID</td>
+                                            <td>닉네임</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>91</td>
+                                            <td>이름</td>
+                                            <td>회원ID</td>
+                                            <td>닉네임</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                @@include('../common/pagination.html')
+                            </div>
+
+                            <!-- 회원 내역 없음 -->
+                            <div class="area-empty" style="display: none">
+                                <div class="date-empty">
+                                    <strong>회원 내역이<br>없습니다.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 검색
+                $('#btnSearch').on('click', function() {
+                    $('.area-list-body').css('display', 'none');
+                    $('.area-empty').fadeIn();
+                });
+
+                // 상세 이동
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_08_member_detail.html';
+                });
+            });
+        </script>
+    </body>
+</html>

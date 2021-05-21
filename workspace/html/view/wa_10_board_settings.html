@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "게시판 설정", "sub" : "주식 서비스 플랫폼 게시판을 관리할 수 있습니다." })
+
+                    <div class="contents">
+                        <div class="area-list area-no-hd">
+                            <div class="area-list-body">
+
+                                <div class="tb-list drag-board">
+                                    <ul class="tb-list-hd tb-list-board">
+                                        <li class="cell">게시판 제목</li>
+                                        <li class="cell">공개 설정</li>
+                                        <li class="cell">글쓰기 설정</li >
+                                        <li class="cell">파일 첨부</li>
+                                        <li class="cell">댓글 사용</li>
+                                        <li class="cell">설정</li>
+                                    </ul>
+                                    <ul class="tb-list-bd tb-list-board" id="sortableBox">
+                                        <li>
+                                            <div class="cell">게시판 A</div>
+                                            <div class="cell">공개</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">
+                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalBoardSettings">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cell">게시판 B</div>
+                                            <div class="cell">공개</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">
+                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalBoardSettings">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cell">게시판 C</div>
+                                            <div class="cell">공개</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">
+                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalBoardSettings">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="btns btns-right">
+                                    <button type="button" class="btn btn-primary">순서 저장</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 게시판 설정 팝업 -->
+        @@include('./inside/wa_10_board_settings_popup.html')
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 게시판 순서변경 - 개발: api 응답 후 이벤트 바인딩
+                $('#sortableBox').sortable({
+                    placeholder: "ui-state-highlight"
+                });
+
+                // 게시판 사용 여부 설정
+                $('input[name=board-use]').on('change', function() {
+                    if ( $(this).val() === '0') {
+                        // 미사용 
+                        $('.table-form').find('input').not('input[name=board-use]').attr('disabled', true);
+                    } else {
+                        $('.table-form').find('input').removeAttr('disabled');
+                    }
+                });
+
+                // 게시판 제목 작성 카운트
+                $('#boardTitle').on('change paste input', function() {
+                    $(this).next('.count').find('.txt-length').text( $(this).val().length );
+                });
+            });
+        </script>
+    </body>
+</html>

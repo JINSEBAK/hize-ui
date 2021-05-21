@@ -34,6 +34,7 @@ $border-light-color: #eee;
 $bg-color: #f2f3f6;
 $bg-light-color: #f9f9f9; // 채팅방bg
 $bg-freezing: #e2f2ff;  // 얼리기
+$bg-white: #fff;
 $balloon-default: #fff;
 $balloon-admin: #ffeae2;  // 관리자 말풍선
 $balloon-signal: #ffdfdf; // 신호색상
@@ -50,6 +51,7 @@ $card-active: #e6e4fc;
 $btn-primary: #2e6da4;
 $btn-secondary: #666;
 $btn-secondary-hover: #000;
+$tb-notice: #f6f2fb;
 
 /* buttons */
 .btn-secondary {
@@ -59,6 +61,46 @@ $btn-secondary-hover: #000;
     color: $text-white;
     background-color: $btn-secondary-hover;
   }
+}
+
+.btn-top {
+  font-size: 11px;
+  border: none;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+// 버튼 group
+.btns {
+  &.btns-right {
+    text-align: right;
+  }
+  &.btns-center {
+    text-align: center;
+  }
+  &.btns-space {
+    .btn {
+      &:first-child {
+        float: left;
+      }
+      &:last-child {
+        float: right;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+.txt-red {
+  color: $text-emphasize;
+}
+
+.txt-blue {
+  color: $text-primary;
 }
 
 
@@ -84,6 +126,10 @@ a {
   border-top: 1px solid $border-color;
   height: 1px;
   margin-bottom: 24px;
+}
+
+.help-block-validate {
+  color: #a94442;
 }
 
 
@@ -132,29 +178,41 @@ a {
         position: absolute;
         right: 0;
         top: 5px;
-        .btn-group {
-          .btn-profile {
-            background-color: transparent;
-            color: $text-basic;
-            display: flex;
-            align-items: center;
-            &:hover, &:focus, &:active {
-              color: $text-basic-hover;
-              box-shadow: none;
+        .vertical {
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          background-color: $border-color;
+        }
+        .btn-profile {
+          background-color: transparent;
+          color: $text-basic;
+          display: inline-block;
+          > * {
+            display: inline-block;
+          }
+          .user-img {
+            display: inline-block;
+            vertical-align: middle;
+            width: 26px;
+            height: 26px;
+            margin-right: 6px;
+            margin-left: 6px;
+            border-radius: 100%;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
             }
-            .user-img {
-              display: inline-block;
-              width: 26px;
-              height: 26px;
-              margin-right: 6px;
-              margin-left: 6px;
-              border-radius: 100%;
-              overflow: hidden;
-              img {
-                width: 100%;
-                height: 100%;
-              }
-            }
+          }
+        }
+        .btn-logout {
+          margin-bottom: 2px;
+          color: $text-basic;
+        }
+        .btn {
+          &:active {
+            box-shadow: none;
           }
         }
       }
@@ -223,6 +281,32 @@ a {
         margin: 0;
         font-size: 80%;
         background-color: transparent;
+      }
+      .dropdown {
+        margin-top: -2px;
+        display: inline-block;
+        button {
+          font-size: 13px;
+          border: 1px solid $border-color;
+          background-color: transparent;
+          width: 100px;
+          text-align: left;
+          margin-bottom: 2px;
+          padding: 2px 6px;
+          border-radius: 4px;
+          .caret {
+            float: right;
+            margin-top: 4px;
+          }
+        }
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          margin: 0 12px;
+          background-color: $border-color;
+        }
       }
     }
   }
@@ -474,6 +558,10 @@ input[type="number"]::-webkit-inner-spin-button {
       clear: both;
     }
   }
+  // 검색 영역이 없는 목록
+  &.area-no-hd {
+    margin: 24px 0;
+  }
 }
 
 .data-list {
@@ -485,11 +573,13 @@ input[type="number"]::-webkit-inner-spin-button {
           color: $text-basic;
           float: right;
         }
+        
       }
     }
   }
   tbody {
     tr {
+      cursor: pointer;
       &:hover {
         background-color: $card-hover;
       }
@@ -509,6 +599,16 @@ input[type="number"]::-webkit-inner-spin-button {
           padding: 0 10px;
         }
       }
+      // 게시판의 공지사항
+      &.notice {
+        background-color: $tb-notice;
+      }
+    }
+  }
+  .checkbox {
+    margin: 0;
+    label {
+      min-height: 15px;
     }
   }
 }
@@ -665,4 +765,9 @@ input[type="number"]::-webkit-inner-spin-button {
   ::-webkit-scrollbar-thumb:hover {
     background-color: #c5c5c5 !important;
   }
+}
+
+// margin, padding
+.mg24 {
+  margin: 24px 0 24px;
 }

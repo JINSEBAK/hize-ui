@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "상품 결제", "sub" : "유료방에 대한 결제를 할 수 있습니다." })
+                
+                    <div class="contents">
+                  
+                        <!-- contents -->
+                        <div class="detail-content">
+                            <!-- 채팅방 정보 -->
+                            <h4 class="detail-content-hd">상품 정보</h4>
+                            <table class="table table-form">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>채팅방명</th>
+                                        <td><span class="data"><strong>성공투자주식방-1</strong></span></td>
+                                        <th>상품 생성자</th>
+                                        <td><span class="data">park77(박홍식)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>채팅유형</th>
+                                        <td><span class="data">일반 채팅</span></td>
+                                        <th>기간</th>
+                                        <td><span class="data">2021.03.01 ~ 2021.05.31</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>인원</th>
+                                        <td colspan="3"><span class="data">85/100</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 class="detail-content-hd">회원 정보</h4>
+                            <table class="table table-form">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>회원명</th>
+                                        <td><span class="data">박둘선</span></td>
+                                        <th>아이디</th>
+                                        <td><span class="data">modelpark</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>전화번호</th>
+                                        <td colspan="3"><span class="data">010-1234-5678</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 class="detail-content-hd">상품 결제</h4>
+                            <table class="table table-form" id="formPayment">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>유형</th>
+                                        <td colspan="3">
+                                            <select class="form-control" id="selectChatType" style="width: 200px;" >
+                                                <option value="1">유료</option>
+                                                <option value="2">체험</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">가입기간</th>
+                                        <td>
+                                            <div class="date-inline">
+                                                <div class="date-box">
+                                                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                                                    <span class="glyphicon glyphicon-calendar"></span> 
+                                                </div>
+                                                <div class="date-box">
+                                                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                                                    <span class="glyphicon glyphicon-calendar"></span> 
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <th>서비스기간</th>
+                                        <td>
+                                            <div class="date-inline">
+                                                <div class="date-box">
+                                                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                                                    <span class="glyphicon glyphicon-calendar"></span> 
+                                                </div>
+                                                <div class="date-box">
+                                                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                                                    <span class="glyphicon glyphicon-calendar"></span> 
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">결제금액</th>
+                                        <td colspan="3">
+                                            <div class="form-inline">
+                                                <div class="form-group form-in-btn">
+                                                    <input type="number" class="form-control" placeholder="결제 금액 입력">
+                                                    <button type="button" class="btn btn-secondary" id="btnPayment">결제</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">승인번호</th>
+                                        <td colspan="3">
+                                            <input type="text" class="form-control" placeholder="승인 번호 입력" style="max-width: 320px;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>결제일</th>
+                                        <td colspan="3"><span class="data">2021.05.10</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ul class="guild">
+                                <li>결제시 상품 가입기간과 결제금액, 승인 번호를 입력해 주세요.</li>
+                                <li>보너스 기간을 제공하는 경우에는 보너스 기간을 입력해 주세요. (가입 종료 기간 이후로 입력)</li>
+                            </ul>
+                        </div>
+                        <!-- btns -->
+                        <div class="btn-groups">
+                            <div class="pull-left">
+                                <a class="btn btn-default" href="./wa_14_request_list.html">목록</a>
+                            </div>
+                            <div class="pull-right">
+                                <button class="btn btn-default" id="btnReject">신청거절</button>
+                                <button class="btn btn-primary" id="btnCompleted">결제완료</button>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 유형 선택 
+                $('#selectChatType').on('change', function() {
+                    if ($(this).val() === '1') {
+                        $('#formPayment').find('input').removeAttr('disabled');
+                        $('#btnPayment').removeAttr('disabled');
+                    } else {
+                        $('#formPayment').find('input').attr('disabled', true);
+                        $('#btnPayment').attr('disabled', true);
+                    }
+                });
+            
+                // 신청 거절
+                $('#btnReject').on('click', function() {
+                    callConfirm(
+                    { title: '유료방 요청건을<br>거절하시겠습니까?'}, 
+                    onClickReject,
+                    { cancel: '취소', confirm: '거절'});
+                });
+
+                // 결제완료
+                $('#btnCompleted').on('click', function() {
+                    callAlert({
+                        title: '결제가 완료되었습니다.',
+                        description: '회원님은 채팅방에<br>가입처리되었습니다.'
+                    });
+                });
+            });
+
+            function onClickReject() {
+                callAlert({ title: '거절되었습니다.' });
+            }
+        </script>
+    </body>
+</html>

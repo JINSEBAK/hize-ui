@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "정책/약관 상세", "sub" : "주식 서비스 플랫폼 정책/약관을 등록, 관리할 수 있습니다." })
+                
+                    <div class="contents">
+                        <div class="table-no-hd">
+                            <table class="table table-form">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>정책</th>
+                                        <td><span class="data">이용약관</span></td>
+                                        <th>버전</th>
+                                        <td><span class="data">1.0.3</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>내용</th>
+                                        <td colspan="3">
+                                            <div class="pre-detail">
+이용약관
+ 
+Hize 주식 서비스를 이용해주셔서 감사합니다. 
+세밀한 분석을 바탕으로 빠르고 정확한 주식 투자 가이드를 제공하는 Hize의 이용방침을 확인해주세요.
+
+
+제 1조 (목적 및 정의)
+1.이 약관은 ”(주)V1인베스트먼트"(이하 ＂회사"이라 한다.)에서 운영하는 웹서비스의 이용조건 및 절차에 관한 사항을 명시합니다.
+2.회원가입에 대한 내용을 충분히 숙지하신 후 가입하여 주시고, 이 약관은 본 진흥원에서 운영하는 모든 웹서비스를 이용하는 모든 회원에게 적용되며 이를 읽고 이해하는 것은 귀하의 책임입니다.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+[ 법적고지일 ]
+공고일자 : 2021년 07월 10일
+시행일자 : 2021년 07월 15일
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>최종 수정자</th>
+                                        <td><span class="data">박민</span></td>
+                                        <th>최종 수정일</th>
+                                        <td><span class="data">2021.03.04</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btns">
+                                <a type="button" class="btn btn-default" href="./wa_11_operation_terms.html">목록</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+    </body>
+</html>

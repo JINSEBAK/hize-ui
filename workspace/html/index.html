@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <style>
+      body { overflow-y: scroll }
+      .panel-heading { cursor: pointer; background: url(./assets/images/icons/up-arrow.svg) calc(100% - 12px) center no-repeat; background-size: 12px;}
+      .panel-heading.open { background: url(./assets/images/icons/down-arrow.svg) calc(100% - 12px) center no-repeat; background-size: 12px; }
+      .panel-heading ~ .panel-body, .panel-heading ~ .table { display: none; }
+      .panel-heading.open ~ .panel-body { display: block; }
+      .panel-heading.open ~ .table { display: table; }
       .panel-body { font-size: 12px; }
       .panel-body dl dd { margin-bottom: 12px; }
       .table tr:hover { background-color: rgb(230, 228, 252); }
@@ -21,7 +27,7 @@
   <body style="padding: 2rem">
     <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading" style="background-color:#f6fbf4">관리자웹 퍼블리싱 파일 목록</div>
+      <div class="panel-heading open" style="background-color:#f6fbf4">관리자웹 퍼블리싱 파일 목록</div>
       <div class="panel-body">
         <dl>
           <dt>목차작성</dt>
@@ -34,6 +40,7 @@
             <span class="label label-success">10%</span>
             <span class="label label-info">wait</span>
             <span class="label label-warning">new</span>
+            <span class="label label-danger">issue</span>
           </dd>
         </dl>
       </div>
@@ -91,7 +98,9 @@
             </td>
             <td><a href="./view/template.html" target="_blank" rel="noreferrer noopener"  class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small>신규 페이지 생성 시, template.html 파일 복사 후 진행</small>
+              <small>신규 페이지 생성 시, template.html 파일 복사 후 진행<br><br>
+                <strong>0521</strong> GNB 정리
+              </small>
             </td>
           </tr>
           <tr >
@@ -190,7 +199,7 @@
             </td>
             <td><a href="./view/wa_05_product_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small><em>v0.2 적용</em></small>
+              <small></small>
             </td>
           </tr>
           <tr>
@@ -207,7 +216,7 @@
             </td>
             <td><a href="./view/wa_05_product_list_empty.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small><em>v0.2 적용</em></small>
+              <small></small>
             </td>
           </tr>
           <tr>
@@ -223,7 +232,7 @@
             </td>
             <td><a href="./view/wa_05_product_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small><em>v0.2 적용</em></small>
+              <small></small>
             </td>
           </tr>
           <tr>
@@ -239,40 +248,418 @@
             </td>
             <td><a href="./view/wa_05_product_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small><em>v0.2 적용</em></small>
+              <small></small>
             </td>
           </tr>
+        
+          <tr>
+            <th class="idx"></th>
+            <td colspan="8" style="background-color: #9e9e8b; color: #fff; text-align: center;">확인 후 화면 작업 필요</td>
+          </tr>
+
           <tr >
             <th class="idx"></th>
-            <td>요청관리</td>
+            <td>회원 관리</td>
             <td colspan="2">목록</td>
-            <td>wa_06_request_list.html</td>
+            <td>wa_08_member_list.html</td>
             <td>
               <span class="label label-default">completed</span>
             </td>
             <td>
               <span class="label label-info">wait</span>
             </td>
-            <td><a href="./view/wa_06_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_08_member_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small><em>v0.2 적용</em></small>
+              <small><em>v0.3 반영</em></small>
             </td>
           </tr>
           <tr >
             <th class="idx"></th>
-            <td>요청관리</td>
+            <td>회원 관리</td>
+            <td colspan="2">상세</td>
+            <td>wa_08_member_detail.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_08_member_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small><em>v0.3 반영</em></small>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="idx"></th>
+            <td colspan="8" style="background-color: #9e9e8b; color: #fff; text-align: center;">확인 후 화면 작업 필요</td>
+          </tr>
+
+          <tr >
+            <th class="idx"></th>
+            <td>게시판 관리</td>
+            <td colspan="2">설정</td>
+            <td>wa_10_board_settings.html</td>
+            <td>
+              <span class="label label-success">90%</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_10_board_settings.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>!TODO: 목록 sortalbe help 수정 필요<br><em>v0.3 적용</em></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>게시판 관리</td>
+            <td>게시물</td>
+            <td>목록</td>
+            <td>wa_10_board_post_list.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_10_board_post_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>게시판 관리</td>
+            <td>게시물</td>
             <td>상세</td>
-            <td>결제</td>
-            <td>wa_06_request_detail.html</td>
+            <td>wa_10_board_post_detail.html</td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_10_board_post_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>게시판 관리</td>
+            <td>게시물</td>
+            <td>수정</td>
+            <td></td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>게시판 관리</td>
+            <td>게시물</td>
+            <td>등록</td>
+            <td></td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>FAQ</td>
+            <td>목록</td>
+            <td>wa_11_operation_faq.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_faq.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>FAQ</td>
+            <td>상세</td>
+            <td>wa_11_operation_faq_detail.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_faq_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>FAQ</td>
+            <td>수정</td>
+            <td>wa_11_operation_faq_modify.html</td>
+            <td>
+              <span class="label label-success">90%</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_faq_modify.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>Editor 연동 필요</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>FAQ</td>
+            <td>등록</td>
+            <td>wa_11_operation_faq_register.html</td>
+            <td>
+              <span class="label label-success">90%</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_faq_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>Editor 연동 필요</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>정책/약관 관리</td>
+            <td>목록</td>
+            <td>wa_11_operation_terms.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_terms.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>정책/약관 관리</td>
+            <td>상세</td>
+            <td>wa_11_operation_terms_detail.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_terms_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>정책/약관 관리</td>
+            <td>등록</td>
+            <td>wa_11_operation_terms_register.html</td>
+            <td>
+              <span class="label label-success">90%</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_terms_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>Editor 연동 필요<br>약관 관리쪽 화면설계 정리 필요</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>Log 내역</td>
+            <td>목록</td>
+            <td>wa_11_operation_log.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_11_operation_log.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>운영 관리</td>
+            <td>Log 내역</td>
+            <td>상세</td>
+            <td>wa_11_operation_log_detail.html</td>
             <td>
               <span class="label label-success">50%</span>
             </td>
             <td>
               <span class="label label-info">wait</span>
             </td>
-            <td><a href="./view/wa_06_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_11_operation_log_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small>기획(진행 중)</small>
+              <small>채팅방-결제정보 화면설계 필요</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td colspan="3">앱메인 관리</td>
+            <td>wa_12_user_app_main.html</td>
+            <td>
+              <span class="label label-success">20%</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_12_user_app_main.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+
+
+          <tr >
+            <th class="idx"></th>
+            <td colspan="3">내 계정</td>
+            <td>wa_13_my_account.html</td>
+            <td>
+              <span class="label label-danger">50%</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_13_my_account.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>화면설계 확인 필요(회원 상세 화면과 동일, 수정 기능이 없음)</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>유료방 가입 요청</td>
+            <td colspan="2">목록</td>
+            <td>wa_14_request_list.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_14_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small><strong>0521-v0.3</strong> 요청관리 GNB에서 빠짐</small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>유료방 가입 요청</td>
+            <td>상세</td>
+            <td>결제</td>
+            <td>wa_14_request_detail.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_14_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>관리자 권한 요청</td>
+            <td colspan="2">목록</td>
+            <td></td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>관리자 권한 요청</td>
+            <td colspan="2">상세</td>
+            <td></td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>게시물 승인 요청</td>
+            <td colspan="2">목록</td>
+            <td>wa_16_posting_approval.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_16_posting_approval.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr >
+            <th class="idx"></th>
+            <td>게시물 승인 요청</td>
+            <td colspan="2">상세</td>
+            <td>wa_16_posting_approval_detail.html</td>
+            <td>
+              <span class="label label-default">completed</span>
+            </td>
+            <td>
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_16_posting_approval_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
             </td>
           </tr>
 
@@ -336,7 +723,7 @@
             <th>소분류</th>
             <th>파일명</th>
             <th>와이어프레임</th>
-            <th>스타일</th>
+            <th>디자인</th>
             <th>이동</th>
             <th>비고</th>
           </tr>
@@ -681,7 +1068,20 @@
       })
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $('.panel-heading').on('click', function() {
+          const chk = $(this).hasClass('open');
+          if ( chk ) {
+            $(this).removeClass('open');
+          } else {
+            $(this).addClass('open');
+          }
 
+        });
+      });
+    </script>
 
 
   </body>

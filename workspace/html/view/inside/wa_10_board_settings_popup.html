@@ -1,0 +1,117 @@
+
+<!-- 게시판 설정 -->
+<div class="modal fade" id="modalBoardSettings" aria-labelledby="modalBoardSettingsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">게시판 설정</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>게시판 사용</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="board-use" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="board-use" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>게시판 제목</th>
+                                <td>
+                                    <div class="input-count">
+                                        <label for="" class="sr-only">게시판 제목</label>
+                                        <input type="text" class="form-control" placeholder="게시판 제목 입력" maxlength="10" id="boardTitle">
+                                        <div class="count">
+                                            <span class="txt-length">0</span>
+                                            <span>10</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용자 글쓰기</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="user-write" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="user-write" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>파일 첨부</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="attachment" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="attachment" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>댓글 사용</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="comment-use" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="comment-use" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>승인여부</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="approval-use" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="approval-use" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSettings">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+

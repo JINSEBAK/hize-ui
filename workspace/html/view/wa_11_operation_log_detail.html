@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "성공투자 주식방-1", "sub" : "유료방에서 폐쇄된 채팅방 정보를 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabInfo" aria-controls="tabInfo" role="tab" data-toggle="tab">채팅방 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabPay" aria-controls="tabPay" role="tab" data-toggle="tab">결제 정보</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <!-- 채팅방 정보 -->
+                            <div role="tabpane" class="tab-pane fade in active" id="tabInfo">
+                                @@include('./inside/wa_11_operation_log_tabinfo.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabPay">
+                                @@include('./inside/wa_11_operation_log_tabpay.html')
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+            });
+        </script>
+    </body>
+</html>

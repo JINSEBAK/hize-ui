@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    <!-- title -->
+                    <div class="page-header">
+                        <h4>
+                            게시물 관리
+                            <div class="dropdown">
+                                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    게시판A
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <li><a href="#">게시판A</a></li>
+                                    <li><a href="#">게시판B</a></li>
+                                    <li><a href="#">게시판C</a></li>
+                                </ul>
+                            </div>
+                            <small>
+                                주식 서비스 플랫폼 게시판을 관리할 수 있습니다.
+                                <ol class="breadcrumb">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Library</a></li>
+                                    <li class="active">Data</li>
+                                </ol>
+                        </small>
+                        </h4>
+                    </div>
+
+                    <div class="contents">
+                        <!-- 검색 -->
+                        <div class="area-search">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label for="">기간</label>
+                                    <div class="date-inline">
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="시작일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="종료일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">구분</label>
+                                    <select class="form-control">
+                                        <option>제목</option>
+                                        <option>작성자 아이디</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-in-btn">
+                                    <label for="" class="sr-only">검색어</label>
+                                    <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
+                                    <button type="button" class="btn btn-secondary" id="btnSearch">검색</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">100</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="all-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <th>No.</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>작성일</th>
+                                            <th>댓글</th>
+                                            <th>조회수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="notice">
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>공지</td>
+                                            <td><span class="ellipsis">오늘의 투자 포인트!!</span></td>
+                                            <td>hongadmin</td>
+                                            <td>2021.05.14</td>
+                                            <td>34</td>
+                                            <td>120</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>100</td>
+                                            <td>
+                                                <span class="ellipsis">
+                                                    <span class="label label-default">Best</span> 흔들리는 시장...…'배당株' 주목
+                                                    <span class="glyphicon glyphicon-picture"></span>
+                                                </span>
+                                            </td>
+                                            <td>hongadmin</td>
+                                            <td>2021.05.14</td>
+                                            <td>24</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>99</td>
+                                            <td><span class="ellipsis">좋은 정보 제공합니다.</span></td>
+                                            <td>mrlee</td>
+                                            <td>2021.05.14</td>
+                                            <td>10</td>
+                                            <td>70</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>98</td>
+                                            <td><span class="ellipsis">하하하! 웃음만 나오네요</span></td>
+                                            <td>narawang</td>
+                                            <td>2021.05.14</td>
+                                            <td>0</td>
+                                            <td>85</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>97</td>
+                                            <td><span class="ellipsis">제목</span></td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>96</td>
+                                            <td>
+                                                <span class="ellipsis">제목 <span class="glyphicon glyphicon-picture"></span></span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>95</td>
+                                            <td><span class="ellipsis">제목</span></td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>94</td>
+                                            <td><span class="ellipsis">제목</span></td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>93</td>
+                                            <td><span class="ellipsis">제목</span></td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>92</td>
+                                            <td><span class="ellipsis">제목</span></td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="btns btns-right">
+                                    <button type="button" class="btn btn-default" id="btnDelete">삭제</button>
+                                    <button type="button" class="btn btn-primary">글쓰기</button>
+                                </div>
+                                
+                                @@include('../common/pagination.html')
+                            </div>
+
+
+                            <!-- 내역 없음 -->
+                            <div class="area-empty" style="display: none">
+                                <div class="date-empty">
+                                    <strong>등록된 정보가<br>없습니다.</strong>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 검색
+                $('#btnSearch').on('click', function() {
+                    $('.area-list-body').css('display', 'none');
+                    $('.area-empty').fadeIn();
+                });
+
+                // 전체 선택
+                $('input[name=all-chk]').on('change', function() {
+                    if ( $(this).is(':checked') ) {
+                        //
+                        $('input[name=select-chk]').each(function() {
+                            $(this).prop('checked', true);
+                        });
+                    } else {
+                        $('input[name=select-chk]').each(function() {
+                            $(this).prop('checked', false);
+                        });
+                    }
+                });
+
+                // 삭제
+                $('#btnDelete').on('click', function() {
+                    const checkedCount = $('input[name=select-chk]:checked').length;
+                    if ( checkedCount > 0 ) {
+                        callAlert({ title: '게시글을 삭제하시겠습니까?' });
+                    }
+                });
+
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = 'wa_10_board_post_detail.html';
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -122,6 +122,12 @@
             font-size: 24px;
             margin: 24px auto;
         }
+        .copy-clipboard {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
         .btns {
             .btn {
                 width: calc(50% - 2px);
@@ -807,12 +813,74 @@
 }
 
 // 등록, 수정 등 table 구조
+.table-no-hd {
+    margin-top: 20px;
+}
+
 .table-form {
     margin-bottom: 36px;
     .fx.fx-mg {
         button {
             margin-left: auto;
             max-height: 34px;
+        }
+    }
+    .profile-img {
+        width: 88px;
+        height: 88px;
+        border-radius: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    .form-in-multi {
+        select {
+            max-width: 120px;
+            margin-bottom: 4px;
+        }
+        .form-in-btn {
+            margin-bottom: 0;
+            & > * {
+                display: inline-block;
+            }
+            input.form-control {
+                max-width: 50%;
+            }
+        }
+    }
+    .pre-detail {
+        white-space: pre-wrap;
+        max-height: 520px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px !important;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #ffffff !important;
+        }
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background-color: #d8d8d8 !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #c5c5c5 !important;
+        }
+    }
+    .required {
+        &:after {
+            content: '*';
+        }
+    }
+    & + .guild {
+        padding-left: 20px;
+        margin-top: -20px;
+        margin-bottom: 24px;
+        li {
+            list-style: disc;
         }
     }
 }
@@ -877,9 +945,292 @@
 }
 
 
+// 게시판
+.drag-board {
+    tbody {
+        tr {
+            cursor: grab;
+            td {
+                .glyphicon {
+                    cursor: pointer;
+                }
+            }
+        }
+        &.scrolling {
+            border: 1px solid red;
+            height: 400px;
+            overflow-y: auto;
+        }
+    }
+}
+
+// ul like table
+.tb-list {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: 24px;
+    border: 1px solid $border-color;
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px !important;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #ffffff !important;
+    }
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background-color: #d8d8d8 !important;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #c5c5c5 !important;
+    }
+
+    .tb-list-hd {
+        position: sticky;
+        top: 0;
+        background-color: $bg-white;
+        z-index: 5;
+        li {
+            float: left;
+            display: block;
+            border-color: $border-color;
+            border-style: solid;
+            border-width: 0px 1px 2px 0px;
+            padding: 8px;
+            line-height: 1.42857143;
+            font-weight: bold;
+        }
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+    .tb-list-bd {
+        min-height: 110px;
+        li {
+            background-color: $bg-white;
+            cursor: grab;
+            .cell {
+                float: left;
+                border-color: $border-color;
+                border-style: solid;
+                border-width: 0px 1px 1px 0px;
+                padding: 8px;
+                line-height: 1.42857143;
+                &:last-child {
+                    border-right: 1px solid $border-color;
+                }
+                .btn-xs {
+                    padding: 0;
+                    border: none;
+                    line-height: 1;
+                    background-color: transparent;
+                }
+            }
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            &:last-child {
+                .cell {
+                    border-width: 0px 1px 0px 0px;
+                }
+            }
+        }
+    }
+    .tb-list-chat {
+        .cell {
+            &:nth-of-type(1) {
+                width: 10%;
+            }
+            &:nth-of-type(2) {
+                width: 45%;
+            }
+            &:nth-of-type(3) {
+                width: 15%;
+            }
+            &:nth-of-type(4) {
+                width: 15%;
+            }
+            &:nth-of-type(5) {
+                width: 15%;
+            }
+        }
+    }
+    .tb-list-board {
+        .cell {
+            &:nth-of-type(1) {
+                width: 50%;
+            }
+            &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6) {
+                width: 10%;
+            }
+        }
+    }
+    
+}
+
+
+
+// table 내 작은 내용
+.post-detail {
+    min-height: 400px;
+}
+
+// 게시물 상세
+.detail-post {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    .detail-post-hd {
+        padding: 12px;
+        border-bottom: 1px solid $border-color;
+        .post-title {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        .post-info {
+            color: $text-basic;
+            font-size: 13px;
+            .writter {
+                color: $text-link-hover;
+            }
+            .vertical {
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    width: 1px;
+                    height: 12px;
+                    background-color: $border-color;
+                    vertical-align: middle;
+                    margin: -2px 6px 0 4px;
+                }
+            }
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+        }
+    }
+    .detail-post-bd {
+        .attachment {
+            padding: 12px;
+            background-color: $bg-color;
+            label {
+                color: $text-basic;
+                font-weight: normal;
+                margin-right: 12px;
+            }
+            .file {
+                display: inline-block;
+                font-size: 12px;
+                background-color: $bg-white;
+                padding: 6px 12px;
+                border-radius: 24px;
+            }
+        }
+        .contents {
+            padding: 12px;
+            img {
+                margin: 12px 0;
+                display: block;
+            }
+        }
+    }
+}
+
+// 게시판 설정
+.modal-form {
+    .input-count {
+        position: relative;
+        input {
+            padding: 6px 44px 6px 12px;
+        }
+        .count {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            margin-top: -10px;
+            color: $text-basic;
+            span {
+                &:last-child {
+                    &:before {
+                        content: '/';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// 댓글
+.comment-area {
+    .title {
+        padding: 12px;
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+    .comment-body {
+        border: 1px solid $border-color;
+        .comment-form {
+            background-color: $bg-color;
+            border-bottom: 1px solid $border-color;
+            padding: 12px;
+        }
+        .comment-list {
+            li {
+                border-bottom: 1px solid $border-light-color;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+            .comment {
+                padding: 12px;
+                position: relative;
+                .vertical {
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        width: 1px;
+                        height: 12px;
+                        margin: 0 4px -2px;
+                        background-color: $border-color;
+                    }
+                }
+                .writter {
+                    font-size: 13px;
+                }
+                .date {
+                    color: $text-basic;
+                    font-size: 13px;
+                }
+                p {
+                    margin-top: 8px;
+                }
+                .btn {
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    margin-top: -8px;
+                }
+            }
+        }
+    }
+}
+
+
 #settingInPopover {
     .btn {
         display: block;
         margin: 0 auto;
     }
 }
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "앱메인 관리", "sub" : "Hize앱 메인을 관리할 수 있습니다." })
+
+                    <div class="contents">
+
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabBasic" aria-controls="tabBasic" role="tab" data-toggle="tab">기본 설정</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabPaidChat" aria-controls="tabPaidChat" role="tab" data-toggle="tab">유료방</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabFreeChat" aria-controls="tabFreeChat" role="tab" data-toggle="tab">체험방</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabAdvertise" aria-controls="tabAdvertise" role="tab" data-toggle="tab">광고 삽입</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabVideo" aria-controls="tabVideo" role="tab" data-toggle="tab">동영상 삽입</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <div role="tabpane" class="tab-pane fade in active" id="tabBasic">
+                                @@include('./inside/wa_12_user_app_main_tabbasic.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabPaidChat">
+                                @@include('./inside/wa_12_user_app_main_tabpaidchat.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabFreeChat">
+                                @@include('./inside/wa_12_user_app_main_tabfreechat.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabAdvertise">
+                                @@include('./inside/wa_12_user_app_main_tabadvertise.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabVideo">
+                                @@include('./inside/wa_12_user_app_main_tabvideo.html')
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                $('.nav-tabs').find('a[href="#tabAdvertise"]').tab('show');
+
+                // 목록 Sortable
+                $('.tb-list-bd').sortable({
+                    placeholder: "ui-state-highlight",
+                    update: function( event, ui ) {
+                        // 다시 채번하기
+                        $('#sortableBox li').each(function(index) {
+                            $(this).find('.cell').eq(0).text( index + 1 );
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

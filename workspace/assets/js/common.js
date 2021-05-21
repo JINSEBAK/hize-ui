@@ -11,8 +11,9 @@ $(function() {
             $(this).parent('li').addClass('active');
             $(this).next('.sub-menu').slideDown();
         }
-        
     });
+
+    $('.datepicker').datepicker();
 });
 
 
@@ -56,7 +57,9 @@ function callAlert(msg, actions) {
 
 
 // confirm 호출
-function callConfirm(msg, actions) {
+function callConfirm(msg, actions, buttons) {
+
+    console.log( buttons);
 
     $('body').find('#alertModal').remove();
     $('body').find('#confirmModal').remove();
@@ -83,6 +86,13 @@ function callConfirm(msg, actions) {
 
     $('body').append(_html);
     $('#confirmModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
+
+    // 버튼명을 지정
+    if ( buttons !== undefined ) {
+        $('#confirmModal').find('.btn-default').text(buttons.cancel);
+        $('#confirmModal').find('.btn-act').text(buttons.confirm);
+    }
+    // ok 버튼 이벤트 바인딩
     $('#confirmModal').find('.btn-act').on('click', function() {
         if ( actions !== undefined) {
             actions();

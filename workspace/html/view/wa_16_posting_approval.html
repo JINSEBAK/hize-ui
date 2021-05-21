@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "게시물 승인", "sub" : "주식 서비스 플랫폼 게시물을 승인할 수 있습니다." })
+                
+                    <div class="contents">
+
+                        <!-- 목록 -->
+                        <div class="area-list area-no-hd">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">10</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list">
+                                    <colgroup>
+                                        <col width="10%">
+                                        <col width="10%">
+                                        <col width="auto">
+                                        <col width="15%">
+                                        <col width="15%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="all-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <th>No.</th>
+                                            <th>제목</th>
+                                            <th>작성자</th>
+                                            <th>작성일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>10</td>
+                                            <td>
+                                                <span class="ellipsis">오늘의 정보!</span>
+                                            </td>
+                                            <td>melee</td>
+                                            <td>2021.05.14</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>9</td>
+                                            <td>
+                                                <span class="ellipsis">상승종목 공유</span>
+                                            </td>
+                                            <td>hongadmin</td>
+                                            <td>2021.05.14</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>8</td>
+                                            <td>
+                                                <span class="ellipsis">좋은 정보 감사해요! <span class="glyphicon glyphicon-picture"></span>
+                                            </td>
+                                            <td>narawang</td>
+                                            <td>2021.05.14</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>7</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>6</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>5</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>4</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>3</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>2</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="select-chk">
+                                                    </label>
+                                                </div>
+                                            </th>
+                                            <td>1</td>
+                                            <td>
+                                                <span class="ellipsis">제목</span>
+                                            </td>
+                                            <td>작성자ID</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="btns btns-right">
+                                    <button type="button" class="btn btn-default">승인</button>
+                                </div>
+
+                                @@include('../common/pagination.html')
+                            </div>
+
+                            <!-- 신청 내역 없음 -->
+                            <div class="area-empty" style="display: none">
+                                <div class="date-empty">
+                                    <strong>게시물 승인 요청이<br>없습니다.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                
+                // 전체 선택
+                $('input[name=all-chk]').on('change', function() {
+                    if ( $(this).is(':checked') ) {
+                        //
+                        $('input[name=select-chk]').each(function() {
+                            $(this).prop('checked', true);
+                        });
+                    } else {
+                        $('input[name=select-chk]').each(function() {
+                            $(this).prop('checked', false);
+                        });
+                    }
+                });
+
+                // 게시물 상세 이동
+                // 이벤트 버블링은 개발 시 풀 것! (체크박스 클릭, row 클릭)
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_16_posting_approval_detail.html';
+                });
+
+
+            });
+        </script>
+    </body>
+</html>

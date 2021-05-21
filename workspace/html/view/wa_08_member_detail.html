@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "회원 상세", "sub" : "주식 서비스 플랫폼 회원을 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabInfo" aria-controls="tabInfo" role="tab" data-toggle="tab">회원 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabSignup" aria-controls="tabSignup" role="tab" data-toggle="tab">가입 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabPay" aria-controls="tabPay" role="tab" data-toggle="tab">결제 정보</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <!-- 채팅방 정보 -->
+                            <div role="tabpane" class="tab-pane fade in active" id="tabInfo">
+                                @@include('./inside/wa_08_member_detail_tabinfo.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabSignup">
+                                @@include('./inside/wa_08_member_detail_tabsignup.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabPay">
+                                @@include('./inside/wa_08_member_detail_tabpay.html')
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- 비밀번호 재설정 popup -->
+        @@include('./inside/wa_08_member_detail_popup.html')
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 회원 상태 변경
+                $('#memberStatus').on('change', function() {
+                    if ( $(this).val() === '0' ) {
+                        // 탈퇴선택 시 form, button 활성화 
+                        $(this).next('.form-in-btn').find('input').removeAttr('disabled');
+                    }
+                });
+
+                // 탈퇴 사유 입력 시 버튼 활성화
+                $('#inputWithdrawal').on('change paste input', function() {
+                    if ( $(this).val().length > 0 ) {
+                        $(this).next('button').removeAttr('disabled');
+                    } else {
+                        $(this).next('button').attr('disabled', true);
+                    }
+                });
+
+                // 탈퇴 사유 작성
+                $('#btnWidthdrawal').on('click', function() {
+                    callConfirm({
+                        title: '회원을 탈퇴처리하시겠습니까?',
+                        description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
+                    });
+                });
+
+                // 비밀번호 재설정
+                $('input[name=password]').on('change paste input', function() {
+                    const errMsg = {
+                        password: '비밀번호를 형식에 맞게 입력해주세요. (영문/숫자 포함 8~20자리)',
+                        passwordConfirm: '비밀번호가 일치하지 않습니다.'
+                    }
+                    const PATTERN = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,20}$/;
+                    var inputValue = $(this).val();
+                    var hasError = false;
+                    var msg = '';
+
+                    if ( inputValue.length > 0 ) {
+                        if ( PATTERN.test(inputValue) ) {
+                            hasError = false;
+                        } else {
+                            hasError = true;
+                            msg = errMsg['password']
+                        }
+                    }
+                   
+                    if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+                        if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
+                            hasError = true;
+                            msg = errMsg['passwordConfirm'];
+
+                            $('#btnReset').attr('disabled', true);
+                        } else {
+                            $('#btnReset').removeAttr('disabled');
+                        }
+                    }
+
+                    if ( hasError ) {
+                        $(this).parent('.form-group').addClass('has-error');
+                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                    } else {
+                        $(this).parent('.form-group').removeClass('has-error');
+                        $(this).parent('.form-group').siblings('.help-block').html('');
+                    }
+
+                });
+
+
+                $('#btnReset').on('click', function() {
+                    callAlert({
+                        title: '비밀번호가<br>재설정 되었습니다.'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

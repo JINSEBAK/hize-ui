@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "게시물 상세", "sub" : "주식 서비스 플랫폼 게시물을 승인할 수 있습니다." })
+                
+                    <div class="contents">
+                  
+                        <!-- contents -->
+                        <div class="detail-content">
+                            <div class="detail-post">
+                                <div class="detail-post-hd">
+                                    <div class="post-title">오늘의 정보!</div>
+                                    <div class="post-info">
+                                        <div class="pull-left">
+                                            <span class="writter">mrlee</span>
+                                            <span class="vertical"></span>
+                                            <span class="date">2021.05.14</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <span class="comment">댓글 0</span>
+                                            <span class="vertical"></span>
+                                            <span class="view">조회수 0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="detail-post-bd">
+                                    <!-- 첨부파일 영역 -->
+                                    <div class="attachment">
+                                        <label>첨부파일</label>
+                                        <span class="file">
+                                            <a href="#">File3567-1.jpg</a>
+                                        </span>
+                                        <span class="file">
+                                            <a href="#">imageimage....12344567890.jpg</a>
+                                        </span>
+                                    </div>
+                                    <div class="contents">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="">
+                                        시장 금리가 가파르게 상승하자 테슬라, 아마존 등 빅테크 주식들이 충격을 받고 있다. 이럴 때는 변동성이 낮으면서 배당수익률이 높은 방어주가 유망하다는 
+                                        분석이다.<br><br>
+                                        23일(현지시간) 미국 경제매체 CNBC는 △지난 3년간 변동성이 낮으면서 △연간 배당수익률이 1.5% 이상이고 △애널리스트 매수 의견 비율이 65%인 종목을
+                                        추렸다. 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- btns -->
+                        <div class="btns btns-space mg24">
+                            <a type="button" class="btn btn-default" href="./wa_16_posting_approval.html">목록</a>
+                            <button type="button" class="btn btn-primary">승인</button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 유형 선택 
+                $('#selectChatType').on('change', function() {
+                    if ($(this).val() === '1') {
+                        $('#formPayment').find('input').removeAttr('disabled');
+                        $('#btnPayment').removeAttr('disabled');
+                    } else {
+                        $('#formPayment').find('input').attr('disabled', true);
+                        $('#btnPayment').attr('disabled', true);
+                    }
+                });
+            
+                // 신청 거절
+                $('#btnReject').on('click', function() {
+                    callConfirm(
+                    { title: '유료방 요청건을<br>거절하시겠습니까?'}, 
+                    onClickReject,
+                    { cancel: '취소', confirm: '거절'});
+                });
+
+                // 결제완료
+                $('#btnCompleted').on('click', function() {
+                    callAlert({
+                        title: '결제가 완료되었습니다.',
+                        description: '회원님은 채팅방에<br>가입처리되었습니다.'
+                    });
+                });
+            });
+
+            function onClickReject() {
+                callAlert({ title: '거절되었습니다.' });
+            }
+        </script>
+    </body>
+</html>
