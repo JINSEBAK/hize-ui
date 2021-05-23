@@ -1,1236 +1,1261 @@
 // 로그인, 회원가입
 .user-sign {
-    max-width: 480px;
-    margin: 0 auto;
-    .login-heading {
+  max-width: 480px;
+  margin: 0 auto;
+  .login-heading {
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 36px;
+    img {
+      display: block;
+      margin: 12px auto;
+      width: auto;
+      height: 27px;
+    }
+  }
+  .help-block {
+    margin-bottom: 24px;
+    &.help-block-login {
+      color: #a94442;
+    }
+  }
+  .find-info {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .mb-join {
+    clear: both;
+    padding-top: 36px;
+  }
+  .form-group {
+    .form-control {
+      + .form-control {
+        margin-top: 8px;
+      }
+    }
+    .user-profile-img {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto;
+      position: relative;
+      img {
+        width: 72px;
+        height: 72px;
+        border-radius: 100%;
+      }
+      label {
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        position: absolute;
+        right: -4px;
+        bottom: -4px;
+        border: 1px solid $border-color;
+        background-color: #fff;
         text-align: center;
-        padding: 12px;
-        margin-bottom: 36px;
-        img {
-            display: block;
-            margin: 12px auto;
-            width: auto;
-            height: 27px;
+        line-height: 24px;
+        border-radius: 100%;
+        margin: 0;
+        cursor: pointer;
+        &:hover {
+          background-color: $card-hover;
         }
+      }
+      input[type="file"] {
+        position: absolute;
+        opacity: 0;
+      }
     }
-    .help-block {
-        margin-bottom: 24px;
-        &.help-block-login {
-            color: #a94442;
-        }
+    &.form-inline {
+      display: flex;
+      flex-wrap: wrap;
+      label {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      input {
+        flex: 1;
+      }
+      button {
+        margin-left: 6px;
+      }
+      .help-block {
+        width: 100%;
+      }
     }
-    .find-info {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .mb-join {
-        clear: both;
-        padding-top: 36px;
-    }
-    .form-group {
-        .form-control {
-            + .form-control {
-                margin-top: 8px;
-            }
-        }
-        .user-profile-img {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto;
-            position: relative;
-            img {
-                width: 72px;
-                height: 72px;
-                border-radius: 100%;
-            }
-            label {
-                width: 24px;
-                height: 24px;
-                padding: 0;
-                position: absolute;
-                right: -4px;
-                bottom: -4px;
-                border: 1px solid $border-color;
-                background-color: #fff;
-                text-align: center;
-                line-height: 24px;
-                border-radius: 100%;
-                margin: 0;
-                cursor: pointer;
-                &:hover {
-                    background-color: $card-hover;
-                    
-                }
-            }
-            input[type=file] {
-                position: absolute;
-                opacity: 0;
-            }
-        }
-        &.form-inline {
-            display: flex;
-            flex-wrap: wrap;
-            label {
-                width: 100%;
-                margin-bottom: 5px;
-            }
-            input {
-                flex: 1;
-            }
-            button {
-                margin-left: 6px;
-            }
-            .help-block {
-                width: 100%;
-            }
-        }
-    }
-    .step {
-        margin: 24px 0;
-        overflow: hidden;
-        .step-join {
-            li {
-                float: left;
-                width: 50%;
-                .step-cell {
-                    text-align: center;
-                    height: 40px;
-                    line-height: 40px;
-                }
-                &.active {
-                    color: $text-primary;
-                    font-weight: bold;
-                }
-            }
-        }
-    }
-    .tab-content {
-        .tab-pane {
-            h5 {
-                margin: 36px 0 12px;
-                small {
-                    display: block;
-                    margin-top: 6px;
-                    line-height: 1.2;
-                }
-            }
-        }
-    }
-    .user-info-board {
-        .id-finded {
-            font-weight: bold;
-            font-size: 24px;
-            margin: 24px auto;
-        }
-        .copy-clipboard {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-        }
-        .btns {
-            .btn {
-                width: calc(50% - 2px);
-                overflow: hidden;
-                &:first-child {
-                    float: let;
-                }
-                &:last-child {
-                    float: right;
-                }
-            }
+  }
+  .step {
+    margin: 24px 0;
+    overflow: hidden;
+    .step-join {
+      li {
+        float: left;
+        width: 50%;
+        .step-cell {
+          text-align: center;
+          height: 40px;
+          line-height: 40px;
         }
         &.active {
-            display: block;
+          color: $text-primary;
+          font-weight: bold;
         }
+      }
     }
+  }
+  .tab-content {
+    .tab-pane {
+      h5 {
+        margin: 36px 0 12px;
+        small {
+          display: block;
+          margin-top: 6px;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+  .user-info-board {
+    .id-finded {
+      font-weight: bold;
+      font-size: 24px;
+      margin: 24px auto;
+    }
+    .copy-clipboard {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+    .btns {
+      .btn {
+        width: calc(50% - 2px);
+        overflow: hidden;
+        &:first-child {
+          float: let;
+        }
+        &:last-child {
+          float: right;
+        }
+      }
+    }
+    &.active {
+      display: block;
+    }
+  }
 }
 
 // 회원가입 완료 모달
 .modal-welcome {
-    .user-info {
-        text-align: center;
-        img {
-            width: 60px;
-            height: 60px;
-            margin: 12px auto;
-            border-radius: 100%;
-        }
-        .msg-welcome {
-            font-weight: 700;
-            font-size: 16px;
-        }
-        p:last-child {
-            color: $text-basic;
-        }
+  .user-info {
+    text-align: center;
+    img {
+      width: 60px;
+      height: 60px;
+      margin: 12px auto;
+      border-radius: 100%;
     }
+    .msg-welcome {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    p:last-child {
+      color: $text-basic;
+    }
+  }
 }
 
 // 가이드 모달 (대표이미지)
 .modal-guide {
-    .ol-guide {
-        padding-left: 20px;
+  .ol-guide {
+    padding-left: 20px;
+    > li {
+      list-style: decimal;
+      > ul {
         > li {
-            list-style: decimal;
-            > ul {
-                > li {
-                    list-style: '-';
-                    padding-left: 6px;
-                }
-            }
+          list-style: "-";
+          padding-left: 6px;
         }
-        .ex-img {
-            background-color: $bg-color;
-            margin: 24px 0;
-            text-align: center;
-            position: relative;
-            p {
-                position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                transform: translate(0, 48%);
-                color: $text-white;
-            }
-            img {
-                width: 500px;
-                height: 300px;
-            }
-        }
+      }
     }
+    .ex-img {
+      background-color: $bg-color;
+      margin: 24px 0;
+      text-align: center;
+      position: relative;
+      p {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 48%);
+        color: $text-white;
+      }
+      img {
+        width: 500px;
+        height: 300px;
+      }
+    }
+  }
 }
 
 // 채팅 목록 및 채팅 카드
 .chat-contents {
-    overflow: hidden;
-    height: 100%;
-    > div {
-        &:nth-of-type(1) {
-            margin: 24px auto;
-            padding: 0;
-        }
-        &:nth-of-type(2) {
-            padding-left: 0;
-        }
-        &:nth-of-type(3) {
-            padding-right: 0;
-        }
+  overflow: hidden;
+  height: 100%;
+  > div {
+    &:nth-of-type(1) {
+      margin: 24px auto;
+      padding: 0;
     }
-    .tab-content {
-        overflow-y: auto;
+    &:nth-of-type(2) {
+      padding-left: 0;
     }
+    &:nth-of-type(3) {
+      padding-right: 0;
+    }
+  }
+  .tab-content {
+    overflow-y: auto;
+  }
 }
 .chat-list {
-    padding: 0 12px;
-    .no-result {
-        margin-top: 48px;
-    }
+  padding: 0 12px;
+  .no-result {
+    margin-top: 48px;
+  }
 }
 
 .chat-card {
-    cursor: pointer;
-    position: relative;
-    z-index: 3;
-    margin-bottom: 12px;
-    &:hover {
-        background-color: $card-hover;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 12px;
+  &:hover {
+    background-color: $card-hover;
+  }
+  &.active {
+    background-color: $card-active;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .chat-info {
+    padding-bottom: 6px;
+    margin: 0;
+    overflow: hidden;
+    > div {
+      float: left;
     }
-    &.active {
-        background-color: $card-active;
+    .img-thumb {
+      width: 24%;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
-    * {
-        box-sizing: border-box;
+    .infos {
+      width: 76%;
+      padding-left: 12px;
+      overflow: hidden;
+      > div {
+        float: left;
+      }
+      .title {
+        width: 76%;
+        .tt {
+          font-weight: bold;
+        }
+        .desc {
+          color: $text-basic;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin-top: 6px;
+        }
+      }
+      .count {
+        width: 24%;
+        text-align: right;
+      }
     }
-    .chat-info {
-        padding-bottom: 6px;
-        margin: 0;
+  }
+  .chat-thumb {
+    border-top: 1px solid $border-light-color;
+    padding-top: 6px;
+    clear: both;
+    overflow: hidden;
+    span {
+      float: left;
+      &:first-child {
+        width: 80%;
+        white-space: nowrap;
         overflow: hidden;
-        > div {
-            float: left;
-        }
-        .img-thumb {
-            width: 24%;
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-        .infos {
-            width: 76%;
-            padding-left: 12px;
-            overflow: hidden;
-            > div {
-                float: left;
-            }
-            .title {
-                width: 76%;
-                .tt {
-                    font-weight: bold;
-                }
-                .desc {
-                    color: $text-basic;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    margin-top: 6px;
-                }
-            }
-            .count {
-                width: 24%;
-                text-align: right;
-            }
-        }
-
+        text-overflow: ellipsis;
+      }
+      &:last-child {
+        width: 20%;
+        text-align: right;
+      }
     }
-    .chat-thumb {
-        border-top: 1px solid $border-light-color;
-        padding-top: 6px;
-        clear: both;
-        overflow: hidden;
-        span {
-            float: left;
-            &:first-child {
-                width: 80%;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            &:last-child {
-                width: 20%;
-                text-align: right;
-            }
-        }
-    }
+  }
 }
 
 // 채팅하기
 .chat {
-    border: 1px solid $border-color;
-    .chat-header {
-        min-height: 36px;
-        background-color: $bg-color;
-        border-bottom: 1px solid $border-color;
-        padding: 4px 12px;
-        position: relative;
-        .title {
-            display: inline-block;
-            line-height: 36px;
-            font-weight: 700;
-        }
-        .dropdown-menu>li>a {
-            padding: 8px 20px;
-            span {
-                margin-right: 4px;
-            }
-        }
-        .chat-notice {
-            position: absolute;
-            top: 45px;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            z-index: 5;
-            padding: 12px;
-            border-bottom: 1px solid $border-color;
-        }
+  border: 1px solid $border-color;
+  .chat-header {
+    min-height: 36px;
+    background-color: $bg-color;
+    border-bottom: 1px solid $border-color;
+    padding: 4px 12px;
+    position: relative;
+    .title {
+      display: inline-block;
+      line-height: 36px;
+      font-weight: 700;
     }
-    .chat-body {
-        .scroll {
-            background-color: $bg-light-color;
-            min-height: 400px;
-            overflow-y: auto;
-            position: relative;
-            &.freezing {
-                background-color: $bg-freezing;
-                & + .chat-input {
-                    background-color: $bg-freezing;
-                }
+    .dropdown-menu > li > a {
+      padding: 8px 20px;
+      span {
+        margin-right: 4px;
+      }
+    }
+    .chat-notice {
+      position: absolute;
+      top: 45px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      z-index: 5;
+      padding: 12px;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+  .chat-body {
+    .scroll {
+      background-color: $bg-light-color;
+      min-height: 400px;
+      overflow-y: auto;
+      position: relative;
+      &.freezing {
+        background-color: $bg-freezing;
+        & + .chat-input {
+          background-color: $bg-freezing;
+        }
+      }
+      .inner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 45px 12px;
+      }
+      .date {
+        font-size: 12px;
+        text-align: center;
+        margin: 24px auto;
+      }
+      .msg {
+        margin-bottom: 15px;
+        display: flex;
+        .info {
+          .name {
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+          }
+          .time {
+            color: $text-basic;
+            font-size: 12px;
+          }
+          .popover {
+            .popover-content {
+              .btn {
+                display: block;
+              }
             }
+          }
+          .balloon {
+            position: relative;
+            max-width: 480px;
             .inner {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                padding: 45px 12px;
+              border: 1px solid $border-color;
+              border-radius: 9px;
+              padding: 8px 15px;
+              position: relative;
+              z-index: 2;
             }
-            .date {
-                font-size: 12px;
-                text-align: center;
-                margin: 24px auto;
+            &:before {
+              content: "";
+              display: block;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-bottom: 0px solid transparent;
+              position: absolute;
+              z-index: 3;
             }
-            .msg {
-                margin-bottom: 15px;
-                display: flex;
-                .info {
-                    .name {
-                        font-weight: bold;
-                        font-size: 12px;
-                        cursor: pointer;
-                    }
-                    .time {
-                        color: $text-basic;
-                        font-size: 12px;
-                    }
-                    .popover {
-                        .popover-content {
-                            .btn {
-                                display: block;
-                            }
-                        }
-                    }
-                    .balloon {
-                        position: relative;
-                        max-width: 480px;
-                        .inner {
-                            border: 1px solid $border-color;
-                            border-radius: 9px;
-                            padding: 8px 15px;
-                            position: relative;
-                            z-index: 2;
-                        }
-                        &:before {
-                            content: '';
-                            display: block;
-                            border-left: 10px solid transparent; 
-                            border-right: 10px solid transparent; 
-                            border-bottom: 0px solid transparent; 
-                            position: absolute;
-                            z-index: 3;
-                        }
-                        &:after {
-                            content: '';
-                            display: block;
-                            border-top: 12px solid $border-color; 
-                            border-left: 12px solid transparent; 
-                            border-right: 12px solid transparent; 
-                            border-bottom: 0px solid transparent; 
-                            position: absolute;
-                            z-index: 1;
-                        }
-                    }
-                }
-                &.general {
-                    position: relative;
-                    .img {
-                        width: 48px;
-                        height: 48px;
-                        border-radius: 100%;
-                        overflow: hidden;
-                        cursor: pointer;
-                        img {
-                            width: 100%;
-                            height: auto;
-                        }
-                    }
-                    .info {
-                        margin-left: 20px;
-                        .balloon {
-                            cursor: pointer;
-                            position: relative;
-                            .inner {
-                                background-color: $balloon-default;
-                            }
-                            &:before {
-                                border-top: 10px solid $balloon-default; 
-                                left: -9px;
-                                top: 8px;
-                            }
-                            &:after {
-                                left: -11px;
-                                top: 7px;
-                            }
-                            button {
-                                display: none;
-                            }
-                            // 메세지 삭제
-                            &.del {
-                                &:before {
-                                    border-top: 10px solid $bg-color;
-                                }
-                                .inner {
-                                    background-color: $bg-color;
-                                    color: $text-basic;
-                                }
-                            }
-                            // 말풍선 클릭
-                            &.selected {
-                                .inner {
-                                    color: #000;
-                                }
-                                button {
-                                    position: absolute;
-                                    padding: 0;
-                                    width: 24px;
-                                    height: 24px;
-                                    border-radius: 100%;
-                                    border: none;
-                                    background-color: rgba(0,0,0,.5);
-                                    color: #fff;
-                                    top: 50%;
-                                    margin-top: -12px;
-                                    &.btn-delete {
-                                        right: -30px;
-                                        display: block;
-                                    }
-                                    &.btn-reply {
-                                        right: -60px;
-                                    }
-                                    &:hover {
-                                        background-color: rgba(0,0,0,1);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                &.blocked {
-                    .img {
-                        border: 1px solid rgba(0,0,0,.8);
-                    }
-                    .info {
-                        .balloon {
-                            &.selected {
-                                button {
-                                    &.btn-reply {
-                                        right: -30px;
-                                        display: block !important;
-                                    }
-                                    &.btn-delete {
-                                        right: -60px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                &.my {
-                    flex-direction: row-reverse;
-                    .info {
-                        padding-right: 20px;
-                        .time {
-                            text-align: right;
-                            padding-right: 6px;
-                            float: right;
-                        }
-                        .balloon {
-                            clear: both;
-                            .inner {
-                                background-color: $balloon-admin;
-                            }
-                            &:before {
-                                border-top: 10px solid $balloon-admin; 
-                                right: -10px;
-                                top: 8px;
-                            }
-                            &:after {
-                                right: -12px;
-                                top: 7px;
-                            }
-                        }
-                    }
-                    &.signal {
-                        .balloon {
-                            .inner {
-                                background-color: $balloon-signal;
-                            }
-                            &:before {
-                                content: none;
-                            }
-                            &:after {
-                                content: none;
-                            }
-                        }
-                    }
-                }
+            &:after {
+              content: "";
+              display: block;
+              border-top: 12px solid $border-color;
+              border-left: 12px solid transparent;
+              border-right: 12px solid transparent;
+              border-bottom: 0px solid transparent;
+              position: absolute;
+              z-index: 1;
             }
+          }
         }
-        .chat-input {
-            position: relative;
-            background-color: $bg-light-color;
-            padding: 12px;
-            textarea.form-control {
-                resize: none;
+        &.general {
+          position: relative;
+          .img {
+            width: 48px;
+            height: 48px;
+            border-radius: 100%;
+            overflow: hidden;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: auto;
             }
-            .pod-options {
-                position: absolute;
-                right: 24px;
-                bottom: 22px;
-                display: flex;
-                align-items: center;
-                > ul {
-                    display: flex;
-                    margin-right: 12px;
-                    > li {
-                        margin: 0 4px;
-                        text-align: center;
-                    }
-                }
-                .btn {
-                    border-radius: 4px !important;
-                }
-                .btn-file {
-                    label {
-                        margin: 0;
-                    }
-                    input[type=file] {
-                        position: absolute;
-                        opacity: 0;
-                        width: 1px;
-                        height: 1px;
-                    }
-                }
-            }
-            .block-msg-reply {
+          }
+          .info {
+            margin-left: 20px;
+            .balloon {
+              cursor: pointer;
+              position: relative;
+              .inner {
+                background-color: $balloon-default;
+              }
+              &:before {
+                border-top: 10px solid $balloon-default;
+                left: -9px;
+                top: 8px;
+              }
+              &:after {
+                left: -11px;
+                top: 7px;
+              }
+              button {
                 display: none;
-                background-color: rgba(0,0,0,.7);
-                color: $text-white;
-                font-size: 13px;
-                border-radius: 4px;
-                padding: 4px 12px;
-                width: calc(100% - 24px);
-                position: absolute;
-                top: -18px;
-                z-index: 100;
-                .tg-msg {
-                    color: rgba(255,255,255,.6);
+              }
+              // 메세지 삭제
+              &.del {
+                &:before {
+                  border-top: 10px solid $bg-color;
                 }
-                .btn-reply-cancel {
-                    position: absolute;
-                    right: 12px;
-                    top: 50%;
-                    margin-top: -7px;
-
+                .inner {
+                  background-color: $bg-color;
+                  color: $text-basic;
                 }
-
+              }
+              // 말풍선 클릭
+              &.selected {
+                .inner {
+                  color: #000;
+                }
+                button {
+                  position: absolute;
+                  padding: 0;
+                  width: 24px;
+                  height: 24px;
+                  border-radius: 100%;
+                  border: none;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  color: #fff;
+                  top: 50%;
+                  margin-top: -12px;
+                  &.btn-delete {
+                    right: -30px;
+                    display: block;
+                  }
+                  &.btn-reply {
+                    right: -60px;
+                  }
+                  &:hover {
+                    background-color: rgba(0, 0, 0, 1);
+                  }
+                }
+              }
             }
+          }
         }
+        &.blocked {
+          .img {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+          }
+          .info {
+            .balloon {
+              &.selected {
+                button {
+                  &.btn-reply {
+                    right: -30px;
+                    display: block !important;
+                  }
+                  &.btn-delete {
+                    right: -60px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.my {
+          flex-direction: row-reverse;
+          .info {
+            padding-right: 20px;
+            .time {
+              text-align: right;
+              padding-right: 6px;
+              float: right;
+            }
+            .balloon {
+              clear: both;
+              .inner {
+                background-color: $balloon-admin;
+              }
+              &:before {
+                border-top: 10px solid $balloon-admin;
+                right: -10px;
+                top: 8px;
+              }
+              &:after {
+                right: -12px;
+                top: 7px;
+              }
+            }
+          }
+          &.signal {
+            .balloon {
+              .inner {
+                background-color: $balloon-signal;
+              }
+              &:before {
+                content: none;
+              }
+              &:after {
+                content: none;
+              }
+            }
+          }
+        }
+      }
     }
+    .chat-input {
+      position: relative;
+      background-color: $bg-light-color;
+      padding: 12px;
+      textarea.form-control {
+        resize: none;
+      }
+      .pod-options {
+        position: absolute;
+        right: 24px;
+        bottom: 22px;
+        display: flex;
+        align-items: center;
+        > ul {
+          display: flex;
+          margin-right: 12px;
+          > li {
+            margin: 0 4px;
+            text-align: center;
+          }
+        }
+        .btn {
+          border-radius: 4px !important;
+        }
+        .btn-file {
+          label {
+            margin: 0;
+          }
+          input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+          }
+        }
+      }
+      .block-msg-reply {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: $text-white;
+        font-size: 13px;
+        border-radius: 4px;
+        padding: 4px 12px;
+        width: calc(100% - 24px);
+        position: absolute;
+        top: -18px;
+        z-index: 100;
+        .tg-msg {
+          color: rgba(255, 255, 255, 0.6);
+        }
+        .btn-reply-cancel {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          margin-top: -7px;
+        }
+      }
+    }
+  }
 }
 
 // 이모지 목록
 .emoji-list {
-    padding: 12px;
-    overflow: hidden;
-    min-width: 240px;
-    li {
-        float: left;
-        width: 25%;
-        padding: 6px;
-        text-align: center;
-        span {
-            cursor: pointer;
-        }
+  padding: 12px;
+  overflow: hidden;
+  min-width: 240px;
+  li {
+    float: left;
+    width: 25%;
+    padding: 6px;
+    text-align: center;
+    span {
+      cursor: pointer;
     }
+  }
 }
 
 // 모달 - 회원 목록
 .user-list {
-    border-top: 1px solid $border-color;
-    li {
-        border-bottom: 1px solid $border-light-color;
-        .user {
-            display: flex;
-            align-items: center;
-            padding: 6px 0;
-            .img {
-                width: 40px;
-                img {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 100%;
-                }
-                &.block {
-                    img {
-                        border: 1px solid #000;
-                    }
-                }
-            }
-            .info {
-                flex: 1;
-                padding-left: 12px;
-                .name {
-                    font-weight: bold;
-                    display: block;
-                }
-                .valid-term {
-                    color: $text-basic;
-                }
-            }
-            .ex-func {
-                display: flex;
-                align-items: center;
-                .checkbox {
-                    text-align: center;
-                    min-width: 36px;
-                    margin-left: 12px;
-                }
-            }
+  border-top: 1px solid $border-color;
+  li {
+    border-bottom: 1px solid $border-light-color;
+    .user {
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+      .img {
+        width: 40px;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 100%;
         }
+        &.block {
+          img {
+            border: 1px solid #000;
+          }
+        }
+      }
+      .info {
+        flex: 1;
+        padding-left: 12px;
+        .name {
+          font-weight: bold;
+          display: block;
+        }
+        .valid-term {
+          color: $text-basic;
+        }
+      }
+      .ex-func {
+        display: flex;
+        align-items: center;
+        .checkbox {
+          text-align: center;
+          min-width: 36px;
+          margin-left: 12px;
+        }
+      }
     }
+  }
 }
 
 // 모달 - 공지목록
 .notice-list {
-    li { 
-        border-bottom: 1px solid $border-light-color;
-        padding: 12px;
-        &:last-child {
-            border-bottom: none;
-        }
-        &:hover {
-            background-color: $card-hover;
-        }
-        .notice {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            .title {
-                flex: 1;
-                width: calc(100% - 120px);
-                padding-right: 24px;
-                span {
-                    display: block;
-                    width: 100%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    &:first-child {
-                        font-weight: bold;
-                    }
-                    &:last-child {
-                        color: $text-basic;
-                    }
-                }
-            }
-            .reg-info {
-                display: flex;
-                flex-direction: column;
-                width: 80px;
-                span {
-                    &:first-child {
-                        font-size: 12px;
-                        text-align: center;
-                    }
-                    &:last-child {
-                        margin: 4px auto;
-                    }
-                }
-            }
-        }
+  li {
+    border-bottom: 1px solid $border-light-color;
+    padding: 12px;
+    &:last-child {
+      border-bottom: none;
     }
+    &:hover {
+      background-color: $card-hover;
+    }
+    .notice {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      .title {
+        flex: 1;
+        width: calc(100% - 120px);
+        padding-right: 24px;
+        span {
+          display: block;
+          width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          &:first-child {
+            font-weight: bold;
+          }
+          &:last-child {
+            color: $text-basic;
+          }
+        }
+      }
+      .reg-info {
+        display: flex;
+        flex-direction: column;
+        width: 80px;
+        span {
+          &:first-child {
+            font-size: 12px;
+            text-align: center;
+          }
+          &:last-child {
+            margin: 4px auto;
+          }
+        }
+      }
+    }
+  }
 }
 
 .modal-notice {
-    .notice-title {
-        margin-bottom: 12px;
-        .hd {
-            strong {
-                float: left;
-                max-width: 80%;
-            }
-            .label {
-                float: right;
-                font-size: 12px;
-            }
-            &:after {
-                content: '';
-                display: block;
-                clear: both;
-            }
-        }
-        .date {
-            color: $text-basic;
-        }
+  .notice-title {
+    margin-bottom: 12px;
+    .hd {
+      strong {
+        float: left;
+        max-width: 80%;
+      }
+      .label {
+        float: right;
+        font-size: 12px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
     }
+    .date {
+      color: $text-basic;
+    }
+  }
 }
 
 // textarea length 사용
 .form-content {
-    position: relative;
-    textarea {
-        resize: none;
-        min-height: 240px;
-    }
-    .count {
-        position: absolute;
-        right: 12px;
-        bottom: 6px;
-        span {
-            color: $text-basic;
-            &:last-child {
-                &:before {
-                    content: ' / ';
-                }
-            }
+  position: relative;
+  textarea {
+    resize: none;
+    min-height: 240px;
+  }
+  .count {
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    span {
+      color: $text-basic;
+      &:last-child {
+        &:before {
+          content: " / ";
         }
+      }
     }
+  }
 }
 
 // 매출액 panel
 .panel.total-revenue {
-    padding: 12px 0;
-    text-align: center;
-    > * {
-        display: inline-block;
+  padding: 12px 0;
+  text-align: center;
+  > * {
+    display: inline-block;
+  }
+  strong {
+    margin-left: 6px;
+    .total {
+      font-size: 18px;
+      color: $text-primary;
     }
-    strong {
-        margin-left: 6px;
-        .total {
-            font-size: 18px;
-            color: $text-primary;
-        }
-    }
+  }
 }
 
 // 관리자
 .mg-groups {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  .mg-pouch {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    .mg-pouch {
-        display: flex;
-        align-items: center;
-        background-color: $text-primary;
-        color: $text-white;
-        padding: 6px 12px 8px;
-        border-radius: 36px;
-        margin: 0 4px 4px 0;
-        min-width: 120px;
-        .icon-del {
-            cursor: pointer;
-            border-radius: 100%;
-            padding: 2px;
-            margin-left: 6px;
-            &:hover {
-                background-color: rgba(0,0,0,.2);
-            }
-        }
+    background-color: $text-primary;
+    color: $text-white;
+    padding: 6px 12px 8px;
+    border-radius: 36px;
+    margin: 0 4px 4px 0;
+    min-width: 120px;
+    .icon-del {
+      cursor: pointer;
+      border-radius: 100%;
+      padding: 2px;
+      margin-left: 6px;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
     }
-    .ph {
-        color: $text-basic;
-    }
+  }
+  .ph {
+    color: $text-basic;
+  }
 }
 
 // 등록, 수정 등 table 구조
 .table-no-hd {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .table-form {
-    margin-bottom: 36px;
-    .fx.fx-mg {
-        button {
-            margin-left: auto;
-            max-height: 34px;
-        }
+  margin-bottom: 36px;
+  .fx.fx-mg {
+    button {
+      margin-left: auto;
+      max-height: 34px;
     }
-    .profile-img {
-        width: 88px;
-        height: 88px;
-        border-radius: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-        img {
-            width: 100%;
-        }
+  }
+  .profile-img {
+    width: 88px;
+    height: 88px;
+    border-radius: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    img {
+      width: 100%;
     }
-    .form-in-multi {
-        select {
-            max-width: 120px;
-            margin-bottom: 4px;
-        }
-        .form-in-btn {
-            margin-bottom: 0;
-            & > * {
-                display: inline-block;
-            }
-            input.form-control {
-                max-width: 50%;
-            }
-        }
+  }
+  .form-in-multi {
+    select {
+      max-width: 120px;
+      margin-bottom: 4px;
     }
-    .pre-detail {
-        white-space: pre-wrap;
-        max-height: 520px;
-        overflow-y: auto;
-        &::-webkit-scrollbar {
-            width: 5px;
-            height: 5px !important;
-        }
-        &::-webkit-scrollbar-track {
-            background-color: #ffffff !important;
-        }
-        &::-webkit-scrollbar-thumb {
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-            background-color: #d8d8d8 !important;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #c5c5c5 !important;
-        }
+    .form-in-btn {
+      margin-bottom: 0;
+      & > * {
+        display: inline-block;
+      }
+      input.form-control {
+        max-width: 50%;
+      }
     }
-    .required {
-        &:after {
-            content: '*';
-        }
+  }
+  .pre-detail {
+    white-space: pre-wrap;
+    max-height: 520px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px !important;
     }
-    & + .guild {
-        padding-left: 20px;
-        margin-top: -20px;
-        margin-bottom: 24px;
-        li {
-            list-style: disc;
-        }
+    &::-webkit-scrollbar-track {
+      background-color: #ffffff !important;
     }
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #d8d8d8 !important;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #c5c5c5 !important;
+    }
+  }
+  .required {
+    &:after {
+      content: "*";
+    }
+  }
+  & + .guild {
+    padding-left: 20px;
+    margin-top: -20px;
+    margin-bottom: 24px;
+    li {
+      list-style: disc;
+    }
+  }
 }
 
 // dl 구조 form (채팅방 설정)
 .detail-form {
-    .fx.fx-mg {
-        button {
-            margin-left: auto;
-            max-height: 34px;
-        }
+  .fx.fx-mg {
+    button {
+      margin-left: auto;
+      max-height: 34px;
     }
-    .title {
-        font-weight: normal;
-        color: $text-basic;
+  }
+  .title {
+    font-weight: normal;
+    color: $text-basic;
+  }
+  .cont {
+    padding: 6px 0 24px;
+    .img-thumb {
+      position: relative;
+      .btn {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        input[type="file"] {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+        }
+      }
+      img {
+        width: 100%;
+      }
     }
-    .cont {
-        padding: 6px 0 24px;
-        .img-thumb {
-            position: relative;
-            .btn {
-                position: absolute;
-                right: 6px;
-                top: 6px;
-                input[type=file] {
-                    position: absolute;
-                    width: 1px;
-                    height: 1px;
-                }
-            }
-            img {
-                width: 100%;
-            }
-        }
-        .form-pack {
-            input.form-control {
-                margin-bottom: 6px;
-            }
-            textarea.form-control {
-                min-height: 120px;
-            }
-        }
-        .radio {
-            label {
-                margin-right: 8px;
-            }
-        }
+    .form-pack {
+      input.form-control {
+        margin-bottom: 6px;
+      }
+      textarea.form-control {
+        min-height: 120px;
+      }
     }
-    .form-inline-set {
-        display: flex;
-        .time-inline {
-            .form-control {
-                max-width: 120px;
-            }
-        }
+    .radio {
+      label {
+        margin-right: 8px;
+      }
     }
+  }
+  .form-inline-set {
+    display: flex;
+    .time-inline {
+      .form-control {
+        max-width: 120px;
+      }
+    }
+  }
 }
 
 // timepicker
 .ui-timepicker-standard {
-    z-index: 10000 !important;
+  z-index: 10000 !important;
 }
-
 
 // 게시판
 .drag-board {
-    tbody {
-        tr {
-            cursor: grab;
-            td {
-                .glyphicon {
-                    cursor: pointer;
-                }
-            }
+  tbody {
+    tr {
+      cursor: grab;
+      td {
+        .glyphicon {
+          cursor: pointer;
         }
-        &.scrolling {
-            border: 1px solid red;
-            height: 400px;
-            overflow-y: auto;
-        }
+      }
     }
+    &.scrolling {
+      border: 1px solid red;
+      height: 400px;
+      overflow-y: auto;
+    }
+  }
 }
 
 // ul like table
 .tb-list {
-    max-height: 500px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: relative;
-    margin-bottom: 24px;
-    border: 1px solid $border-color;
-    &::-webkit-scrollbar {
-        width: 5px;
-        height: 5px !important;
-    }
-    &::-webkit-scrollbar-track {
-        background-color: #ffffff !important;
-    }
-    &::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background-color: #d8d8d8 !important;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: #c5c5c5 !important;
-    }
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  margin-bottom: 24px;
+  border: 1px solid $border-color;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px !important;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #d8d8d8 !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #c5c5c5 !important;
+  }
 
-    .tb-list-hd {
-        position: sticky;
-        top: 0;
-        background-color: $bg-white;
-        z-index: 5;
-        li {
-            float: left;
-            display: block;
-            border-color: $border-color;
-            border-style: solid;
-            border-width: 0px 1px 2px 0px;
-            padding: 8px;
-            line-height: 1.42857143;
-            font-weight: bold;
-        }
-        &:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
+  .tb-list-hd {
+    position: sticky;
+    top: 0;
+    background-color: $bg-white;
+    z-index: 5;
+    li {
+      float: left;
+      display: block;
+      border-color: $border-color;
+      border-style: solid;
+      border-width: 0px 1px 2px 0px;
+      padding: 8px;
+      line-height: 1.42857143;
+      font-weight: bold;
     }
-    .tb-list-bd {
-        min-height: 110px;
-        li {
-            background-color: $bg-white;
-            cursor: grab;
-            .cell {
-                float: left;
-                border-color: $border-color;
-                border-style: solid;
-                border-width: 0px 1px 1px 0px;
-                padding: 8px;
-                line-height: 1.42857143;
-                &:last-child {
-                    border-right: 1px solid $border-color;
-                }
-                .btn-xs {
-                    padding: 0;
-                    border: none;
-                    line-height: 1;
-                    background-color: transparent;
-                }
-            }
-            &:after {
-                content: '';
-                display: block;
-                clear: both;
-            }
-            &:last-child {
-                .cell {
-                    border-width: 0px 1px 0px 0px;
-                }
-            }
-        }
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
     }
-    .tb-list-chat {
+  }
+  .tb-list-bd {
+    min-height: 110px;
+    li {
+      background-color: $bg-white;
+      cursor: grab;
+      .cell {
+        float: left;
+        border-color: $border-color;
+        border-style: solid;
+        border-width: 0px 1px 1px 0px;
+        padding: 8px;
+        line-height: 1.42857143;
+        &:last-child {
+          border-right: 1px solid $border-color;
+        }
+        .btn-xs {
+          padding: 0;
+          border: none;
+          line-height: 1;
+          background-color: transparent;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      &:last-child {
         .cell {
-            &:nth-of-type(1) {
-                width: 10%;
-            }
-            &:nth-of-type(2) {
-                width: 45%;
-            }
-            &:nth-of-type(3) {
-                width: 15%;
-            }
-            &:nth-of-type(4) {
-                width: 15%;
-            }
-            &:nth-of-type(5) {
-                width: 15%;
-            }
+          border-width: 0px 1px 0px 0px;
         }
+      }
     }
-    .tb-list-board {
-        .cell {
-            &:nth-of-type(1) {
-                width: 50%;
-            }
-            &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6) {
-                width: 10%;
-            }
-        }
+  }
+  .tb-list-chat {
+    .cell {
+      &:nth-of-type(1) {
+        width: 10%;
+      }
+      &:nth-of-type(2) {
+        width: 45%;
+      }
+      &:nth-of-type(3) {
+        width: 15%;
+      }
+      &:nth-of-type(4) {
+        width: 15%;
+      }
+      &:nth-of-type(5) {
+        width: 15%;
+      }
     }
-    
+  }
+  .tb-list-board {
+    .cell {
+      &:nth-of-type(1) {
+        width: 50%;
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(4),
+      &:nth-of-type(5),
+      &:nth-of-type(6) {
+        width: 10%;
+      }
+    }
+  }
 }
-
-
 
 // table 내 작은 내용
 .post-detail {
-    min-height: 400px;
+  min-height: 400px;
 }
 
 // 게시물 상세
 .detail-post {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    .detail-post-hd {
-        padding: 12px;
-        border-bottom: 1px solid $border-color;
-        .post-title {
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-        .post-info {
-            color: $text-basic;
-            font-size: 13px;
-            .writter {
-                color: $text-link-hover;
-            }
-            .vertical {
-                &:before {
-                    content: '';
-                    display: inline-block;
-                    width: 1px;
-                    height: 12px;
-                    background-color: $border-color;
-                    vertical-align: middle;
-                    margin: -2px 6px 0 4px;
-                }
-            }
-            &:after {
-                content: '';
-                display: block;
-                clear: both;
-            }
-        }
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  .detail-post-hd {
+    padding: 12px;
+    border-bottom: 1px solid $border-color;
+    .post-title {
+      font-size: 18px;
+      margin-bottom: 4px;
     }
-    .detail-post-bd {
-        .attachment {
-            padding: 12px;
-            background-color: $bg-color;
-            label {
-                color: $text-basic;
-                font-weight: normal;
-                margin-right: 12px;
-            }
-            .file {
-                display: inline-block;
-                font-size: 12px;
-                background-color: $bg-white;
-                padding: 6px 12px;
-                border-radius: 24px;
-            }
+    .post-info {
+      color: $text-basic;
+      font-size: 13px;
+      .writter {
+        color: $text-link-hover;
+      }
+      .vertical {
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          background-color: $border-color;
+          vertical-align: middle;
+          margin: -2px 6px 0 4px;
         }
-        .contents {
-            padding: 12px;
-            img {
-                margin: 12px 0;
-                display: block;
-            }
-        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
     }
+  }
+  .detail-post-bd {
+    .attachment {
+      padding: 12px;
+      background-color: $bg-color;
+      label {
+        color: $text-basic;
+        font-weight: normal;
+        margin-right: 12px;
+      }
+      .file {
+        display: inline-block;
+        font-size: 12px;
+        background-color: $bg-white;
+        padding: 6px 12px;
+        border-radius: 24px;
+      }
+    }
+    .contents {
+      padding: 12px;
+      img {
+        margin: 12px 0;
+        display: block;
+      }
+    }
+  }
 }
 
 // 게시판 설정
 .modal-form {
-    .input-count {
-        position: relative;
-        input {
-            padding: 6px 44px 6px 12px;
-        }
-        .count {
-            position: absolute;
-            right: 6px;
-            top: 50%;
-            margin-top: -10px;
-            color: $text-basic;
-            span {
-                &:last-child {
-                    &:before {
-                        content: '/';
-                    }
-                }
-            }
-        }
+  .input-count {
+    position: relative;
+    input {
+      padding: 6px 44px 6px 12px;
     }
+    .count {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      margin-top: -10px;
+      color: $text-basic;
+      span {
+        &:last-child {
+          &:before {
+            content: "/";
+          }
+        }
+      }
+    }
+  }
 }
-
 
 // 댓글
 .comment-area {
-    .title {
+  .title {
+    padding: 12px;
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+  .comment-body {
+    border: 1px solid $border-color;
+    .comment-form {
+      background-color: $bg-color;
+      border-bottom: 1px solid $border-color;
+      padding: 12px;
+      .writter {
+          text-indent: 6px;
+          margin-bottom: 4px;
+      }
+      .left {
+        float: left;
+        width: calc(100% - 120px);
+        position: relative;
+        textarea {
+            min-height: 88px;
+            border-radius: 4px 0 0 4px;
+        }
+        .count {
+          position: absolute;
+          right: 8px;
+          bottom: 6px;
+        }
+      }
+      .right {
+        float: right;
+        width: 120px;
+        .btn {
+            width:100%;
+            min-height: 88px;
+            border-radius: 0 4px 4px 0;
+            border-left:none;
+        }
+      }
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    }
+    .comment-list {
+      li {
+        border-bottom: 1px solid $border-light-color;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      .comment {
         padding: 12px;
-        h4 {
-            margin-bottom: 0;
+        position: relative;
+        .vertical {
+          &:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            margin: 0 4px -2px;
+            background-color: $border-color;
+          }
         }
+        .writter {
+          font-size: 13px;
+        }
+        .date {
+          color: $text-basic;
+          font-size: 13px;
+        }
+        p {
+          margin-top: 8px;
+        }
+        .btn {
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          margin-top: -8px;
+        }
+      }
     }
-    .comment-body {
-        border: 1px solid $border-color;
-        .comment-form {
-            background-color: $bg-color;
-            border-bottom: 1px solid $border-color;
-            padding: 12px;
-        }
-        .comment-list {
-            li {
-                border-bottom: 1px solid $border-light-color;
-                &:last-child {
-                    border-bottom: none;
-                }
-            }
-            .comment {
-                padding: 12px;
-                position: relative;
-                .vertical {
-                    &:before {
-                        content: '';
-                        display: inline-block;
-                        width: 1px;
-                        height: 12px;
-                        margin: 0 4px -2px;
-                        background-color: $border-color;
-                    }
-                }
-                .writter {
-                    font-size: 13px;
-                }
-                .date {
-                    color: $text-basic;
-                    font-size: 13px;
-                }
-                p {
-                    margin-top: 8px;
-                }
-                .btn {
-                    position: absolute;
-                    right: 12px;
-                    top: 50%;
-                    margin-top: -8px;
-                }
-            }
-        }
-    }
+  }
 }
-
 
 #settingInPopover {
-    .btn {
-        display: block;
-        margin: 0 auto;
-    }
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
 }
-
-
