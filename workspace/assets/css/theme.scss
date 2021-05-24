@@ -746,7 +746,7 @@
   position: relative;
   textarea {
     resize: none;
-    min-height: 240px;
+    min-height: 272px;
   }
   .count {
     position: absolute;
@@ -871,7 +871,7 @@
       content: "*";
     }
   }
-  & + .guild {
+  & + .guide {
     padding-left: 20px;
     margin-top: -20px;
     margin-bottom: 24px;
@@ -1138,6 +1138,48 @@
       }
     }
   }
+  &.detail-register {
+    .detail-post-hd {
+      .form-inline {
+        .form-group {
+          width: calc(100% - 170px);
+          .form-control {
+            width: 100%;
+          }
+        }
+        .checkbox {
+          width: 146px;
+          padding-left: 12px;
+          label {
+            &:first-child {
+              margin-right: 12px;
+            }
+          }
+        }
+      }
+    }
+    .attachment {
+      border-top: 1px solid $border-color;
+      label {
+        position: relative;
+        & + span {
+          color: $text-basic;
+          font-size: 13px;
+        }
+      }
+      input[type=file] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+      }
+      .files {
+        margin-top: 12px;
+      }
+    }
+  }
 }
 
 // 게시판 설정
@@ -1160,6 +1202,12 @@
           }
         }
       }
+    }
+  }
+  .img-file-box {
+    max-width: 410px;
+    img {
+      width: 100%;
     }
   }
 }
@@ -1258,4 +1306,49 @@
     display: block;
     margin: 0 auto;
   }
+}
+
+// 동영상 추가 팝업
+#modalAddVideo {
+  .form-in-btn {
+    margin-bottom: 0;
+    .input-count {
+      float: left;
+      width: calc(100% - 60px);
+    }
+    .btn {
+      float: right;
+      display: block;
+      margin-left: 4px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  .preview-video {
+    min-height: 240px;
+    background-color: $bg-light-color;
+    iframe {
+      width: 100%;
+      min-height: 240px;
+      border: none;
+    }
+  }
+}
+
+// 앱메인 타입 설정
+.app-main-set {
+   .radio-img {
+     margin-bottom: 24px;
+     label {
+       margin-right: 24px;
+       text-align: center;
+       img {
+         display: block;
+         margin: 6px;
+       }
+     }
+   }
 }

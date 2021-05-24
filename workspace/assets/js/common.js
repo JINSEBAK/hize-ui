@@ -59,8 +59,6 @@ function callAlert(msg, actions) {
 // confirm 호출
 function callConfirm(msg, actions, buttons) {
 
-    console.log( buttons);
-
     $('body').find('#alertModal').remove();
     $('body').find('#confirmModal').remove();
 

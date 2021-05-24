@@ -1,1 +1,248 @@
-video
+
+<!-- 검색 -->
+<div class="area-search">
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="">기간</label>
+            <div class="date-inline">
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="">구분</label>
+            <select class="form-control">
+                <option>동영상명</option>
+                <option>등록자명</option>
+            </select>
+        </div>
+        <div class="form-group form-in-btn">
+            <label for="" class="sr-only">검색어</label>
+            <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
+            <button type="button" class="btn btn-secondary">검색</button>
+        </div>
+    </div>
+</div>
+
+<!-- 목록 -->
+<div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            <p class="lead">동영상을 삽입해주세요.</p>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-default">삭제</button>
+            <button type="button" class="btn btn-primary" id="btnVide" data-toggle="modal" data-target="#modalAddVideo">동영상 추가</button>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list">
+            <colgroup>
+                <col style="width: 10%">
+                <col style="width: 10%">
+                <col style="width: 10%">
+                <col style="width: 15%">
+                <col style="width: auto">
+                <col style="width: 15%">
+                <col style="width: 15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox">
+                            <label for="allChk">
+                                <input type="checkbox" id="allVideoChk">
+                            </label>
+                        </div>
+                    </th>
+                    <th>No.</th>
+                    <th>상태 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>이미지</th>
+                    <th>동영상명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록자명</th>
+                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>50</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">Hize 동영상 - 1</span></td>
+                    <td>박민</td>
+                    <td>2021.04.05</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>49</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>48</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>47</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>46</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>45</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>44</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>43</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>42</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>41</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+            </tbody>
+        </table>
+
+        @@include('../../common/pagination.html')
+    </div>
+</div>

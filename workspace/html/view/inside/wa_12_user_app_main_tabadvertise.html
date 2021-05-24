@@ -37,33 +37,202 @@
             <p class="lead">광고를 삽입해주세요.</p>
         </div>
         <div class="pull-right">
-            <button type="button" class="btn btn-primary">광고 추가</button>
+            <button type="button" class="btn btn-default">삭제</button>
+            <button type="button" class="btn btn-primary" id="btnAddAdvertise" data-toggle="modal" data-target="#modalAddAdvertise">광고 추가</button>
         </div>
     </div>
     <div class="area-list-body">
         <table class="table table-bordered data-list">
+            <colgroup>
+                <col style="width: 10%">
+                <col style="width: 10%">
+                <col style="width: 15%">
+                <col style="width: auto">
+                <col style="width: 15%">
+                <col style="width: 15%">
+            </colgroup>
             <thead>
                 <tr>
+                    <th>
+                        <div class="checkbox">
+                            <label for="allChk">
+                                <input type="checkbox" id="allChk">
+                            </label>
+                        </div>
+                    </th>
                     <th>No.</th>
-                    <th>상태 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                     <th>이미지</th>
-                    <th>광고명</th>
+                    <th>광고명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                     <th>등록자명</th>
-                    <th>등록일</th>
-                    <th>종료</th>
+                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">Hize 오픈 광고 - 1</span></td>
+                    <td>박민</td>
+                    <td>2021.04.05</td>
                 </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>9</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>8</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>7</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>6</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>5</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>4</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>3</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>2</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>1</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr> -->
             </tbody>
         </table>
+        <ul class="guide mg24">
+            <li>광고는 앱 메인 상단에 노출됩니다.</li>
+            <li>광고 개수는 최대 10개 입니다.</li>
+        </ul>
     </div>
 </div>

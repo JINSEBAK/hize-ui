@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "수정", "sub" : "주식 서비스 플랫폼 게시물을 관리할 수 있습니다." })
+                
+                    <div class="contents">
+                  
+                        <!-- contents -->
+                        <div class="detail-content">
+                            <div class="detail-post detail-register">
+                                <div class="detail-post-hd">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label for="" class="sr-only">게시물 제목</label>
+                                            <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="postTitle" value="흔들리는 시장…'배당株' 주목">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"  name="post-type" value="notice">
+                                                공지
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"  name="post-type" value="best" checked>
+                                                베스트글
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="detail-post-bd">
+                                    <div class="contents">
+                                        <textarea class="form-control" placeholder="내용을 입력해주세요" rows="20" id="postContent">
+<img src="../../assets/images/photos/sample.jpeg">             
+시장 금리가 가파르게 상승하자 테슬라, 아마존 등 빅테크 주식들이 충격을 받고 있다. 이럴 때는 변동성이 낮으면서 배당수익률이 높은 방어주가 유망하다는 
+분석이다.
+
+23일(현지시간) 미국 경제매체 CNBC는 △지난 3년간 변동성이 낮으면서 △연간 배당수익률이 1.5% 이상이고 △애널리스트 매수 의견 비율이 65%인 종목을
+추렸다. </textarea>
+                                    </div>
+                                    <!-- 첨부파일 영역 -->
+                                    <div class="attachment">
+                                        <label type="button" class="btn btn-default" for="imgAttachment">
+                                            + 이미지첨부
+                                            <input type="file" id="imgAttachment" accept=".git,.jpg,.jpeg,.png">
+                                        </label>
+                                        <span>이미지는 최대 3개, 파일당 30MB까지 첨부 가능합니다.</span>
+
+                                        <div class="files">
+                                            <span class="file">
+                                                <a href="#">File3567-1.jpg</a>
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                            <span class="file">
+                                                <a href="#">imageiamge...123456789.jpg</a>
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- btns -->
+                        <div class="btns btns-space mg24">
+                            <div class="pull-left">
+                                <a href="./wa_10_board_post_list.html" type="button" class="btn btn-default">목록</a>
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default" id="btnCancel">취소</button>
+                                <button type="button" class="btn btn-primary" id="btnModify">수정</button>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                
+                // 게시물 타입 설정
+                $('input[name=post-type]').on('change', function() {
+
+                    // 둘 중 1개만 선택
+                    // 둘 다 미선택 경우가 있기 때문에 checkbox로 구성
+                    if ( $(this).is(':checked') ) {
+                        $('input[name=post-type]').not($(this)).prop('checked', false);
+                    }
+                });
+
+                // 취소 버튼 클릭
+                $('#btnCancel').on('click', function() {
+                    const titleLength = $('#postTitle').val().length;
+                    const contentLength = $('#postContent').val().length;
+
+                    if ( titleLength > 0 || contentLength > 0 ) {
+                        callConfirm({
+                            title: '글쓰기 화면에서 나가시겠습니까?',
+                            description: '이 페이지를 벗어나면<br>입력한 내용은 저장되지 않습니다.'
+                        }, onClickExit, {
+                            cancel: '취소',
+                            confirm: '나가기'
+                        });
+                    } else {
+                        onClickExit();
+                    }
+                });
+                
+            });
+
+
+            function onClickExit() {
+                //
+                window.location.href = './wa_10_board_post_list.html';
+            }
+        </script>
+    </body>
+</html>

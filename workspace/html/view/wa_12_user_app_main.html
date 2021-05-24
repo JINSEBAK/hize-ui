@@ -57,18 +57,23 @@
                                 @@include('./inside/wa_12_user_app_main_tabvideo.html')
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- 광고 추가 팝업 -->
+        @@include('./inside/wa_12_user_app_main_popup_advertise.html')
+
+        <!-- 동영상 추가 팝업 -->
+        @@include('./inside/wa_12_user_app_main_popup_video.html')
 
         <!-- scripts -->
         @@include('../common/scripts.html')
         <script>
             $(function() {
 
-                $('.nav-tabs').find('a[href="#tabAdvertise"]').tab('show');
+                $('.nav-tabs').find('a[href="#tabBasic"]').tab('show');
 
                 // 목록 Sortable
                 $('.tb-list-bd').sortable({
@@ -80,6 +85,55 @@
                         });
                     }
                 });
+
+                // 광고
+                $('#allChk').on('change', function() {
+                    if ($(this).is(':checked')) {
+                        $('input[name=ad-select]').each(function() {
+                            $(this).prop('checked', true);
+                        });
+                    } else {
+                        $('input[name=ad-select]').each(function() {
+                            $(this).prop('checked', false);
+                        });
+                    }
+                });
+
+                $('#btnAddAdvertise').on('click', function() {
+                    const count = $('input[name=ad-select]').length;
+
+                    if (count === 10 ) {
+                        callAlert({
+                            title: '광고 건수가 초과되었습니다.',
+                            description: '광고는 최대 10개까지<br>등록 가능합니다.'
+                        });
+                    }
+                });
+
+                // 동영상
+                $('#allVideoChk').on('change', function() {
+                    if ($(this).is(':checked')) {
+                        $('input[name=video-select]').each(function() {
+                            $(this).prop('checked', true);
+                        });
+                    } else {
+                        $('input[name=video-select]').each(function() {
+                            $(this).prop('checked', false);
+                        });
+                    }
+                });
+
+                $('#btnAddVideoUrl').on('click', function() {
+                    const url = $('#videoUrl').val();
+                    $('#player').attr('src', url);
+                });
+
+                // 글자수 카운트
+                $('.table-form').find('.form-control').on('change keyup input', function() {
+                    var count = $(this).val().length;
+                    $(this).next('.count').find('.txt-length').text(count);
+                });
+
             });
         </script>
     </body>

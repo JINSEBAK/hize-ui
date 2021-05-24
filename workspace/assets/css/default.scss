@@ -20,7 +20,7 @@ button:focus {
 }
 
 *:not(.nav-sidebar>li>.sub-menu) {
-  transition: all .2s;
+  //transition: all .2s;
 }
 
 // except transition
@@ -82,6 +82,7 @@ $tb-notice: #f6f2fb;
     .btn {
       &:first-child {
         float: left;
+        margin-right: 4px;
       }
       &:last-child {
         float: right;
@@ -266,6 +267,7 @@ a {
   .page-header {
     padding: 0;
     margin: 0;
+    position: relative;
     h4 {
       margin: 0 0 10px;
       small {
@@ -275,12 +277,13 @@ a {
       }
       .breadcrumb {
         position: absolute;
-        top: 0;
+        bottom: 8px;
         right: 12px;
         padding: 0;
         margin: 0;
-        font-size: 80%;
+        font-size: 12px;
         background-color: transparent;
+        font-weight: 400;
       }
       .dropdown {
         margin-top: -2px;
@@ -598,6 +601,9 @@ input[type="number"]::-webkit-inner-spin-button {
         .btn {
           padding: 0 10px;
         }
+        .thumb {
+          width: 80px;
+        }
       }
       // 게시판의 공지사항
       &.notice {
@@ -609,6 +615,13 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
     label {
       min-height: 15px;
+    }
+  }
+  & + .guide {
+    li {
+      list-style: '-';
+      margin-left: 12px;
+      padding-left: 4px;
     }
   }
 }
