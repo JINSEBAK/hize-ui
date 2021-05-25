@@ -62,83 +62,78 @@
                             </div>
                             <div class="area-list-body">
                                 <table class="table table-bordered data-list">
+                                    <colgroup>
+                                        <col style="width: 10%">
+                                        <col style="width: auto">
+                                        <col style="width: 15%">
+                                        <col style="width: 15%">
+                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th>No.</th>
                                             <th>정책구분 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>버전 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>최종변경자</th>
-                                            <th>최종변경일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>변경자</th>
+                                            <th>변경일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>10</td>
                                             <td>이용약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.3</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>9</td>
                                             <td>운영약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.2</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
                                             <td>이용약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.2</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
                                             <td>개인정보 처리방침</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.2</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
                                             <td>운영약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.1</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
                                             <td>이용약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.1</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
                                             <td>개인정보 처리방침</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.1</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
                                             <td>운영약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.0</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
                                             <td>이용약관</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.0</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
                                         <tr>
                                             <td>1</td>
                                             <td>개인정보 처리방침</td>
-                                            <td><span class="ellipsis"><a href="./wa_11_operation_terms_detail.html">1.0.0</a></td>
                                             <td>박민</td>
                                             <td>2021.04.07</td>
                                         </tr>
@@ -173,6 +168,10 @@
                 $('#btnSearch').on('click', function() {
                     $('.area-list-body').css('display', 'none');
                     $('.area-empty').fadeIn();
+                });
+
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_11_operation_terms_detail.html';
                 });
             });
         </script>

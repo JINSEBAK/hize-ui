@@ -2,6 +2,7 @@
 <html lang="ko">
     <head>
         @@include('../common/resources.html', { "type" : "admin" })
+        <link href="../../assets/css/quill.snow.css" rel="stylesheet">
     </head>
     <body>
 
@@ -43,13 +44,7 @@
                                 </div>
                                 <div class="detail-post-bd">
                                     <div class="contents">
-                                        <textarea class="form-control" placeholder="내용을 입력해주세요" rows="20" id="postContent">
-<img src="../../assets/images/photos/sample.jpeg">             
-시장 금리가 가파르게 상승하자 테슬라, 아마존 등 빅테크 주식들이 충격을 받고 있다. 이럴 때는 변동성이 낮으면서 배당수익률이 높은 방어주가 유망하다는 
-분석이다.
-
-23일(현지시간) 미국 경제매체 CNBC는 △지난 3년간 변동성이 낮으면서 △연간 배당수익률이 1.5% 이상이고 △애널리스트 매수 의견 비율이 65%인 종목을
-추렸다. </textarea>
+                                        <div class="txt-editor" id="postEditor"></div>
                                     </div>
                                     <!-- 첨부파일 영역 -->
                                     <div class="attachment">
@@ -91,6 +86,7 @@
 
         <!-- scripts -->
         @@include('../common/scripts.html')
+        <script src="../../assets/js/quill.min.js"></script>
         <script>
             $(function() {
                 
@@ -121,7 +117,41 @@
                         onClickExit();
                     }
                 });
+
+                var toolbarOptions = [
+                    [{ 'font': [] }],
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['blockquote', 'code-block'],
+
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    [{ 'indent': '-1'}, { 'indent': '+1' }],          
+                    
+                    [{ 'color': [] }, { 'background': [] }],          
+                    [{ 'align': [] }],
+                    ['image'],
+                    ['clean'],         
+                ];
+
+                var quill = new Quill('#postEditor', {
+                    theme: 'snow',
+                    placeholder: '내용을 입력해주세요.',
+                    modules: {
+                        toolbar: toolbarOptions
+                    }
+                });
                 
+
+                var sampleText = 
+                    '<img src="../../assets/images/photos/sample.jpeg"><br>' +
+                    '시장 금리가 가파르게 상승하자 테슬라, 아마존 등 빅테크 주식들이 충격을 받고 있다.' +
+                    '이럴 때는 변동성이 낮으면서 배당수익률이 높은 방어주가 유망하다는 분석이다.<br><br>' +
+                    '23일(현지시간) 미국 경제매체 CNBC는 △지난 3년간 변동성이 낮으면서 △연간 배당수익률이 1.5% 이상이고' +
+                    '△애널리스트 매수 의견 비율이 65%인 종목을 추렸다.';
+
+                //quill.setText(sampleText);
+                quill.root.innerHTML = sampleText;
             });
 
 

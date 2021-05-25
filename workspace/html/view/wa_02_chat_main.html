@@ -634,8 +634,22 @@
                     if ( type === '1' ) {
                         $('#inputCertificationNum').removeAttr('disabled');
                     } else {
-                        $('#inputCertificationNum').attr('disabled', true);
+                        $('#inputCertificationNum').val('').attr('disabled', true);
+
                     }
+                });
+
+                // 인증번호 입력
+                $('#inputCertificationNum').on('keyup paste input', function() {
+                    if ( $(this).val().length > parseInt($(this).attr('maxLength'))) {
+                        $(this).val( $(this).val().substring(0,4));
+                    }
+                    if ( $(this).val().length === 4 && $(this).val() < 10000) {
+                        $('#btnSetCertifyNumber').removeAttr('disabled');
+                    } else {
+                        $('#btnSetCertifyNumber').attr('disabled', true);
+                    }
+                   
                 });
 
         
