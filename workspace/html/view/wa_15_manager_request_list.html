@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "관리자 권한 요청", "sub" : "관리자 승인과 권한 부여를 할 수 있습니다." })
+                
+                    <div class="contents">
+
+                        <!-- 목록 -->
+                        <div class="area-list area-no-hd">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">20</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list request-list">
+                                    <colgroup>
+                                        <col width="10%">
+                                        <col width="auto">
+                                        <col width="20%">
+                                        <col width="20%">
+                                        <col width="10%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>이름 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>아이디</th>
+                                            <th>요청일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>20</td>
+                                            <td>장말숙</td>
+                                            <td>Hi79jang</td>
+                                            <td>2021.04.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>19</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>17</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>13</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11</td>
+                                            <td>이름</td>
+                                            <td>아이디</td>
+                                            <td>YYYY.MM.DD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                @@include('../common/pagination.html')
+                            </div>
+
+                            <!-- 신청 내역 없음 -->
+                            <div class="area-empty" style="display: none">
+                                <div class="date-empty">
+                                    <strong>관리자 신청 내역이<br>없습니다.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                $('.data-list thead').find('span').on('click', function() {
+                    var classList = $(this).attr('class');
+                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
+                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
+                        $(this).addClass('glyphicon-sort-by-attributes');
+                    } else {
+                        $(this).removeClass('glyphicon-sort-by-attributes');
+                        $(this).addClass('glyphicon-sort-by-attributes-alt');
+                    }
+                });
+
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = "./wa_15_manager_request_detail.html";
+                });
+            });
+        </script>
+    </body>
+</html>

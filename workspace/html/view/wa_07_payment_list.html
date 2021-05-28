@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "결제 관리", "sub" : "채팅방 결제 정보를 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        <!-- 검색 -->
+                        <div class="area-search">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label for="">기간 구분</label>
+                                    <select class="form-control">
+                                        <option value="">결제일</option>
+                                        <option value="">환불일</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">기간</label>
+                                    <div class="date-inline">
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="시작일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="종료일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">구분</label>
+                                    <select class="form-control">
+                                        <option value="">회원명</option>
+                                        <option value="">아이디</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-in-btn">
+                                    <label for="" class="sr-only">검색어</label>
+                                    <input type="text" class="form-control keyword" placeholder="검색어 입력">
+                                    <button type="button" class="btn btn-secondary" id="btnSearch">검색</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">50</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>채팅방명</th>
+                                            <th>회원명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>아이디</th>
+                                            <th>결제금액(원)</th>
+                                            <th>결제일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>환불일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>결제 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>50</td>
+                                            <td>성공투자주식방-5</td>
+                                            <td>이삼오</td>
+                                            <td>235lee</td>
+                                            <td>2,000,000</td>
+                                            <td>2021.04.10</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>49</td>
+                                            <td>성공투자주식방-1</td>
+                                            <td>장나라</td>
+                                            <td>janghaha</td>
+                                            <td><span class="txt-blue">-800,000</span></td>
+                                            <td>-</td>
+                                            <td>2021.03.02</td>
+                                            <td>환불</td>
+                                        </tr>
+                                        <tr>
+                                            <td>48</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>47</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>46</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>45</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>44</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>43</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>42</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                        <tr>
+                                            <td>41</td>
+                                            <td>채팅방명</td>
+                                            <td>회원명</td>
+                                            <td>회원ID</td>
+                                            <td>0,000,000</td>
+                                            <td>YYYY.MM.DD</td>
+                                            <td>-</td>
+                                            <td>결제완료</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                @@include('../common/pagination.html')
+                            </div>
+
+                            <!-- 내역 없음 -->
+                            <div class="area-empty" style="display: none">
+                                <div class="date-empty">
+                                    <strong>결제 내역이<br>없습니다.</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 검색
+                $('#btnSearch').on('click', function() {
+                    $('.area-list-body').css('display', 'none');
+                    $('.area-empty').fadeIn();
+                });
+
+                // 상세 이동
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_07_payment_detail.html';
+                });
+            });
+        </script>
+    </body>
+</html>

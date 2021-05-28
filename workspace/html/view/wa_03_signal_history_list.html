@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "신호 발송 내역", "sub" : "발송된 실시간 신호 내역을 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        <!-- 검색 -->
+                        <div class="area-search">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label for="">기간</label>
+                                    <div class="date-inline">
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="시작일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="종료일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="sr-only">구분</label>
+                                    <select class="form-control">
+                                        <option>채팅방명</option>
+                                        <option>종목명</option>
+                                        <option>발송자명</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-in-btn">
+                                    <label for="" class="sr-only">검색어</label>
+                                    <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
+                                    <button type="button" class="btn btn-secondary">검색</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">100</span>
+                                </div>
+                                <div class="pull-right">
+                                    <label for="" class="sr-only">필터 조건</label>
+                                    <select class="form-control" style="width: 120px;">
+                                        <option selected>전체</option>
+                                        <option>매수</option>
+                                        <option>매도</option>
+                                        <option>알림</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list product-list">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>구분 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>채팅방명</th>
+                                            <th>신호유형</th>
+                                            <th>종목명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>SMS <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>LMS <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>발송자명</th>
+                                            <th>발송일시 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>유료</td>
+                                            <td>성공투자주식방-1</td>
+                                            <td>매수</td>
+                                            <td><span class="ellipsis">삼성전자</span></td>
+                                            <td>0</td>
+                                            <td>80</td>
+                                            <td>박민</td>
+                                            <td>2021.06.10 10:30</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>99</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>96</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>95</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>94</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>93</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>92</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>91</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>신호 유형</td>
+                                            <td>종목명</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>발송자명</td>
+                                            <td>YYYY.MM.DD hh:mm</td>
+                                        </tr>
+                                        <tr class="detail">
+                                            <td colspan="2"></td>
+                                            <td colspan="7">
+                                                <div class="signal">
+                                                    [매수] 신호입니다.<br><br>
+
+                                                    ▶ 삼성전자 (005930)<br>
+                                                    ▶ 매수가: 80,000원 이하<br>
+                                                    ▶ 비중: 10%<br><br>
+
+                                                    삼성전자 현구간 3차 매수 진행합니다.<br>
+                                                    의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                @@include('../common/pagination.html')
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                // datepicker
+                $('.datepicker').datepicker();
+
+                $('.data-list thead').find('span').on('click', function() {
+                    var classList = $(this).attr('class');
+                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
+                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
+                        $(this).addClass('glyphicon-sort-by-attributes');
+                    } else {
+                        $(this).removeClass('glyphicon-sort-by-attributes');
+                        $(this).addClass('glyphicon-sort-by-attributes-alt');
+                    }
+                });
+
+                // 상세 내용 보기
+                $('.data-list tbody tr').not('.detail').on('click', function() {
+                    if ($(this).hasClass('open')) {
+                        $(this).removeClass('open');
+                        $(this).next('.detail').slideUp();
+                    } else {
+                        $('.data-list .detail').css('display','none');
+                        $(this).addClass('open');
+                        $(this).next('.detail').slideDown();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

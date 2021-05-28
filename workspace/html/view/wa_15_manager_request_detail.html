@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "관리자 권한 요청", "sub" : "관리자 승인과 권한 부여를 할 수 있습니다." })
+                
+                    <div class="contents">
+                        <div class="detail-content">
+                            <h4 class="detail-content-hd">요청인 정보</h4>
+                            <table class="table table-form">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>이름</th>
+                                        <td><span class="data">장말숙</span></td>
+                                        <th>아이디</th>
+                                        <td><span class="data">modelpark</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>전화번호</th>
+                                        <td><span class="data">010-1234-1234</span></td>
+                                        <th>이메일</th>
+                                        <td><span class="data">modelpark@gmail.com</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>부서</th>
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="부서 입력">
+                                        </td>
+                                        <th>직급</th>
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="직급 입력">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                $('.data-list thead').find('span').on('click', function() {
+                    var classList = $(this).attr('class');
+                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
+                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
+                        $(this).addClass('glyphicon-sort-by-attributes');
+                    } else {
+                        $(this).removeClass('glyphicon-sort-by-attributes');
+                        $(this).addClass('glyphicon-sort-by-attributes-alt');
+                    }
+                });
+
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = "./wa_15_manager_request_list.html";
+                });
+            });
+        </script>
+    </body>
+</html>

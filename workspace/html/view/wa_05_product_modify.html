@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "성투 주식방-1", "sub" : "유료 채팅방 정보를 볼 수 있습니다." })
+                
+                    <div class="contents">
+                    
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabInfo" aria-controls="tabInfo" role="tab" data-toggle="tab">채팅방 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabMember" aria-controls="tabMember" role="tab" data-toggle="tab">회원 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabPay" aria-controls="tabPay" role="tab" data-toggle="tab">결제 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabHistory" aria-controls="tabHistory" role="tab" data-toggle="tab">관리자 이력</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <!-- 채팅방 정보 -->
+                            <div role="tabpane" class="tab-pane fade in active" id="tabInfo">
+                                @@include('./inside/wa_05_product_modify_tabinfo.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabMember">
+                                @@include('./inside/wa_05_product_detail_tabmember.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabPay">
+                                @@include('./inside/wa_05_product_detail_tabpay.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabHistory">
+                                @@include('./inside/wa_05_product_detail_tabhistory.html')
+                            </div>
+                        </div>
+
+                        <!-- btns -->
+                        <div class="btn-groups">
+                            <button class="btn btn-default">목록</button>
+
+                            <!-- 채팅방 정보 탭에서만 노출 -->
+                            <div class="pull-right" id="modifyBtns">
+                                <button class="btn btn-secondary" id="btnShutdown">폐쇄</button>
+                                <button class="btn btn-primary" id="btnSave">수정</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 관리자 추가 팝업 -->
+        @@include('./inside/wa_05_product_register_popup.html')
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+        <script>
+            $(function() {
+                // datepicker
+                $('.datepicker').datepicker({
+                    dateFormat: 'yyyy.mm.dd'
+                });
+
+                // timepicker
+                $('.timepicker').timepicker();
+
+                // tab check
+                $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+                    if ( e.target.href.split('#')[1] === 'tabInfo' ) {
+                        $('#modifyBtns').css('display', 'none');
+                    } else {
+                        $('#modifyBtns').fadeOut();
+                    }
+                });
+
+                // 관리자 삭제
+                $('.icon-del').on('click', function() {
+                    
+                    $(this).parent('.mg-pouch').remove();
+                
+                    const pouches = document.querySelectorAll('.mg-pouch').length;
+                    if ( pouches < 1 ) {
+                        $('.ph').fadeIn();
+                    } else {
+                        $('.ph').css('display', 'none');
+                    }
+                });
+
+                // 채팅방 폐쇄
+                $('#btnShutdown').on('click', function() {
+                    callConfirm({ 
+                        title: '채팅방을<br>폐쇄하시겠습니까?', 
+                        description: '채팅방을 폐쇄하는 경우 채팅방 목록에서 삭제되고 채팅방에 있는 회원들은 나가기 처리됩니다.'
+                    }, onClickShutdown );
+                });
+
+                // 수정 
+                $('#btnSave').on('click', function() {
+                    callAlert({ title: '수정되었습니다.' });
+                });
+            });
+
+            var onClickShutdown = function() {
+                callAlert({ title: '채팅방이<br>폐쇄되었습니다.'})
+            }
+
+            // 인증번호 설정
+            function setCertifyNumber(mode) {
+                if ( mode === 'off' ) {
+                    $('#certifyNumber').attr('disabled', true);
+                } else {
+                    $('#certifyNumber').removeAttr('disabled');
+                }
+            }
+        </script>
+    </body>
+</html>

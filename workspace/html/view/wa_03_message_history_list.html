@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "문자 발송 내역", "sub" : "발송된 문자 내역을 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        <!-- 검색 -->
+                        <div class="area-search">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <label for="">기간</label>
+                                    <div class="date-inline">
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="시작일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                        <div class="date-box">
+                                            <input type="text" class="form-control datepicker" placeholder="종료일">
+                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-in-btn">
+                                    <label class="sr-only">검색 버튼</label>
+                                    <button type="button" class="btn btn-secondary">검색</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록 -->
+                        <div class="area-list">
+
+                            <!-- 기간 내 메시지 발송 성공 건 수 -->
+                            <div class="panel panel-default summary-info">
+                                <div class="terms">2021.05.01 ~ 2021.05.14</div>
+                                <div class="counter">
+                                    <div class="counter-info"><small>SMS</small> 540<small>건</small></div>
+                                    <div class="counter-info"><small>LMS</small> 600<small>건</small></div>
+                                </div>
+                            </div>
+
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">100</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list product-list no-detail-link">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>발송일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>SMS <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>LMS <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>2021.05.14</td>
+                                            <td>100</td>
+                                            <td>80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>99</td>
+                                            <td>2021.05.13</td>
+                                            <td>100</td>
+                                            <td>80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td>2021.05.12</td>
+                                            <td>100</td>
+                                            <td>80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td>2021.05.11</td>
+                                            <td>100</td>
+                                            <td>80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>96</td>
+                                            <td>2021.05.10</td>
+                                            <td>100</td>
+                                            <td>80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>95</td>
+                                            <td>2021.05.09</td>
+                                            <td>100</td>
+                                            <td>80</td>
+                                        </tr>
+                                        <tr>
+                                            <td>94</td>
+                                            <td>2021.05.08</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>93</td>
+                                            <td>2021.05.07</td>
+                                            <td>0</td>
+                                            <td>60</td>
+                                        </tr>
+                                        <tr>
+                                            <td>92</td>
+                                            <td>2021.05.06</td>
+                                            <td>80</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>91</td>
+                                            <td>2021.05.05</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                @@include('../common/pagination.html')
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                // datepicker
+                $('.datepicker').datepicker();
+
+                $('.data-list thead').find('span').on('click', function() {
+                    var classList = $(this).attr('class');
+                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
+                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
+                        $(this).addClass('glyphicon-sort-by-attributes');
+                    } else {
+                        $(this).removeClass('glyphicon-sort-by-attributes');
+                        $(this).addClass('glyphicon-sort-by-attributes-alt');
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>

@@ -29,7 +29,7 @@
                                     <span class="title">[유료] 성투 주식방 1</span>
                                     <span class="count">85/120</span>
                                     <div class="pull-right">
-                                        <button type="button" class="btn btn-default btn-sm">신호발송</button>
+                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalSendSignal">신호발송</button>
                                         <button type="button" class="btn btn-default btn-sm">
                                             <span class="glyphicon glyphicon-search"></span>
                                         </button>
@@ -479,12 +479,18 @@
         <!-- 채팅방 설정 팝업-->
         @@include('./inside/wa_02_chat_main_setting.html')
 
+        <!-- 신호발송 -->
+        @@include('./inside/wa_02_chat_main_signal_popup.html')
+
 
         <!-- scripts -->
         @@include('../common/scripts.html')
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
         <script>
             $(function() {
+
+                $('#modalSendSignal').modal('show');
+
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 divHeight = browserHeight - (70 + 49 + 82 + 42 + 12);
@@ -649,7 +655,14 @@
                     } else {
                         $('#btnSetCertifyNumber').attr('disabled', true);
                     }
-                   
+                });
+
+                // 신호 유형에 따라 메세지 타입 변경
+                $('input[name=signal-type]').on('change', function() {
+                    $('#signalView').removeClass().addClass($(this).data('type'));
+                    
+                    
+
                 });
 
         

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "성공투자주식방-1", "sub" : "채팅방에서 보유하고 있는 종목정보를 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                       
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabOwner" aria-controls="tab1" role="tab" data-toggle="tab">보유 종목</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabTrade" aria-controls="tab2" role="tab" data-toggle="tab">매매 완료</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <div role="tabpane" class="tab-pane fade in active" id="tabOwner">
+                                @@include('./inside/wa_04_stock_board_tabowner.html')
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabTrade">
+                                @@include('./inside/wa_04_stock_board_tabtrade.html')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 보유 전광판 등록 팝업 -->
+        @@include('./inside/wa_04_stock_board_register_popup.html')
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 상세 이동 
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_04_stock_board_owner_detail.html';
+                });
+
+                // 보유 전광판 등록 파업
+                $('.data-list').find('.btn').on('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $('#modalStockBoardRegister').modal('show');
+                });
+
+                $('#btnRegistserBoard').on('click', function() {
+                    callAlert({
+                        title: '보유 전광판에<br>등록되었습니다.'
+                    });
+                });
+
+                $('.stock-list tbody tr').on('click', function() {
+                    window.location.href = './wa_04_stock_board_owner_detail.html';
+                });
+            });
+        </script>
+    </body>
+</html>

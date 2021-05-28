@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "권한 그룹 생성", "sub" : "주식 서비스 플랫폼 권한을 생성할 수 있습니다." })
+                
+                    <div class="contents">
+                        <div class="auth-board clearfix mg24">
+                            <div class="lf">
+                                <h4>권한 그룹명</h4>
+                                <div class="input-count">
+                                    <label for="" class="sr-only">권한 그룹명</label>
+                                    <input type="text" class="form-control" name="" placeholder="권한 그룹명 입력" id="authGroupName">
+                                    <div class="count">
+                                        <span class="txt-length">0</span>
+                                        <span>16</span>
+                                    </div>
+                                </div>
+                                <small>* 권한 그룹명은 기존 그룹명과 중복되지 않게 입력해주세요.</small>
+                            </div>
+                            <div class="rt">
+                                <table class="table table-bordered tb-auth">
+                                    <thead>
+                                        <tr>
+                                            <th>구분</th>
+                                            <th>설명</th>
+                                            <th>생성</th>
+                                            <th>조회</th>
+                                            <th>수정</th>
+                                            <th>삭제</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th class="d1">실시간 신호</th>
+                                            <th class="d2">신호 발송</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">보유 전광판</th>
+                                            <th class="d2">보유 전광판</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">서비스 상품(채팅방)</th>
+                                            <th class="d2">서비스 상품</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">매출 통계</th>
+                                            <th class="d2">매출 통계</th>
+                                            <td></td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">결제 관리</th>
+                                            <th class="d2">결제 관리</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">회원 관리</th>
+                                            <th class="d2">회원 목록</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1" rowspan="2">권한 관리</th>
+                                            <th class="d2">관리자 목록</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d2">권한 그룹 관리</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1" rowspan="2">게시판 관리</th>
+                                            <th class="d2">게시판 설정</th>
+                                            <td></td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d2">게시물 관리</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1" rowspan="3">운영 관리</th>
+                                            <th class="d2">FAQ</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d2">정책/약관 관리</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d2">Log내역</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1" rowspan="3">요청 관리</th>
+                                            <th class="d2">유료방 요청 승인(결제)</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d2">관리자 권한 요청 승인</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d2">게시물 요청 승인</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">앱 메인 관리</th>
+                                            <th class="d2">앱 메인 관리<br>(메인타입, 채팅방 순서, 광고, 동영상 삽입)</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>    
+                        <div class="btns btns-right mg24">
+                            <button type="button" class="btn btn-primary">생성</button>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                $('#authGroupName').on('keyup paste input', function() {
+                    $(this).next('.count').find('.txt-length').val($(this).val().length);
+                });
+            });
+        </script>
+    </body>
+</html>

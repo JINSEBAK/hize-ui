@@ -52,6 +52,12 @@ $btn-primary: #2e6da4;
 $btn-secondary: #666;
 $btn-secondary-hover: #000;
 $tb-notice: #f6f2fb;
+$signal-buy-bg: #ffdfd2;
+$signal-buy-border: #e79372;
+$signal-sell-bg: #d2edff;
+$signal-sell-border: #72afe7;
+$signal-alarm-bg: #aefffb;
+$signal-alarm-border: #3ea3a7;
 
 /* buttons */
 .btn-secondary {
@@ -609,6 +615,17 @@ input[type="number"]::-webkit-inner-spin-button {
       &.notice {
         background-color: $tb-notice;
       }
+      // 클릭하여 상세 TR보는 table
+      &.detail {
+        display: none;
+        background-color: $bg-light-color;
+        td {
+          border: none;
+          .signal {
+            padding: 12px 0;
+          }
+        }
+      }
     }
   }
   .checkbox {
@@ -622,6 +639,13 @@ input[type="number"]::-webkit-inner-spin-button {
       list-style: '-';
       margin-left: 12px;
       padding-left: 4px;
+    }
+  }
+  &.no-detail-link {
+    tbody {
+      tr {
+        cursor: default;
+      }
     }
   }
 }
@@ -679,6 +703,31 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
+  .stock-title {
+    .stock-code {
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: $border-color;
+        margin: 0 8px 0 6px;
+      }
+    }
+  }
+}
+
+.rate-up {
+  color: $text-emphasize;
+  &:before {
+    content: '▲';
+  }
+}
+.rate-down {
+  color: $btn-primary;
+  &:before {
+    content: '▼';
+  }
 }
 
 .btn-groups {
@@ -714,6 +763,12 @@ input[type="number"]::-webkit-inner-spin-button {
       .radio {
         label {
           margin-right: 8px;
+        }
+      }
+      &.vertical-top {
+        vertical-align: top;
+        > div {
+          display: inline-block;
         }
       }
     }

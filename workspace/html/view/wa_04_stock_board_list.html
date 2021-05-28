@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "보유 전광판", "sub" : "채팅방에서 보유하고 있는 종목정보를 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        <!-- 검색 -->
+                        <div class="area-search">
+                            <div class="form-inline">
+                                <div class="form-group form-in-btn">
+                                    <input type="text" class="form-control keyword" placeholder="채팅방명 입력">
+                                    <button type="button" class="btn btn-secondary">검색</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left">
+                                    Total <span class="count">100</span>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list">
+                                    <colgroup>
+                                        <col style="width: 80px">
+                                        <col style="width: 100px">
+                                        <col style="width: auto">
+                                        <col style="width: 15%">
+                                        <col style="width: 15%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>구분 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>채팅방명</th>
+                                            <th>방장명</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>유료</td>
+                                            <td>
+                                                <span class="ellipsis">성공투자주식방-1</span>
+                                            </td>
+                                            <td>나주민 외 2</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>99</td>
+                                            <td>체험</td>
+                                            <td>
+                                                <span class="ellipsis">성공의 지름길! 자신감 있는 종목 콕 찝어드립니다.</span>
+                                            </td>
+                                            <td>박나래 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>96</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>95</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>94</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>93</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>92</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>91</td>
+                                            <td>구분</td>
+                                            <td><span class="ellipsis">채팅방명</span></td>
+                                            <td>나주민 외 1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default">보유전광판 등록</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                @@include('../common/pagination.html')
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 보유 전광판 등록 팝업 -->
+        @@include('./inside/wa_04_stock_board_register_popup.html')
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 상세 이동 
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_04_stock_board_detail.html';
+                });
+
+                // 보유 전광판 등록 파업
+                $('.data-list').find('.btn').on('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $('#modalStockBoardRegister').modal('show');
+                });
+
+                $('#btnRegistserBoard').on('click', function() {
+                    callAlert({
+                        title: '보유 전광판에<br>등록되었습니다.'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

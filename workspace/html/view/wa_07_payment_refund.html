@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "환불", "sub" : "결제에 대해 환불 처리할 수 있습니다." })
+                
+                    <div class="contents">
+                  
+                        <!-- contents -->
+                        <div class="detail-content">
+                            <h4 class="detail-content-hd">결제 정보</h4>
+                            <table class="table table-form">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>유형</th>
+                                        <td colspan="3">
+                                            <span class="data">유료</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>가입기간</th>
+                                        <td><span class="data">2021.03.01 ~ 2021.05.31</span></td>
+                                        <th>서비스 기간</th>
+                                        <td><span class="data">2021.06.01 ~ 2021.06.31</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>결제금액</th>
+                                        <td><span class="data">800,000</span></td>
+                                        <th>승인번호</th>
+                                        <td><span class="data">1234-5678</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>결제일</th>
+                                        <td colspan="3"><span class="data">2021.02.28 10:00</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 class="detail-content-hd">환불 정보</h4>
+                            <table class="table table-form">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="required">취소금액</th>
+                                        <td>
+                                            <div class="form-inline form-in-btn">
+                                                <input type="number" class="form-control" placeholder="취소 금액 입력">
+                                                <button type="button" class="btn btn-secondary">결제</button>
+                                            </div>
+                                        </td>
+                                        <th class="required">승인번호</th>
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="승인 번호 입력">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="btns btns-space">
+                                <a type="button" class="btn btn-default" href="./wa_07_payment_list.html">목록</a>
+                                <button type="button" class="btn btn-primary" id="btnRefund">환불완료</button>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 환불 요청
+                $('#btnRefund').on('click', function() {
+                    callConfirm({
+                        title: '회원님의 결제를<br>환불처리 하시겠습니까?',
+                    }, onClickRefund);
+                });
+            });
+
+            function onClickRefund() {
+                callAlert({ title: '환불처리가<br>완료되었습니다.' });
+            }
+        </script>
+    </body>
+</html>

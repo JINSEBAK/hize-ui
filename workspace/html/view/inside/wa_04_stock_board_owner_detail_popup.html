@@ -1,0 +1,68 @@
+<div class="modal fade" id="modalStockBoardModify" aria-labelledby="modalStockBoardModifyLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">보유 전광판 설정</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <h4 class="">삼성전자</h4>
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>종목노출</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="user-view" value="1" checked disabled>
+                                            노출
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="user-view" value="0" disabled>
+                                            미노출
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>전문가 의견</th>
+                                <td>
+                                    <div class="opinion">
+                                        삼성전자 매수 기회입니다.<br>
+                                        ㅇㅇㅇ 계약건으로 곧 오를 전망입니다/<br><br>
+                                        현구간 3차 매수 진행합니다.<br>
+                                        의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                    </div>
+
+                                    <div class="area-empty" style="display:none;">
+                                        <div class="data-empty">
+                                            <p>전문가 의견이 없습니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-content" style="display: none">
+                                        <textarea class="form-control" name="">
+삼성전자 매수 기회입니다.
+ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.
+
+현구간 3차 매수 진행합니다.
+의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.</textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnModify">수정</button>
+            </div>
+        </div>
+    </div>
+</div>

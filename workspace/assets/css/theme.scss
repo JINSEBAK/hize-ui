@@ -1184,30 +1184,31 @@
 
 // 게시판 설정
 .modal-form {
-  .input-count {
-    position: relative;
-    input {
-      padding: 6px 44px 6px 12px;
-    }
-    .count {
-      position: absolute;
-      right: 6px;
-      top: 50%;
-      margin-top: -10px;
-      color: $text-basic;
-      span {
-        &:last-child {
-          &:before {
-            content: "/";
-          }
-        }
-      }
-    }
-  }
   .img-file-box {
     max-width: 410px;
     img {
       width: 100%;
+    }
+  }
+}
+
+.input-count {
+  position: relative;
+  input {
+    padding: 6px 44px 6px 12px;
+  }
+  .count {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    margin-top: -10px;
+    color: $text-basic;
+    span {
+      &:last-child {
+        &:before {
+          content: "/";
+        }
+      }
     }
   }
 }
@@ -1357,4 +1358,163 @@
        }
      }
    }
+}
+
+// 권한
+.mg-authority {
+  .col {
+    float: left;
+    width: calc(50% - 50px);
+    &.between {
+      width: 100px;
+      text-align: center;
+      padding-top: 80px;
+      color: $text-basic;
+    }
+  }
+  .auth-box {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    padding: 12px;
+
+    .auth-list {
+      background-color: $bg-color;
+      border-radius: 4px;
+      padding: 12px;
+      .auth-chip {
+        border: 1px solid $border-color;
+        background-color: $bg-white;
+        margin-bottom: 6px;
+        padding: 6px 12px;
+        cursor: grab;
+      }
+    }
+  }
+}
+
+// 권한 그룹 관리
+.auth-board {
+  > div {
+    float: left;
+  }
+  .lf {
+    width: 30%;
+    padding-right: 12px;
+  }
+  .rt {
+    width: 70%;
+    padding-left: 12px;
+    max-height: 700px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px !important;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #ffffff !important;
+    }
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #d8d8d8 !important;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #c5c5c5 !important;
+    }
+  }
+  .tb-auth > tbody > tr > th {
+    vertical-align: middle; 
+  }
+  .tb-auth > tbody > tr > td {
+    text-align: center;
+  }
+}
+
+// 테이블 상단 summary info
+.summary-info {
+  padding: 12px 0;
+  text-align: center;
+  .terms {
+    font-size: 16px;
+  }
+  .counter {
+    padding-top: 12px;
+    .counter-info {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: bold;
+      small {
+        font-weight: normal;
+      }
+      &:last-child {
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          background-color: $border-color;
+          margin: 0 16px 0 12px;
+        }
+      }
+    }
+  }
+}
+
+// 신호
+.signal-form {
+  margin-bottom: 12px !important;
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+}
+
+.signal {
+  border: 1px solid $border-color;
+  &.signal-preview {
+    position:relative;
+    height: 348px;
+    > div:not(.count) {
+      padding: 12px;
+      height: 100%;
+    }
+    .info {
+      display: block;
+      span {
+        color: $text-basic;
+      }
+      .completed {
+        color: $text-basic-hover !important;
+      }
+    }
+    .op {
+      margin-top: 24px;
+      color: $text-basic;
+      &.completed {
+        color: $text-basic-hover;
+      }
+    }
+    .count {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      color: $text-basic;
+      font-size: 12px;
+      span:last-child {
+        &:before {
+          content: '/';
+        }
+      }
+    }
+    .sb {
+      background-color: $signal-buy-bg;
+    }
+    .ss {
+      background-color: $signal-sell-bg;
+    }
+    .sa {
+      background-color: $signal-alarm-bg;
+    }
+  }
+
 }

@@ -20,11 +20,21 @@
       .panel-body { font-size: 12px; }
       .panel-body dl dd { margin-bottom: 12px; }
       .table tr:hover { background-color: rgb(230, 228, 252); }
+      .table tr.now { background-color: rgb(253, 253, 218) !important;}
+      .sub-func { font-size: 85%;  }
+      .sub-func li { list-style: disc; margin-left: 16px;}
       small em { color: #aaa;}
     </style>
 
   </head>
   <body style="padding: 2rem">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <strong>
+          총: <span id="total"></span> / 와이어프레임: <span id="w_completed"></span> / 디자인: <span id="s_completed"></span>
+        </strong>
+      </div>
+    </div>
     <div class="panel panel-default">
       <!-- Default panel contents -->
       <div class="panel-heading open" style="background-color:#f6fbf4">관리자웹 퍼블리싱 파일 목록</div>
@@ -36,11 +46,15 @@
           </dd>
           <dt>진행률</dt>
           <dd>
-            <span class="label label-default">completed</span>
+            <span class="label label-default completed">completed</span>
             <span class="label label-success">10%</span>
             <span class="label label-info">wait</span>
             <span class="label label-warning">new</span>
             <span class="label label-danger">issue</span>
+          </dd>
+          <dt>그리드(Grid)</dt>
+          <dd>
+            임시로 table로 작성, 개발 시 사용하는 라이브러리에 따라 UI는 달라질 수 있음
           </dd>
         </dl>
       </div>
@@ -72,28 +86,28 @@
         </thead>
         <tbody>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">공통요소</td>
             <td>elements.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">ing</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
-            </td>
+            </td >
             <td><a href="./view/elements.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">템플릿(빈페이지)</td>
             <td>template.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">80%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/template.html" target="_blank" rel="noreferrer noopener"  class="glyphicon glyphicon-link"></a></td>
@@ -104,13 +118,13 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">로그인</td>
             <td>wa_01_login.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_01_login.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -119,13 +133,13 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">관리자 회원가입</td>
             <td>wa_01_join.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_01_join.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -134,13 +148,13 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">아이디/비밀번호 찾기</td>
             <td>wa_01_find_info.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -151,14 +165,14 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="2">아이디/비밀번호 찾기</td>
             <td>완료</td>
             <td>wa_01_find_info_completed.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -170,87 +184,108 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>채팅</td>
             <td>채팅</td>
             <td>전체 채팅방</td>
             <td>wa_02_chat_main.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-success">60%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_02_chat_main.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small></small>
+              <small>채팅 화면 내 부가 기능</small>
+              <ul class="sub-func">
+                <li>신호 발송 </li>
+                <li>공지사항 CRUD <span class="glyphicon glyphicon-ok"></span></li>
+                <li>인증번호 설정</li>
+                <li>채팅방 설정</li>
+              </ul>
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>실시간 신호</td>
             <td colspan="2">신호 발송 내역</td>
-            <td>wa_03_</td>
-            <td>
+            <td>wa_03_signal_history_list.html</td>
+            <td class="wf">
+              <span class="label label-default">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
-            <td></td>
+            <td><a href="./view/wa_03_signal_history_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><small>ROW 클릭 시, 상세 내용 확인 가능</small></td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>실시간 신호</td>
             <td colspan="2">문자 발송 내역</td>
-            <td>wa_03_</td>
-            <td>
+            <td>wa_03_message_history.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_03_message_history_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td></td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>보유 전광판</td>
-            <td colspan="2">보유 종목</td>
-            <td>wa_04_</td>
-            <td>
+            <td colspan="2">목록</td>
+            <td>wa_04_stock_board_list.html</td>
+            <td class="wf">
+              <span class="label label-default">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_04_stock_board_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td></td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>보유 전광판</td>
-            <td colspan="2">매매 완료</td>
-            <td>wa_04_</td>
-            <td>
+            <td colspan="2">상세</td>
+            <td>wa_04_stock_board_detail.html</td>
+            <td class="wf">
+              <span class="label label-default">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_04_stock_board_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td></td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
+            <td>보유 전광판</td>
+            <td>상세</td>
+            <td>보유 종목 상세</td>
+            <td>wa_04_stock_board_owner_detail.html</td>
+            <td class="wf">
+              <span class="label label-success">90%</span>
+            </td>
+            <td class="st">
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_04_stock_board_owner_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><small>!TODO: [수정] 버튼 팝업 확인 할 것!</small></td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
             <td>서비스 상품</td>
             <td colspan="2">목록</td>
             <td>wa_05_product_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_05_product_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -259,15 +294,15 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>서비스 상품</td>
             <td>목록</td>
             <td>결과없음</td>
             <td>wa_05_product_list_empty.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_05_product_list_empty.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -276,14 +311,14 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>서비스 상품</td>
             <td colspan="2">상세</td>
             <td>wa_05_product_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_05_product_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -292,14 +327,30 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
+            <td>서비스 상품</td>
+            <td colspan="2">수정</td>
+            <td>wa_05_product_modify.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_05_product_modify.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
             <td>서비스 상품</td>
             <td colspan="2">생성</td>
             <td>wa_05_product_register.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_05_product_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -308,13 +359,13 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">매출 통계</td>
             <td>wa_06_</td>
-            <td>
+            <td class="wf">
               <span class="label label-info">wait</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -323,29 +374,80 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
-            <td colspan="3">결제 관리</td>
-            <td>wa_07_</td>
-            <td>
+            <th class="idx num"></th>
+            <td>결제 관리</td>
+            <td colspan="2">목록</td>
+            <td>wa_07_payment_list.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
+            <td><a href="./view/wa_07_payment_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>결제 관리</td>
+            <td>상세</td>
+            <td>결제완료</td>
+            <td>wa_07_payment_detail.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_07_payment_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>결제 관리</td>
+            <td colspan="2">환불</td>
+            <td>wa_07_payment_refund.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_07_payment_refund.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small></small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>결제 관리</td>
+            <td>상세</td>
+            <td>환불</td>
+            <td>wa_07_payment_refund_detail.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_07_payment_refund_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>회원 관리</td>
             <td colspan="2">목록</td>
             <td>wa_08_member_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_08_member_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -354,14 +456,14 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>회원 관리</td>
             <td colspan="2">상세</td>
             <td>wa_08_member_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_08_member_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -370,33 +472,66 @@
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>권한 관리</td>
             <td colspan="2">관리자 목록</td>
-            <td>wa_09_</td>
-            <td>
+            <td>wa_09_manager_list.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
+            <td><a href="./view/wa_09_manager_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
+              <small><em>v0.4</em></small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>권한 관리</td>
+            <td colspan="2">관리자 상세</td>
+            <td>wa_09_manager_detail.html</td>
+            <td class="wf">
+              <span class="label label-success">50%</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_09_manager_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>!TODO: Drag&Drop 작업 남음</small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>권한 관리</td>
+            <td colspan="2">권한 관리</td>
+            <td>wa_09_permission_list.html</td>
+            <td class="wf">
+              <span class="label label-success">10%</span>
+            </td>
+            <td class="st">
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_09_permission_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
             </td>
           </tr>
           <tr>
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>권한 관리</td>
-            <td colspan="2">권한 관리</td>
-            <td>wa_09_</td>
-            <td>
+            <td>권한 관리</td>
+            <td>생성</td>
+            <td>wa_09_permission_register.html</td>
+            <td class="wf">
+              <span class="label label-success">30%</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_09_permission_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
             </td>
@@ -404,14 +539,14 @@
          
 
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시판 관리</td>
             <td colspan="2">설정</td>
             <td>wa_10_board_settings.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_10_board_settings.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -420,15 +555,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시판 관리</td>
             <td>게시물</td>
             <td>목록</td>
             <td>wa_10_board_post_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_10_board_post_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -437,15 +572,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시판 관리</td>
             <td>게시물</td>
             <td>상세</td>
             <td>wa_10_board_post_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_10_board_post_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -454,15 +589,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시판 관리</td>
             <td>게시물</td>
             <td>수정</td>
             <td>wa_10_board_post_modify.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_10_board_post_modify.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -471,15 +606,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시판 관리</td>
             <td>게시물</td>
             <td>등록</td>
             <td>wa_10_board_post_register.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_10_board_post_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -489,15 +624,15 @@
           </tr>
 
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>FAQ</td>
             <td>목록</td>
             <td>wa_11_operation_faq.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_faq.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -506,15 +641,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>FAQ</td>
             <td>상세</td>
             <td>wa_11_operation_faq_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_faq_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -523,15 +658,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>FAQ</td>
             <td>수정</td>
             <td>wa_11_operation_faq_modify.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_faq_modify.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -540,15 +675,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>FAQ</td>
             <td>등록</td>
             <td>wa_11_operation_faq_register.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_faq_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -557,15 +692,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>정책/약관 관리</td>
             <td>목록</td>
             <td>wa_11_operation_terms.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_terms.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -574,15 +709,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>정책/약관 관리</td>
             <td>상세</td>
             <td>wa_11_operation_terms_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_terms_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -591,15 +726,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>정책/약관 관리</td>
             <td>수정</td>
             <td>wa_11_operation_terms_modify.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_terms_modify.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -608,15 +743,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>Log 내역</td>
             <td>목록</td>
             <td>wa_11_operation_log.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_log.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -625,15 +760,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>운영 관리</td>
             <td>Log 내역</td>
             <td>상세</td>
             <td>wa_11_operation_log_detail.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">50%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_11_operation_log_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -642,13 +777,13 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">앱메인 관리</td>
             <td>wa_12_user_app_main.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">90%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_12_user_app_main.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -659,13 +794,13 @@
 
 
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td colspan="3">내 계정</td>
             <td>wa_13_my_account.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-danger">50%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_13_my_account.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -674,14 +809,14 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>유료방 가입 요청</td>
             <td colspan="2">목록</td>
             <td>wa_14_request_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_14_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -690,15 +825,15 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>유료방 가입 요청</td>
             <td>상세</td>
             <td>결제</td>
             <td>wa_14_request_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_14_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -707,46 +842,46 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>관리자 권한 요청</td>
             <td colspan="2">목록</td>
-            <td></td>
-            <td>
+            <td>wa_15_manager_request_list.html</td>
+            <td class="wf">
+              <span class="label label-default">completed</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_15_manager_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
             </td>
           </tr>
-          <tr >
-            <th class="idx"></th>
+          <tr class="now">
+            <th class="idx num"></th>
             <td>관리자 권한 요청</td>
             <td colspan="2">상세</td>
-            <td></td>
-            <td>
+            <td>wa_15_manager_request_detail.html</td>
+            <td class="wf">
+              <span class="label label-success">50%</span>
+            </td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td>
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_15_manager_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시물 승인 요청</td>
             <td colspan="2">목록</td>
             <td>wa_16_posting_approval.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_16_posting_approval.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -755,14 +890,14 @@
             </td>
           </tr>
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>게시물 승인 요청</td>
             <td colspan="2">상세</td>
             <td>wa_16_posting_approval_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_16_posting_approval_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -775,15 +910,15 @@
 
           <!-- 목록 sample mark-up -->
           <tr >
-            <th class="idx"></th>
+            <th class="idx num"></th>
             <td>대</td>
             <td>중</td>
             <td>소</td>
             <td>join.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-info">wait</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -838,13 +973,13 @@
         </thead>
         <tbody>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE A</td>
             <td>au_01_main.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -856,13 +991,13 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE B</td>
             <td>au_01_main_b.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">50%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -875,13 +1010,13 @@
           </tr>
 
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE C</td>
             <td>au_01_main_c.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">50%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -893,13 +1028,13 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE C - 더보기</td>
             <td>au_01_main_c_2.html</td>
-            <td>
+            <td class="wf">
               <span class="label label-success">50%</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -911,15 +1046,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>게시판</td>
             <td>매매인증</td>
             <td>목록</td>
             <td>au_03_board_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_board_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -928,15 +1063,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>게시판</td>
             <td>매매인증</td>
             <td>상세</td>
             <td>au_03_board_01_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_board_01_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -945,15 +1080,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>게시판</td>
             <td>매매인증</td>
             <td>등록</td>
             <td>au_03_board_01_register.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_board_01_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -962,15 +1097,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>게시판</td>
             <td>매매인증</td>
             <td>수정</td>
             <td>au_03_board_01_modify.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_board_01_modify.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -979,15 +1114,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>게시판</td>
             <td>매매인증</td>
             <td>댓글목록</td>
             <td>au_03_board_01_comment_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_board_01_comment_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -996,15 +1131,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>게시판</td>
             <td>매매인증</td>
             <td>댓글쓰기</td>
             <td>au_03_board_01_comment_register.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_board_01_comment_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -1013,14 +1148,14 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>고객센터</td>
             <td colspan="2">FAQ</td>
             <td>au_03_cs_faq.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_cs_faq.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -1029,15 +1164,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>고객센터</td>
             <td>이용약관</td>
             <td>목록</td>
             <td>au_03_cs_terms_list.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_cs_terms_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -1046,15 +1181,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>고객센터</td>
             <td>이용약관</td>
             <td>상세</td>
             <td>au_03_cs_terms_detail.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_cs_terms_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -1063,15 +1198,15 @@
             </td>
           </tr>
           <tr>
-            <th class="wvidx"></th>
+            <th class="wvidx num"></th>
             <td>고객센터</td>
             <td>회사정보/연락처</td>
             <td></td>
             <td>au_03_cs_company.html</td>
-            <td>
-              <span class="label label-default">completed</span>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./wvview/au_03_cs_company.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
@@ -1127,15 +1262,15 @@
         </thead>
         <tbody>
           <tr>
-            <th class="emidx"></th>
+            <th class="emidx num"></th>
             <td>템플릿</td>
             <td>이메일</td>
             <td>아이디 찾기</td>
             <td></td>
-            <td>
+            <td class="wf">
               <span class="label label-default">wait</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -1147,15 +1282,15 @@
             </td>
           </tr>
           <tr>
-            <th class="emidx"></th>
+            <th class="emidx num"></th>
             <td>템플릿</td>
             <td>이메일</td>
             <td>임시 비밀번호 발송</td>
             <td></td>
-            <td>
+            <td class="wf">
               <span class="label label-default">wait</span>
             </td>
-            <td>
+            <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td>
@@ -1178,9 +1313,18 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
+
+      const totalCount = $('.num').length;
+      $('#total').text(totalCount);
+      
+      const wfCount = $('tbody .wf').find('.completed').length;
+      const stCount = $('tbody .st').find('.completed').length;
+      $('#w_completed').text(wfCount + ' (' + Math.round(wfCount / totalCount * 100) + '%)'); // 와이어프레임 완료개수
+      $('#s_completed').text(stCount + ' (' + Math.round(stCount / totalCount * 100) + '%)'); // 스타일링 완료개수
+
       $(function() {
         $('.panel-heading').on('click', function() {
-          const chk = $(this).hasClass('open');
+          const chk = $(this).hasClass('open'); 
           if ( chk ) {
             $(this).removeClass('open');
           } else {
