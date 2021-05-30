@@ -21,9 +21,11 @@
       .panel-body dl dd { margin-bottom: 12px; }
       .table tr:hover { background-color: rgb(230, 228, 252); }
       .table tr.now { background-color: rgb(253, 253, 218) !important;}
+      .table tr.todo { background-color: #eee !important; }
       .sub-func { font-size: 85%;  }
       .sub-func li { list-style: disc; margin-left: 16px;}
       small em { color: #aaa;}
+
     </style>
 
   </head>
@@ -85,7 +87,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr class="todo">
             <th class="idx num"></th>
             <td colspan="3">공통요소</td>
             <td>elements.html</td>
@@ -100,7 +102,7 @@
               <small></small>
             </td>
           </tr>
-          <tr >
+          <tr class="todo" >
             <th class="idx num"></th>
             <td colspan="3">템플릿(빈페이지)</td>
             <td>template.html</td>
@@ -183,7 +185,7 @@
               <small></small>
             </td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="idx num"></th>
             <td>채팅</td>
             <td>채팅</td>
@@ -201,8 +203,11 @@
               <ul class="sub-func">
                 <li>신호 발송 </li>
                 <li>공지사항 CRUD <span class="glyphicon glyphicon-ok"></span></li>
-                <li>인증번호 설정</li>
-                <li>채팅방 설정</li>
+                <li>회원목록  <span class="glyphicon glyphicon-ok"></span></li>
+                <li>신호내역</li>
+                <li>보유전광판</li>
+                <li>채팅방 설정 <span class="glyphicon glyphicon-ok"></span></li>
+                <li>인증번호 설정 <span class="glyphicon glyphicon-ok"></span></li>
               </ul>
             </td>
           </tr>
@@ -262,7 +267,7 @@
             <td><a href="./view/wa_04_stock_board_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td></td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="idx num"></th>
             <td>보유 전광판</td>
             <td>상세</td>
@@ -360,17 +365,34 @@
           </tr>
           <tr>
             <th class="idx num"></th>
-            <td colspan="3">매출 통계</td>
-            <td>wa_06_</td>
+            <td>매출 통계</td>
+            <td colspan="2">목록</td>
+            <td>wa_06_statistics_list.html</td>
             <td class="wf">
-              <span class="label label-info">wait</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
               <span class="label label-info">wait</span>
             </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td><a href="./view/wa_06_statistics_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>매출 통계</td>
+            <td colspan="2">상세</td>
+            <td>wa_06_statistics_detail.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
+              <span class="label label-info">wait</span>
+            </td>
+            <td><a href="./view/wa_06_statistics_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>Chart library: chart.js</small>
             </td>
           </tr>
           <tr>
@@ -487,7 +509,7 @@
               <small><em>v0.4</em></small>
             </td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="idx num"></th>
             <td>권한 관리</td>
             <td colspan="2">관리자 상세</td>
@@ -503,7 +525,7 @@
               <small>!TODO: Drag&Drop 작업 남음</small>
             </td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="idx num"></th>
             <td>권한 관리</td>
             <td colspan="2">권한 관리</td>
@@ -519,7 +541,7 @@
               <small></small>
             </td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="idx num"></th>
             <td>권한 관리</td>
             <td>권한 관리</td>
@@ -538,7 +560,7 @@
           </tr>
          
 
-          <tr >
+          <tr class="todo">
             <th class="idx num"></th>
             <td>게시판 관리</td>
             <td colspan="2">설정</td>
@@ -759,7 +781,7 @@
               <small></small>
             </td>
           </tr>
-          <tr >
+          <tr class="todo" >
             <th class="idx num"></th>
             <td>운영 관리</td>
             <td>Log 내역</td>
@@ -781,19 +803,19 @@
             <td colspan="3">앱메인 관리</td>
             <td>wa_12_user_app_main.html</td>
             <td class="wf">
-              <span class="label label-success">90%</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
               <span class="label label-info">wait</span>
             </td>
             <td><a href="./view/wa_12_user_app_main.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small>광고/동영상 추가,수정은 동일한 팝업 사용<br><strong>!TODO:</strong> 기본설정 탭 UI 정리 필요</small>
+              <small>광고/동영상 추가,수정은 동일한 팝업 사용</small>
             </td>
           </tr>
 
 
-          <tr >
+          <tr class="todo" >
             <th class="idx num"></th>
             <td colspan="3">내 계정</td>
             <td>wa_13_my_account.html</td>
@@ -857,7 +879,7 @@
               <small></small>
             </td>
           </tr>
-          <tr class="now">
+          <tr class="todo">
             <th class="idx num"></th>
             <td>관리자 권한 요청</td>
             <td colspan="2">상세</td>
@@ -870,7 +892,7 @@
             </td>
             <td><a href="./view/wa_15_manager_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small></small>
+              <small>!TODO: 승인 전 권한 부여 UI 추가 필요</small>
             </td>
           </tr>
           <tr >
@@ -903,27 +925,6 @@
             <td><a href="./view/wa_16_posting_approval_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small></small>
-            </td>
-          </tr>
-
-
-
-          <!-- 목록 sample mark-up -->
-          <tr >
-            <th class="idx num"></th>
-            <td>대</td>
-            <td>중</td>
-            <td>소</td>
-            <td>join.html</td>
-            <td class="wf">
-              <span class="label label-info">wait</span>
-            </td>
-            <td class="st">
-              <span class="label label-info">wait</span>
-            </td>
-            <td><a href="#" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
-            <td>
-              <small>기타 참고 사항을 작성합니다.</small>
             </td>
           </tr>
         </tbody>
@@ -990,7 +991,7 @@
               <small>큰 구조 및 sticky 작업만 진행, 시안 컨펌 후 작업 예정</small>
             </td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE B</td>
             <td>au_01_main_b.html</td>
@@ -1009,7 +1010,7 @@
             </td>
           </tr>
 
-          <tr>
+          <tr class="todo">
             <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE C</td>
             <td>au_01_main_c.html</td>
@@ -1027,7 +1028,7 @@
               <small></small>
             </td>
           </tr>
-          <tr>
+          <tr class="todo">
             <th class="wvidx num"></th>
             <td colspan="3">메인 TYPE C - 더보기</td>
             <td>au_01_main_c_2.html</td>
@@ -1304,6 +1305,7 @@
         </tbody>
       </table>
     </div>
+
     <script>
       var idxCells = document.querySelectorAll('.emidx');
       idxCells.forEach((cell, index) => {

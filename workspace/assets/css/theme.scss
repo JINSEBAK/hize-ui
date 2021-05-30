@@ -1516,5 +1516,28 @@
       background-color: $signal-alarm-bg;
     }
   }
+}
 
+// 통계
+.statistics {
+  .terms {
+    text-align: center;
+    font-size: 18px;
+    padding: 12px 0;
+  }
+  .area-chart {
+    .chart {
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      .chart-title {
+        border-bottom: 1px solid $border-light-color;
+        font-weight: bold;
+        padding: 8px 12px;
+      }
+      .chart-body {
+        padding: 12px;
+      }
+    }
+  }
 }

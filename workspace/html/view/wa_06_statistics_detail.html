@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "성공투자주식방-1", "sub" : "주식 서비스 통계를 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                        <div class="detail-content statistics">
+                            <div class="terms">
+                                <strong>2021.04.14 ~ 2021.05.13</strong>
+                            </div>
+                            <div class="area-chart">
+                                <!-- 매출 통계-->
+                                <div class="chart">
+                                    <div class="chart-title">매출액</div>
+                                    <div class="chart-body">
+                                        <canvas id="salesChart" height="100"></canvas>
+                                    </div>
+                                </div>
+
+                                <!-- 회원수 통계 -->
+                                <div class="chart">
+                                    <div class="chart-title">회원수</div>
+                                    <div class="chart-body">
+                                        <canvas id="userCountChart" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            $(function() {
+
+                const startDate ='2021-04-14';
+                const endDate = '2021-05-13'; 
+                const sampleData = [
+                    '400', '500', '200', '100', '600', '800', '1000', '800',
+                    '400', '500', '200', '100', '600', '800', '1000', '800',
+                    '400', '500', '200', '100', '600', '800', '1000', '800',
+                    '200', '100', '600', '800', '1000', '800',
+                ]
+                
+                var salesChart = new Chart( document.getElementById('salesChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: getDateRangeData(startDate, endDate),
+                        datasets: [{
+                            label: '# of votes',
+                            data: sampleData,
+                            backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+                            borderColor: ['rgba(0, 0, 0, 0.1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+
+                var salesChart = new Chart( document.getElementById('userCountChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: getDateRangeData(startDate, endDate),
+                        datasets: [{
+                            label: '# of votes',
+                            data: sampleData,
+                            backgroundColor: ['rgba(0, 0, 0, 0.1)'],
+                            borderColor: ['rgba(0, 0, 0, 0.1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+
+
+
+            });
+        </script>
+    </body>
+</html>

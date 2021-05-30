@@ -138,4 +138,34 @@ function getChatDate() {
     return meridiem + ' ' + (nowHour % 12) + ':' + nowMinutes;
 }
 
+// yyyymmdd -> object date
+function getDateObject(date) {
+    const year = date.substr(0,4);
+    const month = date.substr(4,2) - 1;
+    const day = date.substr(6,2);
 
+    return new Date(year, month, day);
+}
+
+// 시작일~종료일 사이 날짜 배열로 가져오기
+function getDateRangeData(startDate, endDate) {
+    var resultArray = [];
+
+    var sDate = new Date(startDate);
+    var eDate = new Date(endDate);
+
+    while(sDate.getTime() <= eDate.getTime()) {
+        var _month = sDate.getMonth() + 1;
+        _month = _month < 10 ? '0' + _month : _month;
+
+        var _day = sDate.getDate();
+        _day = _day < 10 ? '0' + _day : _day;
+
+        resultArray.push( sDate.getFullYear() + '-' + _month + '-' + _day);
+        sDate.setDate(sDate.getDate() + 1);
+    }
+    console.log(resultArray);
+
+    return resultArray;
+
+}
