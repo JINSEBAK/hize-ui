@@ -55,19 +55,19 @@
                                     <tr>
                                         <th>매수가</th>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="매수정보 입력">
+                                            <input type="text" class="form-control" placeholder="매수정보 입력" data-target="stockPrice">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>비중(%)</th>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="비중정보 입력">
+                                            <input type="text" class="form-control" placeholder="비중정보 입력" data-target="stockPercent">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>메세지</th>
                                         <td>
-                                            <textarea class="form-control" placeholder="메세지 입력"></textarea>
+                                            <textarea class="form-control" placeholder="메세지 입력" data-target="stockMessage"></textarea>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -81,7 +81,7 @@
                                     <span class="info">종목명: <span id="stockCode">종목코드</span></span>
                                     <span class="info">매수가: <span id="stockPrice">10,000원 이하</span></span>
                                     <span class="info">비중: <span id="stockPercent">10%</span></span>
-                                    <div class="op">전문가 의견</div>
+                                    <div class="op" id="stockMessage">전문가 의견</div>
                                 </div>
                                 <div class="count">
                                     <span class="txt-length">0</span>

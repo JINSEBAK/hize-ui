@@ -488,9 +488,6 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
         <script>
             $(function() {
-
-                $('#modalSendSignal').modal('show');
-
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 divHeight = browserHeight - (70 + 49 + 82 + 42 + 12);
@@ -656,13 +653,35 @@
                         $('#btnSetCertifyNumber').attr('disabled', true);
                     }
                 });
+            
 
+                // 신호 발송 ----------------------------------------------------------------------------
+                const signalMsg = {
+                    sb: { type: '매수',  },
+                    ss: { type: '매도',  },
+                    sa: { type: '알림',  },
+                }
                 // 신호 유형에 따라 메세지 타입 변경
                 $('input[name=signal-type]').on('change', function() {
                     $('#signalView').removeClass().addClass($(this).data('type'));
-                    
-                    
+                    $('#signalView').find('.type').text( signalMsg[$(this).data('type')].type );
 
+                    if ($(this).data('type') === 'sa') {
+                        $('#signalView').find('.info').css('display','none');
+                        $('.signal-form').find('.form-control').not('textarea').attr('disabled',true);
+                    } else {
+                        $('.signal-form').find('input').removeAttr('disabled');
+                    }
+                });
+                $('.signal-form').find('.form-control').on('keyup paste input', function() {
+                    var target = $(this).data('target');
+                    var txt = $(this).val();
+
+                    $('#signalView').find($('#'+target)).text(txt).addClass('completed');
+                    if ( target === 'stockMessage' ) {
+                        $('#stockMessage').addClass('completed');
+                        $('.signal-preview .count').find('.txt-length').text(txt.length);
+                    }
                 });
 
         

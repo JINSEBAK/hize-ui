@@ -1470,8 +1470,8 @@
 }
 
 .signal {
-  border: 1px solid $border-color;
   &.signal-preview {
+    border: 1px solid $border-color;
     position:relative;
     height: 348px;
     > div:not(.count) {
@@ -1481,7 +1481,7 @@
     .info {
       display: block;
       span {
-        color: $text-basic;
+        color: $text-basic; 
       }
       .completed {
         color: $text-basic-hover !important;
