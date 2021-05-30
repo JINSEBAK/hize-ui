@@ -1,0 +1,28 @@
+<!-- 비밀번호 재설정 -->
+<div class="modal fade" id="modalPasswordReset" aria-labelledby="modalPasswordResetLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">비밀번호 재설정</h4>
+            </div>
+            <div class="modal-body">
+                <p>회원 비밀번호를 재설정할 수 있습니다.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="">새 비밀번호</label>
+                        <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리 입력" id="userPw">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="sr-only">새 비밀번호 확인</label>
+                        <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
+                    </div>
+                    <span class="help-block help-block-validate"></span>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" disabled id="btnReset">비밀번호 재설정</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
+
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">Hize 관리자웹</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-signal"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li>
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-th glyphicon"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">상품 목록</a>
+                </li>
+                <li>
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-copy"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-credit-card"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li>
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li>
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-phone"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        게시물 상세 
+        <small>
+            주식 서비스 플랫폼 게시물을 관리할 수 있습니다.
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </h4>
+</div>
+                
+                    <div class="contents">
+                  
+                        <!-- contents -->
+                        <div class="detail-content">
+                            <div class="detail-post">
+                                <div class="detail-post-hd">
+                                    <div class="post-title"><label class="label label-default">Best</label> 흔들리는 시장…'배당株' 주목</div>
+                                    <div class="post-info">
+                                        <div class="pull-left">
+                                            <span class="writter">hongadmin</span>
+                                            <span class="vertical"></span>
+                                            <span class="date">2021.05.14</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <span class="comment">댓글 <span class="txt-red">24</span></span>
+                                            <span class="vertical"></span>
+                                            <span class="view">조회수 <span class="txt-red">120</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="detail-post-bd">
+                                    <!-- 첨부파일 영역 -->
+                                    <div class="attachment">
+                                        <label>첨부파일</label>
+                                        <span class="file">
+                                            <a href="#">File3567-1.jpg</a>
+                                        </span>
+                                        <span class="file">
+                                            <a href="#">imageimage....12344567890.jpg</a>
+                                        </span>
+                                    </div>
+                                    <div class="contents">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="">
+                                        시장 금리가 가파르게 상승하자 테슬라, 아마존 등 빅테크 주식들이 충격을 받고 있다. 이럴 때는 변동성이 낮으면서 배당수익률이 높은 방어주가 유망하다는 
+                                        분석이다.<br><br>
+                                        23일(현지시간) 미국 경제매체 CNBC는 △지난 3년간 변동성이 낮으면서 △연간 배당수익률이 1.5% 이상이고 △애널리스트 매수 의견 비율이 65%인 종목을
+                                        추렸다. 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- btns -->
+                        <div class="btns btns-space mg24">
+                            <div class="pull-left">
+                                <a type="button" class="btn btn-default" href="./wa_10_board_post_detail.html">목록</a>
+                                <button type="button" class="btn btn-default">승인</button>
+                            </div>
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-default" id="btnDelete">삭제</button>
+                                <button type="button" class="btn btn-primary">수정</button>
+                            </div>
+                        </div>
+
+                        <!-- 댓글 -->
+                        <div class="comment-area">
+    <div class="title">
+        <h4>댓글 <small>24</small></h4>
+    </div>
+    <div class="comment-body">
+        <div class="comment-form">
+            <div class="writter">
+                park77
+            </div>
+            <div class="left form-content">
+                <textarea class="form-control" placeholder="댓글을 입력해주세요."></textarea>
+                <div class="count">
+                    <span class="txt-length">0</span>
+                    <span>500</span>
+                </div>
+            </div>
+            <div class="right">
+                <button type="button" class="btn btn-default">등록</button>
+            </div>
+        </div>
+        <ul class="comment-list">
+            <li>
+                <div class="comment">
+                    <span class="writter">hongadmin</span>
+                    <span class="vertical"></span>
+                    <span class="date">2021.05.14</span>
+                    <p>
+                        좋은 소식 감사합니다!
+                    </p>
+                    <button type="button" class="btn btn-default btn-sm">삭제</button>
+                </div>
+            </li>
+            <li>
+                <div class="comment">
+                    <span class="writter">narawang</span>
+                    <span class="vertical"></span>
+                    <span class="date">2021.05.14</span>
+                    <p>
+                        고민해야겠군요! 분석 투자!
+                    </p>
+                    <button type="button" class="btn btn-default btn-sm">삭제</button>
+                </div>
+            </li>
+            <li>
+                <div class="comment">
+                    <span class="writter">작성자ID</span>
+                    <span class="vertical"></span>
+                    <span class="date">2021.05.14</span>
+                    <p>
+                        오늘도 성공투자
+                    </p>
+                    <button type="button" class="btn btn-default btn-sm">삭제</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                        <div class="btns btns-right">
+                            <button type="button" class="btn btn-default btn-xs btn-top">
+                                <span class="glyphicon glyphicon-triangle-top"></span> TOP
+                            </button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+
+                // 유형 선택 
+                $('#selectChatType').on('change', function() {
+                    if ($(this).val() === '1') {
+                        $('#formPayment').find('input').removeAttr('disabled');
+                        $('#btnPayment').removeAttr('disabled');
+                    } else {
+                        $('#formPayment').find('input').attr('disabled', true);
+                        $('#btnPayment').attr('disabled', true);
+                    }
+                });
+            
+                // 신청 거절
+                $('#btnReject').on('click', function() {
+                    callConfirm(
+                    { title: '유료방 요청건을<br>거절하시겠습니까?'}, 
+                    onClickReject,
+                    { cancel: '취소', confirm: '거절'});
+                });
+
+                // 결제완료
+                $('#btnCompleted').on('click', function() {
+                    callAlert({
+                        title: '결제가 완료되었습니다.',
+                        description: '회원님은 채팅방에<br>가입처리되었습니다.'
+                    });
+                });
+
+                // 게시물 삭제
+                $('#btnDelete').on('click', function() {
+                    callConfirm({
+                        title: '게시글을 삭제하시겠습니까?'
+                    }, function() {} , { cancel: '취소', confirm: '삭제'} );
+                });
+
+                // top 버튼
+                $('.btn-top').on('click', function() {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 500);
+                });
+
+                // 댓글 삭제
+                $('.comment-list').find('.btn').on('click', function() {
+                    callConfirm({
+                        title: '댓글을<br>삭제하시겠습니까?'
+                    }, function() {}, { cancel: '취소', confirm: '삭제' });
+                });
+            });
+
+            function onClickReject() {
+                callAlert({ title: '거절되었습니다.' });
+            }
+        </script>
+    </body>
+</html>

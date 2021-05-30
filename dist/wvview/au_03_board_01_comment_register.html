@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+    <link rel="stylesheet" href="../../assets/css/wv.css" />
+
+
+
+
+    </head>
+    <body>
+        <div class="w-main">
+            <!--header-->
+            <header class="w-hd">
+    <div class="inner">
+        <div class="">
+            <span class="glyphicon glyphicon-menu-left"></span>
+        </div>
+        <h4 class="name">댓글 쓰기</h4>
+        <div class="">
+            
+        </div>
+    </div>
+</header>
+            <article>
+                <div class="post-board post-board-detail">
+                    <div class="post">
+                        <div class="post-hd">
+                            <label class="label label-default">BEST</label>
+                            <span class="title">단타와 장기 투자 결고 모두 인증합니다. 감사합니다~</span>
+                        </div>
+                        <div class="post-body">
+                            <form>
+                                <div class="form-group fm-comment">
+                                    <textarea class="form-control" placeholder="댓글을 남겨주세요."></textarea>
+                                    <div class="count">
+                                        <span class="txt-length">0</span>
+                                        <span>500</span>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <button type="button" class="btn btn-primary">등록</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+                $('textarea').on('change keyup paste', function() {
+                    const len = $(this).val().length;
+                    if ( len > 500 ) {
+                    } else {
+                        $('.txt-length').text( len );
+                    }
+                    $(this).val( $(this).val().substring(0, 500) );
+                });
+            });
+        </script>
+    </body>
+</html>

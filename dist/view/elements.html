@@ -9,7 +9,14 @@
 <link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../../assets/css/style.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
 
     <style>
         dl dt { margin-bottom: 12px; font-size: 24px; }
@@ -42,6 +49,24 @@
 
         <dt>Modals</dt>
         <dd>
+            <p>
+                <h5>사용법:</h5>
+                <ul>
+                    <li><strong>alert</strong> - callAlert() 호출</li>
+                    <li>
+                        <p>
+                            callAlert( { title : "굵은 글씨로 표시" , description : "세부 내용 표시 - 미전달 무관"} );
+                        </p>
+                    </li>
+                    <li><strong>confirm</strong> - callConfirm() 호출</li>
+                    <li>
+                        <p>
+                            callConfirm( { title : "굵은 글씨로 표시", description : "세부 내용 표시 - 미전달 무관" }, callBack );
+                        </p>
+                    </li>
+                </ul>
+            </p>
+
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#alertModal" >Alert Modal</button>
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#confirmModal" >Confirm Modal</button>
 
@@ -50,7 +75,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
+                            <h5 class="modal-title" id="alertModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
                         </div>
                         <div class="modal-body">
                             내용을 작성합니다.
@@ -133,7 +158,8 @@
                 </form>
             </div>
             <div class="sep">
-                <select class="form-control">
+                <p>select: 모바일 환경에서 네이티브 컴포넌트 사용 가능</p>
+                <select class="form-control" style="width: 200px;">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -158,6 +184,49 @@
             <div class="sep">
                 <textarea class="form-control" rows="3" ></textarea>
             </div>
+            <div class="step">
+                <div class="date-inline">
+                    <div class="date-box">
+                        <input type="text" class="form-control datepicker" placeholder="시작일">
+                        <span class="glyphicon glyphicon-calendar"></span> 
+                    </div>
+                    <div class="date-box">
+                        <input type="text" class="form-control datepicker" placeholder="종료일">
+                        <span class="glyphicon glyphicon-calendar"></span> 
+                    </div>
+                </div>
+            </div>
+        </dd>
+
+
+        <dt>Pagination</dt>
+        <dd>
+            <p>
+                <h5>사용법:</h5>
+                <ul>
+                    <li>table, ul 등 목록 바로 아래 위치</li>
+                    <li>기본적으로 중앙 정렬 -> style="text-align: left;" 삭제 후 사용</li>
+                </ul>
+            </p>
+            <nav class="pagination-wrap" style="text-align: left;">
+                <ul class="pagination pagination-sm">
+                    <li class="disabled">
+                        <a href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
         </dd>
 
     
@@ -165,9 +234,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="../assets/js/common.js"></script>
     <script>
-        $(document).ready(function() {
+        $(function() {
             // 드롭다운
             $('.dropdown-toggle').on('click', function() {
                 if ($(this).hasClass('open')) {
@@ -175,7 +245,11 @@
                 } else {
                     $(this).addClass('open');
                 }
-            })
+            });
+
+            // datepicker
+            $('.datepicker').datepicker();
+
         });
     </script>
   </body>

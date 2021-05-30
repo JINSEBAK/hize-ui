@@ -1,0 +1,75 @@
+<div class="modal fade" id="modalStockBoardRegister" aria-labelledby="modalStockBoardRegisterLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">보유 전광판 등록</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <h4 class="">성공투자주식방-1</h4>
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>유형</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="signal-type" value="1" checked >
+                                            매수
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="signal-type" value="0">
+                                            매도
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>종목</th>
+                                <td>
+                                    <div class="dropdown">
+                                        <div class="form-inline">
+                                            <input type="text" class="form-control" placeholder="종목명 입력">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
+                                       
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">
+                                                <li role="presentation">
+                                                    <a role="menuitem" tabindex="-1" href="#">삼성전자 <small>(005930)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼O <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOOOOO <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>매수가</th>
+                                <td>
+                                    <input type="number" class="form-control" placeholder="매수가 입력 (숫자)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>비중(%)</th>
+                                <td>
+                                    <input type="number" class="form-control" placeholder="비중 입력 (숫자)">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnRegistserBoard">보유 전광판 등록</button>
+            </div>
+        </div>
+    </div>
+</div>

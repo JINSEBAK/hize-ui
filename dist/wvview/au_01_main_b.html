@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+    <link rel="stylesheet" href="../../assets/css/wv.css" />
+
+
+
+
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    </head>
+    <body>
+        <div class="w-main w-main-b">
+            <article class="w-main-carousel">
+                <div class="swiper-container main-visual-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">1</div>
+                        <div class="swiper-slide">2</div>
+                        <div class="swiper-slide">3</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </article>
+            <article class="w-main-list">
+                <div class="w-main-tab" id="webviewMainTabs">
+                    <ul role="tablist">
+                        <li class="active" role="presentation">
+                            <a href="#payChatList" aria-controls="payChatList" role="tab" data-toggle="tab">유료방</a>
+                        </li>
+                        <li>
+                            <a href="#expChatList" aria-controls="expChatList" role="tab" data-toggle="tab">체험방</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-main-content tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="payChatList">
+                        <ul class="wc-list">
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">주린이방1</span>
+                                        <p class="sub">주식의 A-Z까지 알려드립니다. 알가쉬운 주식 정보를 알려드립니다.</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출합니다. 설명 노출합니다.설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다.</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn-more">
+                            <button class="btn btn-link">
+                                더보기 <span class="glyphicon glyphicon-menu-right"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 체험방 -->
+                    <div class="tab-pane fade" id="expChatList">
+                        <ul class="wc-list">
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h5 class="section-title">
+                        <span>동영상</span>
+                    </h5>
+                    <ul class="mv-list">
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">나분석의 명강의 성투주식</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">주린이에게 알려드리는 주식의 기본</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">나주식의 바이오 분석</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">정확하고 빠른 분석 나분석의 주식</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">주린이에게 알려드리는 성투</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn-more">
+                        <button class="btn btn-link">
+                            더보기 <span class="glyphicon glyphicon-menu-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- 팝업 -->
+        <!-- 1. 유료방 신청 클릭 -->
+        <div class="modal fade modal-confirm enter-confirm" id="modalPaidAdmission" aria-labelledby="modalPaidAdmissionLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="info-wrap text-center">
+                            <strong>채팅방 제목</strong>
+                            <p>
+                                설명 노출합니다.
+                            </p>
+                            <div class="c-info">
+                                <span>방장: OOO</span>
+                                <span>기간: 2021.09.30 ~ 2022.04.31</span>
+                                <span>방 인원: 26/100</span>
+                            </div>
+                            <p>
+                                채팅방에 입장하기 위해서는<br>결제 및 관리자의 승인이 필요합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary" >신청</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. 체험방 신청 클릭 -->
+        <div class="modal fade modal-confirm enter-confirm" id="modalExperience" aria-labelledby="modalExperienceLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="info-wrap text-center">
+                            <strong>채팅방 제목</strong>
+                            <p>
+                                설명 노출합니다.
+                            </p>
+                            <div class="c-info">
+                                <span>방장: OOO</span>
+                                <span>기간: 2021.09.30 ~ 2022.04.31</span>
+                                <span>방 인원: 26/100</span>
+                            </div>
+                            <div class="cf-num">
+                                <input type="password" maxlength="4" placeholder="인증번호 입력" >
+                            </div>
+                            <p>
+                                인증번호를 잊으셨나요?<br>고객센터로 문의하세요.<br>
+                                <a href="tel:1588-0000">1588-0000</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-primary" >입장하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+
+            // swiper
+            const swiper = new Swiper('.swiper-container', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                grabCursor: true,
+                loop: true,
+            });
+
+            $(function() {
+
+                $(window).scroll(function() {
+                    var scroll = $(this).scrollTop();
+                    if ( scroll > 200 ) {
+                        $('#webviewMainTabs').addClass('tab-sticky');
+                    } else {
+                        $('#webviewMainTabs').removeClass('tab-sticky');
+                    }
+                });
+
+                // 유료방 신청
+                $('#payChatList').find('.btn-primary').on('click', function() {
+                    $('#modalPaidAdmission').modal('show');
+                });
+
+                // 체험방 입장하기
+                $('#expChatList').find('.btn-primary').on('click', function() {
+                    $('#modalExperience').modal('show');
+                });
+
+                // 신청 클릭
+                $('#modalPaidAdmission').find('.btn-primary').on('click', function() {
+                    $('#modalPaidAdmission').modal('hide');
+                    // type default: short / short 토스트일 경우 type 안 넘겨도 됨
+                    callToast({ msg: '유료방 입장 승인 신청이 완료되었습니다.<br>방 담당자의 전화를 기다려주시기 바랍니다.', type: 'long' });
+                });
+
+                
+            });
+        </script>
+    </body>
+</html>

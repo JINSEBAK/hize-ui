@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
+
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">Hize 관리자웹</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-signal"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li>
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-th glyphicon"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">상품 목록</a>
+                </li>
+                <li>
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-copy"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-credit-card"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li>
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li>
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-phone"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        회원 상세 
+        <small>
+            주식 서비스 플랫폼 회원을 확인할 수 있습니다.
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </h4>
+</div>
+                
+                    <div class="contents">
+                        
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabInfo" aria-controls="tabInfo" role="tab" data-toggle="tab">회원 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabSignup" aria-controls="tabSignup" role="tab" data-toggle="tab">가입 정보</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabPay" aria-controls="tabPay" role="tab" data-toggle="tab">결제 정보</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <!-- 채팅방 정보 -->
+                            <div role="tabpane" class="tab-pane fade in active" id="tabInfo">
+                                <h4 class="detail-content-hd">기본정보</h4>
+<table class="table table-form">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 38%">
+        <col style="width: 12%">
+        <col style="width: 38%">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>이름</th>
+            <td><span class="data">이삼오</span></td>
+            <th rowspan="3">프로필 사진</th>
+            <td rowspan="3">
+                <div class="profile-img">
+                    <img src="../../../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>전화번호</th>
+            <td>
+                <span class="data">
+                    010-1234-1234 
+                    <em>(SMS수신 동의 | 2021.02.12)</em>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th>생년월일</th>
+            <td><span class="data">1990.03.10</span></td>
+        </tr>
+        <tr>
+            <th>이메일 정보</th>
+            <td><span class="data">235lee@gmail.com</span></td>
+            <th>회원 가입일</th>
+            <td><span class="data">2021.04.10</span></td>
+        </tr>
+        <tr>
+            <th>아이디</th>
+            <td><span class="data">235lee</span></td>
+            <th>닉네임</th>
+            <td><span class="data">235나</span></span></td>
+        </tr>
+        <tr>
+            <th>가입 상태</th>
+            <td colspan="3">
+                <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
+                <div class="form-in-multi">
+                    <select class="form-control" id="memberStatus">
+                        <option value="1">활동</option>
+                        <option value="0">탈퇴</option>
+                    </select>
+                    <div class="form-group form-in-btn">
+                        <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
+                        <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td colspan="3">
+                <div class="form-inline">
+                    <div class="form-group form-in-btn">
+                        <input type="password" class="form-control" placeholder="********">
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPasswordReset">비밀번호 재설정</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>  
+</table>
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabSignup">
+                                <div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            Total <span class="count">10</span>
+        </div>
+        <div class="pull-right">
+            <div class="">
+                <label for="" class="sr-only">회원 상태</label>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="memberTypeSort">
+                        유지
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="memberTypeSort">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">유지</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">만료</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">강퇴</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>채팅방명</th>
+                    <th>결제금액(원)</th>
+                    <th>가입일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>종료일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>보너스 기간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-1</span>
+                    </td>
+                    <td>2,000,000</td>
+                    <td>2021.05.10</td>
+                    <td>2021.06.30</td>
+                    <td>2021.07.01 ~ 2021.07.31</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-2</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>2021.05.09</td>
+                    <td>2021.07.31</td>
+                    <td>2021.08.01 ~ 2021.08.31</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>
+                        <span class="ellipsis">성공의 지름길! 자신감있는 종목을 콕 집어드립니다.</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>2021.05.09</td>
+                    <td>2021.07.31</td>
+                    <td>2021.08.01 ~ 2021.08.31</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-3</span>
+                    </td>
+                    <td>500,000</td>
+                    <td>2021.05.09</td>
+                    <td>2021.07.31</td>
+                    <td>2021.08.01 ~ 2021.08.31</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-5</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>2021.05.09</td>
+                    <td>2021.07.31</td>
+                    <td>2021.08.01 ~ 2021.08.31</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+</div>
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabPay">
+                                <div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            Total <span class="count">12</span>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>채팅방명</th>
+                    <th>결제금액(원)</th>
+                    <th>결제일</th>
+                    <th>환불일</th>
+                    <th>결제 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-1</span>
+                    </td>
+                    <td>2,000,000</td>
+                    <td>2021.05.10</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-2</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>2021.05.09</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>
+                        <span class="ellipsis">성공의 지름길! 자신감있는 종목을 콕 집어드립니다.</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>2021.05.09</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-3</span>
+                    </td>
+                    <td>500,000</td>
+                    <td>2021.05.09</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>
+                        <span class="ellipsis">성공투자주식방-5</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>2021.05.09</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td><span class="txt-blue">-800,000</span></td>
+                    <td>-</td>
+                    <td>2021.03.01</td>
+                    <td>환불</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>-</td>
+                    <td>취소</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <span class="ellipsis">회원명</span>
+                    </td>
+                    <td>1,000,000</td>
+                    <td>YYYY.MM.DD</td>
+                    <td>-</td>
+                    <td>결제완료</td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- 비밀번호 재설정 popup -->
+        <!-- 비밀번호 재설정 -->
+<div class="modal fade" id="modalPasswordReset" aria-labelledby="modalPasswordResetLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">비밀번호 재설정</h4>
+            </div>
+            <div class="modal-body">
+                <p>회원 비밀번호를 재설정할 수 있습니다.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="">새 비밀번호</label>
+                        <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리 입력" id="userPw">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="sr-only">새 비밀번호 확인</label>
+                        <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
+                    </div>
+                    <span class="help-block help-block-validate"></span>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" disabled id="btnReset">비밀번호 재설정</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+
+                // 회원 상태 변경
+                $('#memberStatus').on('change', function() {
+                    if ( $(this).val() === '0' ) {
+                        // 탈퇴선택 시 form, button 활성화 
+                        $(this).next('.form-in-btn').find('input').removeAttr('disabled');
+                    }
+                });
+
+                // 탈퇴 사유 입력 시 버튼 활성화
+                $('#inputWithdrawal').on('change paste input', function() {
+                    if ( $(this).val().length > 0 ) {
+                        $(this).next('button').removeAttr('disabled');
+                    } else {
+                        $(this).next('button').attr('disabled', true);
+                    }
+                });
+
+                // 탈퇴 사유 작성
+                $('#btnWidthdrawal').on('click', function() {
+                    callConfirm({
+                        title: '회원을 탈퇴처리하시겠습니까?',
+                        description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
+                    });
+                });
+
+                // 비밀번호 재설정
+                $('input[name=password]').on('change paste input', function() {
+                    const errMsg = {
+                        password: '비밀번호를 형식에 맞게 입력해주세요. (영문/숫자 포함 8~20자리)',
+                        passwordConfirm: '비밀번호가 일치하지 않습니다.'
+                    }
+                    const PATTERN = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,20}$/;
+                    var inputValue = $(this).val();
+                    var hasError = false;
+                    var msg = '';
+
+                    if ( inputValue.length > 0 ) {
+                        if ( PATTERN.test(inputValue) ) {
+                            hasError = false;
+                        } else {
+                            hasError = true;
+                            msg = errMsg['password']
+                        }
+                    }
+                   
+                    if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+                        if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
+                            hasError = true;
+                            msg = errMsg['passwordConfirm'];
+
+                            $('#btnReset').attr('disabled', true);
+                        } else {
+                            $('#btnReset').removeAttr('disabled');
+                        }
+                    }
+
+                    if ( hasError ) {
+                        $(this).parent('.form-group').addClass('has-error');
+                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                    } else {
+                        $(this).parent('.form-group').removeClass('has-error');
+                        $(this).parent('.form-group').siblings('.help-block').html('');
+                    }
+
+                });
+
+
+                $('#btnReset').on('click', function() {
+                    callAlert({
+                        title: '비밀번호가<br>재설정 되었습니다.'
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

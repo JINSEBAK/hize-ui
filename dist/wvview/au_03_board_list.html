@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+    <link rel="stylesheet" href="../../assets/css/wv.css" />
+
+
+
+
+    </head>
+    <body>
+        <div class="w-main">
+            <!--header-->
+            <header class="w-hd">
+    <div class="inner">
+        <div class="">
+            <span class="glyphicon glyphicon-menu-left"></span>
+        </div>
+        <h4 class="name">게시판</h4>
+        <div class="">
+            
+        </div>
+    </div>
+</header>
+            <article>
+                <div class="w-main-tab" id="webviewMainTabs">
+                    <!-- tab 이름, 순서는 백오피스에서 관리 -->
+                    <ul role="tablist">
+                        <li class="active" role="presentation">
+                            <a href="#tabContent1" aria-controls="tabContent1" role="tab" data-toggle="tab">매매 인증</a>
+                        </li>
+                        <li>
+                            <a href="#tabContent2" aria-controls="tabContent2" role="tab" data-toggle="tab">이용 후기</a>
+                        </li>
+                        <li>
+                            <a href="#tabContent3" aria-controls="tabContent3" role="tab" data-toggle="tab">투자 정보</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-main-content tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="tabContent1">
+                        <!-- search -->
+                        <div class="post-board-top">
+                            <select class="select form-control">
+                                <option>최근 등록일</option>
+                                <option>조회수</option>
+                                <option>댓글</option>
+                                <option>좋아요</option>
+                            </select>
+                            <div class="search">
+                                <div class="fm-search">
+                                    <input type="text" class="form-control" placeholder="">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </div>
+                            </div>
+                            <a href="./au_03_board_01_register.html" type="button" class="btn btn-default">글쓰기</a>
+                        </div>
+                        <ul class="post-board" id="tradingList">
+                            <li>
+                                <div class="post best">
+                                    <div class="post-hd">
+                                        <label class="label label-default">BEST</label>
+                                        <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>주식으로FLEX</li>
+                                            <li>2021.05.04</li>
+                                            <li>조회: 440</li>
+                                            <li>댓글: 8</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post best">
+                                    <div class="post-hd">
+                                        <label class="label label-default">BEST</label>
+                                        <span class="title">저도 인증해봤어요</span>
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>맹구와땡칠이</li>
+                                            <li>2021.05.02</li>
+                                            <li>조회: 340</li>
+                                            <li>댓글: 5</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 24
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post best">
+                                    <div class="post-hd">
+                                        <label class="label label-default">BEST</label>
+                                        <span class="title">구준한 주식 공부 덕에 익절합니다.</span>
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>띤도</li>
+                                            <li>2021.05.04</li>
+                                            <li>조회: 440</li>
+                                            <li>댓글: 8</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 19
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+
+                        <div class="go-on-top">
+                            <a href="#" class="btn btn-link">맨위로</a>
+                        </div>
+                    </div>
+
+                    <!-- 이용 후기 -->
+                    <div class="tab-pane fade" id="tabContent2">
+                        <!-- search -->
+                        <div class="post-board-top">
+                            <select class="select form-control">
+                                <option>최근 등록일</option>
+                                <option>조회수</option>
+                                <option>댓글</option>
+                                <option>좋아요</option>
+                            </select>
+                            <div class="search">
+                                <div class="fm-search">
+                                    <input type="text" class="form-control" placeholder="">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </div>
+                            </div>
+                            <a href="./au_03_board_01_register.html" type="button" class="btn btn-default">글쓰기</a>
+                        </div>
+                        <ul class="post-board" id="tradingList">
+                            <li>
+                                <div class="post best">
+                                    <div class="post-hd">
+                                        <label class="label label-default">BEST</label>
+                                        <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>주식으로FLEX</li>
+                                            <li>2021.05.04</li>
+                                            <li>조회: 440</li>
+                                            <li>댓글: 8</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+
+                        <div class="go-on-top">
+                            <a href="#" class="btn btn-link">맨위로</a>
+                        </div>
+                    </div>
+
+                    <!-- 투자 정보 -->
+                    <div class="tab-pane fade" id="tabContent3">
+                        <!-- search -->
+                        <div class="post-board-top">
+                            <select class="select form-control">
+                                <option>최근 등록일</option>
+                                <option>조회수</option>
+                                <option>댓글</option>
+                                <option>좋아요</option>
+                            </select>
+                            <div class="search">
+                                <div class="fm-search">
+                                    <input type="text" class="form-control" placeholder="">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </div>
+                            </div>
+                            <a href="./au_03_board_01_register.html" type="button" class="btn btn-default">글쓰기</a>
+                        </div>
+                        <ul class="post-board" id="tradingList">
+                            <li>
+                                <div class="post best">
+                                    <div class="post-hd">
+                                        <label class="label label-default">BEST</label>
+                                        <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>주식으로FLEX</li>
+                                            <li>2021.05.04</li>
+                                            <li>조회: 440</li>
+                                            <li>댓글: 8</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post">
+                                    <div class="post-hd">
+                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>닉네임</li>
+                                            <li>YYYY.MM.DD</li>
+                                            <li>조회: 0</li>
+                                            <li>댓글: 0</li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-heart"></span> 0
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+
+                        <div class="go-on-top">
+                            <a href="#" class="btn btn-link">맨위로</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        
+        
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+
+            $(function() {
+
+                $(window).scroll(function() {
+                    var scroll = $(this).scrollTop();
+                    if ( scroll > 50 ) {
+                        $('#webviewMainTabs').addClass('tab-sticky');
+                    } else {
+                        $('#webviewMainTabs').removeClass('tab-sticky');
+                    }
+                });
+
+
+                // 매매인증 상세화면 이동
+                $('.post').on('click', function() {
+                    window.location.href = './au_03_board_01_detail.html';
+                });
+
+           
+            });
+        </script>
+    </body>
+</html>

@@ -9,7 +9,14 @@
 <link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../../assets/css/style.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
 
     </head>
     <body>
@@ -26,19 +33,35 @@
             <a href="#" class="navbar-brand">Hize 관리자웹</a>
         </div>
         <div class="navbar-collapse collapse">
-            <div class="pull-right">
-                <div class="btn-group">
-                    <button class="btn btn-profile dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        <span class="user-img">
-                            <img src="../assets/images/photos/user-img.png" alt="빈센조 까사노 프로필 이미지" >
-                        </span>
-                        <span>빈센조 까사노(admin)</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                        <li><a href="#">내 계정</a></li>
-                        <li><a href="#">로그아웃</a></li>
-                    </ul>
-                </div>
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
             </div>
         </div>
     </div>
@@ -48,21 +71,13 @@
             <div class="row">
 
                 <!-- gnb -->
-                <div class="col-sm-3 col-md-2 sidebar">
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
     <ul class="nav nav-sidebar">
-        <li class="active">
-            <a href="#">
+        <li>
+            <a href="#" class="single">
                 <span class="glyphicon glyphicon-comment"></span>
                 <span>채팅</span>
             </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="#">채팅</a>
-                </li>
-                <li>
-                    <a href="#">채팅생성</a>
-                </li>
-            </ul>
         </li>
         <li>
             <a href="#">
@@ -79,52 +94,36 @@
             </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="#" class="single">
                 <span class="glyphicon glyphicon-th glyphicon"></span>
                 <span>보유 전광판</span>
             </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="#">보유 종목</a>
+                    <a href="#">상품 목록</a>
                 </li>
                 <li>
-                    <a href="#">매매 완료</a>
+                    <a href="#">상품 생성</a>
                 </li>
             </ul>
         </li>
         <li>
             <a href="#" class="single">
-                <span class="glyphicon glyphicon-gift"></span>
-                <span>서비스 상품</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
                 <span class="glyphicon glyphicon-copy"></span>
-                <span>요청 관리</span>
+                <span>매출 통계</span>
             </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="#">유료방 신청 내역</a>
-                </li>
-                <li>
-                    <a href="#">환불 신청 내역</a>
-                </li>
-            </ul>
         </li>
         <li>
-            <a href="#">
+            <a href="#" class="single">
                 <span class="glyphicon glyphicon-credit-card"></span>
-                <span>매출 관리</span>
+                <span>결제 관리</span>
             </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="#">매출 통계</a>
-                </li>
-                <li>
-                    <a href="#">결제 내역</a>
-                </li>
-            </ul>
         </li>
         <li>
             <a href="#" class="single">
@@ -135,7 +134,7 @@
         <li>
             <a href="#">
                 <span class="glyphicon glyphicon-comment"></span>
-                <span>관리자 권한 관리</span>
+                <span>권한 관리</span>
             </a>
             <ul class="sub-menu">
                 <li>
@@ -153,7 +152,7 @@
             </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="#">게시판 관리</a>
+                    <a href="#">게시판 설정</a>
                 </li>
                 <li>
                     <a href="#">게시물 관리</a>
@@ -162,29 +161,18 @@
         </li>
         <li>
             <a href="#">
-                <span class="glyphicon glyphicon-folder-open"></span>
-                <span>주식 서비스 관리</span>
-            </a>
-            <ul class="sub-menu">
-                <li>
-                    <a href="#">Log 내역</a>
-                </li>
-                <li>
-                    <a href="#">정책/약관</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">
                 <span class="glyphicon glyphicon-earphone"></span>
-                <span>고객센터</span>
+                <span>운영관리</span>
             </a>
             <ul class="sub-menu">
                 <li>
                     <a href="#">FAQ</a>
                 </li>
                 <li>
-                    <a href="#">1:1 질문</a>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
                 </li>
             </ul>
         </li>
@@ -195,21 +183,21 @@
             </a>
         </li>
     </ul>
-</div>
+</nav>
 
                 <!-- contents -->
-                <div class="col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <div class="main">
                     <div class="page-header">
     <h4>
         페이지 제목 
         <small>
             메뉴 소개
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-            </ol>
-    </small>
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
     </h4>
 </div>
                 </div>
@@ -219,6 +207,7 @@
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="../assets/js/common.js"></script>
     </body>
 </html>

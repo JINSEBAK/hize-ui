@@ -1,0 +1,76 @@
+
+
+<div class="modal fade" id="modalAddAdvertise" aria-labelledby="modalAddAdvertiseLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">광고 추가</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="required">광고명</th>
+                                <td>
+                                    <div class="input-count">
+                                        <label for="" class="sr-only">광고명</label>
+                                        <input type="text" class="form-control" placeholder="광고명 입력" maxlength="16" id="adTitle">
+                                        <div class="count">
+                                            <span class="txt-length">0</span>
+                                            <span>16</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td>
+                                    <label for="" class="sr-only">광고 url</label>
+                                    <input type="text" class="form-control" placeholder="URL 입력">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="required">광고<br>이미지</th>
+                                <td>
+                                    <div class="img-file-box">
+                                        <div class="img-thumb">
+                                            <img src="../../assets/images/photos/sample.jpeg" alt="">
+                                        </div>
+                                        <div class="file-func">
+                                            <div class="pull-left">
+                                                <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    대표이미지 등록 가이드
+                                                </a>
+                                            </div>
+                                            <div class="pull-right">
+                                                <label type="button" class="btn btn-secondary btn-file btn-sm" for="adThumbnailImg">
+                                                    찾기
+                                                    <input type="file" id="adThumbnailImg" >
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="guide">
+                        <li>광고명: 게재하는 광고의 간략한 광고명을 입력해주세요.</li>
+                        <li>URL: Hize앱에서 광고 배너 선택시 이동하는 화면의 주소를 입력해주세요.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+

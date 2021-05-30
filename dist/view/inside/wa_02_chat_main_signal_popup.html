@@ -1,0 +1,100 @@
+<div class="modal fade modal-notice" id="modalSendSignal" aria-labelledby="modalSendSignalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">신호발송</h4>
+            </div>
+            <div class="modal-body">
+                <h4>성공투자주식방-1</h4>
+                <form>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table table-form signal-form">
+                                <tbody>
+                                    <tr>
+                                        <th>유형</th>
+                                        <td>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="signal-type" value="1" checked data-type="sb">
+                                                    매수
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="signal-type" value="2" data-type="ss">
+                                                    매도
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="signal-type" value="3" data-type="sa">
+                                                    알림
+                                                </label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>종목명</th>
+                                        <td>
+                                            <div class="dropdown">
+                                                <div class="form-inline">
+                                                    <input type="text" class="form-control" placeholder="종목명 입력">
+                                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
+                                               
+                                                    <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">
+                                                        <li role="presentation">
+                                                            <a role="menuitem" tabindex="-1" href="#">삼성전자 <small>(005930)</small></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼O <small>(종목코드)</small></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼OOOOOOO <small>(종목코드)</small></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>매수가</th>
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="매수정보 입력" data-target="stockPrice">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>비중(%)</th>
+                                        <td>
+                                            <input type="text" class="form-control" placeholder="비중정보 입력" data-target="stockPercent">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>메세지</th>
+                                        <td>
+                                            <textarea class="form-control" placeholder="메세지 입력" data-target="stockMessage"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <small>* 단문은 90byte이내입니다. 90byte를 초과하면 장문 메세지로 전환됩니다.</small>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="signal signal-preview">
+                                <div class="sb" id="signalView">
+                                    [<span class="type">매수</span>] 신호입니다.<br><br>
+                                    <span class="info">종목명: <span id="stockCode">종목코드</span></span>
+                                    <span class="info">매수가: <span id="stockPrice">10,000원 이하</span></span>
+                                    <span class="info">비중: <span id="stockPercent">10%</span></span>
+                                    <div class="op" id="stockMessage">전문가 의견</div>
+                                </div>
+                                <div class="count">
+                                    <span class="txt-length">0</span>
+                                    <span>90byte</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">신호 발송</button>
+            </div>
+        </div>
+    </div>
+</div>

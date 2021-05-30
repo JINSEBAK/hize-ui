@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
+
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">Hize 관리자웹</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-signal"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li>
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-th glyphicon"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">상품 목록</a>
+                </li>
+                <li>
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-copy"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-credit-card"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li>
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li>
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-phone"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        게시판 설정 
+        <small>
+            주식 서비스 플랫폼 게시판을 관리할 수 있습니다.
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </h4>
+</div>
+
+                    <div class="contents">
+                        <div class="area-list area-no-hd">
+                            <div class="area-list-body">
+
+                                <div class="tb-list drag-board">
+                                    <ul class="tb-list-hd tb-list-board">
+                                        <li class="cell">게시판 제목</li>
+                                        <li class="cell">공개 설정</li>
+                                        <li class="cell">글쓰기 설정</li >
+                                        <li class="cell">파일 첨부</li>
+                                        <li class="cell">댓글 사용</li>
+                                        <li class="cell">설정</li>
+                                    </ul>
+                                    <ul class="tb-list-bd tb-list-board" id="sortableBox">
+                                        <li>
+                                            <div class="cell">게시판 A</div>
+                                            <div class="cell">공개</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">
+                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalBoardSettings">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cell">게시판 B</div>
+                                            <div class="cell">공개</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">
+                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalBoardSettings">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cell">게시판 C</div>
+                                            <div class="cell">공개</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">사용</div>
+                                            <div class="cell">
+                                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalBoardSettings">
+                                                    <span class="glyphicon glyphicon-cog"></span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="btns btns-right">
+                                    <button type="button" class="btn btn-primary">순서 저장</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 게시판 설정 팝업 -->
+        
+<!-- 게시판 설정 -->
+<div class="modal fade" id="modalBoardSettings" aria-labelledby="modalBoardSettingsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">게시판 설정</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>게시판 사용</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="board-use" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="board-use" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>게시판 제목</th>
+                                <td>
+                                    <div class="input-count">
+                                        <label for="" class="sr-only">게시판 제목</label>
+                                        <input type="text" class="form-control" placeholder="게시판 제목 입력" maxlength="10" id="boardTitle">
+                                        <div class="count">
+                                            <span class="txt-length">0</span>
+                                            <span>10</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사용자 글쓰기</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="user-write" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="user-write" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>파일 첨부</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="attachment" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="attachment" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>댓글 사용</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="comment-use" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="comment-use" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>승인여부</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="approval-use" value="1" checked >
+                                            사용
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="approval-use" value="0">
+                                            미사용
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSettings">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+
+                // 게시판 순서변경 - 개발: api 응답 후 이벤트 바인딩
+                $('#sortableBox').sortable({
+                    placeholder: "ui-state-highlight"
+                });
+
+                // 게시판 사용 여부 설정
+                $('input[name=board-use]').on('change', function() {
+                    if ( $(this).val() === '0') {
+                        // 미사용 
+                        $('.table-form').find('input').not('input[name=board-use]').attr('disabled', true);
+                    } else {
+                        $('.table-form').find('input').removeAttr('disabled');
+                    }
+                });
+
+                // 게시판 제목 작성 카운트
+                $('#boardTitle').on('change paste input', function() {
+                    $(this).next('.count').find('.txt-length').text( $(this).val().length );
+                });
+            });
+        </script>
+    </body>
+</html>

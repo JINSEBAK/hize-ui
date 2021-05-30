@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
+
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">Hize 관리자웹</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-signal"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li>
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-th glyphicon"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">상품 목록</a>
+                </li>
+                <li>
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-copy"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-credit-card"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li>
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li>
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-phone"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        앱메인 관리 
+        <small>
+            Hize앱 메인을 관리할 수 있습니다.
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </h4>
+</div>
+
+                    <div class="contents">
+
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabBasic" aria-controls="tabBasic" role="tab" data-toggle="tab">기본 설정</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabPaidChat" aria-controls="tabPaidChat" role="tab" data-toggle="tab">유료방</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabFreeChat" aria-controls="tabFreeChat" role="tab" data-toggle="tab">체험방</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabAdvertise" aria-controls="tabAdvertise" role="tab" data-toggle="tab">광고 삽입</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabVideo" aria-controls="tabVideo" role="tab" data-toggle="tab">동영상 삽입</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <div role="tabpane" class="tab-pane fade in active" id="tabBasic">
+                                
+<div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-right">
+            <button type="button" class="btn btn-primary">저장</button>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <div class="app-main-set">
+            <p class="lead">앱메인 타입을 설정해주세요.</p>
+            <div class="radio radio-img">
+                <label>
+                    <input type="radio" name="main-type" value="A">
+                    A타입
+                    <img src="../../../assets/images/photos/sample_layout.png" alt="동영상이 탭으로 구성된 A타입">
+                </label>
+                <label>
+                    <input type="radio" name="main-type" value="B">
+                    B타입
+                    <img src="../../../assets/images/photos/sample_layout.png" alt="동영상이 목록으로 노출되는 B타입">
+                </label>
+            </div>
+
+            <p class="lead">동영상컨텐츠에 진입 가능한 회원을 설정해주세요.</p>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="user-type" value="1"> 
+                    모든 회원
+                </label>
+                <label>
+                    <input type="radio" name="user-type" value="2">
+                    유료 회원
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabPaidChat">
+                                <p class="lead">유료방 목록 순서를 설정해주세요.</p>
+<div class="area-list">
+    <div class="area-list-body">
+        <div class="tb-list drag-board">
+            <ul class="tb-list-hd tb-list-chat">
+                <li class="cell"><span>No.</span></li>
+                <li class="cell">채팅방명</li>
+                <li class="cell">생성자명</li>
+                <li class="cell">시작일</li>
+                <li class="cell">종료일</li>
+            </ul>
+            <ul class="tb-list-bd tb-list-chat">
+                <li>
+                    <div class="cell">1</div>
+                    <div class="cell"><span class="ellipsis">성공투자주식방-1</span></div>
+                    <div class="cell">박민</div>
+                    <div class="cell">2021.04.10</div>
+                    <div class="cell">2022.03.30</div>
+                </li>
+                <li>
+                    <div class="cell">2</div>
+                    <div class="cell"><span class="ellipsis">채팅방 A</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">3</div>
+                    <div class="cell"><span class="ellipsis">채팅방 B</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">4</div>
+                    <div class="cell"><span class="ellipsis">채팅방 C</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">5</div>
+                    <div class="cell"><span class="ellipsis">채팅방 D</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">6</div>
+                    <div class="cell"><span class="ellipsis">채팅방 E</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">7</div>
+                    <div class="cell"><span class="ellipsis">채팅방 F</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">8</div>
+                    <div class="cell"><span class="ellipsis">채팅방 G</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">9</div>
+                    <div class="cell"><span class="ellipsis">채팅방 H</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">10</div>
+                    <div class="cell"><span class="ellipsis">채팅방 I</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">11</div>
+                    <div class="cell"><span class="ellipsis">채팅방 J</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">12</div>
+                    <div class="cell"><span class="ellipsis">채팅방 K</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">13</div>
+                    <div class="cell"><span class="ellipsis">채팅방 L</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">14</div>
+                    <div class="cell"><span class="ellipsis">채팅방 M</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">15</div>
+                    <div class="cell"><span class="ellipsis">채팅방 N</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">16</div>
+                    <div class="cell"><span class="ellipsis">채팅방 O</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">17</div>
+                    <div class="cell"><span class="ellipsis">채팅방 P</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">18</div>
+                    <div class="cell"><span class="ellipsis">채팅방 Q</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">19</div>
+                    <div class="cell"><span class="ellipsis">채팅방 R</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">20</div>
+                    <div class="cell"><span class="ellipsis">채팅방 S</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btns btns-center">
+            <button type="button" class="btn btn-primary">저장</button>
+        </div>
+    </div>
+</div>
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabFreeChat">
+                                <p class="lead">체험방 목록 순서를 설정해주세요.</p>
+<div class="area-list">
+    <div class="area-list-body">
+        <div class="tb-list drag-board">
+            <ul class="tb-list-hd tb-list-chat">
+                <li class="cell"><span>No.</span></li>
+                <li class="cell">채팅방명</li>
+                <li class="cell">생성자명</li>
+                <li class="cell">시작일</li>
+                <li class="cell">종료일</li>
+            </ul>
+            <ul class="tb-list-bd tb-list-chat">
+                <li>
+                    <div class="cell">1</div>
+                    <div class="cell"><span class="ellipsis">성공투자주식방-1</span></div>
+                    <div class="cell">박민</div>
+                    <div class="cell">2021.04.10</div>
+                    <div class="cell">2022.03.30</div>
+                </li>
+                <li>
+                    <div class="cell">2</div>
+                    <div class="cell"><span class="ellipsis">채팅방 A</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">3</div>
+                    <div class="cell"><span class="ellipsis">채팅방 B</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">4</div>
+                    <div class="cell"><span class="ellipsis">채팅방 C</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">5</div>
+                    <div class="cell"><span class="ellipsis">채팅방 D</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">6</div>
+                    <div class="cell"><span class="ellipsis">채팅방 E</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">7</div>
+                    <div class="cell"><span class="ellipsis">채팅방 F</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">8</div>
+                    <div class="cell"><span class="ellipsis">채팅방 G</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">9</div>
+                    <div class="cell"><span class="ellipsis">채팅방 H</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">10</div>
+                    <div class="cell"><span class="ellipsis">채팅방 I</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">11</div>
+                    <div class="cell"><span class="ellipsis">채팅방 J</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">12</div>
+                    <div class="cell"><span class="ellipsis">채팅방 K</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">13</div>
+                    <div class="cell"><span class="ellipsis">채팅방 L</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">14</div>
+                    <div class="cell"><span class="ellipsis">채팅방 M</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">15</div>
+                    <div class="cell"><span class="ellipsis">채팅방 N</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">16</div>
+                    <div class="cell"><span class="ellipsis">채팅방 O</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">17</div>
+                    <div class="cell"><span class="ellipsis">채팅방 P</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">18</div>
+                    <div class="cell"><span class="ellipsis">채팅방 Q</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">19</div>
+                    <div class="cell"><span class="ellipsis">채팅방 R</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+                <li>
+                    <div class="cell">20</div>
+                    <div class="cell"><span class="ellipsis">채팅방 S</span></div>
+                    <div class="cell">생성자명</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                    <div class="cell">YYYY.MM.DD</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btns btns-center">
+            <button type="button" class="btn btn-primary">저장</button>
+        </div>
+    </div>
+</div>
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabAdvertise">
+                                <!-- 검색 -->
+<div class="area-search">
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="">기간</label>
+            <div class="date-inline">
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="sr-only">상태</label>
+            <select class="form-control">
+                <option value="">전체</option>
+                <option>채팅방명</option>
+                <option>회원명</option>
+            </select>
+        </div>
+        <div class="form-group form-in-btn">
+            <label for="" class="sr-only">검색어</label>
+            <input type="text" class="form-control keyword" placeholder="검색어 입력">
+            <button type="button" class="btn btn-secondary" id="btnSearch">검색</button>
+        </div>
+    </div>
+</div>
+
+<!-- 목록 -->
+<div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            <p class="lead">광고를 삽입해주세요.</p>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-default">삭제</button>
+            <button type="button" class="btn btn-primary" id="btnAddAdvertise" data-toggle="modal" data-target="#modalAddAdvertise">광고 추가</button>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list">
+            <colgroup>
+                <col style="width: 10%">
+                <col style="width: 10%">
+                <col style="width: 15%">
+                <col style="width: auto">
+                <col style="width: 15%">
+                <col style="width: 15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox">
+                            <label for="allChk">
+                                <input type="checkbox" id="allChk">
+                            </label>
+                        </div>
+                    </th>
+                    <th>No.</th>
+                    <th>이미지</th>
+                    <th>광고명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록자명</th>
+                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>10</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">Hize 오픈 광고 - 1</span></td>
+                    <td>박민</td>
+                    <td>2021.04.05</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>9</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>8</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>7</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>6</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>5</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>4</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>3</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>2</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="ad-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>1</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">광고 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <ul class="guide mg24">
+            <li>광고는 앱 메인 상단에 노출됩니다.</li>
+            <li>광고 개수는 최대 10개 입니다.</li>
+        </ul>
+    </div>
+</div>
+
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabVideo">
+                                
+<!-- 검색 -->
+<div class="area-search">
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="">기간</label>
+            <div class="date-inline">
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="">구분</label>
+            <select class="form-control">
+                <option>동영상명</option>
+                <option>등록자명</option>
+            </select>
+        </div>
+        <div class="form-group form-in-btn">
+            <label for="" class="sr-only">검색어</label>
+            <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
+            <button type="button" class="btn btn-secondary">검색</button>
+        </div>
+    </div>
+</div>
+
+<!-- 목록 -->
+<div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            <p class="lead">동영상을 삽입해주세요.</p>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-default">삭제</button>
+            <button type="button" class="btn btn-primary" id="btnVide" data-toggle="modal" data-target="#modalAddVideo">동영상 추가</button>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list">
+            <colgroup>
+                <col style="width: 10%">
+                <col style="width: 10%">
+                <col style="width: 10%">
+                <col style="width: 15%">
+                <col style="width: auto">
+                <col style="width: 15%">
+                <col style="width: 15%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox">
+                            <label for="allChk">
+                                <input type="checkbox" id="allVideoChk">
+                            </label>
+                        </div>
+                    </th>
+                    <th>No.</th>
+                    <th>상태 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>이미지</th>
+                    <th>동영상명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록자명</th>
+                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>50</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">Hize 동영상 - 1</span></td>
+                    <td>박민</td>
+                    <td>2021.04.05</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>49</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>48</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>47</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>46</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>45</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>44</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>43</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>42</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox">
+                            <label for="">
+                                <input type="checkbox" name="video-select">
+                            </label>
+                        </div>
+                    </td>
+                    <td>41</td>
+                    <td>노출</td>
+                    <td>
+                        <img src="../../../assets/images/photos/sample.jpeg" alt="" class="thumb">
+                    </td>
+                    <td><span class="ellipsis">동영상 제목</span></td>
+                    <td>등록자명</td>
+                    <td>YYYY.MM.DD</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 광고 추가 팝업 -->
+        
+
+<div class="modal fade" id="modalAddAdvertise" aria-labelledby="modalAddAdvertiseLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">광고 추가</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="required">광고명</th>
+                                <td>
+                                    <div class="input-count">
+                                        <label for="" class="sr-only">광고명</label>
+                                        <input type="text" class="form-control" placeholder="광고명 입력" maxlength="16" id="adTitle">
+                                        <div class="count">
+                                            <span class="txt-length">0</span>
+                                            <span>16</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>URL</th>
+                                <td>
+                                    <label for="" class="sr-only">광고 url</label>
+                                    <input type="text" class="form-control" placeholder="URL 입력">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="required">광고<br>이미지</th>
+                                <td>
+                                    <div class="img-file-box">
+                                        <div class="img-thumb">
+                                            <img src="../../assets/images/photos/sample.jpeg" alt="">
+                                        </div>
+                                        <div class="file-func">
+                                            <div class="pull-left">
+                                                <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
+                                                    <span class="glyphicon glyphicon-info-sign"></span>
+                                                    대표이미지 등록 가이드
+                                                </a>
+                                            </div>
+                                            <div class="pull-right">
+                                                <label type="button" class="btn btn-secondary btn-file btn-sm" for="adThumbnailImg">
+                                                    찾기
+                                                    <input type="file" id="adThumbnailImg" >
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="guide">
+                        <li>광고명: 게재하는 광고의 간략한 광고명을 입력해주세요.</li>
+                        <li>URL: Hize앱에서 광고 배너 선택시 이동하는 화면의 주소를 입력해주세요.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- 동영상 추가 팝업 -->
+        
+
+<div class="modal fade" id="modalAddVideo" aria-labelledby="modalAddVideoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">동영상 추가</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="required">동영상 제목</th>
+                                <td>
+                                    <div class="input-count">
+                                        <label for="" class="sr-only">동영상 제목</label>
+                                        <input type="text" class="form-control" placeholder="동영상명 입력" maxlength="16" id="videoTitle">
+                                        <div class="count">
+                                            <span class="txt-length">0</span>
+                                            <span>16</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="required">설명</th>
+                                <td>
+                                    <div class="input-count">
+                                        <label for="" class="sr-only">동영상 설명</label>
+                                        <input type="text" class="form-control" placeholder="설명 입력" maxlength="20" id="videoExplanation">
+                                        <div class="count">
+                                            <span class="txt-length">0</span>
+                                            <span>20</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="required">동영상 주소</th>
+                                <td>
+                                    <div class="form-group form-in-btn">
+                                        <div class="input-count">
+                                            <label for="" class="sr-only">동영상 설명</label>
+                                            <input type="text" class="form-control" placeholder="동영상 주소"  id="videoUrl">
+                                        </div>
+                                        <button type="button" class="btn btn-secondary" id="btnAddVideoUrl">입력</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>동영상</th>
+                                <td>
+                                    <div class="preview-video">
+                                        <iframe id="player" type="text/html" src=""></iframe>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>상태</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="use-yn" value="1" checked >
+                                            노출
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="use-yn" value="0">
+                                            미노출
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="guide">
+                        <li>동영상 제목/설명: 사용자앱에서 보여질 동영상 제목과 설명을 입력해주세요.</li>
+                        <li>동영상 주소: 게시할 유투브 동영상 주소를 입력해주세요.<br>(동영상 주소: 유투브 &gt; 공유 &gt; 링크복사)</li>
+                        <li>상태: 회원에게 동영상 노출 여부를 설정해주세요.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">저장</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+
+                $('.nav-tabs').find('a[href="#tabBasic"]').tab('show');
+
+                // 목록 Sortable
+                $('.tb-list-bd').sortable({
+                    placeholder: "ui-state-highlight",
+                    update: function( event, ui ) {
+                        // 다시 채번하기
+                        $('#sortableBox li').each(function(index) {
+                            $(this).find('.cell').eq(0).text( index + 1 );
+                        });
+                    }
+                });
+
+                // 광고
+                $('#allChk').on('change', function() {
+                    if ($(this).is(':checked')) {
+                        $('input[name=ad-select]').each(function() {
+                            $(this).prop('checked', true);
+                        });
+                    } else {
+                        $('input[name=ad-select]').each(function() {
+                            $(this).prop('checked', false);
+                        });
+                    }
+                });
+
+                $('#btnAddAdvertise').on('click', function() {
+                    const count = $('input[name=ad-select]').length;
+
+                    if (count === 10 ) {
+                        callAlert({
+                            title: '광고 건수가 초과되었습니다.',
+                            description: '광고는 최대 10개까지<br>등록 가능합니다.'
+                        });
+                    }
+                });
+
+                // 동영상
+                $('#allVideoChk').on('change', function() {
+                    if ($(this).is(':checked')) {
+                        $('input[name=video-select]').each(function() {
+                            $(this).prop('checked', true);
+                        });
+                    } else {
+                        $('input[name=video-select]').each(function() {
+                            $(this).prop('checked', false);
+                        });
+                    }
+                });
+
+                $('#btnAddVideoUrl').on('click', function() {
+                    const url = $('#videoUrl').val();
+                    $('#player').attr('src', url);
+                });
+
+                // 글자수 카운트
+                $('.table-form').find('.form-control').on('change keyup input', function() {
+                    var count = $(this).val().length;
+                    $(this).next('.count').find('.txt-length').text(count);
+                });
+
+            });
+        </script>
+    </body>
+</html>

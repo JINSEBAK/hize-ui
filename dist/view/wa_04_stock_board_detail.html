@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
+
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">Hize 관리자웹</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-signal"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li>
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-th glyphicon"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">상품 목록</a>
+                </li>
+                <li>
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-copy"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-credit-card"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li>
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li>
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-phone"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        성공투자주식방-1 
+        <small>
+            채팅방에서 보유하고 있는 종목정보를 확인할 수 있습니다.
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </h4>
+</div>
+                
+                    <div class="contents">
+                       
+                        <!-- tabs -->
+                        <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#tabOwner" aria-controls="tab1" role="tab" data-toggle="tab">보유 종목</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tabTrade" aria-controls="tab2" role="tab" data-toggle="tab">매매 완료</a>
+                            </li>
+                        </ul>
+
+                        <!-- contents -->
+                        <div class="tab-content detail-content">
+                            <div role="tabpane" class="tab-pane fade in active" id="tabOwner">
+                                
+<!-- 검색 -->
+<div class="area-search">
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="">기간</label>
+            <div class="date-inline">
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="">구분</label>
+            <select class="form-control">
+                <option>종목명</option>
+                <option>등록자명</option>
+            </select>
+        </div>
+        <div class="form-group form-in-btn">
+            <label for="" class="sr-only">검색어</label>
+            <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
+            <button type="button" class="btn btn-secondary">검색</button>
+        </div>
+    </div>
+</div>
+
+<div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            Total <span class="count">3</span>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list stock-list">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>종목명</th>
+                    <th>종목번호</th>
+                    <th>비중</th>
+                    <th>수익률 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록자명</th>
+                    <th>등록일시 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>노출여부 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td>삼성전자</td>
+                    <td>005930</td>
+                    <td>5%</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>박민</td>
+                    <td>2021.04.13 10:30</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>블루메드</td>
+                    <td>049180</td>
+                    <td>3%</td>
+                    <td><span class="rate-down">5%</span></td>
+                    <td>박민</td>
+                    <td>2021.04.07 11:10</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>한화에어로스페이스</td>
+                    <td>012450</td>
+                    <td>2%</td>
+                    <td><span class="rate-down">5%</span></td>
+                    <td>박민</td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+                            </div>
+                            <div role="tabpane" class="tab-pane fade" id="tabTrade">
+                                <h4 class="detail-content-hd">기본정보</h4>
+<table class="table table-form">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 38%">
+        <col style="width: 12%">
+        <col style="width: 38%">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>채팅방명</th>
+            <td>
+                <span class="data">성공투자주식방-1</span>
+            </td>
+            <th>상품 생성자</th>
+            <td>
+                <span class="data">park77(박홍식)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>채팅방 소개</th>
+            <td class="vertical-top">
+                <div>
+                    안녕하세요~ 성투주식방의 나주식입니다.<br>
+                    분석을 통해 결과 예측으로 실시간 수익을 내드리고 있습니다. 안전한 수익을 위해 매시간마다 정보를 전달드립니다. 성.공.투.자. 100%
+                </div>
+            </td>
+            <th>대표이미지</th>
+            <td>
+                <div class="img-file-box">
+                    <div class="img-thumb">
+                        <img src="../../assets/images/photos/sample.jpeg" alt="">
+                    </div>
+                    <div class="file-func">
+                        <div class="pull-left">
+                            <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
+                                <span class="glyphicon glyphicon-info-sign"></span>
+                                대표이미지 등록 가이드
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>구분</th>
+            <td>
+                <span class="data">유료</span>
+            </td>
+            <th>채팅유형</th>
+            <td>
+                <span class="data">일반 채팅</span>
+            </td>
+        </tr>
+        <tr>
+            <th>방장</th>
+            <td colspan="3">
+                <span class="data">
+                    나주민(nastock), 박나래(parkadmin), 홍길동(hongadmin)
+                </span>
+                
+            </td>
+        </tr>
+        <tr>
+            <th>기간</th>
+            <td>
+                <span class="data">2021.04.10 ~ 2022.03.31</span>
+            </td>
+            <th>최대인원</th>
+            <td>
+                <span class="data">100</span>
+            </td>
+        </tr>
+        <tr>
+            <th>인증번호 설정</th>
+            <td colspan="3">
+                <span class="data">OFF</span>
+            </td>
+        </tr>
+        <!-- 인증번호 ON 설정 -->
+        <tr>
+            <th>인증번호 설정</th>
+            <td colspan="3">
+                <span class="data">ON | 1234</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- 대표이미지 등록 가이드 -->
+<div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel"
+            aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">대표이미지 등록 가이드</h4>
+            </div>
+            <div class="modal-body">
+               <ol class="ol-guide">
+                   <li>
+                       <strong>이미지 사이즈</strong>
+                       <ul>
+                           <li>이미지 권장 사이즈는 500px * 300px 입니다.</li>
+                           <li>권장사이즈보다 큰 이미지 등록 시 뷰영역 높이 기준으로 이미지가 줄여져서 보여집니다.</li>
+                       </ul>
+                       <div class="ex-img">
+                           <p>썸네일 사진<br>500px * 300px</p>
+                           <img src="../../../assets/images/photos/sample.jpeg">
+                       </div>
+                   </li>
+                   <li>
+                       <strong>파일용량/확장자</strong>
+                       <p>파일용량은 3MB이하 파일은 jpg, png만 가능합니다.</p>
+                   </li>
+               </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 보유 전광판 등록 팝업 -->
+        <div class="modal fade" id="modalStockBoardRegister" aria-labelledby="modalStockBoardRegisterLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">보유 전광판 등록</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <h4 class="">성공투자주식방-1</h4>
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 25%">
+                            <col style="width: 75%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>유형</th>
+                                <td>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="signal-type" value="1" checked >
+                                            매수
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="signal-type" value="0">
+                                            매도
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>종목</th>
+                                <td>
+                                    <div class="dropdown">
+                                        <div class="form-inline">
+                                            <input type="text" class="form-control" placeholder="종목명 입력">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
+                                       
+                                            <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">
+                                                <li role="presentation">
+                                                    <a role="menuitem" tabindex="-1" href="#">삼성전자 <small>(005930)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼O <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOOOOO <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>매수가</th>
+                                <td>
+                                    <input type="number" class="form-control" placeholder="매수가 입력 (숫자)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>비중(%)</th>
+                                <td>
+                                    <input type="number" class="form-control" placeholder="비중 입력 (숫자)">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnRegistserBoard">보유 전광판 등록</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+
+                // 상세 이동 
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_04_stock_board_owner_detail.html';
+                });
+
+                // 보유 전광판 등록 파업
+                $('.data-list').find('.btn').on('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    $('#modalStockBoardRegister').modal('show');
+                });
+
+                $('#btnRegistserBoard').on('click', function() {
+                    callAlert({
+                        title: '보유 전광판에<br>등록되었습니다.'
+                    });
+                });
+
+                $('.stock-list tbody tr').on('click', function() {
+                    window.location.href = './wa_04_stock_board_owner_detail.html';
+                });
+            });
+        </script>
+    </body>
+</html>

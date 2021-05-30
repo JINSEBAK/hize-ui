@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="../../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+
+
+
+
+
+        <link href="../../assets/css/quill.snow.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand">Hize 관리자웹</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <a href="../view/wa_14_request_list.html">
+                        <span>유료방 가입요청</span>
+                        <span><em>50</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>관리자 권한요청</span>
+                        <span><em>20</em>건</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>게시물 승인 요청</span>
+                        <span><em>10</em>건</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="관리자의 프로필 이미지" >
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-signal"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li>
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-th glyphicon"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-gift"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">상품 목록</a>
+                </li>
+                <li>
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-copy"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-credit-card"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-globe"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li>
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-tasks"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li>
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <span class="glyphicon glyphicon-earphone"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li>
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="single">
+                <span class="glyphicon glyphicon-phone"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        글쓰기 
+        <small>
+            주식 서비스 플랫폼 게시물을 관리할 수 있습니다.
+        </small>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+    </h4>
+</div>
+                
+                    <div class="contents">
+                  
+                        <!-- contents -->
+                        <div class="detail-content">
+                            <div class="detail-post detail-register">
+                                <div class="detail-post-hd">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <label for="" class="sr-only">게시물 제목</label>
+                                            <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="postTitle">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"  name="post-type" value="notice">
+                                                공지
+                                            </label>
+                                            <label>
+                                                <input type="checkbox"  name="post-type" value="best">
+                                                베스트글
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="detail-post-bd">
+                                    <div class="contents">
+                                        <div id="postEditor" class="txt-editor"></div>
+                                    </div>
+                                    <!-- 첨부파일 영역 -->
+                                    <div class="attachment">
+                                        <label type="button" class="btn btn-default" for="imgAttachment">
+                                            + 이미지첨부
+                                            <input type="file" id="imgAttachment" accept=".git,.jpg,.jpeg,.png">
+                                        </label>
+                                        <span>이미지는 최대 3개, 파일당 30MB까지 첨부 가능합니다.</span>
+
+                                        <div class="files">
+                                            <span class="file">
+                                                <a href="#">File3567-1.jpg</a>
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                            <span class="file">
+                                                <a href="#">imageiamge...123456789.jpg</a>
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- btns -->
+                        <div class="btns btns-right mg24">
+                            <button type="button" class="btn btn-default" id="btnCancel">취소</button>
+                            <button type="button" class="btn btn-primary" id="btnRegister">등록</button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script src="../../assets/js/quill.min.js"></script>
+        <script>
+            $(function() {
+                
+                // 게시물 타입 설정
+                $('input[name=post-type]').on('change', function() {
+
+                    // 둘 중 1개만 선택
+                    // 둘 다 미선택 경우가 있기 때문에 checkbox로 구성
+                    if ( $(this).is(':checked') ) {
+                        $('input[name=post-type]').not($(this)).prop('checked', false);
+                    }
+                });
+
+                // 취소 버튼 클릭
+                $('#btnCancel').on('click', function() {
+                    const titleLength = $('#postTitle').val().length;
+                    const contentLength = $('#postContent').val().length;
+
+                    if ( titleLength > 0 || contentLength > 0 ) {
+                        callConfirm({
+                            title: '글쓰기 화면에서 나가시겠습니까?',
+                            description: '이 페이지를 벗어나면<br>입력한 내용은 저장되지 않습니다.'
+                        }, onClickExit, {
+                            cancel: '취소',
+                            confirm: '나가기'
+                        });
+                    } else {
+                        onClickExit();
+                    }
+                });
+
+                var toolbarOptions = [
+                    [{ 'font': [] }],
+                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['blockquote', 'code-block'],
+
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    [{ 'indent': '-1'}, { 'indent': '+1' }],          
+                    
+                    [{ 'color': [] }, { 'background': [] }],          
+                    [{ 'align': [] }],
+                    // ['image'],
+                    ['clean'],         
+
+                    //[{'header': 1}, {'header': 2}, {'header': 3}],
+                    //[{ 'script': 'sub'}, { 'script': 'super' }],      
+                    //[{ 'direction': 'rtl' }],                         
+                    //[{ 'size': ['small', false, 'large', 'huge'] }],  
+                ];
+
+                var quill = new Quill('#postEditor', {
+                    theme: 'snow',
+                    placeholder: '내용을 입력해주세요.',
+                    modules: {
+                        toolbar: toolbarOptions
+                    }
+                });
+                
+            });
+
+
+            function onClickExit() {
+                //
+                window.location.href = './wa_10_board_post_list.html';
+            }
+        </script>
+    </body>
+</html>
