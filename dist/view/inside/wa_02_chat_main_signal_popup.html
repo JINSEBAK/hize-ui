@@ -32,6 +32,12 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <th>제목</th>
+                                        <td>
+                                            <input type="text" class="form-control" name="" placeholder="제목" value="[매수] 신호입니다." id="signalTitleInput" data-target="#signalTitle">
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <th>종목명</th>
                                         <td>
                                             <div class="dropdown">
@@ -55,19 +61,19 @@
                                     <tr>
                                         <th>매수가</th>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="매수정보 입력" data-target="stockPrice">
+                                            <input type="text" class="form-control" placeholder="매수정보 입력" data-target="#stockPrice">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>비중(%)</th>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="비중정보 입력" data-target="stockPercent">
+                                            <input type="text" class="form-control" placeholder="비중정보 입력" data-target="#stockPercent">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>메세지</th>
                                         <td>
-                                            <textarea class="form-control" placeholder="메세지 입력" data-target="stockMessage"></textarea>
+                                            <textarea class="form-control" placeholder="메세지 입력" data-target="#stockMessage"></textarea>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -77,7 +83,7 @@
                         <div class="col-md-4">
                             <div class="signal signal-preview">
                                 <div class="sb" id="signalView">
-                                    [<span class="type">매수</span>] 신호입니다.<br><br>
+                                    <span class="title" id="signalTitle">[매수] 신호입니다.</span><br><br>
                                     <span class="info">종목명: <span id="stockCode">종목코드</span></span>
                                     <span class="info">매수가: <span id="stockPrice">10,000원 이하</span></span>
                                     <span class="info">비중: <span id="stockPercent">10%</span></span>
@@ -93,7 +99,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">신호 발송</button>
+                <button type="button" class="btn btn-primary" id="btnSendSignal">신호 발송</button>
             </div>
         </div>
     </div>

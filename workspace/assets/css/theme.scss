@@ -835,14 +835,22 @@
     select {
       max-width: 120px;
       margin-bottom: 4px;
+      display: inline-block;  
     }
     .form-in-btn {
+      display: inline-block;
       margin-bottom: 0;
       & > * {
         display: inline-block;
       }
       input.form-control {
         max-width: 50%;
+      }
+      &.reason {
+        width: calc(100% - 150px);
+        input.form-control {
+          max-width: 80%;
+        }
       }
     }
   }
@@ -878,6 +886,15 @@
     li {
       list-style: disc;
     }
+  }
+  .mod-component {
+    display: none !important;
+  }
+  &.table-form-mod {
+    .mod-component {
+      display: inline-block !important;
+    }
+
   }
 }
 
@@ -1362,31 +1379,34 @@
 
 // 권한
 .mg-authority {
-  .col {
-    float: left;
-    width: calc(50% - 50px);
-    &.between {
-      width: 100px;
-      text-align: center;
-      padding-top: 80px;
-      color: $text-basic;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  .auth-box {
+    padding: 12px;
+    .auth-chip {
+      float: left;
+      width: calc(100% / 3);
+      padding: 6px;
+      label {
+        display: block;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        margin: 0;
+        padding: 6px 12px;
+        cursor: pointer;
+        input[type=checkbox] {
+          float: right;
+        }
+      }
     }
   }
-  .auth-box {
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    padding: 12px;
+}
 
-    .auth-list {
-      background-color: $bg-color;
-      border-radius: 4px;
-      padding: 12px;
+@media (min-width: 1281px) {
+  .mg-authority {
+    .auth-box {
       .auth-chip {
-        border: 1px solid $border-color;
-        background-color: $bg-white;
-        margin-bottom: 6px;
-        padding: 6px 12px;
-        cursor: grab;
+        width: calc(100% / 5);
       }
     }
   }
@@ -1394,39 +1414,65 @@
 
 // 권한 그룹 관리
 .auth-board {
-  > div {
-    float: left;
-  }
-  .lf {
-    width: 30%;
-    padding-right: 12px;
-  }
-  .rt {
-    width: 70%;
-    padding-left: 12px;
-    max-height: 700px;
-    overflow-y: auto;
-    &::-webkit-scrollbar {
-      width: 5px;
-      height: 5px !important;
+  .tp {
+    margin-bottom: 12px;
+    overflow: hidden;
+    > * {
+      float: left;
     }
-    &::-webkit-scrollbar-track {
-      background-color: #ffffff !important;
+    .input-count {
+      label {
+        float: left;
+        margin: 8px 12px 0 0;
+      }
+      input[type=text] {
+        float: left;
+        width: 50%;
+        min-width: 300px;
+      }
     }
-    &::-webkit-scrollbar-thumb {
-      -webkit-border-radius: 5px;
-      border-radius: 5px;
-      background-color: #d8d8d8 !important;
+    .btn {
+      margin-left: 6px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: #c5c5c5 !important;
+    .guide {
+      font-size: 12px;
+      margin-left: 16px;
+      li {
+        list-style: '*';
+      }
     }
   }
-  .tb-auth > tbody > tr > th {
-    vertical-align: middle; 
+  .bt {
+    clear: both;
   }
-  .tb-auth > tbody > tr > td {
-    text-align: center;
+  .table {
+    &.tb-auth {
+      thead {
+        tr {
+          th {
+            background-color: #999;
+            color: #fff;
+          }
+        }
+      }
+      tbody {
+        tr {
+          th {
+           &.d1 {
+             background-color: #f1f1f1;
+           }
+           &.d2 {
+             background-color: #f9f9f9;
+           }
+          }
+          td {
+            .checkbox {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1473,10 +1519,13 @@
   &.signal-preview {
     border: 1px solid $border-color;
     position:relative;
-    height: 348px;
+    height: 398px;
     > div:not(.count) {
       padding: 12px;
       height: 100%;
+    }
+    > span {
+      word-break: break-all;
     }
     .info {
       display: block;
@@ -1517,6 +1566,77 @@
     }
   }
 }
+
+// 보유 전광판
+.modal {
+  .modal-body {
+    &.stock-board {
+      min-height: 480px;
+      .detail-tabs {
+        margin-top: 0;
+      }
+      .detail-content {
+        margin-top: 0;
+        .table {
+          tr {
+            cursor: pointer;
+            &:hover {
+              background-color: $card-hover;
+            }
+          }
+        }
+      }
+    }
+    &.member-board {
+      min-height: 480px;
+    }
+  }
+}
+
+.modal-dialog {
+  .contents {
+    min-height: 480px;
+    &:not(.contents-notice-list) {
+      // padding: 12px;
+    }
+  }
+  .modal-footer {
+    .mode-detail {
+      .btn-default {
+        float: left;
+      }
+    }
+  }
+  &.list {
+    .modal-footer {
+      > *:not(.mode-list) {
+        display: none;
+      }
+    }
+  }
+  &.detail {
+    .modal-footer {
+      > *:not(.mode-detail) {
+        display: none;
+      }
+    }
+  }
+  &.modify {
+    .modal-footer {
+      > *:not(.mode-modify) {
+        display: none;
+      }
+    }
+  }
+  &.register {
+    .modal-footer {
+      > *:not(.mode-register) {
+        display: none;
+      }
+    }
+  }
+}
+
 
 // 통계
 .statistics {

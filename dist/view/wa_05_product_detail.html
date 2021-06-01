@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Hize 관리자웹사이트 UI</title>
-<link rel="shortcut icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -218,6 +218,9 @@
                             <li role="presentation">
                                 <a href="#tabHistory" aria-controls="tabHistory" role="tab" data-toggle="tab">관리자 이력</a>
                             </li>
+                            <li class="floated">
+                                <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalAddMember">회원 추가</button>
+                            </li>
                         </ul>
 
                         <!-- contents -->
@@ -357,23 +360,17 @@
         <div class="pull-right">
             <div class="form-inline">
                 <label for="">가입상태</label>
-                <div class="dropdown ">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="memberTypeSort">
-                        유지
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="memberTypeSort">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">유지</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">만료</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">강퇴</a></li>
-                    </ul>
-                </div>
+                <select class="form-control" style="width: 120px">
+                    <option value="">유지</option>
+                    <option value="">만료</option>
+                    <option value="">강퇴</option>
+                </select>
             </div>
             
         </div>
     </div>
     <div class="area-list-body">
-        <table class="table table-bordered data-list">
+        <table class="table table-bordered data-list member-list">
             <thead>
                 <tr>
                     <th>No.</th>
@@ -390,9 +387,7 @@
             <tbody>
                 <tr>
                     <td>100</td>
-                    <td>
-                        <span><a href="#">장나라</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>janghaha</td>
                     <td>난나라</td>
                     <td>2,000,000</td>
@@ -403,9 +398,7 @@
                 </tr>
                 <tr>
                     <td>99</td>
-                    <td>
-                        <span><a href="#">권우수</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>woosu12</td>
                     <td>woosu12</td>
                     <td>1,000,000</td>
@@ -416,9 +409,7 @@
                 </tr>
                 <tr>
                     <td>98</td>
-                    <td>
-                        <span><a href="#">이경</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>mrlee</td>
                     <td>이하고난</td>
                     <td>1,000,000</td>
@@ -429,9 +420,7 @@
                 </tr>
                 <tr>
                     <td>97</td>
-                    <td>
-                        <span><a href="#">황나라</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>narawang</td>
                     <td>narawang</td>
                     <td>500,000</td>
@@ -442,9 +431,7 @@
                 </tr>
                 <tr>
                     <td>96</td>
-                    <td>
-                        <span><a href="#">김수봉</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>subong54</td>
                     <td>성공투자</td>
                     <td>1,000,000</td>
@@ -455,9 +442,7 @@
                 </tr>
                 <tr>
                     <td>95</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -468,9 +453,7 @@
                 </tr>
                 <tr>
                     <td>94</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -481,9 +464,7 @@
                 </tr>
                 <tr>
                     <td>93</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -494,9 +475,7 @@
                 </tr>
                 <tr>
                     <td>92</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -507,9 +486,7 @@
                 </tr>
                 <tr>
                     <td>91</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -580,9 +557,7 @@
             <tbody>
                 <tr>
                     <td>100</td>
-                    <td>
-                        <span><a href="#">장나라</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>janghaha</td>
                     <td>난나라</td>
                     <td>2,000,000</td>
@@ -592,9 +567,7 @@
                 </tr>
                 <tr>
                     <td>99</td>
-                    <td>
-                        <span><a href="#">권우수</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>woosu12</td>
                     <td>woosu12</td>
                     <td>1,000,000</td>
@@ -604,9 +577,7 @@
                 </tr>
                 <tr>
                     <td>98</td>
-                    <td>
-                        <span><a href="#">이경</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>mrlee</td>
                     <td>이하고난</td>
                     <td>1,000,000</td>
@@ -616,9 +587,7 @@
                 </tr>
                 <tr>
                     <td>97</td>
-                    <td>
-                        <span><a href="#">황나라</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>narawang</td>
                     <td>narawang</td>
                     <td>500,000</td>
@@ -628,9 +597,7 @@
                 </tr>
                 <tr>
                     <td>96</td>
-                    <td>
-                        <span><a href="#">김수봉</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>subong54</td>
                     <td>성공투자</td>
                     <td>1,000,000</td>
@@ -640,9 +607,7 @@
                 </tr>
                 <tr>
                     <td>95</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -652,9 +617,7 @@
                 </tr>
                 <tr>
                     <td>94</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -664,9 +627,7 @@
                 </tr>
                 <tr>
                     <td>93</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -676,9 +637,7 @@
                 </tr>
                 <tr>
                     <td>92</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -688,9 +647,7 @@
                 </tr>
                 <tr>
                     <td>91</td>
-                    <td>
-                        <span><a href="#">회원명</a></span>
-                    </td>
+                    <td>회원명</td>
                     <td>ID</td>
                     <td>Nickname</td>
                     <td>1,000,000</td>
@@ -749,9 +706,7 @@
             <tbody>
                 <tr>
                     <td>50</td>
-                    <td>
-                        <span><a href="#">소담</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>sodamso</td>
                     <td>관리자 권한 삭제</td>
                     <td>나관리</td>
@@ -759,9 +714,7 @@
                 </tr>
                 <tr>
                     <td>49</td>
-                    <td>
-                        <span><a href="#">소담</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>sodamso</td>
                     <td>관리자 권한 부여</td>
                     <td>나관리</td>
@@ -769,9 +722,7 @@
                 </tr>
                 <tr>
                     <td>48</td>
-                    <td>
-                        <span><a href="#">이응삼</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>333go</td>
                     <td>관리자 권한 부여</td>
                     <td>나관리</td>
@@ -779,9 +730,7 @@
                 </tr>
                 <tr>
                     <td>47</td>
-                    <td>
-                        <span><a href="#">박고수</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>gosulike</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -789,9 +738,7 @@
                 </tr>
                 <tr>
                     <td>46</td>
-                    <td>
-                        <span><a href="#">관리자이름</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>id</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -799,9 +746,7 @@
                 </tr>
                 <tr>
                     <td>45</td>
-                    <td>
-                        <span><a href="#">관리자이름</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>id</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -809,9 +754,7 @@
                 </tr>
                 <tr>
                     <td>44</td>
-                    <td>
-                        <span><a href="#">관리자이름</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>id</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -819,9 +762,7 @@
                 </tr>
                 <tr>
                     <td>43</td>
-                    <td>
-                        <span><a href="#">관리자이름</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>id</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -829,9 +770,7 @@
                 </tr>
                 <tr>
                     <td>42</td>
-                    <td>
-                        <span><a href="#">관리자이름</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>id</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -839,9 +778,7 @@
                 </tr>
                 <tr>
                     <td>41</td>
-                    <td>
-                        <span><a href="#">관리자이름</a></span>
-                    </td>
+                    <td>관리자이름</td>
                     <td>id</td>
                     <td>관리자 권한 부여</td>
                     <td>나부장</td>
@@ -910,7 +847,7 @@
                 <form>
                     <div class="form-group form-search">
                         <span class="glyphicon glyphicon-search"></span>
-                        <input type="text" class="form-control" placeholder="닉네임, 아이디 검색">
+                        <input type="text" class="form-control" placeholder="이름, 아이디 검색">
                     </div>
                 </form>
                 <div class="scrolling">
@@ -1144,6 +1081,73 @@
     </div>
 </div>
 
+        <!-- 회원 추가 팝업-->
+        <div class="modal fade" id="modalAddMember" aria-labelledby="modalAddMemberLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">회원 추가</h4>
+            </div>
+            <div class="modal-body member-board">
+                <form>
+                    <div class="form-group form-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <input type="text" class="form-control" placeholder="회원명 입력" value="홍">
+                    </div>
+                </form>
+                <div class="scrolling">
+                    <ul class="user-list">
+                        <li>
+                            <div class="user">
+                                <div class="img">
+                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지" >
+                                </div>
+                                <div class="info">
+                                    <span class="name">홍금보(honghong)</span>
+                                    <span class="valid-term">
+                                        유료회원 기간 2021.03.01 ~ 2021.05.31
+                                    </span>
+                                </div>
+                                <div class="ex-func">
+                                    <div class="radio">
+                                        <label for="chk1">
+                                            <input type="radio" name="user-chk" id="chk1">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="user">
+                                <div class="img">
+                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지" >
+                                </div>
+                                <div class="info">
+                                    <span class="name">홍자79(hongja)</span>
+                                    <span class="valid-term">
+                                        유료회원 기간 2021.03.01 ~ 2021.05.31
+                                    </span>
+                                </div>
+                                <div class="ex-func">
+                                    <div class="radio">
+                                        <label for="chk1">
+                                            <input type="radio" name="user-chk" id="chk1">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAddMember">회원 추가</button>
+            </div>
+        </div>
+    </div>
+</div>
+
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
@@ -1152,6 +1156,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
         <script>
             $(function() {
+
                 // datepicker
                 $('.datepicker').datepicker({
                     dateFormat: 'yyyy.mm.dd'
@@ -1193,6 +1198,16 @@
                 // 수정 
                 $('#btnSave').on('click', function() {
                     callAlert({ title: '수정되었습니다.' });
+                });
+
+                // 회원 목록
+                $('.member-list tbody tr').on('click', function() {
+                    window.location.href = './wa_08_member_detail.html';
+                });
+
+                // 회원 추가 시 결제 화면으로 이동 
+                $('#btnAddMember').on('click', function() {
+                    window.location.href = './wa_14_request_detail.html';
                 });
             });
 

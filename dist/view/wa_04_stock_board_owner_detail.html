@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Hize 관리자웹사이트 UI</title>
-<link rel="shortcut icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -203,9 +203,13 @@
                 
                     <div class="contents">
                         <div class="detail-content">
-                            <h4 class="stock-title">삼성전자 <small class="stock-code">005930</small></h4>
+                            <div class="pull-left">
+                                <h4 class="stock-title">삼성전자 <small class="stock-code">005930</small></h4>
+                            </div>
                             <div class="pull-right">
-                                
+                                <div class="semi-info">
+                                    현재가 <strong>88,200</strong>원 (업데이트 오후 2:20)
+                                </div>
                             </div>
                             <table class="table table-form">
                                 <colgroup>
@@ -219,7 +223,7 @@
                                         <th>평균 매수가</th>
                                         <td><span class="data">84,000</span></td>
                                         <th>비중</th>
-                                        <td><span class="data">38.5%</span></td>
+                                        <td><span class="data">39.5%</span></td>
                                     </tr>
                                     <tr>
                                         <th>보유일</th>
@@ -270,10 +274,11 @@
                             </table>
 
                             <div class="btns btns-right">
-                                <button type="button" class="btn btn-primary">수정</button>
+                                <button type="button" class="btn btn-primary" id="btnModifyPopup">수정</button>
                             </div>
                         </div>
 
+                        <h4 class="detail-content-hd">매매 이력</h4>
                         <div class="area-list mg24">
                             <div class="area-list-header">
                                 <div class="pull-left">
@@ -288,7 +293,7 @@
                                 </div>
                             </div>
                             <div class="area-list-body">
-                                <table class="table table-bordered data-list">
+                                <table class="table table-bordered data-list" id="listTradeCompleted">
                                     <colgroup>
                                         <col style="width: 80px">
                                         <col style="width: auto">
@@ -296,120 +301,99 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
+                                            <th>매수/매도 일시  <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                                             <th>신호유형 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                                             <th>비중</th>
                                             <th>수익률  <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                                             <th>등록자명  <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>등록일시  <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>100</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매수</td>
                                             <td>5%</td>
                                             <td><span class="rate-up">10%</span></td>
                                             <td>박민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>99</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매도</td>
                                             <td>3%</td>
                                             <td><span class="rate-down">5%</span></td>
                                             <td>나주민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>98</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매수</td>
                                             <td>5%</td>
                                             <td><span class="rate-up">10%</span></td>
                                             <td>박민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>97</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매도</td>
                                             <td>3%</td>
                                             <td><span class="rate-down">5%</span></td>
                                             <td>나주민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>96</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매수</td>
                                             <td>5%</td>
                                             <td><span class="rate-up">10%</span></td>
                                             <td>박민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>95</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매도</td>
                                             <td>3%</td>
                                             <td><span class="rate-down">5%</span></td>
                                             <td>나주민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>94</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매수</td>
                                             <td>5%</td>
                                             <td><span class="rate-up">10%</span></td>
                                             <td>박민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>93</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매도</td>
                                             <td>3%</td>
                                             <td><span class="rate-down">5%</span></td>
                                             <td>나주민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>92</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매수</td>
                                             <td>5%</td>
                                             <td><span class="rate-up">10%</span></td>
                                             <td>박민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                         <tr>
                                             <td>91</td>
+                                            <td>2021.04.13 10:30</td>
                                             <td>매도</td>
                                             <td>3%</td>
                                             <td><span class="rate-down">5%</span></td>
                                             <td>나주민</td>
-                                            <td>2021.04.13 10:30</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <nav class="pagination-wrap">
-    <ul class="pagination pagination-sm">
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-        <li><a href="#">7</a></li>
-        <li><a href="#">8</a></li>
-        <li><a href="#">9</a></li>
-        <li><a href="#">10</a></li>
-        <li>
-        <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-    </ul>
-</nav>
+                                <div class="more-view">
+                                    <button type="button" class="btn btn-more">더보기 <span class="glyphicon glyphicon-triangle-bottom"></span></button>
+                                </div>
 
                             </div>
                         </div>
@@ -469,7 +453,7 @@
                                     </div>
 
                                     <div class="form-content" style="display: none">
-                                        <textarea class="form-control" name="">
+                                        <textarea class="form-control" name="" placeholder="전문가 의견 입력">
 삼성전자 매수 기회입니다.
 ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.
 
@@ -490,6 +474,61 @@
 </div>
 
 
+        <!-- 매매이력 상세,수정 팝업 -->
+        <div class="modal fade" id="modalStockHistoryModify" aria-labelledby="modalStockHistoryModifyLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">보유 전광판 설정</h4>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <h4 class="">삼성전자</h4>
+                    <table class="table table-form">
+                        <colgroup>
+                            <col style="width: 20%">
+                            <col style="width: 30%">
+                            <col style="width: 20%">
+                            <col style="width: 30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>매수가</th>
+                                <td>
+                                    <span class="data" data-modify="true">84,000원</span>
+                                    <input type="text" class="form-control" name="" placeholder="" value="84,000" style="display: none;">
+                                </td>
+                                <th>비중</th>
+                                <td>
+                                    <span class="data" data-modify="true">10%</span>
+                                    <input type="text" class="form-control" name="" placeholder="" value="10" style="display: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>보유일</th>
+                                <td><span class="data">129일</span></td>
+                                <th>수익률</th>
+                                <td><span class="data rate-up">5%</span></td>
+                            </tr>
+                            <tr>
+                                <th>보유 기간</th>
+                                <td colspan="3"><span class="data">2021.01.04 ~ 2021.05.13</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="display: none;">취소</button>
+                <button type="button" class="btn btn-primary" id="btnModifyHistory">수정</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
@@ -498,7 +537,7 @@
         <script>
             $(function() {
 
-                $('.data-list tbody tr').on('click', function() {
+                $('#btnModifyPopup').on('click', function() {
                     $('#modalStockBoardModify').modal('show');
                 });
 
@@ -508,7 +547,7 @@
                     if ( !$(this).hasClass('completed') ) {
                         $('input:radio[name=user-view]').removeAttr('disabled');
 
-                        $('.opinion').css('display', 'none');
+                        $('.modal-form .opinion').css('display', 'none');
                         $('.form-content').fadeIn();
 
                         $(this).text('수정완료').addClass('completed');
@@ -520,10 +559,23 @@
                             confirm: '수정'
                         });
                     }
-
-
                 });
-              
+
+                $('#listTradeCompleted tbody tr').on('click', function() {
+                    $('#modalStockHistoryModify').modal('show');
+                });
+
+                // 수정하기
+                $('#btnModifyHistory').on('click', function() {
+                    $(this).prev('.btn').css('display', 'inline-block');
+                    $(this).text('수정완료');
+                    $('span.data').each(function() {
+                        if ($(this).data('modify')) {
+                            $(this).css('display', 'none');
+                            $(this).next('input').fadeIn();
+                        }
+                    });
+                });
             });
         </script>
     </body>

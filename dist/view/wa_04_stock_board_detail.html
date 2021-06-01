@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Hize 관리자웹사이트 UI</title>
-<link rel="shortcut icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -261,10 +261,8 @@
                     <th>No.</th>
                     <th>종목명</th>
                     <th>종목번호</th>
-                    <th>비중</th>
+                    <th>보유비중</th>
                     <th>수익률 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                    <th>등록자명</th>
-                    <th>등록일시 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                     <th>노출여부 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
                 </tr>
             </thead>
@@ -274,9 +272,7 @@
                     <td>삼성전자</td>
                     <td>005930</td>
                     <td>5%</td>
-                    <td><span class="rate-up">10%</span></td>
-                    <td>박민</td>
-                    <td>2021.04.13 10:30</td>
+                    <td><span class="rate-up">39.5%</span></td>
                     <td>노출</td>
                 </tr>
                 <tr>
@@ -284,9 +280,7 @@
                     <td>블루메드</td>
                     <td>049180</td>
                     <td>3%</td>
-                    <td><span class="rate-down">5%</span></td>
-                    <td>박민</td>
-                    <td>2021.04.07 11:10</td>
+                    <td><span class="rate-down">10%</span></td>
                     <td>노출</td>
                 </tr>
                 <tr>
@@ -294,9 +288,7 @@
                     <td>한화에어로스페이스</td>
                     <td>012450</td>
                     <td>2%</td>
-                    <td><span class="rate-down">5%</span></td>
-                    <td>박민</td>
-                    <td>YYYY.MM.DD hh:mm</td>
+                    <td><span class="rate-down">2%</span></td>
                     <td>노출</td>
                 </tr>
             </tbody>
@@ -305,129 +297,164 @@
 </div>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabTrade">
-                                <h4 class="detail-content-hd">기본정보</h4>
-<table class="table table-form">
-    <colgroup>
-        <col style="width: 12%">
-        <col style="width: 38%">
-        <col style="width: 12%">
-        <col style="width: 38%">
-    </colgroup>
-    <tbody>
-        <tr>
-            <th>채팅방명</th>
-            <td>
-                <span class="data">성공투자주식방-1</span>
-            </td>
-            <th>상품 생성자</th>
-            <td>
-                <span class="data">park77(박홍식)</span>
-            </td>
-        </tr>
-        <tr>
-            <th>채팅방 소개</th>
-            <td class="vertical-top">
-                <div>
-                    안녕하세요~ 성투주식방의 나주식입니다.<br>
-                    분석을 통해 결과 예측으로 실시간 수익을 내드리고 있습니다. 안전한 수익을 위해 매시간마다 정보를 전달드립니다. 성.공.투.자. 100%
+                                <!-- 검색 -->
+<div class="area-search">
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="">기간</label>
+            <div class="date-inline">
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="시작일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
                 </div>
-            </td>
-            <th>대표이미지</th>
-            <td>
-                <div class="img-file-box">
-                    <div class="img-thumb">
-                        <img src="../assets/images/photos/sample.jpeg" alt="">
-                    </div>
-                    <div class="file-func">
-                        <div class="pull-left">
-                            <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
-                                <span class="glyphicon glyphicon-info-sign"></span>
-                                대표이미지 등록 가이드
-                            </a>
-                        </div>
-                    </div>
+                <div class="date-box">
+                    <input type="text" class="form-control datepicker" placeholder="종료일">
+                    <span class="glyphicon glyphicon-calendar"></span> 
                 </div>
-            </td>
-        </tr>
-        <tr>
-            <th>구분</th>
-            <td>
-                <span class="data">유료</span>
-            </td>
-            <th>채팅유형</th>
-            <td>
-                <span class="data">일반 채팅</span>
-            </td>
-        </tr>
-        <tr>
-            <th>방장</th>
-            <td colspan="3">
-                <span class="data">
-                    나주민(nastock), 박나래(parkadmin), 홍길동(hongadmin)
-                </span>
-                
-            </td>
-        </tr>
-        <tr>
-            <th>기간</th>
-            <td>
-                <span class="data">2021.04.10 ~ 2022.03.31</span>
-            </td>
-            <th>최대인원</th>
-            <td>
-                <span class="data">100</span>
-            </td>
-        </tr>
-        <tr>
-            <th>인증번호 설정</th>
-            <td colspan="3">
-                <span class="data">OFF</span>
-            </td>
-        </tr>
-        <!-- 인증번호 ON 설정 -->
-        <tr>
-            <th>인증번호 설정</th>
-            <td colspan="3">
-                <span class="data">ON | 1234</span>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-<!-- 대표이미지 등록 가이드 -->
-<div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel"
-            aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">대표이미지 등록 가이드</h4>
             </div>
-            <div class="modal-body">
-               <ol class="ol-guide">
-                   <li>
-                       <strong>이미지 사이즈</strong>
-                       <ul>
-                           <li>이미지 권장 사이즈는 500px * 300px 입니다.</li>
-                           <li>권장사이즈보다 큰 이미지 등록 시 뷰영역 높이 기준으로 이미지가 줄여져서 보여집니다.</li>
-                       </ul>
-                       <div class="ex-img">
-                           <p>썸네일 사진<br>500px * 300px</p>
-                           <img src="../assets/images/photos/sample.jpeg">
-                       </div>
-                   </li>
-                   <li>
-                       <strong>파일용량/확장자</strong>
-                       <p>파일용량은 3MB이하 파일은 jpg, png만 가능합니다.</p>
-                   </li>
-               </ol>
-            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="">구분</label>
+            <select class="form-control">
+                <option>종목명</option>
+                <option>등록자명</option>
+            </select>
+        </div>
+        <div class="form-group form-in-btn">
+            <label for="" class="sr-only">검색어</label>
+            <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
+            <button type="button" class="btn btn-secondary">검색</button>
         </div>
     </div>
 </div>
 
+<div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            Total <span class="count">100</span>
+        </div>
+    </div>
+    <div class="area-list-body">
+        <table class="table table-bordered data-list stock-list">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>종목명</th>
+                    <th>종목번호</th>
+                    <th>수익률 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>매도일시 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>노출여부 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>카카오</td>
+                    <td>035720</td>
+                    <td><span class="rate-up">20%</span></td>
+                    <td>2021.04.13 10:30</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>대한전선</td>
+                    <td>001440</td>
+                    <td><span class="rate-down">10%</span></td>
+                    <td>2021.04.07 11:10</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>98</td>
+                    <td>이트론</td>
+                    <td>096040</td>
+                    <td><span class="rate-down">5%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>미노출</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>삼성전자</td>
+                    <td>005930</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>96</td>
+                    <td>종목명</td>
+                    <td>종목코드</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>95</td>
+                    <td>종목명</td>
+                    <td>종목코드</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>94</td>
+                    <td>종목명</td>
+                    <td>종목코드</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>93</td>
+                    <td>종목명</td>
+                    <td>종목코드</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>92</td>
+                    <td>종목명</td>
+                    <td>종목코드</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+                <tr>
+                    <td>91</td>
+                    <td>종목명</td>
+                    <td>종목코드</td>
+                    <td><span class="rate-up">10%</span></td>
+                    <td>YYYY.MM.DD hh:mm</td>
+                    <td>노출</td>
+                </tr>
+            </tbody>
+        </table>
+        <nav class="pagination-wrap">
+    <ul class="pagination pagination-sm">
+        <li class="disabled">
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li>
+        <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+        </a>
+        </li>
+    </ul>
+</nav>
+    </div>
+</div>
                             </div>
                         </div>
                     </div>
@@ -490,13 +517,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>매수가</th>
+                                <th class="stock-price">매수가</th>
                                 <td>
                                     <input type="number" class="form-control" placeholder="매수가 입력 (숫자)">
                                 </td>
                             </tr>
                             <tr>
-                                <th>비중(%)</th>
+                                <th class="stock-weight">비중(%)</th>
                                 <td>
                                     <input type="number" class="form-control" placeholder="비중 입력 (숫자)">
                                 </td>
@@ -520,7 +547,7 @@
 <script src="../assets/js/common.js"></script>
         <script>
             $(function() {
-
+                
                 // 상세 이동 
                 $('.data-list tbody tr').on('click', function() {
                     window.location.href = './wa_04_stock_board_owner_detail.html';

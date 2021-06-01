@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Hize 관리자웹사이트 UI</title>
-<link rel="shortcut icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -236,6 +236,78 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <h4 class="detail-content-hd">권한 정보</h4>
+                            <div class="mg-authority">
+                                <div class="auth-box clearfix">
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>관리 권한</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>결제 관리</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>게시판 권한</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>매출 통계</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>보유 전광판 관리</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>매출 통계</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>실시간 신호</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>서비스 상품 생성</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                    <div class="auth-chip">
+                                        <label>
+                                            <span>회원 관리</span>
+                                            <input type="checkbox" name="" >
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- 버튼 -->
+                            <div class="btns mg24">
+                                <div class="pull-left">
+                                    <a type="button" class="btn btn-default" href="./wa_15_manager_request_list.html">목록</a>
+                                </div>
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-default" id="btnReject">거절</button>
+                                    <button type="button" class="btn btn-primary" id="btnApprove">승인완료</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -249,19 +321,25 @@
 <script src="../assets/js/common.js"></script>
         <script>
             $(function() {
-                $('.data-list thead').find('span').on('click', function() {
-                    var classList = $(this).attr('class');
-                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
-                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
-                        $(this).addClass('glyphicon-sort-by-attributes');
-                    } else {
-                        $(this).removeClass('glyphicon-sort-by-attributes');
-                        $(this).addClass('glyphicon-sort-by-attributes-alt');
-                    }
+
+                // 거절
+                $('#btnReject').on('click', function() {
+                    callConfirm({
+                        title: '요청 건을<br>거절하시겠습니까?'
+                    }, function() {}, {
+                        cancel: '취소',
+                        confirm: '거절'
+                    });
                 });
 
-                $('.data-list tbody tr').on('click', function() {
-                    window.location.href = "./wa_15_manager_request_list.html";
+                // 승인
+                $('#btnApprove').on('click', function() {
+                    callConfirm({
+                        title: '관리자로<br>승인하시겠습니까?'
+                    }, function() {}, {
+                        cancel: '취소',
+                        confirm: '승인'
+                    });
                 });
             });
         </script>

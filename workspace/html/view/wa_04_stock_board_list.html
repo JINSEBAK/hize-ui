@@ -181,6 +181,19 @@
                     $('#modalStockBoardRegister').modal('show');
                 });
 
+                // 매수, 매도 선택
+                $('input:radio[name=signal-type]').on('change', function() {
+                    if ( $(this).val() === '1' ) {
+                        // 매수
+                        $('.stock-price').text('매수가');
+                        $('.stock-price').next('td').find('input').attr('placeholder', '매수가 입력 (숫자)');
+                    } else {
+                        // 매도
+                        $('.stock-price').text('매도가');
+                        $('.stock-price').next('td').find('input').attr('placeholder', '매도가 입력 (숫자)');
+                    }
+                });
+
                 $('#btnRegistserBoard').on('click', function() {
                     callAlert({
                         title: '보유 전광판에<br>등록되었습니다.'

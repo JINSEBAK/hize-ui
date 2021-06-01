@@ -39,7 +39,7 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right chat-sub-menu" role="menu">
                                                 <li>
-                                                    <a href="#" data-toggle="modal" data-target="#modalNoticeList">
+                                                    <a href="#" data-toggle="modal" data-target="#modalNotice">
                                                         <span class="glyphicon glyphicon-bullhorn"></span>
                                                         공지사항
                                                     </a>
@@ -51,13 +51,13 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="#" data-toggle="modal" data-target="#modalSignalHistory">
                                                         <span class="glyphicon glyphicon-signal"></span>
                                                         신호내역
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="#" data-toggle="modal" data-target="#modalChatStockBoard"> 
                                                         <span class="glyphicon glyphicon-th"></span>
                                                         보유전광판
                                                     </a>
@@ -476,11 +476,23 @@
         <!-- 팝업 -->
         @@include('./inside/wa_02_chat_main_popup.html')
 
+        <!-- 공지사항 -->
+        @@include('./inside/wa_02_chat_main_notice_popup.html');
+
         <!-- 채팅방 설정 팝업-->
         @@include('./inside/wa_02_chat_main_setting.html')
 
         <!-- 신호발송 -->
         @@include('./inside/wa_02_chat_main_signal_popup.html')
+
+        <!-- 보유 전광판 등록 -->
+        @@include('./inside/wa_04_stock_board_register_popup.html')
+
+        <!-- 신호내역-->
+        @@include('./inside/wa_02_chat_main_signal_history_popup.html')
+
+        <!-- 보유 전광판 -->
+        @@include('./inside/wa_02_chat_main_board_popup.html')
 
 
         <!-- scripts -->
@@ -545,8 +557,23 @@
                     }
                 });
 
+                // 공지사항 --------------------------------------------
+                // 상세 이동
+                $('#noticeList .notice').on('click', function() {
+                    $('#modalNotice .contents').css('display', 'none');
+                    $('#modalNotice').find('.contents-notice-detail').fadeIn();
+
+                    $('#modalNotice').find('.modal-dialog').removeClass('list').addClass('detail');
+                });
+                $('#modalNotice .modal-footer').find('button').on('click', function() {
+                    var mode = $(this).data('target-mode');
+                    $('#modalNotice').find('.modal-dialog').removeClass().addClass('modal-dialog ' + mode);
+                    $('#modalNotice .contents').css('display', 'none');
+                    $('#modalNotice').find('.contents-notice-' + mode).fadeIn();
+                });
+             
                 // 공지사항 입력
-                $('#noticeContent').on('change keyup paste', function() {
+                $('#modalNotice .contents textarea').on('change keyup paste', function() {
                     var len = $(this).val().length;
                     if ( len <= 100 ) {
                         $(this).next('.count').find('.txt-length').html(len);
@@ -555,6 +582,7 @@
                     }
                     $(this).val( $(this).val().substring(0, 100) );
                 });
+
 
                 $('#noticeDetailContent').on('change keyup paste', function() {
                     var len = $(this).val().length;
@@ -567,12 +595,12 @@
                 });
 
                 // 공지사항 상세
-                $('.notice-list').find('.notice').on('click', function() {
-                    $('#modalNoticeModify .count').find('.txt-length').text( $('#modalNoticeModify').find('textarea').val().length );
-                    // 열려있는 팝업 닫기
-                    $('.modal').modal('hide');
-                    $('#modalNoticeModify').modal('show');
-                });
+                // $('.notice-list').find('.notice').on('click', function() {
+                //     $('#modalNoticeModify .count').find('.txt-length').text( $('#modalNoticeModify').find('textarea').val().length );
+                //     // 열려있는 팝업 닫기
+                //     $('.modal').modal('hide');
+                //     $('#modalNoticeModify').modal('show');
+                // });
 
                 //
                 $('#modalNoticeModify').find('.btn-default').on('click', function() {
@@ -657,18 +685,24 @@
 
                 // 신호 발송 ----------------------------------------------------------------------------
                 const signalMsg = {
-                    sb: { type: '매수',  },
-                    ss: { type: '매도',  },
-                    sa: { type: '알림',  },
+                    sb: { type: '매수',  title: '[매수] 신호입니다.'},
+                    ss: { type: '매도',  title: '[매도] 신호입니다.'},
+                    sa: { type: '알림',  title: '[알림] 신호입니다.'},
                 }
+
                 // 신호 유형에 따라 메세지 타입 변경
                 $('input[name=signal-type]').on('change', function() {
+
+                    // 제목 생성
+                    $('#signalTitleInput').val(signalMsg[$(this).data('type')].title);
+                    $('#signalView').find('.title').text(signalMsg[$(this).data('type')].title);
+
                     $('#signalView').removeClass().addClass($(this).data('type'));
-                    $('#signalView').find('.type').text( signalMsg[$(this).data('type')].type );
+
 
                     if ($(this).data('type') === 'sa') {
                         $('#signalView').find('.info').css('display','none');
-                        $('.signal-form').find('.form-control').not('textarea').attr('disabled',true);
+                        $('.signal-form').find('.form-control').not('textarea, #signalTitleInput').attr('disabled',true);
                     } else {
                         $('.signal-form').find('input').removeAttr('disabled');
                     }
@@ -677,14 +711,34 @@
                     var target = $(this).data('target');
                     var txt = $(this).val();
 
-                    $('#signalView').find($('#'+target)).text(txt).addClass('completed');
+                    $('#signalView').find($(target)).text(txt).addClass('completed');
                     if ( target === 'stockMessage' ) {
                         $('#stockMessage').addClass('completed');
                         $('.signal-preview .count').find('.txt-length').text(txt.length);
                     }
                 });
+                // 신호 발송
+                $('#btnSendSignal').on('click', function() {
+                    callAlert({
+                        title: '신호가 발송되었습니다.',
+                        description: '보유 전광판에 등록하시려면<br>[보유전광판 등록]을 선택해주세요. <button type="button" class="btn btn-default btn-round" onClick="registerBoard();">보유전광판 등록</button>'
+                    });
+                }); 
+                $('.signal-history tbody tr').not('.detail').on('click', function() {
+                    $('.signal-history .detail').css('display', 'none');
+                    $(this).next('.detail').css('display', 'table-row');
+                });
 
-        
+
+                // 보유전광판----------------------------------------------------------------------------
+                $('#boardList tbody tr').on('click', function() {
+                    $('#boardList').css('display', 'none');
+                    $('#boardDetail').fadeIn();
+                });
+                $('#btnList').on('click', function() {
+                    $('#boardDetail').css('display', 'none');
+                    $('#boardList').fadeIn();
+                });
 
             });
 
@@ -763,6 +817,13 @@
                 } else {
                     $('.timepicker').removeAttr('disabled');
                 }
+            }
+
+            function registerBoard() {
+                // 다른 팝업 닫기
+                $('.modal').modal('hide');
+
+                $('#modalStockBoardRegister').modal('show');
             }
 
         </script>

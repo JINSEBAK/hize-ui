@@ -41,7 +41,9 @@
                                     </tr>
                                     <tr>
                                         <th>전화번호</th>
-                                        <td><span class="data">010-****-1234</span></td>
+                                        <td><span class="data" id="userPhone">010-****-1234</span>
+                                            <input type="text" class="form-control" value="010-1234-1234" id="userPhoneInput" style="display: none">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th>생년월일</th>
@@ -51,7 +53,9 @@
                                         <th>이메일 정보</th>
                                         <td><span class="data">235lee@gmail.com</span></td>
                                         <th>닉네임</th>
-                                        <td><span class="data">박부장</span></td>                                        
+                                        <td><span class="data" id="userNickname">박부장</span>
+                                            <input type="text" class="form-control" value="박부장" id="userNicknameInput" style="display: none">
+                                        </td>                                        
                                     </tr>
                                     <tr>
                                         <th>부서</th>
@@ -60,41 +64,96 @@
                                         <td><span class="data">OOO</span></td>
                                     </tr>
                                     <tr>
-                                        <th>가입 상태</th>
-                                        <td colspan="3">
-                                            <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
-                                            <div class="form-in-multi">
-                                                <select class="form-control" id="memberStatus">
-                                                    <option value="1">활동</option>
-                                                    <option value="0">탈퇴</option>
-                                                </select>
-                                                <div class="form-group form-in-btn">
-                                                    <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
-                                                    <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <th>비밀번호</th>
                                         <td colspan="3">
                                             <div class="form-inline">
                                                 <div class="form-group form-in-btn">
-                                                    <input type="password" class="form-control" placeholder="********">
-                                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPasswordReset">비밀번호 재설정</button>
+                                                    <input type="password" class="form-control" placeholder="********" disabled>
+                                                    <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset">비밀번호 재설정</button>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <div class="btns btns-right">
+                                <button type="button" class="btn btn-primary" id="btnModify">수정</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- 비밀번호 재설정 popup -->
+        @@include('./inside/wa_08_member_detail_popup.html')
+
+
         <!-- scripts -->
         @@include('../common/scripts.html')
+        <script>
+            $(function() {
+
+                // 비밀번호 재설정
+                $('input[name=password]').on('change paste input', function() {
+                    const errMsg = {
+                        password: '비밀번호를 형식에 맞게 입력해주세요. (영문/숫자 포함 8~20자리)',
+                        passwordConfirm: '비밀번호가 일치하지 않습니다.'
+                    }
+                    const PATTERN = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,20}$/;
+                    var inputValue = $(this).val();
+                    var hasError = false;
+                    var msg = '';
+
+                    if ( inputValue.length > 0 ) {
+                        if ( PATTERN.test(inputValue) ) {
+                            hasError = false;
+                        } else {
+                            hasError = true;
+                            msg = errMsg['password']
+                        }
+                    }
+                   
+                    if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+                        if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
+                            hasError = true;
+                            msg = errMsg['passwordConfirm'];
+
+                            $('#btnReset').attr('disabled', true);
+                        } else {
+                            $('#btnReset').removeAttr('disabled');
+                        }
+                    }
+
+                    if ( hasError ) {
+                        $(this).parent('.form-group').addClass('has-error');
+                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                    } else {
+                        $(this).parent('.form-group').removeClass('has-error');
+                        $(this).parent('.form-group').siblings('.help-block').html('');
+                    }
+
+                });
+
+                $('#btnReset').on('click', function() {
+                    callAlert({
+                        title: '비밀번호가<br>재설정 되었습니다.'
+                    });
+                });
+
+
+                $('#btnModify').on('click', function() {
+                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                    $('#btnModify').text('수정 완료');
+                    $('#modifyHistory').css('display', 'none');
+
+                    //
+                    $('.table-form').addClass('table-form-mod');
+                    $('#userPhone, #userNickname').css('display', 'none');
+                    $('#userPhoneInput, #userNicknameInput').fadeIn();
+                });
+            });
+        </script>
     </body>
 </html>

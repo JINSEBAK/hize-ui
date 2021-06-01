@@ -16,23 +16,25 @@
 
                 <!-- contents -->
                 <div class="main">
-                    @@include('../common/title.html', { "title" : "권한 그룹 생성", "sub" : "주식 서비스 플랫폼 권한을 생성할 수 있습니다." })
+                    @@include('../common/title.html', { "title" : "권한 그룹 생성", "sub" : "주식 서비스 플랫폼 권한을 관리할 수 있습니다." })
                 
                     <div class="contents">
-                        <div class="auth-board clearfix mg24">
-                            <div class="lf">
-                                <h4>권한 그룹명</h4>
+                        <div class="auth-board mg24">
+                            <div class="tp">
                                 <div class="input-count">
-                                    <label for="" class="sr-only">권한 그룹명</label>
-                                    <input type="text" class="form-control" name="" placeholder="권한 그룹명 입력" id="authGroupName">
+                                    <label for="" class="">권한 그룹명</label>
+                                    <input type="text" class="form-control" name="" placeholder="권한 그룹명 입력" maxlength="16" id="authGroupName">
                                     <div class="count">
                                         <span class="txt-length">0</span>
                                         <span>16</span>
                                     </div>
                                 </div>
-                                <small>* 권한 그룹명은 기존 그룹명과 중복되지 않게 입력해주세요.</small>
+                                <ul class="guide">
+                                    <li>권한 그룹명 글자수 16자이내</li>
+                                    <li>권한 그룹명은 기존 그룹명과 중복되지 않게 입력해주세요.</li>
+                                </ul>
                             </div>
-                            <div class="rt">
+                            <div class="bt">
                                 <table class="table table-bordered tb-auth">
                                     <thead>
                                         <tr>
@@ -47,27 +49,19 @@
                                     <tbody>
                                         <tr>
                                             <th class="d1">실시간 신호</th>
-                                            <th class="d2">신호 발송</th>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
+                                            <th class="d2">신호 관리</th>
                                             <td></td>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
                                                 </div>
                                             </td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <th class="d1">보유 전광판</th>
-                                            <th class="d2">보유 전광판</th>
+                                            <th class="d2">보유 전광판 관리</th>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
@@ -91,7 +85,7 @@
                                         </tr>
                                         <tr>
                                             <th class="d1">서비스 상품(채팅방)</th>
-                                            <th class="d2">서비스 상품</th>
+                                            <th class="d2">서비스 상품 관리<br>회원 추가</th>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
@@ -115,7 +109,7 @@
                                         </tr>
                                         <tr>
                                             <th class="d1">매출 통계</th>
-                                            <th class="d2">매출 통계</th>
+                                            <th class="d2">매출 통계 보기</th>
                                             <td></td>
                                             <td>
                                                 <div class="checkbox">
@@ -127,7 +121,7 @@
                                         </tr>
                                         <tr>
                                             <th class="d1">결제 관리</th>
-                                            <th class="d2">결제 관리</th>
+                                            <th class="d2">결제 승인 (유료방 요청 결제)<br>환불 승인</th>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
@@ -143,15 +137,11 @@
                                                     <label><input type="checkbox"></label>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <th class="d1">회원 관리</th>
-                                            <th class="d2">회원 목록</th>
+                                            <th class="d2">회원 관리</th>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
@@ -175,7 +165,7 @@
                                         </tr>
                                         <tr>
                                             <th class="d1" rowspan="2">권한 관리</th>
-                                            <th class="d2">관리자 목록</th>
+                                            <th class="d2">관리자 관리</th>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
@@ -237,7 +227,7 @@
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <th class="d2">게시물 관리</th>
+                                            <th class="d2">게시물 관리<br>게시물 요청 승인</th>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
@@ -307,97 +297,15 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th class="d2">Log내역</th>
+                                            <th class="d2">Log내역 보기, 파일 다운로드</th>
+                                            <td></td>
                                             <td>
                                                 <div class="checkbox">
                                                     <label><input type="checkbox"></label>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th class="d1" rowspan="3">요청 관리</th>
-                                            <th class="d2">유료방 요청 승인(결제)</th>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th class="d2">관리자 권한 요청 승인</th>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th class="d2">게시물 요청 승인</th>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         <tr>
                                             <th class="d1">앱 메인 관리</th>
@@ -428,7 +336,7 @@
                             </div>
                         </div>    
                         <div class="btns btns-right mg24">
-                            <button type="button" class="btn btn-primary">생성</button>
+                            <button type="button" class="btn btn-primary" id="btnRegister">생성</button>
                         </div>                    
                     </div>
                 </div>
@@ -441,7 +349,16 @@
             $(function() {
 
                 $('#authGroupName').on('keyup paste input', function() {
-                    $(this).next('.count').find('.txt-length').val($(this).val().length);
+                    $(this).next('.count').find('.txt-length').text($(this).val().length);
+                });
+
+                // 생성하기 - 그룹명 중복 시
+                $('#btnRegister').on('click', function() {
+                    if ($('#authGroupName').val().length > 0 ) {
+                        callAlert({
+                            title: '이미 있는<br>권한 그룹명입니다.'
+                        });
+                    }
                 });
             });
         </script>

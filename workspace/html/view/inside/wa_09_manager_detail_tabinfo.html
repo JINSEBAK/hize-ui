@@ -46,7 +46,7 @@
                         <option value="1">활동</option>
                         <option value="0">탈퇴</option>
                     </select>
-                    <div class="form-group form-in-btn">
+                    <div class="form-group form-in-btn reason mod-component">
                         <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
                         <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
                     </div>
@@ -59,7 +59,7 @@
                 <div class="form-inline">
                     <div class="form-group form-in-btn">
                         <input type="password" class="form-control" placeholder="********" id="memberPassword" disabled>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset" disabled>비밀번호 재설정</button>
+                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset" disabled>비밀번호 재설정</button>
                     </div>
                 </div>
             </td>
@@ -79,11 +79,11 @@
         <tr>
             <th>부서</th>
             <td>
-                <input type="text" class="form-control" name="" value="영업팀" disabled>
+                <input type="text" class="form-control" name="" value="영업팀" id="department" disabled>
             </td>
             <th>직급</th>
             <td>
-                <input type="text" class="form-control" name="" value="대리" disabled>
+                <input type="text" class="form-control" name="" value="대리" id="managerRank" disabled>
             </td>
         </tr>
     </tbody>

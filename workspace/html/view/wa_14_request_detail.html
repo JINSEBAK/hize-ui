@@ -68,7 +68,11 @@
                                     </tr>
                                     <tr>
                                         <th>전화번호</th>
-                                        <td colspan="3"><span class="data">010-1234-5678</span></td>
+                                        <td><span class="data">010-1234-5678</span></td>
+                                        <th>생년월일</th>
+                                        <td>
+                                            <input type="text" class="form-control" name="" placeholder="생년월일 입력" >
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -121,7 +125,7 @@
                                     </tr>
                                     <tr>
                                         <th class="required">결제금액</th>
-                                        <td colspan="3">
+                                        <td>
                                             <div class="form-inline">
                                                 <div class="form-group form-in-btn">
                                                     <input type="number" class="form-control" placeholder="결제 금액 입력">
@@ -129,10 +133,8 @@
                                                 </div>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
                                         <th class="required">승인번호</th>
-                                        <td colspan="3">
+                                        <td>
                                             <input type="text" class="form-control" placeholder="승인 번호 입력" style="max-width: 320px;">
                                         </td>
                                     </tr>
@@ -153,8 +155,10 @@
                                 <a class="btn btn-default" href="./wa_14_request_list.html">목록</a>
                             </div>
                             <div class="pull-right">
-                                <button class="btn btn-default" id="btnReject">신청거절</button>
-                                <button class="btn btn-primary" id="btnCompleted">결제완료</button>
+                                <!-- 상품 상세 > 회원 추가로 통해 진입 시 노출 -->
+                                <button type="button" class="btn btn-default" id="btnAddCancel">회원 추가 취소</button>
+                                <button type="button" class="btn btn-default" id="btnReject">거절</button type="button">
+                                <button type="button" class="btn btn-primary" id="btnCompleted">결제완료</button type="button">
                             </div>
                         </div>
     
@@ -182,22 +186,41 @@
                 // 신청 거절
                 $('#btnReject').on('click', function() {
                     callConfirm(
-                    { title: '유료방 요청건을<br>거절하시겠습니까?'}, 
+                    { title: '요청건을<br>거절하시겠습니까?'}, 
                     onClickReject,
                     { cancel: '취소', confirm: '거절'});
                 });
 
                 // 결제완료
                 $('#btnCompleted').on('click', function() {
-                    callAlert({
-                        title: '결제가 완료되었습니다.',
-                        description: '회원님은 채팅방에<br>가입처리되었습니다.'
+                    callConfirm({
+                        title: '<small>박둘선</small><br>2,000,000원<br>결제를 진행하시겠습니까?',
+                    }, onClickComplete, {
+                        cancel: '취소',
+                        confirm: '결제'
+                    });
+                });
+
+                // 회원 추가 취소 
+                $('#btnAddCancel').on('click', function() {
+                    callConfirm({
+                        title: '회원 추가를<br>취소하시겠습니까?'
+                    }, function() {}, {
+                        cancel: '닫기',
+                        confirm: '회원 추가 취소'
                     });
                 });
             });
 
             function onClickReject() {
                 callAlert({ title: '거절되었습니다.' });
+            }
+
+            function onClickComplete() {
+                callAlert({
+                    title: '결제가 완료되었습니다.',
+                    description: '회원님은 채팅방에<br>가입처리되었습니다.'
+                });
             }
         </script>
     </body>

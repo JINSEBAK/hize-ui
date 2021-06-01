@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Hize 관리자웹사이트 UI</title>
-<link rel="shortcut icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
-<link rel="icon" href="../assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -265,7 +265,7 @@
                         <option value="1">활동</option>
                         <option value="0">탈퇴</option>
                     </select>
-                    <div class="form-group form-in-btn">
+                    <div class="form-group form-in-btn reason mod-component">
                         <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
                         <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
                     </div>
@@ -278,7 +278,7 @@
                 <div class="form-inline">
                     <div class="form-group form-in-btn">
                         <input type="password" class="form-control" placeholder="********" id="memberPassword" disabled>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset" disabled>비밀번호 재설정</button>
+                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset" disabled>비밀번호 재설정</button>
                     </div>
                 </div>
             </td>
@@ -298,11 +298,11 @@
         <tr>
             <th>부서</th>
             <td>
-                <input type="text" class="form-control" name="" value="영업팀" disabled>
+                <input type="text" class="form-control" name="" value="영업팀" id="department" disabled>
             </td>
             <th>직급</th>
             <td>
-                <input type="text" class="form-control" name="" value="대리" disabled>
+                <input type="text" class="form-control" name="" value="대리" id="managerRank" disabled>
             </td>
         </tr>
     </tbody>
@@ -331,65 +331,71 @@
 </table>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabPermission">
-                                <div class="mg-authority clearfix">
-    <div class="col">
-        <div class="auth-box">
-            <h4 class="auth-title">권한 그룹</h4>
-            <ul class="auth-list" id="authGroupList">
-                <li class="auth-chip">
-                    <div>결제 관리</div>
-                </li>
-                <li class="auth-chip">
-                    <div>서비스 상품 관리</div>
-                </li>
-                <li class="auth-chip">
-                    <div>운영 관리</div>
-                </li>
-                <li class="auth-chip">
-                    <div>채팅</div>
-                </li>
-                <li class="auth-chip">
-                    <div>회원 관리</div>
-                </li>
-            </ul>
+                                
+<h4 class="detail-content-hd">권한정보</h4>
+<div class="mg-authority">
+    <div class="auth-box clearfix">
+        <div class="auth-chip">
+            <label>
+                <span>관리 권한</span>
+                <input type="checkbox" name="" >
+            </label>
         </div>
-    </div>
-    <div class="col between">
-        &lt; &gt;
-    </div>
-    <div class="col">
-        <div class="auth-box">
-            <h4 class="auth-title">보유 권한</h4>
-            <ul class="auth-list" id="userAuthGroupList">
-                <li class="auth-chip">
-                    <div>게시물 관리</div>
-                </li>
-            </ul>
+        <div class="auth-chip">
+            <label>
+                <span>결제 관리</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>게시판 권한</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>매출 통계</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>보유 전광판 관리</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>매출 통계</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>실시간 신호</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>서비스 상품 생성</span>
+                <input type="checkbox" name="" >
+            </label>
+        </div>
+        <div class="auth-chip">
+            <label>
+                <span>회원 관리</span>
+                <input type="checkbox" name="" >
+            </label>
         </div>
     </div>
 </div>
 
-<div class="btns btns-right">
+<div class="btns btns-right mg24">
     <button type="button" class="btn btn-primary" id="btnSavePermission">저장</button>
 </div>
 
-<!-- 수정 이력이 있는 경우 노출 -->
-<table class="table table-form mg24" id="modifyHistory">
-    <colgroup>
-        <col style="width: 12%">
-        <col style="width: 38%">
-        <col style="width: 12%">
-        <col style="width: 38%">
-    </colgroup>
-    <tbody>
-        <tr>
-            <th>수정자</th>
-            <td><span class="data">박민</span></td>
-            <th>수정일</th>
-            <td><span class="data">2021.05.14</span></td>
-        </tr>
-    </tbody>
-</table>
                             </div>
                         </div>
                     
@@ -437,6 +443,7 @@
         <script>
             $(function() {
 
+                
                 // 회원 상태 변경
                 $('#memberStatus').on('change', function() {
                     if ( $(this).val() === '0' ) {
@@ -502,25 +509,22 @@
 
                 });
 
-
                 $('#btnReset').on('click', function() {
                     callAlert({
                         title: '비밀번호가<br>재설정 되었습니다.'
                     });
                 });
 
-
                 // 관리자 정보 수정 버튼 클릭 
                 $('#btnModify').on('click', function() {
-                    $('#memberStatus, #memberPassword, #btnPwReset').removeAttr('disabled');
+                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
                     $('#btnModify').text('수정 완료');
                     $('#modifyHistory').css('display', 'none');
+
+                    //
+                    $('.table-form').addClass('table-form-mod');
                 });
 
-                // 권한 Sortable Event
-                $('.auth-list').sortable({
-                    connectWidth: '.auth-list'
-                }).disableSelection();
             });
         </script>
     </body>
