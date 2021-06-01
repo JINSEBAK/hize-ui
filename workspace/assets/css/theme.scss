@@ -1492,16 +1492,21 @@
       small {
         font-weight: normal;
       }
-      &:last-child {
+     
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: $border-color;
+        margin: 0 16px 0 12px;
+      }
+      &:first-child {
         &:before {
-          content: '';
-          display: inline-block;
-          width: 1px;
-          height: 12px;
-          background-color: $border-color;
-          margin: 0 16px 0 12px;
+          content: none;
         }
       }
+      
     }
   }
 }
@@ -1661,3 +1666,33 @@
     }
   }
 }
+
+.area-search {
+  &.statistics {
+    .form-inline {
+      display: flex;
+      .date-twin {
+        float: left;
+        position: relative;
+        label {
+          width: 100%;
+          font-weight: normal;
+          font-size: 12px;
+          margin-bottom: 2px;
+        }
+        select {
+          min-width: 120px;
+          margin-right: 6px;
+        }
+        .btn-search {
+          position: absolute;
+          right: -52px;
+          top: 0;
+          height: 34px;
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+}
+

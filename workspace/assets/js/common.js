@@ -164,7 +164,6 @@ function getDateRangeData(startDate, endDate) {
         resultArray.push( sDate.getFullYear() + '-' + _month + '-' + _day);
         sDate.setDate(sDate.getDate() + 1);
     }
-    console.log(resultArray);
 
     return resultArray;
 
