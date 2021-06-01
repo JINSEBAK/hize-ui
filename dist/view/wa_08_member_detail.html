@@ -243,7 +243,7 @@
             <th>전화번호</th>
             <td>
                 <span class="data">
-                    010-1234-1234 
+                    010-1234-1234 <br>
                     <em>(SMS수신 동의 | 2021.02.12)</em>
                 </span>
             </td>
@@ -269,11 +269,11 @@
             <td colspan="3">
                 <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
                 <div class="form-in-multi">
-                    <select class="form-control" id="memberStatus">
+                    <select class="form-control" id="memberStatus" disabled>
                         <option value="1">활동</option>
                         <option value="0">탈퇴</option>
                     </select>
-                    <div class="form-group form-in-btn reason">
+                    <div class="form-group form-in-btn reason mod-component">
                         <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
                         <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
                     </div>
@@ -285,14 +285,18 @@
             <td colspan="3">
                 <div class="form-inline">
                     <div class="form-group form-in-btn">
-                        <input type="password" class="form-control" placeholder="********">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPasswordReset">비밀번호 재설정</button>
+                        <input type="password" class="form-control" placeholder="********" disabled>
+                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset">비밀번호 재설정</button>
                     </div>
                 </div>
             </td>
         </tr>
     </tbody>  
 </table>
+
+<div class="btns btns-right">
+    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
+</div>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabSignup">
                                 <div class="area-list">
@@ -654,6 +658,15 @@
         <script>
             $(function() {
 
+                $('#btnModify').on('click', function() {
+                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                    $('#btnModify').text('수정 완료');
+                    $('#modifyHistory').css('display', 'none');
+
+                    //
+                    $('.table-form').addClass('table-form-mod');
+                });
+
                 // 회원 상태 변경
                 $('#memberStatus').on('change', function() {
                     if ( $(this).val() === '0' ) {
@@ -661,6 +674,7 @@
                         $(this).next('.form-in-btn').find('input').removeAttr('disabled');
                     }
                 });
+
 
                 // 탈퇴 사유 입력 시 버튼 활성화
                 $('#inputWithdrawal').on('change paste input', function() {

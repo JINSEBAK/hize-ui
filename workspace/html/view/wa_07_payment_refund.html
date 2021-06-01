@@ -66,16 +66,28 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <th class="required">취소금액</th>
-                                        <td>
+                                        <th class="required">환불금액</th>
+                                        <td colspan="3">
                                             <div class="form-inline form-in-btn">
                                                 <input type="number" class="form-control" placeholder="취소 금액 입력">
                                                 <button type="button" class="btn btn-secondary">결제</button>
                                             </div>
                                         </td>
-                                        <th class="required">승인번호</th>
+                                    </tr>
+                                    <tr>
+                                        <th>환불요청일</th>
                                         <td>
-                                            <input type="text" class="form-control" placeholder="승인 번호 입력">
+                                            <div class="date-box" style="width: 200px;">
+                                                <input type="text" class="form-control datepicker" placeholder="환불 요청일">
+                                                <span class="glyphicon glyphicon-calendar"></span> 
+                                            </div>
+                                        </td>
+                                        <th>환불일</th>
+                                        <td>
+                                            <div class="date-box" style="width: 200px;">
+                                                <input type="text" class="form-control datepicker" placeholder="환불일">
+                                                <span class="glyphicon glyphicon-calendar"></span> 
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>

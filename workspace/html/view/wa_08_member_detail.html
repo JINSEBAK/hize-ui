@@ -61,6 +61,15 @@
         <script>
             $(function() {
 
+                $('#btnModify').on('click', function() {
+                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                    $('#btnModify').text('수정 완료');
+                    $('#modifyHistory').css('display', 'none');
+
+                    //
+                    $('.table-form').addClass('table-form-mod');
+                });
+
                 // 회원 상태 변경
                 $('#memberStatus').on('change', function() {
                     if ( $(this).val() === '0' ) {
@@ -68,6 +77,7 @@
                         $(this).next('.form-in-btn').find('input').removeAttr('disabled');
                     }
                 });
+
 
                 // 탈퇴 사유 입력 시 버튼 활성화
                 $('#inputWithdrawal').on('change paste input', function() {
