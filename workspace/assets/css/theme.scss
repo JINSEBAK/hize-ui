@@ -879,6 +879,23 @@
       content: "*";
     }
   }
+  .cf-num {
+    span {
+      &:last-child:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: $border-color;
+        margin: 0 8px -2px 6px;
+      }
+      &.off {
+        & + span {
+          display: none;
+        }
+      }
+    }
+  }
   & + .guide {
     padding-left: 20px;
     margin-top: -20px;

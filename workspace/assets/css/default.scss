@@ -304,6 +304,10 @@ a {
         font-size: 12px;
         background-color: transparent;
         font-weight: 400;
+        color: $text-basic;
+        li:last-child {
+          font-weight: bold;
+        }
       }
       .dropdown {
         margin-top: -2px;
