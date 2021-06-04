@@ -42,9 +42,62 @@
             <td><span class="data">235나</span></span></td>
         </tr>
         <tr>
+            <th>새 비밀번호</th>
+            <td>
+                <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리" id="userPw">
+                <span class="help-block-validate"></span>
+            </td>
+            <th>비밀번호 재입력</th>
+            <td>
+                <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
+                <span calss="help-block-validate"></span>
+            </td>
+        </tr>
+        <tr>
             <th>가입 상태</th>
             <td colspan="3">
                 <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
+                <div class="form-in-multi">
+                    <select class="form-control" id="memberStatus" disabled>
+                        <option value="1">활동</option>
+                        <option value="0">탈퇴</option>
+                    </select>
+                    <div class="form-group form-in-btn reason">
+                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
+                        <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">변경</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!-- <tr>
+            <th>비밀번호</th>
+            <td colspan="3">
+                <div class="form-inline">
+                    <div class="form-group form-in-btn">
+                        <input type="password" class="form-control" placeholder="********" disabled>
+                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset">비밀번호 재설정</button>
+                    </div>
+                </div>
+            </td>
+        </tr> -->
+    </tbody>  
+</table>
+
+<div class="btns btns-right">
+    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
+</div>
+
+
+<h4 class="detail-content-hd">가입상태</h4>
+<table class="table table-form">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: auto">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>가입 상태</th>
+            <td>
                 <div class="form-in-multi">
                     <select class="form-control" id="memberStatus" disabled>
                         <option value="1">활동</option>
@@ -57,20 +110,5 @@
                 </div>
             </td>
         </tr>
-        <tr>
-            <th>비밀번호</th>
-            <td colspan="3">
-                <div class="form-inline">
-                    <div class="form-group form-in-btn">
-                        <input type="password" class="form-control" placeholder="********" disabled>
-                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset">비밀번호 재설정</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </tbody>  
+    </tbody>
 </table>
-
-<div class="btns btns-right">
-    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
-</div>

@@ -53,9 +53,6 @@
             </div>
         </div>
 
-        <!-- 비밀번호 재설정 popup -->
-        @@include('./inside/wa_08_member_detail_popup.html')
-
         <!-- scripts -->
         @@include('../common/scripts.html')
         <script>
@@ -130,11 +127,11 @@
                     }
 
                     if ( hasError ) {
-                        $(this).parent('.form-group').addClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                        //$(this).parent('.form-group').addClass('has-error');
+                        $(this).siblings('.help-block-validate').html(msg);
                     } else {
-                        $(this).parent('.form-group').removeClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html('');
+                        //$(this).parent('.form-group').removeClass('has-error');
+                        $(this).siblings('.help-block-validate').html('');
                     }
 
                 });

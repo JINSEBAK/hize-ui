@@ -264,9 +264,62 @@
             <td><span class="data">235나</span></span></td>
         </tr>
         <tr>
+            <th>새 비밀번호</th>
+            <td>
+                <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리" id="userPw">
+                <span class="help-block-validate"></span>
+            </td>
+            <th>비밀번호 재입력</th>
+            <td>
+                <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
+                <span calss="help-block-validate"></span>
+            </td>
+        </tr>
+        <tr>
             <th>가입 상태</th>
             <td colspan="3">
                 <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
+                <div class="form-in-multi">
+                    <select class="form-control" id="memberStatus" disabled>
+                        <option value="1">활동</option>
+                        <option value="0">탈퇴</option>
+                    </select>
+                    <div class="form-group form-in-btn reason">
+                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
+                        <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">변경</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!-- <tr>
+            <th>비밀번호</th>
+            <td colspan="3">
+                <div class="form-inline">
+                    <div class="form-group form-in-btn">
+                        <input type="password" class="form-control" placeholder="********" disabled>
+                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset">비밀번호 재설정</button>
+                    </div>
+                </div>
+            </td>
+        </tr> -->
+    </tbody>  
+</table>
+
+<div class="btns btns-right">
+    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
+</div>
+
+
+<h4 class="detail-content-hd">가입상태</h4>
+<table class="table table-form">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: auto">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>가입 상태</th>
+            <td>
                 <div class="form-in-multi">
                     <select class="form-control" id="memberStatus" disabled>
                         <option value="1">활동</option>
@@ -279,23 +332,8 @@
                 </div>
             </td>
         </tr>
-        <tr>
-            <th>비밀번호</th>
-            <td colspan="3">
-                <div class="form-inline">
-                    <div class="form-group form-in-btn">
-                        <input type="password" class="form-control" placeholder="********" disabled>
-                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset">비밀번호 재설정</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </tbody>  
+    </tbody>
 </table>
-
-<div class="btns btns-right">
-    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
-</div>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabSignup">
                                 <div class="area-list">
@@ -619,36 +657,6 @@
             </div>
         </div>
 
-        <!-- 비밀번호 재설정 popup -->
-        <!-- 비밀번호 재설정 -->
-<div class="modal fade" id="modalPasswordReset" aria-labelledby="modalPasswordResetLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">비밀번호 재설정</h4>
-            </div>
-            <div class="modal-body">
-                <p>회원 비밀번호를 재설정할 수 있습니다.</p>
-                <form>
-                    <div class="form-group">
-                        <label for="">새 비밀번호</label>
-                        <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리 입력" id="userPw">
-                    </div>
-                    <div class="form-group">
-                        <label for="" class="sr-only">새 비밀번호 확인</label>
-                        <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
-                    </div>
-                    <span class="help-block help-block-validate"></span>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" disabled id="btnReset">비밀번호 재설정</button>
-            </div>
-        </div>
-    </div>
-</div>
-
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
@@ -716,6 +724,9 @@
                    
                     if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
                         if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
+
+                            console.log( $('#userPwConfirm').val() );
+                            console.log( $('#userPw').val() );
                             hasError = true;
                             msg = errMsg['passwordConfirm'];
 
@@ -726,11 +737,11 @@
                     }
 
                     if ( hasError ) {
-                        $(this).parent('.form-group').addClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                        //$(this).parent('.form-group').addClass('has-error');
+                        $(this).siblings('.help-block-validate').html(msg);
                     } else {
-                        $(this).parent('.form-group').removeClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html('');
+                        //$(this).parent('.form-group').removeClass('has-error');
+                        $(this).siblings('.help-block-validate').html('');
                     }
 
                 });

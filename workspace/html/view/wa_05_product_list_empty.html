@@ -63,12 +63,12 @@
                             </div>
 
                             <!-- 상품이 없음 / 검색 결과 없음 -->
-                            <div class="area-empty">
-                                <div class="date-empty">
+                            <div class="area-empty register">
+                                <div class="register-empty">
                                     <strong>서비스 상품이 없습니다.</strong>
                                     <p>서비스 상품 등록은 [채팅방 생성]에서<br>할 수 있습니다.</p>
                                 </div>
-                                <div class="search-empty" style="display: none;">
+                                <div class="search-empty">
                                     <strong>검색 결과가 없습니다.</strong>
                                 </div>
                             </div>
@@ -87,8 +87,7 @@
                 $('.datepicker').datepicker();
 
                 $('#btnSearch').on('click', function() {
-                    $('.date-empty').css('display', 'none');
-                    $('.search-empty').css('display', 'block');
+                    $('.area-empty').removeClass('register').addClass('search');
                 });
             });
         </script>

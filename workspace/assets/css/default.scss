@@ -668,10 +668,12 @@ input[type="number"]::-webkit-inner-spin-button {
 
 // 데이터 없음
 .area-empty {
+  display: none;
   text-align: center;
   padding: 72px 0;
   border: 1px solid $border-light-color;
   > div {
+    display: none;
     strong {
       font-size: 18px;
     }
@@ -687,6 +689,18 @@ input[type="number"]::-webkit-inner-spin-button {
       height: 72px;
       background-color: $bg-color;
       margin: 24px auto;
+    }
+  }
+  &.register {
+    display: block;
+    > div.register-empty {
+      display: block;
+    }
+  }
+  &.search {
+    display: block;
+    > div.search-empty {
+      display: block;
     }
   }
 }
