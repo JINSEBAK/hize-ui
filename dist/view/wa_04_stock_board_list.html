@@ -479,8 +479,13 @@
                 });
 
                 $('#btnRegistserBoard').on('click', function() {
-                    callAlert({
-                        title: '보유 전광판에<br>등록되었습니다.'
+                    callConfirm({
+                        title: '종목을 보유전광판에<br>등록하시겠습니까?'
+                    }, callAlert({
+                        title: '보유전광판에<br>등록되었습니다.'
+                    }), {
+                        cancel: '취소',
+                        confirm: '등록'
                     });
                 });
             });

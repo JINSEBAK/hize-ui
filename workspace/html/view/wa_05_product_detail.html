@@ -63,8 +63,7 @@
 
                             <!-- 채팅방 정보 탭에서만 노출 -->
                             <div class="pull-right" id="modifyBtns">
-                                <button class="btn btn-secondary" id="btnShutdown">폐쇄</button>
-                                <button class="btn btn-primary" id="btnSave">수정</button>
+                                <a href="./wa_05_product_modify.html" class="btn btn-primary" id="btnSave">수정</a>
                             </div>
                         </div>
                         
@@ -87,7 +86,7 @@
 
                 // datepicker
                 $('.datepicker').datepicker({
-                    dateFormat: 'yyyy.mm.dd'
+                    dateFormat: 'yyyy-mm-dd'
                 });
 
                 // timepicker
@@ -123,10 +122,6 @@
                     }, onClickShutdown );
                 });
 
-                // 수정 
-                $('#btnSave').on('click', function() {
-                    callAlert({ title: '수정되었습니다.' });
-                });
 
                 // 회원 목록
                 $('.member-list tbody tr').on('click', function() {

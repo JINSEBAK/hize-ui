@@ -221,7 +221,7 @@
                             <!-- 채팅방 정보 -->
                             <div role="tabpane" class="tab-pane fade in active" id="tabInfo">
                                 <h4 class="detail-content-hd">기본정보</h4>
-<table class="table table-form">
+<table class="table table-form" id="tableBasicInfo">
     <colgroup>
         <col style="width: 12%">
         <col style="width: 38%">
@@ -244,18 +244,18 @@
             <td>
                 <span class="data" id="userPhone">010-1234-1234</span>
                 <input type="text" class="form-control" name="" placeholder="휴대폰번호 입력" value="010-1234-1234" style="display:none;">
-                 <em>(SMS수신 동의 | 2021.02.12)</em>
+                 <em>(SMS수신 동의 | 2021-02-12)</em>
             </td>
         </tr>
         <tr>
             <th>생년월일</th>
-            <td><span class="data">1990.03.10</span></td>
+            <td><span class="data">1990-03-10</span></td>
         </tr>
         <tr>
             <th>이메일 정보</th>
             <td><span class="data">235lee@gmail.com</span></td>
             <th>회원 가입일</th>
-            <td><span class="data">2021.04.10</span></td>
+            <td><span class="data">2021-04-10</span></td>
         </tr>
         <tr>
             <th>아이디</th>
@@ -263,7 +263,13 @@
             <th>닉네임</th>
             <td><span class="data">235나</span></span></td>
         </tr>
-        <tr>
+        <tr class="view">
+            <th>비밀번호</th>
+            <td colspan="3">
+                <span class="data">********</span>
+            </td>
+        </tr>
+        <tr class="new-password" style="display: none;">
             <th>새 비밀번호</th>
             <td>
                 <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리" id="userPw">
@@ -272,36 +278,10 @@
             <th>비밀번호 재입력</th>
             <td>
                 <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
-                <span calss="help-block-validate"></span>
+                <span class="help-block-validate"></span>
             </td>
         </tr>
-        <tr>
-            <th>가입 상태</th>
-            <td colspan="3">
-                <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
-                <div class="form-in-multi">
-                    <select class="form-control" id="memberStatus" disabled>
-                        <option value="1">활동</option>
-                        <option value="0">탈퇴</option>
-                    </select>
-                    <div class="form-group form-in-btn reason">
-                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
-                        <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">변경</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <!-- <tr>
-            <th>비밀번호</th>
-            <td colspan="3">
-                <div class="form-inline">
-                    <div class="form-group form-in-btn">
-                        <input type="password" class="form-control" placeholder="********" disabled>
-                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset">비밀번호 재설정</button>
-                    </div>
-                </div>
-            </td>
-        </tr> -->
+        
     </tbody>  
 </table>
 
@@ -311,7 +291,7 @@
 
 
 <h4 class="detail-content-hd">가입상태</h4>
-<table class="table table-form">
+<table class="table table-form" id="tableUserStatus">
     <colgroup>
         <col style="width: 12%">
         <col style="width: auto">
@@ -325,9 +305,9 @@
                         <option value="1">활동</option>
                         <option value="0">탈퇴</option>
                     </select>
-                    <div class="form-group form-in-btn reason mod-component">
-                        <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
-                        <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
+                    <div class="form-group form-in-btn reason">
+                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
+                        <button type="button" class="btn btn-secondary" id="btnWidthdrawal">변경</button>
                     </div>
                 </div>
             </td>
@@ -377,9 +357,9 @@
                         <span class="ellipsis">성공투자주식방-1</span>
                     </td>
                     <td>2,000,000</td>
-                    <td>2021.05.10</td>
-                    <td>2021.06.30</td>
-                    <td>2021.07.01 ~ 2021.07.31</td>
+                    <td>2021-05-10</td>
+                    <td>2021-06-30</td>
+                    <td>2021-07-01 ~ 2021-07-31</td>
                 </tr>
                 <tr>
                     <td>9</td>
@@ -387,9 +367,9 @@
                         <span class="ellipsis">성공투자주식방-2</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>2021.05.09</td>
-                    <td>2021.07.31</td>
-                    <td>2021.08.01 ~ 2021.08.31</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>8</td>
@@ -397,9 +377,9 @@
                         <span class="ellipsis">성공의 지름길! 자신감있는 종목을 콕 집어드립니다.</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>2021.05.09</td>
-                    <td>2021.07.31</td>
-                    <td>2021.08.01 ~ 2021.08.31</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>7</td>
@@ -407,9 +387,9 @@
                         <span class="ellipsis">성공투자주식방-3</span>
                     </td>
                     <td>500,000</td>
-                    <td>2021.05.09</td>
-                    <td>2021.07.31</td>
-                    <td>2021.08.01 ~ 2021.08.31</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>6</td>
@@ -417,9 +397,9 @@
                         <span class="ellipsis">성공투자주식방-5</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>2021.05.09</td>
-                    <td>2021.07.31</td>
-                    <td>2021.08.01 ~ 2021.08.31</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>5</td>
@@ -427,9 +407,9 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -437,9 +417,9 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -447,9 +427,9 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -457,9 +437,9 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
                 <tr>
                     <td>1</td>
@@ -467,9 +447,9 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD</td>
-                    <td>YYYY.MM.DD ~ YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD</td>
+                    <td>YYYY-MM-DD ~ YYYY-MM-DD</td>
                 </tr>
             </tbody>
         </table>
@@ -526,7 +506,7 @@
                         <span class="ellipsis">성공투자주식방-1</span>
                     </td>
                     <td>2,000,000</td>
-                    <td>2021.05.10</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -536,7 +516,7 @@
                         <span class="ellipsis">성공투자주식방-2</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>2021.05.09</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -546,7 +526,7 @@
                         <span class="ellipsis">성공의 지름길! 자신감있는 종목을 콕 집어드립니다.</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>2021.05.09</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -556,7 +536,7 @@
                         <span class="ellipsis">성공투자주식방-3</span>
                     </td>
                     <td>500,000</td>
-                    <td>2021.05.09</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -566,7 +546,7 @@
                         <span class="ellipsis">성공투자주식방-5</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>2021.05.09</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -577,7 +557,7 @@
                     </td>
                     <td><span class="txt-blue">-800,000</span></td>
                     <td>-</td>
-                    <td>2021.03.01</td>
+                    <td>YYYY-MM-DD</td>
                     <td>환불</td>
                 </tr>
                 <tr>
@@ -586,7 +566,7 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -596,7 +576,7 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>취소</td>
                 </tr>
@@ -606,7 +586,7 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -616,7 +596,7 @@
                         <span class="ellipsis">회원명</span>
                     </td>
                     <td>1,000,000</td>
-                    <td>YYYY.MM.DD</td>
+                    <td>YYYY-MM-DD</td>
                     <td>-</td>
                     <td>결제완료</td>
                 </tr>
@@ -666,14 +646,27 @@
             $(function() {
 
                 $('#btnModify').on('click', function() {
-                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
-                    $('#btnModify').text('수정 완료');
-                    $('#modifyHistory').css('display', 'none');
 
-                    //
-                    $('#userPhone').css('display','none');
-                    $('#userPhone').next('input').fadeIn();
-                    $('.table-form').addClass('table-form-mod');
+                    if ($(this).hasClass('mode-modify')) {
+                        callConfirm({
+                            title: '회원정보를<br>수정하시겠습니까?'
+                        }, function() {},  {
+                            cancel: '취소',
+                            confirm: '수정'
+                        });
+                    } else {
+                        $('#memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                        $('#btnModify').text('수정 완료').addClass('mode-modify');
+                        $('#modifyHistory').css('display', 'none');
+
+                        //
+                        $('#userPhone').css('display','none');
+                        $('#userPhone').next('input').fadeIn();
+                        $('#tableBasicInfo').addClass('table-form-mod');
+
+                        $('.table-form tr.view').css('display', 'none');
+                        $('.table-form tr.new-password').fadeIn();
+                    }
                 });
 
                 // 회원 상태 변경
@@ -688,7 +681,7 @@
                 // 탈퇴 사유 입력 시 버튼 활성화
                 $('#inputWithdrawal').on('change paste input', function() {
                     if ( $(this).val().length > 0 ) {
-                        $(this).next('button').removeAttr('disabled');
+                        $(this).next('button').removeAttr('disabled').addClass('mode-modify');
                     } else {
                         $(this).next('button').attr('disabled', true);
                     }
@@ -696,10 +689,19 @@
 
                 // 탈퇴 사유 작성
                 $('#btnWidthdrawal').on('click', function() {
-                    callConfirm({
-                        title: '회원을 탈퇴처리하시겠습니까?',
-                        description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
-                    });
+
+                    if ($(this).hasClass('mode-modify')) {
+                         callConfirm({
+                            title: '회원을 탈퇴처리하시겠습니까?',
+                            description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
+                        });
+                    } else {
+                        $('#tableUserStatus').addClass('table-form-mod');
+                        $(this).attr('disabled', true);
+                        $('#memberStatus').removeAttr('disabled');
+                    }
+
+                   
                 });
 
                 // 비밀번호 재설정
@@ -723,10 +725,8 @@
                     }
                    
                     if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+    
                         if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
-
-                            console.log( $('#userPwConfirm').val() );
-                            console.log( $('#userPw').val() );
                             hasError = true;
                             msg = errMsg['passwordConfirm'];
 
@@ -737,11 +737,9 @@
                     }
 
                     if ( hasError ) {
-                        //$(this).parent('.form-group').addClass('has-error');
-                        $(this).siblings('.help-block-validate').html(msg);
+                        $(this).next('.help-block-validate').html(msg);
                     } else {
-                        //$(this).parent('.form-group').removeClass('has-error');
-                        $(this).siblings('.help-block-validate').html('');
+                        $(this).next('.help-block-validate').html('');
                     }
 
                 });

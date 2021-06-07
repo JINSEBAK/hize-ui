@@ -59,14 +59,27 @@
             $(function() {
 
                 $('#btnModify').on('click', function() {
-                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
-                    $('#btnModify').text('수정 완료');
-                    $('#modifyHistory').css('display', 'none');
 
-                    //
-                    $('#userPhone').css('display','none');
-                    $('#userPhone').next('input').fadeIn();
-                    $('.table-form').addClass('table-form-mod');
+                    if ($(this).hasClass('mode-modify')) {
+                        callConfirm({
+                            title: '회원정보를<br>수정하시겠습니까?'
+                        }, function() {},  {
+                            cancel: '취소',
+                            confirm: '수정'
+                        });
+                    } else {
+                        $('#memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                        $('#btnModify').text('수정 완료').addClass('mode-modify');
+                        $('#modifyHistory').css('display', 'none');
+
+                        //
+                        $('#userPhone').css('display','none');
+                        $('#userPhone').next('input').fadeIn();
+                        $('#tableBasicInfo').addClass('table-form-mod');
+
+                        $('.table-form tr.view').css('display', 'none');
+                        $('.table-form tr.new-password').fadeIn();
+                    }
                 });
 
                 // 회원 상태 변경
@@ -81,7 +94,7 @@
                 // 탈퇴 사유 입력 시 버튼 활성화
                 $('#inputWithdrawal').on('change paste input', function() {
                     if ( $(this).val().length > 0 ) {
-                        $(this).next('button').removeAttr('disabled');
+                        $(this).next('button').removeAttr('disabled').addClass('mode-modify');
                     } else {
                         $(this).next('button').attr('disabled', true);
                     }
@@ -89,10 +102,19 @@
 
                 // 탈퇴 사유 작성
                 $('#btnWidthdrawal').on('click', function() {
-                    callConfirm({
-                        title: '회원을 탈퇴처리하시겠습니까?',
-                        description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
-                    });
+
+                    if ($(this).hasClass('mode-modify')) {
+                         callConfirm({
+                            title: '회원을 탈퇴처리하시겠습니까?',
+                            description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
+                        });
+                    } else {
+                        $('#tableUserStatus').addClass('table-form-mod');
+                        $(this).attr('disabled', true);
+                        $('#memberStatus').removeAttr('disabled');
+                    }
+
+                   
                 });
 
                 // 비밀번호 재설정
@@ -116,6 +138,7 @@
                     }
                    
                     if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+    
                         if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
                             hasError = true;
                             msg = errMsg['passwordConfirm'];
@@ -127,11 +150,9 @@
                     }
 
                     if ( hasError ) {
-                        //$(this).parent('.form-group').addClass('has-error');
-                        $(this).siblings('.help-block-validate').html(msg);
+                        $(this).next('.help-block-validate').html(msg);
                     } else {
-                        //$(this).parent('.form-group').removeClass('has-error');
-                        $(this).siblings('.help-block-validate').html('');
+                        $(this).next('.help-block-validate').html('');
                     }
 
                 });

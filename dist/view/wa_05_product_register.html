@@ -216,7 +216,7 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <th>채팅방명</th>
+                                        <th class="required">채팅방명</th>
                                         <td>
                                             <input type="text" class="form-control" placeholder="최대 20자 입력" maxlength="20">
                                         </td>
@@ -226,7 +226,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>채팅방 소개</th>
+                                        <th class="required">간단 소개</th>
+                                        <td colspan="3">
+                                            <input type="text" class="form-control" name="" placeholder="최대 20자 입력" maxlength="20">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="required">채팅방 소개</th>
                                         <td>
                                             <div class="form-content">
                                                 <textarea class="form-control" placeholder="최대 80자 입력"></textarea>
@@ -236,7 +242,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <th >대표이미지</th>
+                                        <th class="required">대표이미지</th>
                                         <td>
                                             <div class="img-file-box">
                                                 <div class="img-thumb">
@@ -261,7 +267,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>구분</th>
+                                        <th class="required">구분</th>
                                         <td>
                                             <div class="radio">
                                                 <label>
@@ -274,7 +280,7 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <th>채팅유형</th>
+                                        <th class="required">채팅유형</th>
                                         <td>
                                             <div class="radio">
                                                 <label>
@@ -289,7 +295,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>방장</th>
+                                        <th class="required">방장</th>
                                         <td colspan="3">
                                             <div class="fx fx-mg">
                                                 <div class="mg-groups">
@@ -300,7 +306,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>기간</th>
+                                        <th class="required">기간</th>
                                         <td>
                                             <div class="date-inline">
                                                 <div class="date-box">
@@ -313,7 +319,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <th>최대인원</th>
+                                        <th class="required">최대인원</th>
                                         <td>
                                             <input type="number" class="form-control form-tail" placeholder="" value="100">
                                             <label class="label-tail">최대 인원 1,000명</label>
@@ -321,7 +327,7 @@
                                     </tr>
                                     <!-- 무료 채팅방일 때만 노출 -->
                                     <tr class="free-product" style="display: none;">
-                                        <th>인증번호 설정</th>
+                                        <th class="required">인증번호 설정</th>
                                         <td colspan="3">
                                             <div class="form-inline-set">
                                                 <div class="radio">
@@ -613,7 +619,7 @@
             $(function() {
                 // datepicker
                 $('.datepicker').datepicker({
-                    dateFormat: 'yyyy.mm.dd'
+                    dateFormat: 'yyyy-mm-dd'
                 });
 
     

@@ -1,5 +1,5 @@
 <h4 class="detail-content-hd">기본정보</h4>
-<table class="table table-form">
+<table class="table table-form" id="tableBasicInfo">
     <colgroup>
         <col style="width: 12%">
         <col style="width: 38%">
@@ -29,7 +29,7 @@
             <th>이메일 정보</th>
             <td><span class="data">toptop@gmail.com</span></td>
             <th>관리자 승인일</th>
-            <td><span class="data">2021.04.10</span></td>
+            <td><span class="data">2021-04-10</span></td>
         </tr>
         <tr>
             <th>아이디</th>
@@ -37,38 +37,29 @@
             <th>닉네임</th>
             <td><span class="data">toptop</span></span></td>
         </tr>
-        <tr>
-            <th>가입 상태</th>
-            <td colspan="3">
-                <!-- 탈퇴 상태의 회원은 정보 수정 불가 disabled 처리 -->
-                <div class="form-in-multi">
-                    <select class="form-control" id="memberStatus" disabled>
-                        <option value="1">활동</option>
-                        <option value="0">탈퇴</option>
-                    </select>
-                    <div class="form-group form-in-btn reason mod-component">
-                        <input type="text" class="form-control" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
-                        <button type="button" class="btn btn-secondary" disabled id="btnWidthdrawal">저장</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr>
+        <tr class="view">
             <th>비밀번호</th>
             <td colspan="3">
-                <div class="form-inline">
-                    <div class="form-group form-in-btn">
-                        <input type="password" class="form-control" placeholder="********" id="memberPassword" disabled>
-                        <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset" id="btnPwReset" disabled>비밀번호 재설정</button>
-                    </div>
-                </div>
+                <span class="data">********</span>
+            </td>
+        </tr>
+        <tr class="new-password" style="display: none;">
+            <th>새 비밀번호</th>
+            <td>
+                <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리" id="userPw">
+                <span class="help-block-validate"></span>
+            </td>
+            <th>비밀번호 재입력</th>
+            <td>
+                <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
+                <span class="help-block-validate"></span>
             </td>
         </tr>
     </tbody>  
 </table>
 
 <h4 class="detail-content-hd">부서정보</h4>
-<table class="table table-form">
+<table class="table table-form" id="tableDepInfo">
     <colgroup>
         <col style="width: 12%">
         <col style="width: 38%">
@@ -79,11 +70,13 @@
         <tr>
             <th>부서</th>
             <td>
-                <input type="text" class="form-control" name="" value="영업팀" id="department" disabled>
+                <span class="data">영업팀</span>
+                <input type="text" class="form-control mod-component" name="" value="영업팀" id="department" disabled>
             </td>
             <th>직급</th>
             <td>
-                <input type="text" class="form-control" name="" value="대리" id="managerRank" disabled>
+                <span class="data">대리</span>
+                <input type="text" class="form-control mod-component" name="" value="대리" id="managerRank" disabled>
             </td>
         </tr>
     </tbody>
@@ -92,6 +85,33 @@
 <div class="btns btns-right">
     <button type="button" class="btn btn-primary" id="btnModify">수정</button>
 </div>
+
+
+<h4 class="detail-content-hd">가입상태</h4>
+<table class="table table-form" id="tableUserStatus">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: auto">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>가입 상태</th>
+            <td>
+                <div class="form-in-multi">
+                    <select class="form-control" id="memberStatus" disabled>
+                        <option value="1">활동</option>
+                        <option value="0">탈퇴</option>
+                    </select>
+                    <div class="form-group form-in-btn reason">
+                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
+                        <button type="button" class="btn btn-secondary" id="btnWidthdrawal">변경</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 <!-- 수정 이력이 있는 경우 노출 -->
 <table class="table table-form mg24" id="modifyHistory">
@@ -106,7 +126,7 @@
             <th>수정자</th>
             <td><span class="data">박민</span></td>
             <th>수정일</th>
-            <td><span class="data">2021.05.14</span></td>
+            <td><span class="data">2021-05-14</span></td>
         </tr>
     </tbody>
 </table>

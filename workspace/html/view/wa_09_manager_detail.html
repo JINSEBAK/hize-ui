@@ -47,9 +47,6 @@
             </div>
         </div>
 
-        <!-- 비밀번호 재설정 popup -->
-        @@include('./inside/wa_08_member_detail_popup.html')
-
         <!-- scripts -->
         @@include('../common/scripts.html')
         <script>
@@ -75,9 +72,19 @@
 
                 // 탈퇴 사유 작성
                 $('#btnWidthdrawal').on('click', function() {
-                    callConfirm({
-                        title: '관리자를<br>탈퇴처리하시겠습니까?',
-                    });
+                    if ($(this).hasClass('mode-modify')) {
+                        callConfirm({
+                            title: '관리자를<br>탈퇴처리하시겠습니까?',
+                        }, function() {}, {
+                            cancel: '취소',
+                            confirm: '탈퇴'
+                        });
+                    } else {
+                        $('#tableUserStatus').addClass('table-form-mod');
+                        $(this).attr('disabled', true);
+                        $('#memberStatus').removeAttr('disabled');
+                    }
+                    
                 });
 
                 // 비밀번호 재설정
@@ -129,12 +136,37 @@
 
                 // 관리자 정보 수정 버튼 클릭 
                 $('#btnModify').on('click', function() {
-                    $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
-                    $('#btnModify').text('수정 완료');
-                    $('#modifyHistory').css('display', 'none');
 
-                    //
-                    $('.table-form').addClass('table-form-mod');
+                    if ($(this).hasClass('mode-modify')){
+                        callConfirm({
+                            title: '관리자 정보를<br>수정하시겠습니까?'
+                        }, function() {},  {
+                            cancel: '취소',
+                            confirm: '수정'
+                        });
+                    } else {
+                        $('#memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                        $('#btnModify').text('수정 완료').addClass('mode-modify');
+                        $('#modifyHistory').css('display', 'none');
+                        
+                        //
+                        $('#tableBasicInfo, #tableDepInfo').addClass('table-form-mod');
+                        $('#tableDepInfo').find('span.data').css('display', 'none');
+
+                        $('.table-form tr.view').css('display', 'none');
+                        $('.table-form tr.new-password').fadeIn();
+                    }
+
+                });
+
+                // 권한 수정 완료 클릭 
+                $('#btnSavePermission').on('click', function() {
+                    callConfirm({
+                        title: '권한을<br>수정하시겠습니까?'
+                    }, function() {}, {
+                        cancel: '취소',
+                        confirm: '수정'
+                    });
                 });
 
             });
