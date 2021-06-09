@@ -4,6 +4,9 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-size: 14px;
+  color: #292929;
 }
 
 div, ul {
@@ -29,27 +32,30 @@ button:focus {
 }
 
 /* colors */
-$border-color: #ddd;
-$border-light-color: #eee;
-$bg-color: #f2f3f6;
+$border-color: #a4a4aa;
+$border-light-color: #f1f2f4;
+$bg-color: #f1f2f8;
 $bg-light-color: #f9f9f9; // 채팅방bg
 $bg-freezing: #e2f2ff;  // 얼리기
 $bg-white: #fff;
+$bg-primary: #232a4a;
 $balloon-default: #fff;
 $balloon-admin: #ffeae2;  // 관리자 말풍선
 $balloon-signal: #ffdfdf; // 신호색상
 $text-white: #fff;
-$text-basic: #9d9d9d;
+$text-basic: #999999;
 $text-basic-hover: #000;
 $text-primary: #2e6da4;
-$text-link-basic: #6a6a6a;
-$text-link-hover: #000;
+$text-link-basic: #717171;
+$text-link-hover: #3045a0;
 $text-warning: #8a6d3b;
-$text-emphasize: coral;
+$text-emphasize: #ff7448;
+$text-gnb: #242629;
+$placeholder: #b0b7c3;
 $card-hover: #f2f3f5;
 $card-active: #e6e4fc;
-$btn-primary: #2e6da4;
-$btn-secondary: #666;
+$btn-primary: #293c6c;
+$btn-secondary: #293c6c;
 $btn-secondary-hover: #000;
 $tb-notice: #f6f2fb;  
 $signal-buy-bg: #ffdfd2;
@@ -60,6 +66,10 @@ $signal-alarm-bg: #aefffb;
 $signal-alarm-border: #3ea3a7;
 
 /* buttons */
+.btn-primary {
+  background-color: $btn-primary;
+  border-color: $btn-primary;
+}
 .btn-secondary {
   background-color: $btn-secondary;
   color: $text-white;
@@ -72,7 +82,11 @@ $signal-alarm-border: #3ea3a7;
   border-radius: 50px;
   margin-top: 24px;
 }
-
+.btn-search {
+  background-color: $btn-secondary;
+  color: $text-white;
+  min-width: 90px;
+}
 .btn-top {
   font-size: 11px;
   border: none;
@@ -126,10 +140,59 @@ $signal-alarm-border: #3ea3a7;
 
 
 /* icons */
+.icon {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    &.icon-chatting {
+      background-image: url(../images/icons/chatting-nor.svg);
+    }
+    &.icon-notification {
+      background-image: url(../images/icons/notification-nor.svg);
+    }
+    &.icon-stockboard {
+      background-image: url(../images/icons/stockboard-nor.svg);
+    }
+    &.icon-chat-product {
+      background-image: url(../images/icons/chat-product-nor.svg);
+    }
+    &.icon-chart {
+      background-image: url(../images/icons/chart.svg);
+    }
+    // TODO! 결제 관리 아이콘 다운로드 안됨
+    &.icon-payment {
+      background-image: url(../images/icons/chart.svg);
+    }
+    &.icon-user {
+      background-image: url(../images/icons/user-nor.svg);
+    }
+    &.icon-admin-member {
+      background-image: url(../images/icons/admin-member-nor.svg);
+    }
+    &.icon-board {
+      background-image: url(../images/icons/board-nor.svg);
+    }
+    &.icon-service {
+      background-image: url(../images/icons/hizeservice-nor.svg);
+    }
+    // TODO! 앱 메인 관리 아이콘 다운로드 안됨
+    &.icon-config {
+      background-image: url(../images/icons/hizeservice-nor.svg);
+    }
+    &.icon-calendar {
+      background-image: url(../images/icons/calendar.svg);
+    }
+  }
+
+
 
 // header fixed-top 적용 시, body에 padding-top 필요
 body {
-  padding-top: 70px;
+  padding-top: 106px;
 }
 
 a {
@@ -157,15 +220,26 @@ a {
 
 // header
 .navbar {
-  border-bottom: 1px solid $border-color;
-  background-color: #fff;
+  box-shadow: 0 2px 9px 0 rgba(133, 141, 164, 0.7);
+  background-color: $bg-primary;
+  min-height: 70px;
+  a {
+    color: #fff;
+  }
   .container-fluid {
     padding-left: 0;
+    > div {
+      height: 70px;
+      padding-top: 8px;
+    }
     .navbar-header {
       width: 210px;
-      padding-left: 15px;
-      background-color: $bg-freezing;
-      border-right: 1px solid $border-color;
+      padding-left: 35px;
+      color: #fff;
+      background-image: conic-gradient(from 1.12turn, #cc4035, #1d2858 0.01turn, #cc4035);
+      .navbar-brand {
+        font-size: 28px;
+      }
       .navbar-toggle {
         color: #fff;
       }
@@ -174,19 +248,22 @@ a {
       position: relative;
       .sm-req-bd {
         display: flex;
-        font-size: 13px;
         padding: 16px 15px;
         > li {
-          em {
+          color: #fff;
+          a {
             color: $text-emphasize;
+            font-weight: bold;
+            font-size: 16px;
+            padding-left: 8px;
           }
           &:after {
             content: '';
             display: inline-block;
             width: 1px;
-            height: 12px;
-            margin: 2px 10px -2px 6px;
-            background-color: $border-color;
+            height: 10px;
+            margin: 0 10px;
+            background-color: rgba(255,255,255,.4);
           }
           &:last-child {
             &:after {
@@ -198,16 +275,16 @@ a {
       .rt-info {
         position: absolute;
         right: 0;
-        top: 5px;
+        top: 14px;
         .vertical {
           display: inline-block;
           width: 1px;
-          height: 12px;
-          background-color: $border-color;
+          height: 10px;
+          background-color: rgba(255,255,255,.4);
         }
         .btn-profile {
           background-color: transparent;
-          color: $text-basic;
+          color: $text-white;
           display: inline-block;
           > * {
             display: inline-block;
@@ -215,10 +292,10 @@ a {
           .user-img {
             display: inline-block;
             vertical-align: middle;
-            width: 26px;
-            height: 26px;
-            margin-right: 6px;
-            margin-left: 6px;
+            width: 32px;
+            height: 32px;
+            margin-right: 4px;
+            margin-left: 4px;
             border-radius: 100%;
             overflow: hidden;
             img {
@@ -229,7 +306,7 @@ a {
         }
         .btn-logout {
           margin-bottom: 2px;
-          color: $text-basic;
+          color: $text-white;
         }
         .btn {
           &:active {
@@ -243,17 +320,27 @@ a {
 
 // gnb
 .sidebar {
-  border-right: 1px solid $border-color;
+  border-right: 1px solid $border-light-color;
   position: fixed;
   width: 210px;
-  top: 51px;
+  top: 87px;
   bottom: 0;
   left: 0;
   z-index: 1000;
-  padding: 0;
+  padding: 0 24px;
   .nav-sidebar {
+    border-top: 1px solid $border-light-color;
     > li {
-      margin: 10px 0;
+      border-bottom: 1px solid $border-light-color;
+      a {
+        color: $text-gnb;
+        padding: 16px 10px;
+        &:hover {
+          color: $text-link-hover;
+          font-weight: bold;
+          background-color: transparent;
+        }
+      }
       > a:not(.single) {
         background-image: url(../images/icons/down-arrow.svg);
         background-position: calc(100% - 15px) center;
@@ -261,12 +348,25 @@ a {
         background-size: 10px;
       }
       &.active {
+        a {
+          color: $text-link-hover;
+          font-weight: bold;
+        }
         > a:not(.single) {
           background-image: url(../images/icons/up-arrow.svg);
         }
       }
-      .glyphicon {
-        margin-right: 6px;
+      .icon {
+        margin-top: -1px;
+        margin-right: 4px;
+      }
+      &.fixed-bottom {
+        position: absolute;
+        bottom: 24px;
+        border-bottom: none;
+        a {
+          font-weight: bold;
+        }
       }
     }
     .sub-menu {
@@ -288,25 +388,39 @@ a {
     padding: 0;
     margin: 0;
     position: relative;
+    border-bottom: none;
     h4 {
       margin: 0 0 10px;
+      font-size: 22px;
       small {
         display: block;
         position: relative;
-        margin-top: 6px;
+        margin-top: 10px;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #666;
+        border-top: 1px solid #d3d3d3;
       }
       .breadcrumb {
         position: absolute;
-        bottom: 8px;
-        right: 12px;
+        top: 8px;
+        right: 2px;
         padding: 0;
         margin: 0;
-        font-size: 12px;
+        font-size: 13px;
         background-color: transparent;
         font-weight: 400;
         color: $text-basic;
+        > li {
+          & + li {
+            &:before {
+              content: '>';
+              padding: 0 6px 0 4px;
+            }
+          }
+        }
         li:last-child {
-          font-weight: bold;
+          color: #000;
         }
       }
       .dropdown {
@@ -315,7 +429,7 @@ a {
         button {
           font-size: 13px;
           border: 1px solid $border-color;
-          background-color: transparent;
+          background: transparent url(../images/icons/arrow-down.svg) right center no-repeat;
           width: 100px;
           text-align: left;
           margin-bottom: 2px;
@@ -432,6 +546,22 @@ a {
 
 
 // forms 
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff url(../images/icons/arrow-down.svg) calc(100% - 10px) center no-repeat !important;
+}
+.form-control {
+  border: 1px solid #dbdee6;
+  box-shadow: none;
+  height: 36px;
+  &::placeholder {
+    color: $placeholder;
+  }
+}
+
 .form-search {
   // 돋보기 아이콘이 있는 input - 1개
   position: relative;
@@ -471,7 +601,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .area-search {
   margin: 24px 0;
   background-color: $bg-color;
-  padding: 12px;
+  padding: 16px 24px;
   border-radius: 4px;
   .form-inline {
     .form-group {
@@ -491,6 +621,10 @@ input[type="number"]::-webkit-inner-spin-button {
       &.form-in-btn {
         .keyword {
           width: 320px;
+          margin-top: 1px;
+        }
+        .btn-search {
+          margin-top: 1px;
         }
       }
     }
@@ -506,10 +640,10 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .date-box {
   position: relative;
-  span.glyphicon-calendar {
+  span.icon-calendar {
     position: absolute;
     right: 8px;
-    top: 8px;
+    top: 6px;
     color: $text-basic;
   }
 }
@@ -555,15 +689,57 @@ input[type="number"]::-webkit-inner-spin-button {
   text-align: center;
 }
 
+.pagination {
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 36px;
+  text-align: center;
+  button {
+    color: #7d7d7d;
+    padding: 0 4px;
+    margin: 0 4px;
+    background-color: transparent;
+    border: none;
+    &.active {
+      color: #1e3d9d;
+    }
+    &.pg-opt {
+      text-indent: -9999px;
+      width: 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:disabled {
+        opacity: .3;
+      }
+      &.pg-first {
+        background-image: url(../images/icons/pg-last.svg);
+      }
+      &.pg-prev {
+        background-image: url(../images/icons/pg-next.svg);
+      }
+      &.pg-next {
+        background-image: url(../images/icons/pg-next.svg);
+      }
+      &.pg-last {
+        background-image: url(../images/icons/pg-last.svg);
+      }
+    }
+  }
+}
+
 .area-list {
   .area-list-header {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     > div {
       font-size: 14px;
       &:first-child {
         padding-top: 10px;
+        color: #3f4146;
+        font-size: 13px;
         .count {
-          color: $text-emphasize;
+          color: #292929;
+          padding-left: 4px;
         }
       }
     }
@@ -590,13 +766,17 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .data-list {
+  border-bottom: 1px solid #b5bac8 !important;
   thead {
     tr {
       th {
+        &.center {
+          text-align: center;
+        }
         span {
           cursor: pointer;
           color: $text-basic;
-          float: right;
+          top: 2px;
         }
         
       }
@@ -618,6 +798,8 @@ input[type="number"]::-webkit-inner-spin-button {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            text-align: left;
+            max-width: 300px;
           }
         }
         .btn {
@@ -635,10 +817,12 @@ input[type="number"]::-webkit-inner-spin-button {
       &.detail {
         display: none;
         background-color: $bg-light-color;
+        border-bottom: 1px solid #f1f2f4;
         td {
           border: none;
           .signal {
             padding: 12px 0;
+            text-align: left;
           }
         }
       }

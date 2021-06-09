@@ -539,6 +539,19 @@ a {
     }
 }
 
+@media (max-width: 320px) {
+
+.w-main {
+    .w-hd {
+        .inner {
+            > div {
+                width: 31% !important;
+            }
+        }
+    }
+}
+}
+
 // header(webview)
 .wv-header {
     background-color: $bg-white;
@@ -659,6 +672,59 @@ a {
     }
 }
 
+// 검색
+.mid-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    .category {
+        width: 120px;
+    }
+    .search {
+        flex: 1;
+        position: relative;
+        input {
+            opacity: 0;
+        }
+        .btn {
+            width: 34px;
+            height: 34px;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .btn-search {
+            display: block;
+        }
+        .btn-delete {
+            display: none;
+            opacity: 0;
+        }
+    }
+    &.mode-search {
+        .category {
+            width: 0px;
+            transition: 0.5s width;
+        }
+        .search {
+            input {
+                padding-left: 36px;
+                opacity: 1;
+            }
+            .btn-search {
+                left: 0 !important;
+            }
+            .btn-delete {
+                display: block;
+                opacity: 1;
+                transition: .3s opacity;
+            }
+        }
+    }
+}
+
 .post-board-top {
     display: flex;
     align-items: center;
@@ -692,6 +758,9 @@ a {
             align-items: center;
             label {
                 margin: 0 4px 0 0;
+                &.label-notice {
+                    background-color: blue;
+                }
             }
             .title {
                 max-width: 70%;
@@ -795,6 +864,10 @@ a {
             }
         }
     }
+    & + .btns {
+        text-align: right;
+        padding: 12px;
+    }
 }
 
 .post-form {
@@ -812,7 +885,23 @@ a {
             min-height: 240px;
         }
         .attachment {
-            font-size: 14px;
+            .file {
+                display: inline-block;
+                background-color: $bg-color;
+                border-radius: 50px;
+                padding: 4px 6px 6px;
+                margin: 0 4px 4px 0;
+                span {
+                    vertical-align: middle;
+                }
+                .name {
+                    font-size: 12px;
+                }
+                .glyphicon {
+                    top: 0;
+                    margin-left: 2px;
+                }
+            }
         }
         &.in-remove {
             .form-control {
@@ -829,6 +918,7 @@ a {
         }
     }
 }
+
 
 // 댓글
 .comment-box {
@@ -958,5 +1048,12 @@ a {
     p {
         font-size: 13px;
         margin-bottom: 24px;
+    }
+}
+
+.btns {
+    padding: 12px;
+    &.btns-right {
+        text-align: right;
     }
 }

@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+<!-- 개발에서 사용 안함 -->
+<link rel="stylesheet" href="../assets/css/tables.css">
+
 
 
     <link rel="stylesheet" href="../assets/css/wv.css" />
@@ -50,23 +53,45 @@
                 </div>
                 <div class="w-main-content tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="tabContent1">
+
                         <!-- search -->
-                        <div class="post-board-top">
-                            <select class="select form-control">
-                                <option>최근 등록일</option>
-                                <option>조회수</option>
-                                <option>댓글</option>
-                                <option>좋아요</option>
-                            </select>
-                            <div class="search">
-                                <div class="fm-search">
-                                    <input type="text" class="form-control" placeholder="">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </div>
+                        <div class="mid-search">
+                            <div class="category">
+                                <select class="form-control">
+                                    <option>최근등록일</option>
+                                    <option>조회수</option>
+                                    <option>댓글</option>
+                                </select>
                             </div>
-                            <a href="./au_03_board_01_register.html" type="button" class="btn btn-default">글쓰기</a>
+                            <div class="search">
+                                <input type="text" class="form-control" id="searchKeyword">
+                                <button class="btn btn-search">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                                <button class="btn btn-delete">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </div>
                         </div>
+
                         <ul class="post-board" id="tradingList">
+                            <li>
+                                <div class="post best">
+                                    <div class="post-hd">
+                                        <label class="label label-default label-notice">공지</label>
+                                        <span class="title">오늘의 투자 포인트!!</span>
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="post-sub-info">
+                                        <ul>
+                                            <li>hongadmin</li>
+                                            <li>2021-05-04</li>
+                                            <li>조회: 340</li>
+                                            <li>댓글: 34</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
                             <li>
                                 <div class="post best">
                                     <div class="post-hd">
@@ -80,29 +105,6 @@
                                             <li>2021-05-04</li>
                                             <li>조회: 440</li>
                                             <li>댓글: 8</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="post best">
-                                    <div class="post-hd">
-                                        <label class="label label-default">BEST</label>
-                                        <span class="title">저도 인증해봤어요</span>
-                                        <span class="glyphicon glyphicon-picture"></span>
-                                    </div>
-                                    <div class="post-sub-info">
-                                        <ul>
-                                            <li>맹구와땡칠이</li>
-                                            <li>2021-05-02</li>
-                                            <li>조회: 340</li>
-                                            <li>댓글: 5</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 24
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -120,9 +122,6 @@
                                             <li>2021-05-04</li>
                                             <li>조회: 440</li>
                                             <li>댓글: 8</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 19
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -138,9 +137,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,9 +152,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -174,9 +167,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -192,9 +182,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -210,9 +197,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -228,9 +212,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -246,9 +227,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -264,9 +242,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -282,9 +257,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -300,9 +272,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -318,9 +287,6 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -336,14 +302,15 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회: 0</li>
                                             <li>댓글: 0</li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                         </ul>
+                        <div class="btns">
+                            <a href="./au_03_board_01_register.html" class="btn btn-primary">글쓰기</a>
+                        </div>
+
                         <nav class="pagination-wrap">
     <ul class="pagination pagination-sm">
         <li class="disabled">
@@ -666,6 +633,9 @@
                                 </div>
                             </li>
                         </ul>
+                        <div class="btns">
+                            <a href="./au_03_board_01_register.html" class="btn btn-primary">글쓰기</a>
+                        </div>
                         <nav class="pagination-wrap">
     <ul class="pagination pagination-sm">
         <li class="disabled">
@@ -988,6 +958,10 @@
                                 </div>
                             </li>
                         </ul>
+                        <div class="btns">
+                            <a href="./au_03_board_01_register.html" class="btn btn-primary">글쓰기</a>
+                        </div>
+
                         <nav class="pagination-wrap">
     <ul class="pagination pagination-sm">
         <li class="disabled">
@@ -1046,6 +1020,17 @@
                 // 매매인증 상세화면 이동
                 $('.post').on('click', function() {
                     window.location.href = './au_03_board_01_detail.html';
+                });
+
+                //
+                $('.search').find('.btn-search').on('click', function() {
+                    $(this).parents('.mid-search').addClass('mode-search');
+                    $('#searchKeyword').focus();
+                });
+
+                $('.btn-delete').on('click', function() {
+                    $('#searchKeyword').val('');
+                    $(this).parents('.mid-search').removeClass('mode-search');
                 });
 
            

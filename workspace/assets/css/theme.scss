@@ -1,16 +1,71 @@
 // 로그인, 회원가입
-.user-sign {
-  max-width: 480px;
+.p-login {
+  padding: 0;
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+.user-sign-wrapper {
+  width: 840px;
+  height: 514px;
   margin: 0 auto;
+  > div {
+    float: left;
+    &:first-child {
+      color: #fff;
+      text-align: center;
+      line-height: 514px;
+      border-radius: 4px 0 0 4px;
+      background-image: conic-gradient(from 1.12turn, #cc4035, #1d2858 0turn, #cc4035);
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+      background-image: linear-gradient(to bottom, #cc2d30, #1d2858);
+    }
+  }
+}
+.user-sign {
+  width: 420px;
+  height: 100%;
+  padding: 1px;
+  form { 
+    background-color: #fff;
+    padding: 54px 60px;
+    border-radius: 0 4px 4px 0;
+  }
   .login-heading {
     text-align: center;
+    font-size: 24px;
+    font-weight: bold;
     padding: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 44px;
     img {
       display: block;
       margin: 12px auto;
       width: auto;
       height: 27px;
+    }
+  }
+  .form-group {
+    margin-bottom: 18px;
+    input.form-control {
+      border: none;
+      border-bottom: 1px solid $border-color;
+      border-radius: 0;
+      box-shadow: none;
+      &:placeholder {
+        color: $placeholder;
+      }
+    }
+  }
+  .btns {
+    padding-top: 12px;
+    #btnLogin {
+      font-size: 16px;
+      height: 50px;
     }
   }
   .help-block {
@@ -19,13 +74,37 @@
       color: #a94442;
     }
   }
+  .checkbox {
+    margin-top: 24px;
+  }
   .find-info {
     margin-top: 10px;
     margin-bottom: 10px;
+    .find-info-menu {
+      text-align: right;
+      li {
+        display: inline-block;
+        &:last-child {
+          &:before {
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 10px;
+            margin: 0 6px;
+            background-color: rgba(0,0,0,.4);
+
+          }
+        }
+      }
+    }
+
   }
   .mb-join {
     clear: both;
-    padding-top: 36px;
+    padding-top: 20px;
+    a {
+      text-decoration: underline;
+    }
   }
   .form-group {
     .form-control {
@@ -1704,8 +1783,8 @@
         }
         .btn-search {
           position: absolute;
-          right: -52px;
-          top: 0;
+          right: -94px;
+          top: 1px;
           height: 34px;
           margin-top: 22px;
         }

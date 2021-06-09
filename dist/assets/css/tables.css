@@ -1,0 +1,25 @@
+.table-bordered {
+    border: 1px solid #b5bac8;
+    border-left: none;
+    border-right: none;
+}
+
+.table-bordered > thead > tr > th {
+    border: none;
+    border-bottom: 1px solid #b5bac8;
+    background-color: #f0f2ff;
+    padding: 12px;
+    text-align: center;
+}
+
+.table-bordered > tbody > tr > td, 
+.table-bordered > tbody > tr > th {
+    border: none;
+    border-bottom: 1px solid #f1f2f4;
+    padding: 12px;
+    text-align: center;
+}
+
+.table-bordered > tbody > tr > td.lf {
+    text-align: left;
+}

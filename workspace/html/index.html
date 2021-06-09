@@ -25,6 +25,12 @@
       .sub-func { font-size: 85%;  }
       .sub-func li { list-style: disc; margin-left: 16px;}
       small em { color: #aaa;}
+      @media (max-width: 720px) {
+        .table thead  tr { display: none; }
+        .table td {
+          display: block; 
+        }
+      }
 
     </style>
 
@@ -56,7 +62,8 @@
           </dd>
           <dt>그리드(Grid)</dt>
           <dd>
-            임시로 table로 작성, 개발 시 사용하는 라이브러리에 따라 UI는 달라질 수 있음
+            임시로 table로 작성, 개발 시 사용하는 라이브러리에 따라 UI는 달라질 수 있음<br>
+            퍼블리싱: bootstrap data table / 개발: <strong>DataTables library</strong> 사용
           </dd>
         </dl>
       </div>
@@ -127,11 +134,11 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_01_login.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small></small>
+              <small><strong>TODO!</strong> 로고이미지 적용 </small>
             </td>
           </tr>
           <tr >
@@ -223,7 +230,7 @@
               <span class="label label-default">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_03_signal_history_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td><small>0601-발송건수 컬럼 추가</small></td>
@@ -237,7 +244,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">70%</span>
             </td>
             <td><a href="./view/wa_03_message_history_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td><small>0601-발송건수 컬럼 추가</small></td>
@@ -251,7 +258,7 @@
               <span class="label label-default">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_04_stock_board_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td></td>
@@ -265,7 +272,7 @@
               <span class="label label-default">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">80%</span>
             </td>
             <td><a href="./view/wa_04_stock_board_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td><small>0601-보유종목 컬럼 정리(등록자, 등록일 삭제)</small></td>
@@ -280,7 +287,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">50%</span>
             </td>
             <td><a href="./view/wa_04_stock_board_owner_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td><small>0601<br>매매이력 pagination -> 더보기로 변경, 매매이력 상세 팝업 추가 </small></td>
@@ -294,7 +301,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_05_product_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -311,7 +318,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_05_product_list_empty.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -327,7 +334,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">50%</span>
             </td>
             <td><a href="./view/wa_05_product_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -378,7 +385,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">80%</span>
             </td>
             <td><a href="./view/wa_06_statistics_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -427,7 +434,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_07_payment_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -476,7 +483,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_08_member_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -508,7 +515,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_09_manager_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -610,7 +617,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_10_board_post_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -679,7 +686,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_11_operation_faq.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -747,7 +754,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_11_operation_terms.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -798,7 +805,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_11_operation_log.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -861,7 +868,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_14_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -878,7 +885,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">80%</span>
             </td>
             <td><a href="./view/wa_14_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -894,7 +901,7 @@
               <span class="label label-default">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_15_manager_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -926,7 +933,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-success">90%</span>
             </td>
             <td><a href="./view/wa_16_posting_approval.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -1082,7 +1089,7 @@
             </td>
             <td><a href="./wvview/au_03_board_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small></small>
+              <small>pagination number 최대 10개.... 못 넣어요.. 320 단말기에 줄 밀려요...</small>
             </td>
           </tr>
           <tr>
@@ -1183,7 +1190,7 @@
             </td>
             <td><a href="./wvview/au_03_cs_faq.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
-              <small></small>
+              <small>0607-faq 카테고리 선택 및 검색 UI 추가</small>
             </td>
           </tr>
           <tr>

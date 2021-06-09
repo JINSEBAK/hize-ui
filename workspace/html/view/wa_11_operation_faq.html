@@ -27,11 +27,11 @@
                                     <div class="date-inline">
                                         <div class="date-box">
                                             <input type="text" class="form-control datepicker" placeholder="시작일">
-                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                            <span class="icon icon-calendar"></span> 
                                         </div>
                                         <div class="date-box">
                                             <input type="text" class="form-control datepicker" placeholder="종료일">
-                                            <span class="glyphicon glyphicon-calendar"></span> 
+                                            <span class="icon icon-calendar"></span> 
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                 <div class="form-group form-in-btn">
                                     <label for="" class="sr-only">검색어</label>
                                     <input type="text" class="form-control keyword" placeholder="검색어 입력">
-                                    <button type="button" class="btn btn-secondary" id="btnSearch">검색</button>
+                                    <button type="button" class="btn btn-search" id="btnSearch">검색</button>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                                             <td>노출</td>
                                             <td>신호/보유전광판</td>
                                             <td>
-                                                <span class="ellipsis"><a href="#">받은 신호 확인은 어디서 하나요?</a>
+                                                <span class="ellipsis">받은 신호 확인은 어디서 하나요?</span>
                                             </td>
                                             <td>박민</td>
                                             <td>2021-04-07</td>
@@ -111,7 +111,7 @@
                                             <td>99</td>
                                             <td>노출</td>
                                             <td>게시판</td>
-                                            <td><span class="ellipsis"><a href="#">게시판에 글을 올리고 싶어요.</a></span></td>
+                                            <td><span class="ellipsis">게시판에 글을 올리고 싶어요.</span></td>
                                             <td>나주민</td>
                                             <td>2021-03-20</td>
                                         </tr>
@@ -126,7 +126,7 @@
                                             <td>98</td>
                                             <td>노출</td>
                                             <td>신호/보유전광판</td>
-                                            <td><span class="ellipsis"><a href="#">신호가 오지 않아요.</a></span></td>
+                                            <td><span class="ellipsis">신호가 오지 않아요.</span></td>
                                             <td>김고정</td>
                                             <td>2021-03-20</td>
                                         </tr>
@@ -141,7 +141,7 @@
                                             <td>97</td>
                                             <td>노출</td>
                                             <td>채팅</td>
-                                            <td><span class="ellipsis"><a href="#">제목</a></span></td>
+                                            <td><span class="ellipsis">제목</span></td>
                                             <td>박민</td>
                                             <td>2021-03-16</td>
                                         </tr>
@@ -156,7 +156,7 @@
                                             <td>96</td>
                                             <td>노출</td>
                                             <td>채팅</td>
-                                            <td><span class="ellipsis"><a href="#">제목 </a></span></td>
+                                            <td><span class="ellipsis">제목</span></td>
                                             <td>박민</td>
                                             <td>2021-03-16</td>
                                         </tr>
@@ -171,7 +171,7 @@
                                             <td>95</td>
                                             <td>노출</td>
                                             <td>채팅</td>
-                                            <td><span class="ellipsis"><a href="#">제목</a></span></td>
+                                            <td><span class="ellipsis">제목</span></td>
                                             <td>박민</td>
                                             <td>2021-03-15</td>
                                         </tr>
@@ -186,7 +186,7 @@
                                             <td>94</td>
                                             <td>노출</td>
                                             <td>유료방/체험방</td>
-                                            <td><span class="ellipsis"><a href="#">제목</a></span></td>
+                                            <td><span class="ellipsis">제목</span></td>
                                             <td>박민</td>
                                             <td>2021-03-15</td>
                                         </tr>
@@ -201,7 +201,7 @@
                                             <td>93</td>
                                             <td>노출</td>
                                             <td>가입/로그인</td>
-                                            <td><span class="ellipsis"><a href="#">비밀번호를 변경하고 싶어요.</a></span></td>
+                                            <td><span class="ellipsis">비밀번호를 변경하고 싶어요.</span></td>
                                             <td>박민</td>
                                             <td>2021-03-01</td>
                                         </tr>
@@ -216,7 +216,7 @@
                                             <td>92</td>
                                             <td>미노출</td>
                                             <td>가입/로그인</td>
-                                            <td><span class="ellipsis"><a href="#">로그인이 안되요.</a></span></td>
+                                            <td><span class="ellipsis">로그인이 안되요.</span></td>
                                             <td>박민</td>
                                             <td>2021-03-01</td>
                                         </tr>
@@ -231,7 +231,7 @@
                                             <td>91</td>
                                             <td>노출</td>
                                             <td>가입/로그인</td>
-                                            <td><span class="ellipsis"><a href="#">회원가입이 안되요.</a></span></td>
+                                            <td><span class="ellipsis">회원가입이 안되요.</span></td>
                                             <td>박민</td>
                                             <td>2021-03-01</td>
                                         </tr>
@@ -269,8 +269,11 @@
                     $('.area-empty').fadeIn();
                 });
 
+
+
                 // 전체 선택
-                $('input[name=all-chk]').on('change', function() {
+                $('input[name=all-chk]').on('change', function(event) {
+
                     if ( $(this).is(':checked') ) {
                         //
                         $('input[name=select-chk]').each(function() {
@@ -281,6 +284,15 @@
                             $(this).prop('checked', false);
                         });
                     }
+                });
+
+                $('input[name=select-chk]').on('change', function(event) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                });
+
+                $('.data-list tbody tr').on('click', function() {
+                    window.location.href = './wa_11_operation_faq_detail.html';
                 });
 
                 // 삭제
