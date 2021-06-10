@@ -6,9 +6,10 @@
     <body>
         <div class="w-main">
             <!--header-->
-            @@include('../wvcommon/header.html', { "title" : "게시판", "action" : "" })
+            <!-- @@include('../wvcommon/header.html', { "title" : "게시판", "action" : "" }) -->
+
             <article>
-                <div class="w-main-tab" id="webviewMainTabs">
+                <div class="w-main-tab w-board-tab" id="webviewMainTabs">
                     <!-- tab 이름, 순서는 백오피스에서 관리 -->
                     <ul role="tablist">
                         <li class="active" role="presentation">
@@ -22,14 +23,14 @@
                         </li>
                     </ul>
                 </div>
-                <div class="w-main-content tab-content">
+                <div class="w-board-content tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="tabContent1">
 
                         <!-- search -->
                         <div class="mid-search">
                             <div class="category">
                                 <select class="form-control">
-                                    <option>최근등록일</option>
+                                    <option>최근 등록일</option>
                                     <option>조회수</option>
                                     <option>댓글</option>
                                 </select>
@@ -49,7 +50,7 @@
                             <li>
                                 <div class="post best">
                                     <div class="post-hd">
-                                        <label class="label label-default label-notice">공지</label>
+                                        <label class="label label-notice">공지</label>
                                         <span class="title">오늘의 투자 포인트!!</span>
                                         <span class="glyphicon glyphicon-picture"></span>
                                     </div>
@@ -57,8 +58,8 @@
                                         <ul>
                                             <li>hongadmin</li>
                                             <li>2021-05-04</li>
-                                            <li>조회: 340</li>
-                                            <li>댓글: 34</li>
+                                            <li>조회: <strong>340</strong></li>
+                                            <li>댓글: <strong> 34</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -66,7 +67,7 @@
                             <li>
                                 <div class="post best">
                                     <div class="post-hd">
-                                        <label class="label label-default">BEST</label>
+                                        <label class="label label-best">Best</label>
                                         <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
                                         <span class="glyphicon glyphicon-picture"></span>
                                     </div>
@@ -74,8 +75,8 @@
                                         <ul>
                                             <li>주식으로FLEX</li>
                                             <li>2021-05-04</li>
-                                            <li>조회: 440</li>
-                                            <li>댓글: 8</li>
+                                            <li>조회: <strong>440</strong></li>
+                                            <li>댓글: <strong> 8</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -83,7 +84,7 @@
                             <li>
                                 <div class="post best">
                                     <div class="post-hd">
-                                        <label class="label label-default">BEST</label>
+                                        <label class="label label-best">Best</label>
                                         <span class="title">구준한 주식 공부 덕에 익절합니다.</span>
                                         <span class="glyphicon glyphicon-picture"></span>
                                     </div>
@@ -91,8 +92,8 @@
                                         <ul>
                                             <li>띤도</li>
                                             <li>2021-05-04</li>
-                                            <li>조회: 440</li>
-                                            <li>댓글: 8</li>
+                                            <li>조회: <strong> 440</strong></li>
+                                            <li>댓글: <strong> 8</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -106,8 +107,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -121,8 +122,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -136,8 +137,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -151,8 +152,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -166,8 +167,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -181,8 +182,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -196,8 +197,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -211,8 +212,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -226,8 +227,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -241,8 +242,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -256,8 +257,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -271,8 +272,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -311,7 +312,7 @@
                             <li>
                                 <div class="post best">
                                     <div class="post-hd">
-                                        <label class="label label-default">BEST</label>
+                                        <label class="label label-best">Best</label>
                                         <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
                                         <span class="glyphicon glyphicon-picture"></span>
                                     </div>
@@ -319,8 +320,8 @@
                                         <ul>
                                             <li>주식으로FLEX</li>
                                             <li>2021-05-04</li>
-                                            <li>조회: 440</li>
-                                            <li>댓글: 8</li>
+                                            <li>조회: <strong> 440</strong></li>
+                                            <li>댓글: <strong>8</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -337,8 +338,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -355,8 +356,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -373,8 +374,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -391,8 +392,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -409,8 +410,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -427,8 +428,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -445,8 +446,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -463,8 +464,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -481,8 +482,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -499,8 +500,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -517,8 +518,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -535,8 +536,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -553,8 +554,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -571,8 +572,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -613,7 +614,7 @@
                             <li>
                                 <div class="post best">
                                     <div class="post-hd">
-                                        <label class="label label-default">BEST</label>
+                                        <label class="label label-best">Best</label>
                                         <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
                                         <span class="glyphicon glyphicon-picture"></span>
                                     </div>
@@ -621,8 +622,8 @@
                                         <ul>
                                             <li>주식으로FLEX</li>
                                             <li>2021-05-04</li>
-                                            <li>조회: 440</li>
-                                            <li>댓글: 8</li>
+                                            <li>조회: <strong> 440</strong></li>
+                                            <li>댓글: <strong>8</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -639,8 +640,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -657,8 +658,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -675,8 +676,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -693,8 +694,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -711,8 +712,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -729,8 +730,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -747,8 +748,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -765,8 +766,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -783,8 +784,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -801,8 +802,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -819,8 +820,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -837,8 +838,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -855,8 +856,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>
@@ -873,8 +874,8 @@
                                         <ul>
                                             <li>닉네임</li>
                                             <li>YYYY-MM-DD</li>
-                                            <li>조회: 0</li>
-                                            <li>댓글: 0</li>
+                                            <li>조회: <strong>0</strong></li>
+                                            <li>댓글: <strong>0</strong></li>
                                             <li>
                                                 <span class="glyphicon glyphicon-heart"></span> 0
                                             </li>

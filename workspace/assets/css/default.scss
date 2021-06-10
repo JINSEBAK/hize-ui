@@ -44,6 +44,7 @@ $balloon-admin: #ffeae2;  // 관리자 말풍선
 $balloon-signal: #ffdfdf; // 신호색상
 $text-white: #fff;
 $text-basic: #999999;
+$text-default: #292929;
 $text-basic-hover: #000;
 $text-primary: #2e6da4;
 $text-link-basic: #717171;
@@ -77,6 +78,10 @@ $signal-alarm-border: #3ea3a7;
     color: $text-white;
     background-color: $btn-secondary-hover;
   }
+}
+.btn-default {
+  border-color: #686d83;
+  color: #444756;
 }
 .btn-round {
   border-radius: 50px;
@@ -185,6 +190,9 @@ $signal-alarm-border: #3ea3a7;
     }
     &.icon-calendar {
       background-image: url(../images/icons/calendar.svg);
+    }
+    &.icon-info {
+      background-image: url(../images/icons/info.svg);
     }
   }
 
@@ -894,10 +902,26 @@ input[type="number"]::-webkit-inner-spin-button {
 .nav-tabs.detail-tabs {
   margin: 24px 0 0;
   position: relative;
+  padding-left: 4px;
+  border-bottom: 1px solid #000;
   > li {
+    > a {
+      color: #8e8e8e;
+      padding: 8px 16px;
+      min-width: 120px;
+      margin-right: 0;
+      text-align: center;
+      border: 1px solid #bcbcbc;
+      border-bottom: 1px solid #000;
+      background-color: #f7f7f7;
+    }
     &.active {
       > a {
-        background-color: $card-active !important;
+        color: $text-default;
+        font-weight: bold;
+        border: 1px solid #000;
+        border-bottom: 1px solid #fff;
+        background-color: #fff;
       }
     }
   }
@@ -916,7 +940,7 @@ input[type="number"]::-webkit-inner-spin-button {
   .detail-content-hd {
     font-size: 14px;
     padding: 0 8px;
-    color: $text-basic;
+    color: #414e87;
   }
   .form-inline-set {
     display: flex;
@@ -964,6 +988,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .btn-groups {
   margin-bottom: 36px;
+  .btn {
+    min-width: 110px;
+  }
   &:after {
     content: '';
     display: block;
@@ -973,17 +1000,23 @@ input[type="number"]::-webkit-inner-spin-button {
 
 // table forms
 .table.table-form {
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  border-top: 1px solid #b5bac8 !important;
+  border-bottom: 1px solid #b5bac8;
   tbody {
     th, td {
       vertical-align: middle;
+      border-top: none !important;
     }
     th {
-      background-color: $bg-light-color;
       min-height: 51px;
+      text-align: center;
+      background-color: #f0f2ff;
+      border-bottom: 1px solid #d1d1d1;
     }
     td {
+      border-top: none;
+      padding: 10px 16px;
+      border: 1px solid #d1d1d1;
       .data {
         display: block;
         padding: 6px 0;
@@ -1003,6 +1036,14 @@ input[type="number"]::-webkit-inner-spin-button {
           display: inline-block;
         }
       }
+      &:last-child {
+        border-right: none;
+      }
+    }
+    tr:last-child {
+      th, td {
+        border-bottom: none;
+      }
     }
   }
   .img-file-box {
@@ -1013,6 +1054,9 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .file-func {
       padding-top: 12px;
+      .icon-info {
+        margin-top: -2px;
+      }
       .sm-guide {
         list-style: disc;
         padding-left: 20px;
