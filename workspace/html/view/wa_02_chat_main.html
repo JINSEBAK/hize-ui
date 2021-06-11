@@ -17,25 +17,28 @@
 
                 <!-- contents -->
                 <div class="main" id="main">
-                    @@include('../common/title.html', { "title" : "채팅 <span class='glyphicon glyphicon-info-sign'></span>", "sub" : "참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다." })
+                    @@include('../common/title.html', { "title" : "채팅 <span class='icon icon-info'></span>", "sub" : "참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다." })
 
                     <div class="contents chat-contents">
                         <div class="col-md-12">
                             <button type="button" class="btn btn-secondary pull-right">단체 메시지 발송</button>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-chat col-chat-lf">
                             <div class="chat">
                                 <div class="chat-header">
-                                    <span class="title">[유료] 성투 주식방 1</span>
+                                    <span class="title">
+                                        <label class="label label-chat">유료</label>
+                                        <span>성투 주식방</span>
+                                    </span>
                                     <span class="count">85/120</span>
                                     <div class="pull-right">
                                         <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalSendSignal">신호발송</button>
-                                        <button type="button" class="btn btn-default btn-sm">
-                                            <span class="glyphicon glyphicon-search"></span>
+                                        <button type="button" class="btn btn-icon btn-sm">
+                                            <span class="icon icon-w-search"></span>
                                         </button>
                                         <div class="btn-group">
-                                            <button type="button" class="btn" data-toggle="dropdown" aria-expanded="false">
-                                                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                                            <button type="button" class="btn btn-icon" data-toggle="dropdown" aria-expanded="false">
+                                                <span class="icon icon-w-menu"></span>
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right chat-sub-menu" role="menu">
                                                 <li>
@@ -107,7 +110,7 @@
                                                     <img src="../assets/images/photos/user-img-default.png">
                                                 </div>
                                                 <div class="info">
-                                                    <span class="name" >나회원</span>
+                                                    <span class="name">나회원</span>
                                                     <span class="id">(namem79)</span>
                                                     <span class="time">오전 10:00</span>
                                                     <div class="balloon">
@@ -146,13 +149,16 @@
                                                     <div class="time">오전 10:00</div>
                                                     <div class="balloon">
                                                         <div class="inner">
-                                                            <div style="color: red; font-weight: bold;">[매수] 신호입니다.</div>
-                                                            ❖ 삼성전자 (005930) ❖<br><br>
-                                                            ►매수가 : 85.000원 이하<br>
-                                                            비중 : 10%<br>
-                                                            익/손절가 : 실시간 제시<br><br>
-                                                            삼성전자 현구간 2차 매수 진행합니다.<br>
-                                                            의도적인 흔들기!! 비중확보 후 추가대응 통해 빠른 익절 진행하겠습니다.
+                                                            <div class="signal-type ts">[매수] 신호입니다.</div>
+                                                            <ul class="signal-info">
+                                                                <li>삼성전자 005930</li> 
+                                                                <li>매수가: 85.000원 이하</li>
+                                                                <li>비중: 10%</li>
+                                                            </ul>
+                                                            <p>
+                                                                현구간 3차 매수 진행합니다.<br>
+                                                                의도적인 흔들기!! 비중확보 후 추가 대응 통해 빠른 익절 진행하도록 하겠습니다.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,17 +169,21 @@
                                                     <div class="time">오전 10:00</div>
                                                     <div class="balloon">
                                                         <div class="inner">
-                                                            <div style="color: red; font-weight: bold;">[매수] 신호입니다.</div>
-                                                            ❖ 삼성전자 (005930) ❖<br><br>
-                                                            ►매수가 : 85.000원 이하<br>
-                                                            비중 : 10%<br>
-                                                            익/손절가 : 실시간 제시<br><br>
-                                                            삼성전자 현구간 2차 매수 진행합니다.<br>
-                                                            의도적인 흔들기!! 비중확보 후 추가대응 통해 빠른 익절 진행하겠습니다.
+                                                            <div class="signal-type tb">[매도] 신호입니다.</div>
+                                                            <ul class="signal-info">
+                                                                <li>삼성전자 005930</li> 
+                                                                <li>매수가: 85.000원 이하</li>
+                                                                <li>비중: 10%</li>
+                                                            </ul>
+                                                            <p>
+                                                                현구간 4차 매도 진행합니다.<br>
+                                                                복받으세요.
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
 
                                             <!-- 블록 회원에 대한 답장 -->
                                             <div class="msg my">
@@ -285,17 +295,17 @@
                                             <span class="glyphicon glyphicon-remove btn-reply-cancel"></span>
                                         </div>
 
-                                        <textarea class="form-control" rows="2" placeholder="메시지를 입력하세요." id="chatMsg"></textarea>
+                                        <textarea class="form-control" rows="1" placeholder="메시지를 입력하세요." id="chatMsg"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-chat col-chat-rt">
                             <!-- tabs -->
                             <div>
-                                <ul class="nav nav-tabs nav-justified">
-                                    <li role="presentation" class="active"><a href="#allChatList" data-toggle="tab">관리 채팅방 <span class="badge">13</span></a></li>
-                                    <li role="presentation"><a href="#myChatList" data-toggle="tab">참여 채팅방 <span class="badge">10</span></a></li>
+                                <ul class="nav nav-tabs nav-justified nav-tabs-chat">
+                                    <li role="presentation" class="active"><a href="#allChatList" data-toggle="tab">관리 채팅방<span class="cnt">13</span></a></li>
+                                    <li role="presentation"><a href="#myChatList" data-toggle="tab">참여 채팅방<span class="cnt">10</span></a></li>
                                 </ul>
                             </div>
                             <div class="tab-content scroll">
@@ -304,31 +314,27 @@
                                         <div class="form-group form-search">
                                             <label for="keywordAll" class="sr-only">검색</label>
                                             <input type="text" class="form-control" placeholder="채팅방명" id="keywordAll">
-                                            <span class="glyphicon glyphicon-search"></span>
+                                            <span class="icon icon-search"></span>
                                         </div>
                                     </form>
                                     <div class="filter list-filter">
-                                        <div class="btn-group pull-right">
-                                            <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                                                전체 <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">유료</a></li>
-                                                <li><a href="#">무료</a></li>
-                                            </ul>
-                                        </div>
+                                        <select class="form-control filter">
+                                            <option value="">전체</option>
+                                            <option value="">유료</option>
+                                            <option value="">무료</option>
+                                        </select>
                                     </div>
                                     <div class="chat-list">
                                         <div class="panel panel-default chat-card active">
                                             <div class="panel-body">
                                                 <div class="chat-info">
                                                     <div class="img-thumb">
-                                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방 설정 이미지" >
+                                                        <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지" >
                                                     </div>
                                                     <div class="infos">
                                                         <div class="title">
-                                                            <span class="label label-warning">유료</span>
-                                                            <span class="tt">성투 주식방 1</span>
+                                                            <span class="label label-chat">유료</span>
+                                                            <div class="tt">성투 주식방 1</div>
                                                             <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
                                                         </div>
                                                         <div class="count">
@@ -346,12 +352,12 @@
                                             <div class="panel-body">
                                                 <div class="chat-info">
                                                     <div class="img-thumb">
-                                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방 설정 이미지">
+                                                        <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
                                                     </div>
                                                     <div class="infos">
                                                         <div class="title">
-                                                            <span class="label label-warning">유료</span>
-                                                            <span class="tt">성투 주식방 2</span>
+                                                            <span class="label label-chat">유료</span>
+                                                            <div class="tt">성투 주식방 2</div>
                                                             <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
                                                         </div>
                                                         <div class="count">
@@ -369,11 +375,11 @@
                                             <div class="panel-body">
                                                 <div class="chat-info">
                                                     <div class="img-thumb">
-                                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방 설정 이미지">
+                                                        <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
                                                     </div>
                                                     <div class="infos">
                                                         <div class="title">
-                                                            <span class="tt">모두에게 공유하는 성투주식방입니다 컴온캄온콤온!</span>
+                                                            <div class="tt">모두에게 공유하는 성투주식방입니다 컴온캄온콤온!</div>
                                                             <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
                                                         </div>
                                                         <div class="count">
@@ -391,12 +397,12 @@
                                             <div class="panel-body">
                                                 <div class="chat-info">
                                                     <div class="img-thumb">
-                                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방 설정 이미지">
+                                                        <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
                                                     </div>
                                                     <div class="infos">
                                                         <div class="title">
-                                                            <span class="label label-warning">유료</span>
-                                                            <span class="tt">성투 주식방 3</span>
+                                                            <span class="label label-chat">유료</span>
+                                                            <div class="tt">성투 주식방 3</div>
                                                             <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
                                                         </div>
                                                         <div class="count">
@@ -414,12 +420,12 @@
                                             <div class="panel-body">
                                                 <div class="chat-info">
                                                     <div class="img-thumb">
-                                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방 설정 이미지">
+                                                        <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
                                                     </div>
                                                     <div class="infos">
                                                         <div class="title">
-                                                            <span class="label label-warning">유료</span>
-                                                            <span class="tt">성투 주식방 4</span>
+                                                            <span class="label label-chat">유료</span>
+                                                            <div class="tt">성투 주식방 4</div>
                                                             <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
                                                         </div>
                                                         <div class="count">

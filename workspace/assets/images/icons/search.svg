@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+    <defs>
+        <circle id="6c4k8cmg1a" cx="10.485" cy="10" r="7"/>
+        <path id="6vmqh1i88b" d="M0 0H24V24H0z"/>
+        <mask id="ydh5sncr7d" width="14" height="14" x="0" y="0" fill="#fff" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox">
+            <use xlink:href="#6c4k8cmg1a"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-1523.000000, -290.000000) translate(1230.000000, 278.000000) translate(290.000000, 9.000000)">
+                    <mask id="fvli06lnpc" fill="#fff">
+                        <use xlink:href="#6vmqh1i88b"/>
+                    </mask>
+                    <g fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" mask="url(#fvli06lnpc)">
+                        <use mask="url(#ydh5sncr7d)" xlink:href="#6c4k8cmg1a"/>
+                    </g>
+                    <path fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M15 15l4.95 4.95" mask="url(#fvli06lnpc)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

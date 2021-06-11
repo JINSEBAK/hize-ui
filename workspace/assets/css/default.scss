@@ -39,7 +39,7 @@ $bg-light-color: #f9f9f9; // 채팅방bg
 $bg-freezing: #e2f2ff;  // 얼리기
 $bg-white: #fff;
 $bg-primary: #232a4a;
-$balloon-default: #fff;
+$balloon-default: #fff6ac;
 $balloon-admin: #ffeae2;  // 관리자 말풍선
 $balloon-signal: #ffdfdf; // 신호색상
 $text-white: #fff;
@@ -67,6 +67,9 @@ $signal-alarm-bg: #aefffb;
 $signal-alarm-border: #3ea3a7;
 
 /* buttons */
+.btn {
+  font-size: 14px;
+}
 .btn-primary {
   background-color: $btn-primary;
   border-color: $btn-primary;
@@ -91,6 +94,9 @@ $signal-alarm-border: #3ea3a7;
   background-color: $btn-secondary;
   color: $text-white;
   min-width: 90px;
+}
+.btn-icon {
+  background: transparent;
 }
 .btn-top {
   font-size: 11px;
@@ -122,6 +128,15 @@ $signal-alarm-border: #3ea3a7;
       display: block;
       clear: both;
     }
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 200;
+  &.label-chat {
+    background-color: #272727;
+    color: #fff;
   }
 }
 
@@ -193,6 +208,12 @@ $signal-alarm-border: #3ea3a7;
     }
     &.icon-info {
       background-image: url(../images/icons/info.svg);
+    }
+    &.icon-search {
+      background-image: url(../images/icons/search.svg);
+    }
+    &.icon-w-search {
+      background-image: url(../images/icons/w-search.svg);
     }
   }
 
@@ -340,23 +361,30 @@ a {
     border-top: 1px solid $border-light-color;
     > li {
       border-bottom: 1px solid $border-light-color;
+      &:hover {
+        background-color: transparent;
+      }
       a {
         color: $text-gnb;
         padding: 16px 10px;
+        text-decoration: none;
         &:hover {
           color: $text-link-hover;
           font-weight: bold;
           background-color: transparent;
         }
+        &:focus {
+          background-color: transparent;
+        }
       }
       > a:not(.single) {
         background-image: url(../images/icons/down-arrow.svg);
-        background-position: calc(100% - 15px) center;
+        background-position: calc(100% - 15px) 20px;
         background-repeat: no-repeat;
         background-size: 10px;
       }
       &.active {
-        a {
+        > a {
           color: $text-link-hover;
           font-weight: bold;
         }
@@ -381,9 +409,24 @@ a {
       display: none;
       overflow: hidden;
       list-style: none;
-      padding: 0px 38px;
+      padding: 0px;
+      border-top: 1px solid $border-light-color;
+      background-color: rgba(246, 246, 250, 0.6);
       li {
-        padding: 6px 0;
+        padding: 14px 0 14px 40px;
+        border-bottom: 1px solid $border-light-color;
+        a {
+          padding: 0;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+        &.active {
+          a {
+            color: $text-link-hover;
+            font-weight: bold;
+          }
+        }
       }
     }
   }
@@ -554,12 +597,21 @@ a {
 
 
 // forms 
-
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: #fff url(../images/icons/arrow-down.svg) calc(100% - 10px) center no-repeat !important;
+}
+
+
+.form-group {
+  text-align: left;
+  .control-label {
+    color: #4f5663;
+    font-weight: normal;
+    padding-left: 10px;
+  }
 }
 .form-control {
   border: 1px solid #dbdee6;
@@ -574,15 +626,18 @@ select {
   // 돋보기 아이콘이 있는 input - 1개
   position: relative;
   padding: 12px;
-  .glyphicon {
+  .icon-search {
     position: absolute;
+    width: 24px;
+    height: 24px;
     right: 24px;
     top: 50%;
-    margin-top: -8px;
+    margin-top: -12px;
     z-index: 5;
     cursor: pointer;
   }
 }
+
 // form 요소에 read-only 클래스가 있는 경우
 .form-control[disabled].read-only {
   border: none;
@@ -670,8 +725,19 @@ input[type="number"]::-webkit-inner-spin-button {
 // 목록 상단에 위치
 .list-filter {
   padding: 0 12px 6px 0px;
-  min-height: 28px;
+  min-height: 32px;
   margin-top: -15px;
+  select {
+    &.filter.form-control {
+      float: right;
+      width: 80px;
+      color: #fff;
+      padding: 0 8px;
+      border: none;
+      height: 24px;
+      background: transparent url(../images/icons/arrow-down.svg) calc(100% - 10px) center no-repeat !important;
+    }
+  }
 }
 
 .filter {
@@ -742,13 +808,19 @@ input[type="number"]::-webkit-inner-spin-button {
     > div {
       font-size: 14px;
       &:first-child {
-        padding-top: 10px;
+        padding-top: 13px;
         color: #3f4146;
         font-size: 13px;
         .count {
           color: #292929;
           padding-left: 4px;
+          font-weight: bold;
         }
+      }
+    }
+    select {
+      &.form-control {
+        height: 32px;
       }
     }
     .form-inline {
@@ -797,6 +869,7 @@ input[type="number"]::-webkit-inner-spin-button {
         background-color: $card-hover;
       }
       td {
+        vertical-align: middle;
         span {
           a {
             color: $text-primary;
@@ -812,6 +885,13 @@ input[type="number"]::-webkit-inner-spin-button {
         }
         .btn {
           padding: 0 10px;
+          color: #4e70be;
+          border-color: #a9aebc;
+          width: 70px;
+          height: 32px;
+          font-size: 14px;
+          margin-top: -6px;
+          margin-bottom: -6px;
         }
         .thumb {
           width: 80px;
@@ -832,6 +912,11 @@ input[type="number"]::-webkit-inner-spin-button {
             padding: 12px 0;
             text-align: left;
           }
+        }
+      }
+      &:last-child {
+        td {
+          border-bottom: none;
         }
       }
     }

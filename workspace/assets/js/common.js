@@ -1,4 +1,22 @@
 $(function() {
+
+    let pathname = window.location.pathname;
+    pathname = pathname.substr(pathname.lastIndexOf('/') + 1, pathname.length);
+    const currentMenu = pathname.substr(pathname.lastIndexOf('/')+1, 5);
+ 
+    let fileName = pathname.split('.')[0];
+    fileName = fileName.substr(0, fileName.lastIndexOf('_'));
+
+    const target = $('.nav-sidebar li[data-code=' + currentMenu + ']');
+
+    target.addClass('active');
+    
+    if (target.find('.sub-menu').length > 0 ) {
+
+        target.find('.sub-menu').slideDown();
+        target.find('li[data-sub-code=' + fileName +']').addClass('active');
+    }
+
     // gnb 동작
     $('.nav-sidebar > li > a').on('click', function(e) {
         e.preventDefault();
@@ -15,7 +33,6 @@ $(function() {
 
     $('.datepicker').datepicker();
 });
-
 
 
 // alert 호출
