@@ -98,12 +98,17 @@ $signal-alarm-border: #3ea3a7;
 .btn-icon {
   background: transparent;
 }
+.btn-setting {
+  background-color: #404449;
+  color: #fff;
+}
 .btn-top {
   font-size: 11px;
   border: none;
   margin-top: 24px;
   margin-bottom: 24px;
 }
+
 
 // 버튼 group
 .btns {
@@ -180,12 +185,11 @@ $signal-alarm-border: #3ea3a7;
     &.icon-chat-product {
       background-image: url(../images/icons/chat-product-nor.svg);
     }
-    &.icon-chart {
-      background-image: url(../images/icons/chart.svg);
+    &.icon-statistics {
+      background-image: url(../images/icons/statistics-nor.svg);
     }
-    // TODO! 결제 관리 아이콘 다운로드 안됨
     &.icon-payment {
-      background-image: url(../images/icons/chart.svg);
+      background-image: url(../images/icons/payment-nor.svg);
     }
     &.icon-user {
       background-image: url(../images/icons/user-nor.svg);
@@ -199,9 +203,8 @@ $signal-alarm-border: #3ea3a7;
     &.icon-service {
       background-image: url(../images/icons/hizeservice-nor.svg);
     }
-    // TODO! 앱 메인 관리 아이콘 다운로드 안됨
     &.icon-config {
-      background-image: url(../images/icons/hizeservice-nor.svg);
+      background-image: url(../images/icons/setting-nor.svg);
     }
     &.icon-calendar {
       background-image: url(../images/icons/calendar.svg);
@@ -378,8 +381,8 @@ a {
         }
       }
       > a:not(.single) {
-        background-image: url(../images/icons/down-arrow.svg);
-        background-position: calc(100% - 15px) 20px;
+        background-image: url(../images/icons/submenu-arrow-nor.svg);
+        background-position: calc(100% - 15px) 22px;
         background-repeat: no-repeat;
         background-size: 10px;
       }
@@ -389,7 +392,44 @@ a {
           font-weight: bold;
         }
         > a:not(.single) {
-          background-image: url(../images/icons/up-arrow.svg);
+          background-image: url(../images/icons/submenu-arrow-selet.svg);
+        }
+      }
+      &.active > a, &:hover > a {
+        .icon {
+          &.icon-chatting {
+            background-image: url(../images/icons/chatting-selet.svg);
+          }
+          &.icon-notification {
+            background-image: url(../images/icons/notification-select.svg);
+          }
+          &.icon-stockboard {
+            background-image: url(../images/icons/stockboard-select.svg);
+          }
+          &.icon-chat-product {
+            background-image: url(../images/icons/chat-product-select.svg);
+          }
+          &.icon-statistics {
+            background-image: url(../images/icons/statistics-select.svg);
+          }
+          &.icon-payment {
+            background-image: url(../images/icons/payment-select.svg);
+          }
+          &.icon-user {
+            background-image: url(../images/icons/user-select.svg);
+          }
+          &.icon-admin-member {
+            background-image: url(../images/icons/admin-member-select.svg);
+          }
+          &.icon-board {
+            background-image: url(../images/icons/board-select.svg);
+          }
+          &.icon-service {
+            background-image: url(../images/icons/hizeservice-select.svg);
+          }
+          &.icon-config {
+            background-image: url(../images/icons/setting-selet.svg);
+          }
         }
       }
       .icon {
@@ -1175,6 +1215,23 @@ input[type="number"]::-webkit-inner-spin-button {
         font-weight: normal;
         color: $text-basic;
         font-size: 12px;
+      }
+    }
+  }
+  &.de-mod {
+    .form-control {
+      display: none;
+    }
+  }
+  &.editable {
+    [data-mode=editable] {
+      & ~ td {
+        .data {
+          display: none;
+        }
+        .form-control {
+          display: block;
+        }
       }
     }
   }

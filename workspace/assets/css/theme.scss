@@ -31,7 +31,7 @@
   width: 420px;
   height: 100%;
   padding: 1px;
-  form { 
+  .user-inner { 
     background-color: #fff;
     padding: 52px 60px;
     border-radius: 0 4px 4px 0;
@@ -368,6 +368,10 @@
 }
 
 // 채팅 목록 및 채팅 카드
+.p-chat {
+  overflow: hidden;
+}
+
 .nav-tabs-chat {
   li {
     float: left !important;
@@ -503,6 +507,7 @@
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          display: block;
         }
         .desc {
           color: #242629;
@@ -618,16 +623,29 @@
         margin: 24px auto;
         background-color: rgba(0, 0, 0, 0.05);
       }
+      .wlc {
+         margin: 30px auto;
+         text-align: center;
+         color: #394168;
+         font-size: 13px;
+         span {
+           &:before, &:after {
+             content: '—';
+           }
+         }
+      }
       .msg {
         margin-bottom: 30px;
         display: flex;
         .info {
-          .name {
-            font-size: 14px;
+          .name, .id {
+            font-size: 13px;
+            font-weight: bold;
+            color: #242629;
             cursor: pointer;
           }
           .time {
-            color:#999;
+            color:#61666d;
             font-size: 12px;
           }
           .popover {
@@ -639,7 +657,8 @@
           }
           .balloon {
             position: relative;
-            max-width: 480px;
+            display: inline-block;
+            max-width: 670px;
             margin-top: 6px;
             .inner {
               box-shadow: 2px 2px 2px rgba(0,0,0,.2);
@@ -667,6 +686,16 @@
               position: absolute;
               z-index: 1;
             }
+            &.emo {
+              &:before, &:after {
+                content: none;
+              }
+              .inner {
+                background-color: transparent !important;
+                box-shadow: none !important;
+                padding: 0 12px;
+              }
+            }
           }
         }
         &.general {
@@ -674,13 +703,12 @@
           .img {
             width: 40px;
             height: 40px;
-            border-radius: 100%;
             margin-top: 24px;
-            overflow: hidden;
             cursor: pointer;
             img {
               width: 100%;
               height: auto;
+              border-radius: 100%;
             }
           }
           .info {
@@ -747,7 +775,19 @@
         }
         &.blocked {
           .img {
-            border: 1px solid rgba(0, 0, 0, 0.8);
+            position: relative;
+            &:after {
+              content: '';
+              display: block;
+              border: 1px solid #fff;
+              background-color: #005dff;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              right: 1px;
+              bottom: 1px;
+              border-radius: 100%;
+            }
           }
           .info {
             .balloon {
@@ -807,11 +847,14 @@
                     background-color: #e95757;
                   }
                   &.tb {
-                    background-color: #6892ec;
+                    background-color: #4b8df3;
+                  }
+                  &.gs {
+                    background-color: #60728e;
                   }
                 }
                 .signal-info {
-                  margin: 16px 0 8px;
+                  margin: 16px 0 0px;
                   font-size: 16px;
                   color: #000;
                   padding: 0 20px;
@@ -829,7 +872,7 @@
                   font-size: 14px;
                   color: #333;
                   line-height: 20px;
-                  padding: 0 20px 16px;
+                  padding: 16px 20px;
                 }
               }
               &:before {
@@ -856,13 +899,12 @@
       }
       .pod-options {
         position: absolute;
-        right: 24px;
-        bottom: 22px;
+        right: 8px;
+        bottom: 5px;
         display: flex;
         align-items: center;
         > ul {
           display: flex;
-          margin-right: 12px;
           > li {
             margin: 0 4px;
             text-align: center;

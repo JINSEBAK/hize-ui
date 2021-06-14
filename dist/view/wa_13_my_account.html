@@ -112,7 +112,7 @@
         </li>
         <li data-code="wa_06">
             <a href="#" class="single">
-                <span class="icon icon-chart"></span>
+                <span class="icon icon-statistics"></span>
                 <span>매출 통계</span>
             </a>
         </li>
@@ -201,7 +201,7 @@
                     <div class="contents">
                         <div class="detail-content">
                             <h4 class="detail-content-hd">계정정보</h4>
-                            <table class="table table-form">
+                            <table class="table table-form de-mod">
                                 <colgroup>
                                     <col style="width: 12%">
                                     <col style="width: 38%">
@@ -220,9 +220,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>전화번호</th>
+                                        <th data-mode="editable">전화번호</th data-mode="editable">
                                         <td><span class="data" id="userPhone">010-****-1234</span>
-                                            <input type="text" class="form-control" value="010-1234-1234" id="userPhoneInput" style="display: none">
+                                            <input type="text" class="form-control" value="010-1234-1234" id="userPhoneInput">
                                         </td>
                                     </tr>
                                     <tr>
@@ -232,16 +232,16 @@
                                     <tr>
                                         <th>이메일 정보</th>
                                         <td><span class="data">235lee@gmail.com</span></td>
-                                        <th>닉네임</th>
-                                        <td><span class="data" id="userNickname">박부장</span>
-                                            <input type="text" class="form-control" value="박부장" id="userNicknameInput" style="display: none">
-                                        </td>                                        
+                                        <th>회원 가입일</th>
+                                        <td><span class="data">2021-04-21</span></td>
                                     </tr>
                                     <tr>
-                                        <th>부서</th>
-                                        <td><span class="data">OOO부</span></td>
-                                        <th>직급</th>
-                                        <td><span class="data">OOO</span></td>
+                                        <th>아이디</th>
+                                        <td><span class="data">toptop</span></td>
+                                        <th data-mode="editable">닉네임</th>
+                                        <td><span class="data" id="userNickname">박부장</span>
+                                            <input type="text" class="form-control" value="박부장" id="userNicknameInput">
+                                        </td>                                        
                                     </tr>
                                     <tr>
                                         <th>비밀번호</th>
@@ -253,6 +253,24 @@
                                                 </div>
                                             </div>
                                         </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 class="detail-content-hd">부서 정보</h4>
+                            <table class="table table-form de-mod">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                    <col style="width: 12%">
+                                    <col style="width: 38%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>부서</th>
+                                        <td><span class="data">OOO부</span></td>
+                                        <th>직급</th>
+                                        <td><span class="data">OOO</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -357,6 +375,8 @@
                     $('#memberStatus, #memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
                     $('#btnModify').text('수정 완료');
                     $('#modifyHistory').css('display', 'none');
+
+                    $('.de-mod').addClass('editable');
 
                     //
                     $('.table-form').addClass('table-form-mod');
