@@ -33,21 +33,35 @@
         <dt>Buttons</dt>
         <dd>
             <div class="sep">
-                <button class="btn btn-default">버튼 default</button>
-                <button class="btn btn-primary">버튼 primary</button>
-                <button class="btn btn-primary" disabled>버튼 primary disabeld</button>
+                <button class="btn btn-default btn-lg">버튼 default</button>
+                <button class="btn btn-primary btn-lg">버튼 primary</button>
+                <button class="btn btn-secondary btn-lg">버튼 secondary</button>
+                <button class="btn btn-primary btn-lg" disabled>버튼 disabeld</button>
                 <a class="btn btn-link">link (a tag)</a>
             </div>
             <div class="sep">
-                <button class="btn btn-default btn-xs">버튼 default</button>
-                <button class="btn btn-primary btn-xs">버튼 primary</button>
-                <button class="btn btn-primary btn-xs" disabled>버튼 primary disabeld</button>
+                <button class="btn btn-default btn-sm">버튼 default</button>
+                <button class="btn btn-primary btn-sm">버튼 primary</button>
+                <button class="btn btn-secondary btn-sm">버튼 secondary</button>
+                <button class="btn btn-secondary btn-sm" disabled>버튼 disabeld</button>
             </div>
         </dd>
 
         <dt>Icons</dt>
         <dd>
-            <span class=""></span>
+            <div>
+                <span class="icon icon-chatting"></span>
+                <span class="icon icon-notification"></span>
+                <span class="icon icon-stockboard"></span>
+                <span class="icon icon-chat-product"></span>
+                <span class="icon icon-statistics"></span>
+                <span class="icon icon-payment"></span>
+                <span class="icon icon-user"></span>
+                <span class="icon icon-admin-member"></span>
+                <span class="icon icon-board"></span>
+                <span class="icon icon-service"></span>
+                <span class="icon icon-config"></span>
+            </div>
         </dd>
 
         <dt>Modals</dt>
@@ -58,7 +72,10 @@
                     <li><strong>alert</strong> - callAlert() 호출</li>
                     <li>
                         <p>
-                            callAlert( { title : "굵은 글씨로 표시" , description : "세부 내용 표시 - 미전달 무관"} );
+                            callAlert( { title : "굵은 글씨로 표시" , description : "세부 내용 표시 - 미전달 무관"}, callBack );
+                        </p>
+                        <p>
+                            callback 없는 경우, 팝업 닫힘
                         </p>
                     </li>
                     <li><strong>confirm</strong> - callConfirm() 호출</li>
@@ -77,11 +94,9 @@
             <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="alertModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
-                        </div>
                         <div class="modal-body">
-                            내용을 작성합니다.
+                            메세지
+                            <p>메세지 설명</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
@@ -94,11 +109,11 @@
             <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">모달 제목 - 불필요하면 삭제 가능</h5>
-                        </div>
                         <div class="modal-body">
-                            내용을 작성합니다.
+                            메세지
+                            <p>메세지 설명</p>
+
+                            <button type="button" class="btn btn-primary btn-round">팝업내 버튼</button>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
@@ -107,6 +122,7 @@
                     </div>
                 </div>
             </div>
+
         </dd>
 
         <dt>Forms</dt>
@@ -135,9 +151,9 @@
             <div class="sep">
                 <form>
                     <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="">
-                            label for checkbox
+                        <input type="checkbox" value="" id="chk1">
+                        <label for="chk1">
+                            <span>label for checkbox</span>
                         </label>
                     </div>
                 </form>
@@ -146,19 +162,34 @@
                 <form>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="option-radio" value="1" checked>
-                            label for radio1
+                            <input type="radio" name="option-radio" value="1" id="radio1" checked>
+                            <label for="radio1">
+                                <span>label for radio1</span>
+                            </label>
                         </label>
                         <label>
-                            <input type="radio" name="option-radio" value="2">
-                            label for radio2
+                            <input type="radio" name="option-radio" value="2" id="radio2">
+                            <label for="radio2">
+                                <span>label for radio2</span>
+                            </label>
                         </label>
                         <label>
-                            <input type="radio" name="option-radio" value="3">
-                            label for radio3
+                            <input type="radio" name="option-radio" value="3" id="radio3">
+                            <label for="radio3">
+                                <span>label for radio3</span>
+                            </label>
                         </label>
                     </div>
                 </form>
+            </div>
+            <div class="sep">
+                <div class="checkbox toggle">
+                    <input type="checkbox" value="" id="chk2">
+                    <label for="chk2">
+                        <span class="handle"></span>
+                    </label>
+                </div>
+
             </div>
             <div class="sep">
                 <p>select: 모바일 환경에서 네이티브 컴포넌트 사용 가능</p>
@@ -191,11 +222,11 @@
                 <div class="date-inline">
                     <div class="date-box">
                         <input type="text" class="form-control datepicker" placeholder="시작일">
-                        <span class="glyphicon glyphicon-calendar"></span> 
+                        <span class="icon icon-calendar"></span> 
                     </div>
                     <div class="date-box">
                         <input type="text" class="form-control datepicker" placeholder="종료일">
-                        <span class="glyphicon glyphicon-calendar"></span> 
+                        <span class="icon icon-calendar"></span> 
                     </div>
                 </div>
             </div>
@@ -241,6 +272,7 @@
 <script src="../assets/js/common.js"></script>
     <script>
         $(function() {
+
             // 드롭다운
             $('.dropdown-toggle').on('click', function() {
                 if ($(this).hasClass('open')) {

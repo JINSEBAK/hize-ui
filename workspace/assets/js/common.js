@@ -44,9 +44,6 @@ function callAlert(msg, actions) {
     var _html = '<div class="modal fade modal-alert" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
                 +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
-                +           '<div class="modal-header">'
-                +               '<h5 class="modal-title" id="alertModalLabel"></h5>'
-                +           '</div>'
                 +           '<div class="modal-body text-center">' + msg.title;
     if ( msg.description !== undefined) {
         _html += '<p>' + msg.description + '</p>';
@@ -62,7 +59,6 @@ function callAlert(msg, actions) {
                 +'</div>';
 
     $('body').append(_html);
-    $('#alertModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
     $('#alertModal').modal('show');
 
     $('#alertModal').find('.btn-act').on('click', function() {
@@ -82,10 +78,7 @@ function callConfirm(msg, actions, buttons) {
     var _html = '<div class="modal fade modal-confirm" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
                 +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
-                +           '<div class="modal-header">'
-                +               '<h5 class="modal-title" id="confirmModalLabel"></h5>'
-                +           '</div>'
-                +           '<div class="modal-body text-center">' 
+                +           '<div class="modal-body">' 
                 +               msg.title;
     if ( msg.description !== undefined ) {
         _html += '<p>' + msg.description + '</p>';
@@ -100,7 +93,6 @@ function callConfirm(msg, actions, buttons) {
                 +'</div>';
 
     $('body').append(_html);
-    $('#confirmModal').find('.modal-title').text('모달 제목, 불필요시 삭제');
 
     // 버튼명을 지정
     if ( buttons !== undefined ) {
