@@ -3,13 +3,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">신호발송</h4>
+                <h3 class="modal-title">신호 발송</h3>
             </div>
             <div class="modal-body">
                 <h4>성공투자주식방-1</h4>
                 <form>
-                    <div class="row">
-                        <div class="col-md-8">
+                    <div class="col-signal-wrapper">
+                        <div class="col-signal col-signal-lf">
                             <table class="table table-form signal-form">
                                 <tbody>
                                     <tr>
@@ -17,16 +17,22 @@
                                         <td>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="signal-type" value="1" checked data-type="sb">
-                                                    매수
+                                                    <input type="radio" name="signal-type" value="1" checked data-type="sb" id="radio1">
+                                                    <label for="radio1">
+                                                        <span>매수</span>
+                                                    </label>
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="signal-type" value="2" data-type="ss">
-                                                    매도
+                                                    <input type="radio" name="signal-type" value="2" data-type="ss" id="radio2">
+                                                    <label for="radio2">
+                                                        <span>매도</span>
+                                                    </label>
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="signal-type" value="3" data-type="sa">
-                                                    알림
+                                                    <input type="radio" name="signal-type" value="3" data-type="sa" id="radio3">
+                                                    <label for="radio3">
+                                                        <span>알림</span>
+                                                    </label>
                                                 </label>
                                             </div>
                                         </td>
@@ -34,7 +40,13 @@
                                     <tr>
                                         <th>제목</th>
                                         <td>
-                                            <input type="text" class="form-control" name="" placeholder="제목" value="[매수] 신호입니다." id="signalTitleInput" data-target="#signalTitle">
+                                            <div class="input-count">
+                                                <input type="text" class="form-control" name="" placeholder="제목" value="[매수] 신호입니다." id="signalTitleInput" data-target="#signalTitle" maxlength="15">
+                                                <div class="count">
+                                                    <span class="txt-length">10</span>
+                                                    <span>15</span>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -42,16 +54,14 @@
                                         <td>
                                             <div class="dropdown">
                                                 <div class="form-inline">
-                                                    <input type="text" class="form-control" placeholder="종목명 입력">
-                                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
+                                                    <input type="text" class="form-control" placeholder="종목명 입력" value="삼성" id="inputStockName">
+                                                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
                                                
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">
                                                         <li role="presentation">
-                                                            <a role="menuitem" tabindex="-1" href="#">삼성전자 <small>(005930)</small></a>
-                                                            <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
-                                                            <a role="menuitem" tabindex="-1" href="#">삼O <small>(종목코드)</small></a>
-                                                            <a role="menuitem" tabindex="-1" href="#">삼OOOOOOO <small>(종목코드)</small></a>
-                                                            <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼성전자 <span>005920</span></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼성제약 <span>001360</span></a>
+                                                            <a role="menuitem" tabindex="-1" href="#">삼성 바이오로직스 <span>207940</span></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -78,28 +88,33 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <small>* 단문은 90byte이내입니다. 90byte를 초과하면 장문 메세지로 전환됩니다.</small>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-signal col-signal-rt">
                             <div class="signal signal-preview">
                                 <div class="sb" id="signalView">
-                                    <span class="title" id="signalTitle">[매수] 신호입니다.</span><br><br>
-                                    <span class="info">종목명: <span id="stockCode">종목코드</span></span>
-                                    <span class="info">매수가: <span id="stockPrice">10,000원 이하</span></span>
-                                    <span class="info">비중: <span id="stockPercent">10%</span></span>
-                                    <div class="op" id="stockMessage">전문가 의견</div>
+                                    <div class="title" id="signalTitle">[매수] 신호입니다.</div>
+                                    <ul class="signal-info">
+                                        <li><span id="stockCode">종목코드</span></li>
+                                        <li>매수가: <span id="stockPrice">10,000원 이하</span></li>
+                                        <li>비중: <span id="stockPercent">10%</span></li>
+                                    </ul>
+                                    <div class="op" id="stockMessage">메세지</div>
                                 </div>
                                 <div class="count">
                                     <span class="txt-length">0</span>
-                                    <span>90byte</span>
+                                    <span>2000byte</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <ul class="guide">
+                        <li>* 단문메세지(SMS)는 90byte 이내, 90byte를 초과하면 장문메세지(LMS)로 전환됩니다.</li>
+                        <li>* 문자 메세지(SMS/LMS)에는 광고/수신거부 문자도 포함되어 발송됩니다. (글자수 카운트에 포함되어 보여집니다.)</li>
+                    </ul>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="btnSendSignal">신호 발송</button>
+                <button type="button" class="btn btn-primary btn-lg" id="btnSendSignal">신호발송</button>
             </div>
         </div>
     </div>

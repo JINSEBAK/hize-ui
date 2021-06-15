@@ -365,7 +365,7 @@
                 <h4 class="modal-title">보유 전광판 등록</h4>
             </div>
             <div class="modal-body">
-                <div class="modal-form">
+                <div class="modal-form signal-form">
                     <h4 class="">성공투자주식방-1</h4>
                     <table class="table table-form">
                         <colgroup>
@@ -378,12 +378,16 @@
                                 <td>
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="signal-type" value="1" checked >
-                                            매수
+                                            <input type="radio" name="signal-type" value="1" checked id="type1">
+                                            <label for="type1">
+                                                <span>매수</span>
+                                            </label>
                                         </label>
                                         <label>
-                                            <input type="radio" name="signal-type" value="0">
-                                            매도
+                                            <input type="radio" name="signal-type" value="0" id="type0">
+                                            <label for="type0">
+                                                <span>매도</span>
+                                            </label>
                                         </label>
                                     </div>
                                 </td>
@@ -398,11 +402,9 @@
                                        
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">
                                                 <li role="presentation">
-                                                    <a role="menuitem" tabindex="-1" href="#">삼성전자 <small>(005930)</small></a>
-                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
-                                                    <a role="menuitem" tabindex="-1" href="#">삼O <small>(종목코드)</small></a>
-                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOOOOO <small>(종목코드)</small></a>
-                                                    <a role="menuitem" tabindex="-1" href="#">삼OOOO <small>(종목코드)</small></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼성전자 <span>005920</span></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼성제약 <span>001360</span></a>
+                                                    <a role="menuitem" tabindex="-1" href="#">삼성 바이오로직스 <span>207940</span></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -426,7 +428,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="btnRegistserBoard">보유 전광판 등록</button>
+                <button type="button" class="btn btn-primary btn-lg" id="btnRegistserBoard">보유 전광판 등록</button>
             </div>
         </div>
     </div>

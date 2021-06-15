@@ -338,11 +338,11 @@
                                                     </button>
                                                 </li>
                                                 <li>
-                                                    <button type="button" class="btn btn-primary">전송</button>
+                                                    <button type="button" class="btn btn-primary btn-sm">전송</button>
                                                 </li>
                                                 <li>
                                                     <button type="button" class="btn btn-setting" data-toggle="popover">
-                                                        <span class="glyphicon glyphicon-cog"></span>
+                                                        <span class="icon icon-w-config"></span>
                                                     </button>
                                                     <div id="chatSetting" class="hide">
                                                         <form id="settingInPopover">
@@ -350,25 +350,42 @@
                                                                 메세지 입력 기능
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="chat-freeze" value="0" onchange="javascript: messageSend('off');"> OFF 
-                                                                </label> 
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="chat-freeze" value="1" checked onchange="javascript: messageSend('on');"> ON
-                                                                </label>
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input type="radio" name="chat-freeze" value="0" id="msg1"> 
+                                                                        <label for="msg1">
+                                                                            <span>OFF</span>
+                                                                        </label>
+                                                                    </label> 
+                                                                    <label>
+                                                                        <input type="radio" name="chat-freeze" value="1" id="msg2" checked >
+                                                                        <label for="msg2">
+                                                                            <span>ON</span>
+                                                                        </label>
+                                                                    </label>
+                                                                </div>
                                                             </div>
                                                             <div class="form-title">
-                                                                파일 첨부 기능
+                                                                이미지 첨부 기능
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="attachment" value="0" checked onchange="javascript: fileSend('off');"> OFF 
-                                                                </label> 
-                                                                <label class="radio-inline">
-                                                                    <input type="radio" name="attachment" value="1" onchange="javascript: fileSend('on');"> ON
-                                                                </label>
+                                                                <div class="radio">
+                                                                    <label class="radio-inline">
+                                                                        <input type="radio" name="attachment" value="0" id="file1"> 
+                                                                        <label for="file1">
+                                                                            <span>OFF</span>
+                                                                        </label>
+                                                                    </label> 
+                                                                    <label class="radio-inline">
+                                                                        <label for="file2">
+                                                                            <span>ON</span>
+                                                                        </label>
+                                                                    </label>
+                                                                </div>
                                                             </div>
-                                                            <button type="button" class="btn btn-primary">저장</button>
+                                                            <div class="popover-footer">
+                                                                <button type="button" class="btn btn-text">저장</button>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                 </li>
@@ -599,6 +616,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
         <script>
             $(function() {
+
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
@@ -791,6 +809,9 @@
                     sa: { type: '알림',  title: '[알림] 신호입니다.'},
                 }
 
+                $('#signalTitleInput').next('.count').find('.txt-length').text($('#signalTitleInput').val().length);
+                $('#signalView').next('.count').find('.txt-length').text($('#signalView').text().length);
+
                 // 신호 유형에 따라 메세지 타입 변경
                 $('input[name=signal-type]').on('change', function() {
 
@@ -802,7 +823,7 @@
 
 
                     if ($(this).data('type') === 'sa') {
-                        $('#signalView').find('.info').css('display','none');
+                        $('#signalView').find('.signal-info').css('display','none');
                         $('.signal-form').find('.form-control').not('textarea, #signalTitleInput').attr('disabled',true);
                     } else {
                         $('.signal-form').find('input').removeAttr('disabled');
@@ -813,21 +834,30 @@
                     var txt = $(this).val();
 
                     $('#signalView').find($(target)).text(txt).addClass('completed');
-                    if ( target === 'stockMessage' ) {
-                        $('#stockMessage').addClass('completed');
-                        $('.signal-preview .count').find('.txt-length').text(txt.length);
+                    if ( target === '#signalTitle' ) {
+                        $('#signalTitleInput').next('.count').find('.txt-length').text(txt.length);
                     }
+                    if ( target === '#stockMessage' ) {
+                        $('#stockMessage').addClass('completed');
+                    }
+
+                    $('#signalView').next('.count').find('.txt-length').text($('#signalView').text().length);
                 });
                 // 신호 발송
                 $('#btnSendSignal').on('click', function() {
                     callAlert({
                         title: '신호가 발송되었습니다.',
-                        description: '보유 전광판에 등록하시려면<br>[보유전광판 등록]을 선택해주세요. <button type="button" class="btn btn-default btn-round" onClick="registerBoard();">보유전광판 등록</button>'
+                        description: '보유 전광판에 등록하시려면<br>[보유전광판 등록]을 선택해주세요. <button type="button" class="btn btn-primary btn-round" onClick="registerBoard();">보유전광판 등록</button>'
                     });
                 }); 
                 $('.signal-history tbody tr').not('.detail').on('click', function() {
                     $('.signal-history .detail').css('display', 'none');
                     $(this).next('.detail').css('display', 'table-row');
+                });
+
+                $('#btnSearchDropdown').next('.dropdown-menu').find('a').on('click', function() {
+                    $('#inputStockName').val($(this).text());
+                    $('#stockCode').text($(this).text()).addClass('completed');
                 });
 
 
@@ -839,6 +869,13 @@
                 $('#btnList').on('click', function() {
                     $('#boardDetail').css('display', 'none');
                     $('#boardList').fadeIn();
+                });
+
+                $('input[name=chat-freeze]').on('click', function(){
+                    messageSend($(this).val());
+                });
+                $('input[name=attachment]').on('click', function(){
+                    fileSend($(this).val());
                 });
 
             });
@@ -890,7 +927,7 @@
 
             // 설정 - 팝오버 동적 요소에 이벤트 바인딩이 안됨. 개발시 분리할 것
             function messageSend(mode) {
-                if ( mode === 'off' ) {
+                if ( mode === '0' ) {
                     $('.chat-body').find('.scroll').addClass('freezing');
                     $('.chat-input').find('.form-control').attr('disabled', true);  // form 요소 disabled
                     $('.pod-options').find('button').attr('disabled', true);    // button disabled

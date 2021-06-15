@@ -412,6 +412,10 @@
   }
 }
 
+#modalStockBoardRegister .modal-dialog {
+  width: 434px;
+}
+
 .chat-contents {
   overflow: hidden;
   height: 100%;
@@ -912,6 +916,11 @@
         }
         .btn {
           border-radius: 4px !important;
+          &.btn-primary {
+            background-color: #293c6c;
+            width: 70px;
+            min-width: 70px;
+          }
         }
         .btn-file {
           label {
@@ -1584,11 +1593,13 @@
     right: 6px;
     top: 50%;
     margin-top: -10px;
-    color: $text-basic;
     span {
+      color: #61666d;
       &:last-child {
+        color: #90969e;
         &:before {
           content: "/";
+          color: #90969e;
         }
       }
     }
@@ -1688,13 +1699,6 @@
 .txt-editor.ql-container {
   border: 1px solid red;
   height: 480px;
-}
-
-#settingInPopover {
-  .btn {
-    display: block;
-    margin: 0 auto;
-  }
 }
 
 // 동영상 추가 팝업
@@ -1877,37 +1881,109 @@
 }
 
 // 신호
+.col-signal-wrapper {
+  .col-signal {
+    float: left;
+    &.col-signal-lf {
+      width: calc(100% - 306px);
+      padding-right: 10px;
+    }
+    &.col-signal-rt {
+      border-left: 1px solid #e6eaef;
+      padding-left: 10px;
+      width: 306px;
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
 .signal-form {
   margin-bottom: 12px !important;
+  tbody {
+    tr {
+      th {
+        width: 110px;
+      }
+    }
+  }
   textarea {
     resize: none;
-    height: 120px;
+    height: 135px;
+  }
+  .form-inline {
+    .form-control {
+      width: 197px;
+    }
+    .btn {
+      width: 56px;
+      min-width: 56px;
+    }
+  }
+  .dropdown-menu {
+    border: 1px solid #90969e;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+    margin: 0;
+    width: 197px;
+    padding: 10px;
+    li {
+      a {
+        border-bottom: 1px solid #e6eaef;
+        height: 38px;
+        line-height: 30px;
+        font-weight: bold;
+        padding: 3px 10px;
+        span {
+          font-weight: normal;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+        &:hover {
+          background-color: transparent !important;
+          color: $text-emphasize !important;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
   }
 }
 
 .signal {
   &.signal-preview {
-    border: 1px solid $border-color;
     position:relative;
     height: 398px;
     > div:not(.count) {
       padding: 12px;
       height: 100%;
+      border-radius: 4px;
     }
     > span {
       word-break: break-all;
     }
-    .info {
-      display: block;
-      span {
-        color: $text-basic; 
+    .signal-info {
+      margin: 16px 0 0px;
+      font-size: 14px;
+      color: #000;
+      li {
+        &:before {
+          content: '▸ ';
+        }
       }
-      .completed {
-        color: $text-basic-hover !important;
+      span {
+        color: #90969e;
+        &.completed {
+          color: #000;
+        }
       }
     }
     .op {
-      margin-top: 24px;
+      margin-top: 16px;
       color: $text-basic;
       &.completed {
         color: $text-basic-hover;
@@ -1915,24 +1991,28 @@
     }
     .count {
       position: absolute;
-      right: 8px;
-      bottom: 8px;
-      color: $text-basic;
-      font-size: 12px;
+      right: 16px;
+      bottom: 16px;
+      color: #61666d;
+      font-size: 14px;
       span:last-child {
+        color: #90969e;
         &:before {
-          content: '/';
+          content: '/ ';
         }
       }
     }
     .sb {
       background-color: $signal-buy-bg;
+      border: 1px solid $signal-buy-border;
     }
     .ss {
       background-color: $signal-sell-bg;
+      border: 1px solid $signal-sell-border;
     }
     .sa {
       background-color: $signal-alarm-bg;
+      border: 1px solid $signal-alarm-border;
     }
   }
 }
