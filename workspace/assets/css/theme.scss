@@ -1756,12 +1756,18 @@
       float: left;
       width: calc(100% / 3);
       padding: 6px;
+      .checkbox {
+        margin: 0;
+        input[type=checkbox] {
+          left: -9999px;
+        }
+      }
       label {
-        display: block;
+        display: inline-block;
         border: 1px solid $border-color;
         border-radius: 4px;
         margin: 0;
-        padding: 6px 12px;
+        padding: 6px 16px 6px 24px;
         cursor: pointer;
         input[type=checkbox] {
           float: right;

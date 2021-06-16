@@ -24,6 +24,12 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     </head>
     <body class="bg-ashed">
+
+        <header class="wv-header wv-hd-main">
+            <div class="inner">
+                <strong>Hize</strong>
+            </div>
+        </header>
         <!-- TYPE C는 구조가 완전히 다름 -->
         <div class="w-main w-main-c">
             <article class="w-main-carousel">
@@ -37,12 +43,15 @@
                 </div>
             </article>
             <article class="w-main-list">
+
+                <button type="button" class="btn btn-top btn-float" id="btnTop" style="display: none;">TOP</button>
+
                 <div class="w-main-content">
                     <!-- 유료방 -->
                     <div>
                         <h5 class="section-title">
                             <span>유료방</span>
-                            <a class="glyphicon glyphicon-menu-right more" href="./au_01_main_c_2.html"></a>
+                            <a class="icon icon-chevron-rt more" href="./au_01_main_c_2.html"></a>
                         </h5>
                         <ul class="wc-list wc-list-card-type">
                             <li>
@@ -127,7 +136,7 @@
                     <div>
                         <h5 class="section-title">
                             <span>체험방</span>
-                            <span class="glyphicon glyphicon-menu-right more"></span>
+                            <span class="icon icon-chevron-rt more"></span>
                         </h5>
                         <ul class="wc-list wc-list-type">
                             <li>
@@ -173,7 +182,7 @@
                     <div>
                         <h5 class="section-title">
                             <span>동영상</span>
-                            <span class="glyphicon glyphicon-menu-right more"></span>
+                            <span class="icon icon-chevron-rt more"></span>
                         </h5>
                         <ul class="mv-list">
                             <li>
@@ -245,16 +254,14 @@
             })
 
             $(function() {
-
                 $(window).scroll(function() {
-                    var scroll = $(this).scrollTop();
-                    if ( scroll > 200 ) {
-                        $('#webviewMainTabs').addClass('tab-sticky');
+                    let scroll = $(this).scrollTop();
+                    if ( scroll > $('body').height() ) {
+                        $('#btnTop').fadeIn();
                     } else {
-                        $('#webviewMainTabs').removeClass('tab-sticky');
+                        $('#btnTop').css('display', 'none');
                     }
-                });
-
+                })
                 
             });
         </script>
