@@ -23,20 +23,33 @@
 
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     </head>
-    <body>
+    <body class="bg-ashed">
+        <header class="wv-header wv-hd-main wv-a">
+            <div class="inner">
+                <strong>Hize</strong>
+            </div>
+        </header>
+
         <div class="w-main w-main-a">
+
+            <!-- 광고 Carousel -->
             <article class="w-main-carousel">
-        
                 <div class="swiper-container main-visual-swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">1</div>
+                        <div class="swiper-slide">
+                            <img src="../assets/images/photos/ad_20210616_hize_01.png">
+                        </div>
                         <div class="swiper-slide">2</div>
                         <div class="swiper-slide">3</div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
             </article>
+
             <article class="w-main-list">
+
+                <button type="button" class="btn btn-top btn-float" id="btnTop" style="display: none;"></button>
+
                 <div class="w-main-tab" id="webviewMainTabs">
                     <ul role="tablist">
                         <li class="active" role="presentation">
@@ -74,7 +87,7 @@
                                         <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
                                     </div>
                                     <div class="info">
-                                        <span class="title">제목</span>
+                                        <span class="title">제목을 노출합니다. 제목을 노출합니다. 제목을 노출합니다. 제목을 노출합니다.</span>
                                         <span class="sub">설명 노출합니다. 설명 노출합니다.설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다.</span>
                                     </div>
                                     <div class="ex-func">
@@ -294,6 +307,7 @@
                                 </div>
                             </li>
                         </ul>
+                        <div class="loader"></div>
                     </div>
 
                     <!-- 체험방 -->
@@ -323,7 +337,7 @@
                             <li>
                                 <div class="mv">
                                     <div class="video">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LzXzHoXO5ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe src="https://www.youtube.com/embed/LzXzHoXO5ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div class="info">
                                         <span class="title">나분석의 명강의 성투주식</span>
@@ -440,6 +454,11 @@
                     var scroll = $(this).scrollTop();
                     if ( scroll > 200 ) {
                         $('#webviewMainTabs').addClass('tab-sticky');
+                        if ( scroll > $(this).height() ) {
+                            $('#btnTop').fadeIn();
+                        } else {
+                            $('#btnTop').css('display', 'none');
+                        }
                     } else {
                         $('#webviewMainTabs').removeClass('tab-sticky');
                     }
@@ -473,8 +492,13 @@
                     }
                 });
 
+                // TOP
+                $('#btnTop').on('click', function() {
+                    $('html, body').animate({
+                        scrollTop: 0,
+                    }, 500);
+                });
 
-                
             });
         </script>
     </body>

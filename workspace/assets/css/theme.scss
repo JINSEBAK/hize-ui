@@ -582,6 +582,19 @@
       font-size: 14px;
       font-weight: 300;
     }
+    .btn-sm {
+      height: 32px;
+      min-width: 86px;
+    }
+    .btn-icon {
+      width: 30px;
+      height: 30px;
+      padding: 3px;
+      min-width: 0;
+    }
+    .btn-inline {
+      display: inline-block;
+    }
     .dropdown-menu > li > a {
       padding: 8px 20px;
       span {
@@ -603,6 +616,7 @@
     .scroll {
       background-color: #ededf7;
       min-height: 400px;
+      width: 100%;
       overflow-y: auto;
       position: relative;
       &.freezing {
