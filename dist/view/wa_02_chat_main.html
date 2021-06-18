@@ -295,6 +295,11 @@
                                                     </div>
                                                     <div class="balloon">
                                                         <div class="inner">오늘도 성투하세요.</div>
+
+                                                        <div class="btn-capsule">
+                                                            <button type="button">삭제</button>
+                                                            <button type="button">답장</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -472,6 +477,23 @@
                                                 </div>
                                             </div>
 
+                                            <div class="msg general">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="나회원"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">삭제해보세요.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
 
                                         </div>
                                     </div>
@@ -481,7 +503,7 @@
                                                 <li>
                                                     <div class="btn-group dropup">
                                                         <button type="button" class="btn btn-icon" data-toggle="dropdown" aria-expanded="false">
-                                                            <span class="glyphicon glyphicon-music"></span>
+                                                            <span class="icon icon-emoticon"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
                                                             <li>
@@ -510,7 +532,7 @@
                                                 <li>
                                                     <button class="btn btn-icon btn-file">
                                                         <label>
-                                                            <span class="glyphicon glyphicon-picture" for="chatImageFile"></span>
+                                                            <span class="icon icon-addfile" for="chatImageFile"></span>
                                                             <input type="file" id="chatImageFile">
                                                         </label>
                                                     </button>
@@ -555,6 +577,7 @@
                                                                         </label>
                                                                     </label> 
                                                                     <label class="radio-inline">
+                                                                        <input type="radio" name="attachment" value="1" id="file2"> 
                                                                         <label for="file2">
                                                                             <span>ON</span>
                                                                         </label>
@@ -754,9 +777,10 @@
                                         </div>
                                     </div>
                                     <div class="chat-list">
-                                        <div class="no-result">
-                                            <span class="glyphicon glyphicon-warning-sign"></span>
-                                            참여하는 채팅방이 없습니다.
+                                        <div class="area-empty register">
+                                            <div class="register-empty">
+                                                <strong>등록된 정보가 없습니다.</strong>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2421,15 +2445,27 @@
                     } else if ( $(this).hasClass('del')) {
                         return false;
                     } else {
-                        const _html = '<button type="button" class="btn-sm btn-reply" onClick="replyMsg()">'
-                                    +   '<span class="glyphicon glyphicon-retweet"></span>'
-                                    +'</button>'
-                                    +'<button type="button" class="btn-sm btn-delete" onClick="removeMsg(this);">'
-                                    +   '<span class="glyphicon glyphicon-remove"></span>'
-                                    +'</button>';
+                        const _html = '<div class="btn-capsule">'
+                                +       '<button type="button" class="btn-del-chat">삭제</button>'
+                                +       '<span></span>'
+                                +       '<button type="button" class="btn-rpl-chat">답장</button>'
+                                +'</div>';
 
                         $(this).addClass('selected');
                         $(this).append(_html);
+
+                        $('.btn-del-chat').on('click', function() {
+                            if (!$(this).parents('.balloon').hasClass('del')) {
+                                $(this).parents('.balloon').addClass('del').find('.inner').text('삭제된 메세지입니다.');
+                                $(this).parents('.balloon').find('.btn-capsule').remove();
+                            }
+                        });
+
+                        $('.btn-rpl-chat').on('click', function() {
+                            $('.block-msg-reply').fadeIn();
+                            $(this).parents('.balloon').find('.btn-capsule').remove();
+                            $('textarea').focus();
+                        });
                     }
                 });
 
@@ -2442,6 +2478,12 @@
                     content: function() {
                         return $('#chatSetting').html();
                     }
+                });
+
+                $('#myChatList').find('.icon-search').on('click', function() {
+                    $('#myChatList').find('.area-empty').removeClass('register').addClass('search');
+
+                    $('#myChatList .area-empty').find('.register-empty').addClass('search-empty').removeClass('register-empty').find('strong').text('검색 결과가 없습니다.');
                 });
 
                 // 공지사항 --------------------------------------------
@@ -2697,12 +2739,12 @@
             function messageSend(mode) {
                 if ( mode === '0' ) {
                     $('.chat-body').find('.scroll').addClass('freezing');
-                    $('.chat-input').find('.form-control').attr('disabled', true);  // form 요소 disabled
-                    $('.pod-options').find('button').attr('disabled', true);    // button disabled
+                    // $('.chat-input').find('.form-control').attr('disabled', true);  // form 요소 disabled
+                    //$('.pod-options').find('button').attr('disabled', true);    // button disabled
                 } else {
                     $('.chat-body').find('.scroll').removeClass('freezing');
-                    $('.chat-input').find('.form-control').removeAttr('disabled'); 
-                    $('.pod-options').find('button').removeAttr('disabled');
+                    // $('.chat-input').find('.form-control').removeAttr('disabled'); 
+                    // $('.pod-options').find('button').removeAttr('disabled');
                 }
             }
 

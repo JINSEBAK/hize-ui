@@ -36,7 +36,7 @@ $border-color: #a4a4aa;
 $border-light-color: #f1f2f4;
 $bg-color: #f1f2f8;
 $bg-light-color: #f9f9f9; // 채팅방bg
-$bg-freezing: #e2f2ff;  // 얼리기
+$bg-freezing: #acfaff;  // 얼리기
 $bg-white: #fff;
 $bg-primary: #232a4a;
 $balloon-default: #fff6ac;
@@ -97,6 +97,7 @@ $signal-alarm-border: #cfd4c5;
   border-color: $btn-primary;
   &:focus, &:hover, &:active {
     background-color: $btn-primary-hover;
+    color: #fff;
   }
 }
 .btn-secondary {
@@ -145,7 +146,7 @@ $signal-alarm-border: #cfd4c5;
   height: 36px;
   width: 44px;
   padding: 0;
-  background-color: #404449;
+  background-color: #2f2f48;
   color: #fff;
 }
 .btn-top {
@@ -269,10 +270,12 @@ $signal-alarm-border: #cfd4c5;
   > label {
     position: relative;
     padding-left: 0;
+    margin-right: 12px;
   }
   input[type=radio] {
     position: absolute;
     opacity: 0;
+    left: -9999px;
     & + label {
       background: url(../images/icons/checkbox-nor.svg) left center no-repeat;
       span {
@@ -342,6 +345,15 @@ $signal-alarm-border: #cfd4c5;
     }
     &.icon-w-search {
       background-image: url(../images/icons/w-search.svg);
+    }
+    &.icon-emoticon {
+      background-image: url(../images/icons/btn-emoticon-select.svg);
+    }
+    &.icon-addfile {
+      background-image: url(../images/icons/btn-addfile-select.svg);
+    }
+    &.icon-w-menu {
+      background-image: url(../images/icons/chat-menu.svg);
     }
   }
 
@@ -899,11 +911,6 @@ select {
   cursor: default;
 }
 
-.radio {
-  label {
-    margin-right: 12px;
-  }
-}
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -1199,11 +1206,12 @@ input[type="number"]::-webkit-inner-spin-button {
   display: none;
   text-align: center;
   padding: 72px 0;
-  border: 1px solid $border-light-color;
   > div {
     display: none;
     strong {
-      font-size: 18px;
+      font-size: 14px;
+      color: #b6bbc1;
+      font-weight: normal;
     }
     p {
       margin-top: 6px;
@@ -1213,9 +1221,11 @@ input[type="number"]::-webkit-inner-spin-button {
       // 결과 없음 아이콘
       content: '';
       display: block;
-      width: 72px;
-      height: 72px;
-      background-color: $bg-color;
+      width: 54px;
+      height: 54px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
       margin: 24px auto;
     }
   }
@@ -1223,12 +1233,18 @@ input[type="number"]::-webkit-inner-spin-button {
     display: block;
     > div.register-empty {
       display: block;
+      &:before {
+        background-image: url(../images/icons/nodata.svg);
+      }
     }
   }
   &.search {
     display: block;
     > div.search-empty {
       display: block;
+      &:before {
+        background-image: url(../images/icons/nodata-search.svg);
+      }
     }
   }
 }

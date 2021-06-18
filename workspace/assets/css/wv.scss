@@ -485,8 +485,9 @@ select {
                             width: 72px;
                             display: flex;
                             flex-direction: column;
-                            justify-content: center;
+                            // justify-content: center;
                             padding-right: 2px;
+                            padding-top: 5px;
                             span {
                                 &:first-child {
                                     font-size: 12px;
@@ -579,6 +580,7 @@ select {
                         overflow: hidden;
                         height: 106px;
                         img {
+                            width: 100%;
                             height: 100%;
                         }
                     }
@@ -843,10 +845,19 @@ select {
 
 
 // alert, confirm
+
+.modal.fade .modal-dialog {
+    transform: translate(0, 100%);
+}
+.modal.in .modal-dialog {
+    transform: translate(0, 70%);
+}
+
 .modal-alert, .modal-confirm {
     .modal-dialog {
-        top: 50%;
-        margin-top: -50%;
+        // top: 50%;
+        // margin-top: -50%;
+        //bottom: 0 !important;
         p {
             color: $text-basic;
             font-size: 14px;
