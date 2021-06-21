@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="140" height="80" viewBox="0 0 140 80">
+    <defs>
+        <filter id="byllnurr3a" width="130.4%" height="132.1%" x="-15.8%" y="-12.5%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius=".5" result="shadowSpreadOuter1"/>
+            <feOffset dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+        </filter>
+        <filter id="azzl659ltc" width="148.3%" height="151.4%" x="-25.2%" y="-20%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius=".5" result="shadowSpreadOuter1"/>
+            <feOffset dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
+        </filter>
+        <path id="o7vcgi5p8b" d="M42.696 54.309C40.568 50.35 39.36 45.817 39.36 41c0-15.464 12.456-28 27.82-28C82.544 13 95 25.536 95 41S82.544 69 67.18 69h-2.474C50.119 69 39.55 65.221 33 57.663c5.456 1.1 8.688-.018 9.696-3.354z"/>
+        <path id="sv157w2wvd" d="M93.988 44.993L94 45h-1.52c-8.962 0-15.455-2.24-19.48-6.719 3.512.683 5.525-.077 6.037-2.281l.245.148C77.83 33.597 77 30.645 77 27.5 77 17.835 84.835 10 94.5 10S112 17.835 112 27.5 104.165 45 94.5 45c-.171 0-.342-.002-.512-.007z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g stroke="#69E2FF" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3.5 0v7M0 3.5h7" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(130.000000, 35.000000)"/>
+                    </g>
+                    <g stroke="#D569FF" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1.5 0v3M0 1.5h3" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(29.000000, 43.000000)"/>
+                    </g>
+                    <g stroke="#D569FF" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1.5 0v3M0 1.5h3" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(117.000000, 6.000000)"/>
+                    </g>
+                    <g stroke="#69E2FF" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4.5 0v9M0 4.5h9" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(20.000000, 50.000000)"/>
+                    </g>
+                    <g stroke="#FFCF13" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2.5 0v5M0 2.5h5" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(112.000000, 16.000000)"/>
+                    </g>
+                    <g transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000)">
+                        <use fill="#000" filter="url(#byllnurr3a)" xlink:href="#o7vcgi5p8b"/>
+                        <use fill="#FFF" stroke="#4A4097" xlink:href="#o7vcgi5p8b"/>
+                    </g>
+                    <g transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(92.500000, 27.500000) scale(-1, 1) translate(-92.500000, -27.500000)">
+                        <use fill="#000" filter="url(#azzl659ltc)" xlink:href="#sv157w2wvd"/>
+                        <use fill="#FFF" stroke="#4A4097" xlink:href="#sv157w2wvd"/>
+                    </g>
+                    <g transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(53.000000, 13.000000)">
+                        <path fill="#000" d="M5 17H6V45H5z"/>
+                        <rect width="10" height="17" x=".5" y="22.5" fill="#FF4949" stroke="#000" rx="2"/>
+                        <path fill="#000" d="M23 28H24V56H23z"/>
+                        <rect width="10" height="17" x="18.5" y="33.5" fill="#497FFF" stroke="#000" rx="2"/>
+                        <g transform="translate(33.000000, 0.000000)">
+                            <path fill="#000" d="M5 0H6V28H5z"/>
+                            <rect width="10" height="17" x=".5" y="5.5" fill="#FF4949" stroke="#000" rx="2"/>
+                        </g>
+                        <path fill="#000" d="M64 24H65V52H64z"/>
+                        <rect width="10" height="17" x="59.5" y="29.5" fill="#497FFF" stroke="#000" rx="2"/>
+                    </g>
+                    <g stroke="#FFCF13" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3.5 0v7M0 3.5h7" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(12.000000, 40.000000)"/>
+                    </g>
+                    <g stroke="#000" stroke-width=".6" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(95.000000, 56.000000)">
+                        <circle cx="7" cy="7" r="7" fill="#FFDF00"/>
+                        <circle cx="7" cy="7" r="4.7"/>
+                    </g>
+                    <g stroke="#000" stroke-width=".5" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(22.000000, 25.000000)">
+                        <circle cx="5" cy="5" r="5" fill="#FFDF00"/>
+                        <circle cx="5" cy="5" r="3.75"/>
+                    </g>
+                    <g stroke="#000" stroke-width=".5" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(4.000000, 53.000000)">
+                        <circle cx="4" cy="4" r="4" fill="#FFDF00"/>
+                        <circle cx="4" cy="4" r="2.75"/>
+                    </g>
+                    <g stroke="#000" stroke-width=".5" transform="translate(-110.000000, -201.000000) translate(110.000000, 201.000000) translate(118.000000, 20.000000)">
+                        <circle cx="4.5" cy="4.5" r="4.5" fill="#FFDF00"/>
+                        <circle cx="4.5" cy="4.5" r="3.25"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

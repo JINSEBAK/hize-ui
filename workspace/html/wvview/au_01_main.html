@@ -349,22 +349,24 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="info-wrap text-center">
-                            <strong>채팅방 제목</strong>
-                            <p>
-                                설명 노출합니다.
+                            <img src="../assets/images/icons/popup_chat_private.svg" class="private">
+                            <strong>주식이 즐겁다! 치열하게<br>도전해보자!</strong>
+                            <p class="introduce">
+                                주식은 결코 어려운 것이 아닙니다. 주식에 대한 도전을 값어치 있게! 이 방에서 값진 정보도 많이 얻어가고 성투의 목표를 이루어 보세요~! 성투의 목표를 이루어 보세요
                             </p>
                             <div class="c-info">
-                                <span>방장: OOO</span>
-                                <span>기간: 2021-09-30 ~ 2022-04-31</span>
-                                <span>방 인원: 26/100</span>
+                                <span>방장: <strong>나주식외 3명</strong></span>
+                                <span>기간: <strong>2021-09-30 ~ 2022-04-31</strong></span>
+                                <span>방 인원: <strong>26/100</strong></span>
                             </div>
-                            <p>
-                                채팅방에 입장하기 위해서는<br>결제 및 관리자의 승인이 필요합니다.
+                            <p class="guide">
+                                유료방 승인은 전화로 진행하고 있습니다.<br>
+                                빠르게 확인 후 고객님에게 연락 드리겠습니다.
                             </p>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
                         <button type="button" class="btn btn-primary" >신청하기</button>
                     </div>
                 </div>
@@ -377,26 +379,29 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="info-wrap text-center">
-                            <strong>채팅방 제목</strong>
-                            <p>
-                                설명 노출합니다.
+                            <img src="../assets/images/icons/popup_chat_trial.svg" class="trial">
+                            <strong>주식이 즐겁다! 치열하게<br>도전해보자!</strong>
+                            <p class="introduce">
+                                주식은 결코 어려운 것이 아닙니다. 주식에 대한 도전을 값어치 있게! 이 방에서 값진 정보도 많이 얻어가고 성투의 목표를 이루어 보세요~! 성투의 목표를 이루어 보세요
                             </p>
                             <div class="c-info">
-                                <span>방장: OOO</span>
-                                <span>기간: 2021-09-30 ~ 2022-04-31</span>
-                                <span>방 인원: 26/100</span>
+                                <span>방장: <strong>나주식외 3명</strong></span>
+                                <span>기간: <strong>2021-09-30 ~ 2022-04-31</strong></span>
+                                <span>방 인원: <strong>26/100</strong></span>
                             </div>
+                        </div>
+                        <div class="cf-num-wrapper">
                             <div class="cf-num">
-                                <input type="password" maxlength="4" placeholder="인증번호 입력" >
+                                <input type="password" name="cf-num" maxlength="4" placeholder="인증번호 입력" >
                             </div>
                             <p>
-                                인증번호를 잊으셨나요?<br>고객센터로 문의하세요.<br>
-                                <a href="tel:1588-0000">1588-0000</a>
+                                인증번호는 고객센터로 문의해주세요.
+                                <span>02.1234.1234</span>
                             </p>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
                         <button type="button" class="btn btn-primary" >입장하기</button>
                     </div>
                 </div>
@@ -441,6 +446,8 @@
                     }
                 });
 
+            
+
                 // 유료방 신청하기
                 $('#payChatList').find('.btn-primary').on('click', function() {
                     $('#modalPaidAdmission').modal('show');
@@ -474,6 +481,15 @@
                     $('html, body').animate({
                         scrollTop: 0,
                     }, 500);
+                });
+
+
+                // 인증번호
+                $('input[name=cf-num]').on('keyup', function() {
+                    console.log( $(this).val().length );
+                    if ($(this).val().length === 4 ) {
+                        $(this).blur();
+                    }
                 });
 
             });

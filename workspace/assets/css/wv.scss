@@ -39,7 +39,7 @@ select, input, textarea {
 /* colors */
 $border-color: #e1e1e1;
 $border-light-color: #eee;
-$bg-color: #f2f1f8;
+$bg-color: #f1f2f4;
 $bg-white: #fff;
 $bg-light-color: #f9f9f9; // 채팅방bg
 $bg-toast: #000;
@@ -76,6 +76,10 @@ a {
 .btn {
     &:hover, &:active, &:focus {
         box-shadow: none;
+    }
+    &:disabled {
+        background-color: $bg-color;
+        color: #828792;
     }
 }
 
@@ -116,6 +120,20 @@ a {
 .bg-ashed {
     background-color: $bg-color;
 }
+.btn-primary {
+    background-color: #293894;
+    color: #fff;
+    &:hover, &:focus, &:active {
+        background-color: #344ad0;
+    }
+}
+.btn-secondary {
+    background-color: #464c71;
+    color: #fff;
+    &:hover, &:focus, &:active {
+        background-color: #4f5db2;
+    }
+}
 
 .loader {
     height: 100px;
@@ -149,6 +167,74 @@ select {
     }
 }
 
+// alert, confirm
+
+.modal.fade .modal-dialog {
+    transform: translate(0, 100%);
+}
+.modal.in {
+    .modal-dialog {
+        transform: translate(0, 0%);    // 높이에 따라 위치 계산 필요 
+    }
+    &.enter-confirm {
+        .modal-dialog {
+            bottom: 0;
+            transform: none;
+            position: fixed;
+        }
+    }
+}
+
+.modal-alert, .modal-confirm {
+    .modal-dialog {
+        // top: 50%;
+        // margin-top: -50%;
+        //bottom: 0 !important;
+        p {
+            color: $text-basic;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+    }
+    .modal-body {
+        padding: 30px 15px;
+    }
+    .modal-footer {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        button {
+            padding: 12px;
+            flex: 1;
+            border: none;
+        }
+    }
+}
+
+.modal-alert {
+    .modal-footer {
+        button {
+            border-radius: 0 0 4px 4px;
+        }
+    }
+}
+
+.modal-confirm {
+    .modal-footer {
+        button {
+            margin: 0 !important;
+            &:first-child {
+                border-radius: 0 0 0 4px;
+            }
+            &:last-child {
+                border-radius: 0 0 4px 0;
+            }
+        }
+    }
+}
+
 // modal
 .modal-confirm {
     .modal-dialog {
@@ -161,12 +247,106 @@ select {
         }
     }
     &.enter-confirm {
+        .modal-dialog {
+            margin: 0;
+            width: 100%;
+            .modal-content {
+                border-radius: 10px 10px 0 0;
+                border: none;
+                .modal-body {
+                    padding: 0;
+                    .info-wrap {
+                        padding: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            &.private {
+                                width: 112px;
+                            }
+                            &.trial {
+                                width: 140px;
+                            }
+                        }
+                        strong {
+                            margin: 10px 0;
+                        }
+                        .introduce {
+                            color: #000;
+                            text-align: left;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .guide {
+                            color: #333;
+                        }
+                    }
+                }
+                .modal-footer {
+                    border-top: none;
+                    button {
+                        border: none;
+                        &:first-child {
+                            border-radius: 0 !important;
+                        }
+                        &:last-child {
+                            border-radius: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
         .c-info {
             display: flex;
             flex-direction: column;
+            background-color: $bg-color;
+            margin: 20px 0;
+            width: 100%;
+            padding: 10px;
+            border-radius: 100px;
         }
-        p {
-            padding: 12px 0;
+        .cf-num-wrapper {
+            background-color: #4d3cc7;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 -4px 6px rgba(0,0,0,.4);
+            padding: 20px;
+            margin-top: -30px;
+            .cf-num {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                input {
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #000000;
+                    text-align: center;
+                    margin: 0 5px;
+                    color: #ffc148 !important;
+                    padding: 14px 0;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    border-radius: 0;
+                    &::placeholder {
+                        color: #8b7eeb;
+                        text-align: center;
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            p {
+                color: rgba(255,255,255,.7);
+                font-size: 13px;
+                text-align: center;
+                margin-top: 20px;
+                span {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 }
@@ -209,20 +389,53 @@ select {
     }
 }
 
-// 모달 내 인증번호 폼
-.cf-num {
-    margin: 36px 0 24px;
-    input {
-        text-align: center;
-        border-radius: 0;
-        border-width: 0 0 1px 0;
-        padding: 6px;
-        &:focus {
-            outline: none;
-            color: coral;
-        }
+// 데이터 없음
+.area-empty {
+    display: none;
+    text-align: center;
+    padding: 72px 0;
+    > div {
+      display: none;
+      strong {
+        font-size: 14px;
+        color: #b6bbc1;
+        font-weight: normal;
+      }
+      p {
+        margin-top: 6px;
+        color: $text-basic;
+      }
+      &:before {
+        // 결과 없음 아이콘
+        content: '';
+        display: block;
+        width: 54px;
+        height: 54px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin: 24px auto;
+      }
     }
-}
+    &.register {
+      display: block;
+      > div.register-empty {
+        display: block;
+        &:before {
+          background-image: url(../images/icons/nodata.svg);
+        }
+      }
+    }
+    &.search {
+      display: block;
+      > div.search-empty {
+        display: block;
+        &:before {
+          background-image: url(../images/icons/nodata-search.svg);
+        }
+      }
+    }
+  }
 
 .fm-comment {
     position: relative;
@@ -844,64 +1057,7 @@ select {
 }
 
 
-// alert, confirm
 
-.modal.fade .modal-dialog {
-    transform: translate(0, 100%);
-}
-.modal.in .modal-dialog {
-    transform: translate(0, 70%);
-}
-
-.modal-alert, .modal-confirm {
-    .modal-dialog {
-        // top: 50%;
-        // margin-top: -50%;
-        //bottom: 0 !important;
-        p {
-            color: $text-basic;
-            font-size: 14px;
-            margin-top: 12px;
-        }
-    }
-    .modal-body {
-        padding: 30px 15px;
-    }
-    .modal-footer {
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        button {
-            padding: 12px;
-            flex: 1;
-            border: none;
-        }
-    }
-}
-
-.modal-alert {
-    .modal-footer {
-        button {
-            border-radius: 0 0 4px 4px;
-        }
-    }
-}
-
-.modal-confirm {
-    .modal-footer {
-        button {
-            margin: 0 !important;
-            &:first-child {
-                border-radius: 0 0 0 4px;
-            }
-            &:last-child {
-                border-radius: 0 0 4px 0;
-            }
-        }
-    }
-}
 
 // pagination
 .pagination-wrap {
