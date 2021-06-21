@@ -454,6 +454,16 @@
 
             $(function() {
 
+                // callAlert({
+                //     title: '인증번호 입력 오류',
+                //     description: '입력하신 인증번호가 다릅니다.<br>확인 후 다시 입력하시기 바랍니다.'
+                // });
+
+                // callConfirm({
+                //     title: '인증번호 입력 오류',
+                //     description: '입력하신 인증번호가 다릅니다.<br>확인 후 다시 입력하시기 바랍니다.'
+                // });
+
                 $(window).scroll(function() {
                     var scroll = $(this).scrollTop();
                     if ( scroll > 200 ) {
@@ -508,7 +518,14 @@
 
                 // 인증번호
                 $('input[name=cf-num]').on('keyup', function() {
-                    console.log( $(this).val().length );
+
+                    if ( $(this).val().toString() === '9999') {
+                        $('#modalExperience').modal('hide');
+                        callAlert({
+                            title: '인증번호 입력 오류',
+                            description: '입력하신 인증번호가 다릅니다.<br>확인 후 다시 입력하시기 바랍니다.'
+                        });
+                    }
                     if ($(this).val().length === 4 ) {
                         $(this).blur();
                     }

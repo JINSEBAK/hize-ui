@@ -95,6 +95,7 @@ $signal-alarm-border: #cfd4c5;
 .btn-primary {
   background-color: $btn-primary;
   border-color: $btn-primary;
+  color: #fff;
   &:focus, &:hover, &:active {
     background-color: $btn-primary-hover;
     color: #fff;
@@ -106,6 +107,7 @@ $signal-alarm-border: #cfd4c5;
   &:focus, &:hover, &:active {
     color: $text-white;
     background-color: $btn-secondary-hover;
+    color: #fff;
   }
   &.btn-sm {
     background-color: #282b41;

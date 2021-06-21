@@ -78,15 +78,15 @@ function callConfirm(msg, actions, buttons) {
     var _html = '<div class="modal fade modal-confirm" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
                 +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
-                +           '<div class="modal-body">' 
+                +           '<div class="modal-body text-center">' 
                 +               msg.title;
     if ( msg.description !== undefined ) {
         _html += '<p>' + msg.description + '</p>';
     }
          _html +=           '</div>'
                 +           '<div class="modal-footer">'
-                +               '<button type="button" class="btn btn-default" data-dismiss="modal">아니오</button>'
-                +               '<button type="button" class="btn btn-primary btn-act">네</button>'
+                +               '<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>'
+                +               '<button type="button" class="btn btn-primary btn-act">확인</button>'
                 +           '</div>'
                 +       '</div>'
                 +   '</div>'
