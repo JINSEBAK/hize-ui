@@ -19,39 +19,9 @@
                     @@include('../common/title.html', { "title" : "유료방 가입 요청", "sub" : "유료방에 대한 결제 요청 내역을 확인 및 승인할 수 있습니다." })
                 
                     <div class="contents">
-                        <!-- 검색 -->
-                        <div class="area-search">
-                            <div class="form-inline">
-                                <div class="form-group">
-                                    <label for="">기간</label>
-                                    <div class="date-inline">
-                                        <div class="date-box">
-                                            <input type="text" class="form-control datepicker" placeholder="시작일">
-                                            <span class="icon icon-calendar"></span> 
-                                        </div>
-                                        <div class="date-box">
-                                            <input type="text" class="form-control datepicker" placeholder="종료일">
-                                            <span class="icon icon-calendar"></span> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="" class="sr-only">구분</label>
-                                    <select class="form-control">
-                                        <option>채팅방명</option>
-                                        <option>회원명</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-in-btn">
-                                    <label for="" class="sr-only">검색어</label>
-                                    <input type="text" class="form-control keyword" placeholder="검색어 입력">
-                                    <button type="button" class="btn btn-search" id="btnSearch">검색</button>
-                                </div>
-                            </div>
-                        </div>
-
+                    
                         <!-- 목록 -->
-                        <div class="area-list">
+                        <div class="area-list area-no-hd">
                             <div class="area-list-header">
                                 <div class="pull-left">
                                     Total <span class="count">50</span>
