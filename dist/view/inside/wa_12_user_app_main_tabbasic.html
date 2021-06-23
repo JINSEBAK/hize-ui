@@ -9,28 +9,32 @@
         <div class="app-main-set">
             <p class="lead">앱메인 타입을 설정해주세요.</p>
             <div class="radio radio-img">
-                <label>
+                <span>
                     <input type="radio" name="main-type" value="A">
                     A타입
                     <img src="../assets/images/photos/sample_layout.png" alt="동영상이 탭으로 구성된 A타입">
-                </label>
-                <label>
+                </span>
+                <span>
                     <input type="radio" name="main-type" value="B">
                     B타입
                     <img src="../assets/images/photos/sample_layout.png" alt="동영상이 목록으로 노출되는 B타입">
-                </label>
+                </span>
             </div>
 
             <p class="lead">동영상컨텐츠에 진입 가능한 회원을 설정해주세요.</p>
             <div class="radio">
-                <label>
-                    <input type="radio" name="user-type" value="1"> 
-                    모든 회원
-                </label>
-                <label>
-                    <input type="radio" name="user-type" value="2">
-                    유료 회원
-                </label>
+                <span>
+                    <input type="radio" name="user-type" value="1" id="userType1"> 
+                    <label for="userType1">
+                        <span>모든 회원</span>
+                    </label>
+                </span>
+                <span>
+                    <input type="radio" name="user-type" value="2" id="userType2">
+                    <label for="userType2">
+                        <span>유료 회원</span>
+                    </label>
+                </span>
             </div>
         </div>
     </div>

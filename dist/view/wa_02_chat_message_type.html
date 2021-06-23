@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- 개발에서 사용 안함 -->
+<link rel="stylesheet" href="../assets/css/tables.css">
+
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+
+
+
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+        <style>
+            table caption { text-align: center; font-weight: bold;}
+            #guideTb small { color: #aaa; }
+            #guideTb .em { color: #4f5db2; }
+        </style>
+    </head>
+    <body class="p-chat">
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand"><strong>Hize</strong> Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <span>유료방 가입요청</span>
+                    <span><a href="../view/wa_14_request_list.html">50</a>건</span>
+                </li>
+                <li>
+                    <span>관리자 권한요청</span>
+                    <span><a href="../view/wa_14_request_list.html">20</a>건</span>
+                </li>
+                <li>
+                    <span>게시물 승인 요청</span>
+                    <span><a href="../view/wa_14_request_list.html">10</a>건</span>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">홍</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li data-code="wa_02">
+            <a href="#" class="single" >
+                <span class="icon icon-chatting"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li data-code="wa_03">
+            <a href="#">
+                <span class="icon icon-notification"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_03_signal_history">
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li data-sub-code="wa_03_message_history">
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_04">
+            <a href="#" class="single">
+                <span class="icon icon-stockboard"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li data-code="wa_05">
+            <a href="#">
+                <span class="icon icon-chat-product"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_05_product_list">
+                    <a href="#">상품 목록</a>
+                </li>
+                <li  data-sub-code="wa_05_product_register">
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_06">
+            <a href="#" class="single">
+                <span class="icon icon-statistics"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li data-code="wa_07">
+            <a href="#" class="single">
+                <span class="icon icon-payment"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li data-code="wa_08">
+            <a href="#" class="single">
+                <span class="icon icon-user"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li data-code="wa_09">
+            <a href="#">
+                <span class="icon icon-admin-member"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_09_manager">
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li data-sub-code="wa_09_permission">
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_10">
+            <a href="#">
+                <span class="icon icon-board"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_10_board_settings">
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li data-sub-code="wa_10_board_list">
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_11">
+            <a href="#">
+                <span class="icon icon-service"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_11_operation_faq">
+                    <a href="#">FAQ</a>
+                </li>
+                <li data-sub-code="wa_11_operation_terms">
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li data-sub-code="wa_11_operation_log">
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li class="fixed-bottom" data-code="wa_12">
+            <a href="#" class="single">
+                <span class="icon icon-config"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main" id="main">
+                    <div class="page-header">
+    <h4>
+        채팅 <span class='icon icon-info'></span> 
+        <ol class="breadcrumb">
+            <li>홈</li>
+            <li>Library</li>
+            <li class="active">Data</li>
+        </ol>
+        <small>
+            참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다.
+        </small>
+    </h4>
+</div>
+
+                    <div class="contents chat-contents">
+                        <div class="col-chat col-chat-lf" style="width: calc(100% - 520px)">
+                            <div class="chat">
+                                <div class="chat-body">
+                                    <div class="scroll" style="min-height: 720px">
+                                        <div class="inner">
+
+                                            <!-- 날짜 -->
+                                            <div class="date">2021-05-14</div>
+
+                                            <!-- 일반 사용자 메세지 -->
+                                            <div class="msg general">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="나회원"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">오늘도 성투하세요.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- 블락 회원: 파란색 도트로 표시-->
+                                            <div class="msg general blocked">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="김수로"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">김수로</span>
+                                                        <span class="id">(surokim)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner" id="delExample">여러분도 1**!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 입장, 퇴장 메시지-->
+                                            <div class="wlc">
+                                                <span>오길동님이 입장하셨습니다.</span>
+                                            </div>
+                                            <div class="wlc">
+                                                <span>오길동님이 나가셨습니다.</span>
+                                            </div>
+
+
+                                            <!-- 내가 방장 -->
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">분석을 통해 실시간 종목을 추천합니다.<br>오늘도 성공투자!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- 신호메시지 -->
+                                            <div class="msg my signal">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:00</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type ts">[매수] 신호입니다.</div>
+                                                            <ul class="signal-info">
+                                                                <li>삼성전자 005930</li> 
+                                                                <li>매수가: 80,000원 이하</li>
+                                                                <li>비중: 10%</li>
+                                                            </ul>
+                                                            <p>
+                                                                현구간 3차 매수 진행합니다.<br>
+                                                                의도적인 흔들기!! 비중확보 후 추가 대응 통해 빠른 익절 진행하도록 하겠습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my signal">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:00</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type tb">[매도] 신호입니다.</div>
+                                                            <ul class="signal-info">
+                                                                <li>삼성전자 005930</li> 
+                                                                <li>매수가: 80,000원 이하</li>
+                                                                <li>비중: 10%</li>
+                                                            </ul>
+                                                            <p>
+                                                                삼성전자 현구간 2차 매수 진행합니다.<br>
+                                                                의도적인 흔들기!! 비중확보 후 추가대응 통해 빠른 익절 진행하겠습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my signal">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:00</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type gs">[알림] 신호입니다.</div>
+                                                            <p>
+                                                                잠시 시간할애로 최근 시장 주요 이슈와 관련된 섹터 진단 시간을 갖도록 하겠습니다.<br>
+                                                                20분부터 진행할 예정이니 편하게 차한잔하면서 
+                                                                대기해주세요 ^^
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- 나 이외 다른 방장의 신호 -->
+                                            <div class="msg general signal">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:00</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type ts">[매수] 신호입니다.</div>
+                                                            <ul class="signal-info">
+                                                                <li>삼성전자 005930</li> 
+                                                                <li>매수가: 80,000원 이하</li>
+                                                                <li>비중: 10%</li>
+                                                            </ul>
+                                                            <p>
+                                                                현구간 3차 매수 진행합니다.<br>
+                                                                의도적인 흔들기!! 비중확보 후 추가 대응 통해 빠른 익절 진행하도록 하겠습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg general signal">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:00</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type tb">[매도] 신호입니다.</div>
+                                                            <ul class="signal-info">
+                                                                <li>삼성전자 005930</li> 
+                                                                <li>매수가: 80,000원 이하</li>
+                                                                <li>비중: 10%</li>
+                                                            </ul>
+                                                            <p>
+                                                                삼성전자 현구간 2차 매수 진행합니다.<br>
+                                                                의도적인 흔들기!! 비중확보 후 추가대응 통해 빠른 익절 진행하겠습니다.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg general signal">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:00</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type gs">[알림] 신호입니다.</div>
+                                                            <p>
+                                                                잠시 시간할애로 최근 시장 주요 이슈와 관련된 섹터 진단 시간을 갖도록 하겠습니다.<br>
+                                                                20분부터 진행할 예정이니 편하게 차한잔하면서 
+                                                                대기해주세요 ^^
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- 블록 회원에 대한 답장 -->
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <div class="time">오전 10:10</div>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <p class="rp-msg">
+                                                                <strong>주식수로왕(surokim)</strong>에게 답장<br>
+                                                                여러분도 1**!
+                                                            </p>
+                                                            <p class="rp-msg">
+                                                                채팅방에서 가쉽에 대한 글은 올리지 말아주세요.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- 장문 메시지 -->
+                                            <div class="msg general">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="나회원"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            11일 코스피는 전 거래일(3224.64)보다 24.68포인트(0.77%) 오른 3249.32에 마감했다. 지수는 전일 대비 0.07% 오른 3226.98에 출발해 장중 상승폭을 키우며 거래를 마쳤다. 지난 7일 기록한 종가 기준 코스피 사상 최고치(3252.12)를 3포인트가량 눈앞에 뒀다.<br><br>
+                                                            유가증권시장에서 개인은 홀로 4783억원어치를 팔아치웠다. 반면 기관과 외국인은 각각 2738억원, 1769억원을 매수했다.<br><br>
+                                                            업종별로는 대체로 올랐다. 철강금속(3.50%), 화학(1.79%), 운수창고(1.59%), 통신업(1.04%), 전기전자(1.03%), 제조업(1.00%), 의료정밀(0.91%) 등이 시장상승률을 웃돌았다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            11일 코스피는 전 거래일(3224.64)보다 24.68포인트(0.77%) 오른 3249.32에 마감했다. 지수는 전일 대비 0.07% 오른 3226.98에 출발해 장중 상승폭을 키우며 거래를 마쳤다. 지난 7일 기록한 종가 기준 코스피 사상 최고치(3252.12)를 3포인트가량 눈앞에 뒀다.<br><br>
+                                                            유가증권시장에서 개인은 홀로 4783억원어치를 팔아치웠다. 반면 기관과 외국인은 각각 2738억원, 1769억원을 매수했다.<br><br>
+                                                            업종별로는 대체로 올랐다. 철강금속(3.50%), 화학(1.79%), 운수창고(1.59%), 통신업(1.04%), 전기전자(1.03%), 제조업(1.00%), 의료정밀(0.91%) 등이 시장상승률을 웃돌았다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- 이모티콘: 단독 발송 시 이미지만 노출 -->
+                                            <div class="msg general">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="나회원"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon emo">
+                                                        <div class="inner">
+                                                            <img src="../assets/images/photos/e-02-12.png" alt="따봉">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon emo">
+                                                        <div class="inner">
+                                                            <img src="../assets/images/photos/e-02-12.png" alt="최고">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 이모지 멀티개 선택 시 말풍선 담아서 처리 -->
+                                            <div class="msg general">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="나회원"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            😀😀😀
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            👈👎
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 말풍선 클릭 시 샘플 -->
+                                            <div class="msg general">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="나회원"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">삭제해보세요.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 나 말고 다른 방장 -->
+                                            <div class="msg adm">
+                                                <div class="img" data-toggle="popover" data-placement="right" title="방장"
+                                                data-html="true" data-content='가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-secondary btn-sm">블락해제</button>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </div>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">방장</span>
+                                                        <span class="id">(hoho)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">엇, 진짜요? 어떤 소식인지 궁금 합니당 ㅎㅎ</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-chat col-chat-rt" style="width: 520px;">
+                            <table class="table" id="guideTb">
+                                <caption>채팅 대화 메시지 타입별 스타일 클래스 가이드</caption>
+                                <colgroup>
+                                    <col style="width: 25%">
+                                </colgroup>
+                                <tbody> 
+                                    <tr>
+                                        <th>공통</th>
+                                        <td><strong class="em">.msg</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">일반 사용자</th>
+                                        <td><span class="em">.general</span></td>
+                                        <td></td>
+                                        <td>
+                                            <small>왼쪽에 위치</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>블락 회원</td>
+                                        <td><span class="em">.blocked</span></td>
+                                        <td>
+                                            <small>파란색 도트 표시</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>나(방장)</th>
+                                        <td><span class="em">.my</span></td >
+                                        <td></td>
+                                        <td>
+                                            <small>오른쪽에 위치</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>나외의 방장</th>
+                                        <td><span class="em">.adm</span></td>
+                                        <td></td>
+                                        <td>
+                                            <small>오른쪽에 위치<br>흰색 배경 + 노란색 보더</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="5">신호</th>
+                                        <td><span class="em">.signal</span></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>타입 공통</td>
+                                        <td><span class="em">.signal-type</span></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>매수</td>
+                                        <td><span class="em">.signal-type.ts</span></td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>매수</td>
+                                        <td><span class="em">.signal-type.tb</span></td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>알림</td>
+                                        <td><span class="em">.signal-type.gs</span></td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td colspan="3">
+                                            위의 클래스들을 조합하여 사용<br>
+
+                                            ex) 나 외의 다른 방장이 보낸 신호:  .msg + .general + .signal<br>
+                                            &lt;div class="msg adm signal"&gt; ~~ &lt;/div&gt;
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+                var divHeight = '';
+                var browserHeight = document.documentElement.clientHeight;
+                //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
+                divHeight = browserHeight - (106 + 62 + 60 + 46 + 24);
+
+                $('.chat-contents').find('.tab-content').css('height', divHeight+'px');
+                //$('.chat-body').find('.scroll').css('height', divHeight-78+'px');
+                $('.chat-body').find('.scroll').css('height', divHeight-48+'px');
+
+                $('.chat-body').find('.scroll').scrollTop($('.chat-body .scroll').find('.inner').height() );
+
+
+                // 말풍선 클릭
+                $('.msg.general').find('.balloon').on('click', function() {
+                    if ( $(this).hasClass('selected') ) {
+                        // $(this).removeClass('selected');
+                        // $(this).find('.btn-delete').remove();
+                    } else if ( $(this).hasClass('del')) {
+                        return false;
+                    } else {
+                        const _html = '<div class="btn-capsule">'
+                                +       '<button type="button" class="btn-del-chat">삭제</button>'
+                                +       '<span></span>'
+                                +       '<button type="button" class="btn-rpl-chat">답장</button>'
+                                +'</div>';
+
+                        $(this).addClass('selected');
+                        $(this).append(_html);
+
+                        $('.btn-del-chat').on('click', function() {
+                            if (!$(this).parents('.balloon').hasClass('del')) {
+                                $(this).parents('.balloon').addClass('del').find('.inner').text('삭제된 메세지입니다.');
+                                $(this).parents('.balloon').find('.btn-capsule').remove();
+                            }
+                        });
+
+                        $('.btn-rpl-chat').on('click', function() {
+                            $('.block-msg-reply').fadeIn();
+                            $(this).parents('.balloon').find('.btn-capsule').remove();
+                            $('textarea').focus();
+                        });
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>
