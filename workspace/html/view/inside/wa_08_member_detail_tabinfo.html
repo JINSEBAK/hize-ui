@@ -12,8 +12,14 @@
             <td><span class="data">이삼오</span></td>
             <th rowspan="3">프로필 사진</th>
             <td rowspan="3">
-                <div class="profile-img">
-                    <img src="../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                <div class="profile-img-wrapper">
+                    <div class="profile-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                    </div>
+                    <label for="userProfilePicture">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <input type="file" name="profile_pic" id="userProfilePicture">
+                    </label>
                 </div>
             </td>
         </tr>
@@ -41,34 +47,38 @@
             <th>닉네임</th>
             <td><span class="data">235나</span></span></td>
         </tr>
-        <tr class="view">
-            <th>비밀번호</th>
-            <td colspan="3">
-                <span class="data">********</span>
-            </td>
-        </tr>
-        <tr class="new-password" style="display: none;">
-            <th>새 비밀번호</th>
-            <td>
-                <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리" id="userPw">
-                <span class="help-block-validate"></span>
-            </td>
-            <th>비밀번호 재입력</th>
-            <td>
-                <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
-                <span class="help-block-validate"></span>
-            </td>
-        </tr>
-        
     </tbody>  
 </table>
 
 <div class="btns btns-right">
-    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
+    <button type="button" class="btn btn-default hidden" c>취소</button>
+    <button type="button" class="btn btn-primary" id="btnModify">수정</button>
 </div>
 
 
-<h4 class="detail-content-hd">가입상태</h4>
+<h4 class="detail-content-hd">비밀번호 변경</h4>
+<table class="table table-form" id="tableBasicInfo">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 88%">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>비밀번호</th>
+            <td>
+                <div class="pw-inline">
+                    <span class="data">********</span>
+                    <button type="button" class="btn btn-secondary btn-inline btn-sm" id="btnChangePw">변경</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@@include('./wa_08_password_change_popup.html')
+
+
+<h4 class="detail-content-hd">가입 상태</h4>
 <table class="table table-form" id="tableUserStatus">
     <colgroup>
         <col style="width: 12%">
@@ -79,16 +89,15 @@
             <th>가입 상태</th>
             <td>
                 <div class="form-in-multi">
-                    <select class="form-control" id="memberStatus" disabled>
+                    <select class="form-control" id="memberStatusView" disabled>
                         <option value="1">활동</option>
                         <option value="0">탈퇴</option>
                     </select>
-                    <div class="form-group form-in-btn reason">
-                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
-                        <button type="button" class="btn btn-secondary" id="btnWidthdrawal">변경</button>
-                    </div>
+                    <button type="button" class="btn btn-secondary btn-inline btn-sm" id="btnChangeStatus">변경</button>
                 </div>
             </td>
         </tr>
     </tbody>
 </table>
+
+@@include('./wa_08_status_change_popup.html')

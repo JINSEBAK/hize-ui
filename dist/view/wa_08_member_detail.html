@@ -229,8 +229,14 @@
             <td><span class="data">이삼오</span></td>
             <th rowspan="3">프로필 사진</th>
             <td rowspan="3">
-                <div class="profile-img">
-                    <img src="../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                <div class="profile-img-wrapper">
+                    <div class="profile-img">
+                        <img src="../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                    </div>
+                    <label for="userProfilePicture">
+                        <span class="glyphicon glyphicon-camera"></span>
+                        <input type="file" name="profile_pic" id="userProfilePicture">
+                    </label>
                 </div>
             </td>
         </tr>
@@ -258,34 +264,68 @@
             <th>닉네임</th>
             <td><span class="data">235나</span></span></td>
         </tr>
-        <tr class="view">
-            <th>비밀번호</th>
-            <td colspan="3">
-                <span class="data">********</span>
-            </td>
-        </tr>
-        <tr class="new-password" style="display: none;">
-            <th>새 비밀번호</th>
-            <td>
-                <input type="password" class="form-control" name="password" data-type="new-pw" placeholder="영문/숫자 포함 8~20자리" id="userPw">
-                <span class="help-block-validate"></span>
-            </td>
-            <th>비밀번호 재입력</th>
-            <td>
-                <input type="password" class="form-control" name="password" data-type="new-pw-confirm" placeholder="비밀번호 재입력" id="userPwConfirm">
-                <span class="help-block-validate"></span>
-            </td>
-        </tr>
-        
     </tbody>  
 </table>
 
 <div class="btns btns-right">
-    <buttont type="button" class="btn btn-primary" id="btnModify">수정</buttont>
+    <button type="button" class="btn btn-default hidden" c>취소</button>
+    <button type="button" class="btn btn-primary" id="btnModify">수정</button>
 </div>
 
 
-<h4 class="detail-content-hd">가입상태</h4>
+<h4 class="detail-content-hd">비밀번호 변경</h4>
+<table class="table table-form" id="tableBasicInfo">
+    <colgroup>
+        <col style="width: 12%">
+        <col style="width: 88%">
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>비밀번호</th>
+            <td>
+                <div class="pw-inline">
+                    <span class="data">********</span>
+                    <button type="button" class="btn btn-secondary btn-inline btn-sm" id="btnChangePw">변경</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="modalPasswordChange" aria-labelledby="modalPasswordChangeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">비밀번호 변경</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="">
+                        <div class="form-group">
+                            <label for="userPw">새 비밀번호</label>
+                            <input type="password" class="form-control" name="password" placeholder="영문/숫자 포함 8~20자리 입력" id="userPw">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPwConfirm">비밀번호 재입력</label>
+                            <input type="password" class="form-control" name="password" placeholder="비밀번호 재입력" id="userPwConfirm">
+                            <span class="help-block-validate" id="helpBlockValidate"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" disabled id="btnChangePwConfirm">변경</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h4 class="detail-content-hd">가입 상태</h4>
 <table class="table table-form" id="tableUserStatus">
     <colgroup>
         <col style="width: 12%">
@@ -296,19 +336,50 @@
             <th>가입 상태</th>
             <td>
                 <div class="form-in-multi">
-                    <select class="form-control" id="memberStatus" disabled>
+                    <select class="form-control" id="memberStatusView" disabled>
                         <option value="1">활동</option>
                         <option value="0">탈퇴</option>
                     </select>
-                    <div class="form-group form-in-btn reason">
-                        <input type="text" class="form-control mod-component" placeholder="탈퇴 사유 입력" id="inputWithdrawal" disabled>
-                        <button type="button" class="btn btn-secondary" id="btnWidthdrawal">변경</button>
-                    </div>
+                    <button type="button" class="btn btn-secondary btn-inline btn-sm" id="btnChangeStatus">변경</button>
                 </div>
             </td>
         </tr>
     </tbody>
 </table>
+
+
+<div class="modal fade" id="modalStatusChange" aria-labelledby="modalStatusChangeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">가입상태 변경</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="">
+                        <div class="form-group">
+                            <label for="" class="sr-only">상태</label>
+                            <select class="form-control" id="memberStatus" style="width: 120px;">
+                                <option value="1">활동</option>
+                                <option value="0">탈퇴</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="sr-only">탈퇴 사유</label>
+                            <input type="text" class="form-control" name="reason" placeholder="탈퇴 사유 입력" disabled id="inputWithdrawal">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" disabled id="btnStatusConfirm" >변경</button>
+            </div>
+        </div>
+    </div>
+</div>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabSignup">
                                 <div class="area-list">
@@ -645,42 +716,58 @@
 
                         $('.table-form tr.view').css('display', 'none');
                         $('.table-form tr.new-password').fadeIn();
+
+                        //
+                        $('#btnCancelMf').removeClass('hidden');
                     }
                 });
 
+                // 수정 취소
+                $('#btnCancelMf').on('click', function() {
+                    $('#userPhone').next('input').css('display', 'none');
+                    $('#userPhone').fadeIn();
+
+                    $('#btnModify').text('수정').removeClass('mode-modify');
+
+                    $('#btnCancelMf').addClass('hidden');
+                });
+
+
+                // 가입 상태 변경 -------------------------------------
+                $('#btnChangeStatus').on('click', function() {
+                    $('#modalStatusChange').modal('show');
+                });
+            
                 // 회원 상태 변경
                 $('#memberStatus').on('change', function() {
                     if ( $(this).val() === '0' ) {
                         // 탈퇴선택 시 form, button 활성화 
-                        $(this).next('.form-in-btn').find('input').removeAttr('disabled');
+                        $('#inputWithdrawal').removeAttr('disabled');
+                    } else {
+                        $('#inputWithdrawal').val('').attr('disabled', true);
                     }
                 });
-
 
                 // 탈퇴 사유 입력 시 버튼 활성화
                 $('#inputWithdrawal').on('change paste input', function() {
                     if ( $(this).val().length > 0 ) {
-                        $(this).next('button').removeAttr('disabled').addClass('mode-modify');
+                        $('#btnStatusConfirm').removeAttr('disabled');
                     } else {
-                        $(this).next('button').attr('disabled', true);
+                        $('#btnStatusConfirm').attr('disabled', true);
                     }
                 });
 
                 // 탈퇴 사유 작성
-                $('#btnWidthdrawal').on('click', function() {
+                $('#btnStatusConfirm').on('click', function() {
+                    callConfirm({
+                        title: '회원을 탈퇴처리하시겠습니까?',
+                        description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
+                    });
+                });
 
-                    if ($(this).hasClass('mode-modify')) {
-                         callConfirm({
-                            title: '회원을 탈퇴처리하시겠습니까?',
-                            description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
-                        });
-                    } else {
-                        $('#tableUserStatus').addClass('table-form-mod');
-                        $(this).attr('disabled', true);
-                        $('#memberStatus').removeAttr('disabled');
-                    }
-
-                   
+                // 비밀번호 변경 -----------------------------------------
+                $('#btnChangePw').on('click', function() {
+                    $('#modalPasswordChange').modal('show');
                 });
 
                 // 비밀번호 재설정
@@ -716,9 +803,11 @@
                     }
 
                     if ( hasError ) {
-                        $(this).next('.help-block-validate').html(msg);
+                        $('#helpBlockValidate').html(msg);
+                        $('#btnChangePwConfirm').attr('disabled', true);
                     } else {
-                        $(this).next('.help-block-validate').html('');
+                        $('#helpBlockValidate').html('');
+                        $('#btnChangePwConfirm').removeAttr('disabled');
                     }
 
                 });

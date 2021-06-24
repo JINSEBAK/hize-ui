@@ -53,38 +53,41 @@
             $(function() {
 
                 
+                // 가입 상태 변경 -------------------------------------
+                $('#btnChangeStatus').on('click', function() {
+                    $('#modalStatusChange').modal('show');
+                });
+            
                 // 회원 상태 변경
                 $('#memberStatus').on('change', function() {
                     if ( $(this).val() === '0' ) {
                         // 탈퇴선택 시 form, button 활성화 
-                        $(this).next('.form-in-btn').find('input').removeAttr('disabled');
+                        $('#inputWithdrawal').removeAttr('disabled');
+                    } else {
+                        $('#inputWithdrawal').val('').attr('disabled', true);
                     }
                 });
 
                 // 탈퇴 사유 입력 시 버튼 활성화
                 $('#inputWithdrawal').on('change paste input', function() {
                     if ( $(this).val().length > 0 ) {
-                        $(this).next('button').removeAttr('disabled');
+                        $('#btnStatusConfirm').removeAttr('disabled');
                     } else {
-                        $(this).next('button').attr('disabled', true);
+                        $('#btnStatusConfirm').attr('disabled', true);
                     }
                 });
 
                 // 탈퇴 사유 작성
-                $('#btnWidthdrawal').on('click', function() {
-                    if ($(this).hasClass('mode-modify')) {
-                        callConfirm({
-                            title: '관리자를<br>탈퇴처리하시겠습니까?',
-                        }, function() {}, {
-                            cancel: '취소',
-                            confirm: '탈퇴'
-                        });
-                    } else {
-                        $('#tableUserStatus').addClass('table-form-mod');
-                        $(this).attr('disabled', true);
-                        $('#memberStatus').removeAttr('disabled');
-                    }
-                    
+                $('#btnStatusConfirm').on('click', function() {
+                    callConfirm({
+                        title: '회원을 탈퇴처리하시겠습니까?',
+                        description: '탈퇴된 회원은<br>회원가입 후 서비스를<br>이용할 수 있습니다.'
+                    });
+                });
+
+                // 비밀번호 변경 -----------------------------------------
+                $('#btnChangePw').on('click', function() {
+                    $('#modalPasswordChange').modal('show');
                 });
 
                 // 비밀번호 재설정
@@ -108,6 +111,7 @@
                     }
                    
                     if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+    
                         if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
                             hasError = true;
                             msg = errMsg['passwordConfirm'];
@@ -119,14 +123,16 @@
                     }
 
                     if ( hasError ) {
-                        $(this).parent('.form-group').addClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                        $('#helpBlockValidate').html(msg);
+                        $('#btnChangePwConfirm').attr('disabled', true);
                     } else {
-                        $(this).parent('.form-group').removeClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html('');
+                        $('#helpBlockValidate').html('');
+                        $('#btnChangePwConfirm').removeAttr('disabled');
                     }
 
                 });
+
+
 
                 $('#btnReset').on('click', function() {
                     callAlert({
@@ -145,18 +151,29 @@
                             confirm: '수정'
                         });
                     } else {
-                        $('#memberPassword, #btnPwReset, #department, #managerRank').removeAttr('disabled');
+                        
                         $('#btnModify').text('수정 완료').addClass('mode-modify');
                         $('#modifyHistory').css('display', 'none');
                         
                         //
                         $('#tableBasicInfo, #tableDepInfo').addClass('table-form-mod');
-                        $('#tableDepInfo').find('span.data').css('display', 'none');
+                        $('#tableBasicInfo').find('.mod-component').prev('span.data').css('display', 'none');
 
-                        $('.table-form tr.view').css('display', 'none');
-                        $('.table-form tr.new-password').fadeIn();
+                        $('#btnCancelMf').removeClass('hidden');
                     }
 
+                });
+
+                // 수정 취소
+                $('#btnCancelMf').on('click', function() {
+                   
+                    $('#btnModify').text('수정').removeClass('mode-modify');
+
+                    $('#tableBasicInfo').removeClass('table-form-mod');
+                    $('#tableBasicInfo').find('span.data').css('display', 'block');
+                    $('#tableBasicInfo').find('input').fadeIn();
+
+                    $('#btnCancelMf').addClass('hidden');
                 });
 
                 // 권한 수정 완료 클릭 

@@ -212,9 +212,16 @@
                                         <td><span class="data">박민</span></td>
                                         <th rowspan="3">프로필 사진</th>
                                         <td rowspan="3">
-                                            <div class="profile-img">
-                                                <img src="../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                                            <div class="profile-img-wrapper">
+                                                <div class="profile-img">
+                                                    <img src="../assets/images/photos/user-img-default.png" alt="사용자의 프로필 이미지">
+                                                </div>
+                                                <label for="userProfilePicture">
+                                                    <span class="glyphicon glyphicon-camera"></span>
+                                                    <input type="file" name="profile_pic" id="userProfilePicture">
+                                                </label>
                                             </div>
+                                            
                                         </td>
                                     </tr>
                                     <tr>
@@ -230,7 +237,7 @@
                                     <tr>
                                         <th>이메일 정보</th>
                                         <td><span class="data">235lee@gmail.com</span></td>
-                                        <th>회원 가입일</th>
+                                        <th>관리자 승인일</th>
                                         <td><span class="data">2021-04-21</span></td>
                                     </tr>
                                     <tr>
@@ -242,29 +249,6 @@
                                         </td>                                        
                                     </tr>
                                     <tr>
-                                        <th>비밀번호</th>
-                                        <td colspan="3">
-                                            <div class="form-inline">
-                                                <div class="form-group form-in-btn">
-                                                    <input type="password" class="form-control" placeholder="********" disabled>
-                                                    <button type="button" class="btn btn-secondary mod-component" data-toggle="modal" data-target="#modalPasswordReset">비밀번호 재설정</button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <h4 class="detail-content-hd">부서 정보</h4>
-                            <table class="table table-form de-mod">
-                                <colgroup>
-                                    <col style="width: 12%">
-                                    <col style="width: 38%">
-                                    <col style="width: 12%">
-                                    <col style="width: 38%">
-                                </colgroup>
-                                <tbody>
-                                    <tr>
                                         <th>부서</th>
                                         <td><span class="data">OOO부</span></td>
                                         <th>직급</th>
@@ -274,8 +258,61 @@
                             </table>
 
                             <div class="btns btns-right">
+                                <button type="button" class="btn btn-default hidden" id="btnCancelMf">취소</button>
                                 <button type="button" class="btn btn-primary" id="btnModify">수정</button>
                             </div>
+
+                            <h4 class="detail-content-hd">비밀번호 변경</h4>
+                            <table class="table table-form" id="tableBasicInfo">
+                                <colgroup>
+                                    <col style="width: 12%">
+                                    <col style="width: 88%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>비밀번호</th>
+                                        <td>
+                                            <div class="pw-inline">
+                                                <span class="data">********</span>
+                                                <button type="button" class="btn btn-secondary btn-inline btn-sm" id="btnChangePw">변경</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            
+<div class="modal fade" id="modalPasswordChange" aria-labelledby="modalPasswordChangeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">비밀번호 변경</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="">
+                        <div class="form-group">
+                            <label for="userPw">새 비밀번호</label>
+                            <input type="password" class="form-control" name="password" placeholder="영문/숫자 포함 8~20자리 입력" id="userPw">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPwConfirm">비밀번호 재입력</label>
+                            <input type="password" class="form-control" name="password" placeholder="비밀번호 재입력" id="userPwConfirm">
+                            <span class="help-block-validate" id="helpBlockValidate"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" disabled id="btnChangePwConfirm">변경</button>
+            </div>
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 </div>
@@ -321,6 +358,11 @@
         <script>
             $(function() {
 
+                // 비밀번호 변경 -----------------------------------------
+                $('#btnChangePw').on('click', function() {
+                    $('#modalPasswordChange').modal('show');
+                });
+
                 // 비밀번호 재설정
                 $('input[name=password]').on('change paste input', function() {
                     const errMsg = {
@@ -342,6 +384,7 @@
                     }
                    
                     if ( $('#userPw').val().length > 0 && $('#userPwConfirm').val().length > 0 ) {
+    
                         if ( $('#userPw').val() !== $('#userPwConfirm').val() ) {
                             hasError = true;
                             msg = errMsg['passwordConfirm'];
@@ -353,14 +396,16 @@
                     }
 
                     if ( hasError ) {
-                        $(this).parent('.form-group').addClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html(msg);
+                        $('#helpBlockValidate').html(msg);
+                        $('#btnChangePwConfirm').attr('disabled', true);
                     } else {
-                        $(this).parent('.form-group').removeClass('has-error');
-                        $(this).parent('.form-group').siblings('.help-block').html('');
+                        $('#helpBlockValidate').html('');
+                        $('#btnChangePwConfirm').removeAttr('disabled');
                     }
 
                 });
+
+
 
                 $('#btnReset').on('click', function() {
                     callAlert({
@@ -380,7 +425,20 @@
                     $('.table-form').addClass('table-form-mod');
                     $('#userPhone, #userNickname').css('display', 'none');
                     $('#userPhoneInput, #userNicknameInput').fadeIn();
+
+                    $('#btnCancelMf').removeClass('hidden');
                 });
+
+                $('#btnCancelMf').on('click', function() {
+                    $('.table-form').removeClass('table-form-mod');
+
+                    $('#userPhoneInput, #userNicknameInput').css('display', 'none');
+                    $('#userPhone, #userNickname').fadeIn();
+
+                    $('#btnModify').text('수정').removeClass('mode-modify');
+                    $('#btnCancelMf').addClass('hidden');
+                });
+        
             });
         </script>
     </body>
