@@ -80,6 +80,7 @@ a {
     &:disabled {
         background-color: $bg-color;
         color: #828792;
+        opacity: 1 !important;
     }
 }
 
@@ -310,6 +311,10 @@ select {
                         }
                         &:last-child {
                             border-radius: 0 !important;
+                        }
+                        &:disabled {
+                            background-color: #4c4198 !important;
+                            color: #8076c3 !important;
                         }
                     }
                 }
