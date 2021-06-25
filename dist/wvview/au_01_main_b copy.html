@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-        @@include('../common/resources.html', { "type" : "user" })
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- 개발에서 사용 안함 -->
+<link rel="stylesheet" href="../assets/css/tables.css">
+
+
+
+    <link rel="stylesheet" href="../assets/css/wv.css" />
+
+
+
+
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     </head>
     <body class="bg-ashed">
@@ -16,15 +35,9 @@
             <article class="w-main-carousel">
                 <div class="swiper-container main-visual-swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="../assets/images/photos/ad_default.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../assets/images/photos/ad_default.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="../assets/images/photos/ad_default.png">
-                        </div>
+                        <div class="swiper-slide">1</div>
+                        <div class="swiper-slide">2</div>
+                        <div class="swiper-slide">3</div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -41,12 +54,8 @@
                         <li>
                             <a href="#expChatList" aria-controls="expChatList" role="tab" data-toggle="tab">체험방</a>
                         </li>
-                        <li>
-                            <a href="#movieList" aria-controls="movieList" role="tab" data-toggle="tab">동영상</a>
-                        </li>
                     </ul>
                 </div>
-
                 <div class="w-main-content tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="payChatList">
                         <ul class="wc-list">
@@ -56,27 +65,12 @@
                                         <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
                                     </div>
                                     <div class="info">
-                                        <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <span class="title">주린이방1</span>
+                                        <p class="sub">주식의 A-Z까지 알려드립니다. 알가쉬운 주식 정보를 알려드립니다.</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="wcc">
-                                    <div class="img-thumb">
-                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">제목을 노출합니다. 제목을 노출합니다. 제목을 노출합니다. 제목을 노출합니다.</span>
-                                        <span class="sub">설명 노출합니다. 설명 노출합니다.설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다.</span>
-                                    </div>
-                                    <div class="ex-func">
-                                        <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -87,11 +81,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출합니다. 설명 노출합니다.설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다. 설명 노출합니다.</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -102,11 +96,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -117,11 +111,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -132,11 +126,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -147,11 +141,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -162,11 +156,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -177,11 +171,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -192,11 +186,11 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
@@ -207,91 +201,18 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="wcc">
-                                    <div class="img-thumb">
-                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
-                                    </div>
-                                    <div class="ex-func">
-                                        <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="wcc">
-                                    <div class="img-thumb">
-                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
-                                    </div>
-                                    <div class="ex-func">
-                                        <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="wcc">
-                                    <div class="img-thumb">
-                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
-                                    </div>
-                                    <div class="ex-func">
-                                        <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="wcc">
-                                    <div class="img-thumb">
-                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
-                                    </div>
-                                    <div class="ex-func">
-                                        <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="wcc">
-                                    <div class="img-thumb">
-                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
-                                    </div>
-                                    <div class="ex-func">
-                                        <span>85/120</span>
-                                        <button type="button" class="btn btn-primary btn-sm">신청하기</button>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                        <div class="loader"></div>
+                        <div class="re-load">
+                            <a class="btn btn-more" href="./au_01_main_b_2.html"></a>
+                        </div>
                     </div>
 
                     <!-- 체험방 -->
@@ -304,42 +225,135 @@
                                     </div>
                                     <div class="info">
                                         <span class="title">제목</span>
-                                        <span class="sub">설명 노출</span>
+                                        <p class="sub">설명 노출</p>
                                     </div>
                                     <div class="ex-func">
                                         <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="wcc">
+                                    <div class="img-thumb">
+                                        <img src="../assets/images/photos/sample.jpeg" alt="채팅방의 썸네일 이미지">
+                                    </div>
+                                    <div class="info">
+                                        <span class="title">제목</span>
+                                        <p class="sub">설명 노출</p>
+                                    </div>
+                                    <div class="ex-func">
+                                        <span>85/120</span>
+                                        <button type="button" class="btn btn-primary btn-sm">신청</button>
                                     </div>
                                 </div>
                             </li>
                         </ul>
+                        <div class="re-load">
+                            <button class="btn btn-more"></button>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- 동영상 -->
-                    <div class="tab-pane fade" id="movieList">
-                        <ul class="mv-list">
-                            <li>
-                                <div class="mv">
-                                    <div class="video">
-                                        <iframe src="https://www.youtube.com/embed/LzXzHoXO5ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">나분석의 명강의 성투주식</span>
-                                        <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
-                                    </div>
+
+                <div>
+                    <h5 class="section-title">
+                        <span>동영상</span>
+                    </h5>
+                    <ul class="mv-list">
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="mv">
-                                    <div class="video">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LzXzHoXO5ZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="info">
-                                        <span class="title">주린이에게 알려드리는 주식의 기본</span>
-                                        <span class="sub">주식의 A-Z까지 알려 드립니다.</span>
-                                    </div>
+                                <div class="info">
+                                    <span class="title">나분석의 명강의 성투주식</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">주린이에게 알려드리는 주식의 기본</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">나주식의 바이오 분석</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">정확하고 빠른 분석 나분석의 주식</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mv">
+                                <div class="video">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="info">
+                                    <span class="title">주린이에게 알려드리는 성투</span>
+                                    <span class="sub">주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다. 주식의 A-Z까지 알려 드립니다.</span>
+                                    <span class="ld">나분석</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="re-load">
+                        <button class="btn btn-more"></button>
                     </div>
                 </div>
             </article>
@@ -407,7 +421,10 @@
         </div>
 
         <!-- scripts -->
-        @@include('../common/scripts.html')
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
 

@@ -1086,6 +1086,25 @@
       display: flex;
       align-items: center;
       padding: 6px 0;
+      .profile-img-wrapper {
+        border: 1px solid rgba(0,0,0,.2);
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        overflow: hidden;
+        .profile-img {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          color: #fff;
+          font-size: 16px;
+          line-height: 2;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
       .img {
         width: 40px;
         img {
@@ -1314,6 +1333,9 @@
         width: 1px;
         height: 1px;
         opacity: 0;
+      }
+      &.disabled {
+        cursor: not-allowed;
       }
     }
   }
@@ -2084,6 +2106,24 @@
         }
         &:focus {
           outline: none;
+        }
+      }
+      .dropdown-list-pagination {
+        margin: 0 -10px -10px -10px;
+        padding: 10px 0;
+        border-top: 1px solid #b9b9b9;
+        button {
+          &:first-child {
+            float: left;
+          }
+          &:last-child {
+            float: right;
+          }
+        }
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
         }
       }
     }
