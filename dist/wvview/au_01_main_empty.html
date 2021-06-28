@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- 개발에서 사용 안함 -->
+<link rel="stylesheet" href="../assets/css/tables.css">
+
+
+
+    <link rel="stylesheet" href="../assets/css/wv.css" />
+
+
+
+
+    </head>
+    <body class="bg-ashed">
+        <header class="wv-header wv-hd-main wv-a">
+            <div class="inner">
+                <strong>Hize</strong>
+            </div>
+        </header>
+
+        <div class="w-main w-main-a">
+
+            <!-- 광고 Carousel -->
+            <article class="w-main-carousel">
+                <div class="swiper-container main-visual-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../assets/images/photos/ad_default.png">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </article>
+
+            <article class="w-main-list">
+
+                <button type="button" class="btn btn-top btn-float" id="btnTop" style="display: none;"></button>
+
+                <div class="w-main-tab" id="webviewMainTabs">
+                    <ul role="tablist">
+                        <li class="active" role="presentation">
+                            <a href="#payChatList" aria-controls="payChatList" role="tab" data-toggle="tab">유료방</a>
+                        </li>
+                        <li>
+                            <a href="#expChatList" aria-controls="expChatList" role="tab" data-toggle="tab">체험방</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w-main-content tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="payChatList">
+                        <div class="area-empty register">
+                            <div class="register-empty">
+                                <strong>등록된 정보가 없습니다.</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 체험방 -->
+                    <div class="tab-pane fade" id="expChatList">
+                        <div class="area-empty register">
+                            <div class="register-empty">
+                                <strong>등록된 정보가 없습니다.</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h5 class="section-title">
+                        <span>동영상</span>
+                    </h5>
+                    <div class="area-empty register">
+                        <div class="register-empty">
+                            <strong>등록된 정보가 없습니다.</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </article>
+        </div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+
+            $(function() {
+
+                $(window).scroll(function() {
+                    var scroll = $(this).scrollTop();
+                    if ( scroll > 200 ) {
+                        $('#webviewMainTabs').addClass('tab-sticky');
+                        if ( scroll > $(this).height() ) {
+                            $('#btnTop').fadeIn();
+                        } else {
+                            $('#btnTop').css('display', 'none');
+                        }
+                    } else {
+                        $('#webviewMainTabs').removeClass('tab-sticky');
+                    }
+                });
+
+                // TOP
+                $('#btnTop').on('click', function() {
+                    $('html, body').animate({
+                        scrollTop: 0,
+                    }, 500);
+                });
+
+               
+            });
+        </script>
+    </body>
+</html>
