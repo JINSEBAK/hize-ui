@@ -1070,6 +1070,15 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
+.chat-list + .pagination {
+  button {
+    color: #eee;
+    &.active {
+      color: #fff;
+    }
+  }
+}
+
 .area-list {
   .area-list-header {
     margin-bottom: 8px;
@@ -1257,6 +1266,15 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
+  &.my-chat-empty {
+    display: block;
+    > div.my-chat-empty {
+      display: block;
+      &:before {
+        background-image: url(../images/icons/my-chat-empty-w.svg);
+      }
+    }
+  }
 }
 
 
@@ -1423,6 +1441,9 @@ input[type="number"]::-webkit-inner-spin-button {
       height: 226px;
       overflow-y: hidden;
       background-color: $bg-light-color;
+      img {
+        max-width: 500px;
+      }
     }
     .file-func {
       padding-top: 12px;

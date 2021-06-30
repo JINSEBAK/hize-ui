@@ -17,9 +17,12 @@
     &:first-child {
       color: #fff;
       text-align: center;
-      line-height: 514px;
       border-radius: 4px 0 0 4px;
       background-image: conic-gradient(from 1.12turn, #cc4035, #1d2858 0turn, #cc4035);
+      img {
+        display: block;
+        margin: 215px auto 16px;
+      }
     }
     &:last-child {
       border-radius: 0 4px 4px 0;
@@ -209,10 +212,10 @@
           }
         }
         &.active {
-          color: #bd2d33;
+          color: #ff7448;
           font-weight: bold;
           .circle {
-            background-color: #bd2d33;
+            background-color: #dc643d;
           }
         }
         &:first-child {

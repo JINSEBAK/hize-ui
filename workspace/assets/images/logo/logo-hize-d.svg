@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-723.000000, -87.000000) translate(723.000000, 85.000000)">
+                    <rect width="11" height="34" x="87.627" y="-1" fill="#FF7448" rx="5.5" transform="translate(93.127417, 16.000000) rotate(48.000000) translate(-93.127417, -16.000000)"/>
+                    <rect width="43" height="10" x="64" y="2.373" fill="#CD4141" rx="5"/>
+                    <rect width="43" height="10" x="64" y="35.373" fill="#1D2858" rx="5"/>
+                    <rect width="10" height="43" y="2.373" fill="#1D2858" rx="5"/>
+                    <rect width="43" height="10" x="111" y="3.373" fill="#1D2858" rx="5"/>
+                    <rect width="43" height="10" x="111" y="19.373" fill="#1D2858" rx="5"/>
+                    <rect width="43" height="10" x="111" y="35.373" fill="#1D2858" rx="5"/>
+                    <rect width="38" height="10" y="19.373" fill="#1D2858" rx="5"/>
+                    <rect width="10" height="43" x="30" y="2.373" fill="#1D2858" rx="5"/>
+                    <rect width="10" height="43" x="46" y="2.373" fill="#1D2858" rx="5"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

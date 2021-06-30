@@ -11,6 +11,7 @@ body {
 body {
     padding-top: 0;
     font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Malgun Gothic", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 div, ul {
@@ -88,6 +89,7 @@ a {
     padding: 0;
     width: 24px;
     height: 24px;
+    background-color: transparent;
 }
 .btn-float {
     position: fixed;
@@ -180,8 +182,13 @@ select {
     }
 }
 
-// alert, confirm
 
+// modal
+.modal-open .modal {
+    overflow-y: hidden;
+}
+
+// alert, confirm
 .modal.fade .modal-dialog {
     transform: translate(0, 100%);
 }
@@ -376,6 +383,44 @@ select {
         }
     }
 }
+
+.modal.modal-v-pl {
+    .modal-dialog {
+        margin: 0;
+        height: 100%;
+        .modal-content {
+            //background-color: #000;
+            border-radius: 0;
+            border: none;
+            box-shadow: none;
+            height: 100%;
+            .modal-header {
+                background-color: #000;
+                border-bottom: none;
+            }
+            .modal-body {
+                padding: 0;
+                background-color: #000;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 60px;
+                iframe {
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+        
+    }
+    &.in {
+        .modal-dialog {
+            transform: translate(0,0) !important;
+        }
+    }
+}
+
+
 .toast {
     position: fixed;
     bottom: 80px;
@@ -722,6 +767,7 @@ select {
                             text-overflow: ellipsis;
                             -webkit-line-clamp: 2; 
                             -webkit-box-orient: vertical;
+                            min-height: 40px;
                         }
                     }
                     .ex-func {
@@ -764,6 +810,33 @@ select {
                         height: 100%;
                         background-color: $bg-color;
                     }
+                    .thumbnail {
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        margin-bottom: 0;
+                        border: none;
+                        position: relative;
+                        img {
+                            height: 100%;
+                            width: auto;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            z-index: 3;
+                            width: 46px;
+                            height: 46px;
+                            left: 50%;
+                            top: 50%;
+                            margin-left: -23px;
+                            margin-top: -23px;
+                            background: url(../images/icons/btn-video-play.svg) center no-repeat;
+                        }
+                    }  
                 }
                 .info {
                     width: calc(100% - 140px);
@@ -897,6 +970,33 @@ select {
                         iframe {
                             transform: translate(0%, -15%);
                         }
+                        .thumbnail {
+                            width: 100%;
+                            height: 100%;
+                            padding: 0;
+                            margin-bottom: 0;
+                            border: none;
+                            position: relative;
+                            img {
+                                height: 100%;
+                                width: auto;
+                                position: relative;
+                                z-index: 2;
+                            }
+                            &:before {
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                z-index: 3;
+                                width: 46px;
+                                height: 46px;
+                                left: 50%;
+                                top: 50%;
+                                margin-left: -23px;
+                                margin-top: -23px;
+                                background: url(../images/icons/btn-video-play.svg) center no-repeat;
+                            }
+                        }  
                     }
                     .info {
                         flex: 1;
@@ -1082,6 +1182,8 @@ select {
         }
     }
 }
+
+
 
 
 

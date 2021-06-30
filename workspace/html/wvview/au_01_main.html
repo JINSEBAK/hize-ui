@@ -284,7 +284,10 @@
                         <li>
                             <div class="mv">
                                 <div class="video">
-                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="thumbnail">
+                                    
+                                        <img src="../../assets/images/photos/sample.jpeg">
+                                    </div>
                                 </div>
                                 <div class="info">
                                     <span class="title">나분석의 명강의 성투주식</span>
@@ -417,6 +420,9 @@
             </div>
         </div>
 
+        @@include('./inside/au_01_main_video_play.html')
+
+
         <!-- scripts -->
         @@include('../common/scripts.html')
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -517,6 +523,12 @@
                         $(this).blur();
                     }
                 });
+
+                // 비디오 재생하기
+                $('.mv-list').find('.thumbnail').on('click', function() {
+                    $('#modalVideoPlay').modal('show');
+                });
+
 
             });
         </script>

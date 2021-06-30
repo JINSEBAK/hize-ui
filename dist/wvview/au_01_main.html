@@ -303,7 +303,10 @@
                         <li>
                             <div class="mv">
                                 <div class="video">
-                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="thumbnail">
+                                    
+                                        <img src="../../assets/images/photos/sample.jpeg">
+                                    </div>
                                 </div>
                                 <div class="info">
                                     <span class="title">나분석의 명강의 성투주식</span>
@@ -436,6 +439,25 @@
             </div>
         </div>
 
+        <!-- 비디오 재생 -->
+<div class="modal fade modal-v-pl" id="modalVideoPlay" aria-labelledby="modalVideoPlayLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-icon" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                    <span class="icon icon-back"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe width="560" height="315" src="https://youtu.be/-UMAz1KMHuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
@@ -539,6 +561,12 @@
                         $(this).blur();
                     }
                 });
+
+                // 비디오 재생하기
+                $('.mv-list').find('.thumbnail').on('click', function() {
+                    $('#modalVideoPlay').modal('show');
+                });
+
 
             });
         </script>
