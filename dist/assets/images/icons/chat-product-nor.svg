@@ -5,9 +5,9 @@
                 <g>
                     <g>
                         <g>
-                            <path d="M0 0h24v24H0V0z" transform="translate(-114.000000, -508.000000) translate(80.000000, 297.000000) translate(24.000000, 193.000000) translate(10.000000, 18.000000)"/>
-                            <g fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4">
-                                <path d="M0 0h6v6H0V0zM10 0h6v6h-6V0zM0 10h6v6H0v-6zM10 10h6v6h-6v-6z" transform="translate(-114.000000, -508.000000) translate(80.000000, 297.000000) translate(24.000000, 193.000000) translate(10.000000, 18.000000) translate(4.000000, 4.000000)"/>
+                            <path d="M0 0h24v24H0V0z" transform="translate(-74.000000, -472.000000) translate(40.000000, 261.000000) translate(24.000000, 193.000000) translate(10.000000, 18.000000)"/>
+                            <g fill-rule="nonzero" stroke="#CFD7EF" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4">
+                                <path d="M0 0h6v6H0V0zM10 0h6v6h-6V0zM0 10h6v6H0v-6zM10 10h6v6h-6v-6z" transform="translate(-74.000000, -472.000000) translate(40.000000, 261.000000) translate(24.000000, 193.000000) translate(10.000000, 18.000000) translate(4.000000, 4.000000)"/>
                             </g>
                         </g>
                     </g>

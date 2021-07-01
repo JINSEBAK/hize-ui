@@ -5,10 +5,10 @@
                 <g>
                     <g>
                         <g>
-                            <path d="M0 0h24v24H0V0z" transform="translate(-339.000000, -331.000000) translate(305.000000, 297.000000) translate(24.000000, 16.000000) translate(10.000000, 18.000000)"/>
-                            <g>
-                                <path fill-rule="nonzero" stroke="#3B4EB6" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M2 0h12c1.105 0 2 .895 2 2v8c0 1.105-.895 2-2 2H4.877L0 14V2C0 .895.895 0 2 0z" transform="translate(-339.000000, -331.000000) translate(305.000000, 297.000000) translate(24.000000, 16.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
-                                <path fill="#3B4EB6" d="M5.7 5h4.6c.387 0 .7.313.7.7 0 .387-.313.7-.7.7H5.7c-.387 0-.7-.313-.7-.7 0-.387.313-.7.7-.7z" transform="translate(-339.000000, -331.000000) translate(305.000000, 297.000000) translate(24.000000, 16.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
+                            <path d="M0 0h24v24H0V0z" transform="translate(-304.000000, -295.000000) translate(270.000000, 261.000000) translate(24.000000, 16.000000) translate(10.000000, 18.000000)"/>
+                            <g stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round">
+                                <path fill-rule="nonzero" stroke="#FF8A60" stroke-width="1.4" d="M2 0h12c1.105 0 2 .895 2 2v8c0 1.105-.895 2-2 2H4.877L0 14V2C0 .895.895 0 2 0z" transform="translate(-304.000000, -295.000000) translate(270.000000, 261.000000) translate(24.000000, 16.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
+                                <path fill="#FF8A60" d="M5.7 5h4.6c.387 0 .7.313.7.7 0 .387-.313.7-.7.7H5.7c-.387 0-.7-.313-.7-.7 0-.387.313-.7.7-.7z" transform="translate(-304.000000, -295.000000) translate(270.000000, 261.000000) translate(24.000000, 16.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
                             </g>
                         </g>
                     </g>

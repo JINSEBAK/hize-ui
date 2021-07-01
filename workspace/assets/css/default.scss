@@ -51,7 +51,7 @@ $text-link-basic: #717171;
 $text-link-hover: #3045a0;
 $text-warning: #8a6d3b;
 $text-emphasize: #dc643d;
-$text-gnb: #242629;
+$text-gnb: #d3daf1;
 $placeholder: #b0b7c3;
 $card-hover: #f2f3f5;
 $card-active: #e6e4fc;
@@ -396,7 +396,7 @@ a {
 
 // header
 .navbar {
-  box-shadow: 0 2px 9px 0 rgba(133, 141, 164, 0.7);
+  box-shadow: 0 2px 9px 0 rgba(0,0,0,.4);
   background-color: $bg-primary;
   min-height: 70px;
   a {
@@ -500,18 +500,19 @@ a {
 // gnb
 .sidebar {
   border-right: 1px solid $border-light-color;
+  background-color: #232b4b;
   position: fixed;
   width: 210px;
-  top: 87px;
+  top: 71px;
   bottom: 0;
   left: 0;
   z-index: 1000;
-  padding: 0 24px;
+  padding: 16px 24px;
   min-height: 640px;
   .nav-sidebar {
-    border-top: 1px solid $border-light-color;
+    border-top: 1px solid rgba(230, 235, 239, .1);
     > li {
-      border-bottom: 1px solid $border-light-color;
+      border-bottom: 1px solid rgba(230, 235, 239, .1);
       &:hover {
         background-color: transparent;
       }
@@ -520,7 +521,7 @@ a {
         padding: 16px 10px;
         text-decoration: none;
         &:hover {
-          color: $text-link-hover;
+          color: #ff8a60;
           font-weight: bold;
           background-color: transparent;
         }
@@ -530,13 +531,12 @@ a {
       }
       > a:not(.single) {
         background-image: url(../images/icons/submenu-arrow-nor.svg);
-        background-position: calc(100% - 15px) 22px;
+        background-position: calc(100% - 6px) center;
         background-repeat: no-repeat;
-        background-size: 10px;
       }
       &.active {
         > a {
-          color: $text-link-hover;
+          color: #ff8a60;
           font-weight: bold;
         }
         > a:not(.single) {
@@ -598,11 +598,11 @@ a {
       overflow: hidden;
       list-style: none;
       padding: 0px;
-      border-top: 1px solid $border-light-color;
-      background-color: rgba(246, 246, 250, 0.6);
+      border-top: 1px solid rgba(230, 234, 239, .1);
+      background-color: rgba(0,0,0,.1);
       li {
         padding: 14px 0 14px 40px;
-        border-bottom: 1px solid $border-light-color;
+        border-bottom: 1px solid rgba(230, 234, 239, .1);
         a {
           padding: 0;
         }
@@ -1085,9 +1085,11 @@ input[type="number"]::-webkit-inner-spin-button {
     > div {
       font-size: 14px;
       &:first-child {
-        padding-top: 13px;
         color: #3f4146;
         font-size: 13px;
+        .lead {
+          margin-bottom: 0px;
+        }
         .count {
           color: #292929;
           padding-left: 4px;
@@ -1172,6 +1174,9 @@ input[type="number"]::-webkit-inner-spin-button {
         }
         .thumb {
           width: 80px;
+        }
+        .img-ad {
+          width: 180px;
         }
       }
       // 게시판의 공지사항

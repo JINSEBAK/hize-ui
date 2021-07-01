@@ -1,17 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="8" viewBox="0 0 12 8">
-    <defs>
-        <path id="rd5idtmdga" d="M0 0H24V24H0z"/>
-    </defs>
-    <g fill="none" fill-rule="evenodd">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd" opacity=".8">
         <g>
             <g>
                 <g>
                     <g>
-                        <g transform="translate(-240.000000, -516.000000) translate(80.000000, 297.000000) translate(24.000000, 193.000000) translate(142.000000, 30.000000) rotate(90.000000) translate(-142.000000, -30.000000) translate(130.000000, 18.000000)">
-                            <mask id="4em17rwohb" fill="#fff">
-                                <use xlink:href="#rd5idtmdga"/>
-                            </mask>
-                            <path stroke="#7C7D7F" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M7.5 14.5L12 9.5 12 9.5 16.5 14.5" mask="url(#4em17rwohb)" transform="translate(12.000000, 12.000000) rotate(90.000000) translate(-12.000000, -12.000000)"/>
+                        <g>
+                            <path d="M0 0h24v24H0V0z" transform="translate(-194.000000, -354.000000) translate(40.000000, 261.000000) translate(24.000000, 75.000000) translate(142.000000, 30.000000) rotate(90.000000) translate(-142.000000, -30.000000) translate(130.000000, 18.000000)"/>
+                            <path fill-rule="nonzero" stroke="#CFD7EF" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M9.5 7.5l5 4.5h0l-5 4.5" transform="translate(-194.000000, -354.000000) translate(40.000000, 261.000000) translate(24.000000, 75.000000) translate(142.000000, 30.000000) rotate(90.000000) translate(-142.000000, -30.000000) translate(130.000000, 18.000000)"/>
                         </g>
                     </g>
                 </g>

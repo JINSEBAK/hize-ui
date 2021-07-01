@@ -533,9 +533,13 @@
       height: 80px;
       border-radius: 5px;
       overflow: hidden;
+      position: relative;
       img {
         height: 100%;
-        transform: translate(-30%);
+        // transform: translate(-30%);
+        position: absolute;
+        left: 0;
+        margin-left: -28%;
       }
     }
     .infos {
@@ -1312,7 +1316,7 @@
       overflow: hidden;
       border: 1px solid rgba(0,0,0,.2);
       text-align: center;
-      line-height: 1.5;
+      line-height: 88px;
       color: #fff;
       font-size: 48px;
       img {
@@ -1409,7 +1413,6 @@
   }
   & + .guide {
     padding-left: 20px;
-    margin-top: -20px;
     margin-bottom: 24px;
     li {
       list-style: disc;

@@ -5,10 +5,10 @@
                 <g>
                     <g>
                         <g>
-                            <path d="M0 0H24V24H0z" transform="translate(-339.000000, -731.000000) translate(305.000000, 297.000000) translate(24.000000, 416.000000) translate(10.000000, 18.000000)"/>
-                            <g fill-rule="nonzero" stroke="#3B4EB6" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4">
-                                <path d="M15.91 9.2C15.333 13.05 12.01 16 8 16c-4.418 0-8-3.582-8-8C0 3.931 3.038.572 6.969.066L7 9l8.91.2z" transform="translate(-339.000000, -731.000000) translate(305.000000, 297.000000) translate(24.000000, 416.000000) translate(10.000000, 18.000000) translate(4.000000, 4.000000)"/>
-                                <path d="M10 0c3.314 0 6 2.686 6 6h-6V0z" transform="translate(-339.000000, -731.000000) translate(305.000000, 297.000000) translate(24.000000, 416.000000) translate(10.000000, 18.000000) translate(4.000000, 4.000000)"/>
+                            <path d="M0 0H24V24H0z" transform="translate(-304.000000, -531.000000) translate(270.000000, 261.000000) translate(24.000000, 252.000000) translate(10.000000, 18.000000)"/>
+                            <g fill-rule="nonzero" stroke="#FF8A60" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4">
+                                <path d="M15.91 9.2C15.333 13.05 12.01 16 8 16c-4.418 0-8-3.582-8-8C0 3.931 3.038.572 6.969.066L7 9l8.91.2z" transform="translate(-304.000000, -531.000000) translate(270.000000, 261.000000) translate(24.000000, 252.000000) translate(10.000000, 18.000000) translate(4.000000, 4.000000)"/>
+                                <path d="M10 0c3.314 0 6 2.686 6 6h-6V0z" transform="translate(-304.000000, -531.000000) translate(270.000000, 261.000000) translate(24.000000, 252.000000) translate(10.000000, 18.000000) translate(4.000000, 4.000000)"/>
                             </g>
                         </g>
                     </g>

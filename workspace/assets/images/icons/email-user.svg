@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <linearGradient id="7mqw3d0v7a" x1="74.526%" x2="24.449%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#B62C35"/>
+            <stop offset="100%"/>
+        </linearGradient>
+        <linearGradient id="a3bvr02i0b" x1="158.388%" x2="-54.249%" y1="35.627%" y2="79.459%">
+            <stop offset="0%" stop-color="#DC5764"/>
+            <stop offset="100%" stop-color="#1D2858"/>
+        </linearGradient>
+        <linearGradient id="ya8e0jslec" x1="158.388%" x2="-54.249%" y1="-45.039%" y2="244.792%">
+            <stop offset="0%" stop-color="#DC5764"/>
+            <stop offset="100%" stop-color="#1D2858"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-1141.000000, -432.000000) translate(1142.000000, 433.000000)">
+                <circle cx="31" cy="31" r="31" fill="#FFF" stroke="url(#7mqw3d0v7a)" stroke-width="1.1"/>
+                <path stroke="url(#a3bvr02i0b)" stroke-linecap="round" stroke-width="2.2" d="M17.304 45.147v-5.454c0-3.012 2.44-5.454 5.458-5.454h17.132c3.014 0 5.458 2.448 5.458 5.454v5.454"/>
+                <circle cx="31.328" cy="20.216" r="6.233" stroke="url(#ya8e0jslec)" stroke-width="2.2"/>
+            </g>
+        </g>
+    </g>
+</svg>

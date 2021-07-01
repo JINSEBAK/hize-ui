@@ -5,11 +5,11 @@
                 <g>
                     <g>
                         <g>
-                            <path d="M0 0h24v24H0V0z" transform="translate(-114.000000, -449.000000) translate(80.000000, 297.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000)"/>
+                            <path d="M0 0h24v24H0V0z" transform="translate(-74.000000, -413.000000) translate(40.000000, 261.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000)"/>
                             <g>
-                                <path fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M2 0h12c1.105 0 2 .895 2 2v10c0 1.105-.895 2-2 2H2c-1.105 0-2-.895-2-2V2C0 .895.895 0 2 0z" transform="translate(-114.000000, -449.000000) translate(80.000000, 297.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
-                                <path fill="#2E3A59" d="M0 3h16v1.4H0V3z" transform="translate(-114.000000, -449.000000) translate(80.000000, 297.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
-                                <path fill="#2E3A59" d="M4 4h1.4v10H4V4z" transform="translate(-114.000000, -449.000000) translate(80.000000, 297.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
+                                <path fill-rule="nonzero" stroke="#CFD7EF" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M2 0h12c1.105 0 2 .895 2 2v10c0 1.105-.895 2-2 2H2c-1.105 0-2-.895-2-2V2C0 .895.895 0 2 0z" transform="translate(-74.000000, -413.000000) translate(40.000000, 261.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
+                                <path fill="#CFD7EF" d="M0 3h16v1.4H0V3z" transform="translate(-74.000000, -413.000000) translate(40.000000, 261.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
+                                <path fill="#CFD7EF" d="M4 4h1.4v10H4V4z" transform="translate(-74.000000, -413.000000) translate(40.000000, 261.000000) translate(24.000000, 134.000000) translate(10.000000, 18.000000) translate(4.000000, 5.000000)"/>
                             </g>
                         </g>
                     </g>
