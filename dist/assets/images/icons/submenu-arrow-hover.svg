@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <path d="M0 0h24v24H0V0z" transform="translate(-424.000000, -708.000000) translate(270.000000, 261.000000) translate(24.000000, 429.000000) translate(142.000000, 30.000000) rotate(90.000000) translate(-142.000000, -30.000000) translate(130.000000, 18.000000)"/>
+                                <path fill-rule="nonzero" stroke="#FF8A60" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M9.5 7.5l5 4.5h0l-5 4.5" transform="translate(-424.000000, -708.000000) translate(270.000000, 261.000000) translate(24.000000, 429.000000) translate(142.000000, 30.000000) rotate(90.000000) translate(-142.000000, -30.000000) translate(130.000000, 18.000000)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

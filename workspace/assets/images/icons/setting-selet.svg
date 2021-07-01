@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
     <defs>
-        <path id="tgbnxdbr6a" d="M6.448 18.261c-.477-.006-.945-.133-1.36-.37-.932-.534-1.456-1.573-1.33-2.64l.18-1.71c.06-.524-.228-1.025-.71-1.24l-1.58-.69C.648 11.182 0 10.199 0 9.111s.648-2.071 1.648-2.5l1.58-.69c.482-.215.77-.716.71-1.24l-.18-1.67c-.124-1.07.4-2.11 1.331-2.649.932-.538 2.095-.472 2.96.169l1.39 1c.422.31.997.31 1.42 0l1.39-1c.864-.641 2.027-.707 2.959-.169.931.54 1.454 1.58 1.33 2.649l-.18 1.71c-.058.524.229 1.025.71 1.24l1.58.69c1 .429 1.649 1.412 1.649 2.5s-.649 2.071-1.649 2.5l-1.58.69c-.481.215-.768.716-.71 1.24l.18 1.71c.106 1.062-.424 2.087-1.351 2.615-.928.527-2.08.459-2.939-.175l-1.39-1c-.422-.31-.997-.31-1.42 0l-1.39 1c-.463.342-1.024.527-1.6.53z"/>
-        <path id="vzezy7g4kb" d="M10.148 12.321c-1.761 0-3.19-1.428-3.19-3.19s1.429-3.19 3.19-3.19c1.762 0 3.19 1.428 3.19 3.19 0 .846-.336 1.657-.934 2.256-.598.598-1.41.934-2.256.934z"/>
-        <mask id="6zwsfev3hc" width="20.297" height="18.261" x="0" y="0" fill="#fff" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox">
-            <use xlink:href="#tgbnxdbr6a"/>
+        <path id="tz961zvdaa" d="M6.448 18.261c-.477-.006-.945-.133-1.36-.37-.932-.534-1.456-1.573-1.33-2.64l.18-1.71c.06-.524-.228-1.025-.71-1.24l-1.58-.69C.648 11.182 0 10.199 0 9.111s.648-2.071 1.648-2.5l1.58-.69c.482-.215.77-.716.71-1.24l-.18-1.67c-.124-1.07.4-2.11 1.331-2.649.932-.538 2.095-.472 2.96.169l1.39 1c.422.31.997.31 1.42 0l1.39-1c.864-.641 2.027-.707 2.959-.169.931.54 1.454 1.58 1.33 2.649l-.18 1.71c-.058.524.229 1.025.71 1.24l1.58.69c1 .429 1.649 1.412 1.649 2.5s-.649 2.071-1.649 2.5l-1.58.69c-.481.215-.768.716-.71 1.24l.18 1.71c.106 1.062-.424 2.087-1.351 2.615-.928.527-2.08.459-2.939-.175l-1.39-1c-.422-.31-.997-.31-1.42 0l-1.39 1c-.463.342-1.024.527-1.6.53z"/>
+        <path id="nysuot5vqb" d="M10.148 12.321c-1.761 0-3.19-1.428-3.19-3.19s1.429-3.19 3.19-3.19c1.762 0 3.19 1.428 3.19 3.19 0 .846-.336 1.657-.934 2.256-.598.598-1.41.934-2.256.934z"/>
+        <mask id="d6b75329tc" width="20.297" height="18.261" x="0" y="0" fill="#fff" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox">
+            <use xlink:href="#tz961zvdaa"/>
         </mask>
-        <mask id="4srkxayqdd" width="6.38" height="6.38" x="0" y="0" fill="#fff" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox">
-            <use xlink:href="#vzezy7g4kb"/>
+        <mask id="s7qs6w23id" width="6.38" height="6.38" x="0" y="0" fill="#fff" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox">
+            <use xlink:href="#nysuot5vqb"/>
         </mask>
     </defs>
     <g fill="none" fill-rule="evenodd">
@@ -15,9 +15,11 @@
                 <g>
                     <g>
                         <g>
-                            <g fill-rule="nonzero" stroke="#FF8A60" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" transform="translate(-304.000000, -1029.000000) translate(270.000000, 261.000000) translate(24.000000, 750.000000) translate(10.000000, 18.000000) translate(1.851634, 2.868959)">
-                                <use mask="url(#6zwsfev3hc)" xlink:href="#tgbnxdbr6a"/>
-                                <use mask="url(#4srkxayqdd)" xlink:href="#vzezy7g4kb"/>
+                            <g>
+                                <g fill-rule="nonzero" stroke="#FF8A60" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" transform="translate(-304.000000, -1029.000000) translate(270.000000, 261.000000) translate(24.000000, 750.000000) translate(10.000000, 18.000000) translate(1.851634, 2.868959)">
+                                    <use mask="url(#d6b75329tc)" xlink:href="#tz961zvdaa"/>
+                                    <use mask="url(#s7qs6w23id)" xlink:href="#nysuot5vqb"/>
+                                </g>
                             </g>
                         </g>
                     </g>
