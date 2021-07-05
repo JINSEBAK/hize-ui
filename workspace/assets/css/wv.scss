@@ -543,8 +543,12 @@ select {
         background-image: url(../images/icons/chevron-right.svg);
     }
     &.icon-back {
-        background-image: url(../images/icons/back.svg);
+        background-image: url(../images/icons/icons_arrow_left_white.svg);
     }
+    &.icon-search {
+        background-image: url(../images/icons/btn_search.svg);
+    }
+
 }
 
 .w-main {
@@ -1211,10 +1215,9 @@ select {
         .inner {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0 12px;
+            justify-content: flex-start;
+            padding: 0 16px;
             > div {
-                width: 28%;
                 &:last-child {
                     text-align: right;
                 }
@@ -1230,6 +1233,8 @@ select {
             .name {
                 margin-top: 16px;
                 margin-bottom: 16px;
+                padding-left: 4px;
+                font-weight: bold !important;
             }
             &.no-title {
                 padding: 8px 12px;
@@ -1239,7 +1244,7 @@ select {
             }
         }
         & + article {
-            padding-top: 50px;
+            padding: 50px 16px;
         }
     }
 }
@@ -1249,9 +1254,9 @@ select {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px;
+    padding: 20px 6px 6px;
     .category {
-        width: 100px;
+        width: 58px;
         select.form-control {
             padding: 6px 12px 6px 4px;
         }
@@ -1336,6 +1341,9 @@ select {
         &:last-child {
             border-bottom: none;
         }
+    }
+    &.post-faq {
+        box-shadow: none;
     }
     .post {
         cursor: pointer;
@@ -1569,72 +1577,96 @@ select {
 
 // faq
 .faq-list {
+    border-top: 1px solid #b6bbc1;
     li {
-        border-bottom: 1px solid $border-color;
-        > * {
-            padding: 18px 12px;
-        }
+        border-bottom: 1px solid #e6eaef;
         .faq-title {
-            background-image: url(../images/icons/down-arrow.svg);
-            background-position: calc(100% - 12px) center;
-            background-repeat: no-repeat;
-            background-size: 12px auto;
-            &:before {
-                content: 'Q. ';
-            }
-            & + .faq-content {
-                display: none;
-                &:before {
-                    content: 'A. ';
-                }
-            }
+            padding: 16px 4px;
+            .category {
+                display: block;
+                color: #5341d5;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }   
         }
-        &.active {
-            .faq-title {
-                background-image: url(../images/icons/up-arrow.svg);
-            }
+    }
+}
+.faq-detail {
+    .faq-detail-hd {
+        border-bottom: 1px solid #e6eaef;
+        padding: 20px 0 10px;
+        .category {
+            display: block;
+            color: #5341d5;
+            font-size: 13px;
+            margin-bottom: 8px;
         }
+        strong {
+            font-size: 18px;
+        }
+    }
+    .faq-content {
+        padding: 10px 0;
+        font-size: 14px;
+        line-height: 22px;
     }
 }
 
 // company info
 .info-company {
-    padding: 12px;
     dt {
-        color: $text-basic;
+        color: #676b6f;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 13px;
+        padding: 14px 4px 8px;
     }
     dd {
-        margin-bottom: 12px;
+        padding-bottom: 16px;
+        padding-right: 4px;
+        text-align: right;
+        border-bottom: 1px solid #e6eaef;
+        &:last-child {
+            border-bottom: 1px solid #90969e;
+        }
     }
-    & + p {
-        padding: 0 12px;
-    }
-    & + .info-company {
-        padding-top: 36px;
-        border-top: 1px solid $border-color;
-    }
+   & + .cs {
+       width: calc(100% - 32px);
+       background-color: #f6f7f8;
+       border-radius: 5px;
+       padding: 10px;
+       font-size: 14px;
+       position: absolute;
+       bottom: 15px;
+       p {
+           margin-top: 8px;
+       }
+       .info {
+           font-size: 16px;
+       }
+   }
 }
 
 // 이용약관
 .terms {
-    padding: 12px;
-    border: 1px solid $border-color;
-    margin: 12px;
-    border-radius: 12px;
     ul {
         li {
-            padding: 12px;
+            padding: 16px 4px;
+            border-bottom: 1px solid #e6eaef;
             a {
                 text-decoration: underline;
+                display: block;
+                color: #000;
+                text-decoration: none;
+                background-image: url(../images/icons/arrow_chevron_right.svg);
+                background-repeat: no-repeat;
+                background-position: right center;
             }
         }
     }
 }
 
 .terms-detail {
-    padding: 12px;
+    padding: 0 4px;
     font-size: 14px;
     h3.terms-title {
         font-size: 14px !important;

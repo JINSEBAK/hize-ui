@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- 개발에서 사용 안함 -->
+<link rel="stylesheet" href="../assets/css/tables.css">
+
+
+
+    <link rel="stylesheet" href="../assets/css/wv.css" />
+
+
+
+
+    </head>
+    <body>
+        <div class="w-main">
+            <!--header-->
+            
+            <header class="w-hd">
+    <div class="inner">
+        <div class="">
+            <span class="icon icon-back"></span>
+        </div>
+        <h4 class="name">FAQ 상세</h4>
+        <div class="">
+            
+        </div>
+    </div>
+</header>
+            <article>
+
+                <div class="post-board post-faq">
+                    <div class="faq-detail">
+                        <div class="faq-detail-hd">
+                            <span class="category">기타</span>
+                            <strong>Hize서비스는 어떤 서비스인지 알고 싶어요.</strong>
+                        </div>
+                        <div class="faq-content">
+                            코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다. 코스닥도 반등해 1000선에 바짝 다가섰다.<br>
+                            미국 고용 지표가 예상보다 부진하게 나온 것이 되레 긴축 우려를 잠재우면서 주가 상승을 부추긴 격이 됐다. 
+                            공매도 재개를 앞두고 비틀거리던 증시는 어느새 급락에 대한 불안감을 훌훌 털어버린 듯한 모습이다.<br>
+                            10일 코스피는 전 거래일보다 1.63%(52.10포인트) 오른 3249.30에 마감하며 지난달 20일(3220.70) 
+                            이후 13거래일 만에 사상 최고 기록을 다시 세웠다.<br>
+                            장 초반 개인 매수세와 함께 상승 출발한 코스피는 외국인과 기관이 차례로 매수 규모를 늘리며 순매수로 전환하면서 
+                            한층 강한 상승세를 보였다.
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        
+        
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+
+            $(function() {
+                //
+                $('.faq-list').find('li').on('click', function() {
+                    if ( $(this).hasClass('active') ) {
+                        // 닫기
+                        $(this).removeClass('active').find('.faq-content').slideUp();
+                    } else {
+                        $('.faq-list').find('li').removeClass('active');
+                        $('.faq-list li').find('.faq-content').slideUp();
+
+                        $(this).addClass('active').find('.faq-content').slideDown();
+                    }
+                });
+
+                $('.w-hd').find('button').on('click', function() {
+                    callAlert({ 
+                        title: '1:1 상담은 고객센터<br>직접 연락을 통해 가능합니다.', 
+                        description: '고객센터 전화번호:<br><a href="tel: 010xxxxxxxx">010-XXXX-XXXX</a>'
+                    });
+                });
+
+                //
+                $('.search').find('.btn-search').on('click', function() {
+                    $(this).parents('.mid-search').addClass('mode-search');
+                    $('#searchKeyword').focus();
+                });
+
+                $('.btn-delete').on('click', function() {
+                    $('#searchKeyword').val('');
+                    $(this).parents('.mid-search').removeClass('mode-search');
+                });
+
+            });
+        </script>
+    </body>
+</html>

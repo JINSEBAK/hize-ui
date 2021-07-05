@@ -1,13 +1,13 @@
 .table-bordered {
-    border: 1px solid #b5bac8;
+    border: none;
     border-left: none;
     border-right: none;
 }
 
 .table-bordered > thead > tr > th {
     border: none;
-    border-bottom: 1px solid #b5bac8;
-    background-color: #f0f2ff;
+    background-color: #30344e;
+    color: #fff;
     padding: 12px;
     text-align: center;
 }

@@ -1,12 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
     <g fill="none" fill-rule="evenodd">
         <g>
-            <g>
-                <g>
-                    <path d="M0 0H16V16H0z" transform="translate(-1044.000000, -824.000000) translate(723.000000, 824.000000) translate(321.000000, 0.000000)"/>
-                    <path fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" d="M6 13l5-5-5-5" transform="translate(-1044.000000, -824.000000) translate(723.000000, 824.000000) translate(321.000000, 0.000000)"/>
-                </g>
-            </g>
+            <path d="M0 0H16V16H0z"/>
+            <path fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0 0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4" d="M6 13l5-5-5-5"/>
         </g>
     </g>
 </svg>
