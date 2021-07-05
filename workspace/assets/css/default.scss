@@ -615,6 +615,13 @@ a {
           }
         }
       }
+      // 앱 메인 관리 menu
+      &.fixed-bottom {
+        width: calc(100% - 48px);
+        position: absolute;
+        bottom: 20px;
+        border-top: 1px solid rgba(230, 235, 239, .1);
+      }
     }
   }
 }
