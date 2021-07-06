@@ -226,13 +226,13 @@ $signal-alarm-border: #cfd4c5;
     position: absolute;
     opacity: 0;
     & + label {
-      background: url(../images/icons/checkbox-nor.svg) center center no-repeat;
+      background: url(../images/icons/checkbox-nor.svg) left center no-repeat;
       span {
         padding-left: 8px;
       }
     }
     &:checked + label {
-      background: url(../images/icons/checkbox-checked.svg) center center no-repeat;
+      background: url(../images/icons/checkbox-checked.svg) left center no-repeat;
       background-size: 20px;
     }
   }
