@@ -774,10 +774,16 @@
             width: 40px;
             height: 40px;
             margin-top: 24px;
+            border-radius: 100%;
+            border: 1px solid rgba(0,0,0,.3);
+            color: #fff;
+            font-size: 18px;
+            line-height: 40px;
+            text-align: center;
             cursor: pointer;
             img {
               width: 100%;
-              height: auto;
+              height: 100%;
               border-radius: 100%;
             }
           }
@@ -1120,8 +1126,20 @@
           border-radius: 100%;
         }
         &.block {
-          img {
-            border: 1px solid #000;
+          position: relative;
+          &.img {
+            &:after {
+              content: '';
+              display: block;
+              border: 1px solid #fff;
+              background-color: #005dff;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              right: 1px;
+              bottom: 4px;
+              border-radius: 100%;
+            }
           }
         }
       }
@@ -1134,6 +1152,7 @@
         }
         .valid-term {
           color: $text-basic;
+          display: block;
         }
       }
       .ex-func {

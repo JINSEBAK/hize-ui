@@ -69,6 +69,11 @@
                             </div>
                             <div class="area-list-body">
                                 <table class="table table-bordered data-list product-list">
+                                    <colgroup>
+                                        <col style="width:80px;">
+                                        <col style="width:80px;">
+                                        <col style="width:auto;">
+                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th>No.</th>
@@ -96,9 +101,8 @@
                                             <td>박민</td>
                                             <td>2021-06-10 10:30</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -123,9 +127,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -138,7 +141,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="display:none;">
                                             <td>98</td>
                                             <td>구분</td>
                                             <td class="lf"><span class="ellipsis">채팅방명 채팅방명 채팅방명 채팅방명 채팅방명 채팅방명 채팅방명 채팅방명</span></td>
@@ -150,9 +153,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -177,9 +179,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -204,9 +205,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -231,9 +231,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -258,9 +257,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -285,9 +283,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -312,9 +309,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -327,7 +323,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr >
                                             <td>91</td>
                                             <td>구분</td>
                                             <td class="lf"><span class="ellipsis">채팅방명</span></td>
@@ -339,9 +335,8 @@
                                             <td>발송자명</td>
                                             <td>YYYY-MM-DD hh:mm</td>
                                         </tr>
-                                        <tr class="detail">
-                                            <td colspan="2"></td>
-                                            <td colspan="8">
+                                        <tr style="display:none;">
+                                            <td colspan="10">
                                                 <div class="signal">
                                                     [매수] 신호입니다.<br><br>
 
@@ -384,14 +379,15 @@
                 });
 
                 // 상세 내용 보기
-                $('.data-list tbody tr').not('.detail').on('click', function() {
+
+                $('.data-list tbody tr').on('click', function() {
                     if ($(this).hasClass('open')) {
                         $(this).removeClass('open');
-                        $(this).next('.detail').slideUp();
+                        $(this).next('tr').slideUp();
                     } else {
-                        $('.data-list .detail').css('display','none');
+                        //$('.data-list .detail').css('display','none');
                         $(this).addClass('open');
-                        $(this).next('.detail').slideDown();
+                        $(this).next('tr').slideDown();
                     }
                 });
             });

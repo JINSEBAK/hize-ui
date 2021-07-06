@@ -226,13 +226,13 @@ $signal-alarm-border: #cfd4c5;
     position: absolute;
     opacity: 0;
     & + label {
-      background: url(../images/icons/checkbox-nor.svg) left center no-repeat;
+      background: url(../images/icons/checkbox-nor.svg) center center no-repeat;
       span {
         padding-left: 8px;
       }
     }
     &:checked + label {
-      background: url(../images/icons/checkbox-checked.svg) left center no-repeat;
+      background: url(../images/icons/checkbox-checked.svg) center center no-repeat;
       background-size: 20px;
     }
   }
@@ -737,6 +737,17 @@ a {
       padding: 0;
     }
   }
+  // 채팅방 메시지 popover
+  .popover-chat-member {
+    border: 1px solid red;
+    strong {
+      display: block;
+    }
+    button {
+      display: block;
+      border-radius: 50px;
+    }
+  }
 }
 
 // modal
@@ -1194,18 +1205,11 @@ input[type="number"]::-webkit-inner-spin-button {
       &.notice {
         background-color: $tb-notice;
       }
-      // 클릭하여 상세 TR보는 table
-      &.detail {
-        display: none;
+      .signal {
+        margin: -12px -10px;
+        padding: 12px 10px 12px 170px;
+        text-align: left;
         background-color: #f1f2f4;
-        border-bottom: 1px solid #f1f2f4;
-        td {
-          border: none;
-          .signal {
-            padding: 12px 0;
-            text-align: left;
-          }
-        }
       }
       &:last-child {
         td {
