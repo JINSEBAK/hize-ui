@@ -4,40 +4,53 @@
         @@include('../common/resources.html', { "type" : "user" })
     </head>
     <body>
-        <div class="w-main">
+        <div class="w-main w-board-write">
             <!--header-->
             <header class="w-hd">
-                <div class="inner no-title">
+                <div class="inner">
                     <div class="">
-                        <button type="button" class="btn btn-icon">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </button>
+                        <span class="icon icon-back" id="btnGoBack"></span>
                     </div>
-                    <div class="">
-                        <label class="btn btn-default btn-sm" for="photoAttachment">
-                            사진 첨부
-                            <input type="file" accept="image/*;capture=camera" id="photoAttachment">
-                        </label>
-                        <button type="button" class="btn btn-default btn-sm" id="btnRegister">등록</button>
+                    <h4 class="name">글수정</h4>
+                    <div class="actions">
+                        <button type="button" class="btn btn-file">
+                            <label for="imgAttachment">이미지 첨부</label>
+                            <input type="file" class="form-control" id="imgAttachment">
+                        </button>
+                        <button type="button" class="btn btn-action" id="btnRegister" disabled>등록</button>
                     </div>
                 </div>
             </header>
             <article>
                 <div class="post-board post-form">
                     <form>
-                        <div class="form-group in-remove del">
+                        <div class="form-group in-remove">
                             <label for="" class="sr-only">제목</label>
-                            <input type="text" class="form-control" placeholder="" id="postTitle" value="단타와 장기 투자 결과 모두 인증합니다. 감사합니다~">
-                            <span class="glyphicon glyphicon-remove-circle icon-remove"></span>
+                            <input type="text" class="form-control" placeholder="제목을 입력해주세요. (40자 이내)" maxlength="50" id="postTitle" value="단타와 장기 투자 결과 모두 인증합니다. 감사합니다~감사합니다~감사합니다~">
+                            <span class="icon icon-img-del icon-remove"></span>
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="">OOOO 방에서 주식 지식을 많이 배운 덕분에  좋은 결과 있었습니다.
-여러분들도 성투하세요~!
+                        <div class="form-group form-group-txt">
+                            <textarea class="form-control" placeholder="내용을 입력해주세요.">삼성전자를 수익 인증입니다.
+고맙습니다!!!
                             </textarea>
                         </div>
-                        <div class="form-group">
+
+                        <!-- 첨부 완료 후 표시 -->
+                        <div class="form-group form-group-file">
+                            <label for="" class="">첨부 이미지 (최대 3개까지 가능)</label>
                             <div class="attachment">
-                                <span>첨부사진: </span><a href="#">IMG-00000.jpg</a>
+                                <div class="file">
+                                    <span class="name">File3567-1.jpg</span>
+                                    <span class="icon icon-img-del"></span>
+                                </div>
+                                <div class="file">
+                                    <span class="name">1234567890...1234567890.jpg</span>
+                                    <span class="icon icon-img-del"></span>
+                                </div>
+                                <div class="file">
+                                    <span class="name">File3567-1234567890.jpg</span>
+                                    <span class="icon icon-img-del"></span>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -48,6 +61,16 @@
         @@include('../common/scripts.html')
         <script>
             $(document).ready(function() {
+
+                $('#btnGoBack').on('click', function() {
+                    callConfirm({
+                        title: '글쓰기 화면에서 나가시겠습니까?',
+                        description: '이 페이지를 벗어나면<br>입력한 내용은 저장되지 않습니다.'
+                    }, function() {}, {
+                        cancel: '취소',
+                        confirm: '나가기'
+                    });
+                });
             
                 // 제목 작성
                 $('#postTitle').on('change keyup paste', function() {
@@ -64,13 +87,49 @@
                     $(this).parent().removeClass('del');
                 });
 
+                // 용량 체크 
+                $('#photoAttachment').on('change', function() {
+                    checkUserImgSize();
+                });
+
                 // 등록
                 $('#btnRegister').on('click', function() {
                     callAlert({
-                        title: "글 등록 요청이 완료되었습니다.<br>관리자 확인 후 게재됩니다."
+                        title: "등록한 글은<br>관리자 확인 후 게시됩니다."
                     });
                 });
+
+                $('.attachment .file').find('.glyphicon-remove-circle').on('click', function(event) {
+                    $(this).parent('.file').remove();
+                });
             });
+
+            function checkUserImgSize() {
+                const input = document.getElementById('photoAttachment');
+                if (input.files && input.files[0]) {
+                    const MAX_SIZE = 3 * 1024 * 1024;
+
+                    if (input.files[0].size > MAX_SIZE) {
+                        callAlert({
+                            title: '첨부 이미지는<br>3MB를 넘을 수 없습니다.',
+                        });
+                        return;
+                    }
+
+                    var viewHtml = '';
+                    viewHtml += '<div class="file">'
+                            +       '<span class="name">' + input.files[0].name + '</span>'
+                            +       '<span class="glyphicon glyphicon-remove-circle"></span>'
+                            +   '</div>';
+
+                    $('.attachment').append(viewHtml);
+
+                    $('.attachment .file').find('.glyphicon-remove-circle').on('click', function(event) {
+                        $(this).parent('.file').remove();
+                    });
+
+                }
+            }
         </script>
     </body>
 </html>

@@ -23,31 +23,33 @@
 
     </head>
     <body>
-        <div class="w-main">
+        <div class="w-main w-detail">
             <!--header-->
             <header class="w-hd">
                 <div class="inner">
                     <div class="">
-                        <span class="glyphicon glyphicon-menu-left"></span>
+                        <span class="icon icon-back"></span>
                     </div>
-                    <h4 class="name">매매 인증</h4>
+                    <h4 class="name">매매인증</h4>
                     <!-- 
                         글작성자에게만 노출 => 수정: 관리자에게 요청, 삭제: 즉시삭제
                     -->
-                    <div class="">
+                    <!-- <div class="">
                         <button type="button" class="btn btn-default btn-sm" id="btnModify">수정</button>
                         <button type="button" class="btn btn-default btn-sm" id="btnDelete">삭제</button>
-                    </div>
+                    </div> -->
                 </div>
             </header>
 
             <article>
+
+                <button type="button" class="btn btn-top btn-float" id="btnTop" style="display: none;"></button>
+
                 <div class="post-board post-board-detail">
                     <div class="post">
                         <div class="post-hd">
-                            <label class="label label-default">BEST</label>
+                            <label class="label label-best">Best</label>
                             <span class="title">단타와 장기 투자 결고 모두 인증합니다. 감사합니다~</span>
-                            <span class="glyphicon glyphicon-picture"></span>
                         </div>
                         <div class="post-sub-info">
                             <ul>
@@ -67,19 +69,13 @@
                         </div>
                     </div>
 
-                    <!-- <div class="post-tail">
-                        <div class="">
-                            <button type="button" class="btn btn-sm btn-icon btn-like">
-                                <span class="glyphicon glyphicon-heart-empty"></span>
-                                <span class="count">30</span>
-                            </button>
-                        </div>
-                        <div class="">
-                            <a href="./au_03_board_01_comment_register.html" type="button" class="btn btn-default btn-sm">댓글 쓰기</a>
-                        </div>
-                    </div> -->
-
                     <div class="comment-box">
+                        <div class="comment-hd">
+                            <div class="re-count">
+                                댓글 <span class="count">8</span>
+                            </div>
+                            <a href="./au_03_board_01_comment_register.html" role="button" class="btn btn-reply btn-sm">댓글등록</a>
+                        </div>
                         <ul class="comment-list summary">
                             <li>
                                 <div class="comment">
@@ -137,12 +133,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="btns btns-right">
-                            <a href="./au_03_board_01_comment_register.html" class="btn btn-primary">댓글 등록</a>
-
-                        </div>
+                        
                         <div class="pagination">
-    <button type="button" class="pg-opt pg-first" disabled>처음</button>
     <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
     <button type="button" class="active">1</button>
     <button type="button" class="">2</button>
@@ -150,7 +142,6 @@
     <button type="button" class="">4</button>
     <button type="button" class="">5</button>
     <button type="button" class="pg-opt pg-next">다음글</button>
-    <button type="button" class="pg-opt pg-last">마지막</button>
 </div>
 
                         <!-- <div class="go-on-top">
@@ -167,6 +158,25 @@
 <script src="../assets/js/common.js"></script>
         <script>
             $(document).ready(function() {
+
+                $(window).scroll(function() {
+                    var scroll = $(this).scrollTop();
+                    if ( scroll > $(this).height() ) {
+                        $('#btnTop').fadeIn();
+                    } else {
+                        $('#btnTop').css('display', 'none');
+                    }
+                });
+
+                // TOP
+                $('#btnTop').on('click', function() {
+                    $('html, body').animate({
+                        scrollTop: 0,
+                    }, 500);
+                });
+
+
+
                 $('.comment').on('click', function() {
                     // 댓글 한줄 -> full로 보기
                     $(this).find('p').toggleClass('open');

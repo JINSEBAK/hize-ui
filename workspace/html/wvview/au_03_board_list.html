@@ -4,7 +4,7 @@
         @@include('../common/resources.html', { "type" : "user" })
     </head>
     <body class="bg-ashed">
-        <div class="w-main">
+        <div class="w-main w-board">
             <!--header-->
             <!-- @@include('../wvcommon/header.html', { "title" : "게시판", "action" : "" }) -->
 
@@ -25,7 +25,11 @@
                 </div>
                 <div class="w-board-content tab-content">
 
-                    <a href="./au_03_board_01_register.html" class="btn btn-primary btn-float">글쓰기</a>
+                    <!-- <button type="button" class="btn btn-top btn-float" id="btnTop" style="display: none;"></button> -->
+
+                    <a href="./au_03_board_01_register.html" class="btn btn-float btn-write">
+                        글쓰기 
+                    </a>
 
                     <div role="tabpanel" class="tab-pane fade in active" id="tabContent1">
 
@@ -38,14 +42,16 @@
                                     <option>댓글</option>
                                 </select>
                             </div>
+                            
+                            <!-- 돋보기 클릭 시 .mode-search 추가 -->
                             <div class="search">
-                                <input type="text" class="form-control" id="searchKeyword">
-                                <button class="btn btn-search">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                                <button class="btn btn-delete">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
+                                <div class="group">
+                                    <input type="text" class="form-control" id="searchKeyword">
+                                    <button class="btn btn-icon btn-search">
+                                        <span class="icon icon-search"></span>
+                                    </button>
+                                </div>
+                                <button class="btn btn-icon btn-delete">취소</button>
                             </div>
                         </div>
 
@@ -54,8 +60,10 @@
                                 <div class="post best">
                                     <div class="post-hd">
                                         <label class="label label-notice">공지</label>
-                                        <span class="title">오늘의 투자 포인트!!</span>
-                                        <span class="glyphicon glyphicon-picture"></span>
+                                        <span class="title">
+                                            <span class="ellipsis">오늘의 투자 포인트!!</span>
+                                        </span>
+                                        <span class="icon icon-attach-img"></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -71,8 +79,10 @@
                                 <div class="post best">
                                     <div class="post-hd">
                                         <label class="label label-best">Best</label>
-                                        <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
-                                        <span class="glyphicon glyphicon-picture"></span>
+                                        <span class="title">
+                                            <span class="ellipsis">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
+                                        </span>
+                                        <span class="icon icon-attach-img"></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -88,8 +98,10 @@
                                 <div class="post best">
                                     <div class="post-hd">
                                         <label class="label label-best">Best</label>
-                                        <span class="title">구준한 주식 공부 덕에 익절합니다.</span>
-                                        <span class="glyphicon glyphicon-picture"></span>
+                                        <span class="title">
+                                            <span class="ellipsis">구준한 주식 공부 덕에 익절합니다.</span>
+                                        </span>
+                                        <span class="icon icon-attach-img"></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -104,7 +116,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -119,7 +131,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -134,7 +146,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -149,7 +161,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -164,7 +176,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -179,7 +191,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -194,7 +206,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -209,7 +221,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -224,7 +236,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -239,7 +251,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -254,7 +266,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -269,7 +281,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -297,13 +309,13 @@
                                 </select>
                             </div>
                             <div class="search">
-                                <input type="text" class="form-control" id="searchKeyword">
-                                <button class="btn btn-search">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                                <button class="btn btn-delete">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
+                                <div class="group">
+                                    <input type="text" class="form-control" id="searchKeyword2">
+                                    <button class="btn btn-icon btn-search">
+                                        <span class="icon icon-search"></span>
+                                    </button>
+                                </div>
+                                <button class="btn btn-icon btn-delete">취소</button>
                             </div>
                         </div>
 
@@ -313,7 +325,7 @@
                                     <div class="post-hd">
                                         <label class="label label-best">Best</label>
                                         <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
-                                        <span class="glyphicon glyphicon-picture"></span>
+                                        <span class="icon icon-attach-img"></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -321,9 +333,7 @@
                                             <li>2021-05-04</li>
                                             <li>조회수 <strong> 440</strong></li>
                                             <li>댓글 <strong>8</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -331,7 +341,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -339,9 +349,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -349,7 +357,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -357,9 +365,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -367,7 +373,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -375,9 +381,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -385,7 +389,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -393,9 +397,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -403,7 +405,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -411,9 +413,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -421,7 +421,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -429,9 +429,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -439,7 +437,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -447,9 +445,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -457,7 +453,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -465,9 +461,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -475,7 +469,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -483,9 +477,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -493,7 +485,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -501,9 +493,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -511,7 +501,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -519,9 +509,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -529,7 +517,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -537,9 +525,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -547,7 +533,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -555,9 +541,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -565,7 +549,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -573,9 +557,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -598,13 +580,13 @@
                                 </select>
                             </div>
                             <div class="search">
-                                <input type="text" class="form-control" id="searchKeyword">
-                                <button class="btn btn-search">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                                <button class="btn btn-delete">
-                                    <span class="glyphicon glyphicon-remove"></span>
-                                </button>
+                                <div class="group">
+                                    <input type="text" class="form-control" id="searchKeyword3">
+                                    <button class="btn btn-icon btn-search">
+                                        <span class="icon icon-search"></span>
+                                    </button>
+                                </div>
+                                <button class="btn btn-icon btn-delete">취소</button>
                             </div>
                         </div>
 
@@ -614,7 +596,7 @@
                                     <div class="post-hd">
                                         <label class="label label-best">Best</label>
                                         <span class="title">단타와 장기 투자 결고 모두 인증합니다. 인증합니다. 인증합니다. 인증합니다.</span>
-                                        <span class="glyphicon glyphicon-picture"></span>
+                                        <span class="icon icon-attach-img"></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -622,9 +604,7 @@
                                             <li>2021-05-04</li>
                                             <li>조회수 <strong> 440</strong></li>
                                             <li>댓글 <strong>8</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -632,7 +612,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -640,9 +620,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -650,7 +628,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -658,9 +636,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -668,7 +644,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -676,9 +652,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -686,7 +660,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -694,9 +668,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -704,7 +676,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -712,9 +684,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -722,7 +692,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -730,9 +700,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -740,7 +708,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -748,9 +716,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -758,7 +724,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -766,9 +732,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -776,7 +740,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -784,9 +748,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -794,7 +756,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -802,9 +764,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -812,7 +772,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -820,9 +780,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -830,7 +788,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -838,9 +796,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -848,7 +804,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -856,9 +812,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -866,7 +820,7 @@
                             <li>
                                 <div class="post">
                                     <div class="post-hd">
-                                        <span class="title">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span>
+                                        <span class="title"><span class="ellipsis">제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. 제목입니다. </span></span>
                                     </div>
                                     <div class="post-sub-info">
                                         <ul>
@@ -874,9 +828,7 @@
                                             <li>YYYY-MM-DD</li>
                                             <li>조회수 <strong>0</strong></li>
                                             <li>댓글 <strong>0</strong></li>
-                                            <li>
-                                                <span class="glyphicon glyphicon-heart"></span> 0
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -897,14 +849,21 @@
 
             $(function() {
 
-                // $(window).scroll(function() {
-                //     var scroll = $(this).scrollTop();
-                //     if ( scroll > 50 ) {
-                //         $('#webviewMainTabs').addClass('tab-sticky');
-                //     } else {
-                //         $('#webviewMainTabs').removeClass('tab-sticky');
-                //     }
-                // });
+                $(window).scroll(function() {
+                    let scroll = $(this).scrollTop();
+                    if (scroll > $(this).height()) {
+                        $('#btnTop').fadeIn();
+                    } else {
+                        $('#btnTop').css('display', 'none');
+                    }
+                });
+
+                // TOP
+                $('#btnTop').on('click', function() {
+                    $('html, body').animate({
+                        scrollTop: 0,
+                    }, 500);
+                });
 
 
                 // 매매인증 상세화면 이동
@@ -915,7 +874,7 @@
                 //
                 $('.search').find('.btn-search').on('click', function() {
                     $(this).parents('.mid-search').addClass('mode-search');
-                    $('#searchKeyword').focus();
+                    $(this).prev('input').attr('placeholder', '검색').focus();
                 });
 
                 $('.btn-delete').on('click', function() {

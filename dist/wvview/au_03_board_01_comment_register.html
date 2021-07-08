@@ -26,34 +26,32 @@
         <div class="w-main">
             <!--header-->
             <header class="w-hd">
-    <div class="inner">
-        <div class="">
-            <span class="icon icon-back"></span>
-        </div>
-        <h4 class="name">댓글 쓰기</h4>
-        <div class="">
-            
-        </div>
-    </div>
-</header>
+                <div class="inner">
+                    <div class="">
+                        <span class="icon icon-back"></span>
+                    </div>
+                    <h4 class="name">댓글 등록</h4>
+                    <div class="actions">
+                        <button type="button" class="btn btn-action" disabled>등록</button>
+                    </div>
+                </div>
+            </header>
+
             <article>
                 <div class="post-board post-board-detail">
                     <div class="post">
                         <div class="post-hd">
-                            <label class="label label-default">BEST</label>
+                            <label class="label label-best">Best</label>
                             <span class="title">단타와 장기 투자 결고 모두 인증합니다. 감사합니다~</span>
                         </div>
-                        <div class="post-body">
+                        <div class="post-body post-body-comment">
                             <form>
-                                <div class="form-group fm-comment">
-                                    <textarea class="form-control" placeholder="댓글을 남겨주세요."></textarea>
+                                <div class="form-group fm-comment fm-comment-rp">
+                                    <textarea class="form-control" placeholder="댓글을 남겨보세요."></textarea>
                                     <div class="count">
                                         <span class="txt-length">0</span>
                                         <span>500</span>
                                     </div>
-                                </div>
-                                <div class="btns">
-                                    <button type="button" class="btn btn-primary">등록</button>
                                 </div>
                             </form>
                         </div>
@@ -68,10 +66,16 @@
 <script src="../assets/js/common.js"></script>
         <script>
             $(function() {
-                $('textarea').on('change keyup paste', function() {
+                $('textarea').focus().on('change keyup paste', function() {
                     const len = $(this).val().length;
                     if ( len > 500 ) {
                     } else {
+                        if ( len !== 0 ) {
+                            $('.btn-action').removeAttr('disabled');
+                        } else {
+                            $('.btn-action').attr('disabled', true);
+                        }
+
                         $('.txt-length').text( len );
                     }
                     $(this).val( $(this).val().substring(0, 500) );
