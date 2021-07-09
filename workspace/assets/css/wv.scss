@@ -588,7 +588,7 @@ select {
         background-image: url(../images/icons/icon-addphoto.svg);
     }
     &.icon-img-del {
-        background-image: url(../images/icons/btn-del-img.svg);
+        background-image: url(../images/icons/btn_delete.svg);
     }
 
 }
@@ -1665,9 +1665,31 @@ select {
         }
         .attachment {
             border-top: 1px solid #e1e1e1;
+            background-color: #f4f4fb;
+            display: flex;
+            padding: 15px 20px;
             .file {
-                padding: 6px 20px;
-                border-bottom: 1px solid #f4f4fb;
+                width: 70px;
+                height: 70px;
+                border-radius: 2px;
+                border: 1px solid rgba(0,0,0,.3);
+                position: relative;
+                overflow: hidden;
+                margin-right: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img {
+                    height: 100%;
+                    
+                }
+                .icon-img-del {
+                    position: absolute;
+                    right: 3px;
+                    top: 3px;
+                    z-index: 2;
+                }
                 span {
                     vertical-align: middle;
                 }
