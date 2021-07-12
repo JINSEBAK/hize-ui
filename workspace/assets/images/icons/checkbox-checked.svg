@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <g fill="none" fill-rule="evenodd">
         <g>
             <g>
                 <g>
                     <g>
-                        <g transform="translate(-661.000000, -890.000000) translate(659.000000, 888.000000) translate(2.000000, 2.000000)">
+                        <g transform="translate(-879.000000, -888.000000) translate(879.000000, 888.000000) translate(2.000000, 2.000000)">
                             <rect width="20" height="20" fill="#FF7448" rx="10"/>
                             <path fill="#FFF" d="M13.362 7.634c.26-.253.682-.253.943 0 .26.252.26.662 0 .914l-5 4.93c-.26.252-.683.252-.943 0L5.695 10.89c-.26-.252-.26-.661 0-.914.26-.252.683-.252.943 0l2.195 2.129 4.529-4.472z"/>
                         </g>

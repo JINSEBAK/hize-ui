@@ -1694,12 +1694,33 @@
         font-weight: normal;
         margin-right: 12px;
       }
-      .file {
-        display: inline-block;
-        font-size: 12px;
-        background-color: $bg-white;
-        padding: 6px 12px;
-        border-radius: 24px;
+      .files {
+        display: flex;
+        align-items: center;
+        .file {
+          width: 102px;
+          height: 102px;
+          display: flex;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin-right: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 4px;
+          img {
+            height: 100%;
+            position: static;
+            z-index: 1;
+          }
+          .icon-img-del {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            z-index: 2;
+            cursor: pointer;
+          }
+        }
       }
     }
     .contents {

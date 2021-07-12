@@ -236,8 +236,7 @@ a:focus {
       }
     }
     &:checked + label {
-      background: url(../images/icons/checkbox-checked.svg) left center no-repeat;
-      background-size: 20px;
+      background: url(../images/icons/checkbox-select.svg) left center no-repeat;
     }
   }
   &.toggle {
@@ -368,6 +367,9 @@ a:focus {
     }
     &.icon-w-menu {
       background-image: url(../images/icons/chat-menu.svg);
+    }
+    &.icon-img-del {
+      background-image: url(../images/icons/btn_delete.svg);
     }
   }
 
