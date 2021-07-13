@@ -1610,7 +1610,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 352px;
   padding: 16px 0;
   right: -25px;
-  bottom: 50px;
+  bottom: 46px;
   z-index: 10;
   .arrow {
     display: block;
@@ -1732,7 +1732,8 @@ input[type="number"]::-webkit-inner-spin-button {
       text-align: left;
       .scrollbar {
         > div {
-          text-align: center;
+          text-align: left;
+          padding-left: 8px;
         }
       }
       .emt {
