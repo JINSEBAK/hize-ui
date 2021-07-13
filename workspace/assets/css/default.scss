@@ -31,6 +31,27 @@ button:focus {
   transition: none !important;
 }
 
+.scrollbar {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px !important;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #d8d8d8 !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #c5c5c5 !important;
+  }
+}
+
 /* colors */
 $border-color: #a4a4aa;
 $border-light-color: #f1f2f4;
@@ -370,6 +391,9 @@ a:focus {
     }
     &.icon-img-del {
       background-image: url(../images/icons/btn_delete.svg);
+    }
+    &.icon-close {
+      background-image: url(../images/icons/icon-close-sm.svg);
     }
   }
 
@@ -1202,18 +1226,28 @@ input[type="number"]::-webkit-inner-spin-button {
           padding: 0 10px;
           color: #4e70be;
           border-color: #a9aebc;
-          width: 70px;
+          // width: 70px;
           height: 32px;
           font-size: 14px;
           margin-top: -6px;
           margin-bottom: -6px;
-          min-width: 70px !important;
+          min-width: 70px;
+          &.btn-long {
+            min-width: 120px;
+          }
         }
         .thumb {
           width: 80px;
         }
         .img-ad {
           width: 180px;
+        }
+        select {
+          width: 100px;
+          display: block;
+          margin: 0 auto;
+          height: 30px;
+          padding: 3px 12px;
         }
       }
       // 게시판의 공지사항
@@ -1563,4 +1597,157 @@ input[type="number"]::-webkit-inner-spin-button {
 // margin, padding
 .mg24 {
   margin: 24px 0 24px;
+}
+
+
+/* emoticon */
+.emo-wrapper {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #b6bbc1;
+  border-radius: 5px;
+  box-shadow: 0 0 6px rgba(0,0,0,.3);
+  width: 352px;
+  padding: 16px 0;
+  right: -25px;
+  bottom: 50px;
+  z-index: 10;
+  .arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    bottom: -11px;
+    border-width: 11px;
+    border-color: transparent;
+    border-style: solid;
+    border-top-color: rgba(0,0,0,.25);
+    border-bottom-width: 0;
+    position: absolute;
+    right: 32px;
+    &:after {
+      content: '';
+      right: -10px;
+      bottom: 1px;
+      width: 0;
+      height: 0;
+      display: block;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent;
+      border-top-color: #fff;
+      border-bottom-width: 0;
+      position: absolute;
+    }
+  }
+  .emo-hd {
+    text-align: right;
+    padding: 0 16px 4px;
+    .icon-close {
+      cursor: pointer;
+    }
+  }
+  .emo-inner {
+    .emo-tabs {
+      margin: 0 16px;
+      padding: 0 0 0 4px;
+      li {
+        padding: 3px 0 0 0;
+        a {
+          padding: 6px;
+          border-radius: 100%;
+          margin: 0;
+          border: none;
+          background-color: transparent;
+          .icon {
+            width: 32px;
+            height: 32px;
+          }
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+        .icon-emo-jhl-2 {
+          background-image: url(../images/icons/e-02-00-default-off.svg);
+        }
+        .icon-emo-jhl-3 {
+          background-image: url(../images/icons/e-03-00-default-off.svg);
+        }
+        .icon-emo-1 {
+          background-image: url(../images/icons/icon-emoticon-01-nor.svg);
+        }
+        .icon-emo-2 {
+          background-image: url(../images/icons/icon-emoticon-02-nor.svg);
+        }
+        .icon-emo-3 {
+          background-image: url(../images/icons/icon-emoticon-03-nor.svg);
+        }
+        .icon-emo-4 {
+          background-image: url(../images/icons/icon-emoticon-04-nor.svg);
+        }
+        .icon-emo-5 {
+          background-image: url(../images/icons/icon-emoticon-05-nor.svg);
+        }
+        &.active {
+          > a {
+            border: none;
+          }
+          .icon-emo-jhl-2 {
+            background-image: url(../images/icons/e-02-00-default.svg);
+          }
+          .icon-emo-jhl-3 {
+            background-image: url(../images/icons/e-03-00-default.svg);
+          }
+          .icon-emo-1 {
+            background-image: url(../images/icons/icon-emoticon-01-select.svg);
+          }
+          .icon-emo-2 {
+            background-image: url(../images/icons/icon-emoticon-02-select.svg);
+          }
+          .icon-emo-3 {
+            background-image: url(../images/icons/icon-emoticon-03-select.svg);
+          }
+          .icon-emo-4 {
+            background-image: url(../images/icons/icon-emoticon-04-select.svg);
+          }
+          .icon-emo-5 {
+            background-image: url(../images/icons/icon-emoticon-05-select.svg);
+          }
+          &:after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 32px;
+            margin: 0 auto;
+            background-color: #fa6400;
+          }
+        }
+      }
+    }
+    .emo-content {
+      height: 138px;
+      margin-top: 16px;
+      padding: 0 5px;
+      background-color: #fff;
+      border-bottom: none;
+      text-align: left;
+      .scrollbar {
+        > div {
+          text-align: center;
+        }
+      }
+      .emt {
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        cursor: pointer;
+        span {
+          display: block;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
 }

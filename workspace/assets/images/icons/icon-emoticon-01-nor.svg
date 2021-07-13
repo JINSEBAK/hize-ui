@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <filter id="t733kflhga" width="220%" height="220%" x="-60%" y="-60%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+        </filter>
+        <filter id="j7cd396e5b" width="220%" height="220%" x="-60%" y="-60%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-98.000000, -127.000000) translate(98.000000, 127.000000)">
+                    <circle cx="16" cy="16" r="11" fill="#FFF" stroke="#9098A3" stroke-width="2"/>
+                    <circle cx="10.5" cy="17.5" r="2.5" fill="#E6DDE6" filter="url(#t733kflhga)"/>
+                    <circle cx="21.5" cy="17.5" r="2.5" fill="#E6DDE6" filter="url(#j7cd396e5b)"/>
+                    <path stroke="#9098A3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18c0 1.657 1.79 3 4 3s4-1.343 4-3"/>
+                    <circle cx="11.5" cy="13.5" r="1.5" fill="#9098A3"/>
+                    <circle cx="20.5" cy="13.5" r="1.5" fill="#9098A3"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
