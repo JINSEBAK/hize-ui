@@ -1287,6 +1287,12 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
+
+  &.signal-history {
+    .detail > * {
+      text-align: left !important;
+    }
+  }
 }
 
 // 데이터 없음
@@ -1612,6 +1618,21 @@ input[type="number"]::-webkit-inner-spin-button {
   right: -25px;
   bottom: 46px;
   z-index: 10;
+  .view-detail {
+    border: 1px solid #b6bbc1;
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0,0,0,.3);
+    position: absolute;
+    width: 168px;
+    height: 170px;
+    right: 357px;
+    bottom: 0;
+    background: #fff;
+    img {
+      width: 94px;
+      height: 94px;
+    }
+  }
   .arrow {
     display: block;
     width: 0;
@@ -1666,10 +1687,10 @@ input[type="number"]::-webkit-inner-spin-button {
             background-color: #f0f0f0;
           }
         }
-        .icon-emo-jhl-2 {
+        .emo_e02_jasine {
           background-image: url(../images/icons/e-02-00-default-off.svg);
         }
-        .icon-emo-jhl-3 {
+        .emo_166_kiki {
           background-image: url(../images/icons/e-03-00-default-off.svg);
         }
         .icon-emo-1 {
@@ -1691,10 +1712,10 @@ input[type="number"]::-webkit-inner-spin-button {
           > a {
             border: none;
           }
-          .icon-emo-jhl-2 {
+          .emo_e02_jasine {
             background-image: url(../images/icons/e-02-00-default.svg);
           }
-          .icon-emo-jhl-3 {
+          .emo_166_kiki {
             background-image: url(../images/icons/e-03-00-default.svg);
           }
           .icon-emo-1 {
@@ -1731,18 +1752,22 @@ input[type="number"]::-webkit-inner-spin-button {
       border-bottom: none;
       text-align: left;
       .scrollbar {
-        > div {
-          text-align: left;
-          padding-left: 8px;
-        }
+        text-align: left;
+        padding-left: 10px;
       }
       .emt {
         display: inline-block;
         width: 42px;
         height: 42px;
+        margin-right: 2px;
+        margin-bottom: 4px;
         cursor: pointer;
         span {
           display: block;
+          &.emo-txt {
+            font-size: 30px;
+            text-align: center;
+          }
           img {
             width: 100%;
           }
