@@ -13,6 +13,27 @@
 
         <!-- header -->
         @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+
+        <div class="modal-full" style="display: none;" id="modalChatImageView"> 
+            <div class="inner">
+                <div class="hd">
+                    <button type="button" class="btn btn-close-mf">닫기</button>
+                </div>
+                <div class="bd">
+                    <!-- 
+                        이미지 가로, 세로 비율을 판단하여 클랙스 지정
+                        가로 > 세로: img-horizontal
+                        세로 > 가로: img-vertical
+                    -->
+                    <!-- <div class="img-full-wrapper img-horizontal">
+                        <img src="../assets/images/photos/ad_default.png">
+                    </div> -->
+                    <div class="img-full-wrapper img-vertical">
+                        <img src="../assets/images/photos/190409hiteterraposter.jpeg">
+                    </div>
+                </div>
+            </div>
+        </div>
        
         <div class="container-fluid">
             <div class="row">
@@ -382,6 +403,36 @@
                                                 </div>
                                             </div>
 
+
+                                            <!-- 파일(이미지) 전송 -->
+                                            <div class="msg general">
+                                                <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
+                                                data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
+                                                    <img src="../assets/images/photos/1.png">
+                                                </a>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon-img">
+                                                        <img src="../assets/images/photos/190409hiteterraposter.jpeg">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon-img">
+                                                        <img src="../assets/images/photos/ad_default.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -520,6 +571,26 @@
                             $('textarea').focus();
                         });
                     }
+                });
+
+
+                // 말풍선 내 이미지 클릭 
+                $('.balloon-img').on('click', function() {
+
+                    const img = $(this).find('img');
+                    const imgWidth = img.width();
+                    const imgHeight = img.height();
+
+                    if (imgWidth >= imgHeight) {
+                        $('#modalChatImageView').find('.img-full-wrapper').addClass('img-horizontal');
+                    } else {
+                        $('#modalChatImageView').find('.img-full-wrapper').addClass('img-vertical');
+                    }
+                    $('#modalChatImageView').find('img').attr('src', img.attr('src'));
+                    $('#modalChatImageView').fadeIn();
+                });
+                $('#modalChatImageView').find('.btn-close-mf').on('click', function() {
+                    $('#modalChatImageView').fadeOut();
                 });
 
             });
