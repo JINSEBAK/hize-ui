@@ -29,7 +29,7 @@
                         <span class="help-block help-block-login" style="display: none;"></span>
                         
                         <div class="btns">
-                            <button type="submit" class="btn btn-primary btn-block" id="btnLogin">로그인</button>
+                            <button type="submit" class="btn btn-member btn-block" id="btnLogin">로그인</button>
                         </div>
 
                         <div class="checkbox">
@@ -67,11 +67,11 @@
                     var len = $(this).val().length;
                     if ( len > 0 && (len < 4 || len > 12) ) {
                         $('.help-block').html('아이디를 형식에 맞게 입력해주세요.<br>(영문, 숫자 4~12자리)').fadeIn();
-                        $('.form-group').removeClass('has-warning');
-                        $(this).parent('.form-group').addClass('has-warning');
+                        $('.form-group').removeClass('has-error');
+                        $(this).parent('.form-group').addClass('has-error');
                     } else {
                         $('.help-block').text('').fadeOut();
-                        $('.form-group').removeClass('has-warning');
+                        $('.form-group').removeClass('has-error');
                     }
                 })
             });

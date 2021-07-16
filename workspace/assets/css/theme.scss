@@ -21,7 +21,7 @@
       background-image: conic-gradient(from 1.12turn, #cc4035, #1d2858 0turn, #cc4035);
       img {
         display: block;
-        margin: 215px auto 16px;
+        margin: 215px auto 4px;
       }
     }
     &:last-child {
@@ -36,14 +36,14 @@
   padding: 1px;
   .user-inner { 
     background-color: #fff;
-    padding: 52px 60px;
+    padding: 53px 60px;
     border-radius: 0 4px 4px 0;
   }
   .login-heading {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    padding: 12px;
+    padding: 10px 12px 12px 12px;
     margin-bottom: 44px;
     img {
       display: block;
@@ -53,19 +53,10 @@
     }
   }
   .form-group {
-    margin-bottom: 18px;
-    input.form-control {
-      border: none;
-      border-bottom: 1px solid $border-color;
-      border-radius: 0;
-      box-shadow: none;
-      &:placeholder {
-        color: $placeholder;
-      }
-    }
+    margin-bottom: 16px;
   }
   .btns {
-    padding-top: 12px;
+    padding-top: 8px;
     #btnLogin {
       font-size: 16px;
       height: 50px;
@@ -78,15 +69,23 @@
     }
   }
   .checkbox {
-    margin-top: 24px;
+    float: left;
+    margin-top: 32px;
+    label {
+      color: #717171;
+    }
   }
   .find-info {
-    margin-top: 10px;
+    float: right;
+    margin-top: 32px;
     margin-bottom: 10px;
     .find-info-menu {
       text-align: right;
       li {
         display: inline-block;
+        a {
+          color: #717171;
+        }
         &:last-child {
           &:before {
             content: '';
@@ -104,9 +103,10 @@
   }
   .mb-join {
     clear: both;
-    padding-top: 20px;
+    padding-top: 30px;
     a {
       text-decoration: underline;
+      color: #717171;
     }
   }
   
@@ -189,7 +189,7 @@
     margin: 0;
   }
   .step {
-    margin: 32px 0 24px;
+    margin: 32px 0;
     .step-join {
       li {
         float: left;
@@ -212,10 +212,10 @@
           }
         }
         &.active {
-          color: #ff7448;
+          color: #dc643d;
           font-weight: bold;
           .circle {
-            background-color: #dc643d;
+            background-color: #ff7448;
           }
         }
         &:first-child {
@@ -273,14 +273,12 @@
         border-radius: 100%;
       }
       label {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
         padding: 0;
         position: absolute;
         right: -4px;
         bottom: -4px;
-        border: 1px solid $border-color;
-        background-color: #fff;
         text-align: center;
         line-height: 24px;
         border-radius: 100%;
@@ -288,6 +286,10 @@
         cursor: pointer;
         &:hover {
           background-color: $card-hover;
+        }
+        .icon {
+          width: 26px;
+          height: 26px;
         }
       }
       input[type="file"] {
@@ -307,9 +309,31 @@
       }
       button {
         margin-left: 6px;
+        width: 110px;
+        font-size: 14px;
       }
       .help-block {
         width: 100%;
+      }
+    }
+  }
+}
+
+// 로그인, 회원가입 버튼 컬러지정 
+.user-sign, .user-join {
+  .form-control {
+    height: 46px;
+  }
+  .btns {
+    .btn-member {
+      background-color: #1d2858;
+      color: #fff;
+      &:hover, &:active {
+        background-color: #324494;
+      }
+      &:disabled {
+        background-color: #a9aec2;
+        color: #fff;
       }
     }
   }
@@ -1971,7 +1995,7 @@
 }
 
 // 동영상 추가 팝업
-#modalAddVideo {
+#modalVideoRegister {
   .form-in-btn {
     margin-bottom: 0;
     .input-count {

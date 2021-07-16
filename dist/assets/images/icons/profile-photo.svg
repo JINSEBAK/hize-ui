@@ -1,18 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
     <g fill="none" fill-rule="evenodd">
         <g>
-            <g transform="translate(-35.000000, -389.000000) translate(35.000000, 389.000000)">
-                <circle cx="40" cy="40" r="39.5" fill="#A9A0EA" stroke="#817AB3"/>
-                <g>
+            <g>
+                <g transform="translate(-760.000000, -339.000000) translate(760.000000, 339.000000)">
+                    <circle cx="40" cy="40" r="39.5" fill="#E6E4F0" stroke="#B4B2BF"/>
                     <g>
-                        <g transform="translate(10.000000, 10.000000) translate(7.000000, 2.000000)">
-                            <rect width="46" height="50" fill="#35298A" rx="10"/>
-                            <rect width="33" height="43" x="6.5" y="11.5" fill="#FFF" stroke="#35298A" rx="15.4"/>
-                            <rect width="2" height="5" x="18" y="27" fill="#000" rx="1"/>
-                            <rect width="2" height="5" x="26" y="27" fill="#000" rx="1"/>
-                            <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M17 42c1.092 2.667 3.143 4 6.152 4 3.01 0 4.96-1.333 5.848-4"/>
-                            <rect width="18" height="18" x="6" y="5" fill="#35298A" rx="9"/>
-                            <rect width="18" height="18" x="23" y="5" fill="#35298A" rx="9"/>
+                        <g>
+                            <g transform="translate(15.000000, 15.000000) translate(5.833333, 1.666667)">
+                                <rect width="38.333" height="41.667" fill="#35298A" rx="10"/>
+                                <rect width="27.333" height="35.667" x="5.5" y="9.667" fill="#FFF" stroke="#35298A" rx="13.667"/>
+                                <rect width="1.667" height="4.167" x="15" y="22.5" fill="#000" rx=".833"/>
+                                <rect width="1.667" height="4.167" x="21.667" y="22.5" fill="#000" rx=".833"/>
+                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M14.167 35c.91 2.222 2.619 3.333 5.127 3.333 2.508 0 4.132-1.11 4.873-3.333"/>
+                                <rect width="15" height="15" x="5" y="4.167" fill="#35298A" rx="7.5"/>
+                                <rect width="15" height="15" x="19.167" y="4.167" fill="#35298A" rx="7.5"/>
+                            </g>
                         </g>
                     </g>
                 </g>

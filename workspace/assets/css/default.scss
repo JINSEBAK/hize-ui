@@ -73,7 +73,7 @@ $text-link-hover: #3045a0;
 $text-warning: #8a6d3b;
 $text-emphasize: #dc643d;
 $text-gnb: #d3daf1;
-$placeholder: #b0b7c3;
+$placeholder: #a1a6af;
 $card-hover: #f2f3f5;
 $card-active: #e6e4fc;
 $btn-primary: #293894;
@@ -394,6 +394,9 @@ a:focus {
     }
     &.icon-close {
       background-image: url(../images/icons/icon-close-sm.svg);
+    }
+    &.icon-camera {
+      background-image: url(../images/icons/camera.svg);
     }
   }
 
@@ -937,17 +940,38 @@ select {
 .form-group {
   text-align: left;
   .control-label {
-    color: #4f5663;
+    color: #404449;
     font-weight: normal;
-    padding-left: 10px;
+    padding-left: 4px;
   }
 }
 .form-control {
-  border: 1px solid #dbdee6;
+  border: 1px solid #c3c7cd;
   box-shadow: none;
   height: 36px;
+  color: #000;
   &::placeholder {
     color: $placeholder;
+  }
+  &:focus {
+    border-color: #293894;
+    font-weight: bold;
+    box-shadow: none;
+    &::placeholder {
+      font-weight: normal;
+    }
+  }
+  &[disabled], &[readonly] {
+    background-color: #f0f1f6;
+    color: #6b6f76;
+  }
+}
+.has-error {
+  .form-control {
+    &:focus {
+      border-color: #a94442 !important;
+      box-shadow: none;
+    }
   }
 }
 
@@ -1476,7 +1500,7 @@ input[type="number"]::-webkit-inner-spin-button {
       .data {
         display: block;
         padding: 6px 0;
-        min-height: 36px;
+        // min-height: 36px;
       }
       .info {
         color: $text-basic;
