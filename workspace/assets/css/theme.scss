@@ -122,11 +122,35 @@
       }
     }
   }
-  .user-info-board {
+}
+
+// 아이디 찾기 결과
+.user-info-board {
+  > p {
+    margin: 34px 0 16px;
+    font-size: 16px;
+  }
+  .well {
+    background-color: #f6f8fb;
+    box-shadow: none;
+    border-radius: 10px;
+    border: none;
+    max-width: 306px;
+    margin: 0 auto;
+    label {
+      font-size: 14px;
+      font-weight: normal;
+    }
     .id-finded {
       font-weight: bold;
       font-size: 24px;
-      margin: 24px auto;
+      color: #4761d3;
+      margin: 14px auto 24px;
+    }
+    .btn-default {
+      border-radius: 100px;
+      border-color: #979797;
+      padding: 6px 36px;
     }
     .copy-clipboard {
       position: absolute;
@@ -134,21 +158,29 @@
       height: 1px;
       opacity: 0;
     }
-    .btns {
-      .btn {
-        width: calc(50% - 2px);
-        overflow: hidden;
-        &:first-child {
-          float: let;
-        }
-        &:last-child {
-          float: right;
-        }
+  }
+  .btns {
+    padding-top: 32px !important;
+    .btn {
+      width: calc(50% - 5px);
+      overflow: hidden;
+      &:first-child {
+        float: left;
+        border-color: #aaafc6;
+      }
+      &:last-child {
+        float: right;
+        background-color: #1d2858;
       }
     }
-    &.active {
+    &:after {
+      content: '';
       display: block;
+      clear:  both;
     }
+  }
+  &.active {
+    display: block;
   }
 }
 
@@ -180,6 +212,7 @@
       padding-top: 17px;
       .btn-lg {
         height: 50px;
+        line-height: 1.8;
         font-size: 16px;
       }
     }
@@ -316,6 +349,42 @@
         width: 100%;
       }
     }
+  }
+  .nav-tabs {
+    margin: 32px auto;
+    li {
+      a {
+        background-color: #f7f7f7;
+        border: 1px solid #bcbcbc;
+        border-bottom-color: #000;
+        color: #8e8e8e;
+      }
+      &.active {
+        a, a:hover, a:focus {
+          background-color: #fff;
+          color: #303235;
+          font-weight: bold;
+          border: 1px solid #000;
+          border-bottom-color: #fff;
+        }
+      }
+    }
+  }
+  .tab-content {
+    h5 {
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 16px;
+      small {
+        display: block;
+        font-size: 14px;
+        color: #717171;
+        margin-top: 4px;
+      }
+    }
+  }
+  .info-form {
+    background-image: none;
   }
 }
 
@@ -1124,6 +1193,7 @@
           }
         }
         .btn-file {
+          padding: 3px !important;
           label {
             margin: 0;
           }
