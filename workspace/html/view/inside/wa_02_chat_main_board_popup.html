@@ -14,10 +14,10 @@
                     <!-- tabs -->
                     <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
                         <li role="presentation" class="active">
-                            <a href="#tabOwner" aria-controls="tab1" role="tab" data-toggle="tab">현재 보유 <span class="badge">3</span></a>
+                            <a href="#tabOwner" aria-controls="tab1" role="tab" data-toggle="tab">현재 보유 (3)</a>
                         </li>
                         <li role="presentation">
-                            <a href="#tabTrade" aria-controls="tab2" role="tab" data-toggle="tab">매매 완료 <span class="badge">12</span></a>
+                            <a href="#tabTrade" aria-controls="tab2" role="tab" data-toggle="tab">매매 완료 (20)</a>
                         </li>
                     </ul>
 
@@ -31,39 +31,47 @@
                                     <input type="text" class="form-control" placeholder="종목명 입력">
                                 </div>
                             </form>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>종목명</th>
-                                        <th>종목번호</th>
-                                        <th>비중</th>
-                                        <th>수익률</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>삼성전자</td>
-                                        <td>005930</td>
-                                        <td>39.5%</td>
-                                        <td><span class="rate-up">10%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>블루메드</td>
-                                        <td>049180</td>
-                                        <td>3%</td>
-                                        <td><span class="rate-up">10%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>한화에어로스페이스</td>
-                                        <td>012450</td>
-                                        <td>2%</td>
-                                        <td><span class="rate-down">5%</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="scrolling">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>종목명</th>
+                                            <th>종목번호</th>
+                                            <th>비중</th>
+                                            <th>수익률</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="ellipsis">삼성전자</span></td>
+                                            <td>005930</td>
+                                            <td class="al-rt">39.5%</td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td class="al-rt">
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ellipsis">블루메드</span></td>
+                                            <td>049180</td>
+                                            <td class="al-rt">3%</td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td class="al-rt">
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ellipsis">한화에어로스페이스 한화에어로스페이스 한화에어로스페이스</span></td>
+                                            <td>012450</td>
+                                            <td class="al-rt">2%</td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td class="al-rt">
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div role="tabpane" class="tab-pane fade" id="tabTrade">
-                            <div class="mg24">
+                            <form>
+                                <div class="form-group form-search">
+                                    <span class="icon icon-search"></span>
+                                    <input type="text" class="form-control" placeholder="종목명 입력">
+                                </div>
+                            </form>
+                            <div class="scrolling">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -75,70 +83,70 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>카카오</td>
+                                            <td><span class="ellipsis">삼성전자</span></td>
                                             <td>035720</td>
                                             <td>2021-05-13 10:30</td>
-                                            <td><span class="rate-up">20%</span></td>
+                                            <td class="al-rt"><span class="rate-up">20.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>대한전선</td>
+                                            <td><span class="ellipsis">블루메드</span></td>
                                             <td>001440</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>이트론</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>096040</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>제주맥주</td>
+                                            <td><span class="ellipsis">삼성전자</span></td>
                                             <td>276730</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>케이사인</td>
+                                            <td><span class="ellipsis">블루메드</span></td>
                                             <td>192250</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>한진중공업홀딩스</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>003480</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>삼성전자</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>005930</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>삼성전자</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>005930</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>블루메드</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>049180</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>한화에어로스페이스</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>012450</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5%</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
-
                                 @@include('../../common/pagination_popup.html')
                             </div>
+                     
                         </div>
                     </div>
                 </div>
@@ -146,12 +154,15 @@
                 <!-- 상세 -->
                 <div class="contents" id="boardDetail" style="display: none">
                     <div class="detail-content">
-                        <div class="pull-left">
-                            <h4 class="stock-title">삼성전자 <small class="stock-code">005930</small></h4>
-                        </div>
-                        <div class="pull-right">
-                            <div class="semi-info">
-                                현재가 <strong>88,200</strong>원 (업데이트 오후 2:20)
+                        <h4 class="stock-title">삼성KODEX China H 레버리지증권상장지수투자신탁[주식-파생형](H)</h4>
+                        <div class="detail-content-tail">
+                            <div class="pull-left">
+                                <div class="stock-code">005930</div>
+                            </div>
+                            <div class="pull-right">
+                                <div class="semi-info">
+                                    현재가 <em>88,200</em>원 <span>(오후 2:20 기준)</span>
+                                </div>
                             </div>
                         </div>
                         <table class="table table-form">
@@ -184,17 +195,24 @@
                         </table>
 
                         <h4 class="detail-content-hd">전문가 의견</h4>
-                        <p class="op">
-                            삼성전자 매수 기회입니다.<br>
-                            ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.<br><br>
-                            현구간 3차 매수 진행합니다.<br>
-                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
-                        </p>
+                        <div class="op">
+                            <div class="op-inner scrollbar">
+                                삼성전자 매수 기회입니다.<br>
+                                ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.<br><br>
+                                현구간 3차 매수 진행합니다.<br>
+                                의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                <br><br>
+                                삼성전자 매수 기회입니다.<br>
+                                ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.<br><br>
+                                현구간 3차 매수 진행합니다.<br>
+                                의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                            </div>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-default" id="btnList">목록</button>
                 </div>
-
-
+            </div>
+            <div class="modal-footer hidden">
+                <button type="button" class="btn btn-default" id="btnList">목록</button>
             </div>
         </div>
     </div>

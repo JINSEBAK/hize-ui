@@ -364,7 +364,6 @@
                                                 </div>
                                             </div>
 
-
                                             <div class="msg general blocked">
                                                 <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
                                                 data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
@@ -378,6 +377,17 @@
                                                     </div>
                                                     <div class="balloon">
                                                         <div class="inner" id="delExample">야!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">꺼져!</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -860,11 +870,8 @@
         <script>
             $(function() {
 
+                $('#modalCertification').modal('show');
 
-                $('#modalNotice').modal('show');
-
-
-                
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
@@ -923,6 +930,25 @@
                         });
                     }
                 });
+
+                // 관리자가 본인 메세지 삭제 
+                $('.msg.my').find('.balloon').on('click', function() {
+                    if ($(this).hasClass('selected')) {
+
+                    } else {
+                        const _html = '<div class="btn-capsule">'
+                                    +      '<button type="button" class="btn-del-chat">삭제</button>'
+                                    +'</div>';
+                        $(this).addClass('selected').prepend(_html);
+                    }
+
+                    $('.msg.my').find('.btn-del-chat').on('click', function() {
+                        $(this).parents('.balloon').addClass('del').find('.inner').text('삭제된 메세지입니다.');
+                        $(this).parents('.balloon').find('.btn-capsule').remove();
+                    });
+                });
+                
+
 
                 // 말풍선 내 이미지 클릭 
                 $('.balloon-img').on('click', function() {
@@ -1162,10 +1188,12 @@
                 $('#boardList tbody tr').on('click', function() {
                     $('#boardList').css('display', 'none');
                     $('#boardDetail').fadeIn();
+                    $('#modalChatStockBoard').find('.modal-footer').removeClass('hidden');
                 });
                 $('#btnList').on('click', function() {
                     $('#boardDetail').css('display', 'none');
                     $('#boardList').fadeIn();
+                    $('#modalChatStockBoard').find('.modal-footer').addClass('hidden');
                 });
 
                 $('input[name=chat-freeze]').on('click', function(){

@@ -250,6 +250,18 @@ a:focus {
   color: $text-primary;
 }
 
+
+// align
+.al-lt {
+  text-align: left !important;
+}
+.al-ct {
+  text-align: center !important;
+}
+.al-rt {
+  text-align: right !important;
+}
+
 /* radio, checkbox */
 .checkbox {
   input[type=checkbox] {
@@ -849,6 +861,17 @@ a {
         background-color: #c5c5c5 !important;
       }
     }
+    .form-search {
+      padding: 0;
+      margin: 10px 0;
+      .icon-search {
+        right: 12px;
+      }
+    }
+    input {
+      height: 46px;
+      padding: 6px 42px 6px 12px;
+    }
   }
   .modal-footer {
     border-top: 1px solid #e6eaef;
@@ -1440,8 +1463,8 @@ input[type="number"]::-webkit-inner-spin-button {
 .nav-tabs.detail-tabs {
   margin: 24px 0 0;
   position: relative;
-  padding-left: 4px;
-  border-bottom: 1px solid #000;
+  //padding-left: 4px;
+  //border-bottom: 1px solid #000;
   > li {
     > a {
       color: #8e8e8e;
@@ -1454,7 +1477,7 @@ input[type="number"]::-webkit-inner-spin-button {
       background-color: #f7f7f7;
     }
     &.active {
-      > a {
+      > a, > a:focus {
         color: $text-default;
         font-weight: bold;
         border: 1px solid #000;
@@ -1476,9 +1499,29 @@ input[type="number"]::-webkit-inner-spin-button {
 .detail-content {
   margin-top: 24px;
   .detail-content-hd {
-    font-size: 14px;
-    padding: 0 8px;
-    color: #414e87;
+    padding-top: 8px;
+    font-size: 16px;
+    padding: 0;
+    color: #000;
+  }
+  .detail-content-tail {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    em {
+      font-size: 16px;
+      font-weight: bold;
+      font-style: normal;
+      color: #e95757;
+    }
+    span {
+      font-size: 13px;
+      color: #61666d;
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
   }
   .form-inline-set {
     display: flex;
@@ -1489,6 +1532,7 @@ input[type="number"]::-webkit-inner-spin-button {
     }
   }
   .stock-title {
+    line-height: 1.5;
     .stock-code {
       &:before {
         content: '';
@@ -1500,25 +1544,34 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
-  .semi-info {
-    margin-top: 10px;
-  }
   .op {
-    background-color: $bg-color;
+    background-color: #f6f7f8;
     border-radius: 8px;
-    padding: 12px;
-    min-height: 180px;
+    padding: 16px 5px 16px 16px;
+    height: 186px;
+    .op-inner {
+      height: 100%;
+      overflow-y: auto;
+      padding-right: 11px;
+    }
   }
 }
 
+.txt-guide {
+  font-size: 13px;
+  color: #404449;
+  margin-bottom: 0;
+}
+
+
 .rate-up {
-  color: $text-emphasize;
+  color: #e95757;
   &:before {
     content: '▲';
   }
 }
 .rate-down {
-  color: $btn-primary;
+  color: #4b8df3;
   &:before {
     content: '▼';
   }
@@ -1538,8 +1591,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 // table forms
 .table.table-form {
-  border-top: 1px solid #b5bac8 !important;
-  border-bottom: 1px solid #b5bac8;
+  border-top: 1px solid #494e6e !important;
+  border-bottom: 1px solid #494e6e;
   tbody {
     th, td {
       vertical-align: middle;

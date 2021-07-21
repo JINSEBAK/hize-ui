@@ -193,7 +193,7 @@
                 </li>
             </ul>
         </li>
-        <li class="fixed-bottom" data-code="wa_12">
+        <li data-code="wa_12">
             <a href="#" class="single">
                 <span class="icon icon-config"></span>
                 <span>앱메인 관리</span>
@@ -542,7 +542,6 @@
                                                 </div>
                                             </div>
 
-
                                             <div class="msg general blocked">
                                                 <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
                                                 data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
@@ -556,6 +555,17 @@
                                                     </div>
                                                     <div class="balloon">
                                                         <div class="inner" id="delExample">야!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="msg my">
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">꺼져!</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1286,14 +1296,14 @@
                     <dt class="title">인증번호 설정</dt>
                     <dd class="form-group">
                         <div class="radio">
-                            <label>
-                                <input type="radio" name="certify-num" value="1" >
-                                ON
-                            </label>
-                            <label>
-                                <input type="radio" name="certify-num" value="0" checked>
-                                OFF
-                            </label>
+                            <span>
+                                <input type="radio" name="certify-num" value="0" id="certifyNumOFF">
+                                <label for="certifyNumOFF"><span>OFF</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="certify-num" value="1" checked id="certifyNumON">
+                                <label for="certifyNumON"><span>ON</span></label>
+                            </span>
                         </div>
 
                         <!-- Firefox, safari, IE 동작 안함
@@ -1304,11 +1314,11 @@
                 </dl>
                 
                 <p class="txt-guide">
-                    채팅방 인증번호 분실 시 인증번호를 재설정해야 합니다.<br>중요한 인증번호는 보관해주세요.
+                    채팅방 인증번호 분실시 인증번호를 재설정해야 합니다.<br>중요한 인증번호는 보관해주세요.
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-toggle">취소</button>
+                <button type="button" class="btn btn-default">취소</button>
                 <button type="button" class="btn btn-primary" disabled id="btnSetCertifyNumber">인증번호 설정</button>
             </div>
         </div>
@@ -1494,14 +1504,16 @@
                     <form>
                         <div class="notice-title">
                             <div class="hd">
-                                <strong class="title">정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식!</strong>
+                                정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식!
+                            </div>
+                            <div class="hd-tail">
+                                <span class="date">2021-03-30</span>
                                 <label class="label label-default">나주식</label>
                             </div>
-                            <span class="date">YYYY-MM-DD</span>
                         </div>
                         <div class="form-group form-content">
                             <label for="noticeContent1" class="sr-only">내용</label>
-                            <textarea class="form-control" name="" id="noticeContent1" placeholder="내용을 입력해주세요." >
+                            <textarea class="form-control scrollbar" name="" id="noticeContent1" placeholder="내용을 입력해주세요." >
 안녕하세요~ 성공투자주식방의 나주식입니다.
 
 코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다. 
@@ -1524,7 +1536,7 @@
                     <form>
                         <div class="form-group">
                             <label for="noticeTitle" class="sr-only">제목</label>
-                            <input type="text" class="form-control" name="" id="noticeTitle" placeholder="제목을 입력해주세요.">
+                            <input type="text" class="form-control" name="" id="noticeTitle" placeholder="제목을 입력해주세요. (40자 이내)" maxlength="40">
                         </div>
                         <!-- textarea length 사용 시 form-content 필수 -->
                         <div class="form-group form-content">
@@ -2267,7 +2279,24 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td><label class="label label-alarm">알림</label></td>
+                                        <td><label class="label label-sell">매도</label></td>
+                                        <td>종목명</td>
+                                        <td>종목코드</td>
+                                    </tr>
+                                    <tr class="detail" style="display: none;">
+                                        <td colspan="4">
+                                            [매수] 신호입니다.<br><br>
+                                            ▸삼성전자 (005930)<br>
+                                            ▸매수가: 80,000원 이하<br>
+                                            ▸비중: 10%<br><br>
+
+                                            삼성전자 현구간 3차 매수 진행합니다.<br>
+                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>YYYY-MM-DD hh:mm</td>
+                                        <td><label class="label label-buy">매수</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
@@ -2285,120 +2314,73 @@
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
                                         <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr class="detail" style="display: none;">
                                         <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                            [알림] 신호입니다.<br><br>
+                                            삼계탕 중복
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
                                         <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr class="detail" style="display: none;">
                                         <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                            [알림] 신호입니다.<br><br>
+                                            삼계탕 중복
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
                                         <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr class="detail" style="display: none;">
                                         <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                            [알림] 신호입니다.<br><br>
+                                            삼계탕 중복
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
                                         <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr class="detail" style="display: none;">
                                         <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                            [알림] 신호입니다.<br><br>
+                                            삼계탕 중복
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
                                         <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr class="detail" style="display: none;">
                                         <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                            [알림] 신호입니다.<br><br>
+                                            삼계탕 중복
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
                                         <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr class="detail" style="display: none;">
                                         <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>YYYY-MM-DD hh:mm</td>
-                                        <td><label class="label label-alarm">알림</label></td>
-                                        <td>종목명</td>
-                                        <td>종목코드</td>
-                                    </tr>
-                                    <tr class="detail" style="display: none;">
-                                        <td colspan="4">
-                                            [매수] 신호입니다.<br><br>
-                                            ▸삼성전자 (005930)<br>
-                                            ▸매수가: 80,000원 이하<br>
-                                            ▸비중: 10%<br><br>
-
-                                            삼성전자 현구간 3차 매수 진행합니다.<br>
-                                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                            [알림] 신호입니다.<br><br>
+                                            삼계탕 중복
                                         </td>
                                     </tr>
                                 </tbody>
@@ -2442,10 +2424,10 @@
                     <!-- tabs -->
                     <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
                         <li role="presentation" class="active">
-                            <a href="#tabOwner" aria-controls="tab1" role="tab" data-toggle="tab">현재 보유 <span class="badge">3</span></a>
+                            <a href="#tabOwner" aria-controls="tab1" role="tab" data-toggle="tab">현재 보유 (3)</a>
                         </li>
                         <li role="presentation">
-                            <a href="#tabTrade" aria-controls="tab2" role="tab" data-toggle="tab">매매 완료 <span class="badge">12</span></a>
+                            <a href="#tabTrade" aria-controls="tab2" role="tab" data-toggle="tab">매매 완료 (20)</a>
                         </li>
                     </ul>
 
@@ -2459,39 +2441,47 @@
                                     <input type="text" class="form-control" placeholder="종목명 입력">
                                 </div>
                             </form>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>종목명</th>
-                                        <th>종목번호</th>
-                                        <th>비중</th>
-                                        <th>수익률</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>삼성전자</td>
-                                        <td>005930</td>
-                                        <td>39.5%</td>
-                                        <td><span class="rate-up">10%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>블루메드</td>
-                                        <td>049180</td>
-                                        <td>3%</td>
-                                        <td><span class="rate-up">10%</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>한화에어로스페이스</td>
-                                        <td>012450</td>
-                                        <td>2%</td>
-                                        <td><span class="rate-down">5%</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="scrolling">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>종목명</th>
+                                            <th>종목번호</th>
+                                            <th>비중</th>
+                                            <th>수익률</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="ellipsis">삼성전자</span></td>
+                                            <td>005930</td>
+                                            <td class="al-rt">39.5%</td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td class="al-rt">
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ellipsis">블루메드</span></td>
+                                            <td>049180</td>
+                                            <td class="al-rt">3%</td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td class="al-rt">
+                                        </tr>
+                                        <tr>
+                                            <td><span class="ellipsis">한화에어로스페이스 한화에어로스페이스 한화에어로스페이스</span></td>
+                                            <td>012450</td>
+                                            <td class="al-rt">2%</td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td class="al-rt">
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div role="tabpane" class="tab-pane fade" id="tabTrade">
-                            <div class="mg24">
+                            <form>
+                                <div class="form-group form-search">
+                                    <span class="icon icon-search"></span>
+                                    <input type="text" class="form-control" placeholder="종목명 입력">
+                                </div>
+                            </form>
+                            <div class="scrolling">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -2503,68 +2493,67 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>카카오</td>
+                                            <td><span class="ellipsis">삼성전자</span></td>
                                             <td>035720</td>
                                             <td>2021-05-13 10:30</td>
-                                            <td><span class="rate-up">20%</span></td>
+                                            <td class="al-rt"><span class="rate-up">20.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>대한전선</td>
+                                            <td><span class="ellipsis">블루메드</span></td>
                                             <td>001440</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>이트론</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>096040</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>제주맥주</td>
+                                            <td><span class="ellipsis">삼성전자</span></td>
                                             <td>276730</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>케이사인</td>
+                                            <td><span class="ellipsis">블루메드</span></td>
                                             <td>192250</td>
                                             <td>YYYY-MM-DD 10:30</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>한진중공업홀딩스</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>003480</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>삼성전자</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>005930</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10.0%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>삼성전자</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>005930</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>블루메드</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>049180</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-up">10%</span></td>
+                                            <td class="al-rt"><span class="rate-up">10%</span></td>
                                         </tr>
                                         <tr>
-                                            <td>한화에어로스페이스</td>
+                                            <td><span class="ellipsis">한화에어로스페이스</span></td>
                                             <td>012450</td>
                                             <td>YYYY-MM-DD hh:mm</td>
-                                            <td><span class="rate-down">5%</span></td>
+                                            <td class="al-rt"><span class="rate-down">5%</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
-
                                 <div class="pagination">
     <button type="button" class="pg-opt pg-first" disabled>처음</button>
     <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
@@ -2577,6 +2566,7 @@
     <button type="button" class="pg-opt pg-last">마지막</button>
 </div>
                             </div>
+                     
                         </div>
                     </div>
                 </div>
@@ -2584,12 +2574,15 @@
                 <!-- 상세 -->
                 <div class="contents" id="boardDetail" style="display: none">
                     <div class="detail-content">
-                        <div class="pull-left">
-                            <h4 class="stock-title">삼성전자 <small class="stock-code">005930</small></h4>
-                        </div>
-                        <div class="pull-right">
-                            <div class="semi-info">
-                                현재가 <strong>88,200</strong>원 (업데이트 오후 2:20)
+                        <h4 class="stock-title">삼성KODEX China H 레버리지증권상장지수투자신탁[주식-파생형](H)</h4>
+                        <div class="detail-content-tail">
+                            <div class="pull-left">
+                                <div class="stock-code">005930</div>
+                            </div>
+                            <div class="pull-right">
+                                <div class="semi-info">
+                                    현재가 <em>88,200</em>원 <span>(오후 2:20 기준)</span>
+                                </div>
                             </div>
                         </div>
                         <table class="table table-form">
@@ -2622,17 +2615,24 @@
                         </table>
 
                         <h4 class="detail-content-hd">전문가 의견</h4>
-                        <p class="op">
-                            삼성전자 매수 기회입니다.<br>
-                            ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.<br><br>
-                            현구간 3차 매수 진행합니다.<br>
-                            의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
-                        </p>
+                        <div class="op">
+                            <div class="op-inner scrollbar">
+                                삼성전자 매수 기회입니다.<br>
+                                ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.<br><br>
+                                현구간 3차 매수 진행합니다.<br>
+                                의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                                <br><br>
+                                삼성전자 매수 기회입니다.<br>
+                                ㅇㅇㅇ 계약건으로 곧 오를 전망입니다.<br><br>
+                                현구간 3차 매수 진행합니다.<br>
+                                의도적인 흔들기!! 비중확보 후 추가 대응을 통해 빠른 익절 진행하도록 하겠습니다.
+                            </div>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-default" id="btnList">목록</button>
                 </div>
-
-
+            </div>
+            <div class="modal-footer hidden">
+                <button type="button" class="btn btn-default" id="btnList">목록</button>
             </div>
         </div>
     </div>
@@ -2648,11 +2648,8 @@
         <script>
             $(function() {
 
+                $('#modalCertification').modal('show');
 
-                $('#modalNotice').modal('show');
-
-
-                
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
@@ -2711,6 +2708,25 @@
                         });
                     }
                 });
+
+                // 관리자가 본인 메세지 삭제 
+                $('.msg.my').find('.balloon').on('click', function() {
+                    if ($(this).hasClass('selected')) {
+
+                    } else {
+                        const _html = '<div class="btn-capsule">'
+                                    +      '<button type="button" class="btn-del-chat">삭제</button>'
+                                    +'</div>';
+                        $(this).addClass('selected').prepend(_html);
+                    }
+
+                    $('.msg.my').find('.btn-del-chat').on('click', function() {
+                        $(this).parents('.balloon').addClass('del').find('.inner').text('삭제된 메세지입니다.');
+                        $(this).parents('.balloon').find('.btn-capsule').remove();
+                    });
+                });
+                
+
 
                 // 말풍선 내 이미지 클릭 
                 $('.balloon-img').on('click', function() {
@@ -2950,10 +2966,12 @@
                 $('#boardList tbody tr').on('click', function() {
                     $('#boardList').css('display', 'none');
                     $('#boardDetail').fadeIn();
+                    $('#modalChatStockBoard').find('.modal-footer').removeClass('hidden');
                 });
                 $('#btnList').on('click', function() {
                     $('#boardDetail').css('display', 'none');
                     $('#boardList').fadeIn();
+                    $('#modalChatStockBoard').find('.modal-footer').addClass('hidden');
                 });
 
                 $('input[name=chat-freeze]').on('click', function(){

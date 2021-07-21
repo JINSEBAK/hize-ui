@@ -1055,7 +1055,6 @@
         &.my {
           flex-direction: row-reverse;
           .info {
-            padding-right: 20px;
             .time {
               text-align: right;
               padding-right: 6px;
@@ -1063,18 +1062,26 @@
             }
             .balloon {
               clear: both;
+              cursor: pointer;
+              position: relative;
+              padding-right: 20px;
               .inner {
                 background-color: $balloon-admin;
                 border-radius: 9px 0 9px 9px;
               }
               &:before {
                 border-top: 10px solid $balloon-admin;
-                right: -10px;
+                right: 10px;
                 top: 0;
               }
               &:after {
-                right: -12px;
+                right: 7px;
                 top: 0;
+              }
+              &.del {
+                .inner {
+                  color: rgba(0, 0, 0, 0.4) !important
+                }
               }
             }
             .balloon-img {
@@ -1086,6 +1093,9 @@
               }
             }
           }
+          .btn-capsule {
+            margin-right: 10px;
+          }
         }
         &.signal {
           .balloon {
@@ -1095,6 +1105,7 @@
               padding: 0;
               border-radius: 9px !important;
               overflow: hidden;
+              width: 100%;
               .signal-type {
                 color: #fff;
                 font-size: 16px;
@@ -1351,9 +1362,13 @@
         .btn {
           border-radius: 50px;
           height: 32px !important;
+          line-height: 1;
           &.btn-toggle {
             background-color: #fff;
             border-color: #aaafc6;
+            &:hover {
+              font-weight: bold;
+            }
             &.blocked {
               background-color: #155edd;
               border-color: #155edd;
@@ -1440,7 +1455,38 @@
   }
 }
 
-.modal-notice {
+.modal.modal-notice {
+  .modal-dialog {
+    .contents-notice-list, .contents-notice-detail {
+      .scrolling {
+        padding: 0 19px 0 0;
+      }
+    }
+    .contents-notice-modify, .contents-notice-register {
+      padding-right: 19px;
+      .form-content {
+        padding-top: 16px;
+        textarea {
+          padding: 10px 10px 45px 10px;
+          min-height: 355px;
+        }
+      }
+    }
+    .contents-notice-register {
+      .form-group {
+        margin-bottom: 8px;
+      }
+      input.form-control {
+        height: 46px;
+      }
+      .form-content {
+        padding-top: 0;
+        textarea {
+          min-height: 386px;
+        }
+      }
+    }
+  }
   .notice-title {
     border-bottom: 1px solid #e6eaef;
     .hd {
@@ -1508,7 +1554,7 @@
     right: 12px;
     bottom: 6px;
     span {
-      color: $text-basic;
+      color: #61666d;
       &:last-child {
         &:before {
           content: " / ";
@@ -1711,7 +1757,14 @@
   }
   .title {
     font-weight: normal;
-    color: $text-basic;
+    font-size: 13px;
+    color: #404449;
+  }
+  .radio {
+    > span {
+      min-width: 122px;
+      display: inline-block;
+    }
   }
   .cont {
     padding: 6px 0 24px;
@@ -2506,9 +2559,33 @@
           tr {
             cursor: pointer;
             &:hover {
-              background-color: $card-hover;
+              background-color: #edf0ff;
             }
           }
+          td {
+            .ellipsis {
+              display: block;
+              text-align: left;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 214px;
+            }
+          }
+          &.table-form {
+            tbody {
+              td {
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+      .tab-pane {
+        .scrolling {
+          margin-right: -19px;
+          padding-right: 14px;
+          max-height: 398px;
         }
       }
     }
@@ -2520,14 +2597,9 @@
 
 .modal-dialog {
   .contents {
-    min-height: 480px;
+    //min-height: 480px;
     &:not(.contents-notice-list) {
       // padding: 12px;
-    }
-    &.contents-notice-list, &.contents-notice-detail {
-      .scrolling {
-        padding: 0 19px 0 0;
-      }
     }
   }
   .modal-footer {
@@ -2618,5 +2690,13 @@
         }
       }
     }
+  }
+}
+
+
+// modal width
+#modalCertification {
+  .modal-dialog {
+    width: 348px;
   }
 }

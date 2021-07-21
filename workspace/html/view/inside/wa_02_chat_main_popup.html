@@ -263,14 +263,14 @@
                     <dt class="title">인증번호 설정</dt>
                     <dd class="form-group">
                         <div class="radio">
-                            <label>
-                                <input type="radio" name="certify-num" value="1" >
-                                ON
-                            </label>
-                            <label>
-                                <input type="radio" name="certify-num" value="0" checked>
-                                OFF
-                            </label>
+                            <span>
+                                <input type="radio" name="certify-num" value="0" id="certifyNumOFF">
+                                <label for="certifyNumOFF"><span>OFF</span></label>
+                            </span>
+                            <span>
+                                <input type="radio" name="certify-num" value="1" checked id="certifyNumON">
+                                <label for="certifyNumON"><span>ON</span></label>
+                            </span>
                         </div>
 
                         <!-- Firefox, safari, IE 동작 안함
@@ -281,11 +281,11 @@
                 </dl>
                 
                 <p class="txt-guide">
-                    채팅방 인증번호 분실 시 인증번호를 재설정해야 합니다.<br>중요한 인증번호는 보관해주세요.
+                    채팅방 인증번호 분실시 인증번호를 재설정해야 합니다.<br>중요한 인증번호는 보관해주세요.
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-toggle">취소</button>
+                <button type="button" class="btn btn-default">취소</button>
                 <button type="button" class="btn btn-primary" disabled id="btnSetCertifyNumber">인증번호 설정</button>
             </div>
         </div>
