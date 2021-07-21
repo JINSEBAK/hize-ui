@@ -418,6 +418,15 @@ a:focus {
     &.icon-chat-notice {
       background-image: url(../images/icons/icon-alerts.svg);
     }
+    &.icon-mode-close {
+      background-image: url(../images/icons/mode-close.svg);
+    }
+    &.icon-delete {
+      background-image: url(../images/icons/icon-delete.svg);
+    }
+    &.icon-add-admin {
+      background-image: url(../images/icons/btn-addbangjang.svg);
+    }
   }
 
 
@@ -440,9 +449,9 @@ a {
 }
 
 .divider {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid #e6eaef;
   height: 1px;
-  margin-bottom: 24px;
+  margin: 10px 0;
 }
 
 .help-block-validate {
@@ -1096,7 +1105,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .date-inline {
   display: flex;
-  .date-box {
+  align-items: center;
+  .date-box, .wave {
     margin-right: 6px;
   }
 }
