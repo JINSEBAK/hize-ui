@@ -2487,28 +2487,48 @@
 
 // 테이블 상단 summary info
 .summary-info {
-  padding: 12px 0;
+  padding: 32px 0 12px;
   text-align: center;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 12px;
   .terms {
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: bold;
   }
   .counter {
-    padding-top: 12px;
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 120px;
+    background-color: #30344e;
+    color: #fff;
+    margin-top: 16px;
     .counter-info {
       display: inline-block;
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
-      small {
-        font-weight: normal;
+      color: #ff8959;
+      label {
+        color: #fff;
+        margin-right: 20px;
+        margin-bottom: 0;
       }
-     
+      em {
+        font-size: 34px;
+        line-height: 1;
+      }
+      small {
+        color: #fff;
+        font-weight: normal;
+        font-size: 100%;
+      }
       &:before {
         content: '';
         display: inline-block;
         width: 1px;
-        height: 12px;
-        background-color: $border-color;
-        margin: 0 16px 0 12px;
+        height: 30px;
+        background-color: rgba(255,255,255, 0.3);
+        margin: 0 16px -4px 12px;
       }
       &:first-child {
         &:before {

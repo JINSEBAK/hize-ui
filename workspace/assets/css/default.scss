@@ -7,6 +7,7 @@ body {
   height: 100%;
   font-size: 14px;
   color: #242629;
+  font-family: 'AppleSDGothicNeo', 'Roboto', 'Arial';
 }
 
 div, ul {
@@ -16,6 +17,10 @@ div, ul {
 
 ul, li {
   list-style: none;
+}
+
+em {
+  font-style: normal;
 }
 
 button:focus {
