@@ -110,7 +110,10 @@
                                     </div>
                                     <!-- fixed notice -->
                                     <div class="chat-notice">
-                                        <a href="#" data-toggle="modal" data-target="#modalNoticeModify">성투주식방 공지</a>
+                                        <a href="#" data-toggle="modal" data-target="#modalNoticeModify">
+                                            <span class="icon icon-chat-notice"></span>
+                                            <span>정확하고 신속한 소식!</span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="chat-body">
@@ -138,11 +141,6 @@
                                                     </div>
                                                     <div class="balloon">
                                                         <div class="inner">오늘도 성투하세요.</div>
-
-                                                        <div class="btn-capsule">
-                                                            <button type="button">삭제</button>
-                                                            <button type="button">답장</button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -362,6 +360,24 @@
                                                     </div>
                                                     <div class="balloon-img">
                                                         <img src="../assets/images/photos/ad_default.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="msg general blocked">
+                                                <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
+                                                data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </a>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">김수로</span>
+                                                        <span class="id">(surokim)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner" id="delExample">야!</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -844,6 +860,11 @@
         <script>
             $(function() {
 
+
+                $('#modalNotice').modal('show');
+
+
+                
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
@@ -882,7 +903,6 @@
                     } else {
                         const _html = '<div class="btn-capsule">'
                                 +       '<button type="button" class="btn-del-chat">삭제</button>'
-                                +       '<span></span>'
                                 +       '<button type="button" class="btn-rpl-chat">답장</button>'
                                 +'</div>';
 
@@ -982,7 +1002,6 @@
                     $(this).val( $(this).val().substring(0, 100) );
                 });
 
-
                 $('#noticeDetailContent').on('change keyup paste', function() {
                     var len = $(this).val().length;
                     if ( len <= 500 ) {
@@ -992,14 +1011,6 @@
                     }
                     $(this).val( $(this).val().substring(0, 500) );
                 });
-
-                // 공지사항 상세
-                // $('.notice-list').find('.notice').on('click', function() {
-                //     $('#modalNoticeModify .count').find('.txt-length').text( $('#modalNoticeModify').find('textarea').val().length );
-                //     // 열려있는 팝업 닫기
-                //     $('.modal').modal('hide');
-                //     $('#modalNoticeModify').modal('show');
-                // });
 
                 //
                 $('#modalNoticeModify').find('.btn-default').on('click', function() {
@@ -1022,6 +1033,12 @@
                 // 답장취소
                 $('.btn-reply-cancel').on('click', function() {
                     $('.block-msg-reply').fadeOut('fast');
+                });
+
+                // 회원 검색
+                $('#modalMemberList').find('.icon-search').on('click', function() {
+                    $('#modalMemberList').find('.scrolling').css('display', 'none');
+                    $('#modalMemberList').find('.area-empty').fadeIn();
                 });
 
                 // 회원 상태 변경

@@ -288,7 +288,10 @@
                                     </div>
                                     <!-- fixed notice -->
                                     <div class="chat-notice">
-                                        <a href="#" data-toggle="modal" data-target="#modalNoticeModify">성투주식방 공지</a>
+                                        <a href="#" data-toggle="modal" data-target="#modalNoticeModify">
+                                            <span class="icon icon-chat-notice"></span>
+                                            <span>정확하고 신속한 소식!</span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="chat-body">
@@ -316,11 +319,6 @@
                                                     </div>
                                                     <div class="balloon">
                                                         <div class="inner">오늘도 성투하세요.</div>
-
-                                                        <div class="btn-capsule">
-                                                            <button type="button">삭제</button>
-                                                            <button type="button">답장</button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -540,6 +538,24 @@
                                                     </div>
                                                     <div class="balloon-img">
                                                         <img src="../assets/images/photos/ad_default.png">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="msg general blocked">
+                                                <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
+                                                data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
+                                                    <img src="../assets/images/photos/user-img-default.png">
+                                                </a>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">김수로</span>
+                                                        <span class="id">(surokim)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner" id="delExample">야!</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1009,7 +1025,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group form-search">
-                        <span class="glyphicon glyphicon-search"></span>
+                        <span class="icon icon-search"></span>
                         <input type="text" class="form-control" placeholder="닉네임, 아이디 검색">
                     </div>
                 </form>
@@ -1018,16 +1034,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지" >
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지" >
                                 </div>
                                 <div class="info">
-                                    <span class="name">주식수로왕(surokim)</span>
+                                    <span class="name">주식수로왕 (surokim)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle blocked btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk" id="chk1">
                                         <label for="chk1">
@@ -1039,16 +1055,17 @@
                         <li>
                             <div class="user">
                                 <div class="img block">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">나회원25(namem79)</span>
+                                    <span class="name">나회원25 (namem79)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD<br>
+                                        서비스 기간 : YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-primary btn-sm">블락해제</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락해제</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk" id="chk2">
                                         <label for="chk2">
@@ -1060,16 +1077,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        관리자
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk" id="chk3">
                                         <label for="chk3">
@@ -1081,16 +1098,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
                                     <span class="name">김수로</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk" id="chk4">
                                         <label for="chk4">
@@ -1102,16 +1119,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk">
                                         <label>
@@ -1123,16 +1140,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk">
                                         <label>
@@ -1144,16 +1161,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk">
                                         <label>
@@ -1165,16 +1182,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk">
                                         <label>
@@ -1186,16 +1203,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk">
                                         <label>
@@ -1207,16 +1224,16 @@
                         <li>
                             <div class="user">
                                 <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지">
+                                    <img src="../assets/images/icons/profile-photo.svg" alt="OOO 회원님의 프로필 이미지">
                                 </div>
                                 <div class="info">
-                                    <span class="name">닉네임(id)</span>
+                                    <span class="name">닉네임 (id)</span>
                                     <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
+                                        가입 기간 :  YYYY-MM-DD~YYYY-MM-DD
                                     </span>
                                 </div>
                                 <div class="ex-func">
-                                    <button type="button" class="btn btn-secondary btn-sm">블락등록</button>
+                                    <button type="button" class="btn btn-toggle btn-sm">블락등록</button>
                                     <div class="checkbox">
                                         <input type="checkbox" name="user-chk">
                                         <label>
@@ -1226,25 +1243,23 @@
                             </div>
                         </li>
                     </ul>
-                    <nav class="pagination-wrap">
-    <ul class="pagination pagination-sm">
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-        <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-    </ul>
-</nav>
+                    <div class="pagination">
+    <button type="button" class="pg-opt pg-first" disabled>처음</button>
+    <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
+    <button type="button" class="active">1</button>
+    <button type="button" class="">2</button>
+    <button type="button" class="">3</button>
+    <button type="button" class="">4</button>
+    <button type="button" class="">5</button>
+    <button type="button" class="pg-opt pg-next">다음글</button>
+    <button type="button" class="pg-opt pg-last">마지막</button>
+</div>
+                </div>
+
+                <div class="area-empty search" style="display: none;">
+                    <div class="search-empty">
+                        <strong>검색 결과가 없습니다.</strong>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -1293,7 +1308,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default">취소</button>
+                <button type="button" class="btn btn-toggle">취소</button>
                 <button type="button" class="btn btn-primary" disabled id="btnSetCertifyNumber">인증번호 설정</button>
             </div>
         </div>
@@ -1436,41 +1451,42 @@
                                 </div>
                             </li>
                         </ul>
-                        <nav class="pagination-wrap">
-    <ul class="pagination pagination-sm">
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-        <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-    </ul>
-</nav>
+                        <div class="pagination">
+    <button type="button" class="pg-opt pg-first" disabled>처음</button>
+    <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
+    <button type="button" class="active">1</button>
+    <button type="button" class="">2</button>
+    <button type="button" class="">3</button>
+    <button type="button" class="">4</button>
+    <button type="button" class="">5</button>
+    <button type="button" class="pg-opt pg-next">다음글</button>
+    <button type="button" class="pg-opt pg-last">마지막</button>
+</div>
                     </div>
                 </div>
 
                 <div class="contents contents-notice-detail" style="display: none;">
-                    <div class="notice-title">
-                        <div class="hd">
-                            <strong class="title">정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식!</strong>
-                            <label class="label label-default">나주식</label>
+                    <div class="scrolling">
+                        <div class="notice-title">
+                            <div class="hd">
+                                정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식! 정확하고 신속한 소식!
+                            </div>
+                            <div class="hd-tail">
+                                <span class="date">2021-03-30</span>
+                                <label class="label label-default">나주식</label>
+                            </div>
                         </div>
-                        <span class="date">YYYY-MM-DD</span>
-                    </div>
-                    <div class="notice-detail">
-                        코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다.
-코스닥도 반등해 1000선에 바짝 다가섰다. 미국 고용 지표가 예상보다 부진하게 나온 것이 되레 긴축 우려를 잠재우면서 주가 상승을 부추긴 격이 됐다. 공매도 재개를 앞두고 비틀거리던 증시는 어느새 급락에 대한 불안감을 훌훌 털어버린 듯한 모습이다.
-10일 코스피는 전 거래일보다 1.63%(52.10포인트) 오른 3249.30에 마감하며 지난달 20일(3220.70) 이후 13거래일 만에 사상 최고 기록을 다시 세웠다.
-장 초반 개인 매수세와 함께 상승 출발한 코스피는 외국인과 기관이 차례로 매수 규모를 늘리며 순매수로 전환하면서 한층 강한 상승세를 보였다.
+                        <div class="notice-detail">
+                            안녕하세요~ 성공투자주식방의 나주식입니다.<br><br>
+
+                            코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다. <br>
+                            코스닥도 반등해 1000선에 바짝 다가섰다. <br>
+                            미국 고용 지표가 예상보다 부진하게 나온 것이 되레 긴축 우려를 잠재우면서 주가 상승을 부추긴 격이 됐다. 공매도 재개를 앞두고 비틀거리던 증시는 어느새 급락에 대한 불안감을 훌훌 털어버린 듯한 모습이다.<br><br>
+                            
+                            10일 코스피는 전 거래일보다 1.63%(52.10포인트) 오른 3249.30에 마감하며 지난달 20일(3220.70) 이후 13거래일 만에 사상 최고 기록을 다시 세웠다.<br><br>
+                            
+                            장 초반 개인 매수세와 함께 상승 출발한 코스피는 외국인과 기관이 차례로 매수 규모를 늘리며 순매수로 전환하면서 한층 강한 상승세를 보였다.<br><br>
+                        </div>
                     </div>
                 </div>
 
@@ -1485,10 +1501,17 @@
                         </div>
                         <div class="form-group form-content">
                             <label for="noticeContent1" class="sr-only">내용</label>
-                            <textarea class="form-control" name="" id="noticeContent1" placeholder="내용을 입력해주세요." >코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다. 
-코스닥도 반등해 1000선에 바짝 다가섰다. 미국 고용 지표가 예상보다 부진하게 나온 것이 되레 긴축 우려를 잠재우면서 주가 상승을 부추긴 격이 됐다. 공매도 재개를 앞두고 비틀거리던 증시는 어느새 급락에 대한 불안감을 훌훌 털어버린 듯한 모습이다.
+                            <textarea class="form-control" name="" id="noticeContent1" placeholder="내용을 입력해주세요." >
+안녕하세요~ 성공투자주식방의 나주식입니다.
+
+코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다. 
+코스닥도 반등해 1000선에 바짝 다가섰다. 
+미국 고용 지표가 예상보다 부진하게 나온 것이 되레 긴축 우려를 잠재우면서 주가 상승을 부추긴 격이 됐다. 공매도 재개를 앞두고 비틀거리던 증시는 어느새 급락에 대한 불안감을 훌훌 털어버린 듯한 모습이다.
+
 10일 코스피는 전 거래일보다 1.63%(52.10포인트) 오른 3249.30에 마감하며 지난달 20일(3220.70) 이후 13거래일 만에 사상 최고 기록을 다시 세웠다.
-장 초반 개인 매수세와 함께 상승 출발한 코스피는 외국인과 기관이 차례로 매수 규모를 늘리며 순매수로 전환하면서 한층 강한 상승세를 보였다.</textarea>
+
+장 초반 개인 매수세와 함께 상승 출발한 코스피는 외국인과 기관이 차례로 매수 규모를 늘리며 순매수로 전환하면서 한층 강한 상승세를 보였다.
+                            </textarea>
                             <div class="count">
                                 <span class="txt-length">350</span>
                                 <span>500</span>
@@ -1522,7 +1545,7 @@
                 <div class="mode-detail clearfix">
                     <button type="button" class="btn btn-default"  id="btnListNotice" data-target-mode="list">목록</button>
                     <div class="pull-right">
-                        <button type="button" class="btn btn-default" id="btnDeleteNotice">삭제</button>
+                        <button type="button" class="btn btn-secondary" id="btnDeleteNotice">삭제</button>
                         <button type="button" class="btn btn-primary" id="btnModifyNotice" data-target-mode="modify">수정</button>
                     </div>
                 </div>
@@ -1924,25 +1947,17 @@
                             </div>
                         </li>
                     </ul>
-                    <nav class="pagination-wrap">
-    <ul class="pagination pagination-sm">
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-        <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-    </ul>
-</nav>
+                    <div class="pagination">
+    <button type="button" class="pg-opt pg-first" disabled>처음</button>
+    <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
+    <button type="button" class="active">1</button>
+    <button type="button" class="">2</button>
+    <button type="button" class="">3</button>
+    <button type="button" class="">4</button>
+    <button type="button" class="">5</button>
+    <button type="button" class="pg-opt pg-next">다음글</button>
+    <button type="button" class="pg-opt pg-last">마지막</button>
+</div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -2180,7 +2195,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">신호 발송 내역</h4>
+                <h4 class="modal-title">신호 내역</h4>
             </div>
             <div class="modal-body">
                 <form>
@@ -2218,11 +2233,11 @@
                                 <tbody>
                                     <tr>
                                         <td>2021-05-13 10:30</td>
-                                        <td>매도</td>
+                                        <td><label class="label label-sell">매도</label></td>
                                         <td>카카오</td>
                                         <td>005930</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2235,11 +2250,11 @@
                                     </tr>
                                     <tr>
                                         <td>2021-05-13 10:30</td>
-                                        <td>매수</td>
+                                        <td><label class="label label-buy">매수</label></td>
                                         <td>삼성전자</td>
                                         <td>005930</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2252,11 +2267,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2269,11 +2284,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2286,11 +2301,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2303,11 +2318,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2320,11 +2335,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2337,11 +2352,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2354,11 +2369,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2371,11 +2386,11 @@
                                     </tr>
                                     <tr>
                                         <td>YYYY-MM-DD hh:mm</td>
-                                        <td>신호유형</td>
+                                        <td><label class="label label-alarm">알림</label></td>
                                         <td>종목명</td>
                                         <td>종목코드</td>
                                     </tr>
-                                    <tr class="detail">
+                                    <tr class="detail" style="display: none;">
                                         <td colspan="4">
                                             [매수] 신호입니다.<br><br>
                                             ▸삼성전자 (005930)<br>
@@ -2392,25 +2407,17 @@
                     </div>
                     
                     
-                    <nav class="pagination-wrap">
-    <ul class="pagination pagination-sm">
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-        <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-    </ul>
-</nav>
+                    <div class="pagination">
+    <button type="button" class="pg-opt pg-first" disabled>처음</button>
+    <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
+    <button type="button" class="active">1</button>
+    <button type="button" class="">2</button>
+    <button type="button" class="">3</button>
+    <button type="button" class="">4</button>
+    <button type="button" class="">5</button>
+    <button type="button" class="pg-opt pg-next">다음글</button>
+    <button type="button" class="pg-opt pg-last">마지막</button>
+</div>
                 </div>
             </div>
         </div>
@@ -2558,25 +2565,17 @@
                                     </tbody>
                                 </table>
 
-                                <nav class="pagination-wrap">
-    <ul class="pagination pagination-sm">
-        <li class="disabled">
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-        <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-        </li>
-    </ul>
-</nav>
+                                <div class="pagination">
+    <button type="button" class="pg-opt pg-first" disabled>처음</button>
+    <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
+    <button type="button" class="active">1</button>
+    <button type="button" class="">2</button>
+    <button type="button" class="">3</button>
+    <button type="button" class="">4</button>
+    <button type="button" class="">5</button>
+    <button type="button" class="pg-opt pg-next">다음글</button>
+    <button type="button" class="pg-opt pg-last">마지막</button>
+</div>
                             </div>
                         </div>
                     </div>
@@ -2649,6 +2648,11 @@
         <script>
             $(function() {
 
+
+                $('#modalNotice').modal('show');
+
+
+                
                 var divHeight = '';
                 var browserHeight = document.documentElement.clientHeight;
                 //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
@@ -2687,7 +2691,6 @@
                     } else {
                         const _html = '<div class="btn-capsule">'
                                 +       '<button type="button" class="btn-del-chat">삭제</button>'
-                                +       '<span></span>'
                                 +       '<button type="button" class="btn-rpl-chat">답장</button>'
                                 +'</div>';
 
@@ -2787,7 +2790,6 @@
                     $(this).val( $(this).val().substring(0, 100) );
                 });
 
-
                 $('#noticeDetailContent').on('change keyup paste', function() {
                     var len = $(this).val().length;
                     if ( len <= 500 ) {
@@ -2797,14 +2799,6 @@
                     }
                     $(this).val( $(this).val().substring(0, 500) );
                 });
-
-                // 공지사항 상세
-                // $('.notice-list').find('.notice').on('click', function() {
-                //     $('#modalNoticeModify .count').find('.txt-length').text( $('#modalNoticeModify').find('textarea').val().length );
-                //     // 열려있는 팝업 닫기
-                //     $('.modal').modal('hide');
-                //     $('#modalNoticeModify').modal('show');
-                // });
 
                 //
                 $('#modalNoticeModify').find('.btn-default').on('click', function() {
@@ -2827,6 +2821,12 @@
                 // 답장취소
                 $('.btn-reply-cancel').on('click', function() {
                     $('.block-msg-reply').fadeOut('fast');
+                });
+
+                // 회원 검색
+                $('#modalMemberList').find('.icon-search').on('click', function() {
+                    $('#modalMemberList').find('.scrolling').css('display', 'none');
+                    $('#modalMemberList').find('.area-empty').fadeIn();
                 });
 
                 // 회원 상태 변경

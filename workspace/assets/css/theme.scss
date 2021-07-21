@@ -62,12 +62,6 @@
       height: 50px;
     }
   }
-  .help-block {
-    margin-bottom: 24px;
-    &.help-block-login {
-      color: #a94442;
-    }
-  }
   .checkbox {
     float: left;
     margin-top: 32px;
@@ -172,6 +166,12 @@
         float: right;
         background-color: #1d2858;
       }
+      &:disabled {
+        color: #fff;
+      }
+      &.btn-lg {
+        width: 100%;
+      }
     }
     &:after {
       content: '';
@@ -193,6 +193,13 @@
     margin-bottom: 16px;
     img {
       height: 46px;
+    }
+  }
+  .help-block {
+    margin-bottom: 24px;
+    &.help-block-login {
+      color: #a94442;
+      text-align: left;
     }
   }
   form {
@@ -627,23 +634,29 @@
   background-color: #282b41;
   border-radius: 50px;
   padding: 5px 16px;
-  position: absolute;
-  bottom: 0;
-  right: -113px;
+  margin-left: 10px;
+  position: relative;
   button {
-    display: inline-block !important;
+    display: inline-block;
     font-size: 13px;
     border: none;
     padding: 0;
     background-color: transparent;
     color: #fff;
-  }
-  span {
-    display: inline-block;
-    width: 1px;
-    height: 8px;
-    margin: 0 8px;
-    background-color: rgba(255,255,255,.5);
+    &.btn-rpl-chat {
+      margin-left: 12px;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 8px;
+        background-color: rgba(255,255,255,.5);
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        margin-top: -4px;
+      }
+    }
   }
 }
 
@@ -800,13 +813,19 @@
     }
     .chat-notice {
       position: absolute;
-      top: 45px;
+      top: 46px;
       left: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: rgba(0,122,125,.8);
       z-index: 5;
-      padding: 12px;
-      border-bottom: 1px solid $border-color;
+      a {
+        display: block;
+        padding: 8px 20px;
+        color: #fff;
+        .icon-chat-notice {
+          margin-right: 10px;
+        }
+      }
     }
   }
   .chat-body {
@@ -879,6 +898,8 @@
               position: relative;
               line-height: 20px;
               z-index: 2;
+              display: inline-block;
+              width: auto;
             }
             &:before {
               content: "";
@@ -907,6 +928,9 @@
                 background-color: transparent !important;
                 box-shadow: none !important;
                 padding: 0 12px;
+                img {
+                  max-width: 94px;
+                }
               }
             }
           }
@@ -949,9 +973,6 @@
               &:after {
                 left: -10px;
                 top: 0;
-              }
-              button {
-                display: none;
               }
               // 메세지 삭제
               &.del {
@@ -1255,13 +1276,14 @@
 
 // 모달 - 회원 목록
 .user-list {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid #e6eaef;
+  margin-bottom: 22px;
   li {
     border-bottom: 1px solid $border-light-color;
     .user {
       display: flex;
       align-items: center;
-      padding: 6px 0;
+      padding: 16px 10px;
       .profile-img-wrapper {
         border: 1px solid rgba(0,0,0,.2);
         width: 40px;
@@ -1282,7 +1304,8 @@
         }
       }
       .img {
-        width: 40px;
+        width: 44px;
+        height: 44px;
         img {
           width: 100%;
           height: auto;
@@ -1300,7 +1323,7 @@
               height: 10px;
               position: absolute;
               right: 1px;
-              bottom: 4px;
+              bottom: 1px;
               border-radius: 100%;
             }
           }
@@ -1312,21 +1335,42 @@
         .name {
           font-weight: bold;
           display: block;
+          font-size: 16px;
+          line-height: 1.25;
+          margin-bottom: 4px;
         }
         .valid-term {
-          color: $text-basic;
+          color: #61666d;
           display: block;
+          font-size: 13px;
         }
       }
       .ex-func {
         display: flex;
         align-items: center;
+        .btn {
+          border-radius: 50px;
+          height: 32px !important;
+          &.btn-toggle {
+            background-color: #fff;
+            border-color: #aaafc6;
+            &.blocked {
+              background-color: #155edd;
+              border-color: #155edd;
+              color: #fff;
+            }
+          }
+        }
         .checkbox {
           text-align: center;
-          min-width: 36px;
-          margin-left: 12px;
+          width: 32px;
+          height: 32px;
+          margin-left: 10px;
           label {
-            padding-left: 22px;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background-size: 32px !important;
           }
         }
       }
@@ -1336,14 +1380,15 @@
 
 // 모달 - 공지목록
 .notice-list {
+  margin-bottom: 32px;
   li {
-    border-bottom: 1px solid $border-light-color;
-    padding: 12px;
+    border-top: 1px solid #e6eaef;
+    padding: 16px 10px;
     &:last-child {
-      border-bottom: none;
+      border-bottom: 1px solid #e6eaef;
     }
     &:hover {
-      background-color: $card-hover;
+      background-color: #edf0ff;
     }
     .notice {
       cursor: pointer;
@@ -1351,7 +1396,7 @@
       align-items: center;
       .title {
         flex: 1;
-        width: calc(100% - 120px);
+        width: calc(100% - 140px);
         padding-right: 24px;
         span {
           display: block;
@@ -1360,24 +1405,34 @@
           overflow: hidden;
           text-overflow: ellipsis;
           &:first-child {
-            font-weight: bold;
+            font-size: 16px;
+            color: #000;
           }
           &:last-child {
-            color: $text-basic;
+            color: #242629;
           }
         }
       }
       .reg-info {
-        display: flex;
-        flex-direction: column;
-        width: 80px;
+        text-align: right;
+        width: 100px;
+        margin-top: 3px;
         span {
+          display: inline-block;
           &:first-child {
-            font-size: 12px;
+            font-size: 13px;
+            color: #61666d;
             text-align: center;
+            margin-bottom: 2px;
           }
           &:last-child {
             margin: 4px auto;
+            background-color: #e6eaef;
+            border-radius: 50px;
+            color: #242629;
+            font-weight: normal;
+            width: 60px;
+            height: 22px;
           }
         }
       }
@@ -1387,24 +1442,56 @@
 
 .modal-notice {
   .notice-title {
-    margin-bottom: 12px;
+    border-bottom: 1px solid #e6eaef;
     .hd {
-      strong {
+      font-size: 16px;
+    }
+    .hd-tail {
+      padding-top: 8px;
+      padding-bottom: 12px;
+      .date {
+        color: #61666d;
+        font-size: 13px;
         float: left;
-        max-width: 80%;
+        height: 22px;
+        line-height: 22px;
+        margin: 4px 0;
       }
-      .label {
+      .label-default {
+        display: block;
+        margin: 4px auto;
+        background-color: #e6eaef;
+        border-radius: 50px;
+        color: #242629;
+        font-weight: normal;
+        width: 60px;
+        height: 22px;
         float: right;
-        font-size: 12px;
       }
       &:after {
-        content: "";
+        content: '';
         display: block;
         clear: both;
       }
     }
     .date {
       color: $text-basic;
+    }
+  }
+  .modal-body {
+    padding: 24px 5px 24px 24px;
+    .notice-detail {
+      padding: 16px 10px;
+      line-height: 20px;
+    }
+  }
+  .modal-footer {
+    .mode-detail {
+      padding: 0 24px;
+      .btn-default {
+        width: 90px;
+        min-width: 90px;
+      }
     }
   }
 }
@@ -2437,6 +2524,11 @@
     &:not(.contents-notice-list) {
       // padding: 12px;
     }
+    &.contents-notice-list, &.contents-notice-detail {
+      .scrolling {
+        padding: 0 19px 0 0;
+      }
+    }
   }
   .modal-footer {
     .mode-detail {
@@ -2528,4 +2620,3 @@
     }
   }
 }
-

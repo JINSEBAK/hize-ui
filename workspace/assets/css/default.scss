@@ -83,7 +83,7 @@ $btn-secondary-hover: #5e669c;
 $btn-default: #b6bbc1;
 $btn-default-hover: #e6e9f0;
 $btn-default-hover-border: #dde1e6;
-$btn-disabled: #f1f2f4;
+$btn-disabled: #cdced7;
 $tb-notice: #f6f2fb;  
 $signal-buy-bg: #fbeaea;
 $signal-buy-border: #ceb7b7;
@@ -99,8 +99,8 @@ $signal-alarm-border: #cfd4c5;
   // min-width: 90px;
   &:disabled {
     background-color: $btn-disabled;
-    border: 1px solid $btn-disabled;
-    color: #828792;
+    border: 1px solid #a4a6b0;
+    color: #303235;
   }
   &.btn-sm {
     font-size: 14px;
@@ -123,6 +123,7 @@ $signal-alarm-border: #cfd4c5;
   &:focus, &:hover, &:active {
     background-color: $btn-primary-hover;
     color: #fff;
+    font-weight: bold;
   }
 }
 .btn-secondary {
@@ -132,6 +133,7 @@ $signal-alarm-border: #cfd4c5;
     color: $text-white;
     background-color: $btn-secondary-hover;
     color: #fff;
+    font-weight: bold;
   }
   &.btn-sm {
     background-color: #282b41;
@@ -142,11 +144,13 @@ $signal-alarm-border: #cfd4c5;
   }
 }
 .btn-default {
-  border-color: #686d83;
-  color: #444756;
+  border-color: #aaafc6;
+  background-color: #fff;
+  color: #242629;
   &:focus, &:hover, &:active {
-    background-color: $btn-default-hover;
-    border: 1px solid $btn-default-hover-border;
+    background-color: #dce4fa;
+    border: 1px solid #aaafc6;
+    font-weight: bold;
   }
 }
 .btn-link {
@@ -216,6 +220,7 @@ $signal-alarm-border: #cfd4c5;
 
 a:focus {
   outline: none;
+  text-decoration: none;
 }
 
 .label {
@@ -397,6 +402,9 @@ a:focus {
     }
     &.icon-camera {
       background-image: url(../images/icons/camera.svg);
+    }
+    &.icon-chat-notice {
+      background-image: url(../images/icons/icon-alerts.svg);
     }
   }
 
@@ -797,6 +805,11 @@ a {
   .modal-header {
     background-color: $bg-primary;
     color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px 4px 0 0;
+    .modal-title {
+      font-size: 24px;
+    }
     .close {
       opacity: 1;
       span {
@@ -838,9 +851,13 @@ a {
     }
   }
   .modal-footer {
-    border-top: none;
+    border-top: 1px solid #e6eaef;
     text-align: center;
-    padding: 0 15px 32px;
+    padding: 16px 0;
+    .btn {
+      height: 46px;
+      min-width: 120px;
+    }
     .btn-lg {
       min-width: 240px;
     }
@@ -850,9 +867,20 @@ a {
   }
   &.modal-list {
     .modal-body {
-      padding: 15px 4px;
+      padding: 0 5px 0 0;
+      .form-search {
+        padding: 24px 19px 12px 24px;
+        margin-bottom: 0;
+        .form-control {
+          height: 46px;
+        }
+        .icon-search {
+          right: 34px;
+          margin-top: -5px;
+        }
+      }
       .scrolling {
-        padding: 0 12px;
+        padding: 0 19px 0 24px;
       }
     }
   }
@@ -1230,7 +1258,7 @@ input[type="number"]::-webkit-inner-spin-button {
     tr {
       cursor: pointer;
       &:hover {
-        background-color: $card-hover;
+        background-color: #edf0ff;
       }
       td {
         vertical-align: middle;
@@ -1274,6 +1302,21 @@ input[type="number"]::-webkit-inner-spin-button {
           height: 30px;
           padding: 3px 12px;
         }
+        .label {
+          border-radius: 7px;
+          font-weight: bold;
+          width: 44px;
+          height: 28px;
+          &.label-sell {
+            background-color: #4b8df3;
+          }
+          &.label-buy {
+            background-color: #e95757;
+          }
+          &.label-alarm {
+            background-color: #60728e;
+          }
+        }
       }
       // 게시판의 공지사항
       &.notice {
@@ -1314,8 +1357,13 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   &.signal-history {
-    .detail > * {
-      text-align: left !important;
+    .detail {
+      > * {
+        padding: 16px !important;
+        font-size: 16px;
+        background-color: #f1f2f4;
+        text-align: left !important;
+      }
     }
   }
 }
@@ -1325,6 +1373,7 @@ input[type="number"]::-webkit-inner-spin-button {
   display: none;
   text-align: center;
   padding: 72px 0;
+  min-width: 180px;
   > div {
     display: none;
     strong {
@@ -1363,6 +1412,15 @@ input[type="number"]::-webkit-inner-spin-button {
       display: block;
       &:before {
         background-image: url(../images/icons/nodata-search.svg);
+      }
+    }
+  }
+  &.opinion {
+    display: block;
+    > div.opinion-empty {
+      display: block;
+      &:before {
+        background-image: url(../images/icons/icon-opinion.svg);
       }
     }
   }
