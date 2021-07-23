@@ -504,9 +504,23 @@
                             <tr>
                                 <th>종목</th>
                                 <td>
+                                    <div class="radio">
+                                        <span>
+                                            <input type="radio" name="stock-gubun" value="name" id="stockGubunName" checked>
+                                            <label for="stockGubunName">
+                                                <span>종목명</span>
+                                            </label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="stock-gubun" value="name" id="stockGubunCode">
+                                            <label for="stockGubunCode">
+                                                <span>종목번호</span>
+                                            </label>
+                                        </span>
+                                    </div>
                                     <div class="dropdown">
                                         <div class="form-inline">
-                                            <input type="text" class="form-control" placeholder="종목명 입력">
+                                            <input type="text" class="form-control" placeholder="종목 입력">
                                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
                                        
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">

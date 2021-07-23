@@ -103,7 +103,7 @@ $signal-alarm-border: #cfd4c5;
   // // height: 46px;
   // min-width: 90px;
   &:disabled {
-    background-color: $btn-disabled;
+    background-color: $btn-disabled !important;
     border: 1px solid #a4a6b0;
     color: #303235;
   }
@@ -181,6 +181,11 @@ $signal-alarm-border: #cfd4c5;
 .btn-icon {
   background: transparent;
   min-width: 24px;
+  &:disabled {
+    background-color: transparent !important;
+    border: none !important;
+    opacity: .5;
+  }
 }
 .btn-setting {
   height: 36px;
@@ -878,14 +883,18 @@ a {
     .form-search {
       padding: 0;
       margin: 10px 0;
+      input {
+        height: 46px;
+        padding: 6px 42px 6px 12px
+      }
       .icon-search {
         right: 12px;
       }
     }
-    input {
-      height: 46px;
-      padding: 6px 42px 6px 12px;
-    }
+    // input {
+    //   height: 46px;
+    //   padding: 6px 42px 6px 12px;
+    // }
   }
   .modal-footer {
     border-top: 1px solid #e6eaef;

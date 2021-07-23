@@ -220,7 +220,7 @@
 
                     <div class="contents chat-contents">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-secondary pull-right">단체 메시지 발송</button>
+                            <button type="button" class="btn btn-secondary pull-right" data-toggle="modal" data-target="#modalGroupMessage">단체 메세지 발송</button>
                         </div>
                         <div class="col-chat col-chat-lf">
                             <div class="chat">
@@ -2036,7 +2036,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h3 class="modal-title">신호 발송</h3>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modal-signal">
                 <h4>성공투자주식방-1</h4>
                 <form>
                     <div class="col-signal-wrapper">
@@ -2209,9 +2209,23 @@
                             <tr>
                                 <th>종목</th>
                                 <td>
+                                    <div class="radio">
+                                        <span>
+                                            <input type="radio" name="stock-gubun" value="name" id="stockGubunName" checked>
+                                            <label for="stockGubunName">
+                                                <span>종목명</span>
+                                            </label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="stock-gubun" value="name" id="stockGubunCode">
+                                            <label for="stockGubunCode">
+                                                <span>종목번호</span>
+                                            </label>
+                                        </span>
+                                    </div>
                                     <div class="dropdown">
                                         <div class="form-inline">
-                                            <input type="text" class="form-control" placeholder="종목명 입력">
+                                            <input type="text" class="form-control" placeholder="종목 입력">
                                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
                                        
                                             <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">
@@ -2687,6 +2701,332 @@
     </div>
 </div>
 
+        <!-- 단체 메시지 발송 -->
+        <div class="modal fade modal-group" id="modalGroupMessage" aria-labelledby="modalGroupMessageLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">단체 메세지 발송</h4>
+            </div>
+            <div class="modal-body">
+                <div class="wrapper">
+                    <div class="left">
+                        <div class="content content-msg">
+                            <textarea class="form-control scrollbar" name="" id="" placeholder="메세지를 입력하세요."></textarea>
+                            <div class="group-btns">
+                                <div class="btn-group dropup">
+                                    <button type="button" class="btn btn-icon btn-emoticon" data-toggle="" aria-expanded="false">
+                                        <span class="icon icon-emoticon"></span>
+                                    </button>
+                                    <div class="emo-wrapper" id="emobox" style="display: none;">
+                                        <div class="arrow"></div>
+                                        <div class="view-detail hidden">
+                                            <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                        </div>
+                                        <div class="emo-hd">
+                                            <span class="icon icon-close"></span>
+                                        </div>
+                                        <div class="emo-inner">
+                                            <ul class="nav nav-tabs emo-tabs" role="tablist">
+                                                <li role="presentaion" class="active">
+                                                    <a href="#tabEmo1" aria-controls="tabEmo1" role="tab" data-toggle="tab">
+                                                        <span class="icon emo_e02_jasine"></span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentaion">
+                                                    <a href="#tabEmo2" aria-controls="tabEmo2" role="tab" data-toggle="tab">
+                                                        <span class="icon emo_166_kiki"></span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentaion">
+                                                    <a href="#tabEmo3" aria-controls="tabEmo3" role="tab" data-toggle="tab">
+                                                        <span class="icon icon-emo-1"></span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentaion">
+                                                    <a href="#tabEmo4" aria-controls="tabEmo4" role="tab" data-toggle="tab">
+                                                        <span class="icon icon-emo-2"></span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentaion">
+                                                    <a href="#tabEmo5" aria-controls="tabEmo5" role="tab" data-toggle="tab">
+                                                        <span class="icon icon-emo-3"></span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentaion">
+                                                    <a href="#tabEmo6" aria-controls="tabEmo6" role="tab" data-toggle="tab">
+                                                        <span class="icon icon-emo-4"></span>
+                                                    </a>
+                                                </li><li role="presentaion">
+                                                    <a href="#tabEmo7" aria-controls="tabEmo7" role="tab" data-toggle="tab">
+                                                        <span class="icon icon-emo-5"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content emo-content">
+                                                <div class="scrollbar">
+                                                    <div class="tabpane" class="tab-pane fade in active" id="tabEmo1">
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                        <div class="emt" role="menuitem">
+                                                            <span>
+                                                                <img src="../../assets/images/emoticon/e-02-02@3x.png" alt="슬퍼서 울어요">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tabpane" class="tab-pane fade" id="tabEmo2"></div>
+                                                    <div class="tabpane" class="tab-pane fade" id="tabEmo3"></div>
+                                                    <div class="tabpane" class="tab-pane fade" id="tabEmo4"></div>
+                                                    <div class="tabpane" class="tab-pane fade" id="tabEmo5"></div>
+                                                    <div class="tabpane" class="tab-pane fade" id="tabEmo6"></div>
+                                                    <div class="tabpane" class="tab-pane fade" id="tabEmo7"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-icon btn-file">
+                                    <label>
+                                        <span class="icon icon-addfile" for="chatImageFile"></span>
+                                        <input type="file" id="chatImageFile">
+                                    </label>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="txt-guide">* 발송한 메세지는 각 채팅방에서  확인할 수 있습니다.</span>
+                        </div>
+                    </div>
+                    <div class="right scrollbar">
+                        <div class="content content-chat">
+                            <form>
+                                <div class="form-group form-search">
+                                    <label for="keywordAll" class="sr-only">검색</label>
+                                    <input type="text" class="form-control" placeholder="채팅방명" id="keywordAll">
+                                    <span class="icon icon-search"></span>
+                                </div>
+                            </form>
+                            <div class="filter list-filter">
+                                <select class="form-control filter">
+                                    <option value="">전체</option>
+                                    <option value="">유료</option>
+                                    <option value="">무료</option>
+                                </select>
+                            </div>
+                            <div class="chat-list chat-list-group">
+                                <div class="panel panel-default chat-card">
+                                    <div class="panel-body">
+                                        <div class="chat-info">
+                                            <div class="img-thumb">
+                                                <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지" >
+                                            </div>
+                                            <div class="infos">
+                                                <div class="title">
+                                                    <span class="label label-chat">유료</span>
+                                                    <div class="tt">성투 주식방 1</div>
+                                                    <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
+                                                </div>
+                                                <div class="count">
+                                                    85/120
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-thumb">
+                                            <span>감사합니다. 감사합니다. 감사합니다.감사합니다.감사합니다.감사합니다.감사합니다. 감사합니다.감사합니다.감사합니다.감사합니다.감사합니다.감사합니다.감사합니다.감사합니다.감사합니다.</span>
+                                            <span class="date">오후 4:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default chat-card">
+                                    <div class="panel-body">
+                                        <div class="chat-info">
+                                            <div class="img-thumb">
+                                                <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
+                                            </div>
+                                            <div class="infos">
+                                                <div class="title">
+                                                    <span class="label label-chat">유료</span>
+                                                    <div class="tt">성투 주식방 2</div>
+                                                    <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
+                                                </div>
+                                                <div class="count">
+                                                    70/120
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-thumb">
+                                            <span>신호발송</span>
+                                            <span class="date">오후 3:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default chat-card">
+                                    <div class="panel-body">
+                                        <div class="chat-info">
+                                            <div class="img-thumb">
+                                                <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
+                                            </div>
+                                            <div class="infos">
+                                                <div class="title">
+                                                    <span class="label label-chat">유료</span>
+                                                    <div class="tt">성투 주식방 2</div>
+                                                    <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
+                                                </div>
+                                                <div class="count">
+                                                    70/120
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-thumb">
+                                            <span>신호발송</span>
+                                            <span class="date">오후 3:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default chat-card">
+                                    <div class="panel-body">
+                                        <div class="chat-info">
+                                            <div class="img-thumb">
+                                                <img src="../assets/images/photos/sample_thumb.jpeg" alt="채팅방 설정 이미지">
+                                            </div>
+                                            <div class="infos">
+                                                <div class="title">
+                                                    <span class="label label-chat">유료</span>
+                                                    <div class="tt">성투 주식방 2</div>
+                                                    <div class="desc">나 주식은 당신들의 재산을 많이 많이 불려줄 생각입니다. 나만 믿고 따라와봥</div>
+                                                </div>
+                                                <div class="count">
+                                                    70/120
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-thumb">
+                                            <span>신호발송</span>
+                                            <span class="date">오후 3:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--.chat-list-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-lg" id="" disabled>전송</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
         <!-- scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -3034,6 +3374,11 @@
                 });
                 $('input[name=attachment]').on('click', function(){
                     fileSend($(this).val());
+                });
+
+                // 단체 메세지 발송 -----------
+                $('.chat-list-group').find('.chat-card').on('click', function() {
+                    $(this).toggleClass('selected');
                 });
 
             });
