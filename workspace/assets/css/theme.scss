@@ -799,7 +799,13 @@
             }
           }
           .btn-sm {
-            display: none;
+            position: absolute;
+            right: 106px;
+            top: 50%;
+            margin-top: -14px;
+            .icon-w-search {
+              background-image: url(../images/icons/btn_search.svg);
+            }
           }
         }
       }
@@ -888,6 +894,10 @@
       &.freezing {
         background-color: $bg-freezing;
         border: 5px solid #00dcff;
+      }
+      .highlight {
+        background-color: #4bffff !important;
+        color: #000 !important;
       }
       .inner {
         position: absolute;
@@ -2565,27 +2575,49 @@
   }
   .table {
     &.tb-auth {
+      border-bottom: 1px solid #494e6e;	
       thead {
         tr {
           th {
-            background-color: #999;
+            background-color: #30344e;
             color: #fff;
+            padding: 8px 12px;
+            border-bottom: none;
+            text-align: center;
           }
         }
       }
       tbody {
         tr {
           th {
+            border-bottom: 1px solid #d1d1d1;
+            border-right: 1px solid #d1d1d1;
            &.d1 {
-             background-color: #f1f1f1;
+             background-color: #f0f2ff;
+             text-align: center;
            }
            &.d2 {
-             background-color: #f9f9f9;
+             background-color: #f5f5fa;
+             text-align: left;
+             font-weight: normal;
            }
           }
           td {
+            border-bottom: 1px solid #d1d1d1;
+            border-right: 1px solid #d1d1d1;
+            text-align: center;
+            padding: 12px;
+            vertical-align: middle;
             .checkbox {
               margin: 0;
+            }
+            &:last-child {
+              border-right: none;
+            }
+          }
+          &:last-child {
+            > * {
+              border: none;
             }
           }
         }

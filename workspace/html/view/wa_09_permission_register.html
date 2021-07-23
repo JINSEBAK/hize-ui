@@ -36,6 +36,14 @@
                             </div>
                             <div class="bt">
                                 <table class="table table-bordered tb-auth">
+                                    <colgroup>
+                                        <col style="width: 12%;">
+                                        <col style="width: auto;">
+                                        <col style="width: 12%">
+                                        <col style="width: 12%">
+                                        <col style="width: 12%">
+                                        <col style="width: 12%">
+                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th>구분</th>
@@ -49,11 +57,12 @@
                                     <tbody>
                                         <tr>
                                             <th class="d1">실시간 신호</th>
-                                            <th class="d2">신호 관리</th>
+                                            <th class="d2">발송된 신호 정보, 문자 발신 정보</th>
                                             <td></td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk1-02">
+                                                    <label for="chk1-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td></td>
@@ -61,105 +70,121 @@
                                         </tr>
                                         <tr>
                                             <th class="d1">보유 전광판</th>
-                                            <th class="d2">보유 전광판 관리</th>
+                                            <th class="d2">보유 전광판 등록 및 관리</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk2-01">
+                                                    <label for="chk2-01"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk2-02">
+                                                    <label for="chk2-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk2-03">
+                                                    <label for="chk2-03"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk2-04">
+                                                    <label for="chk2-04"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th class="d1">서비스 상품(채팅방)</th>
-                                            <th class="d2">서비스 상품 관리<br>회원 추가</th>
+                                            <th class="d2">상품별(채팅방) 관리, 가입회원 정보, 결제 정보, 회원추가, 상품 생성</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk3-01">
+                                                    <label for="chk3-01"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk3-02">
+                                                    <label for="chk3-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk3-03">
+                                                    <label for="chk3-03"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk3-04">
+                                                    <label for="chk3-04"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th class="d1">매출 통계</th>
-                                            <th class="d2">매출 통계 보기</th>
+                                            <th class="d1">매출통계</th>
+                                            <th class="d2">채팅방별 매출, 회원수, 수익률 정보</th>
                                             <td></td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk4-02">
+                                                    <label for="chk4-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="d1">결제 관리</th>
-                                            <th class="d2">결제 승인 (유료방 요청 결제)<br>환불 승인</th>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
-                                                </div>
-                                            </td>
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <th class="d1">회원 관리</th>
-                                            <th class="d2">회원 관리</th>
+                                            <th class="d1">결제관리</th>
+                                            <th class="d2">결제 승인 (유료방 요청 결제), 환불 승인</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk5-01">
+                                                    <label for="chk5-01"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk5-02">
+                                                    <label for="chk5-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk5-03">
+                                                    <label for="chk5-03"><span></span></label>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="d1">회원관리</th>
+                                            <th class="d2">회원에 대한 정보, 가입된 채팅방 정보, 결제정보</th>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="chk6-01">
+                                                    <label for="chk6-01"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk6-02">
+                                                    <label for="chk6-02"><span></span></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="chk6-03">
+                                                    <label for="chk6-03"><span></span></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="chk6-04">
+                                                    <label for="chk6-04"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -168,22 +193,26 @@
                                             <th class="d2">관리자 관리</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-01">
+                                                    <label for="chk7-01"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-02">
+                                                    <label for="chk7-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-03">
+                                                    <label for="chk7-03"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-04">
+                                                    <label for="chk7-04"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -191,61 +220,73 @@
                                             <th class="d2">권한 그룹 관리</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-05">
+                                                    <label for="chk7-05"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-06">
+                                                    <label for="chk7-06"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-07">
+                                                    <label for="chk7-07"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk7-08">
+                                                    <label for="chk7-08"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th class="d1" rowspan="2">게시판 관리</th>
                                             <th class="d2">게시판 설정</th>
-                                            <td></td>
+                                            <td>
+                                            </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk8-02">
+                                                    <label for="chk8-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk8-03">
+                                                    <label for="chk8-03"><span></span></label>
                                                 </div>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <th class="d2">게시물 관리<br>게시물 요청 승인</th>
+                                            <th class="d2">게시물 관리, 게시물 요청 승인</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk8-05">
+                                                    <label for="chk8-05"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk8-06">
+                                                    <label for="chk8-06"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk8-07">
+                                                    <label for="chk8-07"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk8-08">
+                                                    <label for="chk8-08"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -254,22 +295,26 @@
                                             <th class="d2">FAQ</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-01">
+                                                    <label for="chk9-01"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-02">
+                                                    <label for="chk9-02"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-03">
+                                                    <label for="chk9-03"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-04">
+                                                    <label for="chk9-04"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -277,22 +322,26 @@
                                             <th class="d2">정책/약관 관리</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-05">
+                                                    <label for="chk9-05"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-06">
+                                                    <label for="chk9-06"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-07">
+                                                    <label for="chk9-07"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-08">
+                                                    <label for="chk9-08"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -301,33 +350,38 @@
                                             <td></td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-10">
+                                                    <label for="chk9-10"><span></span></label>
                                                 </div>
                                             </td>
                                             <td></td>
                                             <td></td>
                                         </tr>
                                         <tr>
-                                            <th class="d1">앱 메인 관리</th>
-                                            <th class="d2">앱 메인 관리<br>(메인타입, 채팅방 순서, 광고, 동영상 삽입)</th>
+                                            <th class="d1">앱 메인관리</th>
+                                            <th class="d2">앱메인 설정, 채팅방 순서 설정, 광고, 동영상 삽입</th>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk10-01">
+                                                    <label for="chk10-05"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-02">
+                                                    <label for="chk10-06"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-03">
+                                                    <label for="chk10-07"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox"></label>
+                                                    <input type="checkbox" id="chk9-04">
+                                                    <label for="chk10-08"><span></span></label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -335,7 +389,8 @@
                                 </table>
                             </div>
                         </div>    
-                        <div class="btns btns-right mg24">
+                        <div class="btns btns-space mg24">
+                            <button type="button" class="btn btn-default">목록</button>
                             <button type="button" class="btn btn-primary" id="btnRegister">생성</button>
                         </div>                    
                     </div>
