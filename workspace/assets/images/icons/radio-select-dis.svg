@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g transform="translate(-772.000000, -254.000000) translate(770.000000, 252.000000)">
+                            <rect width="19" height="19" x="2.5" y="2.5" fill="#EDEDED" stroke="#CDD2D6" rx="9.5"/>
+                            <rect width="8" height="8" x="8" y="8" fill="#CDD2D6" rx="4"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

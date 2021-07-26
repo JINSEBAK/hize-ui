@@ -17,7 +17,7 @@
 
                 <!-- contents -->
                 <div class="main">
-                    @@include('../common/title.html', { "title" : "수정", "sub" : "주식 서비스 플랫폼 게시물을 관리할 수 있습니다." })
+                    @@include('../common/title.html', { "title" : "게시물 수정", "sub" : "주식 서비스 플랫폼 게시물을 관리할 수 있습니다." })
                 
                     <div class="contents">
                   
@@ -28,17 +28,21 @@
                                     <div class="form-inline">
                                         <div class="form-group">
                                             <label for="" class="sr-only">게시물 제목</label>
-                                            <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="postTitle" value="흔들리는 시장…'배당株' 주목">
+                                            <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="postTitle" value="오늘의 정보!">
                                         </div>
                                         <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"  name="post-type" value="notice">
-                                                공지
-                                            </label>
-                                            <label>
-                                                <input type="checkbox"  name="post-type" value="best" checked>
-                                                베스트글
-                                            </label>
+                                            <span>
+                                                <input type="checkbox"  name="post-type" value="notice" id="postType1">
+                                                <label for="postType1">
+                                                    <span>공지</span>
+                                                </label>
+                                            </span>
+                                            <span>
+                                                <input type="checkbox"  name="post-type" value="best" checked id="postType2">
+                                                <label for="postType2">
+                                                    <span>베스트글</span>
+                                                </label>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -48,34 +52,37 @@
                                     </div>
                                     <!-- 첨부파일 영역 -->
                                     <div class="attachment">
-                                        <label type="button" class="btn btn-default" for="imgAttachment">
-                                            + 이미지첨부
-                                            <input type="file" id="imgAttachment" accept=".git,.jpg,.jpeg,.png">
-                                        </label>
-                                        <span>이미지는 최대 3개, 파일당 30MB까지 첨부 가능합니다.</span>
-
-                                        <div class="files">
-                                            <span class="file">
-                                                <a href="#">File3567-1.jpg</a>
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </span>
-                                            <span class="file">
-                                                <a href="#">imageiamge...123456789.jpg</a>
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </span>
+                                        <div class="files-btn">
+                                            <label type="button" class="btn btn-default" for="imgAttachment">
+                                                <span class="icon icon-plus"></span>
+                                                이미지첨부
+                                                <input type="file" id="imgAttachment" accept=".git,.jpg,.jpeg,.png">
+                                            </label>
                                         </div>
+                                        <div class="files">
+                                            <div class="file">
+                                                <img src="../../assets/images/photos/sample.jpeg">
+                                                <!-- <a href="#">File3567-1.jpg</a> -->
+                                                <span class="icon icon-img-del"></span>
+                                            </div>
+                                            <div class="file">
+                                                <img src="../../assets/images/photos/sample.jpeg">
+                                                <span class="icon icon-img-del"></span>
+                                            </div>
+                                        </div>
+                                        <div class="txt-guide">* 이미지는 최대 3개, 파일당 30MB까지 첨부 가능합니다.</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- btns -->
-                        <div class="btns btns-space mg24">
+                        <div class="btns btns-space mg16">
                             <div class="pull-left">
                                 <a href="./wa_10_board_post_list.html" type="button" class="btn btn-default">목록</a>
                             </div>
                             <div class="pull-right">
-                                <button type="button" class="btn btn-default" id="btnCancel">취소</button>
-                                <button type="button" class="btn btn-primary" id="btnModify">수정</button>
+                                <button type="button" class="btn btn-secondary" id="btnCancel">취소</button>
+                                <button type="button" class="btn btn-primary" id="btnModify">수정완료</button>
                             </div>
                         </div>
     
@@ -144,11 +151,12 @@
                 
 
                 var sampleText = 
-                    '<img src="../assets/images/photos/sample.jpeg"><br>' +
-                    '시장 금리가 가파르게 상승하자 테슬라, 아마존 등 빅테크 주식들이 충격을 받고 있다.' +
-                    '이럴 때는 변동성이 낮으면서 배당수익률이 높은 방어주가 유망하다는 분석이다.<br><br>' +
-                    '23일(현지시간) 미국 경제매체 CNBC는 △지난 3년간 변동성이 낮으면서 △연간 배당수익률이 1.5% 이상이고' +
-                    '△애널리스트 매수 의견 비율이 65%인 종목을 추렸다.';
+                    '안녕하세요~ 성공투자주식방의 나주식입니다.<br><br>' +
+                    '코스피 지수가 4거래일 연속 상승하며 사상 최고치를 경신했다. <br>' +
+                    '코스닥도 반등해 1000선에 바짝 다가섰다. <br>' +
+                    '미국 고용 지표가 예상보다 부진하게 나온 것이 되레 긴축 우려를 잠재우면서 주가 상승을 부추긴 격이 됐다. 공매도 재개를 앞두고 비틀거리던 증시는 어느새 급락에 대한 불안감을 훌훌 털어버린 듯한 모습이다.<br><br>'+
+                    '10일 코스피는 전 거래일보다 1.63%(52.10포인트) 오른 3249.30에 마감하며 지난달 20일(3220.70) 이후 13거래일 만에 사상 최고 기록을 다시 세웠다.<br>' +
+                    '장 초반 개인 매수세와 함께 상승 출발한 코스피는 외국인과 기관이 차례로 매수 규모를 늘리며 순매수로 전환하면서 한층 강한 상승세를 보였다.';
 
                 //quill.setText(sampleText);
                 quill.root.innerHTML = sampleText;

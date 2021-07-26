@@ -89,7 +89,7 @@ $btn-default: #b6bbc1;
 $btn-default-hover: #e6e9f0;
 $btn-default-hover-border: #dde1e6;
 $btn-disabled: #cdced7;
-$tb-notice: #f6f2fb;  
+$tb-notice: #fff8f5;  
 $signal-buy-bg: #fbeaea;
 $signal-buy-border: #ceb7b7;
 $signal-sell-bg: #eaf6fb;
@@ -119,6 +119,13 @@ $signal-alarm-border: #cfd4c5;
   }
   &.btn-inline {
     display: inline-block !important;
+  }
+  &.btn-top {
+    background: transparent url(../images/icons/icon_top.svg) center no-repeat;
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    margin-right: 8px;
   }
 }
 .btn-primary {
@@ -204,6 +211,12 @@ $signal-alarm-border: #cfd4c5;
 
 // 버튼 group
 .btns {
+  .btn {
+    font-weight: normal;
+    min-width: 110px;
+    height: 40px;
+    line-height: 1.8;
+  }
   &.btns-right {
     text-align: right;
   }
@@ -236,9 +249,27 @@ a:focus {
 .label {
   font-size: 14px;
   font-weight: 200;
+  border-radius: 6px;
   &.label-chat {
     background-color: #272727;
     color: #fff;
+  }
+  &.label-notice {
+    background-color: #ec7c5b;
+    font-weight: 400;
+  }
+  &.label-best {
+    background-color: #4c4d64;
+    font-weight: 200;
+  }
+  &.label-sell {
+    background-color: #4b8df3;
+  }
+  &.label-buy {
+    background-color: #e95757;
+  }
+  &.label-alarm {
+    background-color: #60728e;
   }
 }
 
@@ -346,6 +377,14 @@ a:focus {
     &:checked + label {
       background: url(../images/icons/radio-checked.svg) left center no-repeat;
     }
+    &:disabled + label {
+      background: url(../images/icons/radio-nor-dis.svg) left center no-repeat;
+    }
+    &:disabled {
+      &:checked + label {
+        background: url(../images/icons/radio-select-dis.svg) left center no-repeat;
+      }
+    }
   }
 }
 
@@ -417,7 +456,7 @@ a:focus {
       background-image: url(../images/icons/chat-menu.svg);
     }
     &.icon-img-del {
-      background-image: url(../images/icons/btn_delete.svg);
+      background-image: url(../images/icons/btn_delete.svg?ver=2);
     }
     &.icon-close {
       background-image: url(../images/icons/icon-close-sm.svg);
@@ -437,6 +476,16 @@ a:focus {
     &.icon-add-admin {
       background-image: url(../images/icons/btn-addbangjang.svg);
     }
+    &.icon-picture {
+      background-image: url(../images/icons/icon-addphoto.svg);
+    }
+    &.icon-cog {
+      background-image: url(../images/icons/btn-setting-nor.svg);
+    }
+    &.icon-plus {
+      background-image: url(../images/icons/icon-plus.svg);
+    }
+
   }
 
 
@@ -699,8 +748,8 @@ a {
 }
 
 .main {
-  padding: 0 20px;
-  padding-left: 230px;
+  padding: 0 24px;
+  padding-left: 234px;
   .page-header {
     padding: 0;
     margin: 0;
@@ -743,28 +792,15 @@ a {
       .dropdown {
         margin-top: -2px;
         display: inline-block;
-        button {
-          font-size: 13px;
-          border: 1px solid $border-color;
-          background: transparent url(../images/icons/arrow-down.svg) right center no-repeat;
-          width: 100px;
-          text-align: left;
-          margin-bottom: 2px;
-          padding: 2px 6px;
-          border-radius: 4px;
-          .caret {
-            float: right;
-            margin-top: 4px;
-          }
-        }
-        &:before {
-          content: '';
-          display: inline-block;
-          width: 1px;
-          height: 12px;
-          margin: 0 12px;
-          background-color: $border-color;
-        }
+        min-width: 104px;
+        max-width: 500px;
+        height: 32px;
+        padding: 4px 10px;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        width: auto;
+        background: #475ebd url(../images/icons/arrow-down-w.svg) calc(100% - 10px) center no-repeat !important;
       }
     }
   }
@@ -1190,8 +1226,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .pagination {
   display: block;
   margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 36px;
+  // padding-top: 10px;
+  // padding-bottom: 36px;
+  padding: 32px 0;
   text-align: center;
   button {
     color: #7d7d7d;
@@ -1286,6 +1323,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .data-list {
   border-collapse: unset;
   border-bottom: 1px solid #30344e !important;
+  margin-bottom: 16px;
   thead {
     tr {
       th {
@@ -1326,7 +1364,6 @@ input[type="number"]::-webkit-inner-spin-button {
           padding: 0 10px;
           color: #4e70be;
           border-color: #a9aebc;
-          // width: 70px;
           height: 32px;
           font-size: 14px;
           margin-top: -6px;
@@ -1350,24 +1387,18 @@ input[type="number"]::-webkit-inner-spin-button {
           padding: 3px 12px;
         }
         .label {
-          border-radius: 7px;
-          font-weight: bold;
+          border-radius: 6px;
           width: 44px;
           height: 28px;
-          &.label-sell {
-            background-color: #4b8df3;
-          }
-          &.label-buy {
-            background-color: #e95757;
-          }
-          &.label-alarm {
-            background-color: #60728e;
-          }
+          
         }
       }
       // 게시판의 공지사항
       &.notice {
         background-color: $tb-notice;
+        &:hover {
+          background-color: #edf0ff;
+        }
       }
       .signal {
         margin: -12px -10px;
@@ -1761,6 +1792,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 // margin, padding
+.mg16 {
+  margin: 16px 0 16px;
+}
 .mg24 {
   margin: 24px 0 24px;
 }

@@ -186,17 +186,12 @@
                     <div class="page-header">
                         <h4>
                             게시물 관리
-                            <div class="dropdown">
-                                <button id="dLabel" class="btn btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    게시판A
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                    <li><a href="#">게시판A</a></li>
-                                    <li><a href="#">게시판B</a></li>
-                                    <li><a href="#">게시판C</a></li>
-                                </ul>
-                                
-                            </div>
+                            
+                            <select class="form-control dropdown">
+                                <option>게시판A</option>
+                                <option>게시판B</option>
+                                <option>게시판C</option>
+                            </select>
                             <ol class="breadcrumb">
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">Library</a></li>
@@ -235,7 +230,7 @@
                                 <div class="form-group form-in-btn">
                                     <label for="" class="sr-only">검색어</label>
                                     <input type="text" class="form-control keyword" placeholder="검색어를 입력하세요.">
-                                    <button type="button" class="btn btn-secondary" id="btnSearch">검색</button>
+                                    <button type="button" class="btn btn-search" id="btnSearch">검색</button>
                                 </div>
                             </div>
                         </div>
@@ -249,12 +244,18 @@
                             </div>
                             <div class="area-list-body">
                                 <table class="table table-bordered data-list">
+                                    <colgroup>
+                                        <col style="width: 80px;">
+                                        <col style="width: 100px;">
+                                        <col>
+                                    </colgroup>
                                     <thead>
                                         <tr>
                                             <th>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="all-chk">
+                                                    <input type="checkbox" name="all-chk" id="allCheck">
+                                                    <label for="allCheck">
+                                                        <span></span>
                                                     </label>
                                                 </div>
                                             </th>
@@ -270,13 +271,17 @@
                                         <tr class="notice">
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk1">
+                                                    <label for="selectChk1"><span></span></label>
                                                 </div>
                                             </td>
-                                            <td>공지</td>
-                                            <td class="lf"><span class="ellipsis">오늘의 투자 포인트!!</span></td>
+                                            <td>100</td>
+                                            <td class="lf">
+                                                <span class="ellipsis">
+                                                    <span class="label label-notice">공지</span>
+                                                    오늘의 투자 포인트!!
+                                                </span>
+                                            </td>
                                             <td>hongadmin</td>
                                             <td>2021-05-14</td>
                                             <td>34</td>
@@ -285,16 +290,15 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk2">
+                                                    <label for="selectChk2"><span></span></label>
                                                 </div>
                                             </td>
-                                            <td>100</td>
+                                            <td>99</td>
                                             <td>
                                                 <span class="ellipsis">
-                                                    <span class="label label-default">Best</span> 흔들리는 시장...…'배당株' 주목
-                                                    <span class="glyphicon glyphicon-picture"></span>
+                                                    <span class="label label-best">Best</span> 흔들리는 시장...…'배당株' 주목
+                                                    <span class="icon icon-picture"></span>
                                                 </span>
                                             </td>
                                             <td>hongadmin</td>
@@ -305,12 +309,11 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk3">
+                                                    <label for="selectChk3"><span></span></label>
                                                 </div>
                                             </td>
-                                            <td>99</td>
+                                            <td>98</td>
                                             <td class="lf"><span class="ellipsis">좋은 정보 제공합니다.</span></td>
                                             <td>mrlee</td>
                                             <td>2021-05-14</td>
@@ -320,24 +323,8 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
-                                                </div>
-                                            </td>
-                                            <td>98</td>
-                                            <td class="lf"><span class="ellipsis">하하하! 웃음만 나오네요</span></td>
-                                            <td>narawang</td>
-                                            <td>2021-05-14</td>
-                                            <td>0</td>
-                                            <td>85</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk5">
+                                                    <label for="selectChk5"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>97</td>
@@ -350,14 +337,13 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk6">
+                                                    <label for="selectChk6"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>96</td>
                                             <td>
-                                                <span class="ellipsis">제목 <span class="glyphicon glyphicon-picture"></span></span>
+                                                <span class="ellipsis">제목 <span class="icon icon-picture"></span></span>
                                             </td>
                                             <td>작성자ID</td>
                                             <td>YYYY-MM-DD</td>
@@ -367,9 +353,8 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk7">
+                                                    <label for="selectChk7"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>95</td>
@@ -382,9 +367,8 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk8">
+                                                    <label for="selectChk8"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>94</td>
@@ -397,9 +381,8 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk9">
+                                                    <label for="selectChk9"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>93</td>
@@ -412,9 +395,8 @@
                                         <tr>
                                             <td>
                                                 <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="select-chk">
-                                                    </label>
+                                                    <input type="checkbox" name="select-chk" id="selectChk10">
+                                                    <label for="selectChk10"><span></span></label>
                                                 </div>
                                             </td>
                                             <td>92</td>
@@ -424,10 +406,26 @@
                                             <td>0</td>
                                             <td>0</td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" name="select-chk" id="selectChk4">
+                                                    <label for="selectChk4"><span></span></label>
+                                                </div>
+                                            </td>
+                                            <td>98</td>
+                                            <td class="lf"><span class="ellipsis">하하하! 웃음만 나오네요</span></td>
+                                            <td>narawang</td>
+                                            <td>2021-05-14</td>
+                                            <td>0</td>
+                                            <td>85</td>
+                                        </tr>
                                     </tbody>
                                 </table>
-
-                                
+                                <div class="btns btns-right">
+                                    <button type="button" class="btn btn-secondary" id="btnDelete">삭제</button>
+                                    <a type="button" class="btn btn-primary" href="./wa_10_board_post_register.html">글쓰기</a>
+                                </div>
                                 <div class="pagination">
     <button type="button" class="pg-opt pg-first" disabled>처음</button>
     <button type="button" class="pg-opt pg-prev" disabled>이전글</button>
@@ -446,10 +444,6 @@
 </div>
                             </div>
 
-                            <div class="btns btns-right">
-                                <button type="button" class="btn btn-default" id="btnDelete">삭제</button>
-                                <a type="button" class="btn btn-primary" href="./wa_10_board_post_register.html">글쓰기</a>
-                            </div>
 
 
                             <!-- 내역 없음 -->
@@ -503,7 +497,7 @@
                     }
                 });
 
-                $('.data-list tbody tr').on('click', function() {
+                $('.data-list tbody tr td:not(:first-child)').on('click', function() {
                     window.location.href = 'wa_10_board_post_detail.html';
                 });
             });

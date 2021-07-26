@@ -17,7 +17,7 @@
 
                 <!-- contents -->
                 <div class="main">
-                    @@include('../common/title.html', { "title" : "글쓰기", "sub" : "주식 서비스 플랫폼 게시물을 관리할 수 있습니다." })
+                    @@include('../common/title.html', { "title" : "게시물 쓰기", "sub" : "주식 서비스 플랫폼 게시물을 관리할 수 있습니다." })
                 
                     <div class="contents">
                   
@@ -28,17 +28,21 @@
                                     <div class="form-inline">
                                         <div class="form-group">
                                             <label for="" class="sr-only">게시물 제목</label>
-                                            <input type="text" class="form-control" placeholder="제목을 입력해주세요." id="postTitle">
+                                            <input type="text" class="form-control" placeholder="제목을 입력해주세요. (40자 이내)" id="postTitle">
                                         </div>
                                         <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"  name="post-type" value="notice">
-                                                공지
-                                            </label>
-                                            <label>
-                                                <input type="checkbox"  name="post-type" value="best">
-                                                베스트글
-                                            </label>
+                                            <span>
+                                                <input type="checkbox"  name="post-type" value="notice" id="postType1">
+                                                <label for="postType1">
+                                                    <span>공지</span>
+                                                </label>
+                                            </span>
+                                            <span>
+                                                <input type="checkbox"  name="post-type" value="best" id="postType2">
+                                                <label for="postType2">
+                                                    <span>베스트글</span>
+                                                </label>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -48,12 +52,13 @@
                                     </div>
                                     <!-- 첨부파일 영역 -->
                                     <div class="attachment">
-                                        <label type="button" class="btn btn-default" for="imgAttachment">
-                                            + 이미지첨부
-                                            <input type="file" id="imgAttachment" accept=".git,.jpg,.jpeg,.png">
-                                        </label>
-                                        <span>이미지는 최대 3개, 파일당 30MB까지 첨부 가능합니다.</span>
-
+                                        <div class="files-btn">
+                                            <label type="button" class="btn btn-default" for="imgAttachment">
+                                                <span class="icon icon-plus"></span>
+                                                이미지첨부
+                                                <input type="file" id="imgAttachment" accept=".git,.jpg,.jpeg,.png">
+                                            </label>
+                                        </div>
                                         <div class="files">
                                             <div class="file">
                                                 <img src="../../assets/images/photos/sample.jpeg">
@@ -65,13 +70,14 @@
                                                 <span class="icon icon-img-del"></span>
                                             </div>
                                         </div>
+                                        <div class="txt-guide">* 이미지는 최대 3개, 파일당 3MB까지 첨부 가능합니다.</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- btns -->
-                        <div class="btns btns-right mg24">
-                            <button type="button" class="btn btn-default" id="btnCancel">취소</button>
+                        <div class="btns btns-space mg16">
+                            <a type="button" class="btn btn-default" href="./wa_10_board_post_list.html">목록</a>
                             <button type="button" class="btn btn-primary" id="btnRegister">등록</button>
                         </div>
     

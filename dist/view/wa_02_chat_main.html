@@ -224,7 +224,8 @@
                         </div>
                         <div class="col-chat col-chat-lf">
                             <div class="chat">
-                                <div class="chat-header chat-search-mode">
+                                <!-- 채팅방 내용 검색 아이콘 클릭 시 .chat-header에 .chat-search-mode 추가 -->
+                                <div class="chat-header">
                                     <div class="left">
                                         <div class="chat-header-info">
                                             <span class="title">
@@ -2083,11 +2084,25 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th>종목명</th>
+                                        <th>종목</th>
                                         <td>
+                                            <div class="radio">
+                                                <span>
+                                                    <input type="radio" name="stock-sch-type" value="name" id="stockSchType1">
+                                                    <label for="stockSchType1">
+                                                        <span>종목명</span>
+                                                    </label>
+                                                </span>
+                                                <span>
+                                                    <input type="radio" name="stock-sch-type" value="number" id="stockSchType2">
+                                                    <label for="stockSchType2">
+                                                        <span>종목번호</span>
+                                                    </label>
+                                                </span>
+                                            </div>
                                             <div class="dropdown">
                                                 <div class="form-inline">
-                                                    <input type="text" class="form-control" placeholder="종목명 입력" value="삼성" id="inputStockName">
+                                                    <input type="text" class="form-control" placeholder="종목 입력" value="삼성" id="inputStockName">
                                                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="btnSearchDropdown">검색</button>
                                                
                                                     <ul class="dropdown-menu" role="menu" aria-labelledby="btnSearchDropdown">

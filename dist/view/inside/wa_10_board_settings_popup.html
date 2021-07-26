@@ -1,6 +1,6 @@
 
 <!-- 게시판 설정 -->
-<div class="modal fade" id="modalBoardSettings" aria-labelledby="modalBoardSettingsLabel" aria-hidden="true">
+<div class="modal fade" id="modalBoardSettings" aria-labelledby="modalBoardSettingsLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,14 +20,14 @@
                                 <th>게시판 사용</th>
                                 <td>
                                     <div class="radio">
-                                        <label>
-                                            <input type="radio" name="board-use" value="1" checked >
-                                            사용
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="board-use" value="0">
-                                            미사용
-                                        </label>
+                                        <span>
+                                            <input type="radio" name="board-use" value="1" checked id="boardUse1">
+                                            <label for="boardUse1"><span>사용</span></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="board-use" value="0" id="boardUse2">
+                                            <label for="boardUse2"><span>미사용</span></label>
+                                        </span>
                                     </div>
                                 </td>
                             </tr>
@@ -48,14 +48,14 @@
                                 <th>사용자 글쓰기</th>
                                 <td>
                                     <div class="radio">
-                                        <label>
-                                            <input type="radio" name="user-write" value="1" checked >
-                                            사용
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="user-write" value="0">
-                                            미사용
-                                        </label>
+                                        <span>
+                                            <input type="radio" name="user-write" value="1" checked id="userWrite1">
+                                            <label for="userWrite1"><span>사용</span></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="user-write" value="0" id="userWrite2">
+                                            <label for="userWrite2"><span>미사용</span></label>
+                                        </span>
                                     </div>
                                 </td>
                             </tr>
@@ -63,14 +63,14 @@
                                 <th>이미지 첨부</th>
                                 <td>
                                     <div class="radio">
-                                        <label>
-                                            <input type="radio" name="attachment" value="1" checked >
-                                            사용
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="attachment" value="0">
-                                            미사용
-                                        </label>
+                                        <span>
+                                            <input type="radio" name="attachment" value="1" checked id="attachment1">
+                                            <label for="attachment1"><span>사용</span></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="attachment" value="0" id="attachment2">
+                                            <label for="attachment2"><span>미사용</span></label>
+                                        </span>
                                     </div>
                                 </td>
                             </tr>
@@ -78,14 +78,14 @@
                                 <th>댓글 사용</th>
                                 <td>
                                     <div class="radio">
-                                        <label>
-                                            <input type="radio" name="comment-use" value="1" checked >
-                                            사용
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="comment-use" value="0">
-                                            미사용
-                                        </label>
+                                        <span>
+                                            <input type="radio" name="comment-use" value="1" checked id="commentUse1">
+                                            <label for="commentUse1"><span>사용</span></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="comment-use" value="0" id="commentUse2">
+                                            <label for="commentUse2"><span>미사용</span></label>
+                                        </span>
                                     </div>
                                 </td>
                             </tr>
@@ -93,14 +93,14 @@
                                 <th>승인여부</th>
                                 <td>
                                     <div class="radio">
-                                        <label>
-                                            <input type="radio" name="approval-use" value="1" checked >
-                                            사용
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="approval-use" value="0">
-                                            미사용
-                                        </label>
+                                        <span>
+                                            <input type="radio" name="approval-use" value="1" checked id="approvalUse1">
+                                            <label for="approvalUse1"><span>사용</span></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="approval-use" value="0" id="approvalUse2">
+                                            <label for="approvalUse2"><span>미사용</span></label>
+                                        </span>
                                     </div>
                                 </td>
                             </tr>
