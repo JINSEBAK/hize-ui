@@ -306,6 +306,7 @@
                                         </a>
                                     </div>
                                 </div>
+                                <!-- 얼리기 시 .chat-body에 .freeze 추가 -->
                                 <div class="chat-body">
                                     <div class="scroll" >
                                         <div class="inner" id="chatBody">
@@ -784,53 +785,55 @@
                                                     <button type="button" class="btn btn-primary btn-sm">전송</button>
                                                 </li>
                                                 <li>
-                                                    <button type="button" class="btn btn-setting" data-toggle="popover">
-                                                        <span class="icon icon-w-config"></span>
-                                                    </button>
-                                                    <div id="chatSetting" class="hide">
-                                                        <form id="settingInPopover">
-                                                            <div class="form-title">
-                                                                메세지 입력 기능
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="radio">
-                                                                    <label>
-                                                                        <input type="radio" name="chat-freeze" value="0" id="msg1"> 
-                                                                        <label for="msg1">
-                                                                            <span>OFF</span>
-                                                                        </label>
-                                                                    </label> 
-                                                                    <label>
-                                                                        <input type="radio" name="chat-freeze" value="1" id="msg2" checked >
-                                                                        <label for="msg2">
-                                                                            <span>ON</span>
-                                                                        </label>
-                                                                    </label>
+                                                    <div class="set-popover">
+                                                        <button type="button" class="btn btn-setting" data-toggle="popover">
+                                                            <span class="icon icon-w-config"></span>
+                                                        </button>
+                                                        <div id="chatSetting" class="hidden">
+                                                            <form class="setting-in-popover">
+                                                                <div class="form-title">
+                                                                    메세지 입력 기능
                                                                 </div>
-                                                            </div>
-                                                            <div class="form-title">
-                                                                이미지 첨부 기능
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="radio">
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="attachment" value="0" id="file1"> 
-                                                                        <label for="file1">
-                                                                            <span>OFF</span>
-                                                                        </label>
-                                                                    </label> 
-                                                                    <label class="radio-inline">
-                                                                        <input type="radio" name="attachment" value="1" id="file2"> 
-                                                                        <label for="file2">
-                                                                            <span>ON</span>
-                                                                        </label>
-                                                                    </label>
+                                                                <div class="form-groupabc">
+                                                                    <div class="radio">
+                                                                        <span>
+                                                                            <input type="radio" name="chat-freeze" value="0" id="msg1"> 
+                                                                            <label for="msg1">
+                                                                                <span>OFF</span>
+                                                                            </label>
+                                                                        </span> 
+                                                                        <span>
+                                                                            <input type="radio" name="chat-freeze" value="1" id="msg2" checked >
+                                                                            <label for="msg2">
+                                                                                <span>ON</span>
+                                                                            </label>
+                                                                        </span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="popover-footer">
-                                                                <button type="button" class="btn btn-text">저장</button>
-                                                            </div>
-                                                        </form>
+                                                                <div class="form-title">
+                                                                    이미지 첨부 기능
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="radio">
+                                                                        <span>
+                                                                            <input type="radio" name="attachment" value="0" id="file1"> 
+                                                                            <label for="file1">
+                                                                                <span>OFF</span>
+                                                                            </label>
+                                                                        </span> 
+                                                                        <span>
+                                                                            <input type="radio" name="attachment" value="1" id="file2"> 
+                                                                            <label for="file2">
+                                                                                <span>ON</span>
+                                                                            </label>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="popover-footer">
+                                                                    <button type="button" class="btn btn-text">저장</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -3185,7 +3188,25 @@
                         return $('#chatSetting').html();
                     }
                 });
+                $('.btn-setting').on('shown.bs.popover', function() {
+                    var el = $('.popover .popover-content').find('.setting-in-popover');
+                    el.find('input[type=radio]').each(function() {
+                        const newId = $(this).attr('name') + '_' + $(this).attr('value')
+                        $(this).attr('id', newId);
+                        $(this).next('label').attr('for', newId);
+                    });
+                    $('input:radio[name="chat-freeze"]').on('change', function() {
+                        console.log($(this).val());
+                        if ($(this).val() === '0') {
+                            $('.chat-body').addClass('freeze');
+                        } else {
+                            $('.chat-body').removeClass('freeze');
+                        }
+                    });
+                });
 
+
+               
                 $('#myChatList').find('.icon-search').on('click', function() {
                     $('#myChatList').find('.area-empty').removeClass('register').addClass('search');
 
