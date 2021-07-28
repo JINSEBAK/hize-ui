@@ -191,7 +191,7 @@
             <li class="active">Data</li>
         </ol>
         <small>
-            Hize앱 메인을 관리할 수 있습니다.
+            주식 서비스 플랫폼 메인을 관리할 수 있습니다.
         </small>
     </h4>
 </div>
@@ -199,7 +199,7 @@
                     <div class="contents">
 
                         <!-- tabs -->
-                        <ul class="nav nav-tabs nav-justified detail-tabs" role="tablist">
+                        <ul class="nav nav-tabs nav-justified detail-tabs detail-tabs-b" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#tabBasic" aria-controls="tabBasic" role="tab" data-toggle="tab">기본 설정</a>
                             </li>
@@ -210,10 +210,10 @@
                                 <a href="#tabFreeChat" aria-controls="tabFreeChat" role="tab" data-toggle="tab">체험방</a>
                             </li>
                             <li role="presentation">
-                                <a href="#tabAdvertise" aria-controls="tabAdvertise" role="tab" data-toggle="tab">광고 삽입</a>
+                                <a href="#tabAdvertise" aria-controls="tabAdvertise" role="tab" data-toggle="tab">광고 등록</a>
                             </li>
                             <li role="presentation">
-                                <a href="#tabVideo" aria-controls="tabVideo" role="tab" data-toggle="tab">동영상 삽입</a>
+                                <a href="#tabVideo" aria-controls="tabVideo" role="tab" data-toggle="tab">동영상 등록</a>
                             </li>
                         </ul>
 
@@ -223,52 +223,113 @@
                                 
 <div class="area-list">
     <div class="area-list-header">
+        <div class="pull-left">
+            <p class="lead">앱메인 스타일을 설정해주세요.</p>
+        </div>
         <div class="pull-right">
             <button type="button" class="btn btn-primary">저장</button>
         </div>
     </div>
     <div class="area-list-body">
         <div class="app-main-set">
-            <p class="lead">앱메인 타입을 설정해주세요.</p>
             <div class="radio radio-img">
                 <span>
-                    <input type="radio" name="main-type" value="A">
-                    A타입
-                    <img src="../assets/images/photos/sample_layout.png" alt="동영상이 탭으로 구성된 A타입">
+                    <input type="radio" name="main-type" value="A" id="mainTypeA" checked>
+                    <label for="mainTypeA">
+                        <span>이미지형</span>
+                        <img src="../assets/images/photos/main-type-img.png" alt="동영상이 탭으로 구성된 A타입">
+                    </label>
                 </span>
                 <span>
-                    <input type="radio" name="main-type" value="B">
-                    B타입
-                    <img src="../assets/images/photos/sample_layout.png" alt="동영상이 목록으로 노출되는 B타입">
+                    <input type="radio" name="main-type" value="B" id="mainTypeB">
+                    <label for="mainTypeB">
+                        <span>리스트형</span>
+                        <img src="../assets/images/photos/main-type-list.png" alt="동영상이 목록으로 노출되는 B타입">
+                    </label>
                 </span>
             </div>
 
-            <p class="lead">동영상컨텐츠에 진입 가능한 회원을 설정해주세요.</p>
-            <div class="radio">
-                <span>
-                    <input type="radio" name="user-type" value="1" id="userType1"> 
-                    <label for="userType1">
-                        <span>모든 회원</span>
-                    </label>
-                </span>
-                <span>
-                    <input type="radio" name="user-type" value="2" id="userType2">
-                    <label for="userType2">
-                        <span>유료 회원</span>
-                    </label>
-                </span>
-            </div>
+
+            <table class="table table-form">
+
+                <colgroup>
+                    <col style="width: 12%">
+                    <col style="width: 88%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>앱 이름</th>
+                        <td>
+                            <div class="form-inline">
+                                <label for="" class="sr-only">앱 이름</label>
+                                <input type="text" class="form-control" placeholder="앱 이름 입력 (최대 15자)" style="width: 50%;">
+                                <small>* 앱이름은 앱 메인화면 상단에 보여집니다.</small>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>동영상 컨텐츠 접근</th>
+                        <td>
+                            <div class="radio">
+                                <span>
+                                    <input type="radio" name="video-yn" value="y" id="videoYn_y">
+                                    <label for="videoYn_y">
+                                        <span>모든 회원 접근</span>
+                                    </label>
+                                </span>
+                                <span>
+                                    <input type="radio" name="video-yn" value="n" id="videoYn_y">
+                                    <label for="videoYn_y">
+                                        <span>모든 회원 접근</span>
+                                    </label>
+                                </span>
+                                <small>* 유료 회원 설정 시 동영상 컨텐츠는 유료회원에게만 보여집니다.</small>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>체험방 서비스</th>
+                        <td>
+                            <div class="radio">
+                                <span>
+                                    <input type="radio" name="trial-yn" value="y" id="trialYn_y">
+                                    <label for="trialYn_y">
+                                        <span>체험방 제공</span>
+                                    </label>
+                                </span>
+                                <span>
+                                    <input type="radio" name="video-yn" value="n" id="trialYn_n">
+                                    <label for="trialYn_n">
+                                        <span>체험방 미제공</span>
+                                    </label>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     </div>
 </div>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabPaidChat">
-                                <p class="lead">유료방 목록 순서를 설정해주세요.</p>
-<div class="area-list">
+                                <div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            <p class="lead">
+                유료방 목록 순서를 설정해주세요.
+                <small>주식서비스앱 메인에 설정한 순서대로 유료방이 보여집니다.</small>
+            </p>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-primary">저장</button>
+        </div>
+    </div>
     <div class="area-list-body">
         <div class="tb-list drag-board">
             <ul class="tb-list-hd tb-list-chat">
-                <li class="cell"><span>No.</span></li>
+                <li class="cell"><span>순서</span></li>
                 <li class="cell">채팅방명</li>
                 <li class="cell">생성자명</li>
                 <li class="cell">시작일</li>
@@ -276,157 +337,163 @@
             </ul>
             <ul class="tb-list-bd tb-list-chat">
                 <li>
-                    <div class="cell">1</div>
+                    <div class="cell cell-no">1</div>
                     <div class="cell"><span class="ellipsis">성공투자주식방-1</span></div>
                     <div class="cell">박민</div>
                     <div class="cell">2021-04-10</div>
                     <div class="cell">2022-03-30</div>
                 </li>
                 <li>
-                    <div class="cell">2</div>
+                    <div class="cell cell-no">2</div>
                     <div class="cell"><span class="ellipsis">채팅방 A</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">3</div>
+                    <div class="cell cell-no">3</div>
                     <div class="cell"><span class="ellipsis">채팅방 B</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">4</div>
+                    <div class="cell cell-no">4</div>
                     <div class="cell"><span class="ellipsis">채팅방 C</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">5</div>
+                    <div class="cell cell-no">5</div>
                     <div class="cell"><span class="ellipsis">채팅방 D</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">6</div>
+                    <div class="cell cell-no">6</div>
                     <div class="cell"><span class="ellipsis">채팅방 E</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">7</div>
+                    <div class="cell cell-no">7</div>
                     <div class="cell"><span class="ellipsis">채팅방 F</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">8</div>
+                    <div class="cell cell-no">8</div>
                     <div class="cell"><span class="ellipsis">채팅방 G</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">9</div>
+                    <div class="cell cell-no">9</div>
                     <div class="cell"><span class="ellipsis">채팅방 H</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">10</div>
+                    <div class="cell cell-no">10</div>
                     <div class="cell"><span class="ellipsis">채팅방 I</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">11</div>
+                    <div class="cell cell-no">11</div>
                     <div class="cell"><span class="ellipsis">채팅방 J</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">12</div>
+                    <div class="cell cell-no">12</div>
                     <div class="cell"><span class="ellipsis">채팅방 K</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">13</div>
+                    <div class="cell cell-no">13</div>
                     <div class="cell"><span class="ellipsis">채팅방 L</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">14</div>
+                    <div class="cell cell-no">14</div>
                     <div class="cell"><span class="ellipsis">채팅방 M</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">15</div>
+                    <div class="cell cell-no">15</div>
                     <div class="cell"><span class="ellipsis">채팅방 N</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">16</div>
+                    <div class="cell cell-no">16</div>
                     <div class="cell"><span class="ellipsis">채팅방 O</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">17</div>
+                    <div class="cell cell-no">17</div>
                     <div class="cell"><span class="ellipsis">채팅방 P</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">18</div>
+                    <div class="cell cell-no">18</div>
                     <div class="cell"><span class="ellipsis">채팅방 Q</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">19</div>
+                    <div class="cell cell-no">19</div>
                     <div class="cell"><span class="ellipsis">채팅방 R</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
                 <li>
-                    <div class="cell">20</div>
+                    <div class="cell cell-no">20</div>
                     <div class="cell"><span class="ellipsis">채팅방 S</span></div>
                     <div class="cell">생성자명</div>
                     <div class="cell">YYYY-MM-DD</div>
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
             </ul>
-        </div>
-
-        <div class="btns btns-center">
-            <button type="button" class="btn btn-primary">저장</button>
         </div>
     </div>
 </div>
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabFreeChat">
-                                <p class="lead">체험방 목록 순서를 설정해주세요.</p>
-<div class="area-list">
+                                <div class="area-list">
+    <div class="area-list-header">
+        <div class="pull-left">
+            <p class="lead">
+                체험방 목록 순서를 설정해주세요.
+                <small>주식서비스앱 메인에 설정한 순서대로 체험방이 보여집니다.</small>
+            </p>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-primary">저장</button>
+        </div>
+    </div>
     <div class="area-list-body">
         <div class="tb-list drag-board">
             <ul class="tb-list-hd tb-list-chat">
@@ -578,10 +645,6 @@
                     <div class="cell">YYYY-MM-DD</div>
                 </li>
             </ul>
-        </div>
-
-        <div class="btns btns-center">
-            <button type="button" class="btn btn-primary">저장</button>
         </div>
     </div>
 </div>
@@ -591,19 +654,21 @@
 <div class="area-list">
     <div class="area-list-header">
         <div class="pull-left">
-            <p class="lead">광고를 삽입해주세요.</p>
-            <small>Hize앱 메인에 등록한 광고가 보여집니다.</small>
+            <p class="lead">
+                광고를 등록해주세요.
+                <small>주식서비스앱 메인에 등록한 광고가 보여집니다.</small>
+            </p>
         </div>
         <div class="pull-right">
-            <button type="button" class="btn btn-default">삭제</button>
+            <button type="button" class="btn btn-secondary">삭제</button>
             <button type="button" class="btn btn-primary" id="btnAddAdvertise" data-toggle="modal" data-target="#modalAddAdvertise">광고 추가</button>
         </div>
     </div>
     <div class="area-list-body">
         <table class="table table-bordered data-list">
             <colgroup>
-                <col style="width: 10%">
-                <col style="width: 10%">
+                <col style="width: 100px">
+                <col style="width: 100px">
                 <col style="width: 15%">
                 <col style="width: auto">
                 <col style="width: 15%">
@@ -613,24 +678,26 @@
                 <tr>
                     <th>
                         <div class="checkbox">
+                            <input type="checkbox" id="allChk">
                             <label for="allChk">
-                                <input type="checkbox" id="allChk">
+                                <span></span>
                             </label>
                         </div>
                     </th>
                     <th>No.</th>
                     <th>이미지</th>
-                    <th>광고명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>광고명 <span class="icon icon-table-sort"></span></th>
                     <th>등록자명</th>
-                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록일 <span class="icon icon-table-sort"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="1" id="adSelect1">
+                            <label for="adSelect1">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -645,8 +712,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="2" id="adSelect2">
+                            <label for="adSelect2">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -661,8 +729,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="3" id="adSelect3">
+                            <label for="adSelect3">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -677,8 +746,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="4" id="adSelect4">
+                            <label for="adSelect4">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -693,8 +763,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="5" id="adSelect5">
+                            <label for="adSelect5">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -709,8 +780,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="6" id="adSelect6">
+                            <label for="adSelect6">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -725,8 +797,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="7" id="adSelect7">
+                            <label for="adSelect7">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -741,8 +814,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="8" id="adSelect8">
+                            <label for="adSelect8">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -757,8 +831,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="9" id="adSelect9">
+                            <label for="adSelect9">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -770,25 +845,9 @@
                     <td>등록자명</td>
                     <td>YYYY-MM-DD</td>
                 </tr>
-                <!-- <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
-                            </label>
-                        </div>
-                    </td>
-                    <td>1</td>
-                    <td>
-                        <img src="../../assets/images/photos/sample.jpeg" alt="" class="thumb">
-                    </td>
-                    <td><span class="ellipsis">광고 제목</span></td>
-                    <td>등록자명</td>
-                    <td>YYYY-MM-DD</td>
-                </tr> -->
             </tbody>
         </table>
-        <ul class="guide mg24">
+        <ul class="guide">
             <li>광고는 앱 메인 상단에 노출됩니다.</li>
             <li>광고 개수는 최대 10개 입니다.</li>
         </ul>
@@ -833,20 +892,21 @@
 <div class="area-list">
     <div class="area-list-header">
         <div class="pull-left">
-            <p class="lead">동영상을 삽입해주세요.</p>
+            <p class="lead">
+                동영상을 등록해주세요.
+                <small>주식서비스앱 메인에 등록한 동영상이 보여집니다.</small>
+            </p>
         </div>
         <div class="pull-right">
-            <button type="button" class="btn btn-default">삭제</button>
-            <button type="button" class="btn btn-primary" id="btnVide" data-toggle="modal" data-target="#modalAddVideo">동영상 추가</button>
+            <button type="button" class="btn btn-secondary">삭제</button>
+            <button type="button" class="btn btn-primary" id="btnVide" data-toggle="modal" data-target="#modalAddVideo">동영상 등록</button>
         </div>
     </div>
     <div class="area-list-body">
         <table class="table table-bordered data-list">
-            <colgroup>
-                <col style="width: 10%">
-                <col style="width: 10%">
-                <col style="width: 10%">
-                <col style="width: 15%">
+            <colgroup> 
+                <col style="width: 100px"> 
+                <col style="width: 100px">
                 <col style="width: auto">
                 <col style="width: 15%">
                 <col style="width: 15%">
@@ -855,25 +915,27 @@
                 <tr>
                     <th>
                         <div class="checkbox">
-                            <label for="allChk">
-                                <input type="checkbox" id="allVideoChk">
+                            <input type="checkbox" id="allVideoChk">
+                            <label for="allVideoChk">
+                                <span></span>
                             </label>
                         </div>
                     </th>
                     <th>No.</th>
-                    <th>상태 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>상태 <span class="icon icon-table-sort"></span></th>
                     <th>이미지</th>
-                    <th>동영상명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>동영상명 <span class="icon icon-table-sort"></span></th>
                     <th>등록자명</th>
-                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록일 <span class="icon icon-table-sort"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="1" id="videoSelect1">
+                            <label for="videoSelect1">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -889,8 +951,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="2" id="videoSelect2">
+                            <label for="videoSelect2">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -906,8 +969,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="3" id="videoSelect3">
+                            <label for="videoSelect3">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -923,8 +987,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="4" id="videoSelect4">
+                            <label for="videoSelect4">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -940,8 +1005,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="5" id="videoSelect5">
+                            <label for="videoSelect5">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -957,8 +1023,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="6" id="videoSelect6">
+                            <label for="videoSelect6">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -974,8 +1041,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="7" id="videoSelect7">
+                            <label for="videoSelect7">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -991,8 +1059,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="8" id="videoSelect8">
+                            <label for="videoSelect8">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -1008,8 +1077,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="9" id="videoSelect9">
+                            <label for="videoSelect9">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -1025,8 +1095,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="10" id="videoSelect10">
+                            <label for="videoSelect10">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -1041,6 +1112,9 @@
                 </tr>
             </tbody>
         </table>
+        <div class="txt-guide">
+            동영상 컨텐츠 접근을 제한한 경우 등록한 동영상은 보이지 않습니다.(앱메인 관리 &gt; 기본설정)
+        </div>
 
         <div class="pagination">
     <button type="button" class="pg-opt pg-first" disabled>처음</button>
@@ -1074,49 +1148,50 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">광고 추가</h4>
+                <h4 class="modal-title">광고 등록</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-form">
                     <table class="table table-form">
                         <colgroup>
-                            <col style="width: 25%">
-                            <col style="width: 75%">
+                            <col style="width: 110px">
+                            <col style="width: auto">
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th class="required">광고명</th>
+                                <th>광고명</th>
                                 <td>
                                     <div class="input-count">
                                         <label for="" class="sr-only">광고명</label>
-                                        <input type="text" class="form-control" placeholder="광고명 입력" maxlength="16" id="adTitle">
+                                        <input type="text" class="form-control" placeholder="광고명 입력" maxlength="20" id="adTitle">
                                         <div class="count">
                                             <span class="txt-length">0</span>
-                                            <span>16</span>
+                                            <span>20</span>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th>URL</th>
+                                <th>상세화면 URL</th>
                                 <td>
-                                    <label for="" class="sr-only">광고 url</label>
+                                    <label for="" class="sr-only">상세화면 URL</label>
                                     <input type="text" class="form-control" placeholder="URL 입력">
                                 </td>
                             </tr>
                             <tr>
-                                <th class="required">광고<br>이미지</th>
+                                <th>광고 이미지</th>
                                 <td>
                                     <div class="img-file-box">
                                         <div class="img-thumb">
-                                            <img src="../assets/images/photos/sample.jpeg" alt="">
+                                            <span>광고 배너이미지를 등록해주세요</span>
                                         </div>
                                         <div class="file-func">
                                             <div class="pull-left">
-                                                <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
-                                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                                    대표이미지 등록 가이드
-                                                </a>
+                                                <ul class="li-guide">
+                                                    <li>파일 형식 : JPG, JPEG, PNG</li>
+                                                    <li>이미지 비율 : 4:2.1</li>
+                                                    <li>이미지 권장사이즈(가로*세로) : 700px*368px 이상</li>
+                                                </ul>
                                             </div>
                                             <div class="pull-right">
                                                 <label type="button" class="btn btn-secondary btn-file btn-sm" for="adThumbnailImg">
@@ -1130,15 +1205,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <ul class="guide">
-                        <li>광고명: 게재하는 광고의 간략한 광고명을 입력해주세요.</li>
-                        <li>URL: Hize앱에서 광고 배너 선택시 이동하는 화면의 주소를 입력해주세요.</li>
+                    <ul class="li-guide">
+                        <li><strong>광고명</strong> : 게재하는 광고에 대한 간략한 설명을 입력해주세요.</li>
+                        <li><strong>URL</strong> : 앱에서 광고 배너 선택시 이동할 화면의 URL을 입력해주세요.<br>URL을 미입력한 경우에는 광고 배너 선택시 화면 이동을 하지 않습니다.</li>
                     </ul>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-primary">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">등록</button>
             </div>
         </div>
     </div>
@@ -1153,34 +1228,34 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">동영상 추가</h4>
+                <h4 class="modal-title">동영상 등록</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-form">
                     <table class="table table-form">
                         <colgroup>
-                            <col style="width: 25%">
-                            <col style="width: 75%">
+                            <col style="width: 110px">
+                            <col style="width: auto">
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th class="required">동영상 제목</th>
+                                <th>동영상 제목</th>
                                 <td>
                                     <div class="input-count">
                                         <label for="" class="sr-only">동영상 제목</label>
-                                        <input type="text" class="form-control" placeholder="동영상명 입력" maxlength="16" id="videoTitle">
+                                        <input type="text" class="form-control" placeholder="동영상명 입력" maxlength="20" id="videoTitle">
                                         <div class="count">
                                             <span class="txt-length">0</span>
-                                            <span>16</span>
+                                            <span>20</span>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="required">설명</th>
+                                <th>설명</th>
                                 <td>
                                     <div class="input-count">
-                                        <label for="" class="sr-only">동영상 설명</label>
+                                        <label for="" class="sr-only">설명</label>
                                         <input type="text" class="form-control" placeholder="설명 입력" maxlength="20" id="videoExplanation">
                                         <div class="count">
                                             <span class="txt-length">0</span>
@@ -1190,26 +1265,25 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="required">동영상 주소</th>
+                                <th>동영상 주소</th>
                                 <td>
                                     <div class="form-group form-in-btn">
                                         <div class="input-count">
                                             <label for="" class="sr-only">동영상 설명</label>
-                                            <input type="text" class="form-control" placeholder="동영상 주소"  id="videoUrl">
+                                            <input type="text" class="form-control" placeholder="유투브 동영상 주소"  id="videoUrl">
                                         </div>
-                                        <button type="button" class="btn btn-secondary" id="btnAddVideoUrl">입력</button>
+                                        <button type="button" class="btn btn-secondary" id="btnAddVideoUrl">저장</button>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th>동영상</th>
+                                <th>동영상 썸네일</th>
                                 <td>
                                     <div class="preview-video">
-                                        <iframe id="player" type="text/html" src=""></iframe>
+                                        <span>유투브 동영상</span>
                                     </div>
                                 </td>
                             </tr>
-                            
                             <tr>
                                 <th>상태</th>
                                 <td>
@@ -1227,16 +1301,18 @@
                             </tr>
                         </tbody>
                     </table>
-                    <ul class="guide">
-                        <li>동영상 제목/설명: 사용자앱에서 보여질 동영상 제목과 설명을 입력해주세요.</li>
-                        <li>동영상 주소: 게시할 유투브 동영상 주소를 입력해주세요.<br>(동영상 주소: 유투브 &gt; 공유 &gt; 링크복사)</li>
-                        <li>상태: 회원에게 동영상 노출 여부를 설정해주세요.</li>
+                    <ul class="li-guide">
+                        <li><strong>동영상 제목/설명</strong> : 사용자앱에서 보여질 동영상 제목과 설명을 입력해주세요.</li>
+                        <li><strong>동영상 주소</strong> : 게시할 유투브 동영상 주소를 입력해주세요.<br>
+                            유투브 동영상 주소만 유효합니다. 유투브 동영상 주소를 입력 후 저장하시면 동영상 썸네일이 보여집니다.
+                        </li>
+                        <li><strong>상태</strong> : 회원에게 동영상 노출 여부를 설정할 수 있습니다.</li>
                     </ul>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-primary">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">등록</button>
             </div>
         </div>
     </div>
@@ -1251,7 +1327,6 @@
 <script src="../assets/js/common.js"></script>
         <script>
             $(function() {
-
                 $('.nav-tabs').find('a[href="#tabBasic"]').tab('show');
 
                 // 목록 Sortable

@@ -4,49 +4,50 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">광고 추가</h4>
+                <h4 class="modal-title">광고 등록</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-form">
                     <table class="table table-form">
                         <colgroup>
-                            <col style="width: 25%">
-                            <col style="width: 75%">
+                            <col style="width: 110px">
+                            <col style="width: auto">
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th class="required">광고명</th>
+                                <th>광고명</th>
                                 <td>
                                     <div class="input-count">
                                         <label for="" class="sr-only">광고명</label>
-                                        <input type="text" class="form-control" placeholder="광고명 입력" maxlength="16" id="adTitle">
+                                        <input type="text" class="form-control" placeholder="광고명 입력" maxlength="20" id="adTitle">
                                         <div class="count">
                                             <span class="txt-length">0</span>
-                                            <span>16</span>
+                                            <span>20</span>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th>URL</th>
+                                <th>상세화면 URL</th>
                                 <td>
-                                    <label for="" class="sr-only">광고 url</label>
+                                    <label for="" class="sr-only">상세화면 URL</label>
                                     <input type="text" class="form-control" placeholder="URL 입력">
                                 </td>
                             </tr>
                             <tr>
-                                <th class="required">광고<br>이미지</th>
+                                <th>광고 이미지</th>
                                 <td>
                                     <div class="img-file-box">
                                         <div class="img-thumb">
-                                            <img src="../assets/images/photos/sample.jpeg" alt="">
+                                            <span>광고 배너이미지를 등록해주세요</span>
                                         </div>
                                         <div class="file-func">
                                             <div class="pull-left">
-                                                <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
-                                                    <span class="glyphicon glyphicon-info-sign"></span>
-                                                    대표이미지 등록 가이드
-                                                </a>
+                                                <ul class="li-guide">
+                                                    <li>파일 형식 : JPG, JPEG, PNG</li>
+                                                    <li>이미지 비율 : 4:2.1</li>
+                                                    <li>이미지 권장사이즈(가로*세로) : 700px*368px 이상</li>
+                                                </ul>
                                             </div>
                                             <div class="pull-right">
                                                 <label type="button" class="btn btn-secondary btn-file btn-sm" for="adThumbnailImg">
@@ -60,15 +61,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <ul class="guide">
-                        <li>광고명: 게재하는 광고의 간략한 광고명을 입력해주세요.</li>
-                        <li>URL: Hize앱에서 광고 배너 선택시 이동하는 화면의 주소를 입력해주세요.</li>
+                    <ul class="li-guide">
+                        <li><strong>광고명</strong> : 게재하는 광고에 대한 간략한 설명을 입력해주세요.</li>
+                        <li><strong>URL</strong> : 앱에서 광고 배너 선택시 이동할 화면의 URL을 입력해주세요.<br>URL을 미입력한 경우에는 광고 배너 선택시 화면 이동을 하지 않습니다.</li>
                     </ul>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-primary">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">등록</button>
             </div>
         </div>
     </div>

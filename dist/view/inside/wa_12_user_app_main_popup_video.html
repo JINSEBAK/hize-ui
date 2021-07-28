@@ -4,34 +4,34 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">동영상 추가</h4>
+                <h4 class="modal-title">동영상 등록</h4>
             </div>
             <div class="modal-body">
                 <div class="modal-form">
                     <table class="table table-form">
                         <colgroup>
-                            <col style="width: 25%">
-                            <col style="width: 75%">
+                            <col style="width: 110px">
+                            <col style="width: auto">
                         </colgroup>
                         <tbody>
                             <tr>
-                                <th class="required">동영상 제목</th>
+                                <th>동영상 제목</th>
                                 <td>
                                     <div class="input-count">
                                         <label for="" class="sr-only">동영상 제목</label>
-                                        <input type="text" class="form-control" placeholder="동영상명 입력" maxlength="16" id="videoTitle">
+                                        <input type="text" class="form-control" placeholder="동영상명 입력" maxlength="20" id="videoTitle">
                                         <div class="count">
                                             <span class="txt-length">0</span>
-                                            <span>16</span>
+                                            <span>20</span>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th class="required">설명</th>
+                                <th>설명</th>
                                 <td>
                                     <div class="input-count">
-                                        <label for="" class="sr-only">동영상 설명</label>
+                                        <label for="" class="sr-only">설명</label>
                                         <input type="text" class="form-control" placeholder="설명 입력" maxlength="20" id="videoExplanation">
                                         <div class="count">
                                             <span class="txt-length">0</span>
@@ -41,26 +41,25 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th class="required">동영상 주소</th>
+                                <th>동영상 주소</th>
                                 <td>
                                     <div class="form-group form-in-btn">
                                         <div class="input-count">
                                             <label for="" class="sr-only">동영상 설명</label>
-                                            <input type="text" class="form-control" placeholder="동영상 주소"  id="videoUrl">
+                                            <input type="text" class="form-control" placeholder="유투브 동영상 주소"  id="videoUrl">
                                         </div>
-                                        <button type="button" class="btn btn-secondary" id="btnAddVideoUrl">입력</button>
+                                        <button type="button" class="btn btn-secondary" id="btnAddVideoUrl">저장</button>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <th>동영상</th>
+                                <th>동영상 썸네일</th>
                                 <td>
                                     <div class="preview-video">
-                                        <iframe id="player" type="text/html" src=""></iframe>
+                                        <span>유투브 동영상</span>
                                     </div>
                                 </td>
                             </tr>
-                            
                             <tr>
                                 <th>상태</th>
                                 <td>
@@ -78,16 +77,18 @@
                             </tr>
                         </tbody>
                     </table>
-                    <ul class="guide">
-                        <li>동영상 제목/설명: 사용자앱에서 보여질 동영상 제목과 설명을 입력해주세요.</li>
-                        <li>동영상 주소: 게시할 유투브 동영상 주소를 입력해주세요.<br>(동영상 주소: 유투브 &gt; 공유 &gt; 링크복사)</li>
-                        <li>상태: 회원에게 동영상 노출 여부를 설정해주세요.</li>
+                    <ul class="li-guide">
+                        <li><strong>동영상 제목/설명</strong> : 사용자앱에서 보여질 동영상 제목과 설명을 입력해주세요.</li>
+                        <li><strong>동영상 주소</strong> : 게시할 유투브 동영상 주소를 입력해주세요.<br>
+                            유투브 동영상 주소만 유효합니다. 유투브 동영상 주소를 입력 후 저장하시면 동영상 썸네일이 보여집니다.
+                        </li>
+                        <li><strong>상태</strong> : 회원에게 동영상 노출 여부를 설정할 수 있습니다.</li>
                     </ul>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                <button type="button" class="btn btn-primary">저장</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary">등록</button>
             </div>
         </div>
     </div>

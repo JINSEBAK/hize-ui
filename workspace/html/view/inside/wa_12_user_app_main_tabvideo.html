@@ -34,20 +34,21 @@
 <div class="area-list">
     <div class="area-list-header">
         <div class="pull-left">
-            <p class="lead">동영상을 삽입해주세요.</p>
+            <p class="lead">
+                동영상을 등록해주세요.
+                <small>주식서비스앱 메인에 등록한 동영상이 보여집니다.</small>
+            </p>
         </div>
         <div class="pull-right">
-            <button type="button" class="btn btn-default">삭제</button>
-            <button type="button" class="btn btn-primary" id="btnVide" data-toggle="modal" data-target="#modalAddVideo">동영상 추가</button>
+            <button type="button" class="btn btn-secondary">삭제</button>
+            <button type="button" class="btn btn-primary" id="btnVide" data-toggle="modal" data-target="#modalAddVideo">동영상 등록</button>
         </div>
     </div>
     <div class="area-list-body">
         <table class="table table-bordered data-list">
-            <colgroup>
-                <col style="width: 10%">
-                <col style="width: 10%">
-                <col style="width: 10%">
-                <col style="width: 15%">
+            <colgroup> 
+                <col style="width: 100px"> 
+                <col style="width: 100px">
                 <col style="width: auto">
                 <col style="width: 15%">
                 <col style="width: 15%">
@@ -56,25 +57,27 @@
                 <tr>
                     <th>
                         <div class="checkbox">
-                            <label for="allChk">
-                                <input type="checkbox" id="allVideoChk">
+                            <input type="checkbox" id="allVideoChk">
+                            <label for="allVideoChk">
+                                <span></span>
                             </label>
                         </div>
                     </th>
                     <th>No.</th>
-                    <th>상태 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>상태 <span class="icon icon-table-sort"></span></th>
                     <th>이미지</th>
-                    <th>동영상명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>동영상명 <span class="icon icon-table-sort"></span></th>
                     <th>등록자명</th>
-                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록일 <span class="icon icon-table-sort"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="1" id="videoSelect1">
+                            <label for="videoSelect1">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -90,8 +93,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="2" id="videoSelect2">
+                            <label for="videoSelect2">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -107,8 +111,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="3" id="videoSelect3">
+                            <label for="videoSelect3">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -124,8 +129,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="4" id="videoSelect4">
+                            <label for="videoSelect4">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -141,8 +147,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="5" id="videoSelect5">
+                            <label for="videoSelect5">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -158,8 +165,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="6" id="videoSelect6">
+                            <label for="videoSelect6">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -175,8 +183,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="7" id="videoSelect7">
+                            <label for="videoSelect7">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -192,8 +201,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="8" id="videoSelect8">
+                            <label for="videoSelect8">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -209,8 +219,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="9" id="videoSelect9">
+                            <label for="videoSelect9">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -226,8 +237,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="video-select">
+                            <input type="checkbox" name="video-select" value="10" id="videoSelect10">
+                            <label for="videoSelect10">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -242,6 +254,9 @@
                 </tr>
             </tbody>
         </table>
+        <div class="txt-guide">
+            동영상 컨텐츠 접근을 제한한 경우 등록한 동영상은 보이지 않습니다.(앱메인 관리 &gt; 기본설정)
+        </div>
 
         @@include('../../common/pagination.html')
     </div>

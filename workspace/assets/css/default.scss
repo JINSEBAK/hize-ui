@@ -241,6 +241,10 @@ $signal-alarm-border: #cfd4c5;
   }
 }
 
+.area-list-header .btn {
+  min-width: 110px;
+}
+
 a:focus {
   outline: none;
   text-decoration: none;
@@ -929,6 +933,8 @@ a {
     }
     .guide {
       color: #404449;
+      font-size: 13px;
+      margin-bottom: 4px;
     }
     .scrolling {
       max-height: 60vh;
@@ -1312,6 +1318,17 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
+.lead {
+  font-weight: bold;
+  font-size: 20px;
+  small {
+    color: #61666d;
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+  }
+}
+
 .area-list {
   .area-list-header {
     margin-bottom: 8px;
@@ -1475,11 +1492,26 @@ input[type="number"]::-webkit-inner-spin-button {
     }
   }
   & + .guide {
+    margin-top: -10px;
+    margin-bottom: 40px;
     li {
-      list-style: '-';
-      margin-left: 12px;
+      color: #61666d;
       padding-left: 4px;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: #404449;
+        margin: 0 6px 3px 0;
+      }
     }
+  }
+  & + .txt-guide {
+    font-size: 14px;
+    margin-top: -10px;
+    color: #61666d;
   }
   &.no-detail-link {
     tbody {
@@ -1497,6 +1529,27 @@ input[type="number"]::-webkit-inner-spin-button {
         background-color: #f1f2f4;
         text-align: left !important;
       }
+    }
+  }
+}
+
+.li-guide {
+  li {
+    color: #404449;
+    font-size: 13px;
+    letter-spacing: -0.3px;
+    position: relative;
+    padding-left: 10px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+      background-color: #404449;
+      left: 0;
+      top: 6px;
+      position: absolute;
     }
   }
 }
@@ -1625,7 +1678,33 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .nav-tabs.detail-tabs-b {
-  border: 1px solid orange !important;
+  padding-left: 0;
+  > li {
+    width: 1%;
+    > a {
+      border-radius: 0;
+      border: 1px solid #bcbcbc;
+      border-right: none;
+      background-color: #f7f7f7;
+      font-size: 16px;
+    }
+    &:last-child {
+      > a {
+        border-right: 1px solid #bcbcbc;
+      }
+    }
+    &.active, &:focus {
+      > a {
+        border-color: #4e70be !important;
+        color: #4d78da !important;
+      }
+      + li {
+        > a {
+          border-left: none;
+        }
+      }
+    }
+  }
 }
 
 .detail-content {
@@ -1780,14 +1859,11 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     td {
       border-top: none;
-      // padding: 10px 16px;
       padding: 6px 8px;
       border: 1px solid #d1d1d1;
       .data {
         display: block;
         padding: 6px 0;
-        //text-align: right;
-        // min-height: 36px;
         &.stock-name {
           font-size: 14px;
           &:before {
@@ -1824,6 +1900,31 @@ input[type="number"]::-webkit-inner-spin-button {
       &:last-child {
         border-right: none;
       }
+      .preview-video {
+        background-color: #f1f2f8;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 180px;
+        span {
+          color: #333;
+          font-size: 12px;
+        }
+      }
+      .form-in-btn {
+        > * {
+          float: left;
+          &.input-count {
+            width: calc(100% - 60px);
+            margin-right: 4px;
+          }
+          &.btn {
+            width: 56px;
+          }
+        }
+      }
     }
     tr:last-child {
       th, td {
@@ -1833,15 +1934,24 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   .img-file-box {
     .img-thumb {
-      height: 226px;
+      height: 180px;
       overflow-y: hidden;
-      background-color: $bg-light-color;
+      background-color: #f1f2f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
       img {
         max-width: 500px;
       }
+      span {
+        color: #333;
+        font-size: 12px;
+      }
     }
     .file-func {
-      padding-top: 12px;
+      padding-top: 4px;
       .icon-info {
         margin-top: -2px;
       }
@@ -1856,6 +1966,8 @@ input[type="number"]::-webkit-inner-spin-button {
       }
       .btn-file {
         position: relative;
+        width: 56px;
+        min-width: 56px;
         input[type=file] {
           position: absolute;
           width: 1px;
@@ -2099,4 +2211,25 @@ input[type="number"]::-webkit-inner-spin-button {
     }
   }
 
+}
+
+// 주식종목 검색 api license
+.ntc-license {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  img {
+    width: 80px;
+    height: auto;
+  }
+  p {
+    width: calc(100% - 80px);
+    font-size: 12px;
+    letter-spacing: -0.3px;
+    color: #404449;
+    line-height: 1.33;
+    word-break: break-all;
+    padding: 0 0 0 5px;
+    margin: 0;
+  }
 }

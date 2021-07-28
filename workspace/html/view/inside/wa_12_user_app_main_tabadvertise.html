@@ -2,19 +2,21 @@
 <div class="area-list">
     <div class="area-list-header">
         <div class="pull-left">
-            <p class="lead">광고를 삽입해주세요.</p>
-            <small>Hize앱 메인에 등록한 광고가 보여집니다.</small>
+            <p class="lead">
+                광고를 등록해주세요.
+                <small>주식서비스앱 메인에 등록한 광고가 보여집니다.</small>
+            </p>
         </div>
         <div class="pull-right">
-            <button type="button" class="btn btn-default">삭제</button>
+            <button type="button" class="btn btn-secondary">삭제</button>
             <button type="button" class="btn btn-primary" id="btnAddAdvertise" data-toggle="modal" data-target="#modalAddAdvertise">광고 추가</button>
         </div>
     </div>
     <div class="area-list-body">
         <table class="table table-bordered data-list">
             <colgroup>
-                <col style="width: 10%">
-                <col style="width: 10%">
+                <col style="width: 100px">
+                <col style="width: 100px">
                 <col style="width: 15%">
                 <col style="width: auto">
                 <col style="width: 15%">
@@ -24,24 +26,26 @@
                 <tr>
                     <th>
                         <div class="checkbox">
+                            <input type="checkbox" id="allChk">
                             <label for="allChk">
-                                <input type="checkbox" id="allChk">
+                                <span></span>
                             </label>
                         </div>
                     </th>
                     <th>No.</th>
                     <th>이미지</th>
-                    <th>광고명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>광고명 <span class="icon icon-table-sort"></span></th>
                     <th>등록자명</th>
-                    <th>등록일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>등록일 <span class="icon icon-table-sort"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="1" id="adSelect1">
+                            <label for="adSelect1">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -56,8 +60,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="2" id="adSelect2">
+                            <label for="adSelect2">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -72,8 +77,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="3" id="adSelect3">
+                            <label for="adSelect3">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -88,8 +94,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="4" id="adSelect4">
+                            <label for="adSelect4">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -104,8 +111,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="5" id="adSelect5">
+                            <label for="adSelect5">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -120,8 +128,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="6" id="adSelect6">
+                            <label for="adSelect6">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -136,8 +145,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="7" id="adSelect7">
+                            <label for="adSelect7">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -152,8 +162,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="8" id="adSelect8">
+                            <label for="adSelect8">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -168,8 +179,9 @@
                 <tr>
                     <td>
                         <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
+                            <input type="checkbox" name="ad-select" value="9" id="adSelect9">
+                            <label for="adSelect9">
+                                <span></span>
                             </label>
                         </div>
                     </td>
@@ -181,25 +193,9 @@
                     <td>등록자명</td>
                     <td>YYYY-MM-DD</td>
                 </tr>
-                <!-- <tr>
-                    <td>
-                        <div class="checkbox">
-                            <label for="">
-                                <input type="checkbox" name="ad-select">
-                            </label>
-                        </div>
-                    </td>
-                    <td>1</td>
-                    <td>
-                        <img src="../../assets/images/photos/sample.jpeg" alt="" class="thumb">
-                    </td>
-                    <td><span class="ellipsis">광고 제목</span></td>
-                    <td>등록자명</td>
-                    <td>YYYY-MM-DD</td>
-                </tr> -->
             </tbody>
         </table>
-        <ul class="guide mg24">
+        <ul class="guide">
             <li>광고는 앱 메인 상단에 노출됩니다.</li>
             <li>광고 개수는 최대 10개 입니다.</li>
         </ul>

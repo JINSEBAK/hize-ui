@@ -2081,7 +2081,7 @@
     tr {
       cursor: grab;
       td {
-        .glyphicon {
+        .icon {
           cursor: pointer;
         }
       }
@@ -2092,6 +2092,14 @@
       overflow-y: auto;
     }
   }
+}
+
+// sorting 
+.ui-sortable-helper {
+  background-color: rgba(0,46,255,.2) !important;
+}
+.ui-sortable-placeholder {
+  border-color: #3456f0 !important;
 }
 
 // ul like table
@@ -2161,8 +2169,15 @@
           line-height: 1;
           background-color: transparent;
         }
+        .ellipsis {
+          display: block;
+          text-align: left;
+        }
         &:first-child {
           text-align: left;
+          &.cell-no {
+            text-align: center !important;
+          }
         }
       }
       &:after {
@@ -2174,6 +2189,9 @@
         .cell {
           border-width: 0px;
         }
+      }
+      &:focus {
+        background-color: rgba 0 46 255, 0.2 !important;
       }
     }
   }
@@ -2427,10 +2445,8 @@
     span {
       color: #61666d;
       &:last-child {
-        color: #90969e;
         &:before {
           content: "/";
-          color: #90969e;
         }
       }
     }
@@ -2579,12 +2595,15 @@
 .app-main-set {
    .radio-img {
      margin-bottom: 24px;
+     text-align: center;
      label {
        margin-right: 24px;
        text-align: center;
+       background-position: 34% -1px !important;
        img {
          display: block;
          margin: 6px;
+         width: 162px;
        }
      }
    }
@@ -3119,5 +3138,15 @@
       height: 197px;
       min-height: 197px;
     }
+  }
+}
+#modalStockBoardRegister {
+  .modal-dialog {
+    width: 434px;
+  }
+}
+#modalAddAdvertise, #modalAddVideo {
+  .modal-dialog {
+    width: 506px;
   }
 }
