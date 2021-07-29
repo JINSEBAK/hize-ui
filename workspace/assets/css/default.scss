@@ -672,6 +672,9 @@ a {
     border-top: 1px solid rgba(230, 235, 239, .1);
     > li {
       border-bottom: 1px solid rgba(230, 235, 239, .1);
+      &.menu-p {
+        display: none;
+      }
       &:hover {
         background-color: transparent;
       }
@@ -1449,7 +1452,7 @@ input[type="number"]::-webkit-inner-spin-button {
           width: 80px;
         }
         .img-ad {
-          width: 180px;
+          width: 132px;
         }
         select {
           width: 100px;
@@ -1631,7 +1634,8 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 24px 0 0;
   padding-left: 4px;
   position: relative;
-  overflow: hidden;
+  border-bottom: none;
+  height: 38px;
   &:after {
     content: '';
     display: block;
@@ -1645,6 +1649,7 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   > li {
     width: 160px;
+    margin-bottom: 0;
     > a {
       color: #8e8e8e;
       padding: 8px 16px;
@@ -1751,7 +1756,7 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 186px;
   }
   .table-form {
-    margin-bottom: 36px;
+    margin-bottom: 16px;
   }
   .detail-content-tail {
     margin-top: 10px;
@@ -1839,6 +1844,21 @@ input[type="number"]::-webkit-inner-spin-button {
     content: '';
     display: block;
     clear: both;
+  }
+}
+
+.btn-group.date-type {
+  .btn-default {
+    border-color: #aaafc6;
+    color: #8e8e8e;
+    width: 70px;
+    &.active {
+      background-color: #4f5db2;
+      border-color: #203299;
+      box-shadow: none;
+      color: #fff;
+      font-weight: bold;
+    }
   }
 }
 
@@ -1934,7 +1954,8 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   .img-file-box {
     .img-thumb {
-      height: 180px;
+      width: 280px;
+      height: 182px;
       overflow-y: hidden;
       background-color: #f1f2f8;
       display: flex;
@@ -1943,7 +1964,7 @@ input[type="number"]::-webkit-inner-spin-button {
       justify-content: center;
       border-radius: 5px;
       img {
-        max-width: 500px;
+        width: 100%;
       }
       span {
         color: #333;

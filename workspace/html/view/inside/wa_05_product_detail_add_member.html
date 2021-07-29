@@ -9,26 +9,28 @@
                 <form>
                     <div class="form-group form-search">
                         <span class="icon icon-search"></span>
-                        <input type="text" class="form-control" placeholder="회원명 입력" value="홍">
+                        <input type="text" class="form-control" placeholder="회원명 검색">
                     </div>
                 </form>
                 <div class="scrolling">
-                    <ul class="user-list">
+                    <div class="sch-initial">
+                        <img src="../../assets/images/icons/member-sch-init.svg" alt="사용자의 프로필 이미지" >
+                        <p>회원을 검색해주세요.</p>
+                    </div>
+                    <ul class="user-list" style="display: none;">
                         <li>
                             <div class="user">
-                                <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지" >
+                                <div class="profile-img-wrapper">
+                                    <div class="profile-img" style="background-color: #68a5a0;">h</div>
                                 </div>
                                 <div class="info">
                                     <span class="name">홍금보(honghong)</span>
-                                    <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
-                                    </span>
                                 </div>
                                 <div class="ex-func">
                                     <div class="radio">
+                                        <input type="radio" name="user-chk" id="chk1" value="1">
                                         <label for="chk1">
-                                            <input type="radio" name="user-chk" id="chk1">
+                                            <span></span>
                                         </label>
                                     </div>
                                 </div>
@@ -36,19 +38,17 @@
                         </li>
                         <li>
                             <div class="user">
-                                <div class="img">
-                                    <img src="../assets/images/photos/user-img-default.png" alt="OOO 회원님의 프로필 이미지" >
+                                <div class="profile-img-wrapper">
+                                    <div class="profile-img" style="background-color: #a77593;">h</div>
                                 </div>
                                 <div class="info">
                                     <span class="name">홍자79(hongja)</span>
-                                    <span class="valid-term">
-                                        유료회원 기간 YYYY-MM-DD ~ YYYY-MM-DD
-                                    </span>
                                 </div>
                                 <div class="ex-func">
                                     <div class="radio">
-                                        <label for="chk1">
-                                            <input type="radio" name="user-chk" id="chk1">
+                                        <input type="radio" name="user-chk" id="chk2" value="2">
+                                        <label for="chk2">
+                                            <span></span>
                                         </label>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="btnAddMember">회원 추가</button>
+                <button type="button" class="btn btn-primary" id="btnAddMember" disabled>회원 추가</button>
             </div>
         </div>
     </div>

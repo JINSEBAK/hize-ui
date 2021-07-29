@@ -1553,6 +1553,9 @@ select {
         > * {
             border-bottom: none;
         }
+        img {
+            width: 100%;
+        }
         .post {
             margin-bottom: 15px;
             .post-hd {
@@ -1694,8 +1697,7 @@ select {
                 justify-content: center;
                 align-items: center;
                 img {
-                    height: 100%;
-                    
+                    width: 100%;
                 }
                 .icon-img-del {
                     position: absolute;

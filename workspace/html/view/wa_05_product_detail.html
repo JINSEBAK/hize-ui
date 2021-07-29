@@ -132,6 +132,19 @@
                 $('#btnAddMember').on('click', function() {
                     window.location.href = './wa_14_request_detail.html';
                 });
+
+                $('.member-board').find('input[type="text"]').on('paste change input', function() {
+                    if ($(this).val().length > 0) {
+                        $('#btnAddMember').removeAttr('disabled');
+                        $('.sch-initial').css('display', 'none');
+                        $('.sch-initial').next('.user-list').show();
+                    } else {
+                        $('#btnAddMember').attr('disabled', true);
+                        $('.sch-initial').next('.user-list').css('display','none');
+                        $('.sch-initial').show();
+                    }
+                });
+
             });
 
             var onClickShutdown = function() {
