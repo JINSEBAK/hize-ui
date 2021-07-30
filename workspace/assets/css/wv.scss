@@ -591,6 +591,9 @@ select {
     &.icon-img-del {
         background-image: url(../images/icons/btn_delete.svg);
     }
+    &.icon-back-w {
+        background-image: url(../images/icons/btn-back-w.svg);
+    }
 
 }
 
@@ -618,6 +621,7 @@ select {
     }
     // 동영상 목록
     .mv-list {
+        padding-bottom: 16px;
         > li {
             border-bottom: 1px solid $border-color;
             padding: 14px 0;
@@ -1016,6 +1020,7 @@ select {
                 }
             }
             .mv-list {
+                padding-bottom: 16px;
                 .mv {
                     display: flex;
                     .video {
@@ -1346,7 +1351,7 @@ select {
     align-items: center;
     padding: 20px 0 9px;
     .category {
-        width: 94px;
+        width: 102px;
         select.form-control {
             padding: 6px 12px 6px 4px;
         }
