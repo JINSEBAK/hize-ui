@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Hize 관리자 사이트 UI</title>
-    <link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/hize_favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/images/hize_favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <style>
@@ -110,6 +110,21 @@
             <td><a href="./view/elements.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
               <small>0705-GNB 스타일변경(다크모드)<br>0721-앱메인관리 메뉴 위치 이동</small>
+            </td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td colspan="3">404, 에러페이지</td>
+            <td>error.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
+              <span class="label label-default completed">completed</span>
+            </td >
+            <td><a href="./view/error.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
+            <td>
+              <small>0805-에러페이지 추가</small>
             </td>
           </tr>
           <tr>
@@ -227,7 +242,8 @@
                 0715-메세지타입추가(이미지전송)<br>
                 0721-관리자메세지 삭제기능, 사이드메뉴 팝업 디자인<br>
                 0723-단체메세지 발송 팝업 추가<br>
-                0728-종목조회api라이센스 고지 추가(신호발송팝업)
+                0728-종목조회api라이센스 고지 추가(신호발송팝업)<br>
+                0805-단체신호발송 팝업 추가
               </small>
             </td>
           </tr>
@@ -277,6 +293,21 @@
             </td>
             <td><a href="./view/wa_03_message_history_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td><small>0601-발송건수 컬럼 추가</small></td>
+          </tr>
+          <tr>
+            <th class="idx num"></th>
+            <td>실시간 신호</td>
+            <td>문자 발송 내역</td>
+            <td>상세</td>
+            <td>wa_03_message_history_detail.html</td>
+            <td class="wf">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td class="st">
+              <span class="label label-default completed">completed</span>
+            </td>
+            <td><a href="./view/wa_03_message_history_detail.html" target="_blank" rel="noreferrer noopenner" class="glyphicon glyphicon-link"></a></td>
+            <td><small>0806-문자발송 상세 내역 화면 추가(신규 추가 기능)</small></td>
           </tr>
           <tr>
             <th class="idx num"></th>
@@ -585,7 +616,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_09_permission_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -602,7 +633,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_09_permission_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -619,7 +650,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_09_permission_register.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -887,7 +918,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_13_my_account.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -903,7 +934,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-success">90%</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_14_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -920,7 +951,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-success">80%</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_14_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -933,10 +964,10 @@
             <td colspan="2">목록</td>
             <td>wa_15_manager_request_list.html</td>
             <td class="wf">
-              <span class="label label-default">completed</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-success">90%</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_15_manager_request_list.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>
@@ -952,7 +983,7 @@
               <span class="label label-default completed">completed</span>
             </td>
             <td class="st">
-              <span class="label label-info">wait</span>
+              <span class="label label-default completed">completed</span>
             </td>
             <td><a href="./view/wa_15_manager_request_detail.html" target="_blank" rel="noreferrer noopener" class="glyphicon glyphicon-link"></a></td>
             <td>

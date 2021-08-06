@@ -33,7 +33,7 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <th class="required">채팅방명</th>
+                                        <th>채팅방명</th>
                                         <td>
                                             <input type="text" class="form-control" placeholder="최대 20자 입력" maxlength="20">
                                         </td>
@@ -43,13 +43,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="required">간단 소개</th>
+                                        <th>간단 소개</th>
                                         <td colspan="3">
                                             <input type="text" class="form-control" name="" placeholder="최대 20자 입력" maxlength="20">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="required">채팅방 소개</th>
+                                        <th>채팅방 소개</th>
                                         <td>
                                             <div class="form-content">
                                                 <textarea class="form-control" placeholder="최대 80자 입력"></textarea>
@@ -59,17 +59,18 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <th class="required">대표이미지</th>
+                                        <th>대표이미지</th>
                                         <td>
                                             <div class="img-file-box">
                                                 <div class="img-thumb">
+                                                    <span class="hint">대표이미지를 등록해주세요.</span>
                                                     <img src="" alt="">
                                                 </div>
                                                 <div class="file-func">
                                                     <div class="pull-left">
                                                         <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
-                                                            <span class="glyphicon glyphicon-info-sign"></span>
-                                                            대표이미지 등록 가이드
+                                                            <span class="icon icon-info"></span>
+                                                            대표이미지 등록 가이드(이미지 비율 4:26 | 사이즈 800px*520px)
                                                         </a>
                                                     </div>
                                                     <div class="pull-right">
@@ -84,35 +85,43 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="required">구분</th>
+                                        <th>구분</th>
                                         <td>
                                             <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="chat-price" value="1" checked onchange="javascript: setChatPrice('1');">
-                                                    유료
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="chat-price" value="2"  onchange="javascript: setChatPrice('2');">
-                                                    체험
-                                                </label>
+                                                <span>
+                                                    <input type="radio" name="chat-price" value="1" id="chatprice1" checked onchange="javascript: setChatPrice('1');">
+                                                    <label for="chatprice1">
+                                                        <span>유료</span>
+                                                    </label>
+                                                </span>
+                                                <span>
+                                                    <input type="radio" name="chat-price" value="2" id="chatprice2" onchange="javascript: setChatPrice('2');">
+                                                    <label for="chatprice2">
+                                                        <span>체험</span>
+                                                    </label>
+                                                </span>
                                             </div>
                                         </td>
-                                        <th class="required">채팅유형</th>
+                                        <th>채팅유형</th>
                                         <td>
                                             <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="chat-type" value="1" checked>
-                                                    일반 채팅
-                                                </label>
-                                                <label>
-                                                    <input type="radio" name="chat-type" value="2">
-                                                    1:n 채팅
-                                                </label>
+                                                <span>
+                                                    <input type="radio" name="chat-type" value="1" id="chattype1" checked>
+                                                    <label for="chattype1">
+                                                        <span>일반 채팅</span>
+                                                    </label>
+                                                </span>
+                                                <span>
+                                                    <input type="radio" name="chat-type" value="2" id="chattype2">
+                                                    <label for="chattype2">
+                                                        <span>1:n 채팅</span>
+                                                    </label>
+                                                </span>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="required">방장</th>
+                                        <th>방장</th>
                                         <td colspan="3">
                                             <div class="fx fx-mg">
                                                 <div class="mg-groups">
@@ -123,7 +132,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="required">기간</th>
+                                        <th>기간</th>
                                         <td>
                                             <div class="date-inline">
                                                 <div class="date-box">
@@ -136,7 +145,7 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <th class="required">최대인원</th>
+                                        <th>최대인원</th>
                                         <td>
                                             <input type="number" class="form-control form-tail" placeholder="" value="100">
                                             <label class="label-tail">최대 인원 1,000명</label>
@@ -144,18 +153,22 @@
                                     </tr>
                                     <!-- 무료 채팅방일 때만 노출 -->
                                     <tr class="free-product" style="display: none;">
-                                        <th class="required">인증번호 설정</th>
+                                        <th>인증번호 설정</th>
                                         <td colspan="3">
                                             <div class="form-inline-set">
                                                 <div class="radio">
-                                                    <label>
-                                                        <input type="radio" name="certify-num" value="0" checked onchange="javascript: setCertifyNumber('off');">
-                                                        OFF
-                                                    </label>
-                                                    <label>
-                                                        <input type="radio" name="certify-num" value="1" onchange="javascript: setCertifyNumber('on');">
-                                                        ON
-                                                    </label>
+                                                    <span>
+                                                        <input type="radio" name="certify-num" value="0" id="certifynum0" checked onchange="javascript: setCertifyNumber('off');">
+                                                        <label for="certifynum0">
+                                                            <span>OFF</span>
+                                                        </label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="radio" name="certify-num" value="1" id="certifynum1" onchange="javascript: setCertifyNumber('on');">
+                                                        <label for="certifynum1">
+                                                            <span>ON</span>
+                                                        </label>
+                                                    </span>
                                                 </div>
                                                 <div class="time-inline">
                                                     <input type="number" class="form-control" placeholder="숫자 4자리 입력" disabled id="certifyNumber" maxlength="4">
@@ -168,6 +181,9 @@
                         </div>
                         <!-- btns -->
                         <div class="btn-groups">
+                            <div class="pull-left">
+                                <a href="./wa_05_product_list.html" class="btn btn-default">목록</a>
+                            </div>
                             <div class="pull-right">
                                 <button class="btn btn-primary" disabled>상품 생성</button>
                             </div>
@@ -181,10 +197,14 @@
         <!-- 관리자 추가 팝업 -->
         @@include('./inside/wa_05_product_register_popup.html')
 
+        <!-- 대표이미지 가이드-->
+        @@include('./inside/wa_05_product_img_guide_popup.html')
+
         <!-- scripts -->
         @@include('../common/scripts.html')
         <script>
             $(function() {
+
                 // datepicker
                 $('.datepicker').datepicker({
                     dateFormat: 'yyyy-mm-dd'

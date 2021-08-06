@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Hize 관리자웹사이트 UI</title>
-<link rel="shortcut icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
-<link rel="icon" href="./assets/images/favicon_s.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/hize_favicon.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/hize_favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
@@ -314,10 +314,7 @@
     </tbody>
 </table>
 
-
-<!-- 대표이미지 등록 가이드 -->
-<div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel"
-            aria-hidden="true">
+<div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -326,28 +323,44 @@
                 <h4 class="modal-title">대표이미지 등록 가이드</h4>
             </div>
             <div class="modal-body">
-               <ol class="ol-guide">
+               <ul class="ol-guide">
                    <li>
-                       <strong>이미지 사이즈</strong>
+                       <strong>이미지 가이드</strong>
                        <ul>
-                           <li>이미지 권장 사이즈는 500px * 300px 입니다.</li>
-                           <li>권장사이즈보다 큰 이미지 등록 시 뷰영역 높이 기준으로 이미지가 줄여져서 보여집니다.</li>
+                           <li>
+                               <strong>파일 형식</strong> : JPG 또는 PNG
+                           </li>
+                           <li>
+                               <strong>이미지 비율</strong> : 4:2.6
+                           </li>
+                           <li>
+                               <strong>이미지 권장사이즈(가로*세로)</strong> : 800px*520px 이상
+                           </li>
                        </ul>
-                       <div class="ex-img">
-                           <p>썸네일 사진<br>500px * 300px</p>
-                           <img src="../assets/images/photos/sample.jpeg">
-                       </div>
                    </li>
                    <li>
-                       <strong>파일용량/확장자</strong>
-                       <p>파일용량은 3MB이하 파일은 jpg, png만 가능합니다.</p>
+                        <strong>사용자앱</strong>
+                        <p>채팅리스트에서는 썸네일 높이 기준으로 이미지가 축소되어 보여집니다.</p>
+                        <div class="ex-img-wrapper">
+                            <div class="ex-img">
+                                <span class="lb">[이미지형 썸네일]</span>
+                                <div class="guide">
+                                    <div class="thumb thumb-img">썸네일</div>
+                                </div>
+                            </div>
+                            <div class="ex-img">
+                                <span class="lb">[리스트형 썸네일]</span>
+                                <div class="guide">
+                                    <div class="thumb thumb-list">썸네일</div>
+                                </div>
+                            </div>
+                        </div>
                    </li>
-               </ol>
+               </ul>
             </div>
         </div>
     </div>
 </div>
-
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabMember">
                                 <div class="area-list">
@@ -517,13 +530,15 @@
                             <div role="tabpane" class="tab-pane fade" id="tabPay">
                                 <div class="area-list">
     <!-- 매출액 정보 -->
-    <div class="panel panel-default total-revenue">
-        <span>2021-05-10</span>
-        <strong>
-            <span class="lb">총 매출액</span>
-            <span class="total">70,000,000</span>
-            <span>원</span>
-        </strong>
+    <div class="panel panel-default summary-info">
+        <div class="terms">2021-05-10</div>
+        <div class="counter">
+            <div class="counter-info">
+                <small>총 매출액</small>
+                <span class="totalprice">70,000,000</span>
+                <span>원</span>
+            </div>
+        </div>
     </div>
     <div class="area-list-header">
         <div class="pull-left">

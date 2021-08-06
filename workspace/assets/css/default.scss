@@ -165,6 +165,14 @@ $signal-alarm-border: #cfd4c5;
     font-weight: bold;
   }
 }
+.btn-error {
+  background-color: #1d2858;
+  color: #fff;
+  &:focus, &:hover, &:active {
+    background-color: #324494;
+    color: #fff;
+  }
+}
 .btn-link {
   color: $text-default;
   &:focus, &:hover, &:active {
@@ -284,6 +292,9 @@ a:focus {
     background-color: transparent;
     font-size: 14px;
     color: #61666d;
+    &:hover, &:active, &:focus {
+      box-shadow: none !important;
+    }
     &.btn-more-down {
       &:after {
         content: '';
@@ -304,6 +315,7 @@ a:focus {
 .txt-blue {
   color: $text-primary;
 }
+
 
 
 // align
@@ -509,13 +521,16 @@ a:focus {
       background-image: url(../images/icons/icon-plus.svg);
     }
     &.icon-table-sort {
-      background-image: url(../images/icons/iocn-tablesort.svg);
+      background-image: url(../images/icons/icon-tablesort.svg);
     }
     &.icon-table-sort-up {
       background-image: url(../images/icons/tablesort-up.svg);
     }
     &.icon-table-sort-down {
       background-image: url(../images/icons/tablesort-down.svg);
+    }
+    &.icon-info {
+      background-image: url(../images/icons/icon-info.svg);
     }
   }
 
@@ -859,6 +874,7 @@ a {
 }
 
 .popover {
+  z-index: 85 !important;
   min-width: 200px;
   border: 1px solid #b6bbc1;
   box-shadow: 0 0 6px rgba(0,0,0,.3);
@@ -938,6 +954,9 @@ a {
       color: #404449;
       font-size: 13px;
       margin-bottom: 4px;
+      .em {
+        color: #dc6430 !important;
+      }
     }
     .scrolling {
       max-height: 60vh;
@@ -1031,6 +1050,10 @@ a {
         font-weight: bold;
         color: #000;
         min-height: 122px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         p {
           font-size: 14px;
           font-weight: normal;
@@ -1205,6 +1228,11 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
   .date-box, .wave {
     margin-right: 6px;
+  }
+  .date-box {
+    input {
+      width: 140px;
+    }
   }
 }
 
@@ -1534,6 +1562,13 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
+  &.detail {
+    tbody {
+      tr {
+        cursor: default;
+      }
+    }
+  }
 }
 
 .li-guide {
@@ -1617,7 +1652,7 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
-  &.my-chat-empty {
+  &.my-chat {
     display: block;
     > div.my-chat-empty {
       display: block;
@@ -1866,6 +1901,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .table.table-form {
   border-top: 1px solid #494e6e !important;
   border-bottom: 1px solid #494e6e;
+  border-collapse: separate;
   tbody {
     th, td {
       vertical-align: middle;
@@ -1875,12 +1911,18 @@ input[type="number"]::-webkit-inner-spin-button {
       min-height: 51px;
       text-align: center;
       background-color: #f0f2ff;
-      border-bottom: 1px solid #d1d1d1;
+      //border-bottom: 1px solid #d1d1d1;
+      border: 1px solid #d1d1d1;
+      &:first-child {
+        border-left: none;
+      }
     }
     td {
       border-top: none;
       padding: 6px 8px;
       border: 1px solid #d1d1d1;
+      border-left: none;
+      border-right: none;
       .data {
         display: block;
         padding: 6px 0;
@@ -1917,8 +1959,11 @@ input[type="number"]::-webkit-inner-spin-button {
           display: inline-block;
         }
       }
-      &:last-child {
-        border-right: none;
+      // &:last-child {
+      //   border-right: none;
+      // }
+      &:first-child {
+        border-left: none;
       }
       .preview-video {
         background-color: #f1f2f8;
@@ -1942,6 +1987,10 @@ input[type="number"]::-webkit-inner-spin-button {
           }
           &.btn {
             width: 56px;
+            margin-left: 4px;
+          }
+          &.form-control {
+            width: 200px;
           }
         }
       }
@@ -1973,6 +2022,9 @@ input[type="number"]::-webkit-inner-spin-button {
     }
     .file-func {
       padding-top: 4px;
+      .pull-left {
+        padding-top: 8px;
+      }
       .icon-info {
         margin-top: -2px;
       }
@@ -2060,6 +2112,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .mg24 {
   margin: 24px 0 24px;
 }
+.no-padding {
+  padding: 0 !important;
+}
 
 
 /* emoticon */
@@ -2081,6 +2136,7 @@ input[type="number"]::-webkit-inner-spin-button {
     position: absolute;
     width: 168px;
     height: 170px;
+    line-height: 170px;
     right: 357px;
     bottom: 0;
     background: #fff;
@@ -2252,5 +2308,33 @@ input[type="number"]::-webkit-inner-spin-button {
     word-break: break-all;
     padding: 0 0 0 5px;
     margin: 0;
+  }
+}
+
+
+// 404, Error페이지 
+.error-container {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .error-inner {
+    h3 {
+      font-weight: normal;
+      line-height: 1.33;
+      margin-top: 50px;
+    }
+    p {
+      color: #61666d;
+      font-size: 16px;
+      line-height: 1.63;
+      margin: 20px 0 50px;
+    }
+    .btn-error {
+      width: 195px;
+      height: 50px;
+    }
   }
 }

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Hize 관리자웹사이트 UI</title>
+<link rel="shortcut icon" href="./assets/images/hize_favicon.ico" type="image/x-icon">
+<link rel="icon" href="./assets/images/hize_favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- 개발에서 사용 안함 -->
+<link rel="stylesheet" href="../assets/css/tables.css">
+
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+
+
+
+
+    </head>
+    <body>
+
+        <!-- header -->
+        <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <!-- 모바일 메뉴 버튼 -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+            <!-- LOGO -->
+            <a href="#" class="navbar-brand"><strong>Hize</strong> Admin</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="sm-req-bd">
+                <li>
+                    <span>유료방 가입요청</span>
+                    <span><a href="../view/wa_14_request_list.html">50</a>건</span>
+                </li>
+                <li>
+                    <span>관리자 권한요청</span>
+                    <span><a href="../view/wa_14_request_list.html">20</a>건</span>
+                </li>
+                <li>
+                    <span>게시물 승인 요청</span>
+                    <span><a href="../view/wa_14_request_list.html">10</a>건</span>
+                </li>
+            </ul>
+            <div class="rt-info">
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+                <span class="vertical"></span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>홍어드민(hongadmin)</span>
+                    <span class="user-img">홍</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                <nav class="sidebar hidden-md hidden-sm hidden-xs">
+    <ul class="nav nav-sidebar">
+        <li data-code="wa_02">
+            <a href="#" class="single" >
+                <span class="icon icon-chatting"></span>
+                <span>채팅</span>
+            </a>
+        </li>
+        <li data-code="wa_03">
+            <a href="#">
+                <span class="icon icon-notification"></span>
+                <span>실시간 신호</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_03_signal_history">
+                    <a href="#">신호 발송 내역</a>
+                </li>
+                <li data-sub-code="wa_03_message_history">
+                    <a href="#">문자 발송 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_04">
+            <a href="#" class="single">
+                <span class="icon icon-stockboard"></span>
+                <span>보유 전광판</span>
+            </a>
+        </li>
+        <li data-code="wa_05">
+            <a href="#">
+                <span class="icon icon-chat-product"></span>
+                <span>서비스 상품</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_05_product_list">
+                    <a href="#">상품 목록</a>
+                </li>
+                <li  data-sub-code="wa_05_product_register">
+                    <a href="#">상품 생성</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_06">
+            <a href="#" class="single">
+                <span class="icon icon-statistics"></span>
+                <span>매출 통계</span>
+            </a>
+        </li>
+        <li data-code="wa_07">
+            <a href="#" class="single">
+                <span class="icon icon-payment"></span>
+                <span>결제 관리</span>
+            </a>
+        </li>
+        <li data-code="wa_08">
+            <a href="#" class="single">
+                <span class="icon icon-user"></span>
+                <span>회원 관리</span>
+            </a>
+        </li>
+        <li data-code="wa_09">
+            <a href="#">
+                <span class="icon icon-admin-member"></span>
+                <span>권한 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_09_manager">
+                    <a href="#">관리자 목록</a>
+                </li>
+                <li data-sub-code="wa_09_permission">
+                    <a href="#">권한 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_10">
+            <a href="#">
+                <span class="icon icon-board"></span>
+                <span>게시판 관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_10_board_settings">
+                    <a href="#">게시판 설정</a>
+                </li>
+                <li data-sub-code="wa_10_board_list">
+                    <a href="#">게시물 관리</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_11">
+            <a href="#">
+                <span class="icon icon-service"></span>
+                <span>운영관리</span>
+            </a>
+            <ul class="sub-menu">
+                <li data-sub-code="wa_11_operation_faq">
+                    <a href="#">FAQ</a>
+                </li>
+                <li data-sub-code="wa_11_operation_terms">
+                    <a href="#">정책/약관 관리</a>
+                </li>
+                <li data-sub-code="wa_11_operation_log">
+                    <a href="#">Log 내역</a>
+                </li>
+            </ul>
+        </li>
+        <li data-code="wa_12">
+            <a href="#" class="single">
+                <span class="icon icon-config"></span>
+                <span>앱메인 관리</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+                <!-- contents -->
+                <div class="main">
+                    <div class="page-header">
+    <h4>
+        문자 발송 상세 
+        <ol class="breadcrumb">
+            <li>홈</li>
+            <li>Library</li>
+            <li class="active">Data</li>
+        </ol>
+        <small>
+            발송된 문자 내역을 확인할 수 있습니다.
+        </small>
+    </h4>
+</div>
+                
+                    <div class="contents">
+                      
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left rt-filter">
+                                    Total <span class="count">100</span>
+                                </div>
+                                <div class="pull-right">
+                                    <select class="form-control" style="width: 100px;">
+                                        <option>전체</option>
+                                        <option>성공</option>
+                                        <option>실패</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list product-list no-detail-link">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>발송일 <span class="icon icon-table-sort"></span></th>
+                                            <th>전화번호</th>
+                                            <th>SMS/LMS <span class="icon icon-table-sort"></span></th>
+                                            <th>성공/실패</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>99</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>MMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>96</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>MMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>95</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>94</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>93</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>92</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>실패</td>
+                                        </tr>
+                                        <tr>
+                                            <td>91</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>실패</td>
+                                        </tr>
+                                        <tr>
+                                            <td>90</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>89</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>88</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>87</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>86</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>85</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>84</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>83</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>82</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>81</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="more-view">
+                                    <button type="button" class="btn btn-more btn-more-down">더보기</button>
+                                </div>
+                            </div>
+                            <div class="btns mg24">
+                                <a href="./wa_03_message_history_list.html" role="button" class="btn btn-default">목록</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../assets/js/common.js"></script>
+        <script>
+            $(function() {
+                // datepicker
+                $('.datepicker').datepicker();
+
+                $('.data-list thead').find('span').on('click', function() {
+                    var classList = $(this).attr('class');
+                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
+                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
+                        $(this).addClass('glyphicon-sort-by-attributes');
+                    } else {
+                        $(this).removeClass('glyphicon-sort-by-attributes');
+                        $(this).addClass('glyphicon-sort-by-attributes-alt');
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>

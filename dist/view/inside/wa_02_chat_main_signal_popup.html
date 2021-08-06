@@ -117,6 +117,25 @@
                                             <textarea class="form-control" placeholder="메세지 입력" data-target="#stockMessage"></textarea>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <th>광고 안내</th>
+                                        <td>
+                                            <div class="radio">
+                                                <span>
+                                                    <input type="radio" value="0" name="ad-view" id="adView0">
+                                                    <label for="adView0">
+                                                        <span>미표기</span>
+                                                    </label>
+                                                </span>
+                                                <span>
+                                                    <input type="radio" value="1" name="ad-view" id="adView1">
+                                                    <label for="adView1">
+                                                        <span>표기</span>
+                                                    </label>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -140,7 +159,7 @@
                     </div>
                     <ul class="guide">
                         <li>* 단문메세지(SMS)는 90byte 이내, 90byte를 초과하면 장문메세지(LMS)로 전환됩니다.</li>
-                        <li>* 문자 메세지(SMS/LMS)에는 광고/수신거부 문자도 포함되어 발송됩니다. (글자수 카운트에 포함되어 보여집니다.)</li>
+                        <li>* <span class="em">광고 안내 : 광고/수신거부 안내 문자로 광고성 문자로 발송시 반드시 [표기]를 선택하여 발송해야 합니다.</span></li>
                     </ul>
                     <div class="ntc-license">
                         <img src="../../../assets/images/icons/stock-search-license.png" alt="공공저작물 자유이용허락 이미지">

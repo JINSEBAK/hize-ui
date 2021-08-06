@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        @@include('../common/resources.html', { "type" : "admin" })
+    </head>
+    <body>
+
+        <!-- header -->
+        @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
+       
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- gnb -->
+                @@include('../common/navigation.html')
+
+                <!-- contents -->
+                <div class="main">
+                    @@include('../common/title.html', { "title" : "문자 발송 상세", "sub" : "발송된 문자 내역을 확인할 수 있습니다." })
+                
+                    <div class="contents">
+                      
+                        <!-- 목록 -->
+                        <div class="area-list">
+                            <div class="area-list-header">
+                                <div class="pull-left rt-filter">
+                                    Total <span class="count">100</span>
+                                </div>
+                                <div class="pull-right">
+                                    <select class="form-control" style="width: 100px;">
+                                        <option>전체</option>
+                                        <option>성공</option>
+                                        <option>실패</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="area-list-body">
+                                <table class="table table-bordered data-list product-list no-detail-link">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>발송일 <span class="icon icon-table-sort"></span></th>
+                                            <th>전화번호</th>
+                                            <th>SMS/LMS <span class="icon icon-table-sort"></span></th>
+                                            <th>성공/실패</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>100</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>99</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>98</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>97</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>MMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>96</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>MMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>95</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>94</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>93</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>92</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>실패</td>
+                                        </tr>
+                                        <tr>
+                                            <td>91</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>실패</td>
+                                        </tr>
+                                        <tr>
+                                            <td>90</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>89</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>88</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>87</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>86</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>85</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>84</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>83</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>82</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                        <tr>
+                                            <td>81</td>
+                                            <td>YYYY-MM-DD hh:mm:ss</td>
+                                            <td>010-0000-000</td>
+                                            <td>SMS</td>
+                                            <td>성공</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="more-view">
+                                    <button type="button" class="btn btn-more btn-more-down">더보기</button>
+                                </div>
+                            </div>
+                            <div class="btns mg24">
+                                <a href="./wa_03_message_history_list.html" role="button" class="btn btn-default">목록</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- scripts -->
+        @@include('../common/scripts.html')
+        <script>
+            $(function() {
+                // datepicker
+                $('.datepicker').datepicker();
+
+                $('.data-list thead').find('span').on('click', function() {
+                    var classList = $(this).attr('class');
+                    if ( $(this).hasClass('glyphicon-sort-by-attributes-alt') ) {
+                        $(this).removeClass('glyphicon-sort-by-attributes-alt');
+                        $(this).addClass('glyphicon-sort-by-attributes');
+                    } else {
+                        $(this).removeClass('glyphicon-sort-by-attributes');
+                        $(this).addClass('glyphicon-sort-by-attributes-alt');
+                    }
+                });
+
+            });
+        </script>
+    </body>
+</html>
