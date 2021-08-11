@@ -915,10 +915,22 @@
     .btn-inline {
       display: inline-block;
     }
-    .dropdown-menu > li > a {
-      padding: 8px 20px;
-      span {
-        margin-right: 4px;
+    .dropdown-menu {
+      padding: 14px 0;
+      width: 180px;
+      right: -3px !important;
+      top: 90% !important;
+      > li {
+        > a {
+          padding: 6px 14px;
+          line-height: 1;
+          .icon {
+            width: 16px;
+            height: 16px;
+            margin-bottom: 1px;
+            margin-right: 12px;
+          }
+        }
       }
     }
     .chat-search {
