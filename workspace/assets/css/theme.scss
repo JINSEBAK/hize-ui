@@ -200,6 +200,7 @@
     margin-bottom: 16px;
     img {
       height: 46px;
+      cursor: pointer;
     }
   }
   .help-block {
@@ -2619,6 +2620,62 @@
       .comment {
         padding: 16px;
         position: relative;
+        .pull-left {
+          padding-top: 4px;
+        }
+        .pull-right {
+          margin-bottom: 7px;
+        }
+        .form-content {
+          clear: both;
+          overflow: hidden;
+          > * {
+            float: left;
+            &.form-content-inner {
+              display: block;
+              position: relative;
+              padding-right: 4px;
+              width: calc(100% - 128px);
+            }
+            &.btn {
+              display: block;
+              width: 128px;
+              height: 80px;
+            }
+            &.view {
+              display: none;
+            }
+          }
+          textarea {
+            height: 80px;
+            min-height: 80px;
+          }
+          &.form-read-only {
+            .view {
+              display: block;
+              clear: both;
+            }
+            .form-content-inner {
+              display: none;
+            }
+            .btn {
+              display: none;
+            }
+            .count {
+              opacity: 0;
+            }
+            .btn {
+              width: 0 !important;
+              position: absolute !important;
+            }
+          }
+        }
+        .btn-default {
+          width: 60px;
+          min-width: 60px;
+          margin-left: 4px;
+          height: 30px;
+        }
         .vertical {
           &:before {
             content: "";
@@ -2640,20 +2697,7 @@
           color: #61666d;
           font-size: 13px;
         }
-        p {
-          margin: 10px 0 0;
-        }
-        .btn {
-          position: absolute;
-          right: 16px;
-          top: 16px;
-          width: 32px;
-          height: 32px;
-          min-width: 32px;
-          text-indent: -9999px;
-          border: none;
-          background: url(../images/icons/delete-reply.svg) center no-repeat;
-        }
+       
       }
     }
   }
@@ -2764,6 +2808,22 @@
           color: #fff;
           font-weight: bold;
           background: #ff8a60 url(../images/icons/icon-check-select.svg) calc(100% - 10px) center no-repeat;
+        }
+      }
+      input[type=checkbox]:disabled {
+        & + label {
+          cursor: not-allowed;
+          color: #97989a;
+          border: 1px solid #d7d7d7;
+          background: #f7f7f7 url(../images/icons/icon-check-normal.svg) calc(100% - 10px) center no-repeat;
+        }
+      }
+      input[type=checkbox]:checked:disabled {
+        & + label {
+          cursor: not-allowed;
+          color: #fff;
+          border: 1px solid #c6c0be;
+          background: #d6d0ce url(../images/icons/icon-check-select.svg) calc(100% - 10px) center no-repeat;
         }
       }
     }
@@ -3047,7 +3107,7 @@
           content: '▸ ';
         }
       }
-      span {
+      span:not(.type-price) {
         color: #90969e;
         &.completed {
           color: #000;
@@ -3269,6 +3329,9 @@
 #modalGroupMessage {
   .modal-dialog {
     width: 770px;
+    .right {
+      height: 504px;
+    }
   }
 }
 #modalBoardSettings {

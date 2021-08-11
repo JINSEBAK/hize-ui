@@ -532,6 +532,9 @@ a:focus {
     &.icon-info {
       background-image: url(../images/icons/icon-info.svg);
     }
+    &.icon-mg-del {
+      background-image: url(../images/icons/icon-mg-delete.svg);
+    }
   }
 
 
@@ -1265,12 +1268,20 @@ input[type="number"]::-webkit-inner-spin-button {
   select {
     &.filter.form-control {
       float: right;
-      width: 80px;
+      width: 68px;
       color: #fff;
       padding: 0 8px;
       border: none;
       height: 24px;
-      background: transparent url(../images/icons/arrow-down.svg) calc(100% - 10px) center no-repeat !important;
+      background-color: transparent !important;
+      background-position: calc(100% - 10px);
+      background-repeat: no-repeat;
+      background-image: url(../images/icons/arrow-down.svg) !important;
+      &.filter-d {
+        width: 62px;
+        background-size: auto 6px !important;
+        background-image: url(../images/icons/arrow-down-w.svg) !important;
+      }
     }
   }
 }

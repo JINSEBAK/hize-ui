@@ -876,11 +876,11 @@
                                         </div>
                                     </form>
                                     <div class="filter list-filter">
-                                        <select class="form-control filter">
-                                            <option value="">전체</option>
-                                            <option value="">유료</option>
-                                            <option value="">무료</option>
-                                        </select>
+                                        <select class="form-control filter filter-d">
+                                            <option>전체</option>
+                                            <option>유료</option>
+                                            <option>체험</option>
+                                        </select>>
                                     </div>
                                     <div class="chat-list">
                                         <div class="panel panel-default chat-card active">
@@ -1012,16 +1012,11 @@
 
                                     <!-- 목록이 1개 이상 존재할 경우에만 filter 노출 -->
                                     <div class="filter list-filter" style="display: none;">
-                                        <div class="btn-group pull-right">
-                                            <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown"
-                                                aria-expanded="false">
-                                                전체 <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">유료</a></li>
-                                                <li><a href="#">무료</a></li>
-                                            </ul>
-                                        </div>
+                                        <select class="form-control filter filter-d">
+                                            <option>전체</option>
+                                            <option>유료</option>
+                                            <option>체험</option>
+                                        </select>>
                                     </div>
                                     <div class="chat-list">
                                         <div class="area-empty register">
@@ -1809,9 +1804,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk1">
+                                        <label for="chk1"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1831,9 +1825,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk2">
+                                        <label for="chk2"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1853,9 +1846,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk3">
+                                        <label for="chk3"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1875,9 +1867,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk4">
+                                        <label for="chk4"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1897,9 +1888,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk5">
+                                        <label for="chk5"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1919,9 +1909,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk6">
+                                        <label for="chk6"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1941,9 +1930,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk7">
+                                        <label for="chk7"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1963,9 +1951,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk8">
+                                        <label for="chk8"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1985,9 +1972,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk9">
+                                        <label for="chk9"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -2007,9 +1993,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk10">
+                                        <label for="chk10"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -2092,7 +2077,7 @@
                                         <td>
                                             <div class="radio">
                                                 <span>
-                                                    <input type="radio" name="stock-sch-type" value="name" id="stockSchType1">
+                                                    <input type="radio" name="stock-sch-type" value="name" id="stockSchType1" checked>
                                                     <label for="stockSchType1">
                                                         <span>종목명</span>
                                                     </label>
@@ -2160,7 +2145,7 @@
                                         <td>
                                             <div class="radio">
                                                 <span>
-                                                    <input type="radio" value="0" name="ad-view" id="adView0">
+                                                    <input type="radio" value="0" name="ad-view" id="adView0" checked>
                                                     <label for="adView0">
                                                         <span>미표기</span>
                                                     </label>
@@ -2761,7 +2746,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">단체 메세지 발송</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modal-signal">
                 <div class="wrapper">
                     <div class="left">
                         <div class="content content-msg">

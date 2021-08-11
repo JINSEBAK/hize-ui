@@ -265,8 +265,8 @@
                     <div class="file-func">
                         <div class="pull-left">
                             <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
-                                <span class="glyphicon glyphicon-info-sign"></span>
-                                대표이미지 등록 가이드
+                                <span class="icon icon-info"></span>
+                                대표이미지 등록 가이드(이미지 비율 4:26 | 사이즈 800px*520px)
                             </a>
                         </div>
                         <div class="pull-right">
@@ -287,14 +287,14 @@
             <th>채팅유형</th>
             <td>
                 <div class="radio">
-                    <label>
+                    <span>
                         <input type="radio" name="chat-type" value="1" checked>
-                        일반 채팅
-                    </label>
-                    <label>
+                        <label for="chatType1"><span>일반 채팅</span></label>
+                    </span>
+                    <span>
                         <input type="radio" name="chat-type" value="2">
-                        1:n 채팅
-                    </label>
+                        <label for="chatType2"><span>1:n 채팅</span></label>
+                    </span>
                 </div>
             </td>
         </tr>
@@ -307,18 +307,18 @@
                         <div class="mg-pouch">
                             <span>나주민</span>
                             <span>(nastock)</span>
-                            <span class="glyphicon glyphicon-minus icon-del"></span>
+                            <span class="icon icon-mg-del icon-del"></span>
                         </div>
 
                         <div class="mg-pouch">
                             <span>박나래</span>
                             <span>(parkadmin)</span>
-                            <span class="glyphicon glyphicon-minus icon-del"></span>
+                            <span class="icon icon-mg-del icon-del"></span>
                         </div>
                         <div class="mg-pouch">
                             <span>홍길동</span>
                             <span>(hongadmin)</span>
-                            <span class="glyphicon glyphicon-minus icon-del"></span>
+                            <span class="icon icon-mg-del icon-del"></span>
                         </div>
                     </div>
                     <button class="btn btn-secondary" data-toggle="modal" data-target="#modalManagerList">추가</button>
@@ -350,14 +350,14 @@
             <td colspan="3">
                 <div class="form-inline-set">
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="certify-num" value="0" checked onchange="javascript: setCertifyNumber('off');">
-                            OFF
-                        </label>
-                        <label>
-                            <input type="radio" name="certify-num" value="1" onchange="javascript: setCertifyNumber('on');">
-                            ON
-                        </label>
+                        <span>
+                            <input type="radio" name="certify-num" value="0" checked id="certifyNum0" onchange="javascript: setCertifyNumber('off');">
+                            <label for="certifyNum0"><span>OFF</span></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="certify-num" value="1" id="certifyNum1" onchange="javascript: setCertifyNumber('on');">
+                            <label for="certifyNum1"><span>ON</span></label>
+                        </span>
                     </div>
                     <div class="time-inline">
                         <input type="number" class="form-control" placeholder="숫자 4자리 입력" disabled id="certifyNumber" maxlength="4">
@@ -369,44 +369,11 @@
 </table>
 
 
-<!-- 대표이미지 등록 가이드 -->
-<div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel"
-            aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">대표이미지 등록 가이드</h4>
-            </div>
-            <div class="modal-body">
-               <ol class="ol-guide">
-                   <li>
-                       <strong>이미지 사이즈</strong>
-                       <ul>
-                           <li>이미지 권장 사이즈는 500px * 300px 입니다.</li>
-                           <li>권장사이즈보다 큰 이미지 등록 시 뷰영역 높이 기준으로 이미지가 줄여져서 보여집니다.</li>
-                       </ul>
-                       <div class="ex-img">
-                           <p>썸네일 사진<br>500px * 300px</p>
-                           <img src="../assets/images/photos/sample.jpeg">
-                       </div>
-                   </li>
-                   <li>
-                       <strong>파일용량/확장자</strong>
-                       <p>파일용량은 3MB이하 파일은 jpg, png만 가능합니다.</p>
-                   </li>
-               </ol>
-            </div>
-        </div>
-    </div>
-</div>
-
                             </div>
                             <div role="tabpane" class="tab-pane fade" id="tabMember">
                                 <div class="area-list">
     <div class="area-list-header">
-        <div class="pull-left">
+        <div class="pull-left rt-filter">
             Total <span class="count">100</span>
         </div>
         <div class="pull-right">
@@ -426,13 +393,13 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>회원명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>회원명 <span class="icon icon-table-sort"></span></th>
                     <th>아이디</th>
                     <th>닉네임</th>
                     <th>결제금액(원)</th>
-                    <th>가입일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>가입일 <span class="icon icon-table-sort"></span></th>
                     <th>종료일</th>
-                    <th>보너스 기간 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>보너스 기간 <span class="icon icon-table-sort"></span></th>
                     <th>블락여부</th>
                 </tr>
             </thead>
@@ -594,10 +561,10 @@
                     <th>회원명</th>
                     <th>아이디</th>
                     <th>닉네임</th>
-                    <th>결제금액(원) <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                    <th>결제일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>결제금액(원) <span class="icon icon-table-sort"></span></th>
+                    <th>결제일 <span class="icon icon-table-sort"></span></th>
                     <th>환불일</th>
-                    <th>결제 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>결제 <span class="icon icon-table-sort"></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -736,7 +703,7 @@
                     <th>No.</th>
                     <th>관리자명</th>
                     <th>아이디</th>
-                    <th>이력 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>이력 <span class="icon icon-table-sort"></span></th>
                     <th>변경자</th>
                     <th>변경일</th>
                 </tr>
@@ -897,9 +864,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk1">
+                                        <label for="chk1"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -919,9 +885,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk2">
+                                        <label for="chk2"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -941,9 +906,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk3">
+                                        <label for="chk3"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -963,9 +927,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk4">
+                                        <label for="chk4"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -985,9 +948,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk5">
+                                        <label for="chk5"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1007,9 +969,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk6">
+                                        <label for="chk6"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1029,9 +990,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk7">
+                                        <label for="chk7"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1051,9 +1011,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk8">
+                                        <label for="chk8"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1073,9 +1032,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk9">
+                                        <label for="chk9"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1095,9 +1053,8 @@
                                 </div>
                                 <div class="ex-func">
                                     <div class="checkbox">
-                                        <label for="chk1">
-                                            <input type="checkbox" id="chk1">
-                                        </label>
+                                        <input type="checkbox" id="chk10">
+                                        <label for="chk10"><span></span></label>
                                     </div>
                                 </div>
                             </div>
@@ -1118,6 +1075,55 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">추가</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- 대표이미지 등록 가이드-->
+        <div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">대표이미지 등록 가이드</h4>
+            </div>
+            <div class="modal-body">
+               <ul class="ol-guide">
+                   <li>
+                       <strong>이미지 가이드</strong>
+                       <ul>
+                           <li>
+                               <strong>파일 형식</strong> : JPG 또는 PNG
+                           </li>
+                           <li>
+                               <strong>이미지 비율</strong> : 4:2.6
+                           </li>
+                           <li>
+                               <strong>이미지 권장사이즈(가로*세로)</strong> : 800px*520px 이상
+                           </li>
+                       </ul>
+                   </li>
+                   <li>
+                        <strong>사용자앱</strong>
+                        <p>채팅리스트에서는 썸네일 높이 기준으로 이미지가 축소되어 보여집니다.</p>
+                        <div class="ex-img-wrapper">
+                            <div class="ex-img">
+                                <span class="lb">[이미지형 썸네일]</span>
+                                <div class="guide">
+                                    <div class="thumb thumb-img">썸네일</div>
+                                </div>
+                            </div>
+                            <div class="ex-img">
+                                <span class="lb">[리스트형 썸네일]</span>
+                                <div class="guide">
+                                    <div class="thumb thumb-list">썸네일</div>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+               </ul>
             </div>
         </div>
     </div>

@@ -380,24 +380,15 @@
                             <div role="tabpane" class="tab-pane fade" id="tabSignup">
                                 <div class="area-list">
     <div class="area-list-header">
-        <div class="pull-left">
+        <div class="pull-left rt-filter">
             Total <span class="count">10</span>
         </div>
         <div class="pull-right">
-            <div class="">
-                <label for="" class="sr-only">회원 상태</label>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true" id="memberTypeSort">
-                        유지
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="memberTypeSort">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">유지</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">만료</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">강퇴</a></li>
-                    </ul>
-                </div>
-            </div>
+            <select class="form-control" style="width: 100px">
+                <option>유지</option>
+                <option>만료</option>
+                <option>강퇴</option>
+            </select>
         </div>
     </div>
     <div class="area-list-body">
@@ -407,8 +398,8 @@
                     <th>No.</th>
                     <th>채팅방명</th>
                     <th>결제금액(원)</th>
-                    <th>가입일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                    <th>종료일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>가입일 <span class="icon icon-table-sort"></span></th>
+                    <th>종료일 <span class="icon icon-table-sort"></span></th>
                     <th>보너스 기간</th>
                 </tr>
             </thead>
@@ -550,7 +541,7 @@
                     <th>결제금액(원)</th>
                     <th>결제일</th>
                     <th>환불일</th>
-                    <th>결제 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                    <th>결제 <span class="icon icon-table-sort"></span></th>
                 </tr>
             </thead>
             <tbody>

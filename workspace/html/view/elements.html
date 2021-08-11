@@ -6,7 +6,8 @@
         dl dt { margin-bottom: 12px; font-size: 24px; }
         dl dd { margin-bottom: 48px; }
         dl dd .sep { margin-bottom: 36px; }
-        .area-empty { display: inline-block !important; border: 1px solid rgba(0,0,0,.05)}
+        dl:last-child { margin-bottom: 100px; }
+        .area-empty { display: inline-block !important; border: 1px solid rgba(0,0,0,.05); margin-right: 16px;}
         .area-empty.my-chat-empty { background-color: #394168; }
     </style>
   </head>
@@ -257,27 +258,29 @@
         <dt>데이터없음</dt>
         <dd>
             <h5>검색결과 없음</h5>
-            <div class="area-empty search">
-                <div class="search-empty">
-                    <strong>검색 결과가 없습니다.</strong>
+            <div class="" style="display: flex; align-items: center;">
+                <div class="area-empty search">
+                    <div class="search-empty">
+                        <strong>검색 결과가 없습니다.</strong>
+                    </div>
                 </div>
-            </div>
 
-            <div class="area-empty register" >
-                <div class="register-empty">
-                    <strong>등록된 정보가 없습니다.</strong>
+                <div class="area-empty register" >
+                    <div class="register-empty">
+                        <strong>등록된 정보가 없습니다.</strong>
+                    </div>
                 </div>
-            </div>
 
-            <div class="area-empty opinion">
-                <div class="opinion-empty">
-                    <strong>전문가 의견이 없습니다.</strong>
+                <div class="area-empty opinion">
+                    <div class="opinion-empty">
+                        <strong>전문가 의견이 없습니다.</strong>
+                    </div>
                 </div>
-            </div>
 
-            <div class="area-empty my-chat-empty">
-                <div class="my-chat-empty">
-                    <strong>참여한 채팅방이 없습니다.</strong>
+                <div class="area-empty my-chat-empty">
+                    <div class="my-chat-empty">
+                        <strong>참여한 채팅방이 없습니다.</strong>
+                    </div>
                 </div>
             </div>
 

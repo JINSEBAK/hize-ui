@@ -44,8 +44,8 @@
                     <div class="file-func">
                         <div class="pull-left">
                             <a href="#" data-toggle="modal" data-target="#modalThumbImgGuide">
-                                <span class="glyphicon glyphicon-info-sign"></span>
-                                대표이미지 등록 가이드
+                                <span class="icon icon-info"></span>
+                                대표이미지 등록 가이드(이미지 비율 4:26 | 사이즈 800px*520px)
                             </a>
                         </div>
                         <div class="pull-right">
@@ -66,14 +66,14 @@
             <th>채팅유형</th>
             <td>
                 <div class="radio">
-                    <label>
+                    <span>
                         <input type="radio" name="chat-type" value="1" checked>
-                        일반 채팅
-                    </label>
-                    <label>
+                        <label for="chatType1"><span>일반 채팅</span></label>
+                    </span>
+                    <span>
                         <input type="radio" name="chat-type" value="2">
-                        1:n 채팅
-                    </label>
+                        <label for="chatType2"><span>1:n 채팅</span></label>
+                    </span>
                 </div>
             </td>
         </tr>
@@ -86,18 +86,18 @@
                         <div class="mg-pouch">
                             <span>나주민</span>
                             <span>(nastock)</span>
-                            <span class="glyphicon glyphicon-minus icon-del"></span>
+                            <span class="icon icon-mg-del icon-del"></span>
                         </div>
 
                         <div class="mg-pouch">
                             <span>박나래</span>
                             <span>(parkadmin)</span>
-                            <span class="glyphicon glyphicon-minus icon-del"></span>
+                            <span class="icon icon-mg-del icon-del"></span>
                         </div>
                         <div class="mg-pouch">
                             <span>홍길동</span>
                             <span>(hongadmin)</span>
-                            <span class="glyphicon glyphicon-minus icon-del"></span>
+                            <span class="icon icon-mg-del icon-del"></span>
                         </div>
                     </div>
                     <button class="btn btn-secondary" data-toggle="modal" data-target="#modalManagerList">추가</button>
@@ -129,14 +129,14 @@
             <td colspan="3">
                 <div class="form-inline-set">
                     <div class="radio">
-                        <label>
-                            <input type="radio" name="certify-num" value="0" checked onchange="javascript: setCertifyNumber('off');">
-                            OFF
-                        </label>
-                        <label>
-                            <input type="radio" name="certify-num" value="1" onchange="javascript: setCertifyNumber('on');">
-                            ON
-                        </label>
+                        <span>
+                            <input type="radio" name="certify-num" value="0" checked id="certifyNum0" onchange="javascript: setCertifyNumber('off');">
+                            <label for="certifyNum0"><span>OFF</span></label>
+                        </span>
+                        <span>
+                            <input type="radio" name="certify-num" value="1" id="certifyNum1" onchange="javascript: setCertifyNumber('on');">
+                            <label for="certifyNum1"><span>ON</span></label>
+                        </span>
                     </div>
                     <div class="time-inline">
                         <input type="number" class="form-control" placeholder="숫자 4자리 입력" disabled id="certifyNumber" maxlength="4">
@@ -147,36 +147,3 @@
     </tbody>
 </table>
 
-
-<!-- 대표이미지 등록 가이드 -->
-<div class="modal fade modal-guide" id="modalThumbImgGuide" aria-labelledby="modalThumbImgGuideLabel"
-            aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">대표이미지 등록 가이드</h4>
-            </div>
-            <div class="modal-body">
-               <ol class="ol-guide">
-                   <li>
-                       <strong>이미지 사이즈</strong>
-                       <ul>
-                           <li>이미지 권장 사이즈는 500px * 300px 입니다.</li>
-                           <li>권장사이즈보다 큰 이미지 등록 시 뷰영역 높이 기준으로 이미지가 줄여져서 보여집니다.</li>
-                       </ul>
-                       <div class="ex-img">
-                           <p>썸네일 사진<br>500px * 300px</p>
-                           <img src="../assets/images/photos/sample.jpeg">
-                       </div>
-                   </li>
-                   <li>
-                       <strong>파일용량/확장자</strong>
-                       <p>파일용량은 3MB이하 파일은 jpg, png만 가능합니다.</p>
-                   </li>
-               </ol>
-            </div>
-        </div>
-    </div>
-</div>

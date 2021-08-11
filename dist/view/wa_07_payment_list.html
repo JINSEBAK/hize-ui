@@ -238,8 +238,15 @@
                         <!-- 목록 -->
                         <div class="area-list">
                             <div class="area-list-header">
-                                <div class="pull-left">
+                                <div class="pull-left rt-filter">
                                     Total <span class="count">50</span>
+                                </div>
+                                <div class="pull-right">
+                                    <select class="form-control" style="width: 100px">
+                                        <option>전체</option>
+                                        <option>결제</option>
+                                        <option>환불</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="area-list-body">
@@ -248,12 +255,12 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>채팅방명</th>
-                                            <th>회원명 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>회원명 <span class="icon icon-table-sort"></span></th>
                                             <th>아이디</th>
                                             <th>결제금액(원)</th>
-                                            <th>결제일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>환불일 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
-                                            <th>결제 <span class="glyphicon glyphicon-sort-by-attributes-alt"></span></th>
+                                            <th>결제일 <span class="icon icon-table-sort"></span></th>
+                                            <th>환불일 <span class="icon icon-table-sort"></span></th>
+                                            <th>결제 <span class="icon icon-table-sort"></span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -262,7 +269,7 @@
                                             <td class="lf"><span class="ellipsis">성공투자주식방-5</span></td>
                                             <td>이삼오</td>
                                             <td>235lee</td>
-                                            <td>2,000,000</td>
+                                            <td><span class="price">2,000,000</span></td>
                                             <td>2021-04-10</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -272,7 +279,7 @@
                                             <td class="lf"><span class="ellipsis">성공투자주식방-1</span></td>
                                             <td>장나라</td>
                                             <td>janghaha</td>
-                                            <td><span class="txt-blue">-800,000</span></td>
+                                            <td><span class="price">800,000</span></td>
                                             <td>-</td>
                                             <td>2021-03-02</td>
                                             <td>환불</td>
@@ -282,7 +289,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -292,7 +299,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -302,7 +309,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -312,7 +319,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -322,7 +329,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -332,7 +339,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -342,7 +349,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
@@ -352,7 +359,7 @@
                                            <td class="lf"><span class="ellipsis">채팅방명</span></td>
                                             <td>회원명</td>
                                             <td>회원ID</td>
-                                            <td>0,000,000</td>
+                                            <td><span class="price">0,000,000</span></td>
                                             <td>YYYY-MM-DD</td>
                                             <td>-</td>
                                             <td>결제완료</td>
