@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <style>
-      body { overflow-y: scroll }
+      body { overflow-y: scroll; padding: 0 !important; }
+      body .inner { padding: 2rem;}
       .panel-heading { cursor: pointer; background: url(./assets/images/icons/up-arrow.svg) calc(100% - 12px) center no-repeat; background-size: 12px;}
       .panel-heading.open { background: url(./assets/images/icons/down-arrow.svg) calc(100% - 12px) center no-repeat; background-size: 12px; }
       .panel-heading ~ .panel-body, .panel-heading ~ .table { display: none; }
@@ -38,7 +39,8 @@
     </style>
 
   </head>
-  <body style="padding: 2rem">
+  <body>
+    <div class="inner">
     <div class="panel panel-default">
       <div class="panel-body">
         <strong>
@@ -1499,6 +1501,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
     </div>
 
     <script>
