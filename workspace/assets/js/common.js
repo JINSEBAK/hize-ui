@@ -1,4 +1,20 @@
 $(function() {
+    $('.navbar-brand').on('click', function() {
+        callConfirm({
+            title: '타이틀이요',
+            description: '설명 문구요',
+        });
+    });
+
+    $('<span id="widthSize">').css({
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        color: 'yellow'
+    }).text($(window).width()).appendTo('.navbar-fixed-top');
+    $(window).on('resize', function() {
+        $('#widthSize').text($(window).width());
+    });
 
     let pathname = window.location.pathname;
     pathname = pathname.substr(pathname.lastIndexOf('/') + 1, pathname.length);
@@ -29,6 +45,14 @@ $(function() {
             $(this).parent('li').addClass('active');
             $(this).next('.sub-menu').slideDown();
         }
+    });
+
+    // 모바일 메뉴
+    $('.navbar-toggle').on('click', function() {
+        $('#mSidebar').addClass('slide-on');
+    });
+    $('#mSidebar').find('.btn-close-menu').on('click', function() {
+        $('#mSidebar').removeClass('slide-on');
     });
 
     $('.datepicker').datepicker();

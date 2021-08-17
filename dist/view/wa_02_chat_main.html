@@ -31,7 +31,9 @@
         <div class="navbar-header">
             <!-- 모바일 메뉴 버튼 -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="glyphicon glyphicon-option-vertical"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
             <!-- LOGO -->
             <a href="#" class="navbar-brand"><strong>Hize</strong> Admin</a>
@@ -62,6 +64,155 @@
         </div>
     </div>
 </nav>
+
+<!-- 모바일 메뉴 오픈 시 .slide-on 추가 -->
+<div class="mobile-menu-wrap" id="mSidebar">
+    <div class="mobile-menu">
+        <div class="mobile-menu-top">
+            <button type="button" class="btn btn-icon btn-close-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="rt-info">
+                <span class="user-img">h</span>
+                <a class="btn btn-profile" type="button" href="../view/wa_13_my_account.html">
+                    <span>hongadmin</span>
+                </a>
+                <span class="vertical"></span>
+                <a href="#" type="button" class="btn btn-logout">로그아웃</a>
+            </div>
+        </div>
+        <ul class="sm-req-bd">
+            <li>
+                <span>유료방 가입</span>
+                <span><a href="../view/wa_14_request_list.html">50</a>건</span>
+            </li>
+            <li>
+                <span>관리자 권한</span>
+                <span><a href="../view/wa_14_request_list.html">20</a>건</span>
+            </li>
+            <li>
+                <span>게시물 승인</span>
+                <span><a href="../view/wa_14_request_list.html">10</a>건</span>
+            </li>
+        </ul>
+
+        <nav class="sidebar scrollbar">
+            <ul class="nav nav-sidebar">
+                <li data-code="wa_02">
+                    <a href="#" class="single" >
+                        <span class="icon icon-chatting"></span>
+                        <span>채팅</span>
+                    </a>
+                </li>
+                <li data-code="wa_03">
+                    <a href="#">
+                        <span class="icon icon-notification"></span>
+                        <span>실시간 신호</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li data-sub-code="wa_03_signal_history">
+                            <a href="#">신호 발송 내역</a>
+                        </li>
+                        <li data-sub-code="wa_03_message_history">
+                            <a href="#">문자 발송 내역</a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-code="wa_04">
+                    <a href="#" class="single">
+                        <span class="icon icon-stockboard"></span>
+                        <span>보유 전광판</span>
+                    </a>
+                </li>
+                <li data-code="wa_05">
+                    <a href="#">
+                        <span class="icon icon-chat-product"></span>
+                        <span>서비스 상품</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li data-sub-code="wa_05_product_list">
+                            <a href="#">상품 목록</a>
+                        </li>
+                        <li  data-sub-code="wa_05_product_register">
+                            <a href="#">상품 생성</a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-code="wa_06">
+                    <a href="#" class="single">
+                        <span class="icon icon-statistics"></span>
+                        <span>매출 통계</span>
+                    </a>
+                </li>
+                <li data-code="wa_07">
+                    <a href="#" class="single">
+                        <span class="icon icon-payment"></span>
+                        <span>결제 관리</span>
+                    </a>
+                </li>
+                <li data-code="wa_08">
+                    <a href="#" class="single">
+                        <span class="icon icon-user"></span>
+                        <span>회원 관리</span>
+                    </a>
+                </li>
+                <li data-code="wa_09">
+                    <a href="#">
+                        <span class="icon icon-admin-member"></span>
+                        <span>권한 관리</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li data-sub-code="wa_09_manager">
+                            <a href="#">관리자 목록</a>
+                        </li>
+                        <li data-sub-code="wa_09_permission">
+                            <a href="#">권한 관리</a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-code="wa_10">
+                    <a href="#">
+                        <span class="icon icon-board"></span>
+                        <span>게시판 관리</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li data-sub-code="wa_10_board_settings">
+                            <a href="#">게시판 설정</a>
+                        </li>
+                        <li data-sub-code="wa_10_board_list">
+                            <a href="#">게시물 관리</a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-code="wa_11">
+                    <a href="#">
+                        <span class="icon icon-service"></span>
+                        <span>운영관리</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li data-sub-code="wa_11_operation_faq">
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li data-sub-code="wa_11_operation_terms">
+                            <a href="#">정책/약관 관리</a>
+                        </li>
+                        <li data-sub-code="wa_11_operation_log">
+                            <a href="#">Log 내역</a>
+                        </li>
+                    </ul>
+                </li>
+                <li data-code="wa_12">
+                    <a href="#" class="single">
+                        <span class="icon icon-config"></span>
+                        <span>앱메인 관리</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
 
         <div class="modal-full" style="display: none;" id="modalChatImageView"> 
             <div class="inner">
@@ -302,7 +453,7 @@
                                     <!-- fixed notice -->
                                     <div class="chat-notice">
                                         <a href="#" data-toggle="modal" data-target="#modalNoticeModify">
-                                            <span class="icon icon-chat-notice"></span>
+                                            <span class="icon icon-chat-alert"></span>
                                             <span>정확하고 신속한 소식!</span>
                                         </a>
                                     </div>
