@@ -1,3 +1,17 @@
+var isMobile = {
+    Android: function () {
+      return navigator.userAgent.match(/Android/i) == null ? false : true;
+    },
+    iOS: function () {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null
+        ? false
+        : true;
+    },
+    any: function () {
+      return isMobile.Android() || isMobile.iOS();
+    },
+  };
+
 $(function() {
     $('.navbar-brand').on('click', function() {
         callConfirm({
@@ -66,6 +80,7 @@ function callAlert(msg, actions) {
     $('body').find('#confirmModal').remove();
 
     var _html = '<div class="modal fade modal-alert" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">'
+                +   '<div class="m-shadow">'
                 +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
                 +           '<div class="modal-body text-center">' + msg.title;
@@ -79,6 +94,7 @@ function callAlert(msg, actions) {
                 +               '<button type="button" class="btn btn-primary btn-act" data-dismiss="modal">확인</button>'
                 +           '</div>'
                 +       '</div>'
+                +   '</div>'
                 +   '</div>'
                 +'</div>';
 
@@ -100,6 +116,7 @@ function callConfirm(msg, actions, buttons) {
     $('body').find('#confirmModal').remove();
 
     var _html = '<div class="modal fade modal-confirm" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">'
+                +   '<div class="m-shadow">'
                 +   '<div class="modal-dialog modal-dialog-centered" role="document">'
                 +       '<div class="modal-content">'
                 +           '<div class="modal-body text-center">' 
@@ -113,6 +130,7 @@ function callConfirm(msg, actions, buttons) {
                 +               '<button type="button" class="btn btn-primary btn-act">확인</button>'
                 +           '</div>'
                 +       '</div>'
+                +   '</div>'
                 +   '</div>'
                 +'</div>';
 

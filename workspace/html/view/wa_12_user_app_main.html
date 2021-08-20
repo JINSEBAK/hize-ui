@@ -3,7 +3,7 @@
     <head>
         @@include('../common/resources.html', { "type" : "admin" })
     </head>
-    <body>
+    <body class="app-main">
 
         <!-- header -->
         @@include('../common/header.html', { "active" : "활성화되어야하는 메뉴" })
@@ -75,15 +75,29 @@
                 $('.nav-tabs').find('a[href="#tabBasic"]').tab('show');
 
                 // 목록 Sortable
-                $('.tb-list-bd').sortable({
-                    placeholder: "ui-state-highlight",
-                    update: function( event, ui ) {
-                        // 다시 채번하기
-                        $('#sortableBox li').each(function(index) {
-                            $(this).find('.cell').eq(0).text( index + 1 );
+                console.log(navigator.platform);
+                const filter = "win16|win32|win64|mac|macintel";
+                if ( navigator.platform ) {
+                    if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
+                        //mobile
+                        $('#tabPaidChat').find('.btn-primary').hide();
+                        $('#tabFreeChat').find('.btn-primary').hide();
+                    } else {
+                        //pc
+                        $('#tabPaidChat').find('.btn-primary').show();
+                        $('#tabFreeChat').find('.btn-primary').show();
+
+                        $('.tb-list-bd').sortable({
+                            placeholder: "ui-state-highlight",
+                            update: function( event, ui ) {
+                                // 다시 채번하기
+                                $('#sortableBox li').each(function(index) {
+                                    $(this).find('.cell').eq(0).text( index + 1 );
+                                });
+                            }
                         });
                     }
-                });
+                }
 
                 // 광고
                 $('#allChk').on('change', function() {

@@ -38,7 +38,7 @@
 
                 <!-- contents -->
                 <div class="main" id="main">
-                    @@include('../common/title.html', { "title" : "채팅 <span class='icon icon-info'></span>", "sub" : "참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다." })
+                    @@include('../common/title.html', { "title" : "채팅", "sub" : "참여중인 채팅리스트를 관리하고 채팅을 할 수 있습니다." })
 
                     <div class="contents chat-contents">
                         <div class="col-md-12">
@@ -53,7 +53,7 @@
                                         <div class="chat-header-info">
                                             <span class="title">
                                                 <label class="label label-chat">유료</label>
-                                                <span>성투 주식방</span>
+                                                <span>바이오 주식 분성방으로 오세요.</span>
                                             </span>
                                             <span class="count">85/120</span>
                                         </div>
@@ -378,6 +378,31 @@
                                                 </div>
                                             </div>
 
+                                            <div class="msg general signal">
+                                                <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
+                                                data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
+                                                    <img src="../assets/images/photos/1.png">
+                                                </a>
+                                                <div class="info">
+                                                    <div class="tk-info">
+                                                        <span class="name">나회원</span>
+                                                        <span class="id">(namem79)</span>
+                                                        <span class="time">오전 10:00</span>
+                                                    </div>
+                                                    <div class="balloon">
+                                                        <div class="inner">
+                                                            <div class="signal-type gs">[알림] 신호입니다.</div>
+                                                            <p>
+                                                                잠시 시간할애로 최근 시장 주요 이슈와 관련된 섹터 진단 시간을 갖도록 하겠습니다.<br>
+                                                                20분부터 진행할 예정이니 편하게 차한잔하면서 
+                                                                대기해주세요 ^^
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
                                             <div class="msg general blocked">
                                                 <a tabindex="0" class="img" role="button" data-trigger="focus" data-toggle="popover" data-placement="right"
                                                 data-html="true" data-content='<div class="popover-chat-member"><strong>나회원</strong>가입기간: 2021-03-01 ~ 2021-05-20<br>가입비: 100만원 <button class="btn btn-default btn-sm">블락등록</button></div>'>
@@ -412,6 +437,23 @@
                                         </div>
                                     </div>
                                     <div class="chat-input">
+                                
+
+                                        <!-- 답장하기 UI : 블락회원의 메세지의 답장하기 선택 시 노출 -->
+                                        <div class="block-msg-reply">
+                                            <!-- target 정보 -->
+                                            <div class="tg-info">
+                                                <span class="glyphicon glyphicon-thumbs-down"></span>
+                                                <span class="tg-name">
+                                                    <strong>주식수로왕(surokim)</strong>에게 답장
+                                                </span>
+                                                <span class="tg-msg">여러분도 1**!</span>
+                                            </div>
+                                            <span class="glyphicon glyphicon-remove btn-reply-cancel"></span>
+                                        </div>
+
+                                        <textarea class="form-control" rows="1" placeholder="메시지를 입력하세요." id="chatMsg"></textarea>
+
                                         <div class="pod-options">
                                             <ul>
                                                 <li>
@@ -661,26 +703,49 @@
                                                 </li>
                                             </ul>
                                         </div>
-
-                                        <!-- 답장하기 UI : 블락회원의 메세지의 답장하기 선택 시 노출 -->
-                                        <div class="block-msg-reply">
-                                            <!-- target 정보 -->
-                                            <div class="tg-info">
-                                                <span class="glyphicon glyphicon-thumbs-down"></span>
-                                                <span class="tg-name">
-                                                    <strong>주식수로왕(surokim)</strong>에게 답장
-                                                </span>
-                                                <span class="tg-msg">여러분도 1**!</span>
-                                            </div>
-                                            <span class="glyphicon glyphicon-remove btn-reply-cancel"></span>
-                                        </div>
-
-                                        <textarea class="form-control" rows="1" placeholder="메시지를 입력하세요." id="chatMsg"></textarea>
                                     </div>
                                 </div>
+
+                                <!-- 모바일 해상도에서 채팅방은 slide 메뉴로 변경 -->
+                                <div class="chat-m-menu">
+                                    <ul class="">
+                                        <li>
+                                            <button type="button" class="btn btn-icon" id="btnChatInMobile">
+                                                <span class="icon icon-chatroom-list"></span>
+                                                <span>채팅방</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-icon" id="btnChatInMobile2" data-toggle="modal" data-target="#modalSendSignal">
+                                                <span class="icon icon-stock-signal"></span>
+                                                <span>신호</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-icon" id="btnChatInMobile3" data-toggle="modal" data-target="#modalGroupSignal">
+                                                <span class="icon icon-stock-group-signal"></span>
+                                                <span>단체신호</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn btn-icon" id="btnChatInMobile3" data-toggle="modal" data-target="#modalGroupMessage">
+                                                <span class="icon icon-message-group"></span>
+                                                <span>단체 메세지</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-chat col-chat-rt">
+                            <!-- 모바일 전용 버튼 -->
+                            <div class="m-slide-close">
+                                <button type="button" class="btn btn-icon btn-slide-close">
+                                    <span class="icon icon-popup-close"></span>
+                                </button>
+                            </div>
+
                             <!-- tabs -->
                             <div>
                                 <ul class="nav nav-tabs nav-justified nav-tabs-chat">
@@ -702,7 +767,7 @@
                                             <option>전체</option>
                                             <option>유료</option>
                                             <option>체험</option>
-                                        </select>>
+                                        </select>
                                     </div>
                                     <div class="chat-list">
                                         <div class="panel panel-default chat-card active">
@@ -889,17 +954,31 @@
         <script>
             $(function() {
 
-                var divHeight = '';
-                var browserHeight = document.documentElement.clientHeight;
-                //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
-                divHeight = browserHeight - (106 + 62 + 60 + 46 + 24);
+                if ( $(window).width() > 768) {
+                    var divHeight = '';
+                    var browserHeight = document.documentElement.clientHeight;
+                    //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
+                    divHeight = browserHeight - (106 + 62 + 60 + 46 + 24);
 
+                    $('.chat-contents').find('.tab-content').not('.emo-content').css('height', divHeight+'px');
+                    //$('.chat-body').find('.scroll').css('height', divHeight-78+'px');
+                    $('.chat-body').find('.scroll').css('height', divHeight-48+'px');
+                    $('.chat-body').find('.scroll').scrollTop($('.chat-body .scroll').find('.inner').height() );
+                }
 
-                $('.chat-contents').find('.tab-content').not('.emo-content').css('height', divHeight+'px');
-                //$('.chat-body').find('.scroll').css('height', divHeight-78+'px');
-                $('.chat-body').find('.scroll').css('height', divHeight-48+'px');
+                $(window).on('resize', function() {
+                    if ( $(window).width() > 768) {
+                        var divHeight = '';
+                        var browserHeight = document.documentElement.clientHeight;
+                        //divHeight = browserHeight - (90 + 49 + 82 + 42 + 12);
+                        divHeight = browserHeight - (106 + 62 + 60 + 46 + 24);
 
-                $('.chat-body').find('.scroll').scrollTop($('.chat-body .scroll').find('.inner').height() );
+                        $('.chat-contents').find('.tab-content').not('.emo-content').css('height', divHeight+'px');
+                        //$('.chat-body').find('.scroll').css('height', divHeight-78+'px');
+                        $('.chat-body').find('.scroll').css('height', divHeight-48+'px');
+                        $('.chat-body').find('.scroll').scrollTop($('.chat-body .scroll').find('.inner').height() );
+                    }
+                });
 
                 $('#chatMsg').keydown(function(event) {
                     event.preventDefault;
@@ -914,6 +993,29 @@
                         }
                     }
                 });
+
+                // 모바일 ------------------------------------------------
+                $('#btnChatInMobile').on('click', function() {
+                   if (!$(this).hasClass('slide-on')) {
+                       $('.col-chat-rt').addClass('slide-on');
+                   }
+                });
+                $('.btn-slide-close').on('click', function() {
+                    $('.col-chat-rt').removeClass('slide-on');
+                });
+
+                $('#btnGroupSignalChatList').on('click', function() {
+                    $('.col-signal.col-signal-et').addClass('slide-on');
+                });
+                $('#btnCloseGroupSignalChatList').on('click', function() {
+                    $('.col-signal.col-signal-et').removeClass('slide-on');
+                });
+
+                $('#btnGroupMessageChatList, #btnCloseGroupMessageChatList').on('click', function() {
+                    $('#modalGroupMessage').find('.right').toggleClass('slide-on');
+                });
+
+
 
                  // 사용자 정보
                  $('.msg .img').popover();
@@ -1251,6 +1353,7 @@
                 $('.chat-list-group').find('.chat-card').on('click', function() {
                     $(this).toggleClass('selected');
                 });
+
 
             });
 

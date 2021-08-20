@@ -1,0 +1,35 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <mask id="e" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="24" height="22" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <mask id="f" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="24" height="7" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <mask id="g" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="5" height="5" fill="#fff">
+            <use xlink:href="#c"/>
+        </mask>
+        <mask id="h" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="5" height="5" fill="#fff">
+            <use xlink:href="#d"/>
+        </mask>
+        <circle id="c" cx="2.5" cy="2.5" r="2.5"/>
+        <circle id="d" cx="2.5" cy="2.5" r="2.5"/>
+        <path d="M10 5h12a6 6 0 0 1 6 6v10a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6V11a6 6 0 0 1 6-6z" id="a"/>
+        <path d="M10 5h12a6 6 0 0 1 6 6v1H4v-1a6 6 0 0 1 6-6z" id="b"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <use stroke="#2E3A59" mask="url(#e)" stroke-width="2.8" fill="#FFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" xlink:href="#a"/>
+        <path d="M10 6h2v6H5v-1a5 5 0 0 1 5-5z" fill="#FF6853"/>
+        <path d="M20 6h2a5 5 0 0 1 5 5v1h-7V6z" fill="#AFAFAF"/>
+        <path fill="#4675E3" d="M12 6h8v6h-8z"/>
+        <use stroke="#2E3A59" mask="url(#f)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" fill-rule="nonzero" xlink:href="#b"/>
+        <g transform="translate(17 14)" fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0,0" stroke-linecap="round" stroke-linejoin="round">
+            <use mask="url(#g)" stroke-width="2.8" xlink:href="#c"/>
+            <path d="M0 9V7.714C0 7.151.703 6 2.5 6 4.321 6 5 7.151 5 7.714V9" stroke-width="1.4"/>
+        </g>
+        <g transform="translate(10 14)" fill-rule="nonzero" stroke="#2E3A59" stroke-dasharray="0,0" stroke-linecap="round" stroke-linejoin="round">
+            <use mask="url(#h)" stroke-width="2.8" xlink:href="#d"/>
+            <path d="M0 9V7.714C0 7.151.703 6 2.5 6 4.321 6 5 7.151 5 7.714V9" stroke-width="1.4"/>
+        </g>
+    </g>
+</svg>

@@ -1,20 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="154" height="44" viewBox="0 0 154 44">
+<svg width="154" height="50" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" fill-rule="evenodd">
-        <g>
-            <g>
-                <g transform="translate(-723.000000, -87.000000) translate(723.000000, 85.000000)">
-                    <rect width="11" height="34" x="87.627" y="-1" fill="#FF7448" rx="5.5" transform="translate(93.127417, 16.000000) rotate(48.000000) translate(-93.127417, -16.000000)"/>
-                    <rect width="43" height="10" x="64" y="2.373" fill="#CD4141" rx="5"/>
-                    <rect width="43" height="10" x="64" y="35.373" fill="#1D2858" rx="5"/>
-                    <rect width="10" height="43" y="2.373" fill="#1D2858" rx="5"/>
-                    <rect width="43" height="10" x="111" y="3.373" fill="#1D2858" rx="5"/>
-                    <rect width="43" height="10" x="111" y="19.373" fill="#1D2858" rx="5"/>
-                    <rect width="43" height="10" x="111" y="35.373" fill="#1D2858" rx="5"/>
-                    <rect width="38" height="10" y="19.373" fill="#1D2858" rx="5"/>
-                    <rect width="10" height="43" x="30" y="2.373" fill="#1D2858" rx="5"/>
-                    <rect width="10" height="43" x="46" y="2.373" fill="#1D2858" rx="5"/>
-                </g>
-            </g>
-        </g>
+        <rect fill="#FFC148" transform="rotate(38 90.726 18)" x="85.226" width="11" height="36" rx="5.5"/>
+        <rect fill="#CD4141" transform="rotate(-13 86.5 9.749)" x="68" y="4.749" width="37" height="10" rx="5"/>
+        <rect fill="#1D2858" x="64" y="39.914" width="43" height="10" rx="5"/>
+        <rect fill="#1D2858" y="6.914" width="10" height="43" rx="5"/>
+        <path d="M116 6.914h33a5 5 0 1 1 0 10h-33a5 5 0 1 1 0-10zm0 16h33a5 5 0 1 1 0 10h-33a5 5 0 1 1 0-10zm0 17h33a5 5 0 1 1 0 10h-33a5 5 0 1 1 0-10z" fill="#1D2858"/>
+        <rect fill="#1D2858" y="23.914" width="38" height="10" rx="5"/>
+        <rect fill="#1D2858" x="30" y="6.914" width="10" height="43" rx="5"/>
+        <rect fill="#1D2858" x="46" y="6.914" width="10" height="43" rx="5"/>
     </g>
 </svg>

@@ -1,0 +1,27 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="a" x="5" y="5" width="10" height="10" rx="2"/>
+        <rect id="b" x="18" y="5" width="10" height="10" rx="2"/>
+        <rect id="c" x="5" y="18" width="10" height="10" rx="2"/>
+        <rect id="d" x="18" y="18" width="10" height="10" rx="2"/>
+        <mask id="e" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10" height="10" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <mask id="f" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10" height="10" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <mask id="g" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10" height="10" fill="#fff">
+            <use xlink:href="#c"/>
+        </mask>
+        <mask id="h" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10" height="10" fill="#fff">
+            <use xlink:href="#d"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h32v32H0V0z"/>
+        <use stroke="#2E3A59" mask="url(#e)" stroke-width="2.8" fill="#FFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" xlink:href="#a"/>
+        <use stroke="#2E3A59" mask="url(#f)" stroke-width="2.8" fill="#FFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" xlink:href="#b"/>
+        <use stroke="#2E3A59" mask="url(#g)" stroke-width="2.8" fill="#FFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" xlink:href="#c"/>
+        <use stroke="#2E3A59" mask="url(#h)" stroke-width="2.8" fill="#FFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0,0" xlink:href="#d"/>
+    </g>
+</svg>

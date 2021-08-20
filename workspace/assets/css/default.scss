@@ -128,6 +128,14 @@ $signal-alarm-border: #cfd4c5;
     margin-right: 8px;
   }
 }
+
+@media (max-width: 768px) {
+  .btn {
+    &.btn-sm {
+      min-width: 80px;
+    }
+  }
+}
 .btn-primary {
   background-color: $btn-primary;
   border-color: $btn-primary;
@@ -216,6 +224,12 @@ $signal-alarm-border: #cfd4c5;
   margin-bottom: 24px;
 }
 
+@media (max-width: 768px) {
+  .btn-search {
+    min-width: 60px;
+  }
+}
+
 
 // 버튼 group
 .btns {
@@ -254,14 +268,18 @@ $signal-alarm-border: #cfd4c5;
   }
 }
 
+
+.area-list-header .btn {
+  min-width: 110px;
+}
+
 @media (max-width: 768px) {
   .btns {
     padding-bottom: 16px;
   }
-}
-
-.area-list-header .btn {
-  min-width: 110px;
+  .area-list-header .btn {
+    min-width: 80px;
+  }
 }
 
 a:focus {
@@ -573,6 +591,21 @@ a:focus {
     &.icon-popup-close {
       background-image: url(../images/icons/popup-close.svg);
     }
+    &.icon-chatroom-list {
+      background-image: url(../images/icons/icon-chatroom-list.svg);
+    }
+    &.icon-stock-signal {
+      background-image: url(../images/icons/icon-stocknoti.svg);
+    }
+    &.icon-stock-group-signal {
+      background-image: url(../images/icons/icon-stocknoti-group.svg);
+    }
+    &.icon-message-group {
+      background-image: url(../images/icons/icon-message-group.svg);
+    }
+    &.icon-fold {
+      background-image: url(../images/icons/icon-fold.svg);
+    }
   }
 
 
@@ -584,7 +617,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 80px;
+    padding-top: 90px;
   }
 }
 
@@ -754,9 +787,11 @@ a {
         .navbar-brand {
           height: 60px;
           line-height: 1.7;
+          padding-left: 10px;
         }
         .navbar-toggle {
           display: block !important;
+          margin-right: -3px;
         }
       }
       .navbar-collapse.collapse {
@@ -1114,23 +1149,27 @@ a {
 @media (max-width: 1199px) {
   .main {
     padding-left: 20px;
-    .page-header {
-      h4 {
-        font-size: 18px;
-        small {
-          font-size: 13px;
-        }
-        .breadcrumb {
-          font-size: 12px;
-        }
-      }
-    }
   }
 }
 
 @media ( max-width: 991px) {
   .main {
     padding: 0 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    .page-header {
+      h4 {
+        .breadcrumb {
+          display: none;
+        }
+        small {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 
@@ -1293,12 +1332,46 @@ a {
       }
     }
   }
-
 }
 
 @media (max-width: 768px) {
   .modal {
-
+    .modal-dialog {
+      margin: 0;
+      width: 100% !important;
+      .modal-content {
+        border: none;
+      }
+    }
+    .modal-header {
+      padding: 12px 16px;
+    }
+    .modal-body {
+      padding: 10px;
+      .scrolling {
+        max-height: 100%;
+      }
+    }
+    &.modal-list {
+      .modal-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .form-search {
+          padding: 0 0 10px 0;
+          .icon-search {
+            right: 10px;
+            margin-top: -16px;
+          }
+        }
+        .scrolling {
+          height: 100%;
+          max-height: 100%;
+          padding: 0 !important;
+          margin-right: 0px !important;
+        }
+      }
+    }
   }
 }
 
@@ -1306,6 +1379,7 @@ a {
 #alertModal, #confirmModal {
   .modal-dialog {
     width: 260px;
+    max-width: 260px;
     .modal-content {
       border: 1px solid #dadfe4;
       box-shadow: 0 0 6px rgba(0,0,0,.2);
@@ -1373,9 +1447,16 @@ a {
 
 @media (max-width: 768px) {
   #alertModal, #confirmModal {
-    .modal-dialog {
-      margin: 10px auto;
+    .m-shadow {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .modal-dialog {
+        margin: auto;
+      }
     }
+  }
 }
 
 
@@ -1506,11 +1587,15 @@ input[type="number"]::-webkit-inner-spin-button {
       .date-inline {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         .date-box {
           width: calc(50% - 3px);
           margin-right: 0;
           input {
             width: 100%;
+          }
+          & + .form-in-btn {
+            margin-top: 4px;
           }
         }
       }
@@ -2070,10 +2155,34 @@ input[type="number"]::-webkit-inner-spin-button {
   .nav-tabs.detail-tabs {
     display: flex;
     padding-left: 0;
+    position: relative;
     > li {
       flex: 1;
+      width: auto;
       > a {
         border-radius: 4px 4px 0 0 !important;
+        min-width: 0;
+        padding: 8px 2px;
+      }
+    }
+    &:after {
+      background-color: transparent;
+    }
+    .floated {
+      button {
+        bottom: 48px;
+      }
+    }
+    &.detail-tabs-product {
+      > li {
+        &:last-child {
+          position: absolute;
+          right: 0;
+          bottom: 48px;
+          button {
+            position: static !important;
+          }
+        }
       }
     }
   }
@@ -2104,6 +2213,31 @@ input[type="number"]::-webkit-inner-spin-button {
         > a {
           border-left: none;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-tabs.detail-tabs-b {
+    flex-wrap: wrap;
+    height: auto !important;
+    > li {
+      width: 50% !important;
+      > a {
+        min-width: 120px;
+        border-right: 1px solid #bcbcbc;
+        border-radius: 0 !important;
+      }
+      &.active {
+        & + li {
+          > a {
+            border-left: 1px solid #bcbcbc;
+          }
+        }
+      }
+      &:last-child {
+        position: static;
       }
     }
   }
@@ -2205,7 +2339,7 @@ input[type="number"]::-webkit-inner-spin-button {
 @media (max-width: 768px) {
   .detail-content {
     .table-form {
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -2363,6 +2497,12 @@ input[type="number"]::-webkit-inner-spin-button {
             width: 200px;
           }
         }
+        &.pg {
+          select {
+            width: 120px;
+            margin-right: 4px;
+          }
+        }
       }
     }
     tr:last-child {
@@ -2458,6 +2598,9 @@ input[type="number"]::-webkit-inner-spin-button {
       tr {
         td {
           text-align: right;
+          .data {
+            text-align: right;
+          }
         }
       }
     }
@@ -2465,7 +2608,81 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (max-width: 768px) {
-  
+  .table.table-form {
+    display: block;
+    clear: both;
+    tbody {
+      display: block;
+      tr {
+        display: flex;
+        flex-wrap: wrap;
+        th {
+          width: 28%;
+          border-left: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        td {
+          width: 72%;
+          .date-inline {
+            .date-box {
+              input {
+                max-width: 120px;
+              }
+            }
+          }
+          .form-in-btn {
+            display: flex;
+            &.pg {
+              flex-direction: column;
+              margin-bottom: 0;
+              select {
+                width: 100%;
+                margin-bottom: 4px;
+              }
+              input {
+                width: 100%;
+              }
+            }
+          }
+        }
+        &:last-child {
+          th, td {
+            border-bottom: 1px solid #d1d1d1;
+          }
+        }
+      }
+    }
+    .img-file-box {
+      .img-thumb {
+        width: 100%;
+        height: 146px;
+      }
+      .file-func {
+        .pull-left {
+          a {
+            display: flex;
+            span:not(.icon) {
+              padding-left: 4px;  
+            }
+          }
+        }
+        .pull-right {
+          float: none !important;
+          label {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    .img-thumb {
+      img {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+  }
 }
 
 
@@ -2670,8 +2887,20 @@ input[type="number"]::-webkit-inner-spin-button {
       }
     }
   }
-
 }
+
+@media (max-width: 768px) {
+  .emo-wrapper {
+    right: 0;
+    left: -2px !important;
+    .arrow {
+      right: 0;
+      left: 10px !important;
+    }
+  }
+}
+
+
 
 // 주식종목 검색 api license
 .ntc-license {
@@ -2721,3 +2950,4 @@ input[type="number"]::-webkit-inner-spin-button {
     }
   }
 }
+
